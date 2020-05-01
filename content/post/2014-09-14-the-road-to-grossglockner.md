@@ -3,7 +3,8 @@ title = "The road to Großglockner"
 slug = "2014-09-14-the-road-to-grossglockner"
 published = 2014-09-14T21:01:00+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2014/09/the-road-to-groglockner.html"
 +++
 Sixteen days after leaving home, we're now on our way back to Antwerp.
 After Croatia, we've driven through Slovenia, Italy, Austra and
@@ -21,15 +22,10 @@ production-ready prototypes.
 It has been quite the trip. I had never expected to give my eyes such a
 show so close to home.  
   
-
 [![](/post/images/thumbnails/2014-09-14-the-road-to-grossglockner-grossglockner_1.jpg)](/post/images/2014-09-14-the-road-to-grossglockner-grossglockner_1.jpg)
 
 [![](/post/images/thumbnails/2014-09-14-the-road-to-grossglockner-gross_glockner2.jpg)](/post/images/2014-09-14-the-road-to-grossglockner-gross_glockner2.jpg)
 
-  
-
 [![](/post/images/thumbnails/2014-09-14-the-road-to-grossglockner-gross_glockner3.jpg)](/post/images/2014-09-14-the-road-to-grossglockner-gross_glockner3.jpg)
-
-  
 
 [![](/post/images/thumbnails/2014-09-14-the-road-to-grossglockner-gross_glockner4.jpg)](/post/images/2014-09-14-the-road-to-grossglockner-gross_glockner4.jpg)

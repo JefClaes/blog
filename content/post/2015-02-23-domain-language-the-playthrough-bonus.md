@@ -3,7 +3,7 @@ title = "Domain Language: The Playthrough Bonus"
 slug = "2015-02-23-domain-language-the-playthrough-bonus"
 published = 2015-02-23T19:05:00+01:00
 author = "Jef Claes"
-tags = [ "ddd",]
+tags = [ "ddd", "code"]
 url = "2015/02/domain-language-playthrough-bonus.html"
 +++
 Since online gambling has been regulated in Belgium, basically each

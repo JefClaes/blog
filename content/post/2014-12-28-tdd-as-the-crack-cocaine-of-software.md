@@ -3,7 +3,8 @@ title = "TDD as the crack cocaine of software"
 slug = "2014-12-28-tdd-as-the-crack-cocaine-of-software"
 published = 2014-12-28T17:29:00+01:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2014/12/tdd-as-crack-cocaine-of-software.html"
 +++
 > The psychologist Mihaly Csikszentmihalyi popularized the term "flow"
 > to describe states of absorption in which attention is so narrowly

@@ -30,5 +30,15 @@
       <description>Late 2017, we set out to replace and upgrade our existing reporting and analytics infrastructure with something that would be a better fit for our workloads. Keeping costs and required maintenance at a minimum would be a nice plus, making for an easy sell. After a bit of research, it was obvious Amazon Redshift had the potential to tick all the right boxes. While steadily porting the most problematic workloads away from our existing infrastructure, I started writing an investigative article on the fundamental concepts of Amazon Redshift.</description>
     </item>
     
+    <item>
+      <title>Programmatically force create a new LocalDB database</title>
+      <link>http://localhost:1313/2014/10/programmatically-force-create-new.html</link>
+      <pubDate>Sun, 26 Oct 2014 16:59:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/10/programmatically-force-create-new.html</guid>
+      <description>I have spent the last week working in an integration test suite that seemed to be taking ages to run its first test. I ran a profiler on the setup, and noticed a few things that were cheap to improve. The first one was how a new LocalDB database was being created.
+An empty database file was included into the project. When running the setup, this file would replace the existing test database.</description>
+    </item>
+    
   </channel>
 </rss>

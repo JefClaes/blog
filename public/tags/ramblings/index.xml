@@ -6,38 +6,10 @@
     <description>Recent content in Ramblings on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Dec 2014 17:29:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 26 Aug 2014 19:52:00 +0200</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/ramblings/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>TDD as the crack cocaine of software</title>
-      <link>http://localhost:1313/2014/12/tdd-as-the-crack-cocaine-of-software/</link>
-      <pubDate>Sun, 28 Dec 2014 17:29:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/12/tdd-as-the-crack-cocaine-of-software/</guid>
-      <description>The psychologist Mihaly Csikszentmihalyi popularized the term &amp;ldquo;flow&amp;rdquo; to describe states of absorption in which attention is so narrowly focused on an activity that a sense of time fades, along with the troubles and concerns of day-to-day life. &amp;ldquo;Flow provides an escape from the chaos of the quotidian,&amp;rdquo; he wrote.  This is a snippet from the highly recommended book Addiction by Design, which not only gives you an incredibly complete overview of the gambling industry, but also insights into the human psyche which apply far outside the domain of gambling.</description>
-    </item>
-    
-    <item>
-      <title>Solomon, the architect</title>
-      <link>http://localhost:1313/2014/08/solomon-the-architect/</link>
-      <pubDate>Tue, 26 Aug 2014 19:52:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/08/solomon-the-architect/</guid>
-      <description>Two junior developers who started working for the company at the same time, had been quite competitive with each other from the get-go. They had once been assigned to the same team, but because of the constant bickering, which had put a serious amount of stress on the team, one of them was pulled off the project and reassigned.
-A good year later, just the two of them were assigned to a new smallish, but interesting in-house project.</description>
-    </item>
-    
-    <item>
-      <title>Thinking No Computers</title>
-      <link>http://localhost:1313/2014/08/thinking-no-computers/</link>
-      <pubDate>Tue, 19 Aug 2014 20:09:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/08/thinking-no-computers/</guid>
-      <description>The other day I happened to see a curious exchange in one of our businesses. The cashier swapped a torn, but carefully restored by taping it together again, Euro bill for a new one with the manager. Inquisitive, I asked the manager what he was planning to do with that Euro bill. &amp;ldquo;Once a month, I take all those ripped up or badly worn bills to the National Bank, and trade them for new ones.</description>
-    </item>
     
     <item>
       <title>new YearPassed(2013);</title>

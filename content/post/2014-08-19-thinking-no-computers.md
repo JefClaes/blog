@@ -3,7 +3,7 @@ title = "Thinking No Computers"
 slug = "2014-08-19-thinking-no-computers"
 published = 2014-08-19T20:09:00+02:00
 author = "Jef Claes"
-tags = [ "DDD", "Ramblings",]
+tags = [ "ddd",]
 +++
 The other day I happened to see a curious exchange in one of our
 businesses. The cashier swapped a torn, but carefully restored by taping

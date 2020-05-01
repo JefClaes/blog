@@ -11,48 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/f#/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Spinning the wheel: clustering and near misses</title>
-      <link>http://localhost:1313/2014/12/spinning-the-wheel-clustering-and-near-misses/</link>
-      <pubDate>Sun, 14 Dec 2014 17:13:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/12/spinning-the-wheel-clustering-and-near-misses/</guid>
-      <description>The previous post showed a simple model casinos use to manipulate the odds. Instead of relying on the physical wheel for randomness, they rely on a virtual list of indexes that maps to the physical wheel.
-Using that same model, it&amp;rsquo;s easy to fiddle with the virtual indexes so that they map to misses right next to the winning pocket, creating &amp;ldquo;near misses&amp;rdquo;. &amp;ldquo;Near misses&amp;rdquo; make players feel less like losing, since you &amp;ldquo;almost won&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>Spinning the wheel: manipulating the odds</title>
-      <link>http://localhost:1313/2014/12/spinning-the-wheel-manipulating-the-odds/</link>
-      <pubDate>Thu, 11 Dec 2014 19:24:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/12/spinning-the-wheel-manipulating-the-odds/</guid>
-      <description>The previous post defined a basic set of data structures and functions to spin a wheel of fortune in F#.
-There was very little mystery to that implementation though. The physical wheel had four pockets and spinning the wheel would land you a win one out of four spins. As a casino, it&amp;rsquo;s impossible to come up with an interesting payout using this model.
-To juice up the pot, casinos started adding more pockets to the wheel of fortune.</description>
-    </item>
-    
-    <item>
-      <title>Spinning the wheel</title>
-      <link>http://localhost:1313/2014/12/spinning-the-wheel/</link>
-      <pubDate>Tue, 09 Dec 2014 19:56:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/12/spinning-the-wheel/</guid>
-      <description>In this post, I&amp;rsquo;ll define a basic set of data structures and functions to spin a wheel of fortune. In the next post, I&amp;rsquo;ll show you the simple model casinos use to build a bigger, more attractive pot, without touching the physical wheel and without losing money. Finally, I&amp;rsquo;ll show you how casinos tweak that model to bend the odds and create near misses.
-
-Let&amp;rsquo;s say we have a physical wheel with four pockets, which are labeled either miss or win.</description>
-    </item>
-    
-    <item>
-      <title>Print out the maximum depth of recursion allowed</title>
-      <link>http://localhost:1313/2014/10/print-out-the-maximum-depth-of-recursion-allowed/</link>
-      <pubDate>Sun, 19 Oct 2014 17:33:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/10/print-out-the-maximum-depth-of-recursion-allowed/</guid>
-      <description>Karl Seguin tweeted the following earlier this week: &amp;ldquo;An interview question I sometimes ask: Write code that prints out the maximum depth of recursion allowed.&amp;rdquo;
-This question is interesting for a couple of reasons. First, it&amp;rsquo;s a shorter FizzBuzz; can the candidate open an IDE, write a few lines of code, compile and run them? And second, does he know what recursion is?
-Now let&amp;rsquo;s say, the interviewee knows how to write code and is familiar with the concept of recursion.</description>
-    </item>
-    
   </channel>
 </rss>

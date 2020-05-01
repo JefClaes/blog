@@ -3,7 +3,8 @@ title = "Solomon, the architect"
 slug = "2014-08-26-solomon-the-architect"
 published = 2014-08-26T19:52:00.003000+02:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2014/08/solomon-architect.html"
 +++
 Two junior developers who started working for the company at the same
 time, had been quite competitive with each other from the get-go. They

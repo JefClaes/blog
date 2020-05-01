@@ -3,7 +3,8 @@ title = "Splitting hot aggregates"
 slug = "2014-11-09-splitting-hot-aggregates"
 published = 2014-11-09T19:00:00.002000+01:00
 author = "Jef Claes"
-tags = [ "DDD",]
+tags = [ "ddd",]
+url = "2014/11/splitting-hot-aggregates.html"
 +++
 When you visit a real casino, the constant busy-ness is overwhelming;
 players spamming buttons, pulling levers, spinning the wheel, gambling

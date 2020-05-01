@@ -103,17 +103,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/.net/</loc>
-    <lastmod>2016-09-18T20:52:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and.html</loc>
-    <lastmod>2016-09-18T20:52:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/messaging/</loc>
     <lastmod>2016-09-18T20:52:00+02:00</lastmod>
   </url>
   
@@ -128,38 +118,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/sql/</loc>
-    <lastmod>2016-04-24T22:43:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/sqlserver/</loc>
-    <lastmod>2016-04-24T22:43:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2016/04/using-batch-layer-for-faster.html</loc>
     <lastmod>2016-04-24T22:43:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/f#/</loc>
-    <lastmod>2016-04-17T17:37:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2016/04/notifications-from-event-log.html</loc>
     <lastmod>2016-04-17T17:37:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/c#/</loc>
-    <lastmod>2016-03-28T16:22:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/codesnippets/</loc>
-    <lastmod>2016-03-28T16:22:00+02:00</lastmod>
   </url>
   
   <url>
@@ -258,57 +223,52 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/ramblings/</loc>
+    <loc>http://localhost:1313/2014/12/tdd-as-crack-cocaine-of-software.html</loc>
     <lastmod>2014-12-28T17:29:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/12/tdd-as-the-crack-cocaine-of-software/</loc>
-    <lastmod>2014-12-28T17:29:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2014/12/spinning-the-wheel-clustering-and-near-misses/</loc>
+    <loc>http://localhost:1313/2014/12/spinning-wheel-clustering-and-near.html</loc>
     <lastmod>2014-12-14T17:13:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/12/spinning-the-wheel-manipulating-the-odds/</loc>
+    <loc>http://localhost:1313/2014/12/spinning-wheel-manipulating-odds.html</loc>
     <lastmod>2014-12-11T19:24:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/12/spinning-the-wheel/</loc>
+    <loc>http://localhost:1313/2014/12/spinning-wheel.html</loc>
     <lastmod>2014-12-09T19:56:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/11/hot-aggregate-detection-using-f/</loc>
+    <loc>http://localhost:1313/2014/11/hot-aggregate-detection-using-f.html</loc>
     <lastmod>2014-11-16T17:20:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/11/splitting-hot-aggregates/</loc>
+    <loc>http://localhost:1313/2014/11/splitting-hot-aggregates.html</loc>
     <lastmod>2014-11-09T19:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</loc>
+    <loc>http://localhost:1313/2014/10/programmatically-force-create-new.html</loc>
     <lastmod>2014-10-26T16:59:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/10/print-out-the-maximum-depth-of-recursion-allowed/</loc>
+    <loc>http://localhost:1313/2014/10/print-out-maximum-depth-of-recursion.html</loc>
     <lastmod>2014-10-19T17:33:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/10/read-an-event-store-stream-as-a-sequence-of-slices-using-f/</loc>
+    <loc>http://localhost:1313/2014/10/read-event-store-stream-as-sequence-of.html</loc>
     <lastmod>2014-10-05T15:21:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/09/the-road-to-gro%C3%9Fglockner/</loc>
+    <loc>http://localhost:1313/2014/09/the-road-to-groglockner.html</loc>
     <lastmod>2014-09-14T21:01:00+02:00</lastmod>
   </url>
   
@@ -318,28 +278,38 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/09/northbound-again/</loc>
+    <loc>http://localhost:1313/2014/09/northbound-again.html</loc>
     <lastmod>2014-09-10T11:25:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/09/tolkiens-inspiration/</loc>
+    <loc>http://localhost:1313/2014/09/tolkiens-inspiration.html</loc>
     <lastmod>2014-09-07T10:36:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/09/porsches-and-a-setting-that-sells-them/</loc>
+    <loc>http://localhost:1313/2014/09/porsches-and-setting-that-sells-them.html</loc>
     <lastmod>2014-09-02T22:24:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/08/solomon-the-architect/</loc>
+    <loc>http://localhost:1313/tags/ramblings/</loc>
+    <lastmod>2014-08-26T19:52:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2014/08/solomon-architect.html</loc>
     <lastmod>2014-08-26T19:52:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://localhost:1313/2014/08/thinking-no-computers/</loc>
     <lastmod>2014-08-19T20:09:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/.net/</loc>
+    <lastmod>2014-06-08T18:33:00+02:00</lastmod>
   </url>
   
   <url>
@@ -354,6 +324,11 @@
   
   <url>
     <loc>http://localhost:1313/2014/05/eventual-consistency-in-the-wild-west/</loc>
+    <lastmod>2014-05-25T18:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/messaging/</loc>
     <lastmod>2014-05-25T18:01:00+02:00</lastmod>
   </url>
   
@@ -409,6 +384,11 @@
   
   <url>
     <loc>http://localhost:1313/tags/asp.net-mvc/</loc>
+    <lastmod>2014-04-06T18:43:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/codesnippets/</loc>
     <lastmod>2014-04-06T18:43:00+02:00</lastmod>
   </url>
   
@@ -778,6 +758,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2013-02-17T17:57:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2013/02/premature-judgement/</loc>
     <lastmod>2013-02-10T16:46:00+01:00</lastmod>
   </url>
@@ -1069,6 +1054,11 @@
   
   <url>
     <loc>http://localhost:1313/2012/07/on-crime-and-document-stores/</loc>
+    <lastmod>2012-07-01T16:04:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/sqlserver/</loc>
     <lastmod>2012-07-01T16:04:00+02:00</lastmod>
   </url>
   

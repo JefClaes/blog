@@ -9,11 +9,11 @@ This question is interesting for a couple of reasons. First, it&rsquo;s a shorte
 Now let&rsquo;s say, the interviewee knows how to write code and is familiar with the concept of recursion.">
 <meta itemprop="datePublished" content="2014-10-19T17:33:00&#43;02:00" />
 <meta itemprop="dateModified" content="2014-10-19T17:33:00&#43;02:00" />
-<meta itemprop="wordCount" content="352">
+<meta itemprop="wordCount" content="403">
 
 
 
-<meta itemprop="keywords" content="CodeSnippets,C#,F#," /><meta property="og:title" content="Print out the maximum depth of recursion allowed" />
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Print out the maximum depth of recursion allowed" />
 <meta property="og:description" content="Karl Seguin tweeted the following earlier this week: &ldquo;An interview question I sometimes ask: Write code that prints out the maximum depth of recursion allowed.&rdquo;
 This question is interesting for a couple of reasons. First, it&rsquo;s a shorter FizzBuzz; can the candidate open an IDE, write a few lines of code, compile and run them? And second, does he know what recursion is?
 Now let&rsquo;s say, the interviewee knows how to write code and is familiar with the concept of recursion." />
@@ -102,7 +102,17 @@ run them? And second, does he know what recursion is?</p>
 <p>Now let&rsquo;s say, the interviewee knows how to write code and is familiar
 with the concept of recursion. If he had to do this exercise in C#, he
 might come up with something along these lines.</p>
-<p>Before you let him run his code, you ask him to guess the output of this
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">static</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Main</span>()
+{
+    <span style="color:#268bd2">Recursive</span>(<span style="color:#2aa198;font-weight:bold">0</span>);
+}
+
+<span style="color:#859900">static</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Recursive</span>(<span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">i</span>)
+{
+    <span style="color:#268bd2">Console</span>.<span style="color:#268bd2">WriteLine</span>(<span style="color:#268bd2">i</span>);
+    <span style="color:#268bd2">Recursive</span>(<span style="color:#268bd2">i</span> + <span style="color:#2aa198;font-weight:bold">1</span>);
+}
+</code></pre></div><p>Before you let him run his code, you ask him to guess the output of this
 little program. If he&rsquo;s smart, he won&rsquo;t give you much of an answer.
 Instead he will point out that the result depends on the runtime,
 compiler, compiler switches, machine architecture, the amount of
@@ -115,14 +125,30 @@ tail-recursive. A smart compiler might detect the tail-recursion and
 convert the recursive call into a plain loop, avoiding recursion.</p>
 <p>Running this program shows that the C# compiler isn&rsquo;t that smart, and
 will yield the maximum depth of recursion just before crashing.</p>
-<p>If we were to port this snippet to F#, a functional language in which
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">...
+171424
+171425
+171426
+171427
+Process is terminated due to StackOverflowException.
+</code></pre></div><p>If we were to port this snippet to F#, a functional language in which
 recursion is a first class citizen, the results are a bit different.</p>
-<p>This just kept running until I killed it when the count was far over
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">rec</span> <span style="color:#268bd2">recursiveFun</span> <span style="color:#268bd2">i</span> =
+    <span style="color:#268bd2">Console</span>.<span style="color:#268bd2">WriteLine</span>(<span style="color:#268bd2">i</span>.<span style="color:#268bd2">ToString</span><span style="color:#268bd2">()</span>) 
+    <span style="color:#268bd2">recursiveFun</span> (<span style="color:#268bd2">i</span> + <span style="color:#268bd2">1</span>)
+ 
+<span style="color:#268bd2">recursiveFun</span> <span style="color:#268bd2">0</span>
+</code></pre></div><p>This just kept running until I killed it when the count was far over
 171427. Looking at the generated IL, you can see that the compiler was
 smart enough to turn this recursive function into a loop.</p>
 <p>If we want the F# implementation to behave more like the C# one, we
 need to make sure the compiler doesn&rsquo;t optimize for tail recursion.</p>
-<p>Running this also ends in a StackOverflowException pretty early on.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">rec</span> <span style="color:#268bd2">recursiveFun</span> <span style="color:#268bd2">i</span> =
+    <span style="color:#268bd2">Console</span>.<span style="color:#268bd2">WriteLine</span>(<span style="color:#268bd2">i</span>.<span style="color:#268bd2">ToString</span><span style="color:#268bd2">()</span>) 
+    <span style="color:#268bd2">recursiveFun</span> (<span style="color:#268bd2">i</span> + <span style="color:#268bd2">1</span>)
+ 
+<span style="color:#268bd2">recursiveFun</span> <span style="color:#268bd2">0</span>
+</code></pre></div><p>Running this also ends in a StackOverflowException pretty early on.</p>
 <p>I love how this question seems shallow at the surface, but gives away
 more and more depth the harder you look.</p>
 
@@ -133,11 +159,7 @@ more and more depth the harder you look.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
-							
-							<li><a href="/tags/c">C#</a></li>
-							
-							<li><a href="/tags/f">F#</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					

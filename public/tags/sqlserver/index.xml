@@ -6,20 +6,10 @@
     <description>Recent content in SQLServer on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 24 Apr 2016 22:43:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jul 2012 16:04:00 +0200</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/sqlserver/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Programmatically force create a new LocalDB database</title>
-      <link>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</link>
-      <pubDate>Sun, 26 Oct 2014 16:59:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</guid>
-      <description>I have spent the last week working in an integration test suite that seemed to be taking ages to run its first test. I ran a profiler on the setup, and noticed a few things that were cheap to improve. The first one was how a new LocalDB database was being created.
-An empty database file was included into the project. When running the setup, this file would replace the existing test database.</description>
-    </item>
     
     <item>
       <title>On crime and document stores</title>

@@ -341,29 +341,29 @@ I started off with a markdown file on Github that quikcly evolved into a good ex
     
     <item>
       <title>TDD as the crack cocaine of software</title>
-      <link>http://localhost:1313/2014/12/tdd-as-the-crack-cocaine-of-software/</link>
+      <link>http://localhost:1313/2014/12/tdd-as-crack-cocaine-of-software.html</link>
       <pubDate>Sun, 28 Dec 2014 17:29:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/12/tdd-as-the-crack-cocaine-of-software/</guid>
+      <guid>http://localhost:1313/2014/12/tdd-as-crack-cocaine-of-software.html</guid>
       <description>The psychologist Mihaly Csikszentmihalyi popularized the term &amp;ldquo;flow&amp;rdquo; to describe states of absorption in which attention is so narrowly focused on an activity that a sense of time fades, along with the troubles and concerns of day-to-day life. &amp;ldquo;Flow provides an escape from the chaos of the quotidian,&amp;rdquo; he wrote.  This is a snippet from the highly recommended book Addiction by Design, which not only gives you an incredibly complete overview of the gambling industry, but also insights into the human psyche which apply far outside the domain of gambling.</description>
     </item>
     
     <item>
       <title>Spinning the wheel: clustering and near misses</title>
-      <link>http://localhost:1313/2014/12/spinning-the-wheel-clustering-and-near-misses/</link>
+      <link>http://localhost:1313/2014/12/spinning-wheel-clustering-and-near.html</link>
       <pubDate>Sun, 14 Dec 2014 17:13:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/12/spinning-the-wheel-clustering-and-near-misses/</guid>
+      <guid>http://localhost:1313/2014/12/spinning-wheel-clustering-and-near.html</guid>
       <description>The previous post showed a simple model casinos use to manipulate the odds. Instead of relying on the physical wheel for randomness, they rely on a virtual list of indexes that maps to the physical wheel.
 Using that same model, it&amp;rsquo;s easy to fiddle with the virtual indexes so that they map to misses right next to the winning pocket, creating &amp;ldquo;near misses&amp;rdquo;. &amp;ldquo;Near misses&amp;rdquo; make players feel less like losing, since you &amp;ldquo;almost won&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>Spinning the wheel: manipulating the odds</title>
-      <link>http://localhost:1313/2014/12/spinning-the-wheel-manipulating-the-odds/</link>
+      <link>http://localhost:1313/2014/12/spinning-wheel-manipulating-odds.html</link>
       <pubDate>Thu, 11 Dec 2014 19:24:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/12/spinning-the-wheel-manipulating-the-odds/</guid>
+      <guid>http://localhost:1313/2014/12/spinning-wheel-manipulating-odds.html</guid>
       <description>The previous post defined a basic set of data structures and functions to spin a wheel of fortune in F#.
 There was very little mystery to that implementation though. The physical wheel had four pockets and spinning the wheel would land you a win one out of four spins. As a casino, it&amp;rsquo;s impossible to come up with an interesting payout using this model.
 To juice up the pot, casinos started adding more pockets to the wheel of fortune.</description>
@@ -371,10 +371,10 @@ To juice up the pot, casinos started adding more pockets to the wheel of fortune
     
     <item>
       <title>Spinning the wheel</title>
-      <link>http://localhost:1313/2014/12/spinning-the-wheel/</link>
+      <link>http://localhost:1313/2014/12/spinning-wheel.html</link>
       <pubDate>Tue, 09 Dec 2014 19:56:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/12/spinning-the-wheel/</guid>
+      <guid>http://localhost:1313/2014/12/spinning-wheel.html</guid>
       <description>In this post, I&amp;rsquo;ll define a basic set of data structures and functions to spin a wheel of fortune. In the next post, I&amp;rsquo;ll show you the simple model casinos use to build a bigger, more attractive pot, without touching the physical wheel and without losing money. Finally, I&amp;rsquo;ll show you how casinos tweak that model to bend the odds and create near misses.
 
 Let&amp;rsquo;s say we have a physical wheel with four pockets, which are labeled either miss or win.</description>
@@ -382,10 +382,10 @@ Let&amp;rsquo;s say we have a physical wheel with four pockets, which are labele
     
     <item>
       <title>Hot aggregate detection using F#</title>
-      <link>http://localhost:1313/2014/11/hot-aggregate-detection-using-f/</link>
+      <link>http://localhost:1313/2014/11/hot-aggregate-detection-using-f.html</link>
       <pubDate>Sun, 16 Nov 2014 17:20:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/11/hot-aggregate-detection-using-f/</guid>
+      <guid>http://localhost:1313/2014/11/hot-aggregate-detection-using-f.html</guid>
       <description>Last week, I wrote about splitting a hot aggregate. Discovering that specific hot aggregate was easy; it would cause transactional failures from time to time.
 Long-lived hot aggregates often are an indication of a missing concept and an opportunity for teasing things apart. Last week, I took one long-lived hot aggregate and pulled smaller short-lived hot aggregates out, identifying two missing concepts.
 Hunting for more hot aggregates, I could visualize event streams and use my eyes to detect bursts of activity, or I could have a little function analyze the event streams for me.</description>
@@ -393,30 +393,30 @@ Hunting for more hot aggregates, I could visualize event streams and use my eyes
     
     <item>
       <title>Splitting hot aggregates</title>
-      <link>http://localhost:1313/2014/11/splitting-hot-aggregates/</link>
+      <link>http://localhost:1313/2014/11/splitting-hot-aggregates.html</link>
       <pubDate>Sun, 09 Nov 2014 19:00:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/11/splitting-hot-aggregates/</guid>
+      <guid>http://localhost:1313/2014/11/splitting-hot-aggregates.html</guid>
       <description>When you visit a real casino, the constant busy-ness is overwhelming; players spamming buttons, pulling levers, spinning the wheel, gambling on the outcome of sports games, playing cards, feeding the machine, cashing out, breaking bills, ordering drinks or even buying a souvenir. A single player will easily generate a thousand transactions in one sitting.
 When you look at an online casino, this isn&amp;rsquo;t very different. In the system we inherited, the biggest and busiest aggregate by far is a user&amp;rsquo;s account.</description>
     </item>
     
     <item>
       <title>Programmatically force create a new LocalDB database</title>
-      <link>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</link>
+      <link>http://localhost:1313/2014/10/programmatically-force-create-new.html</link>
       <pubDate>Sun, 26 Oct 2014 16:59:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</guid>
+      <guid>http://localhost:1313/2014/10/programmatically-force-create-new.html</guid>
       <description>I have spent the last week working in an integration test suite that seemed to be taking ages to run its first test. I ran a profiler on the setup, and noticed a few things that were cheap to improve. The first one was how a new LocalDB database was being created.
 An empty database file was included into the project. When running the setup, this file would replace the existing test database.</description>
     </item>
     
     <item>
       <title>Print out the maximum depth of recursion allowed</title>
-      <link>http://localhost:1313/2014/10/print-out-the-maximum-depth-of-recursion-allowed/</link>
+      <link>http://localhost:1313/2014/10/print-out-maximum-depth-of-recursion.html</link>
       <pubDate>Sun, 19 Oct 2014 17:33:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/10/print-out-the-maximum-depth-of-recursion-allowed/</guid>
+      <guid>http://localhost:1313/2014/10/print-out-maximum-depth-of-recursion.html</guid>
       <description>Karl Seguin tweeted the following earlier this week: &amp;ldquo;An interview question I sometimes ask: Write code that prints out the maximum depth of recursion allowed.&amp;rdquo;
 This question is interesting for a couple of reasons. First, it&amp;rsquo;s a shorter FizzBuzz; can the candidate open an IDE, write a few lines of code, compile and run them? And second, does he know what recursion is?
 Now let&amp;rsquo;s say, the interviewee knows how to write code and is familiar with the concept of recursion.</description>
@@ -424,30 +424,30 @@ Now let&amp;rsquo;s say, the interviewee knows how to write code and is familiar
     
     <item>
       <title>Read an Event Store stream as a sequence of slices using F#</title>
-      <link>http://localhost:1313/2014/10/read-an-event-store-stream-as-a-sequence-of-slices-using-f/</link>
+      <link>http://localhost:1313/2014/10/read-event-store-stream-as-sequence-of.html</link>
       <pubDate>Sun, 05 Oct 2014 15:21:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/10/read-an-event-store-stream-as-a-sequence-of-slices-using-f/</guid>
+      <guid>http://localhost:1313/2014/10/read-event-store-stream-as-sequence-of.html</guid>
       <description>I&amp;rsquo;m slowly working on some ideas I&amp;rsquo;ve been playing around with whole Summer. Since that&amp;rsquo;s taking me to unknown territory, I guess I&amp;rsquo;ll be putting out more technical bits here in the next few weeks.
 Using the Event Store, I tried to read all events of a specific event type. This stream turned out to be a tad too large to be sent over the wire in one piece, leading to a PackageFramingException: Package size is out of bounds.</description>
     </item>
     
     <item>
       <title>The road to Großglockner</title>
-      <link>http://localhost:1313/2014/09/the-road-to-gro%C3%9Fglockner/</link>
+      <link>http://localhost:1313/2014/09/the-road-to-groglockner.html</link>
       <pubDate>Sun, 14 Sep 2014 21:01:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/09/the-road-to-gro%C3%9Fglockner/</guid>
+      <guid>http://localhost:1313/2014/09/the-road-to-groglockner.html</guid>
       <description>Sixteen days after leaving home, we&amp;rsquo;re now on our way back to Antwerp. After Croatia, we&amp;rsquo;ve driven through Slovenia, Italy, Austra and Switzerland, arriving in France to meet up with my parents for a few days.
 France offered us the typical vineyards and chateaux. What, next to the good company, will stick with me the most is the High Alpine road in Austria. We paid 34 euros to be allowed on the road, but the surroundings of that piece of asphalt are extraordinary.</description>
     </item>
     
     <item>
       <title>Northbound again</title>
-      <link>http://localhost:1313/2014/09/northbound-again/</link>
+      <link>http://localhost:1313/2014/09/northbound-again.html</link>
       <pubDate>Wed, 10 Sep 2014 11:25:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/09/northbound-again/</guid>
+      <guid>http://localhost:1313/2014/09/northbound-again.html</guid>
       <description>Leaving Plitvice behind us, we crossed the country heading for the sea. We didn&amp;rsquo;t need to cover a lot of distance, to discover how diverse the Croatian landscape and climate is. In only two hours we went from the cold, foggy lakes and waterfalls to green meadows to dusty mountains to sunbathing coasts.
 
 
@@ -456,30 +456,30 @@ We followed the coastline for a little while, strolling through old coast towns,
     
     <item>
       <title>Tolkien&#39;s inspiration</title>
-      <link>http://localhost:1313/2014/09/tolkiens-inspiration/</link>
+      <link>http://localhost:1313/2014/09/tolkiens-inspiration.html</link>
       <pubDate>Sun, 07 Sep 2014 10:36:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/09/tolkiens-inspiration/</guid>
+      <guid>http://localhost:1313/2014/09/tolkiens-inspiration.html</guid>
       <description>The next morning we woke up to another rainy day. We caught up with the rain in Austria and we have been following it ever since. Or the other way around. Even the locals can&amp;rsquo;t seem to stop talking about how much rain is falling.
 Between showers, we were able to hike the Vintgar trail. The one hour hike takes you along dangerous rapid waters, bringing you to a big waterfall.</description>
     </item>
     
     <item>
       <title>Porsches and a setting that sells them</title>
-      <link>http://localhost:1313/2014/09/porsches-and-a-setting-that-sells-them/</link>
+      <link>http://localhost:1313/2014/09/porsches-and-setting-that-sells-them.html</link>
       <pubDate>Tue, 02 Sep 2014 22:24:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/09/porsches-and-a-setting-that-sells-them/</guid>
+      <guid>http://localhost:1313/2014/09/porsches-and-setting-that-sells-them.html</guid>
       <description>With the Belgian &amp;lsquo;Summer&amp;rsquo; ending, we are exploring South Eastern Europe. This trip will take us through Germany, Austria, Slovenia and Croatia.
 On Saturday, we stopped in Stuttgart to complete our list of visits to the three most popular European sports car museums, after visiting Lamborghini and Ferrari two years ago: the Porsche museum. In my teens, my affinity to fast cars was ignited by spending rainy afternoons at one of my best friends&amp;rsquo;s, attempting to crush each other&amp;rsquo;s track records playing Need For Speed Porsche Unleashed.</description>
     </item>
     
     <item>
       <title>Solomon, the architect</title>
-      <link>http://localhost:1313/2014/08/solomon-the-architect/</link>
+      <link>http://localhost:1313/2014/08/solomon-architect.html</link>
       <pubDate>Tue, 26 Aug 2014 19:52:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/08/solomon-the-architect/</guid>
+      <guid>http://localhost:1313/2014/08/solomon-architect.html</guid>
       <description>Two junior developers who started working for the company at the same time, had been quite competitive with each other from the get-go. They had once been assigned to the same team, but because of the constant bickering, which had put a serious amount of stress on the team, one of them was pulled off the project and reassigned.
 A good year later, just the two of them were assigned to a new smallish, but interesting in-house project.</description>
     </item>

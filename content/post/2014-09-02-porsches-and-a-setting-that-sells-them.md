@@ -3,7 +3,8 @@ title = "Porsches and a setting that sells them"
 slug = "2014-09-02-porsches-and-a-setting-that-sells-them"
 published = 2014-09-02T22:24:00.003000+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2014/09/porsches-and-setting-that-sells-them.html"
 +++
 With the Belgian 'Summer' ending, we are exploring South Eastern Europe.
 This trip will take us through Germany, Austria, Slovenia and Croatia.  
@@ -32,15 +33,11 @@ driving experience. Not once did I hear the trademark roar of a Porsche
 engine, which I learned to love playing video games.  
   
 
-[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B123.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B123.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart1.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart1.jpg)
 
-[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B124.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B124.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart2.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart2.jpg)
 
-  
-
-[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B127.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B127.jpg)
-
-  
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart3.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart3.jpg)
 
 Leaving Stuttgart behind us, we set out for Bled, Slovenia. This took us
 through Austria, where we diverged far from the optimal route to visit
@@ -49,21 +46,13 @@ one of the most beautiful places on earth, is hidden deep into the
 inhospitable landscape of Austria. Being so out-of-the-way might just be
 what has made it possible to preserve the charm of this little place.  
 
-  
-
-[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B109.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B109.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt1.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt1.jpg)
 
   
 
-[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B174.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B174.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt2.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt2.jpg)
 
-  
-
-[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B175.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B175.jpg)
-
-  
-
-<span style="text-align: left;">Getting back into the car, it started
+Getting back into the car, it started
 raining, and it didn't stop until we crossed the Slovenian border. The
 type of rain that gives you that claustrophobic car wash feeling. We
 arrived in Bled well after dark, and went to bed curious of what our

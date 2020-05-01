@@ -75,69 +75,6 @@
     </item>
     
     <item>
-      <title>.NET</title>
-      <link>http://localhost:1313/tags/.net/</link>
-      <pubDate>Sun, 18 Sep 2016 20:52:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/.net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Messaging</title>
-      <link>http://localhost:1313/tags/messaging/</link>
-      <pubDate>Sun, 18 Sep 2016 20:52:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/messaging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
-      <pubDate>Sun, 24 Apr 2016 22:43:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQLServer</title>
-      <link>http://localhost:1313/tags/sqlserver/</link>
-      <pubDate>Sun, 24 Apr 2016 22:43:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/sqlserver/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>F#</title>
-      <link>http://localhost:1313/tags/f#/</link>
-      <pubDate>Sun, 17 Apr 2016 17:37:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/f#/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C#</title>
-      <link>http://localhost:1313/tags/c#/</link>
-      <pubDate>Mon, 28 Mar 2016 16:22:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/c#/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CodeSnippets</title>
-      <link>http://localhost:1313/tags/codesnippets/</link>
-      <pubDate>Mon, 28 Mar 2016 16:22:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/codesnippets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>talks</title>
       <link>http://localhost:1313/tags/talks/</link>
       <pubDate>Wed, 18 Nov 2015 15:47:00 +0100</pubDate>
@@ -147,20 +84,38 @@
     </item>
     
     <item>
+      <title>Travel</title>
+      <link>http://localhost:1313/tags/travel/</link>
+      <pubDate>Sun, 14 Sep 2014 21:01:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/travel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ramblings</title>
       <link>http://localhost:1313/tags/ramblings/</link>
-      <pubDate>Sun, 28 Dec 2014 17:29:00 +0100</pubDate>
+      <pubDate>Tue, 26 Aug 2014 19:52:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/ramblings/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Travel</title>
-      <link>http://localhost:1313/tags/travel/</link>
-      <pubDate>Sun, 14 Sep 2014 21:01:00 +0200</pubDate>
+      <title>.NET</title>
+      <link>http://localhost:1313/tags/.net/</link>
+      <pubDate>Sun, 08 Jun 2014 18:33:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/tags/travel/</guid>
+      <guid>http://localhost:1313/tags/.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Messaging</title>
+      <link>http://localhost:1313/tags/messaging/</link>
+      <pubDate>Sun, 25 May 2014 18:01:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/messaging/</guid>
       <description></description>
     </item>
     
@@ -224,6 +179,15 @@
       <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/asp.net-mvc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CodeSnippets</title>
+      <link>http://localhost:1313/tags/codesnippets/</link>
+      <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/codesnippets/</guid>
       <description></description>
     </item>
     
@@ -363,6 +327,15 @@
     </item>
     
     <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Sun, 17 Feb 2013 17:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>NancyFx</title>
       <link>http://localhost:1313/tags/nancyfx/</link>
       <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
@@ -494,6 +467,15 @@
       <pubDate>Sun, 15 Jul 2012 22:37:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/codesnipeets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQLServer</title>
+      <link>http://localhost:1313/tags/sqlserver/</link>
+      <pubDate>Sun, 01 Jul 2012 16:04:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/sqlserver/</guid>
       <description></description>
     </item>
     
