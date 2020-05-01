@@ -43,22 +43,21 @@ Books The Zen and Art of Motor Cycle Maintenance The author is a tormented soul 
     
     <item>
       <title>Passing the AWS Certified Solutions Architect exam</title>
-      <link>http://localhost:1313/2017/12/passing-the-aws-certified-solutions-architect-exam/</link>
+      <link>http://localhost:1313/2017/12/passing-aws-certified-solutions.html</link>
       <pubDate>Fri, 15 Dec 2017 20:34:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2017/12/passing-the-aws-certified-solutions-architect-exam/</guid>
+      <guid>http://localhost:1313/2017/12/passing-aws-certified-solutions.html</guid>
       <description>Before last week, the only certification exam I ever passed was the Microsoft .NET Framework Application Development Foundation certification. This was almost eight years ago. My manager back then thought getting certified was the best way for me to get a raise. It would be a win-win. I for one would learn something along the way, and the company would have less trouble keeping its Microsoft Gold partnership. As far as I remember, I spent a good six months reading, studying and memorizing this 794 pages thick book.</description>
     </item>
     
     <item>
       <title>Fast projections</title>
-      <link>http://localhost:1313/2017/07/fast-projections/</link>
+      <link>http://localhost:1313/2017/07/fast-projections.html</link>
       <pubDate>Sun, 30 Jul 2017 14:34:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2017/07/fast-projections/</guid>
+      <guid>http://localhost:1313/2017/07/fast-projections.html</guid>
       <description>Most EventStore client libraries allow you to subscribe to a stream by passing in a callback which is invoked when an event occurs (either a live or historic event).
-Let&amp;rsquo;s say we subscribe to a stream of a popular video service, and we want to project a read model that shows how many videos a viewer has watched. We don&amp;rsquo;t care about the bookmarked videos for now.
-We&amp;rsquo;re sitting on top of storage that can execute a single statement and a batch of statements.</description>
+type Envelope = { Id : Int64 Event : Event Historic : bool } type EventOccurred = Envelope -&amp;gt; unit Let&amp;rsquo;s say we subscribe to a stream of a popular video service, and we want to project a read model that shows how many videos a viewer has watched.</description>
     </item>
     
     <item>

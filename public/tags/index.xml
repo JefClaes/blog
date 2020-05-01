@@ -12,38 +12,11 @@
     
     
     <item>
-      <title>database</title>
-      <link>http://localhost:1313/tags/database/</link>
-      <pubDate>Sun, 12 Aug 2018 14:58:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>infrastructure</title>
       <link>http://localhost:1313/tags/infrastructure/</link>
       <pubDate>Sun, 12 Aug 2018 14:58:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/infrastructure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>storage</title>
-      <link>http://localhost:1313/tags/storage/</link>
-      <pubDate>Sun, 12 Aug 2018 14:58:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/storage/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bookreview</title>
-      <link>http://localhost:1313/tags/bookreview/</link>
-      <pubDate>Wed, 03 Jan 2018 21:28:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/bookreview/</guid>
       <description></description>
     </item>
     
@@ -57,20 +30,11 @@
     </item>
     
     <item>
-      <title>review</title>
-      <link>http://localhost:1313/tags/review/</link>
-      <pubDate>Wed, 03 Jan 2018 21:28:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/review/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CodeSnippets</title>
-      <link>http://localhost:1313/tags/codesnippets/</link>
+      <title>code</title>
+      <link>http://localhost:1313/tags/code/</link>
       <pubDate>Sun, 30 Jul 2017 14:34:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/tags/codesnippets/</guid>
+      <guid>http://localhost:1313/tags/code/</guid>
       <description></description>
     </item>
     
@@ -152,6 +116,15 @@
       <pubDate>Mon, 28 Mar 2016 16:22:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CodeSnippets</title>
+      <link>http://localhost:1313/tags/codesnippets/</link>
+      <pubDate>Mon, 28 Mar 2016 16:22:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/codesnippets/</guid>
       <description></description>
     </item>
     
@@ -260,6 +233,24 @@
       <pubDate>Sun, 16 Mar 2014 21:23:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bookreview</title>
+      <link>http://localhost:1313/tags/bookreview/</link>
+      <pubDate>Sun, 02 Feb 2014 18:19:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/bookreview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>database</title>
+      <link>http://localhost:1313/tags/database/</link>
+      <pubDate>Sun, 26 Jan 2014 18:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/database/</guid>
       <description></description>
     </item>
     

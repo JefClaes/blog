@@ -27,8 +27,6 @@ of our new loyalty system. The system stores two types of data.
 As a rough estimate, for every 1000 ingress transient events, only 1
 needs to be stored indefinitely as part of a state machine.
 
-  
-
 When implementing this more than a year ago, I thought I had done my
 homework and knew how to make sure the ingress events would get cleaned
 up. First you make sure the *$maxAge* metadata is set on the streams you
@@ -39,8 +37,6 @@ after a few months I started to become a bit suspicious of my
 understanding of the scavening process. GES was releasing less disk
 space than I expected.
 
-  
-
 Even though, we had been quite generous while provisioning the nodes
 with disk space, we would run out very soon. Much to my frustration, the
 "Storage is cheap" mantra gets thrown around too lightly. While the
@@ -48,14 +44,12 @@ statement in essence is not wrong, for a database like GES that's built
 on top of a log, more data also means slower node restarts (index
 verification), slower scavenges and slower *$all* subscriptions.
 
-  
-
 GES has no built-in system catalog that allows you to discover which
 streams are taking up all this space. However, you can implement an $all
 subscription and count events per stream or even count the bytes in the
 event payload.
 
-```
+```csharp
 static void Main(string[] args) {
     using (var conn = EventStoreConnection.Create(
         ConnectionSettings.Create().Build(),
@@ -111,8 +105,6 @@ Luckily, I was only using a small portion of the built-in projections. I
 created a custom projection that only created streams I was actually
 interested in, pointed my code in the right direction, stopped the
 built-in projections and deleted the now irrelevant streams.
-
-  
 
 Running the scavenging process after being able to delete all these
 streams was very satisfying. The scavenging process loops through all

@@ -1,3 +1,8 @@
+pygmentsStyle = "solarized-light"
+pygmentsCodeFences = true
+pygmentsCodeFencesGuessSyntax = true
+pygmentsUseClasses = false
+
 baseURL = "https://jefclaes.be/"
 languageCode = "en-us"
 title = "Jef Claes"
@@ -6,9 +11,7 @@ theme = "ink"
 [permalinks]
 post = "/:year/:month/:title"
 
-pygmentsstyle = "colorful"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+
 
 googleAnalytics = "UA-123-45"
 disqusShortname = "ink-demo"

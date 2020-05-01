@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://localhost:1313/tags/database/</loc>
-    <lastmod>2018-08-12T14:58:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2018/08/ges-scavenging-and-hidden-cost-of-link.html</loc>
     <lastmod>2018-08-12T14:58:00+02:00</lastmod>
   </url>
@@ -28,11 +23,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/storage/</loc>
-    <lastmod>2018-08-12T14:58:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2018-08-12T14:58:00+02:00</lastmod>
   </url>
@@ -40,11 +30,6 @@
   <url>
     <loc>http://localhost:1313/2018/05/amazon-redshift-fundamentals.html</loc>
     <lastmod>2018-05-01T14:17:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/bookreview/</loc>
-    <lastmod>2018-01-03T21:28:00+01:00</lastmod>
   </url>
   
   <url>
@@ -58,22 +43,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/review/</loc>
-    <lastmod>2018-01-03T21:28:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2017/12/passing-the-aws-certified-solutions-architect-exam/</loc>
+    <loc>http://localhost:1313/2017/12/passing-aws-certified-solutions.html</loc>
     <lastmod>2017-12-15T20:34:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/codesnippets/</loc>
+    <loc>http://localhost:1313/tags/code/</loc>
     <lastmod>2017-07-30T14:34:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2017/07/fast-projections/</loc>
+    <loc>http://localhost:1313/2017/07/fast-projections.html</loc>
     <lastmod>2017-07-30T14:34:00+02:00</lastmod>
   </url>
   
@@ -169,6 +149,11 @@
   
   <url>
     <loc>http://localhost:1313/tags/c#/</loc>
+    <lastmod>2016-03-28T16:22:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/codesnippets/</loc>
     <lastmod>2016-03-28T16:22:00+02:00</lastmod>
   </url>
   
@@ -473,8 +458,18 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/bookreview/</loc>
+    <lastmod>2014-02-02T18:19:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2014/02/thinking-in-systems/</loc>
     <lastmod>2014-02-02T18:19:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/database/</loc>
+    <lastmod>2014-01-26T18:00:00+01:00</lastmod>
   </url>
   
   <url>
