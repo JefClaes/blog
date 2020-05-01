@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Spinning the wheel: clustering and near misses - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Spinning the wheel: clustering and near misses">
+<meta itemprop="description" content="The previous post showed a simple model casinos use to manipulate the odds. Instead of relying on the physical wheel for randomness, they rely on a virtual list of indexes that maps to the physical wheel.
+Using that same model, it&rsquo;s easy to fiddle with the virtual indexes so that they map to misses right next to the winning pocket, creating &ldquo;near misses&rdquo;. &ldquo;Near misses&rdquo; make players feel less like losing, since you &ldquo;almost won&rdquo;.">
+<meta itemprop="datePublished" content="2014-12-14T17:13:00&#43;01:00" />
+<meta itemprop="dateModified" content="2014-12-14T17:13:00&#43;01:00" />
+<meta itemprop="wordCount" content="231">
+
+
+
+<meta itemprop="keywords" content="code,ddd," /><meta property="og:title" content="Spinning the wheel: clustering and near misses" />
+<meta property="og:description" content="The previous post showed a simple model casinos use to manipulate the odds. Instead of relying on the physical wheel for randomness, they rely on a virtual list of indexes that maps to the physical wheel.
+Using that same model, it&rsquo;s easy to fiddle with the virtual indexes so that they map to misses right next to the winning pocket, creating &ldquo;near misses&rdquo;. &ldquo;Near misses&rdquo; make players feel less like losing, since you &ldquo;almost won&rdquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/12/spinning-wheel-clustering-and-near.html" />
+<meta property="article:published_time" content="2014-12-14T17:13:00+01:00" />
+<meta property="article:modified_time" content="2014-12-14T17:13:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spinning the wheel: clustering and near misses"/>
+<meta name="twitter:description" content="The previous post showed a simple model casinos use to manipulate the odds. Instead of relying on the physical wheel for randomness, they rely on a virtual list of indexes that maps to the physical wheel.
+Using that same model, it&rsquo;s easy to fiddle with the virtual indexes so that they map to misses right next to the winning pocket, creating &ldquo;near misses&rdquo;. &ldquo;Near misses&rdquo; make players feel less like losing, since you &ldquo;almost won&rdquo;."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">14</span>
+							<span class="rest">Dec 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Spinning the wheel: clustering and near misses</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>The previous post showed a simple model casinos use to manipulate the
+odds. Instead of relying on the physical wheel for randomness, they rely
+on a virtual list of indexes that maps to the physical wheel.</p>
+<p>Using that same model, it&rsquo;s easy to fiddle with the virtual indexes so
+that they map to misses right next to the winning pocket, creating &ldquo;near
+misses&rdquo;. &ldquo;Near misses&rdquo; make players feel less like losing, since you
+&ldquo;almost won&rdquo;. Casinos use this technique to get the next spin out of
+you.</p>
+<p>Let&rsquo;s create more specific labels - a label for each individual
+pocket.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">WheelSpaceLabel</span> =
+    | <span style="color:#268bd2">Miss1</span>
+    | <span style="color:#268bd2">Miss2</span>
+    | <span style="color:#268bd2">Miss3</span>
+    | <span style="color:#268bd2">Win</span>
+</code></pre></div><p>The winning pocket is in the physical wheel at index two. We need the
+virtual indexes to make clusters next to the winning label. Four indexes
+map to Miss2, one maps to Win and three map to Miss3. We intentionally
+ignore Miss1.</p>
+<p><a href="/post/images/2014-12-14-spinning-the-wheel-clustering-and-near-misses-SpinningTheWheelClusteringAndNearMisses.png"><img src="/post/images/thumbnails/2014-12-14-spinning-the-wheel-clustering-and-near-misses-SpinningTheWheelClusteringAndNearMisses.png" alt=""></a></p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">physicalWheel</span> = [<span style="color:#268bd2">Miss1</span>; <span style="color:#268bd2">Miss2</span>; <span style="color:#268bd2">Win</span>; <span style="color:#268bd2">Miss3</span>] |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">ofList</span>
+<span style="color:#859900">let</span> <span style="color:#268bd2">virtualWheel</span> = [<span style="color:#268bd2">1</span>; <span style="color:#268bd2">1</span>; <span style="color:#268bd2">1</span>; <span style="color:#268bd2">1</span>; <span style="color:#268bd2">2</span>; <span style="color:#268bd2">3</span>; <span style="color:#268bd2">3</span>; <span style="color:#268bd2">3</span>] |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">ofList</span>
+</code></pre></div><p>Spinning the wheel one million times reveals the pattern; Miss1 gets
+ignored, while we hardly ever win but very often &ldquo;just&rdquo; miss.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#268bd2">Results</span> <span style="color:#268bd2">seq</span> [(<span style="color:#268bd2">Miss3</span>, <span style="color:#268bd2">37501</span>); (<span style="color:#268bd2">Miss2</span>, <span style="color:#268bd2">49901</span>); (<span style="color:#268bd2">Win</span>, <span style="color:#268bd2">12598</span>)]
+</code></pre></div><p>Since the law states that randomness and visualization are two separate
+concepts, casinos are free to operate in this gray zone, as long as
+randomness stays untouched.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+							<li><a href="/tags/ddd">ddd</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

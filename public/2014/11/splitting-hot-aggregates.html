@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Splitting hot aggregates - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Splitting hot aggregates">
+<meta itemprop="description" content="When you visit a real casino, the constant busy-ness is overwhelming; players spamming buttons, pulling levers, spinning the wheel, gambling on the outcome of sports games, playing cards, feeding the machine, cashing out, breaking bills, ordering drinks or even buying a souvenir. A single player will easily generate a thousand transactions in one sitting.
+When you look at an online casino, this isn&rsquo;t very different. In the system we inherited, the biggest and busiest aggregate by far is a user&rsquo;s account.">
+<meta itemprop="datePublished" content="2014-11-09T19:00:00&#43;01:00" />
+<meta itemprop="dateModified" content="2014-11-09T19:00:00&#43;01:00" />
+<meta itemprop="wordCount" content="693">
+
+
+
+<meta itemprop="keywords" content="ddd," /><meta property="og:title" content="Splitting hot aggregates" />
+<meta property="og:description" content="When you visit a real casino, the constant busy-ness is overwhelming; players spamming buttons, pulling levers, spinning the wheel, gambling on the outcome of sports games, playing cards, feeding the machine, cashing out, breaking bills, ordering drinks or even buying a souvenir. A single player will easily generate a thousand transactions in one sitting.
+When you look at an online casino, this isn&rsquo;t very different. In the system we inherited, the biggest and busiest aggregate by far is a user&rsquo;s account." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/11/splitting-hot-aggregates.html" />
+<meta property="article:published_time" content="2014-11-09T19:00:00+01:00" />
+<meta property="article:modified_time" content="2014-11-09T19:00:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Splitting hot aggregates"/>
+<meta name="twitter:description" content="When you visit a real casino, the constant busy-ness is overwhelming; players spamming buttons, pulling levers, spinning the wheel, gambling on the outcome of sports games, playing cards, feeding the machine, cashing out, breaking bills, ordering drinks or even buying a souvenir. A single player will easily generate a thousand transactions in one sitting.
+When you look at an online casino, this isn&rsquo;t very different. In the system we inherited, the biggest and busiest aggregate by far is a user&rsquo;s account."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">09</span>
+							<span class="rest">Nov 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Splitting hot aggregates</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>When you visit a real casino, the constant busy-ness is overwhelming;
+players spamming buttons, pulling levers, spinning the wheel, gambling
+on the outcome of sports games, playing cards, feeding the machine,
+cashing out, breaking bills, ordering drinks or even buying a souvenir.
+A single player will easily generate a thousand transactions in one
+sitting.</p>
+<p>When you look at an online casino, this isn&rsquo;t very different. In the
+system we inherited, the biggest and busiest aggregate by far is a
+user&rsquo;s account. Basically every action that has money involved, leads to
+activity on this aggregate.<br>
+This makes sense. An account is an important consistency boundary, if
+not the most important one. Casino&rsquo;s can&rsquo;t afford to have people spend
+more than their account&rsquo;s worth.</p>
+<p>Since we&rsquo;re applying optimistic concurrency, bursts of activity would
+occasionally lead to transactional failures. Looking at a real casino,
+it&rsquo;s easy to see why they aren&rsquo;t running into these types of issues.<br>
+In a physical casino, it&rsquo;s only the owner of the wallet that gets to
+access it. Casino employees are not allowed to take a player&rsquo;s wallet
+out of his pocket to make a transaction. There is no concurrent use of a
+player&rsquo;s wallet: single spender principle.<br>
+Online on the other hand, we aren&rsquo;t constrained by common courtesy and
+have no problem reaching into a user&rsquo;s pocket. It&rsquo;s common to have a
+user playing the slots, while we automatically try to pay out a
+sportsbetting win once the results of a game are in.</p>
+<p>Mapping out an aggregate&rsquo;s eventstream on a timeline is a great way to
+visualize its lifecycle and usage patterns. When we did this for an
+account, we came up with something that looked like this.</p>
+<p><a href="/post/images/2014-11-09-splitting-hot-aggregates-AggregateTimeline.png"><img src="/post/images/thumbnails/2014-11-09-splitting-hot-aggregates-AggregateTimeline.png" alt=""></a></p>
+<p>Activity peaks when a user starts a game. Each bet and each win drags in
+the account aggregate. When you know that some players make thirty bets
+per minute, it should be of no surprise that other processes accessing
+the account in the background might introduce transactional failures.</p>
+<p>Inspired by a real casino, I wonder if users online would appreciate it
+if we stayed out of their pockets and let them do it for us instead.<br>
+Instead of paying out sportsbetting winnings automatically, we could
+notify a user that his bet was settled and that he can head over to his
+bet and cash out the winnings to his account any time.<br>
+The same goes for games; instead of cashing out wins to a player&rsquo;s
+account after each bet, we could - like in a casino - cumulate all
+winnings in the slot machine itself, also known as a game session, for
+the player to cash out by pushing a button once he&rsquo;s done playing. To
+reduce the amount of small bets taken from the account, we could also
+encourage users to feed the slot machine before they start playing.</p>
+<p>In practice, we would extract behaviour out of the account aggregate and
+move it into the sportsbet and game session aggregates. It wouldn&rsquo;t be
+until the end of their lifecycles, that we would involve the account
+aggregate to move money around.</p>
+<p><a href="/post/images/2014-11-09-splitting-hot-aggregates-AggregateTimeline2.png"><img src="/post/images/thumbnails/2014-11-09-splitting-hot-aggregates-AggregateTimeline2.png" alt=""></a></p>
+<p>By spreading activity to other and shorter lived aggregates, and having
+the player do a bit of our work, we could reduce the amount of
+concurrency on the account aggregate and end up with less transactional
+failures.</p>
+<p>But can we really expect of users to cash out manually? Probably not,
+but we can still use most of the mechanics we just came up with, but
+cash out automatically. We can cash out winnings automatically when a
+user leaves a game session. We can queue up sportsbetting winnings and
+cash out when a user isn&rsquo;t playing a game.</p>
+<p>By exploring alternatives, we discovered that we can work the model to
+reduce activity and concurrency on the account aggregate, lowering the
+chances for transactional failures. Now, it&rsquo;s only fair to say that
+there are other, more technical, options. The most obvious one would
+probably be making the existing transactions on the account aggregate
+shorter, also lowering the chance of concurrent use of the account.</p>
+<p>I can&rsquo;t help but guess the actor model might be a better fit for this
+type of problem.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/ddd">ddd</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

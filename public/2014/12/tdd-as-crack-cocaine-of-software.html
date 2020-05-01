@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>TDD as the crack cocaine of software - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="TDD as the crack cocaine of software">
+<meta itemprop="description" content="The psychologist Mihaly Csikszentmihalyi popularized the term &ldquo;flow&rdquo; to describe states of absorption in which attention is so narrowly focused on an activity that a sense of time fades, along with the troubles and concerns of day-to-day life. &ldquo;Flow provides an escape from the chaos of the quotidian,&rdquo; he wrote.  This is a snippet from the highly recommended book Addiction by Design, which not only gives you an incredibly complete overview of the gambling industry, but also insights into the human psyche which apply far outside the domain of gambling.">
+<meta itemprop="datePublished" content="2014-12-28T17:29:00&#43;01:00" />
+<meta itemprop="dateModified" content="2014-12-28T17:29:00&#43;01:00" />
+<meta itemprop="wordCount" content="842">
+
+
+
+<meta itemprop="keywords" content="opinion," /><meta property="og:title" content="TDD as the crack cocaine of software" />
+<meta property="og:description" content="The psychologist Mihaly Csikszentmihalyi popularized the term &ldquo;flow&rdquo; to describe states of absorption in which attention is so narrowly focused on an activity that a sense of time fades, along with the troubles and concerns of day-to-day life. &ldquo;Flow provides an escape from the chaos of the quotidian,&rdquo; he wrote.  This is a snippet from the highly recommended book Addiction by Design, which not only gives you an incredibly complete overview of the gambling industry, but also insights into the human psyche which apply far outside the domain of gambling." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/12/tdd-as-crack-cocaine-of-software.html" />
+<meta property="article:published_time" content="2014-12-28T17:29:00+01:00" />
+<meta property="article:modified_time" content="2014-12-28T17:29:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TDD as the crack cocaine of software"/>
+<meta name="twitter:description" content="The psychologist Mihaly Csikszentmihalyi popularized the term &ldquo;flow&rdquo; to describe states of absorption in which attention is so narrowly focused on an activity that a sense of time fades, along with the troubles and concerns of day-to-day life. &ldquo;Flow provides an escape from the chaos of the quotidian,&rdquo; he wrote.  This is a snippet from the highly recommended book Addiction by Design, which not only gives you an incredibly complete overview of the gambling industry, but also insights into the human psyche which apply far outside the domain of gambling."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">28</span>
+							<span class="rest">Dec 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">TDD as the crack cocaine of software</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<blockquote>
+<p>The psychologist Mihaly Csikszentmihalyi popularized the term &ldquo;flow&rdquo;
+to describe states of absorption in which attention is so narrowly
+focused on an activity that a sense of time fades, along with the
+troubles and concerns of day-to-day life. &ldquo;Flow provides an escape
+from the chaos of the quotidian,&rdquo; he wrote. </p>
+</blockquote>
+<p>This is a snippet from the highly recommended book <a href="http://www.amazon.com/gp/product/0691160880/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0691160880&amp;linkCode=as2&amp;tag=diofanedebyje-20&amp;linkId=B2LQH4574PP6A5AL">Addiction by
+Design</a>,
+which not only gives you an incredibly complete overview of the gambling
+industry, but also insights into the human psyche which apply far
+outside the domain of gambling.</p>
+<p>For me, this book was an eye-opener, with the biggest realization being
+that most gamblers don&rsquo;t play to win. They play to lose. To lose
+themselves. Slot machines and video poker are for many people the
+quickest and surest way to reach flow. It&rsquo;s this phenomenon that has
+earned machine gambling the title of &ldquo;the crack cocaine of gambling.&rdquo;</p>
+<p>It&rsquo;s not just gamblers that crave for flow though, we all do.</p>
+<p>Some of us get up early on the weekends, to drive halfway across the
+country for a few hours of intensive mountain biking. Others come home
+after work, throw their laptop in the corner, to engage in an online
+shooter, zoning out for a good hour. Others will accidentally waste
+their entire Sunday morning solving a crossword puzzle they bumped on
+reading the newspaper.</p>
+<p>All these activities meet a specific set of preconditions.</p>
+<blockquote>
+<p>Csikszentmihalyi identified four preconditions of flow: first, each
+moment of the activity must have a little goal; second, the rules of
+attaining that goal must be clear; third, the activity must give
+immediate feedback so that one has certainty, from moment to moment,
+on where one stands; fourth, the tasks of the activity must be matched
+with operational skills, bestowing a sense of simultaneous control and
+challenge.</p>
+</blockquote>
+<p>Machine play has all these properties. Let&rsquo;s look at video poker. The
+goal is to make a winning combination. The set of winning combinations
+should be easy enough to remember; they&rsquo;re similar to live poker. After
+pushing &ldquo;deal&rdquo; you get five cards. The player decides which cards to
+&ldquo;hold&rdquo;. Pushing the &ldquo;deal&rdquo; button the second time will draw new cards
+from the same virtual deck. After the draw, you immediately know whether
+you&rsquo;ve won or lost. Feedback is instantaneous. A game is over in a few
+seconds. Although the outcome is determined by chance, there is some
+degree of skill involved; it&rsquo;s up to you to hold the right cards.<br>
+<!-- raw HTML omitted --> <!-- raw HTML omitted --><br>
+As programmers we&rsquo;re lucky enough to inadvertently end up in the zone
+frequently. Without a doubt, it&rsquo;s in this state most of us do our best
+work. In the zone, it&rsquo;s constant feedback and a sense of moving forward
+that keep me going. One could argue that the zone is inherent to the
+activity of programming. I&rsquo;d say that the length of the feedback loop
+and the size of the goals are critical and hard to maintain without
+working at it.</p>
+<p>In this regard, there are a few techniques that help me reach a state of
+flow. At first I could get by just trying to get the code to compile or
+to just launch whatever it was I was working on. But once you&rsquo;re
+comfortable with a code base, getting it to compile isn&rsquo;t much of a
+challenge, and having to start your application to get feedback gets old
+real quick. Most often it&rsquo;s TDD that helps me get there these days. You
+start of with a failing test, your mission: to make it pass. The rules
+are simple; when your test goes from red to green, you&rsquo;re allowed to
+move on. It&rsquo;s important that tests are fast to be able to give you that
+immediate feedback. How fast? Fast enough for you not to lose focus. It
+stands for itself that the fourth precondition is met too; you&rsquo;re
+writing the code, doing your best to bend it your way.</p>
+<p>When TDD is sold as a productivity booster, it are often strengths such
+as automated continuous validation of correctness, partitioning of work
+in smaller units and cleaner and better designed code that are used as
+arguments. While these are valid arguments, it&rsquo;s a shame that the power
+of TDD as a consistent gateway to flow gets neglected or undersold.</p>
+<p>Getting in the zone by yourself is one thing, getting there surrounded
+by a group of people is often out of the question. Here <a href="http://www.jefclaes.be/2014/05/ncrafts-eventstorming-slides.html">Event
+Storming</a>
+has helped me out. Small goals; what happens before this event? Rules;
+write the previous event down on a yellow post-it. Feedback; once the
+post-it is up, we see that we&rsquo;re reaching a better understanding of the
+big picture. Control and challenge; you&rsquo;re the one searching for deeper
+insight, writing and putting up the post-its.</p>
+<p>The activities that get me in a state of flow are the ones that I enjoy
+the most and which enable me to output my best results. If you reread
+the four preconditions, and assess the things that get you going, you
+might learn that the same goes for you.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/opinion">opinion</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
