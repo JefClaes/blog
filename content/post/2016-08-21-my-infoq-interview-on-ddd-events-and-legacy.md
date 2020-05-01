@@ -3,21 +3,16 @@ title = "My InfoQ interview on DDD, events and legacy"
 slug = "2016-08-21-my-infoq-interview-on-ddd-events-and-legacy"
 published = 2016-08-21T15:07:00.001000+02:00
 author = "Jef Claes"
-tags = []
+tags = [ "ddd"]
+url = "2016/08/my-infoq-article-on-ddd-events-and.html"
 +++
 Seems that it's impossible to beat the Gaussian curve of blogging
 frequency. On the other hand, I spent quite some of my mental blogging
 budget on an interview with InfoQ.
 
+I'm a bit bummed out that it's such a large wall of text. When submitting the answers, I highlighted some snippets which should make for easier scanning. Too bad the formatting was lost when publishing it. I included some highlights below.  
   
-I'm a bit bummed out that it's such a large wall of text. When
-submitting the answers, I highlighted some snippets which should make
-for easier scanning. Too bad the formatting was lost when publishing it.
-I included some highlights below.  
-  
-The interview itself can be found
-[here](https://www.infoq.com/news/2016/08/software-devs-ddd-drive-business).
-Let me know what you think!  
+The interview itself can be found [here](https://www.infoq.com/news/2016/08/software-devs-ddd-drive-business).
 
 > **Extracting components:** Starting out, this can be as trivial as
 > trying to model boundaries as namespaces or modules. 

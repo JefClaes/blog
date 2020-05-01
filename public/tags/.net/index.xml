@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Commands and events with JustSaying and AWS</title>
-      <link>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and-aws/</link>
-      <pubDate>Sun, 18 Sep 2016 20:52:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and-aws/</guid>
-      <description>I&amp;rsquo;ve been looking into handing a bit of our messaging infrastructure over to a managed alternative. Managing your own messaging infrastructure that should be highly available is not always an investment you want to make in this day and age. Going through the documentation and relying on experiences from some people I trust, I ended up looking at AWS and SNS/SQS.
-Making the Github repository rounds, looking for inspiration, I stumbled on JustSaying: a library by the people from JustEat implementing a message bus on top of AWS.</description>
-    </item>
-    
-    <item>
       <title>Scaling promotion codes</title>
       <link>http://localhost:1313/2015/03/scaling-promotion-codes/</link>
       <pubDate>Sun, 15 Mar 2015 18:01:00 +0100</pubDate>

@@ -18,11 +18,8 @@ Redshift. I learned a lot studying each individual building block,
 allowing me to make some small, but impactful changes to our own setup
 along the way.  
 
-  
-
 The outcome is a 10.000 word document (1 hour reading time), covering 7
 topics:  
-
 -   Storage
 -   Distribution
 -   Importing data
@@ -31,26 +28,16 @@ topics:
 -   Query processing
 -   Workload management
 
-  
-
 The text is available in three formats:  
-
--   [HTML](https://s3-eu-west-1.amazonaws.com/cdn.jefclaes.be/amazon-redshift-fundamentals/aws-redshift-fundamentals.html)
--   [EPUB](https://s3-eu-west-1.amazonaws.com/cdn.jefclaes.be/amazon-redshift-fundamentals/aws-redshift-fundamentals.epub)
--   [MOBI](https://s3-eu-west-1.amazonaws.com/cdn.jefclaes.be/amazon-redshift-fundamentals/aws-redshift-fundamentals.mobi)
-    (Kindle)
-
-  
+- [HTML](https://s3-eu-west-1.amazonaws.com/cdn.jefclaes.be/amazon-redshift-fundamentals/aws-redshift-fundamentals.html)
+- [EPUB](https://s3-eu-west-1.amazonaws.com/cdn.jefclaes.be/amazon-redshift-fundamentals/aws-redshift-fundamentals.epub)
+- [MOBI](https://s3-eu-west-1.amazonaws.com/cdn.jefclaes.be/amazon-redshift-fundamentals/aws-redshift-fundamentals.mobi) (Kindle)
 
 The project is open source and available [on
 Github](https://github.com/JefClaes/amazon-redshift-fundamentals).
 
-  
-
 Thanks to everyone who proof-read earlier iterations and provided me
 with indispensable feedback.
-
-  
 
 I hope this work can teach you as much as it thought me. I'm looking
 forward to your feedback.

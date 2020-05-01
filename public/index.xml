@@ -37,7 +37,6 @@
       
       <guid>http://localhost:1313/2018/01/consumed-in-2017.html</guid>
       <description>Another year, another 17 books, 6 shows and 3 movies consumed. Here&amp;rsquo;s this year&amp;rsquo;s highlights.
-
 Books The Zen and Art of Motor Cycle Maintenance The author is a tormented soul on a quest to define quality. You&amp;rsquo;re his passenger, driving shot gun on a CB77 Super Hawk, in for an exhausting intellectual journey through the high mountains of reasoning. You will often fear getting lost and feel slightly anxious that the driver might drive of a cliff any moment, but he won&amp;rsquo;t.</description>
     </item>
     
@@ -62,20 +61,20 @@ type Envelope = { Id : Int64 Event : Event Historic : bool } type EventOccurred 
     
     <item>
       <title>From human decisions, to suggestions to automated decisions</title>
-      <link>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to-automated-decisions/</link>
+      <link>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to.html</link>
       <pubDate>Sun, 23 Jul 2017 08:48:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to-automated-decisions/</guid>
+      <guid>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to.html</guid>
       <description>I&amp;rsquo;ve been wanting to share this experience for a while, but it took me a while to come up with a story and example I could use in a blog post.
 I help out during the weekends in a small family run magic shop. I&amp;rsquo;m the third generation working in the shop. My great-grandfather always hoped that his only son would follow in his footsteps as a carpenter. But at only eighteen years old, my grandfather said goodbye to the chisels and sawdust, and set out for the big city to chase his dream of becoming a world class magician.</description>
     </item>
     
     <item>
       <title>How to organize a meetup</title>
-      <link>http://localhost:1313/2017/02/how-to-organize-a-meetup/</link>
+      <link>http://localhost:1313/2017/02/how-to-organize-meetup.html</link>
       <pubDate>Mon, 13 Feb 2017 21:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2017/02/how-to-organize-a-meetup/</guid>
+      <guid>http://localhost:1313/2017/02/how-to-organize-meetup.html</guid>
       <description>I&amp;rsquo;ve organized a few DDDBE meetups in the past, and always succeed in forgetting something. Either someone points it out well in advance, or I end up stressing last minute. This post partly serves as a checklist for myself, but it would be a welcome side effect to also see it encourage others to help out organizing future meetups. Organizing a meetup is not rocket science, having a list of what to take care of is a good start.</description>
     </item>
     
@@ -91,10 +90,10 @@ While most tend to leave this mindset at work, one colleague in particular, is a
     
     <item>
       <title>Everyone has to serve somebody, but software has to serve more than one</title>
-      <link>http://localhost:1313/2017/01/everyone-has-to-serve-somebody-but-software-has-to-serve-more-than-one/</link>
+      <link>http://localhost:1313/2017/01/gotta-serve-somebody-or-somebodies.html</link>
       <pubDate>Fri, 13 Jan 2017 15:08:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2017/01/everyone-has-to-serve-somebody-but-software-has-to-serve-more-than-one/</guid>
+      <guid>http://localhost:1313/2017/01/gotta-serve-somebody-or-somebodies.html</guid>
       <description>When people get paid to write software, we very often find some form of friction between the people that build the software and those that pay to have it built.
 The company I joined three years ago was no exception. When I joined, they had just launched three months ago, weren&amp;rsquo;t seeing any return on investment and prospects weren&amp;rsquo;t too bright either.
 I won&amp;rsquo;t lie, that first year was quite stressful.</description>
@@ -102,63 +101,61 @@ I won&amp;rsquo;t lie, that first year was quite stressful.</description>
     
     <item>
       <title>Consumed in 2016</title>
-      <link>http://localhost:1313/2016/12/consumed-in-2016/</link>
+      <link>http://localhost:1313/2016/12/consumed-in-2016.html</link>
       <pubDate>Tue, 27 Dec 2016 22:10:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2016/12/consumed-in-2016/</guid>
+      <guid>http://localhost:1313/2016/12/consumed-in-2016.html</guid>
       <description>I&amp;rsquo;m keeping the tradition alive, sharing how much I&amp;rsquo;ve consumed over the last year highlighting the things that stood out. 18 books, 8 movies and 9 shows. Looks like I consumed more than other years, which probably also explains why I produced less after-hours.
-
-Books
-I finished the Dark Tower series after 3 years. Following Roland Deschain and his ka-tet throughout the 8 books has been an epic adventure. Finishing Harry Potter by the time I was 18, I had little hopes to be ever dragged into such a long and captivating tale ever again.</description>
+Books I finished the Dark Tower series after 3 years. Following Roland Deschain and his ka-tet throughout the 8 books has been an epic adventure. Finishing Harry Potter by the time I was 18, I had little hopes to be ever dragged into such a long and captivating tale ever again.</description>
     </item>
     
     <item>
       <title>Commands and events with JustSaying and AWS</title>
-      <link>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and-aws/</link>
+      <link>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and.html</link>
       <pubDate>Sun, 18 Sep 2016 20:52:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and-aws/</guid>
+      <guid>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and.html</guid>
       <description>I&amp;rsquo;ve been looking into handing a bit of our messaging infrastructure over to a managed alternative. Managing your own messaging infrastructure that should be highly available is not always an investment you want to make in this day and age. Going through the documentation and relying on experiences from some people I trust, I ended up looking at AWS and SNS/SQS.
 Making the Github repository rounds, looking for inspiration, I stumbled on JustSaying: a library by the people from JustEat implementing a message bus on top of AWS.</description>
     </item>
     
     <item>
       <title>My InfoQ interview on DDD, events and legacy</title>
-      <link>http://localhost:1313/2016/08/my-infoq-interview-on-ddd-events-and-legacy/</link>
+      <link>http://localhost:1313/2016/08/my-infoq-article-on-ddd-events-and.html</link>
       <pubDate>Sun, 21 Aug 2016 15:07:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2016/08/my-infoq-interview-on-ddd-events-and-legacy/</guid>
+      <guid>http://localhost:1313/2016/08/my-infoq-article-on-ddd-events-and.html</guid>
       <description>Seems that it&amp;rsquo;s impossible to beat the Gaussian curve of blogging frequency. On the other hand, I spent quite some of my mental blogging budget on an interview with InfoQ.
 I&amp;rsquo;m a bit bummed out that it&amp;rsquo;s such a large wall of text. When submitting the answers, I highlighted some snippets which should make for easier scanning. Too bad the formatting was lost when publishing it. I included some highlights below.</description>
     </item>
     
     <item>
       <title>Pieter Hintjens</title>
-      <link>http://localhost:1313/2016/04/pieter-hintjens/</link>
+      <link>http://localhost:1313/2016/04/pieter-hintjens.html</link>
       <pubDate>Wed, 27 Apr 2016 22:47:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2016/04/pieter-hintjens/</guid>
+      <guid>http://localhost:1313/2016/04/pieter-hintjens.html</guid>
       <description>Writing doesn&amp;rsquo;t necessarily always come naturally to me. It often takes me days, weeks or even months of toying with an idea, before I think it&amp;rsquo;s mature enough to put it down into writing. I can&amp;rsquo;t afford that luxury this time though, I wouldn&amp;rsquo;t think of myself as much of a friend if Pieter didn&amp;rsquo;t get to read this in time.
 I met Pieter the first time in a bar in Vilnius, December 2013, I accidentally ended up sitting next to him during the traditional pre-conf drinks.</description>
     </item>
     
     <item>
       <title>Using a batch layer for fast(er) aggregations </title>
-      <link>http://localhost:1313/2016/04/using-a-batch-layer-for-faster-aggregations/</link>
+      <link>http://localhost:1313/2016/04/using-batch-layer-for-faster.html</link>
       <pubDate>Sun, 24 Apr 2016 22:43:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2016/04/using-a-batch-layer-for-faster-aggregations/</guid>
+      <guid>http://localhost:1313/2016/04/using-batch-layer-for-faster.html</guid>
       <description>In the oldest system I&amp;rsquo;m maintaining right now, we have an account aggregate that, next to mutating various balances, produces immutable financial transactions. These transactions are persisted together with the aggregate itself to a relational database. The transactions can be queried by the owner of the account in an immediate consistent fashion.
 The table with these transactions looks similar to this:
-There&amp;rsquo;s an index on the timestamp, the account identifier and the transaction type, which allows for fast enough reads for the most common access patterns which only return a small subset.</description>
+CREATE TABLE [dbo].[Transaction] ( [Id] [int] IDENTITY(1,1) NOT NULL, [Timestamp] [datetime] NULL, [AccountId] [int] NOT NULL, [TransactionType] [varchar](25) NOT NULL, [CashAmount] [decimal](19, 2) NOT NULL, [BonusAmount] [decimal](19, 2) NOT NULL, [.</description>
     </item>
     
     <item>
       <title>Notifications from an event log</title>
-      <link>http://localhost:1313/2016/04/notifications-from-an-event-log/</link>
+      <link>http://localhost:1313/2016/04/notifications-from-event-log.html</link>
       <pubDate>Sun, 17 Apr 2016 17:37:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2016/04/notifications-from-an-event-log/</guid>
+      <guid>http://localhost:1313/2016/04/notifications-from-event-log.html</guid>
       <description>User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
 In the domain I&amp;rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website.</description>
     </item>

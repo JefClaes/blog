@@ -3,7 +3,8 @@ title = "Pieter Hintjens"
 slug = "2016-04-27-pieter-hintjens"
 published = 2016-04-27T22:47:00+02:00
 author = "Jef Claes"
-tags = []
+tags = ["community"]
+url = "2016/04/pieter-hintjens.html"
 +++
 Writing doesn't necessarily always come naturally to me. It often takes
 me days, weeks or even months of toying with an idea, before I think
@@ -30,8 +31,7 @@ introduce myself and talk for a bit.
   
 From that moment on, we would only meet a few times a year, traveling to
 Vilnius with the Belgian delegation or as a guest at the Domain Driven
-Design Belgium meetup. During that time, we had a few - far from enough
-- lengthy conversations. Me mostly asking questions, him sharing his
+Design Belgium meetup. During that time, we had a few - far from enough - lengthy conversations. Me mostly asking questions, him sharing his
 point of view, and me trying hard to keep up, taking it all in. Although
 he was always more than happy to entertain each question you would throw
 at him, I would always feel a bit selfish keeping him to myself for too

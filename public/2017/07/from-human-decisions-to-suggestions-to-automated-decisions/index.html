@@ -8,11 +8,11 @@
 I help out during the weekends in a small family run magic shop. I&rsquo;m the third generation working in the shop. My great-grandfather always hoped that his only son would follow in his footsteps as a carpenter. But at only eighteen years old, my grandfather said goodbye to the chisels and sawdust, and set out for the big city to chase his dream of becoming a world class magician.">
 <meta itemprop="datePublished" content="2017-07-23T08:48:00&#43;02:00" />
 <meta itemprop="dateModified" content="2017-07-23T08:48:00&#43;02:00" />
-<meta itemprop="wordCount" content="1496">
+<meta itemprop="wordCount" content="1816">
 
 
 
-<meta itemprop="keywords" content="DDD," /><meta property="og:title" content="From human decisions, to suggestions to automated decisions" />
+<meta itemprop="keywords" content="ddd," /><meta property="og:title" content="From human decisions, to suggestions to automated decisions" />
 <meta property="og:description" content="I&rsquo;ve been wanting to share this experience for a while, but it took me a while to come up with a story and example I could use in a blog post.
 I help out during the weekends in a small family run magic shop. I&rsquo;m the third generation working in the shop. My great-grandfather always hoped that his only son would follow in his footsteps as a carpenter. But at only eighteen years old, my grandfather said goodbye to the chisels and sawdust, and set out for the big city to chase his dream of becoming a world class magician." />
 <meta property="og:type" content="article" />
@@ -141,8 +141,8 @@ over the world, begging me to ship our gadget their way.</p>
 blown web shop in a matter of days. While orders started rolling in, we
 got a grip on how to actually produce our new product at a sufficient
 pace. Shipping overseas turned out to be surprisingly easy. What we
-didn&rsquo;t anticipate for was how to handle returns and refunds. <strong>This is
-where the actual story starts&hellip;</strong></p>
+didn&rsquo;t anticipate for was how to handle returns and refunds.</p>
+<p><em>This is where the actual story starts&hellip;</em></p>
 <p>When our usual customers visit the store, we take our sweet time to show
 them how to perform the trick. This results in us knowing our customers
 pretty well and hardly ever having anyone return an item or ask for a
@@ -157,9 +157,7 @@ very much underdeveloped. Even something as simple as looking up a
 customer&rsquo;s details and order history, requires scanning multiple pages
 of information or even querying the database by hand. Making a
 well-informed decision takes up way more time than it should.</p>
-<p><strong>A use case specific view</strong></p>
-<p>**<br>
-**</p>
+<h3 id="a-use-case-specific-view">A use case specific view</h3>
 <p>The first thing I did in an attempt to speed up this process was
 building a use case specific view. I asked my dad and grandfather which
 heuristics they use and which data is needed to feed those heuristics.
@@ -180,13 +178,51 @@ define the total amount of money spent purchasing items. We decided on
 being more explicit and making a composition of all those words.</p>
 <p>I ended up with a simple screen that rendered a read model that looked
 something like this.</p>
-<p><a href="/post/images/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-readmodel.PNG"><img src="/post/images/thumbnails/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-readmodel.PNG" alt=""></a>Based
-on heuristics in the head and a snapshot of information available in the
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">ReadModel</span> = {
+    <span style="color:#268bd2">DaysSinceItemPurchased</span> : <span style="color:#268bd2">int</span>
+    <span style="color:#268bd2">ItemPrice</span> : <span style="color:#859900;font-weight:bold">decimal</span>
+    <span style="color:#268bd2">ItemPurchasedSumLifetime</span> : <span style="color:#859900;font-weight:bold">decimal</span>
+    <span style="color:#268bd2">RefundedToPurchasedItemsRatio</span> : <span style="color:#859900;font-weight:bold">decimal</span>
+    <span style="color:#268bd2">CustomerId</span> : <span style="color:#859900;font-weight:bold">string</span>
+    <span style="color:#268bd2">CustomerName</span> : <span style="color:#859900;font-weight:bold">string</span>
+    <span style="color:#268bd2">CustomerCity</span> : <span style="color:#859900;font-weight:bold">string</span>
+    <span style="color:#268bd2">CustomerCountryCode</span> : <span style="color:#859900;font-weight:bold">string</span>
+}
+</code></pre></div><p><a href="/post/images/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-readmodel.PNG"><img src="/post/images/thumbnails/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-readmodel.PNG" alt=""></a></p>
+<p>Based on heuristics in the head and a snapshot of information available in the
 world, we would make a decision and click a button to execute a specific
 command.</p>
-<p><strong>Making suggestions</strong><br>
-**<br>
-**By now, I had gotten quite interested in this domain. Each day I would
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">Command</span> =
+    | <span style="color:#268bd2">IssueRefund</span>
+    | <span style="color:#268bd2">IssuePartialRefund</span>
+    | <span style="color:#268bd2">AwardCoupon</span>
+    | <span style="color:#268bd2">ShipReplacement</span>
+    | <span style="color:#268bd2">DenyRefund</span>
+    | <span style="color:#268bd2">DeferDecision</span>
+
+<span style="color:#859900">type</span> <span style="color:#cb4b16">Snapshot</span> = {
+    <span style="color:#268bd2">SnapshotId</span> : <span style="color:#859900;font-weight:bold">string</span>
+    <span style="color:#268bd2">Value</span> : <span style="color:#268bd2">ReadModel</span>
+}
+
+<span style="color:#859900">type</span> <span style="color:#cb4b16">Decision</span> = {
+    <span style="color:#268bd2">BasedOnSnapshotId</span> : <span style="color:#859900;font-weight:bold">string</span>
+    <span style="color:#268bd2">Command</span> : <span style="color:#268bd2">Command</span>
+    <span style="color:#268bd2">MadeBy</span> : <span style="color:#859900;font-weight:bold">string</span>
+}
+
+<span style="color:#859900">type</span> <span style="color:#cb4b16">MakeDecision</span> = <span style="color:#268bd2">Snapshot</span> -&gt; <span style="color:#268bd2">Decision</span>
+
+<span style="color:#859900">let</span> <span style="color:#268bd2">makeHumanDecision</span> <span style="color:#268bd2">by</span> : <span style="color:#268bd2">MakeDecision</span> =
+    <span style="color:#93a1a1;font-style:italic">// Heuristics in the head, fed by knowledge in the world
+</span><span style="color:#93a1a1;font-style:italic"></span>    <span style="color:#859900">fun</span> <span style="color:#268bd2">snapshot</span> -&gt;
+        {
+            <span style="color:#268bd2">BasedOnSnapshotId</span> = <span style="color:#268bd2">snapshot</span>.<span style="color:#268bd2">SnapshotId</span>
+            <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">IssueRefund</span>
+            <span style="color:#268bd2">MadeBy</span> = <span style="color:#268bd2">by</span>
+        }
+</code></pre></div><h3 id="making-suggestions">Making suggestions</h3>
+<p>By now, I had gotten quite interested in this domain. Each day I would
 go over all of the decisions and see whether I understood why a decision
 was made. I would call the shop each time I didn&rsquo;t understand and
 scribble down notes whenever I discovered a new implicit rule. In the
@@ -194,27 +230,85 @@ meanwhile, I started experimenting with codifying these rules to make
 automated decisions, but when I ran the older snapshots through my
 routine the results were not 100% there yet. Instead of making automated
 decisions, I switched to making suggestions instead.</p>
-<p>I rendered these suggestions on top of the existing view and observed
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">Suggestion</span> = {
+    <span style="color:#268bd2">Command</span> : <span style="color:#268bd2">Command</span>
+    <span style="color:#268bd2">Confidence</span> : <span style="color:#268bd2">int</span>
+}
+
+<span style="color:#859900">type</span> <span style="color:#cb4b16">Suggestions</span> = {
+    <span style="color:#268bd2">BasedOnSnapshotId</span> : <span style="color:#859900;font-weight:bold">string</span>
+    <span style="color:#268bd2">Options</span> : <span style="color:#268bd2">Suggestion</span> <span style="color:#268bd2">seq</span>
+}
+
+<span style="color:#859900">type</span> <span style="color:#cb4b16">MakeSuggestion</span> = <span style="color:#268bd2">Snapshot</span> -&gt; <span style="color:#268bd2">Suggestions</span>
+
+<span style="color:#859900">let</span> <span style="color:#268bd2">machineMakesSuggestions</span> <span style="color:#268bd2">snapshot</span> =
+    <span style="color:#859900">let</span> <span style="color:#268bd2">returnWindowInDays</span> = <span style="color:#268bd2">14</span>
+    <span style="color:#859900">let</span> <span style="color:#268bd2">itemInReturnWindow</span> = <span style="color:#268bd2">snapshot</span>.<span style="color:#268bd2">Value</span>.<span style="color:#268bd2">DaysSinceItemPurchased</span> &lt;= <span style="color:#268bd2">returnWindowInDays</span>
+
+    <span style="color:#859900">let</span> <span style="color:#268bd2">options</span> =
+        <span style="color:#859900">if</span> <span style="color:#268bd2">itemInReturnWindow</span> <span style="color:#859900">then</span>
+            [
+                { <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">ShipReplacement</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">51</span> }
+                { <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">IssueRefund</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">49</span> }
+		{ <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">DenyRefund</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">0</span> }
+                { <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">AwardCoupon</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">0</span> }
+                { <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">IssuePartialRefund</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">0</span> }
+            ]
+        <span style="color:#859900">else</span>
+            [
+                { <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">DenyRefund</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">50</span> }
+                { <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">AwardCoupon</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">30</span> }
+                { <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">IssuePartialRefund</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">10</span> }
+                { <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">ShipReplacement</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">10</span> }
+                { <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">IssueRefund</span>; <span style="color:#268bd2">Confidence</span> = <span style="color:#268bd2">0</span> }
+            ]
+
+    { <span style="color:#268bd2">BasedOnSnapshotId</span> = <span style="color:#268bd2">snapshot</span>.<span style="color:#268bd2">SnapshotId</span>; <span style="color:#268bd2">Options</span> = <span style="color:#268bd2">options</span> }
+</code></pre></div><p>I rendered these suggestions on top of the existing view and observed
 the decisions that were made.</p>
 <p><a href="/post/images/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-suggestions.PNG"><img src="/post/images/thumbnails/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-suggestions.PNG" alt=""></a></p>
-<p>_</p>
-<p>My partners in crime were quite ecstatic with this new feature. They had
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">PickSuggestion</span> = <span style="color:#268bd2">Suggestions</span> -&gt; <span style="color:#268bd2">Decision</span>
+
+<span style="color:#859900">let</span> <span style="color:#268bd2">humanPicksSuggestion</span> <span style="color:#268bd2">by</span> : <span style="color:#268bd2">PickSuggestion</span> =	
+    <span style="color:#859900">fun</span> <span style="color:#268bd2">suggestions</span> -&gt;
+        {
+            <span style="color:#268bd2">BasedOnSnapshotId</span> = <span style="color:#268bd2">suggestions</span>.<span style="color:#268bd2">BasedOnSnapshotId</span>
+            <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">IssueRefund</span>
+            <span style="color:#268bd2">MadeBy</span> = <span style="color:#268bd2">by</span>
+        }
+</code></pre></div><p>My partners in crime were quite ecstatic with this new feature. They had
 a bit more room to breathe and could spend more time doing things they
 liked.</p>
 <p>After observing and comparing the suggestions with the decisions made, I
 kept tweaking the routine a bit more. I got close but I felt as if I
 wasn&rsquo;t quite there yet.</p>
-<p><strong>Automating decisions</strong><br>
-**<br>
-**It was my grandfather who eventually pushed me to fully automate
+<h3 id="automating-decisions">Automating decisions</h3>
+<p>It was my grandfather who eventually pushed me to fully automate
 making these decisions. He said &ldquo;I almost always find myself picking the
 first option. It&rsquo;s fine if the machine is a bit off now and then. Just
 defer decisions and call in a human when the machine is not confident
 enough.&rdquo; How can I question my grandfather&rsquo;s wisdom? And so this
 happened&hellip;</p>
-<p><strong>From human decisions, to suggestions, to automated decisions</strong><br>
-**<br>
-**With that, we&rsquo;ve come full circle. I&rsquo;m happy to report that my dad,
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">machinePicksSuggestion</span> : <span style="color:#268bd2">PickSuggestion</span> =
+    <span style="color:#859900">fun</span> <span style="color:#268bd2">suggestions</span> -&gt;
+        <span style="color:#859900">let</span> <span style="color:#268bd2">confidenceTreshold</span> = <span style="color:#268bd2">50</span>
+
+        <span style="color:#859900">let</span> <span style="color:#268bd2">command</span> =
+            <span style="color:#268bd2">suggestions</span>.<span style="color:#268bd2">Options</span>
+            |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">filter</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">x</span> -&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Confidence</span> &gt;= <span style="color:#268bd2">confidenceTreshold</span>)
+            |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">sortByDescending</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">x</span> -&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Confidence</span>)
+            |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">map</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">x</span> -&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Command</span>)
+            |&gt; <span style="color:#268bd2">withFallbackTo</span> <span style="color:#268bd2">DeferDecision</span>
+            |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">head</span>
+
+        {
+            <span style="color:#268bd2">BasedOnSnapshotId</span> =  <span style="color:#268bd2">suggestions</span>.<span style="color:#268bd2">BasedOnSnapshotId</span>
+            <span style="color:#268bd2">Command</span> = <span style="color:#268bd2">command</span>
+            <span style="color:#268bd2">MadeBy</span> = <span style="color:#2aa198">&#34;Machine&#34;</span>
+        }
+</code></pre></div><h3 id="from-human-decisions-to-suggestions-to-automated-decisions">From human decisions, to suggestions, to automated decisions</h3>
+<p>With that, we&rsquo;ve come full circle. I&rsquo;m happy to report that my dad,
 grandfather and I are back to spending more time in my grandfather&rsquo;s
 study coming up with new tricks.</p>
 <p>I regularly have a look at the data to check for anomalies and to tweak
@@ -234,7 +328,7 @@ automagical enough.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/ddd">DDD</a></li>
+							<li><a href="/tags/ddd">ddd</a></li>
 							
 						</ul>
 					

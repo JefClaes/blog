@@ -3,7 +3,8 @@ title = "Everyone has to serve somebody, but software has to serve more than one
 slug = "2017-01-13-everyone-has-to-serve-somebody-but-software-has-to-serve-more-than-one"
 published = 2017-01-13T15:08:00.002000+01:00
 author = "Jef Claes"
-tags = [ "General",]
+tags = [ "opinion"]
+url = "2017/01/gotta-serve-somebody-or-somebodies.html"
 +++
 When people get paid to write software, we very often find some form of
 friction between the people that build the software and those that pay

@@ -48,20 +48,29 @@
     </item>
     
     <item>
-      <title>DDDBE</title>
-      <link>http://localhost:1313/tags/dddbe/</link>
+      <title>community</title>
+      <link>http://localhost:1313/tags/community/</link>
       <pubDate>Mon, 13 Feb 2017 21:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/tags/dddbe/</guid>
+      <guid>http://localhost:1313/tags/community/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>General</title>
-      <link>http://localhost:1313/tags/general/</link>
+      <title>sec</title>
+      <link>http://localhost:1313/tags/sec/</link>
+      <pubDate>Sun, 12 Feb 2017 00:20:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/sec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opinion</title>
+      <link>http://localhost:1313/tags/opinion/</link>
       <pubDate>Fri, 13 Jan 2017 15:08:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/tags/general/</guid>
+      <guid>http://localhost:1313/tags/opinion/</guid>
       <description></description>
     </item>
     
@@ -183,6 +192,15 @@
     </item>
     
     <item>
+      <title>General</title>
+      <link>http://localhost:1313/tags/general/</link>
+      <pubDate>Mon, 21 Apr 2014 12:07:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ASP.NET</title>
       <link>http://localhost:1313/tags/asp.net/</link>
       <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
@@ -233,6 +251,15 @@
       <pubDate>Sun, 16 Mar 2014 21:23:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DDDBE</title>
+      <link>http://localhost:1313/tags/dddbe/</link>
+      <pubDate>Sun, 16 Feb 2014 18:04:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/dddbe/</guid>
       <description></description>
     </item>
     

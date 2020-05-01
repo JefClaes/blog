@@ -13,20 +13,30 @@
     
     <item>
       <title>From human decisions, to suggestions to automated decisions</title>
-      <link>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to-automated-decisions/</link>
+      <link>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to.html</link>
       <pubDate>Sun, 23 Jul 2017 08:48:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to-automated-decisions/</guid>
+      <guid>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to.html</guid>
       <description>I&amp;rsquo;ve been wanting to share this experience for a while, but it took me a while to come up with a story and example I could use in a blog post.
 I help out during the weekends in a small family run magic shop. I&amp;rsquo;m the third generation working in the shop. My great-grandfather always hoped that his only son would follow in his footsteps as a carpenter. But at only eighteen years old, my grandfather said goodbye to the chisels and sawdust, and set out for the big city to chase his dream of becoming a world class magician.</description>
     </item>
     
     <item>
+      <title>My InfoQ interview on DDD, events and legacy</title>
+      <link>http://localhost:1313/2016/08/my-infoq-article-on-ddd-events-and.html</link>
+      <pubDate>Sun, 21 Aug 2016 15:07:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/08/my-infoq-article-on-ddd-events-and.html</guid>
+      <description>Seems that it&amp;rsquo;s impossible to beat the Gaussian curve of blogging frequency. On the other hand, I spent quite some of my mental blogging budget on an interview with InfoQ.
+I&amp;rsquo;m a bit bummed out that it&amp;rsquo;s such a large wall of text. When submitting the answers, I highlighted some snippets which should make for easier scanning. Too bad the formatting was lost when publishing it. I included some highlights below.</description>
+    </item>
+    
+    <item>
       <title>Notifications from an event log</title>
-      <link>http://localhost:1313/2016/04/notifications-from-an-event-log/</link>
+      <link>http://localhost:1313/2016/04/notifications-from-event-log.html</link>
       <pubDate>Sun, 17 Apr 2016 17:37:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2016/04/notifications-from-an-event-log/</guid>
+      <guid>http://localhost:1313/2016/04/notifications-from-event-log.html</guid>
       <description>User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
 In the domain I&amp;rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website.</description>
     </item>

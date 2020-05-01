@@ -3,7 +3,8 @@ title = "Using a batch layer for fast(er) aggregations "
 slug = "2016-04-24-using-a-batch-layer-for-fast-er-aggregations"
 published = 2016-04-24T22:43:00+02:00
 author = "Jef Claes"
-tags = [ "SQL", "SQLServer",]
+tags = [ "code",]
+url = "2016/04/using-batch-layer-for-faster.html"
 +++
 In the oldest system I'm maintaining right now, we have an account
 aggregate that, next to mutating various balances, produces immutable
@@ -14,7 +15,19 @@ fashion.
   
 The table with these transactions looks similar to this:
 
-  
+```sql
+CREATE TABLE [dbo].[Transaction] (
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Timestamp] [datetime] NULL,
+	[AccountId] [int] NOT NULL,
+	[TransactionType] [varchar](25) NOT NULL,
+	[CashAmount] [decimal](19, 2) NOT NULL,
+	[BonusAmount] [decimal](19, 2) NOT NULL,
+	[...] [...] () NULL /* Too much metadata I'm not very happy about */
+CONSTRAINT [Tx_PK] PRIMARY KEY CLUSTERED ( [Id] ASC) 
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 100) ON [PRIMARY]
+) ON [PRIMARY]
+``` 
 
 There's an index on the timestamp, the account identifier and the
 transaction type, which allows for *fast enough* reads for the most
@@ -22,7 +35,18 @@ common access patterns which only return a small subset.
   
 In a use case we recently worked on, we wanted real-time statistics of
 an account's transactions over its life time.  
-  
+
+```sql
+SELECT
+  TransactionType,
+  SUM(CashAmount) AS CashAmount,
+  SUM(BonusAmount) AS BonusAmount,
+  COUNT(*) AS Count,
+  /* ... */
+FROM Transaction
+WHERE AccountId = @AccountId
+GROUP BY TransactionType, /* ... */
+```
 
 Running this query would seek the account id index, to look up all rows
 that match given predicate. In case one account has tens of thousands of
@@ -53,7 +77,22 @@ transactions per account.
 This translates into scheduling a job which catches up all days, by
 performing a query per day and appending the results to a specific
 table.  
-  
+
+```sql
+/** Aggregate transactions by day **/
+INSERT INTO [dbo].[DailyTransactionAggregation]
+   SELECT
+     CONVERT(DATE, Timestamp) AS Datestamp,
+     AccountId
+     TransactionType
+     COUNT(*) AS Count,
+     SUM(CashAmount) AS CashAmount,
+     SUM(BonusAmount) AS BonusAmount,
+     /* ... */
+   FROM [dbo].[Transaction]
+   WHERE Timestamp >= :start AND Timestamp < :end
+   GROUP BY CONVERT(DATE, Timestamp), TransactionType, AccountId,   /* ... */
+```
 
 On our dataset, this compresses the transaction table by a factor of
 more than 300. Not just that, by separating reads from writes, we give

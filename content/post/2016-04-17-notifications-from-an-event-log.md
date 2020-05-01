@@ -3,7 +3,8 @@ title = "Notifications from an event log"
 slug = "2016-04-17-notifications-from-an-event-log"
 published = 2016-04-17T17:37:00+02:00
 author = "Jef Claes"
-tags = [ "DDD", "F#",]
+tags = [ "code", "ddd" ]
+url = "2016/04/notifications-from-event-log.html"
 +++
 User notifications are a feature that came as an afterthought, but
 turned out to be rather easy to implement - without touching (read:
@@ -27,11 +28,8 @@ to dismiss notifications as soon as they are no longer relevant.
   
 Two examples of when a notification might no longer be considered
 relevant:  
-
-1.  When a bonus is awarded to a user, he might ignore the notification
-    and activate the bonus by directly browsing to the specific page.
-2.  When a bonus is awarded to a user, he might not visit the website
-    before the bonus expires.
+1.When a bonus is awarded to a user, he might ignore the notification and activate the bonus by directly browsing to the specific page.
+2.When a bonus is awarded to a user, he might not visit the website before the bonus expires.
 
 In these cases, to avoid confusion and unsatisfied customers, we want to
 dismiss the notification automatically.

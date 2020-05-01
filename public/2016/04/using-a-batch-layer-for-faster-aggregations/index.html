@@ -13,7 +13,7 @@ There&rsquo;s an index on the timestamp, the account identifier and the transact
 
 
 
-<meta itemprop="keywords" content="SQL,SQLServer," /><meta property="og:title" content="Using a batch layer for fast(er) aggregations " />
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Using a batch layer for fast(er) aggregations " />
 <meta property="og:description" content="In the oldest system I&rsquo;m maintaining right now, we have an account aggregate that, next to mutating various balances, produces immutable financial transactions. These transactions are persisted together with the aggregate itself to a relational database. The transactions can be queried by the owner of the account in an immediate consistent fashion.
 The table with these transactions looks similar to this:
 There&rsquo;s an index on the timestamp, the account identifier and the transaction type, which allows for fast enough reads for the most common access patterns which only return a small subset." />
@@ -151,9 +151,7 @@ practices and push further.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/sql">SQL</a></li>
-							
-							<li><a href="/tags/sqlserver">SQLServer</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					

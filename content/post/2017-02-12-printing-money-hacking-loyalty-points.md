@@ -3,7 +3,7 @@ title = "Printing money - hacking loyalty points"
 slug = "2017-02-12-printing-money-hacking-loyalty-points"
 published = 2017-02-12T00:20:00.003000+01:00
 author = "Jef Claes"
-tags = []
+tags = [ "sec"]
 +++
 At work, we've all grown quite vigilant when it comes to customers
 trying to cheat the system. A necessary trait when working in a domain
@@ -36,22 +36,13 @@ card. The item cost less than four euros, earning us one meager loyalty
 point. If you take a closer look at the ticket, you can see the amount
 of points being repeated at the tail of the barcode.  
   
-
 [![](/post/images/thumbnails/2017-02-12-printing-money-hacking-loyalty-points-ticket.png)](/post/images/2017-02-12-printing-money-hacking-loyalty-points-ticket.png)
-
-  
-
-  
 
 If you're familiar with the anatomy of some of the established barcode
 standards, you might notice they're using the UPC symbology to encode
 loyalty points.
 
-  
-
 [![](/post/images/thumbnails/2017-02-12-printing-money-hacking-loyalty-points-upc.gif)](/post/images/2017-02-12-printing-money-hacking-loyalty-points-upc.gif)
-
-  
 
 After proving the manufacturer code was connected to the store the
 ticket was printed at - by purchasing multiple products from different
@@ -59,11 +50,7 @@ branches, we figured we could just go ahead and forge our own loyalty
 points. A quick Google search and a printer were all the tools we
 needed.
 
-  
-
 [![](/post/images/thumbnails/2017-02-12-printing-money-hacking-loyalty-points-forge.PNG)](/post/images/2017-02-12-printing-money-hacking-loyalty-points-forge.PNG)
-
-  
 
 So we first purchased two products on two different days. This gave us a
 ticket worth one point and another one worth two points. We printed our
@@ -71,39 +58,22 @@ own barcode worth three points, and claimed it at the self-checkout. We
 weren't stopped by security on our way out, and the points were credited
 to our points wallet, so I guess it was a successful experiment.
 
-  
-
 To be fair, if it wasn't for the self-checkout option, it would be much
 harder to get away with this. If we had to hand over our ticket to a
 human, we would have needed to counterfeit a lot more than just the
 barcode. There are reasons it's so incredibly hard to print fake money. 
 
-  
-
 The system used is quite simple; both from a customer perspective as a
 technical perspective. It's a lightweight stateless model which should
 hardly require any maintenance.
 
-  
-
 If you wanted to make this system more secure - not necessarily bullet
 proof, I can think of two obvious options:
-
-  
-
--   Leave the validation of points to humans. I'm not sure how hard it
-    would be to make a high quality copy of a ticket with lots of points
-    on it. 
--   Spawn a new state machine identified by a random token each time you
-    hand out points. This state machine allows points to be claimed and
-    to expire. 
-
-  
+- Leave the validation of points to humans. I'm not sure how hard it would be to make a high quality copy of a ticket with lots of points on it. 
+- Spawn a new state machine identified by a random token each time you hand out points. This state machine allows points to be claimed and to expire. 
 
 Please chime in if you know of battle-tested models for this type of
 functionality. 
-
-  
 
 Closing off, we didn't do any harm during our research: we didn't take
 more than we paid for.

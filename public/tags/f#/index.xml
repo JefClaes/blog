@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Notifications from an event log</title>
-      <link>http://localhost:1313/2016/04/notifications-from-an-event-log/</link>
-      <pubDate>Sun, 17 Apr 2016 17:37:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2016/04/notifications-from-an-event-log/</guid>
-      <description>User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
-In the domain I&amp;rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website.</description>
-    </item>
-    
-    <item>
       <title>Functional one-liner for running totals in C#</title>
       <link>http://localhost:1313/2016/03/functional-one-liner-for-running-totals-in-c/</link>
       <pubDate>Mon, 28 Mar 2016 16:22:00 +0200</pubDate>

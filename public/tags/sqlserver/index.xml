@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>Using a batch layer for fast(er) aggregations </title>
-      <link>http://localhost:1313/2016/04/using-a-batch-layer-for-faster-aggregations/</link>
-      <pubDate>Sun, 24 Apr 2016 22:43:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2016/04/using-a-batch-layer-for-faster-aggregations/</guid>
-      <description>In the oldest system I&amp;rsquo;m maintaining right now, we have an account aggregate that, next to mutating various balances, produces immutable financial transactions. These transactions are persisted together with the aggregate itself to a relational database. The transactions can be queried by the owner of the account in an immediate consistent fashion.
-The table with these transactions looks similar to this:
-There&amp;rsquo;s an index on the timestamp, the account identifier and the transaction type, which allows for fast enough reads for the most common access patterns which only return a small subset.</description>
-    </item>
-    
-    <item>
       <title>Programmatically force create a new LocalDB database</title>
       <link>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</link>
       <pubDate>Sun, 26 Oct 2014 16:59:00 +0100</pubDate>

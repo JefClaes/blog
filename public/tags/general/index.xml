@@ -6,33 +6,10 @@
     <description>Recent content in General on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Jan 2017 15:08:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 21 Apr 2014 12:07:00 +0200</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/general/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Everyone has to serve somebody, but software has to serve more than one</title>
-      <link>http://localhost:1313/2017/01/everyone-has-to-serve-somebody-but-software-has-to-serve-more-than-one/</link>
-      <pubDate>Fri, 13 Jan 2017 15:08:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2017/01/everyone-has-to-serve-somebody-but-software-has-to-serve-more-than-one/</guid>
-      <description>When people get paid to write software, we very often find some form of friction between the people that build the software and those that pay to have it built.
-The company I joined three years ago was no exception. When I joined, they had just launched three months ago, weren&amp;rsquo;t seeing any return on investment and prospects weren&amp;rsquo;t too bright either.
-I won&amp;rsquo;t lie, that first year was quite stressful.</description>
-    </item>
-    
-    <item>
-      <title>Consumed in 2016</title>
-      <link>http://localhost:1313/2016/12/consumed-in-2016/</link>
-      <pubDate>Tue, 27 Dec 2016 22:10:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2016/12/consumed-in-2016/</guid>
-      <description>I&amp;rsquo;m keeping the tradition alive, sharing how much I&amp;rsquo;ve consumed over the last year highlighting the things that stood out. 18 books, 8 movies and 9 shows. Looks like I consumed more than other years, which probably also explains why I produced less after-hours.
-
-Books
-I finished the Dark Tower series after 3 years. Following Roland Deschain and his ka-tet throughout the 8 books has been an epic adventure. Finishing Harry Potter by the time I was 18, I had little hopes to be ever dragged into such a long and captivating tale ever again.</description>
-    </item>
     
     <item>
       <title>Solving Mavericks with VMware Fusion 6 and Windows 8.1 hangs</title>
