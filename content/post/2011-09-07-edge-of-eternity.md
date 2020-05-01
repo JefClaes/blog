@@ -34,15 +34,15 @@ cheap alternative to an expensive helicopter flight through the canyon.
 
   
 
-[![](../images/thumbnails/2011-09-07-edge-of-eternity-GrandCanyon_0020.png)](../images/2011-09-07-edge-of-eternity-GrandCanyon_0020.png)
+[![](/post/images/thumbnails/2011-09-07-edge-of-eternity-GrandCanyon_0020.png)](/post/images/2011-09-07-edge-of-eternity-GrandCanyon_0020.png)
 
   
 
-[![](../images/thumbnails/2011-09-07-edge-of-eternity-GrandCanyon_0066.png)](../images/2011-09-07-edge-of-eternity-GrandCanyon_0066.png)
+[![](/post/images/thumbnails/2011-09-07-edge-of-eternity-GrandCanyon_0066.png)](/post/images/2011-09-07-edge-of-eternity-GrandCanyon_0066.png)
 
   
 
-[![](../images/thumbnails/2011-09-07-edge-of-eternity-GrandCanyon_0114.png)](../images/2011-09-07-edge-of-eternity-GrandCanyon_0114.png)
+[![](/post/images/thumbnails/2011-09-07-edge-of-eternity-GrandCanyon_0114.png)](/post/images/2011-09-07-edge-of-eternity-GrandCanyon_0114.png)
 
   
 Tomorrow morning we will return to the more civilized (?) man-made

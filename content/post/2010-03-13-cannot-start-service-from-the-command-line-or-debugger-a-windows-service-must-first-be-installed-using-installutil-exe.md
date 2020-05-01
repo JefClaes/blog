@@ -12,7 +12,7 @@ Windows Service must first be installed (using installutil.exe) and then
 started with the Server Explorer, Windows Services Administrative tool
 or the NET START command.".  
   
-[![](../images/thumbnails/2010-03-13-cannot-start-service-from-the-command-line-or-debugger-a-windows-service-must-first-be-installed-using-installutil-exe-serviceError.JPG)](../images/2010-03-13-cannot-start-service-from-the-command-line-or-debugger-a-windows-service-must-first-be-installed-using-installutil-exe-serviceError.JPG)  
+[![](/post/images/thumbnails/2010-03-13-cannot-start-service-from-the-command-line-or-debugger-a-windows-service-must-first-be-installed-using-installutil-exe-serviceError.JPG)](/post/images/2010-03-13-cannot-start-service-from-the-command-line-or-debugger-a-windows-service-must-first-be-installed-using-installutil-exe-serviceError.JPG)  
 The trick my team and I use to workaround this problem, makes use of the
 service Debug flag. If the Debug flag is on, we just start the service
 by using our own public Start method. When the OnStart event is fired in
@@ -95,7 +95,7 @@ And this goes in Program.cs.
   
 You can set the Debug flag of your service in your service properties.  
   
-[![](../images/thumbnails/2010-03-13-cannot-start-service-from-the-command-line-or-debugger-a-windows-service-must-first-be-installed-using-installutil-exe-debug.JPG)](../images/2010-03-13-cannot-start-service-from-the-command-line-or-debugger-a-windows-service-must-first-be-installed-using-installutil-exe-debug.JPG)  
+[![](/post/images/thumbnails/2010-03-13-cannot-start-service-from-the-command-line-or-debugger-a-windows-service-must-first-be-installed-using-installutil-exe-debug.JPG)](/post/images/2010-03-13-cannot-start-service-from-the-command-line-or-debugger-a-windows-service-must-first-be-installed-using-installutil-exe-debug.JPG)  
   
 The only problem with this solution is that you can't debug your OnStop
 event but this hasn't been an issue for us so far.  

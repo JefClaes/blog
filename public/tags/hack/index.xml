@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hack on Jef Claes</title>
+    <link>http://localhost:1313/tags/hack/</link>
+    <description>Recent content in Hack on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Jan 2013 21:18:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/hack/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Autocorrecting unknown actions using the Levenshtein distance</title>
+      <link>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</link>
+      <pubDate>Sun, 15 Jan 2012 16:04:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</guid>
+      <description>This weekend I prototyped an idea I had earlier this week: autocorrecting unknown actions in ASP.NET MVC.
+**Handling unknown actions
+**
+To give you an example, let&amp;rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method.</description>
+    </item>
+    
+    <item>
+      <title>Data validation, take it seriously</title>
+      <link>http://localhost:1313/2011/08/data-validation-take-it-seriously/</link>
+      <pubDate>Sun, 28 Aug 2011 16:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/08/data-validation-take-it-seriously/</guid>
+      <description>We just heard that we might be stuck in Washington DC for a few hours due to a defect of our plane&amp;rsquo;s backup generator. We decided to notify our hotel we might be running late.
+Surfing to the contact page on their site, we found out that we couldn&amp;rsquo;t enter our European mobile phonenumber in the required (!) telephone number field.
+Unable to find the direct email address of the hotel, I opened the developer tools and had a look at the validation script.</description>
+    </item>
+    
+    <item>
+      <title>Keeping WebSockets alive</title>
+      <link>http://localhost:1313/2011/03/keeping-websockets-alive/</link>
+      <pubDate>Sat, 12 Mar 2011 17:40:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/03/keeping-websockets-alive/</guid>
+      <description>The problem with using stateful connections on an imperfect place as the internet is that connections might drop. The server or an intermediary can drop the connection due to an idle timeout. Even a temporary problem at the server or a local network hiccup might kill your connection.
+If you aren&amp;rsquo;t prepared to handle these scenarios, you will not be able to fully rely on WebSockets.
+A simple solution
+The simplest solution is checking every few seconds whether the WebSocket is still opened.</description>
+    </item>
+    
+    <item>
+      <title>IE8-Fix: Disabled select not showing selected options</title>
+      <link>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</link>
+      <pubDate>Wed, 24 Feb 2010 19:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</guid>
+      <description>In this post a small workaround for disabled select not showing selected options in IE8. It&amp;rsquo;s probably not the cleanest fix, but it get&amp;rsquo;s the job done.
+ProblemA disabled select does not highlight the selected options.
+ 1: &amp;lt;select size=&amp;quot;3&amp;quot; multiple=&amp;quot;multiple&amp;quot; id=&amp;quot;mySelect&amp;quot; disabled=&amp;quot;disabled&amp;quot;&amp;gt; 2: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option1&amp;quot;&amp;gt;Option 1&amp;lt;/option&amp;gt; 3: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option2&amp;quot;&amp;gt;Option 2&amp;lt;/option&amp;gt; 4: &amp;lt;option value=&amp;quot;Option3&amp;quot;&amp;gt;Option 3&amp;lt;/option&amp;gt; 5: &amp;lt;/select&amp;gt;  
+SolutionThe following CSS provides a workaround. It looks pretty similar to the appearance we are used to.</description>
+    </item>
+    
+  </channel>
+</rss>

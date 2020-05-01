@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Browser on Jef Claes</title>
+    <link>http://localhost:1313/tags/browser/</link>
+    <description>Recent content in Browser on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 May 2014 18:23:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/browser/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Glueing the browser and POS devices together </title>
+      <link>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</link>
+      <pubDate>Sun, 04 May 2014 18:23:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</guid>
+      <description>I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
+Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&amp;rsquo;s asynchronous programming model and its incredible rich ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Released: My Antwerp Open Data submissions</title>
+      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
+      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
+      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
+    </item>
+    
+    <item>
+      <title>Show More pagination with angular.js</title>
+      <link>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</link>
+      <pubDate>Wed, 12 Dec 2012 19:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</guid>
+      <description>I built my first application with angular.js over these last few weeks (not during business hours), and although I still have lots and lots to discover and learn, I think I somewhat grasp the basics.
+In the application I built, I had to implement paging because rendering all the items at once was too slow on mobile devices (on my Windows Phone 7 anyways). The paging variant I decided on was the &amp;lsquo;Show More&amp;rsquo; technique.</description>
+    </item>
+    
+  </channel>
+</rss>

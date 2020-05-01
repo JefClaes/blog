@@ -15,7 +15,7 @@ made this example. In this form there are three checkboxes which map
 with the textboxes next to them. If the checkbox gets unchecked the
 corresponding textboxes should be cleared.  
   
-[![](../images/thumbnails/2010-07-12-webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls-Example.PNG)](../images/2010-07-12-webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls-Example.PNG)  
+[![](/post/images/thumbnails/2010-07-12-webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls-Example.PNG)](/post/images/2010-07-12-webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls-Example.PNG)  
   
 <span style="font-weight:bold;">First iteration</span>  
   

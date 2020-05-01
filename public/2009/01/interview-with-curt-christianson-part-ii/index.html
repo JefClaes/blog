@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Interview with Curt Christianson (Part II) - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Interview with Curt Christianson (Part II)">
+<meta itemprop="description" content="This is part II of the interview with Curt Christianson. For Part I go here.
+Part 2: Technology Let me ask you some general questions about building a web application. What is your advise on setting up the layers of a web application. In the web application I&rsquo;m currently working on we chose a not so standard architecture I guess. We have multiple &ldquo;modules&rdquo;, which are folders in practice. In the root of these modules we hold our aspx pages.">
+<meta itemprop="datePublished" content="2009-01-12T20:34:00&#43;01:00" />
+<meta itemprop="dateModified" content="2009-01-12T20:34:00&#43;01:00" />
+<meta itemprop="wordCount" content="1283">
+
+
+
+<meta itemprop="keywords" content=".NET,ASP.NET,Interview," /><meta property="og:title" content="Interview with Curt Christianson (Part II)" />
+<meta property="og:description" content="This is part II of the interview with Curt Christianson. For Part I go here.
+Part 2: Technology Let me ask you some general questions about building a web application. What is your advise on setting up the layers of a web application. In the web application I&rsquo;m currently working on we chose a not so standard architecture I guess. We have multiple &ldquo;modules&rdquo;, which are folders in practice. In the root of these modules we hold our aspx pages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2009/01/interview-with-curt-christianson-part-ii/" />
+<meta property="article:published_time" content="2009-01-12T20:34:00+01:00" />
+<meta property="article:modified_time" content="2009-01-12T20:34:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Interview with Curt Christianson (Part II)"/>
+<meta name="twitter:description" content="This is part II of the interview with Curt Christianson. For Part I go here.
+Part 2: Technology Let me ask you some general questions about building a web application. What is your advise on setting up the layers of a web application. In the web application I&rsquo;m currently working on we chose a not so standard architecture I guess. We have multiple &ldquo;modules&rdquo;, which are folders in practice. In the root of these modules we hold our aspx pages."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">12</span>
+							<span class="rest">Jan 2009</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Interview with Curt Christianson (Part II)</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>This is part II of the interview with <a href="http://darkfalz.com/">Curt
+Christianson</a>. For Part I go
+<a href="http://jclaes.blogspot.com/2009/01/interview-with-curt-christianson-part-i.html">here</a>.</p>
+<h3 id="part-2-technology">Part 2: Technology</h3>
+<p><!-- raw HTML omitted -->Let me ask you some general questions
+about building a web application. What is your advise on setting up the
+layers of a web application. In the web application I&rsquo;m currently
+working on we chose a not so standard architecture I guess. We have
+multiple &ldquo;modules&rdquo;, which are folders in practice. In the root of these
+modules we hold our aspx pages. For each module we have three folders:
+BLL, DAL and Controls. In our BLL we hold our objects, some logic, &hellip;
+In our DAL we stock our typed datasets based on stored procedures. We
+divided our pages into Controls, because our pages are pretty big. We
+access all of our data methods in the controls, using ObjectDataSources
+based on the typed datasets. We try to make as much use as possible from
+the ObjectDataSources using the designer, some custom things are done in
+code-behind. But we found out that this architecture is a hassle. It
+doesn&rsquo;t give a much as control as we&rsquo;d like and debugging/logging really
+is a pain in the ass. A problem is that we can&rsquo;t use the designer as
+much as we want, because we needed to add more functionality/business
+logic than the designer allows us. With the result that some of the
+logic is in the aspx page and some in the code behind. What is in your
+opinion a better architecture?<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->From the sound of it you are running into some of the same
+circumstances I did. I found that using the pre-build datasources were
+WAY too much limitation for me. I tend to toss them out right away and
+switch to a more manual approach. This does make more work (you have to
+do sorting and paging yourself) but other than that I found it a lot
+easier to work with.<br>
+I used to be a fairly strong believer in the 3 tier approach but have
+come to the conclusion that for 99% of work that&rsquo;s done you are best off
+with a simple 2 tier approach. There is no real need to seperate the
+Business and Data layers. Combining the object definitions with the
+calls to the database and mixing in the validation from the business
+perspective all at once seemed the best bet. I still break the pieces
+out into seperate methods but I&rsquo;ve combined them all into one set of
+classes instead of 2 distinctive ones.<br>
+Now, as far as controls go&hellip; my rule is simple&hellip; if I use it more then
+once it&rsquo;s a control&hellip;if not, then it&rsquo;s coded into the page. I never
+make a code block into a control unless there is a reason to&hellip;otherwise
+it&rsquo;s extra work for yourself. That said&hellip; i was VERY guilty of the
+opposite. I used to take every Asp.Net control and make a custom control
+that inherited from the native one. Then I would only use the custom
+one&hellip;just in case some day I wanted to enhance it (I almost never did)
+so eventually I stopped that nonsense.</p>
+<p><!-- raw HTML omitted -->What is your opinion on using stored
+procedures? Some say using stored procedures is oldschool.<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --> I&rsquo;ve really shifted away from it. In the past, with previous
+versions of MS SQL you really wanted to use them as much as you could
+for perf reasons, but now that&rsquo;s really not the case. What I&rsquo;ve done is
+actually make all my SQL statements simply constants in my application.
+They are all in one class file so they are easily found and tweaked when
+needed. I do parameterize everything though&hellip;this is a MUST in my
+book.</p>
+<p><!-- raw HTML omitted -->About using the sql queries in your
+classes.. Are you simply returning datasets from your functions and
+binding these to your controls? Are you planning on using LinqToSql in
+your future projects for this? What is your opinion on Linq? I also
+wonder if you have any idea what Microsoft&rsquo;s is opinion on the issue of
+not being able to use the datasources for more complex things, because
+basically that&rsquo;s what they are designed for, to reduce development time.
+What is your opinion on this. Should Microsoft do something about
+it?<!-- raw HTML omitted --></p>
+<p>I used to use datasources a lot but since vs2005 I discovered
+Generic.List(of ). This has been my favorite thing. Everything now is
+bound to a List(Of myObject), hence the custom sorting and paging. I&rsquo;ve
+used LinqToSql in the past to play around but the limitations were too
+great. My objects are often complex and it didn&rsquo;t really handle them
+well. The new Entity Framework stuff looks more promising though, and it
+looks like LinqToSql is already &ldquo;obsoleted&rdquo; in the framework anyways.<br>
+I don&rsquo;t think these datasources were really meant for anything other
+than small-midsized applications (complexity wise). They were always
+meant (in my opinion only of course) to be for those times when you need
+it fast and easy and you have a one-to-one relationship with your
+datamodel and application classes.</p>
+<p><!-- raw HTML omitted -->You also co-edited a book about AJAX?
+AJAX is an awesome technology. &ldquo;Javascript that works&rdquo;. I really think I
+am not using AJAX to it&rsquo;s full potential though. What I am using is the
+UpdatePanel (which is the best control ever) and the AjaxControlToolKit.
+That&rsquo;s it. What am I missing here?<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->I wouldn&rsquo;t say edited.. but reviewed. It&rsquo;s different, but same
+basic concept. Personally, the UpdatePanel is THE heart of Ajax. Beyond
+that it&rsquo;s all secondary. So, with that I&rsquo;d say you are actually right on
+track with what you need for Ajax.</p>
+<p><!-- raw HTML omitted -->The other book you reviewed was on WPF,
+right? What are your thoughts on WPF? Is it gonna take of soon? Is this
+the end for WinForms?<!-- raw HTML omitted --></p>
+<p>I&rsquo;ve actually reviewed at least a dozen different books over the last
+few years.<br>
+The WPF one was a while ago but it&rsquo;s just coming out in published
+copy.<br>
+For me WPF is something that&rsquo;s interesting but not something that I will
+probably ever do much with. Is *it* the end of WinForms&hellip; absolutely
+not. Is it *part* of the beginning of the end&hellip; sure.</p>
+<p>Now&hellip;if I was to take a stab at the prediction of development here&rsquo;s
+what I see. WinForms and WebForms will both really &ldquo;die off&rdquo; and what
+you&rsquo;ll see come out of the ashes will be a conglomeration of the two.
+More like a child of the two rather than one taking over the other. The
+differentiation between two negligible. The user will never really know,
+or care, where they are operating. It&rsquo;s not really &ldquo;cloud&rdquo; computing
+(that&rsquo;s just poor PR in my opinion) but rather a melding of the two.
+With things like Ajax, WPF, WCF and all the other acromyms, we are on
+the way. I think in the next 2 years you will see some real distinct
+breakthroughs, especially with hand-held platforms, that will be the
+hybrid we&rsquo;re after. Take those and extend them to the larger CPU
+capacity of the home PC and you get some idea of what could be done.</p>
+<p><!-- raw HTML omitted -->Are you thinking of more Surface like
+interactivity? <!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->Not really&hellip; surface is cool, and definitely part of it. The
+multiple-input, touch-sensitive piece will definitely find it&rsquo;s place
+with the new scheme but I don&rsquo;t think we&rsquo;re really gotten at the core of
+the new stuff yet, it&rsquo;s still on the verge of being discovered (or
+tucked in a lab somewhere). Think of a meld between the PC,
+Laptop/Tablet and SmartPhone, but all as one device with all the best
+features of them all and integrated into a form factor yet to be
+determined (I have ideas but still to early to say).</p>
+<p><!-- raw HTML omitted -->I think that&rsquo;s a good line to end this
+interview! Thank a lot.<!-- raw HTML omitted --></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+							<li><a href="/tags/asp.net">ASP.NET</a></li>
+							
+							<li><a href="/tags/interview">Interview</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2009  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

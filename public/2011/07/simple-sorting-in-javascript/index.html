@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Simple sorting in JavaScript - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Simple sorting in JavaScript">
+<meta itemprop="description" content="About three years ago I graduated and got my degree in Applied Computer Science. Although it says Computer Science, we hardly ever focused on data structures and algorithms. Obviously, I now see that as a shortcoming. So I plan to make up for that by reading up on some of the basics. While at it, I might be blogging on some of the topics.
+I am going to start by implementing some of the simple sorting algorithms in JavaScript.">
+<meta itemprop="datePublished" content="2011-07-07T21:30:00&#43;02:00" />
+<meta itemprop="dateModified" content="2011-07-07T21:30:00&#43;02:00" />
+<meta itemprop="wordCount" content="823">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,javascript," /><meta property="og:title" content="Simple sorting in JavaScript" />
+<meta property="og:description" content="About three years ago I graduated and got my degree in Applied Computer Science. Although it says Computer Science, we hardly ever focused on data structures and algorithms. Obviously, I now see that as a shortcoming. So I plan to make up for that by reading up on some of the basics. While at it, I might be blogging on some of the topics.
+I am going to start by implementing some of the simple sorting algorithms in JavaScript." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2011/07/simple-sorting-in-javascript/" />
+<meta property="article:published_time" content="2011-07-07T21:30:00+02:00" />
+<meta property="article:modified_time" content="2011-07-07T21:30:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Simple sorting in JavaScript"/>
+<meta name="twitter:description" content="About three years ago I graduated and got my degree in Applied Computer Science. Although it says Computer Science, we hardly ever focused on data structures and algorithms. Obviously, I now see that as a shortcoming. So I plan to make up for that by reading up on some of the basics. While at it, I might be blogging on some of the topics.
+I am going to start by implementing some of the simple sorting algorithms in JavaScript."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">07</span>
+							<span class="rest">Jul 2011</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Simple sorting in JavaScript</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>About three years ago I graduated and got my degree in Applied Computer
+Science. Although it says Computer Science, we hardly ever focused on
+data structures and algorithms. Obviously, I now see that as a
+shortcoming. So I plan to make up for that by reading up on some of the
+basics. While at it, I might be blogging on some of the topics.</p>
+<p>I am going to start by implementing some of the simple sorting
+algorithms in JavaScript.</p>
+<p><!-- raw HTML omitted -->Find the final result
+<a href="http://dl.dropbox.com/u/19698383/Blog/JavaScriptAlgorithmsDataStructs/Implementations/SimpleSorting.html">here</a>.<!-- raw HTML omitted --></p>
+<p><strong>Bubble sort</strong></p>
+<p>The first sorting algorithm I&rsquo;m going to implement is probably also the
+easiest, and slowest in most scenario&rsquo;s: <a href="http://en.wikipedia.org/wiki/Bubblesort">Bubble
+sort</a>.</p>
+<blockquote>
+<p>Bubble sort is a simple sorting algorithm that works by repeatedly
+stepping through the list to be sorted, comparing each pair of
+adjacent items and swapping them if they are in the wrong order. The
+pass through the list is repeated until no swaps are needed, which
+indicates that the list is sorted.</p>
+</blockquote>
+<p>Let&rsquo;s start by defining a namespace.</p>
+<pre><code>var algorithms = { };
+</code></pre>
+<p>We could extend the native array object, but to keep things simple,
+let&rsquo;s create our own sortArray object.</p>
+<pre><code>var algorithms = {         
+
+    sortArray : function(){
+
+                
+
+    } 
+
+};
+</code></pre>
+<p>The sortArray object contains a private array of elements. To add
+elements to that array, we will expose a push function on our sortArray
+object.</p>
+<pre><code>var algorithms = {         
+
+    sortArray : function(){
+
+        var elements = [];                                                                           
+
+                     
+
+        this.push = function(val){
+
+            elements.push(val);                    
+
+        };                                       
+
+    } 
+
+};
+</code></pre>
+<p>So far we can do something like this.</p>
+<pre><code>var sortArr = new algorithms.sortArray();               
+
+             
+
+sortArr.push(80);
+
+sortArr.push(20);
+
+sortArr.push(...);
+</code></pre>
+<p>Now we have to add a public sort function. Before we do that we need to
+define a private swap function, which can swap elements.</p>
+<pre><code>var swap = function(one, two) {
+
+    var tmp = elements[one];
+
+    elements[one] = elements[two];
+
+    elements[two] = tmp;                    
+
+};
+</code></pre>
+<p>The bubbleSort function will take a callback argument which will be
+called every sort iteration.</p>
+<pre><code>this.bubbleSort = function(callback) {   
+
+    callback(elements);
+
+    //Loop over all the elements
+
+    for (var out = elements.length - 1; out &gt; 0; out--){                            
+
+        for (var inn = 0; inn &lt; out; inn++) {
+
+            //Are they out of order?
+
+            if (elements[inn] &gt; elements[inn+1]){
+
+                swap(inn, inn+1);                                
+
+            } 
+
+        }
+
+        callback(elements);
+
+    }                    
+
+};
+</code></pre>
+<p>That should be it. Now let&rsquo;s try to push some elements in the array,
+define a callback and call the bubbleSort function. In the callback
+function I&rsquo;m using the <a href="http://code.google.com/intl/nl-BE/apis/chart/">Google Charts
+API</a> to visualize the
+sorting process.</p>
+<pre><code>$(document).ready(function() {             
+
+    ...                                 
+
+                
+
+    var results = $(&quot;#results&quot;);
+
+    
+
+    var drawElements = function(elements) {                            
+
+        var chd = &quot;&quot;;                    
+
+        
+
+        for (var e in elements) {
+
+            chd += elements[e].toString() + &quot;,&quot;;
+
+        }
+
+        
+
+        //Remove that last &quot;,&quot;
+
+        chd = chd.substring(0, chd.length - 1);                        
+
+        
+
+        //Build the Google Charts url
+
+        var chartUrlBase = &quot;http://chart.apis.google.com/chart?chxt=y&amp;chbh=a&amp;chs=300x225&amp;cht=bvg&amp;chco=A2C180,3D7930&amp;chtt=Sorting&quot;;
+
+        var chartUrlComplete = chartUrlBase + &quot;&amp;chd=t:&quot; + chd;                                    
+
+        
+
+        $(&quot;#results&quot;).append(&quot;&lt;img src='&quot; + chartUrlComplete + &quot;'/&gt;&quot;).append(&quot;&lt;br/&gt;&quot;);                                                                                                                                         
+
+    }                              
+
+                         
+
+    sortArr.bubbleSort(drawElements);                               
+
+});
+</code></pre>
+<p><strong>Selection sort</strong></p>
+<p>The second algorithm is <a href="http://en.wikipedia.org/wiki/Selection_sort">Selection
+sort</a>. I found this one the
+easiest to understand so far: find the mimimum value, swap it with the
+value in the first position, advance one position and repeat.</p>
+<blockquote>
+<p>Selection sort is a sorting algorithm, specifically an in-place
+comparison sort. It has O(n2) time complexity, making it inefficient
+on large lists, and generally performs worse than the similar
+insertion sort. Selection sort is noted for its simplicity, and also
+has performance advantages over more complicated algorithms in certain
+situations, particularly where auxiliary memory is limited.</p>
+</blockquote>
+<p>Let&rsquo;s start by giving the BubbleSort callback function another place. We
+will make this a public function on our sortArray. I will name it onSort
+and set it to an empty function by default.</p>
+<pre><code>this.onSort = function() {};      
+</code></pre>
+<p>Once that is done we can define our public selectionSort function. This
+function calls the onSort function every sort iteration.</p>
+<pre><code>this.selectionSort = function(){
+
+    this.onSort(elements);
+
+    for (var out = 0; out &lt; elements.length - 1; out++) {
+
+        var min = out;
+
+        for (var inn = out; inn &lt; elements.length; inn++) {
+
+            //If minium greater =&gt; new minimum
+
+            if (elements[inn] &lt; elements[min]){
+
+                min = inn;
+
+            }                            
+
+        }
+
+        swap(out, min);
+
+        this.onSort(elements);
+
+    }
+
+};
+</code></pre>
+<p><strong>Insertion sort</strong></p>
+<p>The last simple sorting algorithm I&rsquo;m going to implement in this post is
+<a href="http://en.wikipedia.org/wiki/Insertion_sort">Insertion sort</a>.</p>
+<blockquote>
+<p>Insertion sort is a simple sorting algorithm: a comparison sort in
+which the sorted array (or list) is built one entry at a time.</p>
+<p>Every repetition of insertion sort removes an element from the input
+data, inserting it into the correct position in the already-sorted
+list, until no input elements remain. The choice of which element to
+remove from the input is arbitrary, and can be made using almost any
+choice algorithm.</p>
+</blockquote>
+<p>The insertionSort is just another public function on our sortArray
+object.</p>
+<pre><code>this.insertionSort = function(){
+
+    this.onSort(elements);
+
+    for (var out = 1; out &lt; elements.length; out++){                        
+
+        var temp = elements[out];
+
+        var inn = out;
+
+        
+
+        //Until one is smaller
+
+        while (inn &gt; 0 &amp;&amp; elements[inn-1] &gt;= temp){
+
+            elements[inn] = elements[inn-1];
+
+
+
+            inn--;
+
+        }
+
+        elements[inn] = temp;
+
+        this.onSort(elements);
+
+    }
+
+}
+</code></pre>
+<p>You can <strong>find the final result
+<a href="http://dl.dropbox.com/u/19698383/Blog/JavaScriptAlgorithmsDataStructs/Implementations/SimpleSorting.html">here</a></strong>.
+If you have any remarks on these implementations, please let me know!</p>
+<p><a href="/post/images/2011-07-07-simple-sorting-in-javascript-SortResult.PNG"><img src="/post/images/thumbnails/2011-07-07-simple-sorting-in-javascript-SortResult.PNG" alt=""></a></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/javascript">javascript</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2011  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

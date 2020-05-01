@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LOL on Jef Claes</title>
+    <link>http://localhost:1313/tags/lol/</link>
+    <description>Recent content in LOL on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 14 Nov 2012 12:26:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/lol/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>No trains today? No resources were found either.</title>
+      <link>http://localhost:1313/2012/11/no-trains-today-no-resources-were-found-either./</link>
+      <pubDate>Wed, 14 Nov 2012 12:26:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/no-trains-today-no-resources-were-found-either./</guid>
+      <description>Belgian&amp;rsquo;s National Railway has decided to strike again today to assail Europe&amp;rsquo;s oncoming austerity. I don&amp;rsquo;t think there is anything wrong with sticking it to the man, or fighting for your right to party, if you believe it is just, yet the preferred tactics don&amp;rsquo;t feel quite right. There must be more constructive ways to get your point across, instead of terribly inconveniencing all those people who give you a job in the first place, your customers.</description>
+    </item>
+    
+    <item>
+      <title>A solar storm anecdote</title>
+      <link>http://localhost:1313/2012/02/a-solar-storm-anecdote/</link>
+      <pubDate>Wed, 01 Feb 2012 08:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/a-solar-storm-anecdote/</guid>
+      <description>Last week, several news channels reported on the strongest solar storm since 2005. This news item reminded me of a peculiar support ticket we received one gray Monday morning a few years ago, when I was still writing software for fire departments.
+ *********************************************************************************
+Ticket 7238
+Subject: AVL broken
+Status: New
+Description
+06:22 Vehicles stay mostly stationary on the map, even when we are
+positive they are en route.
+*********************************************************************************</description>
+    </item>
+    
+    <item>
+      <title>Recursively spawning Web Workers</title>
+      <link>http://localhost:1313/2011/07/recursively-spawning-web-workers/</link>
+      <pubDate>Thu, 21 Jul 2011 15:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/recursively-spawning-web-workers/</guid>
+      <description>I like to think of HTML5 Web Workers simply as &amp;lsquo;threading for the Web&amp;rsquo;.
+Wikipedia describes it a bit more in detail.
+ Web Workers define an API for running scripts, basically JavaScript, in the background independently of any user interface scripts. This allows for long-running scripts that are not interrupted by scripts that respond to clicks or other user interactions, and allows long tasks to be executed without yielding to keep the page responsive.</description>
+    </item>
+    
+    <item>
+      <title>A sign of broken code</title>
+      <link>http://localhost:1313/2011/05/a-sign-of-broken-code/</link>
+      <pubDate>Sat, 28 May 2011 18:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/05/a-sign-of-broken-code/</guid>
+      <description>Credit to Calvin and Hobbes.</description>
+    </item>
+    
+    <item>
+      <title>arealdeveloper.com</title>
+      <link>http://localhost:1313/2011/04/arealdeveloper.com/</link>
+      <pubDate>Tue, 26 Apr 2011 20:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/arealdeveloper.com/</guid>
+      <description>A Real Developer is a side-project I built over the weekend poking around with WebMatrix.
+
+It got a little out of hand. After publishing, I showed it to a few popular tweeps, and they were kind enough to mention it. 24 hours after the launch it has gotten over 3.5k unique visitors, 39k page views (see what I did there?) and over 240 submissions. Being mentioned by Scott Hanselman and Rey Bango helps.</description>
+    </item>
+    
+    <item>
+      <title>Using C# keywords as variables</title>
+      <link>http://localhost:1313/2011/04/using-c#-keywords-as-variables/</link>
+      <pubDate>Mon, 11 Apr 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/using-c#-keywords-as-variables/</guid>
+      <description>Hold it, don&amp;rsquo;t shoot me. I know this would be an awful practice, but it is an interesting C# compiler quirk nonetheless.
+ Keywords are predefined reserved identifiers that have special meanings to the compiler. They cannot be used as identifiers in your program unless they include @ as a prefix. For example, @if is a legal identifier but if is not because it is a keyword.
+ static void Main(string[] args) { var @if = &amp;quot;oh my.</description>
+    </item>
+    
+  </channel>
+</rss>

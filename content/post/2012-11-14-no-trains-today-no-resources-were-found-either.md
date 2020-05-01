@@ -23,7 +23,7 @@ WTF](http://thedailywtf.com/). This weekend my girlfriend called me over
 to her desk to show me this.  
   
 
-[![](../images/thumbnails/2012-11-14-no-trains-today-no-resources-were-found-either-Afbeelding+3.png)](../images/2012-11-14-no-trains-today-no-resources-were-found-either-Afbeelding+3.png)
+[![](/post/images/thumbnails/2012-11-14-no-trains-today-no-resources-were-found-either-Afbeelding+3.png)](/post/images/2012-11-14-no-trains-today-no-resources-were-found-either-Afbeelding+3.png)
 
   
 Taking it out on their IT department might not be completely fair, but I

@@ -31,8 +31,8 @@ If you're interested in running your first event storming workshop, I'd
 love to come over and help you get started.  
   
 
-[![](../images/thumbnails/2013-11-17-event-storming-workshop-slides-EventStorming.jpg)](../images/2013-11-17-event-storming-workshop-slides-EventStorming.jpg)
+[![](/post/images/thumbnails/2013-11-17-event-storming-workshop-slides-EventStorming.jpg)](/post/images/2013-11-17-event-storming-workshop-slides-EventStorming.jpg)
 
   
 
-[![](../images/thumbnails/2013-11-17-event-storming-workshop-slides-EventStorming2.jpg)](../images/2013-11-17-event-storming-workshop-slides-EventStorming2.jpg)
+[![](/post/images/thumbnails/2013-11-17-event-storming-workshop-slides-EventStorming2.jpg)](/post/images/2013-11-17-event-storming-workshop-slides-EventStorming2.jpg)

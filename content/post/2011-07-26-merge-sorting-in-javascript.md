@@ -23,7 +23,7 @@ this diagram (also from
 [Wikipedia](http://en.wikipedia.org/wiki/Merge_sort)).  
   
   
-[![](../images/thumbnails/2011-07-26-merge-sorting-in-javascript-MergeSort.png)](../images/2011-07-26-merge-sorting-in-javascript-MergeSort.png)  
+[![](/post/images/thumbnails/2011-07-26-merge-sorting-in-javascript-MergeSort.png)](/post/images/2011-07-26-merge-sorting-in-javascript-MergeSort.png)  
 I added a public mergeSort function to the sortArray object, which I
 showed in the [first
 post](http://jclaes.blogspot.com/2011/07/simple-sorting-in-javascript.html)

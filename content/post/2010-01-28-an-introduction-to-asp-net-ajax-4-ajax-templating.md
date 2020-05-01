@@ -164,4 +164,4 @@ Some code examples shows best.
   
 Both ways have the same result.  
   
-[![](../images/thumbnails/2010-01-28-an-introduction-to-asp-net-ajax-4-ajax-templating-templating.JPG)](../images/2010-01-28-an-introduction-to-asp-net-ajax-4-ajax-templating-templating.JPG)
+[![](/post/images/thumbnails/2010-01-28-an-introduction-to-asp-net-ajax-4-ajax-templating-templating.JPG)](/post/images/2010-01-28-an-introduction-to-asp-net-ajax-4-ajax-templating-templating.JPG)

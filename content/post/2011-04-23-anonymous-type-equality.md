@@ -28,7 +28,7 @@ These two variables are not equal. Not something I expected!
 If we look at the IL the C\# compiler produced, it starts making sense
 though.  
   
-[![](../images/thumbnails/2011-04-23-anonymous-type-equality-AnonymousTypeEquality.PNG)](../images/2011-04-23-anonymous-type-equality-AnonymousTypeEquality.PNG)  
+[![](/post/images/thumbnails/2011-04-23-anonymous-type-equality-AnonymousTypeEquality.PNG)](/post/images/2011-04-23-anonymous-type-equality-AnonymousTypeEquality.PNG)  
 There are two different types generated, although the properties we
 assigned are the same. What differs is **the sequence of the property
 assignment**.  

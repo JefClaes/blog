@@ -27,7 +27,7 @@ A disabled select does not highlight the selected options.
 
   
 
-[![](../images/thumbnails/2010-02-24-ie8-fix-disabled-select-not-showing-selected-options-NotFixed.JPG)](../images/2010-02-24-ie8-fix-disabled-select-not-showing-selected-options-NotFixed.JPG)  
+[![](/post/images/thumbnails/2010-02-24-ie8-fix-disabled-select-not-showing-selected-options-NotFixed.JPG)](/post/images/2010-02-24-ie8-fix-disabled-select-not-showing-selected-options-NotFixed.JPG)  
   
 <span style="font-weight:bold;">Solution</span>  
   
@@ -51,7 +51,7 @@ appearance we are used to.
        7:  }  
 
   
-[![](../images/thumbnails/2010-02-24-ie8-fix-disabled-select-not-showing-selected-options-Fixed.JPG)](../images/2010-02-24-ie8-fix-disabled-select-not-showing-selected-options-Fixed.JPG)  
+[![](/post/images/thumbnails/2010-02-24-ie8-fix-disabled-select-not-showing-selected-options-Fixed.JPG)](/post/images/2010-02-24-ie8-fix-disabled-select-not-showing-selected-options-Fixed.JPG)  
   
 <span style="font-weight:bold;">Still not working?</span>  
   

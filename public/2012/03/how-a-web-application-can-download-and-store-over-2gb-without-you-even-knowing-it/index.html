@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>How a web application can download and store over 2GB without you even knowing it - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="How a web application can download and store over 2GB without you even knowing it">
+<meta itemprop="description" content="I have been experimenting with the HTML5 offline application cache some more over the last few days, doing boundary tests in an attempt to learn more about browser behaviour in edge cases.
+One of these experiments was testing the cache quota.
+Two weeks ago, I blogged about generating and serving an offline application manifest using ASP.NET MVC. I reused that code to add hundreds of 7MB PDF files to the cache.">
+<meta itemprop="datePublished" content="2012-03-25T13:11:00&#43;02:00" />
+<meta itemprop="dateModified" content="2012-03-25T13:11:00&#43;02:00" />
+<meta itemprop="wordCount" content="366">
+
+
+
+<meta itemprop="keywords" content="Browsers,HTML5," /><meta property="og:title" content="How a web application can download and store over 2GB without you even knowing it" />
+<meta property="og:description" content="I have been experimenting with the HTML5 offline application cache some more over the last few days, doing boundary tests in an attempt to learn more about browser behaviour in edge cases.
+One of these experiments was testing the cache quota.
+Two weeks ago, I blogged about generating and serving an offline application manifest using ASP.NET MVC. I reused that code to add hundreds of 7MB PDF files to the cache." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/" />
+<meta property="article:published_time" content="2012-03-25T13:11:00+02:00" />
+<meta property="article:modified_time" content="2012-03-25T13:11:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How a web application can download and store over 2GB without you even knowing it"/>
+<meta name="twitter:description" content="I have been experimenting with the HTML5 offline application cache some more over the last few days, doing boundary tests in an attempt to learn more about browser behaviour in edge cases.
+One of these experiments was testing the cache quota.
+Two weeks ago, I blogged about generating and serving an offline application manifest using ASP.NET MVC. I reused that code to add hundreds of 7MB PDF files to the cache."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">25</span>
+							<span class="rest">Mar 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">How a web application can download and store over 2GB without you even knowing it</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>I have been experimenting with the <a href="http://www.w3.org/TR/html5/offline.html">HTML5 offline application
+cache</a> some more over the last
+few days, doing boundary tests in an attempt to learn more about browser
+behaviour in edge cases.</p>
+<p>One of these experiments was testing the cache quota.</p>
+<p>Two weeks ago, I blogged about <a href="http://jclaes.blogspot.com/2012/03/html5-offline-web-applications-as.html">generating and serving an offline
+application manifest using ASP.NET
+MVC</a>.
+I reused that code to add hundreds of 7MB PDF files to the cache.</p>
+<pre><code>public ActionResult Manifest()
+{     
+    var cacheResources = new List&lt;string&gt;();
+    var n = 300; // Play with this number
+
+    for (var i = 0; i &lt; n; i++)
+        cacheResources.Add(&quot;Content/&quot; + Url.Content(&quot;book.pdf?&quot; + i));
+
+    var manifestResult = new ManifestResult(&quot;1&quot;)
+    {
+        NetworkResources = new string[] { &quot;*&quot; },
+        CacheResources = cacheResources
+    };
+
+    return manifestResult;
+}
+</code></pre>
+<p>I initially tried adding 1000 PDF files to the cache, but this threw an
+error: Chrome failed to commit the new cache to the storage, because the
+quota would be exceeded.</p>
+<p>After lowering the number of files several times, I hit the sweet spot.
+I could add 300 PDF files to the cache without breaking it.</p>
+<p>Looking into <em>chrome://appcache-internals/</em>, I can see the size of the
+cache being a whopping <strong>2.2GB</strong> now for one single web application.</p>
+<p><a href="/post/images/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-appcache-internals.PNG"><img src="/post/images/thumbnails/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-appcache-internals.PNG" alt=""></a></p>
+<p>As a user, I had no idea that the website I&rsquo;m browsing is downloading a
+suspicious amount of data in the background. Chrome (17.0.963.83), nor
+any other desktop browser that I know of, warns me. I would expect the
+browser to ask for my permission when a website wants to download and
+store such an excessive amount of data on my machine.</p>
+<p>Something else I noticed, is that other sites now fail to commit
+anything to the application cache due to the browser-wide quota being
+exceeded. I&rsquo;m pretty sure this &lsquo;first browsed, first reserved&rsquo; approach
+will be a source of frustration in the future.<br>
+To handle this scenario we could use the applicationCache API to listen
+for quota errors, and inform the user to browse to
+<em>chrome://appcache-internals/</em> and remove other caches in favor of the
+new one. This feels sketchy though; shouldn&rsquo;t the browser intervene in a
+more elegant way here?</p>
+<p><a href="/post/images/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-exceedquote.PNG"><img src="/post/images/thumbnails/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-exceedquote.PNG" alt=""></a></p>
+<p><strong>What are your thoughts? What would you want your browser to do in
+these scenarios?</strong></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/browsers">Browsers</a></li>
+							
+							<li><a href="/tags/html5">HTML5</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

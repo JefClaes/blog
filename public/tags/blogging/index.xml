@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogging on Jef Claes</title>
+    <link>http://localhost:1313/tags/blogging/</link>
+    <description>Recent content in Blogging on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Dec 2013 17:05:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/blogging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2013&#39;s most read posts</title>
+      <link>http://localhost:1313/2013/12/2013s-most-read-posts/</link>
+      <pubDate>Sun, 29 Dec 2013 17:05:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/12/2013s-most-read-posts/</guid>
+      <description>This time of year, we&amp;rsquo;re all very busy honoring traditions. This post is no exception (2009, 2010, 2011, 2012).Today was probably the first time this year that I took some time to study my blog&amp;rsquo;s Google Analytics metrics. If I keep last year&amp;rsquo;s black swan posts out of the equation, traffic seems to be comparable to last year&amp;rsquo;s. The most meaningful metrics to me are the number of subscriptions and the average time spent reading.</description>
+    </item>
+    
+    <item>
+      <title>Feeds worth reading - saying goodbye to Google Reader</title>
+      <link>http://localhost:1313/2013/06/feeds-worth-reading-saying-goodbye-to-google-reader/</link>
+      <pubDate>Sun, 16 Jun 2013 22:18:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/feeds-worth-reading-saying-goodbye-to-google-reader/</guid>
+      <description>New to programming in the wild, and starving for hints on how to do it better, I would often stumble upon programmers documenting their journey on a personal blog. A big orange icon would incite readers to subscribe to their content using RSS. Taking the bait, I started using Google Reader, and found myself frantically hoarding feeds a bit later.
+After a while I got fed up with going through an abundance of subscriptions daily though; it was turning into a chore.</description>
+    </item>
+    
+    <item>
+      <title>2012&#39;s most read posts</title>
+      <link>http://localhost:1313/2012/12/2012s-most-read-posts/</link>
+      <pubDate>Sun, 23 Dec 2012 15:53:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/2012s-most-read-posts/</guid>
+      <description>I look forward to writing this post each year; it&amp;rsquo;s by far the easiest one to write, and it provides me with an occasion to look back on previous years (2009, 2010, 2011). It&amp;rsquo;s entertaining - and shameful too - to see what kept me busy back then, which opinions I held, and which technologies and techniques are still relevant in the meanwhile. Anyways, here it goes.
+The most read post this year, with 37.</description>
+    </item>
+    
+    <item>
+      <title>Reviewing and renewing resolutions</title>
+      <link>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions/</link>
+      <pubDate>Wed, 29 Dec 2010 20:17:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions/</guid>
+      <description>My career
+I&amp;rsquo;m still working on the same projects as I was last year: Firestation Antwerp and Ghent. This year we did not build a lot of brand new things, but we have added a decent amount of new functionalities. Next to that there were a bunch of bugs to fix and technical debt to pay off. I learned a lot from the mistakes we made and refactoring makes you really think about what good and clean code should look like.</description>
+    </item>
+    
+    <item>
+      <title>Top 5 popular posts of 2010</title>
+      <link>http://localhost:1313/2010/12/top-5-popular-posts-of-2010/</link>
+      <pubDate>Sun, 26 Dec 2010 17:25:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/top-5-popular-posts-of-2010/</guid>
+      <description>Today I have spent a few hours evaluating this year&amp;rsquo;s analytics of my blog. In total I posted 59 entries this year, but in this post you will only find the 5 most popular, plus the ones that I liked writing a lot but failed to make it to the top 5.
+The most popular posts of 2010
+  Cannot start Service from the command line or debugger.: The most popular post of 2010, almost all traffic was completely driven by search engines.</description>
+    </item>
+    
+    <item>
+      <title>Making my blog suck less</title>
+      <link>http://localhost:1313/2010/06/making-my-blog-suck-less/</link>
+      <pubDate>Sat, 19 Jun 2010 23:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/06/making-my-blog-suck-less/</guid>
+      <description>Today Scott Hanselman did a session on blogging at the BWB (Blogging While Brown - yah seriously!) conference. He tweeted a link to the slides of this session. I embedded the slides in this post, but you can also get them from here.
+Take your time to check out the slides. It&amp;rsquo;s actually a bit of a checklist, so it shouldn&amp;rsquo;t take more than two minutes.
+The slides pointed out a few things that were missing on my blog.</description>
+    </item>
+    
+    <item>
+      <title>Fixed commenting</title>
+      <link>http://localhost:1313/2010/05/fixed-commenting/</link>
+      <pubDate>Wed, 19 May 2010 09:05:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/fixed-commenting/</guid>
+      <description>After giving my blog a new design a few people pointed out that posting a comment was broken. You had to tab your way to the submit button.
+Turns out that the comment section is hosted in an iFrame and that scrolling was disabled.
+That issue should be solved now. Please let me know if commenting isn&amp;rsquo;t working for you!</description>
+    </item>
+    
+    <item>
+      <title>Blog redesign</title>
+      <link>http://localhost:1313/2010/05/blog-redesign/</link>
+      <pubDate>Sat, 08 May 2010 16:25:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/blog-redesign/</guid>
+      <description>Today I finally took the time to redesign my blog.
+The word redesign might be a bit exaggerated though. I downloaded the 2plus blogger template and tweaked it a little. Hope you like the new design!
+Before..
+..and after
+Your opinionAs always, I would like to hear your opinion!</description>
+    </item>
+    
+    <item>
+      <title>Looking back, moving forward (New years post)</title>
+      <link>http://localhost:1313/2009/12/looking-back-moving-forward-new-years-post/</link>
+      <pubDate>Mon, 21 Dec 2009 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/12/looking-back-moving-forward-new-years-post/</guid>
+      <description>In this post I&amp;rsquo;m going to reflect on the year that&amp;rsquo;s almost finished and the year to come.
+I came up with a few topics that are worth discussing in this post.
+My career
+I don&amp;rsquo;t think I ever mentioned where I work. The first of January I will be working 18 months for Ferranti. The only company I&amp;rsquo;ve worked for since I graduated.
+The first project I&amp;rsquo;ve ever worked on was a rather big one.</description>
+    </item>
+    
+  </channel>
+</rss>

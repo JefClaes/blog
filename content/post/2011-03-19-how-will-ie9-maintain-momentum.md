@@ -15,7 +15,7 @@ a very solid browser, outclassing every previous Microsoft browser *by
 far*. Microsoft finally built a browser which is capable of competing
 with other modern browsers.  
   
-[![](../images/thumbnails/2011-03-19-how-will-ie9-maintain-momentum-IE9%2BTigerblood.png)](../images/2011-03-19-how-will-ie9-maintain-momentum-IE9%2BTigerblood.png)  
+[![](/post/images/thumbnails/2011-03-19-how-will-ie9-maintain-momentum-IE9%2BTigerblood.png)](/post/images/2011-03-19-how-will-ie9-maintain-momentum-IE9%2BTigerblood.png)  
 The global consensus seems to be that Internet Explorer has regained
 serious momentum. Now I wonder how Microsoft plans on maintaining that
 momentum. IE9 still has some issues to address, and with the HTML5
@@ -25,7 +25,7 @@ in the near future.
 I think a big part of the future success of IE9 is directly proportional
 to the ability to leverage these fixes and new features.  
   
-[![](../images/thumbnails/2011-03-19-how-will-ie9-maintain-momentum-WebSocketsUndefined.png)](../images/2011-03-19-how-will-ie9-maintain-momentum-WebSocketsUndefined.png)  
+[![](/post/images/thumbnails/2011-03-19-how-will-ie9-maintain-momentum-WebSocketsUndefined.png)](/post/images/2011-03-19-how-will-ie9-maintain-momentum-WebSocketsUndefined.png)  
 As far as I know they are going to continue pushing browser updates
 through Windows Updates, and this raises a few concerns. A lot of people
 have disabled automatic Windows Updates. Either they are using a pirated

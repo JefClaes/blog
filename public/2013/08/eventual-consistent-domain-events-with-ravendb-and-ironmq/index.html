@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Eventual consistent domain events with RavenDB and IronMQ - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Eventual consistent domain events with RavenDB and IronMQ">
+<meta itemprop="description" content="Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&rsquo;m working on right now makes use of domain events. As an example, I&rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.">
+<meta itemprop="datePublished" content="2013-08-15T14:03:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-08-15T14:03:00&#43;02:00" />
+<meta itemprop="wordCount" content="739">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,.NET,DDD,NoSql," /><meta property="og:title" content="Eventual consistent domain events with RavenDB and IronMQ" />
+<meta property="og:description" content="Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&rsquo;m working on right now makes use of domain events. As an example, I&rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/" />
+<meta property="article:published_time" content="2013-08-15T14:03:00+02:00" />
+<meta property="article:modified_time" content="2013-08-15T14:03:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Eventual consistent domain events with RavenDB and IronMQ"/>
+<meta name="twitter:description" content="Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&rsquo;m working on right now makes use of domain events. As an example, I&rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">15</span>
+							<span class="rest">Aug 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Eventual consistent domain events with RavenDB and IronMQ</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Working on side projects, I often find myself using
+<a href="http://ravendb.net/">RavenDB</a> for storage and
+<a href="http://www.iron.io/mq">IronMQ</a> for queueing. I wrote about that last
+one before
+<a href="http://www.jefclaes.be/2013/03/first-ironmq-impressions.html">here</a> and
+<a href="http://www.jefclaes.be/2013/03/putting-my-ironmq-experiment-under.html">here</a>.</p>
+<p>One project I&rsquo;m working on right now makes use of domain events. As an
+example, I&rsquo;ll use the usual suspect: the BookingConfirmed event. When a
+booking has been confirmed, I want to notify my customer by sending him
+an email.</p>
+<p>I want to avoid that persisting a booking fails because an eventhandler
+throws - the mail server is unavailable. I also don&rsquo;t want that an
+eventhandler executes an operation that can&rsquo;t be rolled back - sending
+out an email - without first making sure the booking was persisted
+succesfully. If an eventhandler fails, I want to give it the opportunity
+to fix what&rsquo;s wrong and retry.</p>
+<pre><code>public void Confirm()
+{
+    Status = BookingStatus.Accepted;
+
+    Events.Raise(new BookingConfirmed(Id));
+}
+</code></pre>
+<p><strong>Get in line</strong><br>
+**<br>
+**The idea is, instead of dealing with the domain events in memory, to
+push them out to a queue so that  eventhandlers can deal with them
+asynchronously. If we&rsquo;re trusting IronMQ with our queues, we get in
+trouble guaranteeing that the events aren&rsquo;t sent out unless the booking
+is persisted succesfully; you can&rsquo;t make IronMQ enlist in a
+transaction.</p>
+<p><strong>Avoiding false events</strong></p>
+<p>To avoid pushing out events, and alerting our customer, without having
+succesfully persisted the booking, I want to commit my events in the
+same transaction. Since IronMQ can&rsquo;t be enlisted in a transaction, we
+have to take a detour; instead of publishing the event directly, we&rsquo;re
+going to persist it as a RavenDB document. This guarantees the event is
+committed in the same transaction as the booking.</p>
+<pre><code>public class DomainEvent
+{
+    public DomainEvent(object body)
+    {
+        Guard.ForNull(body, &quot;body&quot;);          
+        
+        Type = body.GetType();
+        Body = body;
+        Published = false;
+        TimeStamp = DateTimeProvider.Now();
+    }
+    
+    protected DomainEvent() { }
+
+    public string Id { get; private set; }
+
+    public DateTime TimeStamp { get; private set; }
+
+    public Type Type { get; private set; }
+
+    public object Body { get; private set; }
+
+    public bool Published { get; private set; }
+
+    public void MarkAsPublished()
+    {
+        Published = true;
+    }
+}
+
+public class DomainEvents : IDomainEvents
+{
+    private IDocumentSession _session;
+
+    public DomainEvents(IDocumentSession session)
+    {
+        _session = session;
+    }
+
+    public void Raise&lt;T&gt;(T args) where T : IDomainEvent
+    {       
+        _session.Store(new DomainEvent(args));
+    }
+}
+</code></pre>
+<p><a href="/post/images/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG"><img src="/post/images/thumbnails/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG" alt=""></a></p>
+<p><strong>Getting the events out</strong><br>
+**<br>
+**Now we still need to get the events out of RavenDB. Looking into this,
+I found this to be a very good use of the <a href="http://ayende.com/blog/157121/awesome-feature-of-the-day-ravendb-changes-api">Changes
+API</a>.
+Using the Changes API, you can subscribe to all changes made to a
+certain document. If you&rsquo;re familiar with relation databases, the
+Changes API might remind you of triggers - except for that the Changes
+API doesn&rsquo;t live in the database, nor does it run in the same
+transaction. In this scenario, I use it to listen for changes to the
+domain events collection. On every change, I&rsquo;ll load the document, push
+the content out to IronMQ, and mark it as published.</p>
+<pre><code>public class DomainEventPublisher
+{
+    private readonly IQueueFactory _queueFactory;
+    
+    public DomainEventPublisher(IQueueFactory queueFactory)
+    {           
+        _queueFactory = queueFactory;
+    }
+
+    public void Start()
+    {
+        DocumentStore
+          .Get()
+          .Changes()
+          .ForDocumentsStartingWith(typeof(DomainEvent).Name)
+          .Subscribe(PublishDomainEvent);
+    }
+
+    private void PublishDomainEvent(DocumentChangeNotification change)
+    {
+        Task.Factory.StartNew(() =&gt;
+        {
+            if (change.Type != DocumentChangeTypes.Put)
+                return;
+
+            using (var session = DocumentStore.Get().OpenSession())
+            {
+                var domainEvent = session.Load&lt;DomainEvent&gt;(change.Id);
+
+                if (domainEvent.Published)
+                    return;
+
+                var queue = _queueFactory.CreateQueue(domainEvent.Type.Name);
+                queue.Push(JsonConvert.SerializeObject(domainEvent.Body));
+
+                domainEvent.MarkAsPublished();
+
+                session.SaveChanges();
+            }
+        });
+    }
+}
+</code></pre>
+<p>I tested this by raising 10,000 events on my machine, and got up to an
+average of pushing out 7 events a second. With an average of 250ms per
+request, the major culprit is posting messages to IronMQ. Since I&rsquo;m
+posting these messages over the Atlantic, IronMQ is not really to blame.
+Once you get closer, response times go down to the 10ms - 100ms range.</p>
+<p><strong>A back-up plan</strong><br>
+**<br>
+**If the subscriber goes down, events won&rsquo;t be pushed out, so you need
+to have a back-up plan. I planned for missing events by scheduling a
+Quartz job that periodically queries for old unpublished domain events
+and publishes them.</p>
+<p><strong>In conclusion</strong><br>
+**<br>
+**You don&rsquo;t need expensive infrastructure or a framework to enable
+handling domain events in an eventual consistent fashion. Using RavenDB
+as an event store, the Changes API as an event listener, and IronMQ for
+queuing, we landed a rather light-weight solution. It won&rsquo;t scale
+endlessly, but it doesn&rsquo;t have to either.</p>
+<p><em>I&rsquo;m interested in hearing which homegrown solutions you have come up
+with, or how I could improve mine.</em></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+							<li><a href="/tags/nosql">NoSql</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

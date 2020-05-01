@@ -14,10 +14,10 @@ to green meadows to dusty mountains to sunbathing coasts.
 
   
 
-[![](../images/thumbnails/2014-09-10-northbound-again-Piran%2B-%2B30kl.jpg)](../images/2014-09-10-northbound-again-Piran%2B-%2B30kl.jpg)  
+[![](/post/images/thumbnails/2014-09-10-northbound-again-Piran%2B-%2B30kl.jpg)](/post/images/2014-09-10-northbound-again-Piran%2B-%2B30kl.jpg)  
   
 
-[![](../images/thumbnails/2014-09-10-northbound-again-Piran%2B-%2B29kl.jpg)](../images/2014-09-10-northbound-again-Piran%2B-%2B29kl.jpg)
+[![](/post/images/thumbnails/2014-09-10-northbound-again-Piran%2B-%2B29kl.jpg)](/post/images/2014-09-10-northbound-again-Piran%2B-%2B29kl.jpg)
 
 We followed the coastline for a little while, strolling through old
 coast towns, eating seafood, drinking something cold. Driving up North
@@ -25,7 +25,7 @@ and more inland, we spent two days in Motovun, a picturesque town high
 on a mountain.  
   
 
-[![](../images/thumbnails/2014-09-10-northbound-again-Premantura%2B-%2BMotovun%2B-%2B43kl.jpg)](../images/2014-09-10-northbound-again-Premantura%2B-%2BMotovun%2B-%2B43kl.jpg)
+[![](/post/images/thumbnails/2014-09-10-northbound-again-Premantura%2B-%2BMotovun%2B-%2B43kl.jpg)](/post/images/2014-09-10-northbound-again-Premantura%2B-%2BMotovun%2B-%2B43kl.jpg)
 
   
 We'll be continuing up North, slowly making our way home.

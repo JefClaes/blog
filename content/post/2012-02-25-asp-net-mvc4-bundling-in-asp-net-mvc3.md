@@ -56,9 +56,9 @@ If you start your application now, and inspect the HTML, you will find
 two versioned links to a minified version of your CSS and JavaScript.  
   
 
-[![](../images/thumbnails/2012-02-25-asp-net-mvc4-bundling-in-asp-net-mvc3-minifiedhead.PNG)](../images/2012-02-25-asp-net-mvc4-bundling-in-asp-net-mvc3-minifiedhead.PNG)
+[![](/post/images/thumbnails/2012-02-25-asp-net-mvc4-bundling-in-asp-net-mvc3-minifiedhead.PNG)](/post/images/2012-02-25-asp-net-mvc4-bundling-in-asp-net-mvc3-minifiedhead.PNG)
 
-[![](../images/thumbnails/2012-02-25-asp-net-mvc4-bundling-in-asp-net-mvc3-minifiedJS.PNG)](../images/2012-02-25-asp-net-mvc4-bundling-in-asp-net-mvc3-minifiedJS.PNG)
+[![](/post/images/thumbnails/2012-02-25-asp-net-mvc4-bundling-in-asp-net-mvc3-minifiedJS.PNG)](/post/images/2012-02-25-asp-net-mvc4-bundling-in-asp-net-mvc3-minifiedJS.PNG)
 
   
 

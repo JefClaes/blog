@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DDD on Jef Claes</title>
+    <link>http://localhost:1313/tags/ddd/</link>
+    <description>Recent content in DDD on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Jul 2017 08:48:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/ddd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>From human decisions, to suggestions to automated decisions</title>
+      <link>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to-automated-decisions/</link>
+      <pubDate>Sun, 23 Jul 2017 08:48:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to-automated-decisions/</guid>
+      <description>I&amp;rsquo;ve been wanting to share this experience for a while, but it took me a while to come up with a story and example I could use in a blog post.
+I help out during the weekends in a small family run magic shop. I&amp;rsquo;m the third generation working in the shop. My great-grandfather always hoped that his only son would follow in his footsteps as a carpenter. But at only eighteen years old, my grandfather said goodbye to the chisels and sawdust, and set out for the big city to chase his dream of becoming a world class magician.</description>
+    </item>
+    
+    <item>
+      <title>Notifications from an event log</title>
+      <link>http://localhost:1313/2016/04/notifications-from-an-event-log/</link>
+      <pubDate>Sun, 17 Apr 2016 17:37:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/04/notifications-from-an-event-log/</guid>
+      <description>User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
+In the domain I&amp;rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing event streams</title>
+      <link>http://localhost:1313/2015/12/visualizing-event-streams/</link>
+      <pubDate>Sun, 20 Dec 2015 17:59:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/12/visualizing-event-streams/</guid>
+      <description>In my recent talk on Evil by Design, I showed how I&amp;rsquo;ve been visualizing event streams as a means to get a better grip on how aggregates behave in production. The talk&amp;rsquo;s scope kept me from showing the code that goes together with the examples shown. Consider this post as an addendum to that talk.
+First off, we need a few types: a string that identifies a stream, an event containing a timestamp and its name.</description>
+    </item>
+    
+    <item>
+      <title>Slides from my talk &#34;Evil by Design&#34; at Build Stuff</title>
+      <link>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at-build-stuff/</link>
+      <pubDate>Wed, 18 Nov 2015 15:47:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at-build-stuff/</guid>
+      <description>Third time attending Build Stuff, first time doing a talk. I&amp;rsquo;m happy that it&amp;rsquo;s out of the way and can now just enjoy the conference, but I&amp;rsquo;m even more excited that it was well-received! The talk should have been recorded, but you can already find the abstract and slides below.
+ Last year I ventured into the domain of (online) gambling. Given that the industry has been around since forever, I expected most problems to be of the technical kind.</description>
+    </item>
+    
+    <item>
+      <title>Defining big wins</title>
+      <link>http://localhost:1313/2015/11/defining-big-wins/</link>
+      <pubDate>Mon, 16 Nov 2015 21:31:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/11/defining-big-wins/</guid>
+      <description>Casinos invest a lot of energy selling the dream. One way to do this is by showing off people winning big in your casino. Everyone has seen those corny pictures of people holding human-sized cheques right? It&amp;rsquo;s a solid tactic, since empirical evidence shows that after a store has sold a large-prize winning lottery ticket, the ticket sales increase from 12 to 38% over the following weeks.
+If we look at slot machine play, what exactly defines a big win?</description>
+    </item>
+    
+    <item>
+      <title>Bulk SQL projections with F# and type providers</title>
+      <link>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</link>
+      <pubDate>Sun, 18 Oct 2015 15:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</guid>
+      <description>Early Summer, I had to set up an integration with an external partner. They required of us to daily provide them with a relational dataset stored in SQL Server. Most, if not all of the data was temporal, append-only by nature; think logins, financial transactions..
+Since the data required largely lived in an eventstore on our end, I needed fast bulk projections. Having experimented with a few approaches, I eventually settled on projections in F# taking advantage of type providers.</description>
+    </item>
+    
+    <item>
+      <title>Basic casino math</title>
+      <link>http://localhost:1313/2015/06/basic-casino-math/</link>
+      <pubDate>Mon, 22 Jun 2015 22:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/06/basic-casino-math/</guid>
+      <description>In a previous series of posts, I went over the models used by casinos to spin a wheel (spinning, manipulating the odds, clustering and near misses). I did not yet expand on the basic mathematical models that ensure a casino makes money.
+Let&amp;rsquo;s pretend we are spinning the wheel again. The wheel has 5 pockets, and just one of those is the winning one. Given we will be using an unmodified wheel, you win 1 out of 5 spins.</description>
+    </item>
+    
+    <item>
+      <title>Consumed: Queries and projections (F#)</title>
+      <link>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</link>
+      <pubDate>Sun, 24 May 2015 18:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</guid>
+      <description>This is the third post in my series on porting a node.js application to an F# application.
+So far, I&amp;rsquo;ve looked at parsing command line arguments, handling commands and storing events. Today, I want to project those events into something useful that can be formatted and printed to the console.
+In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically</description>
+    </item>
+    
+    <item>
+      <title>Consumed: Handling commands (F#)</title>
+      <link>http://localhost:1313/2015/05/consumed-handling-commands-f/</link>
+      <pubDate>Sun, 17 May 2015 17:51:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/05/consumed-handling-commands-f/</guid>
+      <description>As I wrote earlier, I&amp;rsquo;ve been working on porting a node.js web application to an F# console application. It&amp;rsquo;s an application I wrote to learn node.js but still use today to keep track of all the things I consume.
+The application is able to consume an item, to remove a consumed item and to query all consumed items.
+In the previous post, I parsed command line arguments into typed commands and queries.</description>
+    </item>
+    
+    <item>
+      <title>Scaling promotion codes</title>
+      <link>http://localhost:1313/2015/03/scaling-promotion-codes/</link>
+      <pubDate>Sun, 15 Mar 2015 18:01:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/03/scaling-promotion-codes/</guid>
+      <description>In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
+In code these requirements translated into a promotion code aggregate which would guard three invariants.</description>
+    </item>
+    
+    <item>
+      <title>Domain Language: The Playthrough Bonus</title>
+      <link>http://localhost:1313/2015/02/domain-language-the-playthrough-bonus/</link>
+      <pubDate>Mon, 23 Feb 2015 19:05:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/02/domain-language-the-playthrough-bonus/</guid>
+      <description>Since online gambling has been regulated in Belgium, basically each eligible license holder has complemented their land based operations with an online counterpart. Being such a small country, everyone wants to secure their market share as soon as possible. The big players have been pouring tons of money in to marketing and advertising, it&amp;rsquo;s everywhere: radio, television, (online) newspapers, bus stops, billboards, sport events, airplane vouchers - you name it. While regulations for land based casinos are very strict and almost overprotective, regulations for online play are much more permissive.</description>
+    </item>
+    
+    <item>
+      <title>Hot aggregate detection using F#</title>
+      <link>http://localhost:1313/2014/11/hot-aggregate-detection-using-f/</link>
+      <pubDate>Sun, 16 Nov 2014 17:20:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/11/hot-aggregate-detection-using-f/</guid>
+      <description>Last week, I wrote about splitting a hot aggregate. Discovering that specific hot aggregate was easy; it would cause transactional failures from time to time.
+Long-lived hot aggregates often are an indication of a missing concept and an opportunity for teasing things apart. Last week, I took one long-lived hot aggregate and pulled smaller short-lived hot aggregates out, identifying two missing concepts.
+Hunting for more hot aggregates, I could visualize event streams and use my eyes to detect bursts of activity, or I could have a little function analyze the event streams for me.</description>
+    </item>
+    
+    <item>
+      <title>Splitting hot aggregates</title>
+      <link>http://localhost:1313/2014/11/splitting-hot-aggregates/</link>
+      <pubDate>Sun, 09 Nov 2014 19:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/11/splitting-hot-aggregates/</guid>
+      <description>When you visit a real casino, the constant busy-ness is overwhelming; players spamming buttons, pulling levers, spinning the wheel, gambling on the outcome of sports games, playing cards, feeding the machine, cashing out, breaking bills, ordering drinks or even buying a souvenir. A single player will easily generate a thousand transactions in one sitting.
+When you look at an online casino, this isn&amp;rsquo;t very different. In the system we inherited, the biggest and busiest aggregate by far is a user&amp;rsquo;s account.</description>
+    </item>
+    
+    <item>
+      <title>Thinking No Computers</title>
+      <link>http://localhost:1313/2014/08/thinking-no-computers/</link>
+      <pubDate>Tue, 19 Aug 2014 20:09:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/08/thinking-no-computers/</guid>
+      <description>The other day I happened to see a curious exchange in one of our businesses. The cashier swapped a torn, but carefully restored by taping it together again, Euro bill for a new one with the manager. Inquisitive, I asked the manager what he was planning to do with that Euro bill. &amp;ldquo;Once a month, I take all those ripped up or badly worn bills to the National Bank, and trade them for new ones.</description>
+    </item>
+    
+    <item>
+      <title>Not about the UI and the database</title>
+      <link>http://localhost:1313/2014/06/not-about-the-ui-and-the-database/</link>
+      <pubDate>Sun, 01 Jun 2014 17:55:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/06/not-about-the-ui-and-the-database/</guid>
+      <description>When you ask an outsider which components an average application consists of, he will most likely be able to identify the user interface and the database. He will also recognize that there is something in between that takes the input from the user interface, applies some logic and persists the result in the database.
+
+In the past, trying to make sense of what goes on the middle, we started</description>
+    </item>
+    
+    <item>
+      <title>NCrafts Eventstorming slides</title>
+      <link>http://localhost:1313/2014/05/ncrafts-eventstorming-slides/</link>
+      <pubDate>Fri, 16 May 2014 15:22:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/ncrafts-eventstorming-slides/</guid>
+      <description>Me and Tom just finished doing our Event storming workshop at NCrafts Paris. Although we made a few mistakes along the way, feedback on the workshop was great. I hope to put something out about what we learned facilitating later this week. People talked, discovered and eventually learned a new domain in under two hours. The domain? Two minutes before the workshop we found a domain expert prepared to talk about his coupon start-up.</description>
+    </item>
+    
+    <item>
+      <title>What if we stored events instead of state? - slides</title>
+      <link>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</link>
+      <pubDate>Mon, 12 May 2014 17:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</guid>
+      <description>I just returned from Croatia, where I got to speak twice at the second edition of The Geek Gathering.
+Being such a young conference, I had no idea what to expect really. Turns out they have a good thing going on; a small, local and very personal approach to conferences. Speakers both local and international, covering topics that serve the community, not their employer.
+Together with Tom, I preached Alberto&amp;lsquo;s Event Storming during a four hour long workshop.</description>
+    </item>
+    
+    <item>
+      <title>Alternatives to Udi&#39;s domain events</title>
+      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</link>
+      <pubDate>Sun, 02 Mar 2014 18:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</guid>
+      <description>Almost four years ago Udi Dahan introduced an elegant technique that allows you to have your domain model dispatch events without injecting a dispatcher into the model - keeping your model focused on the business at hand.
+This works by having a static DomainEvents class which dispatches raised events.
+This customer aggregate raises an event when a customer moves to a new address.
+public class Customer { private readonly string _id; private Address _address; private Name _name; public Customer(string id, Name name, Address address) { Guard.</description>
+    </item>
+    
+    <item>
+      <title>Strategic DDD in a nutshell </title>
+      <link>http://localhost:1313/2014/02/strategic-ddd-in-a-nutshell/</link>
+      <pubDate>Sun, 23 Feb 2014 18:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/02/strategic-ddd-in-a-nutshell/</guid>
+      <description>There are two big parts to Domain Driven Design; strategy and tactics. Strategy helps setting out a high-level grand design, while tactics enable us to execute on the strategy.
+Practicing strategic design, we generally first try to list all of the different parts that make our business a whole; these are sub-domains. When you look at a supermarket chain, you would find sub-domains like real estate management, advertising, suppliers, stock, sales, human resources, finance, security and so on.</description>
+    </item>
+    
+    <item>
+      <title>DDDBE slides on the Ubiquitous Language</title>
+      <link>http://localhost:1313/2014/02/dddbe-slides-on-the-ubiquitous-language/</link>
+      <pubDate>Sun, 16 Feb 2014 18:04:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/02/dddbe-slides-on-the-ubiquitous-language/</guid>
+      <description>Monday, I and four others did a DDDBE session on the strategic side of Domain Driven Design.
+My talk covered the Ubiquitous Language, and can be found on Slideshare or embedded below. I might end up writing down the content of the talk as well - some images are meaningless without words. Evaluating feedback, I think the biggest mistake we made was keeping some things too abstract - curse of knowledge at work.</description>
+    </item>
+    
+    <item>
+      <title>Reading an EventStore stream using JavaScript</title>
+      <link>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</link>
+      <pubDate>Sun, 09 Feb 2014 18:07:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</guid>
+      <description>Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
+An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable.</description>
+    </item>
+    
+    <item>
+      <title>Repositories, where did we go wrong?</title>
+      <link>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</link>
+      <pubDate>Sun, 26 Jan 2014 18:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</guid>
+      <description>In essence, repositories are a simple abstraction over aggregate storage. A repository will insert, update, delete or fetch an aggregate from the underlying persistence mechanism. This abstraction avoids that databases, SQL statements, Object Mappers and the like leak into your domain. Next to that, swapping out repositories for an in-memory version makes testing easier.
+Recently, the use of repositories is being questioned again.
+Why would we wrap Object Mappers in yet another abstraction?</description>
+    </item>
+    
+    <item>
+      <title>Command and event semantics</title>
+      <link>http://localhost:1313/2014/01/command-and-event-semantics/</link>
+      <pubDate>Sun, 05 Jan 2014 18:12:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/01/command-and-event-semantics/</guid>
+      <description>Yesterday, I read this blog post by Michael Feathers. In the post he goes over a pain point he has often found himself struggling with while breaking down a large method; conditional statements. if (alarmEnabled) { var alarm = new Alarm(); ... alarm.Sound(); }  Should we extract the if and the associated block into a new method, or just the content of the block? Is the condition too important to hide in a method?</description>
+    </item>
+    
+    <item>
+      <title>Event storming workshop slides</title>
+      <link>http://localhost:1313/2013/11/event-storming-workshop-slides/</link>
+      <pubDate>Sun, 17 Nov 2013 19:56:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/11/event-storming-workshop-slides/</guid>
+      <description>At Euricom, we quarterly all retreat to headquarters for a day of sharing and learning. This time, I and others organized and facilitated an event storming workshop.
+After a short introduction on event storming participants were initiated to the domain of Cambio CarSharing - which is packed with behaviour. After that, seven groups of five (+ one domain expert) spread out across the office, and spent two slots of twenty minutes modeling the domain - with two extra slots for feedback.</description>
+    </item>
+    
+    <item>
+      <title>An event store with optimistic concurrency</title>
+      <link>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</link>
+      <pubDate>Sun, 10 Nov 2013 18:25:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</guid>
+      <description>Like I mentioned last week - after only five posts on the subject - there still are a great deal of event sourcing nuances left to be discovered.
+My current event store implementation only supports a single user. Due to an aggressive file lock, concurrently accessing an aggregate will throw an exception. Can we allow multiple users to write to and read from an event stream? Also, what can we do about users making changes to the same aggregate; can we somehow detect conflicts and avoid changes to be committed?</description>
+    </item>
+    
+    <item>
+      <title>Event source all the things?</title>
+      <link>http://localhost:1313/2013/11/event-source-all-the-things/</link>
+      <pubDate>Sun, 03 Nov 2013 18:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/11/event-source-all-the-things/</guid>
+      <description>Having covered projections last week, I think I have come full circle in these posts that turned out to be a small preliminary series on event sourcing. Even though there are still a vast amount of nuances to discover, I think I&amp;rsquo;ve captured the gist of it. Even without running an event sourced system in production - I feel as if I somewhat have an idea of what event sourcing can bring to the table.</description>
+    </item>
+    
+    <item>
+      <title>Event projections</title>
+      <link>http://localhost:1313/2013/10/event-projections/</link>
+      <pubDate>Sun, 27 Oct 2013 17:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/event-projections/</guid>
+      <description>In my first two posts on event sourcing, I implemented an event sourced aggregate from scratch. After being able to have an aggregate record and play events, I looked at persisting them in an event store. Logically, the next question is: how do I query my aggregates, how do I get my state out?
+In traditional systems, write and read models are not separated, they are one and the same. Event sourced systems on the other hand have a write model - event streams, and a separate read model.</description>
+    </item>
+    
+    <item>
+      <title>An event store</title>
+      <link>http://localhost:1313/2013/10/an-event-store/</link>
+      <pubDate>Sun, 20 Oct 2013 17:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/an-event-store/</guid>
+      <description>Last week, I implemented an event sourced aggregate from scratch. There I learned, that there isn&amp;rsquo;t much to a naively implemented event sourced aggregate; it should be able to initialize itself from a stream of events, and it should be able to record all the events it raises.
+public interface IEventSourcedAggregate : IAggregate { void Initialize(EventStream eventStream); EventStream RecordedEvents(); }  The question I want to answer today is: how do I persist those event sourced aggregates?</description>
+    </item>
+    
+    <item>
+      <title>An event sourced aggregate</title>
+      <link>http://localhost:1313/2013/10/an-event-sourced-aggregate/</link>
+      <pubDate>Sun, 13 Oct 2013 18:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/an-event-sourced-aggregate/</guid>
+      <description>Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
+In traditional systems, we only persist the current state of an object.
+
+In event sourced systems, we don&amp;rsquo;t persist the current state of an object, but the sequence of events that caused the object to be in the current state.</description>
+    </item>
+    
+    <item>
+      <title>My understanding of event sourcing</title>
+      <link>http://localhost:1313/2013/10/my-understanding-of-event-sourcing/</link>
+      <pubDate>Sun, 06 Oct 2013 18:32:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/my-understanding-of-event-sourcing/</guid>
+      <description>I&amp;rsquo;ve been studying event sourcing from a distance for little over a year now; reading online material and going through some of the excellent OS code. Unfortunately, there would be no value introducing it into my current project - it would even be a terrible idea, so I decided to satisfy my inquisitiveness by consolidating and sharing my understanding of the concept.
+Domain events
+**
+**An event is something that happened in the past.</description>
+    </item>
+    
+    <item>
+      <title>Actor Model in COBOL</title>
+      <link>http://localhost:1313/2013/09/actor-model-in-cobol/</link>
+      <pubDate>Sun, 22 Sep 2013 16:38:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/09/actor-model-in-cobol/</guid>
+      <description>In an Actor system, each Actor acts as a self-contained and autonomous component. An Actor can only communicate with other Actors by exchanging messages - they are not allowed to share state. Messages are handled asynchronously, and are nondeterministic. The location of Actors should be transparent; they can either live on the same machine, or on a distributed system. These properties make the Actor Model a great fit for parallel and distributed computing.</description>
+    </item>
+    
+    <item>
+      <title>Slides from my talk on the Ubiquitous Language</title>
+      <link>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</link>
+      <pubDate>Sun, 15 Sep 2013 16:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</guid>
+      <description>I just returned from our yearly Euricom retreat. This year, all forty of us got to spend four days in the South of Spain. Where we had longish sessions and a few workshops last year, we experimented with shorter talks this year - a la lightning talks, TEDx style.
+This format made it possible for everyone to speak, but also forced the speaker to keep the scope of the talk focused, and to organize the information in a way that attendees can get the gist of it in only twelve minutes.</description>
+    </item>
+    
+    <item>
+      <title>The first DDDBE Modellathon</title>
+      <link>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</link>
+      <pubDate>Fri, 06 Sep 2013 13:24:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</guid>
+      <description>On our way back from DDD Exchange, heavily influenced by yet another immersive DDD experience, we searched for ways to keep the momentum going. Sure, we met up regularly for CQRS beers, but we felt that we could do more, better. That&amp;rsquo;s when we coined the term modellathon, something like a hackathon, but instead of writing code, we would build models.
+Thanks to the effort of Mathias, Stijn and Yves, Tuesday marked the first get-together of the Belgian DDD user group in its official form.</description>
+    </item>
+    
+    <item>
+      <title>Eventual consistent domain events with RavenDB and IronMQ</title>
+      <link>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</link>
+      <pubDate>Thu, 15 Aug 2013 14:03:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</guid>
+      <description>Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&amp;rsquo;m working on right now makes use of domain events. As an example, I&amp;rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.</description>
+    </item>
+    
+    <item>
+      <title>When your commands spell CUD</title>
+      <link>http://localhost:1313/2013/08/when-your-commands-spell-cud/</link>
+      <pubDate>Sun, 04 Aug 2013 19:08:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/when-your-commands-spell-cud/</guid>
+      <description>A good while ago, I blogged on commands (and queries). After exploring various flavors, I eventually settled on this one; commands, handlers and an in-memory bus that serves as a command executor.
+Commands help you in supporting the ubiquitous language by explicitly capturing user intent at the boundaries of your system - think use cases. You can look at them as messages that are being sent to your domain. In this regard, they also serve as a layer over your domain - decoupling the inside from the outside, allowing you to gradually introduce concepts on the inside, without breaking the outside.</description>
+    </item>
+    
+    <item>
+      <title>Multiplayer Enterprise Architect</title>
+      <link>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</link>
+      <pubDate>Sun, 30 Jun 2013 17:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</guid>
+      <description>Hanging around in the pub after DDDX, I ended up talking to Alberto Brandolini. For those who have never met him; he&amp;rsquo;s very much into visualization. You will always see him carrying a drawing pad, with a dash of permanent marker on his cheek, and a few lost sticky notes on his back. I don&amp;rsquo;t know if it was the Italian accent and the strong gestures, or my mildly intoxicated condition, but the idea of visualization as an important tool grew on me even more that evening.</description>
+    </item>
+    
+    <item>
+      <title>Not handling edge cases, making them explicit instead</title>
+      <link>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</link>
+      <pubDate>Sun, 23 Jun 2013 16:49:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</guid>
+      <description>When I wrote about accidental entities earlier, we followed a consultant building software for a car rental company. In the meanwhile, he has finished implementing the registration of new cars. Next on the list is allowing customers to make a booking.
+We managed to get the CEO to set a whole hour apart to walk us over how the booking system should work.
+CEO: &amp;ldquo;I&amp;rsquo;m not sure this meeting is going to take a whole hour though.</description>
+    </item>
+    
+    <item>
+      <title>Accidental entities - what about the UI?</title>
+      <link>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</link>
+      <pubDate>Sun, 02 Jun 2013 16:24:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</guid>
+      <description>This post is a follow-up to my previous blog post &amp;ldquo;[Accidental entities
+ you don&amp;rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&amp;quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&amp;rsquo;s color as a value, and does not care about a color&amp;rsquo;s identity.</description>
+    </item>
+    
+    <item>
+      <title>Accidental entities - you don&#39;t need that identity</title>
+      <link>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</link>
+      <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</guid>
+      <description>An entity is identified by an identifier, while value objects are identified by their value.
+If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&amp;hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
+However, if I were a car paint manufacturer, I would care a great deal about the identity of a color.</description>
+    </item>
+    
+    <item>
+      <title>IDDD Tour notes (2/2)</title>
+      <link>http://localhost:1313/2013/05/iddd-tour-notes-2/2/</link>
+      <pubDate>Sun, 12 May 2013 15:44:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/iddd-tour-notes-2/2/</guid>
+      <description>This is the second and last part of my notes I scribbled down attending the IDDD Tour. The first part was published last week.
+A better model
+ Even if you come up with a better model, the fact that it has been the ubiquitous language of the domain for decades proves that it works for them.
+ This quote bothers me a bit. There definitely is truth to this, but modeling an existing process often presents such a great opportunity to revise and improve it.</description>
+    </item>
+    
+    <item>
+      <title>IDDD Tour notes (1/2)</title>
+      <link>http://localhost:1313/2013/05/iddd-tour-notes-1/2/</link>
+      <pubDate>Sun, 05 May 2013 17:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/iddd-tour-notes-1/2/</guid>
+      <description>Two weeks ago I got to spend four days attending the IDDD Tour by Vaughn Vernon. Although my book queue has only allowed me to shallowly browse the book, I had high hopes for this course. I anticipated a week of getting lectured on DDD with a few practical exercises, but was blown away by the openness and interaction promoted by Vaughn and his associate Alberto Brandolini. A passionate group, engaging workshops, long days and lots of sharing made these few days exceptionally satisfying and inspirational.</description>
+    </item>
+    
+    <item>
+      <title>Designing entities: immutability first</title>
+      <link>http://localhost:1313/2013/04/designing-entities-immutability-first/</link>
+      <pubDate>Sun, 07 Apr 2013 17:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/designing-entities-immutability-first/</guid>
+      <description>The first year I wrote software for a living I spent my days mostly writing forms over data applications; most of my efforts were wasted just trying to make things work using ASP.NET and the Webforms engine. It was only after a year and graduating from the School of Hard Knocks that I learned there is a lot more to building clean and maintainable software than knowing the ins&amp;rsquo; and outs&amp;rsquo; of a proprietary UI technology.</description>
+    </item>
+    
+    <item>
+      <title>Adding the R to CQS: some storage options</title>
+      <link>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</link>
+      <pubDate>Sun, 17 Feb 2013 17:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</guid>
+      <description>I&amp;rsquo;ve been writing quite a bit about CQS (or command and query separation) lately. In my last post on using events, I already hinted towards bringing in the R; command and query responsibility separation.
+With CQS, commands can mutate data, while queries can only read that data. CQRS takes this one step further, and assigns commands and queries each a dedicated model; we now talk of a write side, and a read side.</description>
+    </item>
+    
+    <item>
+      <title>Raising events in commandhandlers</title>
+      <link>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</link>
+      <pubDate>Sun, 03 Feb 2013 17:49:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</guid>
+      <description>I&amp;rsquo;ve explored quite a few options on how to handle commands and queries in the last few posts. I finally settled on this approach. The example used in that post looked like this.
+public class CreateSubscriptionCommandHandler : ICommandHandler&amp;lt;CreateSubscriptionCommand&amp;gt; { private IDocumentSession _session; public CreateSubscriptionCommandHandler(IDocumentSession session) { _session = session; } public void Handle(CreateSubscriptionCommand command) { var subscription = new Documents.Subscription( command.Value, command.Category, command.EmailAddress); _session.Store(subscription); } }  Now imagine I would want to do some extra stuff after creating the subscription; update the sales statistics, append the email address to a mailing list, send out a confirmation email, etc.</description>
+    </item>
+    
+    <item>
+      <title>Organizing commands and queries</title>
+      <link>http://localhost:1313/2013/01/organizing-commands-and-queries/</link>
+      <pubDate>Sun, 27 Jan 2013 18:23:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/organizing-commands-and-queries/</guid>
+      <description>In the last few posts I settled on an architecture for handling commands and queries. A byproduct of the described approach, is that your codebase quickly racks up plentiful little classes; a class to hold data, and a handler to act on that data, for each use case.
+There are a few ways you can go at organizing things.
+Everything in one location
+**
+**When there is very little going on in your application, you can just dump everything in one location without getting hurt too much.</description>
+    </item>
+    
+    <item>
+      <title>Separating command data from logic and sending it on a bus</title>
+      <link>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</link>
+      <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</guid>
+      <description>In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers.</description>
+    </item>
+    
+    <item>
+      <title>Commands with dependencies</title>
+      <link>http://localhost:1313/2012/10/commands-with-dependencies/</link>
+      <pubDate>Mon, 15 Oct 2012 16:57:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/commands-with-dependencies/</guid>
+      <description>Also read: Separating command data from logic and sending it on a bus
+Yesterday I wrote about an architecture which limits abstractions by solely introducing commands and queries. I shared a dead simple variation of this pattern, the advantages I experienced, and how I could still unit test the controller if I wanted to.
+At the end of that post I wondered how I would be able to test commands in isolation; suppose the implementation doesn&amp;rsquo;t use a database this time, but a hairy, too low-level, third party webservice.</description>
+    </item>
+    
+    <item>
+      <title>Value object obsession</title>
+      <link>http://localhost:1313/2012/09/value-object-obsession/</link>
+      <pubDate>Sun, 16 Sep 2012 17:20:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/value-object-obsession/</guid>
+      <description>Primitive obsession is one of the more popular (hyped?) code smells these days.
+ Primitive obsession is the name of a code smell that occurs when we use primitive data types to represent domain ideas. For example, we use a string to describe a message or an integer to represent an amount of money.
+ The antidote is creating a value object instead of using a primitive. A value object is an immutable object which (in its DDD definition) carries no identity, but is compared based on the value of its attributes.</description>
+    </item>
+    
+  </channel>
+</rss>

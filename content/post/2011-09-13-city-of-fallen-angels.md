@@ -29,23 +29,23 @@ generic-built shooting sets.
 
   
 
-[![](../images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0005.png)](../images/2011-09-13-city-of-fallen-angels-LosAngeles_0005.png)
+[![](/post/images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0005.png)](/post/images/2011-09-13-city-of-fallen-angels-LosAngeles_0005.png)
 
   
 
-[![](../images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0205.png)](../images/2011-09-13-city-of-fallen-angels-LosAngeles_0205.png)
+[![](/post/images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0205.png)](/post/images/2011-09-13-city-of-fallen-angels-LosAngeles_0205.png)
 
   
 
-[![](../images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0138.png)](../images/2011-09-13-city-of-fallen-angels-LosAngeles_0138.png)
+[![](/post/images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0138.png)](/post/images/2011-09-13-city-of-fallen-angels-LosAngeles_0138.png)
 
   
 
-[![](../images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0072.png)](../images/2011-09-13-city-of-fallen-angels-LosAngeles_0072.png)
+[![](/post/images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0072.png)](/post/images/2011-09-13-city-of-fallen-angels-LosAngeles_0072.png)
 
   
 
-[![](../images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0048.png)](../images/2011-09-13-city-of-fallen-angels-LosAngeles_0048.png)
+[![](/post/images/thumbnails/2011-09-13-city-of-fallen-angels-LosAngeles_0048.png)](/post/images/2011-09-13-city-of-fallen-angels-LosAngeles_0048.png)
 
   
 

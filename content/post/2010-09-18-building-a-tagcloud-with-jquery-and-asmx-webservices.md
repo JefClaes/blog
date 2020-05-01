@@ -236,7 +236,7 @@ page.
   
 So far this looks something like this.  
   
-[![](../images/thumbnails/2010-09-18-building-a-tagcloud-with-jquery-and-asmx-webservices-noCss.PNG)](../images/2010-09-18-building-a-tagcloud-with-jquery-and-asmx-webservices-noCss.PNG)  
+[![](/post/images/thumbnails/2010-09-18-building-a-tagcloud-with-jquery-and-asmx-webservices-noCss.PNG)](/post/images/2010-09-18-building-a-tagcloud-with-jquery-and-asmx-webservices-noCss.PNG)  
   
 I used following css to make the unordered list look like a tagcloud.  
   
@@ -266,7 +266,7 @@ their heaviness.
   
 The final result looks like this.  
   
-[![](../images/thumbnails/2010-09-18-building-a-tagcloud-with-jquery-and-asmx-webservices-tagCloudwithCss.PNG)](../images/2010-09-18-building-a-tagcloud-with-jquery-and-asmx-webservices-tagCloudwithCss.PNG)  
+[![](/post/images/thumbnails/2010-09-18-building-a-tagcloud-with-jquery-and-asmx-webservices-tagCloudwithCss.PNG)](/post/images/2010-09-18-building-a-tagcloud-with-jquery-and-asmx-webservices-tagCloudwithCss.PNG)  
   
 Different ways of marking up a tagcloud can be found in [this
 article](http://24ways.org/2006/marking-up-a-tag-cloud).  

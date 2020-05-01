@@ -16,12 +16,12 @@ number field.
 Unable to find the direct email address of the hotel, I opened the
 developer tools and had a look at the validation script.  
   
-[![](../images/thumbnails/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B7.png)](../images/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B7.png)  
+[![](/post/images/thumbnails/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B7.png)](/post/images/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B7.png)  
 Instead of even trying to understand the regular expression, I just
 redefined the validation function using the console and retried sending
 the message.  
   
-[![](../images/thumbnails/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B8.png)](../images/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B8.png)  
+[![](/post/images/thumbnails/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B8.png)](/post/images/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B8.png)  
 Not so suprisingly, judging by the cheesiness of the hotel's website,
 our message was sent successfully.  
   

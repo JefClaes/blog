@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>javascript on Jef Claes</title>
+    <link>http://localhost:1313/tags/javascript/</link>
+    <description>Recent content in javascript on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 May 2014 17:41:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>What if we stored events instead of state? - slides</title>
+      <link>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</link>
+      <pubDate>Mon, 12 May 2014 17:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</guid>
+      <description>I just returned from Croatia, where I got to speak twice at the second edition of The Geek Gathering.
+Being such a young conference, I had no idea what to expect really. Turns out they have a good thing going on; a small, local and very personal approach to conferences. Speakers both local and international, covering topics that serve the community, not their employer.
+Together with Tom, I preached Alberto&amp;lsquo;s Event Storming during a four hour long workshop.</description>
+    </item>
+    
+    <item>
+      <title>Glueing the browser and POS devices together </title>
+      <link>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</link>
+      <pubDate>Sun, 04 May 2014 18:23:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</guid>
+      <description>I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
+Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&amp;rsquo;s asynchronous programming model and its incredible rich ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Rebinding a knockout view model</title>
+      <link>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</link>
+      <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</guid>
+      <description>As you might have noticed reading my last two posts, I have been doing a bit of front-end work using knockout.js. Here is something that had me scratching my head for a little while..
+In one of our pages we&amp;rsquo;re subscribing to a specific event. As soon as that event arrives, we need to reinitialize the model that is bound to our container element. Going through snippets earlier, I remembered seeing the cleanNode function being used a few times - which I thought would remove all knockout data and event handlers from an element.</description>
+    </item>
+    
+    <item>
+      <title>Sending commands from a knockout.js view model</title>
+      <link>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</link>
+      <pubDate>Sun, 23 Mar 2014 18:31:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</guid>
+      <description>While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&amp;rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&amp;rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&amp;rsquo;ll end up with a lot less.</description>
+    </item>
+    
+    <item>
+      <title>Building a live dashboard with some knockout</title>
+      <link>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</link>
+      <pubDate>Sun, 16 Mar 2014 21:23:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</guid>
+      <description>Last week, we added a dashboard to our back office application that shows some actionable data about what&amp;rsquo;s going on in our system. Although we have infrastructure in place to push changes to the browser, it seemed more reasonable to have the browser fetch fresh data every few minutes.
+We split the dashboard up in a few functional cohesive widgets. On the server, we built a view-optimized read model for each widget.</description>
+    </item>
+    
+    <item>
+      <title>Reading an EventStore stream using JavaScript</title>
+      <link>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</link>
+      <pubDate>Sun, 09 Feb 2014 18:07:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</guid>
+      <description>Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
+An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable.</description>
+    </item>
+    
+    <item>
+      <title>Angular.js and IE8 caching</title>
+      <link>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</link>
+      <pubDate>Sun, 09 Jun 2013 16:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</guid>
+      <description>Older Internet Explorer versions are notorious for agressively caching AJAX requests. In this post, you&amp;rsquo;ll find two techniques that combat this behaviour.
+The first option is to have your server explicitly set the caching headers.
+Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidUntilExpires(false); Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches); Response.Cache.SetCacheability(HttpCacheability.NoCache); Response.Cache.SetNoStore();  Since you don&amp;rsquo;t necessarily own the server, or clients might already have cached some requests, you can trick the browser into thinking each request is a fresh one by making each url unique.</description>
+    </item>
+    
+    <item>
+      <title>Validating composite models with knockout validation</title>
+      <link>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</link>
+      <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</guid>
+      <description>When you use knockout validation to extend observables with validation rules, it will add a few functions to these observables - the most important ones being; error and isValid. You can use these functions to verify if any of the validation rules were violated, and to extract an error message.
+To extract all of the error messages out of a composite model, you can use a grouping function.
+function BookingModel() { var self = this; self.</description>
+    </item>
+    
+    <item>
+      <title>Customizing a knockout validation message</title>
+      <link>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</link>
+      <pubDate>Sun, 28 Apr 2013 18:56:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</guid>
+      <description>Knockout validation is a plugin that allows you to extend observables with validation. If you&amp;rsquo;re familiar with jQuery validation, you will notice that most provided validation rules are very similar.
+One of the validation rules available out-of-the-box is pattern validation. By default the error message for violating this rule doesn&amp;rsquo;t mention the expected pattern. And in general, showing the expected pattern probably isn&amp;rsquo;t a good idea since your users will have no idea what you&amp;rsquo;re talking about.</description>
+    </item>
+    
+    <item>
+      <title>Released: My Antwerp Open Data submissions</title>
+      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
+      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
+      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
+    </item>
+    
+    <item>
+      <title>Show More pagination with angular.js</title>
+      <link>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</link>
+      <pubDate>Wed, 12 Dec 2012 19:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</guid>
+      <description>I built my first application with angular.js over these last few weeks (not during business hours), and although I still have lots and lots to discover and learn, I think I somewhat grasp the basics.
+In the application I built, I had to implement paging because rendering all the items at once was too slow on mobile devices (on my Windows Phone 7 anyways). The paging variant I decided on was the &amp;lsquo;Show More&amp;rsquo; technique.</description>
+    </item>
+    
+    <item>
+      <title>Released: Kill long meetings</title>
+      <link>http://localhost:1313/2012/11/released-kill-long-meetings/</link>
+      <pubDate>Sun, 25 Nov 2012 17:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/released-kill-long-meetings/</guid>
+      <description>A lot has already been said and written about meetings, and some have carried the message above par; &amp;lsquo;Meetings: where work goes to die&#39;. Today, I&amp;rsquo;m not going to foul the internet with another rant, but I&amp;rsquo;d like to show you a small application built over the last few weeks after work.
+I regularly find myself building small things as an antitoxin to the regular periods of not writing and shipping code at work.</description>
+    </item>
+    
+    <item>
+      <title>My InfoQ article on HTML5 offline web applications</title>
+      <link>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</link>
+      <pubDate>Wed, 02 May 2012 20:09:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</guid>
+      <description>After writing a few things on HTML5 offline web applications earlier this year, I got contacted by InfoQ to write an in-detail article on the subject for them. I hesitated at first, because I was afraid that it would feel too much like work, taking the fun out of my writing. Turns out it wasn&amp;rsquo;t like that at all. The guys at infoQ were really relaxed to work with, asking interesting questions and giving useful feedback, without forcing me into a certain direction.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing the offline application cache update progress</title>
+      <link>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</link>
+      <pubDate>Wed, 11 Apr 2012 16:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</guid>
+      <description>I wrote about using the HTML5 application cache earlier, mostly focusing on generating and serving the manifest file using ASP.NET MVC. I also bitched about how not one browser I know of gives an indication of the application cache update progress. Today I wanted to write something about how you can visualize the application cache update progress yourself.
+The applicationCache API has several useful and rather straightforward events we can handle to inform the user of the update progress.</description>
+    </item>
+    
+    <item>
+      <title>Check for local file browsing with JavaScript</title>
+      <link>http://localhost:1313/2012/04/check-for-local-file-browsing-with-javascript/</link>
+      <pubDate>Mon, 02 Apr 2012 15:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/check-for-local-file-browsing-with-javascript/</guid>
+      <description>Because I do most of my research while commuting by train, I often pull entire websites offline using httrack. While browsing the jQuery Mobile documentation locally this morning, I stumbled upon following gem.
+
+I was curious to see how they determine whether a page is browsed locally or not. Looking into the source, I was a bit dissapointed to find nothing but plain common sense. The trick is comparing the protocol of the current location with known local protocols.</description>
+    </item>
+    
+    <item>
+      <title>Daydreaming about jQuery Mobile and the WebAPI</title>
+      <link>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</link>
+      <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</guid>
+      <description>I recently blogged about programming for the future of mobile with jQuery Mobile and the WebAPI. You probably heard that jQuery Mobile 1.0 was released earlier this week. Although it will take a while before we will see some actual results from the WebAPI initiative, that shouldn&amp;rsquo;t keep us from letting our minds play with things that might be possible one day using the WebAPI.
+The thoughts in this post were provoked by an interesting comment Kristof Claes left on my previous post.</description>
+    </item>
+    
+    <item>
+      <title>Programming for the future of mobile</title>
+      <link>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</link>
+      <pubDate>Wed, 09 Nov 2011 22:27:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</guid>
+      <description>I have been working on something small on the side lately. I hardly have anything to show for it though, most of it is still being shaped in my head.
+Anyhow, a very important part of the front-end is built using jQuery mobile. Although the framework hasn&amp;rsquo;t been released - release candidates are available though -, it&amp;rsquo;s something you should start looking into today. Why? Because the browser is the future of mobile applications.</description>
+    </item>
+    
+    <item>
+      <title>Data validation, take it seriously</title>
+      <link>http://localhost:1313/2011/08/data-validation-take-it-seriously/</link>
+      <pubDate>Sun, 28 Aug 2011 16:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/08/data-validation-take-it-seriously/</guid>
+      <description>We just heard that we might be stuck in Washington DC for a few hours due to a defect of our plane&amp;rsquo;s backup generator. We decided to notify our hotel we might be running late.
+Surfing to the contact page on their site, we found out that we couldn&amp;rsquo;t enter our European mobile phonenumber in the required (!) telephone number field.
+Unable to find the direct email address of the hotel, I opened the developer tools and had a look at the validation script.</description>
+    </item>
+    
+    <item>
+      <title>Merge sorting in JavaScript</title>
+      <link>http://localhost:1313/2011/07/merge-sorting-in-javascript/</link>
+      <pubDate>Tue, 26 Jul 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/merge-sorting-in-javascript/</guid>
+      <description>The latest addition to my data structures and algorithms in JavaScript is the merge sort algorithm.
+There are four main steps in the merge sort algorithm (from Wikipedia):
+ If the list is of length 0 or 1, then it is already sorted. Otherwise: Divide the unsorted list into two sublists of about half the size. Sort each sublist recursively by re-applying the merge sort. Merge the two sublists back into one sorted list.</description>
+    </item>
+    
+    <item>
+      <title>My js data structures and algorithms now on GitHub</title>
+      <link>http://localhost:1313/2011/07/my-js-data-structures-and-algorithms-now-on-github/</link>
+      <pubDate>Sat, 23 Jul 2011 15:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/my-js-data-structures-and-algorithms-now-on-github/</guid>
+      <description>If you have been reading my blog lately, you know that I&amp;rsquo;m implementing some data structures and algorithms in JavaScript. So far, I have blogged about simple sorting algorithms, the stack data structure and the queue data structure. This week I have also implemented a doubly linked list. I started writing a post about that last implementation, but I didn&amp;rsquo;t like where it was going, so instead of writing about it, I have pushed everything to a public Git repository.</description>
+    </item>
+    
+    <item>
+      <title>Recursively spawning Web Workers</title>
+      <link>http://localhost:1313/2011/07/recursively-spawning-web-workers/</link>
+      <pubDate>Thu, 21 Jul 2011 15:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/recursively-spawning-web-workers/</guid>
+      <description>I like to think of HTML5 Web Workers simply as &amp;lsquo;threading for the Web&amp;rsquo;.
+Wikipedia describes it a bit more in detail.
+ Web Workers define an API for running scripts, basically JavaScript, in the background independently of any user interface scripts. This allows for long-running scripts that are not interrupted by scripts that respond to clicks or other user interactions, and allows long tasks to be executed without yielding to keep the page responsive.</description>
+    </item>
+    
+    <item>
+      <title>Overoptimizing my JavaScript stack implementation for fun</title>
+      <link>http://localhost:1313/2011/07/overoptimizing-my-javascript-stack-implementation-for-fun/</link>
+      <pubDate>Mon, 18 Jul 2011 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/overoptimizing-my-javascript-stack-implementation-for-fun/</guid>
+      <description>Davy Brion made a comment on my JavaScript stack/queue implementation on Twitter last night: Any reason why you don&amp;rsquo;t immediately set elements to [] at declaration in your stack/queue example?
+var elements; this.push = function(element) { if (typeof(elements) === &#39;undefined&#39;) { elements = []; } elements.push(element); }  Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&amp;rsquo;t push elements.</description>
+    </item>
+    
+    <item>
+      <title>Stacks and queues in JavaScript</title>
+      <link>http://localhost:1313/2011/07/stacks-and-queues-in-javascript/</link>
+      <pubDate>Tue, 12 Jul 2011 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/stacks-and-queues-in-javascript/</guid>
+      <description>The second assignment in my &amp;lsquo;implementing data structures and algorithms in JavaScript&amp;rsquo; quest consists of two popular data structures: the stack and the queue.
+The stack
+ A stack is a last in, first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only three fundamental operations: push, pop and stack top.
+ Implementing this turned out to be pretty easy.</description>
+    </item>
+    
+    <item>
+      <title>Simple sorting in JavaScript</title>
+      <link>http://localhost:1313/2011/07/simple-sorting-in-javascript/</link>
+      <pubDate>Thu, 07 Jul 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/simple-sorting-in-javascript/</guid>
+      <description>About three years ago I graduated and got my degree in Applied Computer Science. Although it says Computer Science, we hardly ever focused on data structures and algorithms. Obviously, I now see that as a shortcoming. So I plan to make up for that by reading up on some of the basics. While at it, I might be blogging on some of the topics.
+I am going to start by implementing some of the simple sorting algorithms in JavaScript.</description>
+    </item>
+    
+    <item>
+      <title>My first jQuery plugin: jRoll</title>
+      <link>http://localhost:1313/2011/05/my-first-jquery-plugin-jroll/</link>
+      <pubDate>Sat, 14 May 2011 17:45:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/05/my-first-jquery-plugin-jroll/</guid>
+      <description>With transitioning to ASP.NET MVC, I see our JavaScript codebase increasing exponentially. And this is a big win, unless we fail to keep that codebase maintainable. We mainly rely on jQuery to do our DOM manipulations, so it&amp;rsquo;s only logical for us to abstract those manipulations into reusable jQuery plugins.
+So today, I wrote my first jQuery plugin and named it jRoll.
+jRoll
+jRoll is a plugin that finds all the (external) links in a jQuery object, and replaces the value of the href attribute with a value you specified.</description>
+    </item>
+    
+    <item>
+      <title>Video, slides and source from my WebSockets talk</title>
+      <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
+      <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</guid>
+      <description>Yesterday, I gave a talk on WebSockets at HTML5 WebCamps Belgium.
+I got a lot of positive feedback on Twitter, which makes me a very happy panda!
+
+You can already find the video of my session on Channel9.
+The slides can be found on SlideShare.
+If you want to play with the demo yourself, you can download the source:
+ Make sure your firewall allows incoming TCP traffic on port 4502 Deploy the client access policy file to IIS Also host the Demo.</description>
+    </item>
+    
+    <item>
+      <title>Using JSON serialization outside a web context</title>
+      <link>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</link>
+      <pubDate>Sun, 06 Feb 2011 16:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</guid>
+      <description>You usually are in a web context if you are working with JSON, where JSON serialization almost always is encapsulated by the framework. You might accidentally come across scenarios where you want to serialize and deserialize JSON in a non-web context though.
+Turns out this is fairly trivial since .NET 3.5. .NET 3.5 added the JavaScriptSerializer class. You can find this class in the System.Web.Script.Serialization namespace. To access this namespace you need to reference the System.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: Installing the Microsoft WebSockets prototype</title>
+      <link>http://localhost:1313/2011/01/html5-installing-the-microsoft-websockets-prototype/</link>
+      <pubDate>Sat, 08 Jan 2011 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/01/html5-installing-the-microsoft-websockets-prototype/</guid>
+      <description>In December Microsoft launched the HTML5 Labs for experimental HTML5 technologies still under development. With the launch, they also released a WebSockets prototype.
+In this post I will lead you through the process of installing the WebSockets prototype on your machine. By the end of this tutorial you should have a working chat web application sample.
+Download
+First you need to download and run the WebSockets prototype installer.
+This package installs the binaries and samples in the %ProgramFiles%\Microsoft SDKs\WCF WebSockets\10.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: Exception handling with the Geolocation API</title>
+      <link>http://localhost:1313/2010/12/html5-exception-handling-with-the-geolocation-api/</link>
+      <pubDate>Sun, 26 Dec 2010 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-exception-handling-with-the-geolocation-api/</guid>
+      <description>In my previous post on the Geolocation API I passed in a PositionErrorCallback to the geolocation.getCurrentPosition() method. When I received this callback I displayed a generic message informing the user something went wrong. In real-world scenarios you probably want the message to be more specific. You might also want to call a specific fallback method depending on what went wrong.
+This is where the PositionError argument of the PositionErrorCallback comes in handy.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: The Geolocation API is scary (good)</title>
+      <link>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</link>
+      <pubDate>Sun, 19 Dec 2010 17:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</guid>
+      <description>I read about the HTML5 Geolocation API in the Pro HTML5 Programming book a while ago, and decided to play with it on this lazy Sunday.
+Using the Geolocation API to make a one-shot position request is very straight-forward. Get a reference to the navigator.geolocation object and call the getCurrentPosition() method, passing in at least a PositionCallback. In this example I&amp;rsquo;m also passing in a PositionErrorCallback. In the PositionCallback you can examine the properties of the position object.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 selectors and jQuery</title>
+      <link>http://localhost:1313/2010/12/html5-selectors-and-jquery/</link>
+      <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-selectors-and-jquery/</guid>
+      <description>In my first post on the HTML5 javascript Selector API I wondered how the new methods querySelector() and querySelectorAll() would influence jQuery.
+At the time, I couldn&amp;rsquo;t find any information on the subject, but yesterday I found out that jQuery has been taking advantage of these new methods since version 1.4.3.
+From the release notes..
+ The performance of nearly all the major traversal methods has been drastically improved. .closest(), .</description>
+    </item>
+    
+    <item>
+      <title>More accurate javascript execution time measurement with the msPerformance API</title>
+      <link>http://localhost:1313/2010/12/more-accurate-javascript-execution-time-measurement-with-the-msperformance-api/</link>
+      <pubDate>Fri, 10 Dec 2010 20:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/more-accurate-javascript-execution-time-measurement-with-the-msperformance-api/</guid>
+      <description>A cool feature of Internet Explorer 9 is the msPerformance API. This API helps you to accurately measure the performance of a webpage. A lot of developers have built their own performance measurement constructs over the years, based on the Date function, but the results of these constructs can be way off!
+John Resig (jQuery inventor) has an in detail blogpost where he discovers where custom javascript execution time measurement goes wrong.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: Drawing images to the canvas gotcha</title>
+      <link>http://localhost:1313/2010/12/html5-drawing-images-to-the-canvas-gotcha/</link>
+      <pubDate>Sun, 05 Dec 2010 19:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-drawing-images-to-the-canvas-gotcha/</guid>
+      <description>While I was playing with the Canvas API I came across a weird issue: I was trying to draw an image to the canvas, but the image failed to render very often.
+Have a look at the source. Do you spot the problem?
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;HTML5: Canvas&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.addEventListener(&amp;quot;load&amp;quot;, draw, true); function draw(){ var canvas = document.getElementById(&#39;canvas&#39;); var context = canvas.getContext(&#39;2d&#39;); var img = new Image(); img.src = &amp;quot;http://3.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: More on selectors</title>
+      <link>http://localhost:1313/2010/12/html5-more-on-selectors/</link>
+      <pubDate>Sun, 05 Dec 2010 13:15:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-more-on-selectors/</guid>
+      <description>Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&amp;rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&amp;rsquo;s impossible to show you all of the selectors usages in just one post, that&amp;rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: New in the javascript Selector API</title>
+      <link>http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/</link>
+      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/</guid>
+      <description>Because I finally got the MCTS 70-536 certification out of the way, I can start experimenting with some fun stuff again. One of the things on the top of my list is HTML5. I started reading the book Pro HTML5 Programming, so expect more posts on HTML5 in the near future.
+In this post I will show you two new methods in the javascript Selector API which are extremely useful to find elements.</description>
+    </item>
+    
+    <item>
+      <title>Building a tagcloud with jQuery and ASMX Webservices</title>
+      <link>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</link>
+      <pubDate>Sat, 18 Sep 2010 18:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</guid>
+      <description>Generating tagclouds is nothing new. People have been generating tagclouds server-side since the seventies. Lately more and more tagclouds are being generated client-side.
+There is nothing wrong with generating tagclouds server-side. Telerik has a great tagcloud server control. Generating tagclouds server-side can bring some overhead though, so depending on the scenario and the requirements you might decide to do it client-side. There are a ton of fancy ready-to-use jQuery tagcloud plug-ins out there.</description>
+    </item>
+    
+    <item>
+      <title>The state of the client-side ASP.NET Ajax 4.0 framework</title>
+      <link>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</link>
+      <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</guid>
+      <description>The people who follow my blog might remember the ASP.NET Ajax 4.0 series. In these series I showed some of the core features of the ASP.NET Ajax 4.0 beta javascript library.
+In January Microsoft told us that they would ship the ASP.NET Ajax 4.0 library as a part of the Microsoft Ajax framework, together with the release of ASP.NET 4.0. A few days ago I was ready to dig in the library a little deeper, but I found out that most of the documentation and resources I used to consult, had moved or had disappeared.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Object-Oriented JavaScript</title>
+      <link>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</link>
+      <pubDate>Mon, 22 Feb 2010 19:47:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</guid>
+      <description>Although I&amp;rsquo;ve made my feet wet with various JavaScript frameworks, I am not a JavaScript hero at all. This might be one of the disadvantages of being a WebForms developer and having great toolkits at hand like the AJAX Control Toolkit and Telerik RADControls.
+Because you really can&amp;rsquo;t call yourself a webdeveloper without having some understanding of JavaScript I decided to order Object-Oriented Javascript by Stoyan Stefanov.
+This book really handles the language itself.</description>
+    </item>
+    
+    <item>
+      <title>Why the javascript beforeunload event is incomplete</title>
+      <link>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</link>
+      <pubDate>Sat, 12 Sep 2009 21:13:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</guid>
+      <description>The onbeforeunload event fires when a page is being unloaded.
+In the intranet webapplications world customers pretty often ask to show a warning when a user leaves a page (by closing the browser, closing a tab, clicking a link,..). This feature is specifically very interesting for data-input-driven webforms where one wrong click can make ten minutes of work undone.
+Last week I had to implement this feature in a huge webform which is causing lots of postbacks (firing the onbeforeunload event).</description>
+    </item>
+    
+  </channel>
+</rss>

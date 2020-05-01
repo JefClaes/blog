@@ -10,7 +10,7 @@ department, our developer team.. to India. I asked [Mudassar Ahmed
 Khan](http://mudassarkhan.wordpress.com/) a few questions about how it's
 like being a developer in India.  
   
-[![](../images/thumbnails/2009-02-10-being-a-developer-in-india-outsourcing2.gif)](../images/2009-02-10-being-a-developer-in-india-outsourcing2.gif)  
+[![](/post/images/thumbnails/2009-02-10-being-a-developer-in-india-outsourcing2.gif)](/post/images/2009-02-10-being-a-developer-in-india-outsourcing2.gif)  
   
 <span style="font-weight: bold;">How is it like to be a developer in
 India?</span>  

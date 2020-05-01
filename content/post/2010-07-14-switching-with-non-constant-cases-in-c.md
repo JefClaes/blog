@@ -113,7 +113,7 @@ I think this option is a lot better than the previous one:
 
   
   
-[![](../images/thumbnails/2010-07-14-switching-with-non-constant-cases-in-c-argumentExc.png)](../images/2010-07-14-switching-with-non-constant-cases-in-c-argumentExc.png)  
+[![](/post/images/thumbnails/2010-07-14-switching-with-non-constant-cases-in-c-argumentExc.png)](/post/images/2010-07-14-switching-with-non-constant-cases-in-c-argumentExc.png)  
   
 <span style="font-weight:bold;">More options?</span>  
   

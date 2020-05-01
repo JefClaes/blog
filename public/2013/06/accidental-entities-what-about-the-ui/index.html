@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Accidental entities - what about the UI? - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Accidental entities - what about the UI?">
+<meta itemprop="description" content="This post is a follow-up to my previous blog post &ldquo;[Accidental entities
+ you don&rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&rsquo;s color as a value, and does not care about a color&rsquo;s identity.">
+<meta itemprop="datePublished" content="2013-06-02T16:24:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-06-02T16:24:00&#43;02:00" />
+<meta itemprop="wordCount" content="833">
+
+
+
+<meta itemprop="keywords" content="Architecture,DDD,Ramblings," /><meta property="og:title" content="Accidental entities - what about the UI?" />
+<meta property="og:description" content="This post is a follow-up to my previous blog post &ldquo;[Accidental entities
+ you don&rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&rsquo;s color as a value, and does not care about a color&rsquo;s identity." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/" />
+<meta property="article:published_time" content="2013-06-02T16:24:00+02:00" />
+<meta property="article:modified_time" content="2013-06-02T16:24:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Accidental entities - what about the UI?"/>
+<meta name="twitter:description" content="This post is a follow-up to my previous blog post &ldquo;[Accidental entities
+ you don&rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&rsquo;s color as a value, and does not care about a color&rsquo;s identity."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">02</span>
+							<span class="rest">Jun 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Accidental entities - what about the UI?</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>This post is a follow-up to my previous blog post &ldquo;[Accidental entities</p>
+<ul>
+<li>you don&rsquo;t need that
+identity](<a href="http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)%22">http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&quot;</a>.</li>
+</ul>
+<p>In that post, we followed a consultant building an application for a car
+rental. One of the requirements was that the CEO could manage a
+collection of available colors. Although the tools at our disposal - a
+relational database and NHibernate - wanted to trick us into making a
+car reference one of these available colors by its identifier, we found
+out that the CEO really thinks of a car&rsquo;s color as a value, and does not
+care about a color&rsquo;s identity. This means that we didn&rsquo;t make a car
+reference an available color, but we copied its value instead. This
+allows the CEO to remove available colors, without it having an impact
+on cars that already came in that color.</p>
+<p>The solution we&rsquo;re building contains a public facing web application
+that allows customers to make reservations online, and a backoffice web
+application - hosted on the intranet, that employees will use to manage
+the cars.</p>
+<p>When a new car arrives at the car rental, a backoffice user will
+register it. Once the car is registered - and in use, backoffice users
+should still be able to change some of its characteristics; brand,
+model, color, engine size, etc&hellip;</p>
+<p>Instinct tells us to add a page that enables editing all the car&rsquo;s
+properties. Some of these properties are free text, some radio buttons,
+but for the car color, it&rsquo;s a dropdownlist.<br>
+Halfway through implementing this new functionality, we notice that
+changing the color gets us into trouble. We populate the dropdownlist
+with all available colors, but when we want to bind the car&rsquo;s current
+color as the selected value, it&rsquo;s not in the list of available colors.
+The CEO has removed the car&rsquo;s current color out of the list of available
+colors.<br>
+After a bit of tinkering, we come up with a workaround that adds the
+car&rsquo;s current color to the available colors with a default value of -1.
+This allows us to determine if the color needs to be changed.</p>
+<p><a href="/post/images/2013-06-02-accidental-entities-what-about-the-ui-EditCar.PNG"><img src="/post/images/thumbnails/2013-06-02-accidental-entities-what-about-the-ui-EditCar.PNG" alt=""></a></p>
+<p>Relational databases, RAD tools, scaffolding and anemic models have
+poisoned our minds, making us throw up the database schema all over the
+UI. We can do a lot more though.<br>
+If we take a step back, and make an effort to discover what changing
+these properties really means to our business users, we might come up
+with a totally different user experience.</p>
+<p>We leave the UI as is, and ping the CEO on Lync, inviting her for a
+coffee break.</p>
+<p>After a bit of obligatory small talk, we start asking questions about
+what we&rsquo;re really after.</p>
+<p><strong>Us</strong>: &ldquo;Can all of the car&rsquo;s characteristics change after the initial
+registration?&rdquo;<br>
+<strong>CEO</strong>: &ldquo;No, have you ever seen a car change brand, or model through
+its lifecycle?&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;I can imagine the engine size also belongs to the list of
+characteristics that can&rsquo;t be changed after registration?&rdquo;<br>
+<strong>CEO</strong>: &ldquo;Oh, it can! We sometimes have the engine of our sports models
+tuned to have an edge over the competition. Guys are crazy for
+horsepower.&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;What about changing the color?&rdquo;<br>
+<strong>CEO</strong>: &ldquo;If a car has some nasty scratches on it, we sometimes get it
+repainted. If we do get it repainted, it&rsquo;s always in one of the colors
+available at that moment.&rdquo;</p>
+<p>We return to our desk with a far better understanding of what it really
+means to change each of the car&rsquo;s characteristics. We discovered a whole
+new language, with some important constraints. Neither brands nor models
+change after registration. Engines get tuned, increasing their engine
+size. A car&rsquo;s color doesn&rsquo;t change; a car gets repainted - always in one
+of the available colors.</p>
+<p>After iterating on this feedback, we&rsquo;re far more satisfied with the
+model; it captures the language far better. Our backend implementation
+is not the most important part of the solution though; it&rsquo;s useful to
+invest in improving the UI.</p>
+<p>After some experimentation we come up with a more <a href="http://cqrs.wordpress.com/documents/task-based-ui/">task-based
+UI</a>, something that
+looks like this.</p>
+<p><a href="/post/images/2013-06-02-accidental-entities-what-about-the-ui-EditCarExplicit.PNG"><img src="/post/images/thumbnails/2013-06-02-accidental-entities-what-about-the-ui-EditCarExplicit.PNG" alt=""></a></p>
+<p>The UI now does a far better job supporting the language and
+communicating its constraints. And with that, we also solved the
+original problem that motivated us to ask these extra questions. There
+is no value in having the current color in the dropdownlist; we are
+better off making the process of having a car repainted explicit.</p>
+<p>When we make an effort to really capture the language, this will be
+reflected in our model, but also in the UI. This can add tremendous
+value. It&rsquo;s not only about making the user experience more intuitive,
+but about making a language consistent for thousands of users,
+supporting processes and communication throughout the company.</p>
+<p>As a disclaimer; sometimes it&rsquo;s fine to just throw up your database.
+There&rsquo;s a place and time for anything. But don&rsquo;t let CRUD be the only
+tool in your toolbox; you can do much more. Make sure to invest this
+extra effort where it matters, where it makes a difference.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/architecture">Architecture</a></li>
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+							<li><a href="/tags/ramblings">Ramblings</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AJAX on Jef Claes</title>
+    <link>http://localhost:1313/tags/ajax/</link>
+    <description>Recent content in AJAX on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Mar 2014 18:31:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sending commands from a knockout.js view model</title>
+      <link>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</link>
+      <pubDate>Sun, 23 Mar 2014 18:31:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</guid>
+      <description>While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&amp;rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&amp;rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&amp;rsquo;ll end up with a lot less.</description>
+    </item>
+    
+    <item>
+      <title>Angular.js and IE8 caching</title>
+      <link>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</link>
+      <pubDate>Sun, 09 Jun 2013 16:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</guid>
+      <description>Older Internet Explorer versions are notorious for agressively caching AJAX requests. In this post, you&amp;rsquo;ll find two techniques that combat this behaviour.
+The first option is to have your server explicitly set the caching headers.
+Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidUntilExpires(false); Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches); Response.Cache.SetCacheability(HttpCacheability.NoCache); Response.Cache.SetNoStore();  Since you don&amp;rsquo;t necessarily own the server, or clients might already have cached some requests, you can trick the browser into thinking each request is a fresh one by making each url unique.</description>
+    </item>
+    
+    <item>
+      <title>The state of the client-side ASP.NET Ajax 4.0 framework</title>
+      <link>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</link>
+      <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</guid>
+      <description>The people who follow my blog might remember the ASP.NET Ajax 4.0 series. In these series I showed some of the core features of the ASP.NET Ajax 4.0 beta javascript library.
+In January Microsoft told us that they would ship the ASP.NET Ajax 4.0 library as a part of the Microsoft Ajax framework, together with the release of ASP.NET 4.0. A few days ago I was ready to dig in the library a little deeper, but I found out that most of the documentation and resources I used to consult, had moved or had disappeared.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Object-Oriented JavaScript</title>
+      <link>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</link>
+      <pubDate>Mon, 22 Feb 2010 19:47:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</guid>
+      <description>Although I&amp;rsquo;ve made my feet wet with various JavaScript frameworks, I am not a JavaScript hero at all. This might be one of the disadvantages of being a WebForms developer and having great toolkits at hand like the AJAX Control Toolkit and Telerik RADControls.
+Because you really can&amp;rsquo;t call yourself a webdeveloper without having some understanding of JavaScript I decided to order Object-Oriented Javascript by Stoyan Stefanov.
+This book really handles the language itself.</description>
+    </item>
+    
+    <item>
+      <title>Wrapping up the &#34;An introduction to ASP.NET Ajax 4&#34; series</title>
+      <link>http://localhost:1313/2010/01/wrapping-up-the-an-introduction-to-asp.net-ajax-4-series/</link>
+      <pubDate>Fri, 29 Jan 2010 22:44:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/wrapping-up-the-an-introduction-to-asp.net-ajax-4-series/</guid>
+      <description>I&amp;rsquo;m wrapping up the &amp;ldquo;An introduction to ASP.NET Ajax&amp;rdquo; series today.
+Although the posts were short and didn&amp;rsquo;t go in depth, I hope I&amp;rsquo;ve been able to encourage you to dig some deeper yourself.
+You can find all the posts here:
+ The CDN The ScriptLoader Client Controls AJAX Templating The Minifier  You might also find this collection of ASP.NET Ajax 4.0 Beta Resources useful.
+I&amp;rsquo;d highly appreciate it if you give me your opinion on these series.</description>
+    </item>
+    
+    <item>
+      <title>An introduction to ASP.NET Ajax 4: The Minifier</title>
+      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-minifier/</link>
+      <pubDate>Fri, 29 Jan 2010 08:32:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-minifier/</guid>
+      <description>The Minifier is an utility which &amp;ldquo;minifies&amp;rdquo; your scripts: it reduces the size of your scripts by removing comments, removing spaces, renaming local variables and removing unreachable code.
+You can download the Minifier on Codeplex.
+Before and afterThe unminified script looks like this.
+ 1: //This function does something 2: function doSomething(valueOne, valueTwo){ 3: var result = valueOne + valueTwo; 4: return result; 5: }  After hypercrunching the script looks likes this.</description>
+    </item>
+    
+    <item>
+      <title>An introduction to ASP.NET Ajax 4: Ajax Templating</title>
+      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-ajax-templating/</link>
+      <pubDate>Thu, 28 Jan 2010 08:09:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-ajax-templating/</guid>
+      <description>ASP.NET Ajax 4 contains a powerful templating engine. The Dataview makes it very easy to bind JSON data to HTML elements.
+You can bind the JSON data to the Dataview imperatively or declaratively (mapping html elements with javascript).
+Some code examples shows best.
+Example (Imperatively) 1: &amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&amp;gt; 2: &amp;lt;head runat=&amp;quot;server&amp;quot;&amp;gt; 3: &amp;lt;title&amp;gt;Demo - Ajax Templating&amp;lt;/title&amp;gt; 4: &amp;lt;script src=&amp;quot;Scripts/Start.debug.js&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 5: &amp;lt;!-- Script --&amp;gt; 6: &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; 7: Sys.Debug = true; 8: 9: var events = [ 10: { Street: &#39;Laarsveld&#39;, City: &#39;Geel&#39;, Priority: 2 }, 11: { Street: &#39;Noorderlaan&#39;, City: &#39;Antwerpen&#39;, Priority: 1 }, 12: { Street: &#39;Meir&#39;, City: &#39;Antwerpen&#39;, Priority: 5 }, 13: { Street: &#39;Groenplaats&#39;, City: &#39;Antwerpen&#39;, Priority: 1 }, 14: { Street: &#39;Bredabaan&#39;, City: &#39;Antwerpen&#39;, Priority: 1 } 15: ]; 16: 17: Sys.</description>
+    </item>
+    
+    <item>
+      <title>An introduction to ASP.NET Ajax 4: Client Controls</title>
+      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-client-controls/</link>
+      <pubDate>Wed, 27 Jan 2010 07:37:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-client-controls/</guid>
+      <description>Client Controls are controls from the Ajax Control Toolkit made available client-side.
+This means you can now use these awesome controls without using ASP.NET WebForms.
+You can instantiate these controls imperatively, declaratively or imperatively with jQuery. All controls are exposed as jQuery plugins automatically.
+You can find these controls in the ExtendedControls script.
+ExampleThis example shows you how to hook a color picker to an input element using jQuery and the ExtendedControls.</description>
+    </item>
+    
+    <item>
+      <title>An introduction to ASP.NET Ajax 4: The CDN</title>
+      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-cdn/</link>
+      <pubDate>Mon, 25 Jan 2010 08:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-cdn/</guid>
+      <description>Microsoft is providing a free content delivery network hosting ASP.NET Ajax and jQuery. Next to these scripts, they are also hosting some stylesheets which play together nicely with the Client Controls.
+DefineHere is a definition I found on Wikipedia.
+ A content delivery network is a system of computers containing copies of data, placed at various points in a network so as to maximize bandwidth for access to the data from clients throughout the network.</description>
+    </item>
+    
+  </channel>
+</rss>

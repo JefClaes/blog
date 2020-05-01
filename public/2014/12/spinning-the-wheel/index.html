@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Spinning the wheel - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Spinning the wheel">
+<meta itemprop="description" content="In this post, I&rsquo;ll define a basic set of data structures and functions to spin a wheel of fortune. In the next post, I&rsquo;ll show you the simple model casinos use to build a bigger, more attractive pot, without touching the physical wheel and without losing money. Finally, I&rsquo;ll show you how casinos tweak that model to bend the odds and create near misses.
+
+Let&rsquo;s say we have a physical wheel with four pockets, which are labeled either miss or win.">
+<meta itemprop="datePublished" content="2014-12-09T19:56:00&#43;01:00" />
+<meta itemprop="dateModified" content="2014-12-09T19:56:00&#43;01:00" />
+<meta itemprop="wordCount" content="256">
+
+
+
+<meta itemprop="keywords" content="F#," /><meta property="og:title" content="Spinning the wheel" />
+<meta property="og:description" content="In this post, I&rsquo;ll define a basic set of data structures and functions to spin a wheel of fortune. In the next post, I&rsquo;ll show you the simple model casinos use to build a bigger, more attractive pot, without touching the physical wheel and without losing money. Finally, I&rsquo;ll show you how casinos tweak that model to bend the odds and create near misses.
+
+Let&rsquo;s say we have a physical wheel with four pockets, which are labeled either miss or win." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/12/spinning-the-wheel/" />
+<meta property="article:published_time" content="2014-12-09T19:56:00+01:00" />
+<meta property="article:modified_time" content="2014-12-09T19:56:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spinning the wheel"/>
+<meta name="twitter:description" content="In this post, I&rsquo;ll define a basic set of data structures and functions to spin a wheel of fortune. In the next post, I&rsquo;ll show you the simple model casinos use to build a bigger, more attractive pot, without touching the physical wheel and without losing money. Finally, I&rsquo;ll show you how casinos tweak that model to bend the odds and create near misses.
+
+Let&rsquo;s say we have a physical wheel with four pockets, which are labeled either miss or win."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">09</span>
+							<span class="rest">Dec 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Spinning the wheel</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>In this post, I&rsquo;ll define a basic set of data structures and functions
+to spin a wheel of fortune. In the next post, I&rsquo;ll show you the simple
+model casinos use to build a bigger, more attractive pot, without
+touching the physical wheel and without losing money. Finally, I&rsquo;ll show
+you how casinos tweak that model to bend the odds and create near
+misses.</p>
+<p><a href="/post/images/2014-12-09-spinning-the-wheel-SpinTheWheel.png"><img src="/post/images/thumbnails/2014-12-09-spinning-the-wheel-SpinTheWheel.png" alt=""></a></p>
+<p>Let&rsquo;s say we have a physical wheel with four pockets, which are labeled
+either miss or win.</p>
+<p>Three out of four pockets are labeled as a miss, one is labeled as a
+win. This makes the odds to win one out of four, or 25%.</p>
+<p>Spinning the wheel, we should end up in one of four pockets. We can do
+this by picking a random index of the physical wheel.</p>
+<p>To avoid a shoulder injury spinning the wheel multiple times, we&rsquo;ll
+define a function that does this for us instead.</p>
+<p>Now I can spin the wheel one million times.</p>
+<p>If the math adds up, we should win 25% of the time. To verify this,
+we&rsquo;ll group the results by label and print them.</p>
+<p>Give or take a few hundred spins, we&rsquo;re pretty close to winning 25% of
+the time.</p>
+<p>When the odds are this fair, it&rsquo;s impossible to come up with an
+attractive enough payout without the casino going broke. What if we
+wanted to advertise a bigger pot, while keeping the same physical wheel,
+without losing money? Tomorrow, I&rsquo;ll write about the simple model
+casinos have been using to achieve this.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/f">F#</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

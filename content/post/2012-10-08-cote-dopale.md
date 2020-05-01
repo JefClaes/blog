@@ -42,19 +42,19 @@ ten. Sold! And that's how my girlfriend saved herself five euros without
 even having to haggle.  
   
 
-[![](../images/thumbnails/2012-10-08-cote-dopale-IMG_2254.jpg)](../images/2012-10-08-cote-dopale-IMG_2254.jpg)
+[![](/post/images/thumbnails/2012-10-08-cote-dopale-IMG_2254.jpg)](/post/images/2012-10-08-cote-dopale-IMG_2254.jpg)
 
   
 
-[![](../images/thumbnails/2012-10-08-cote-dopale-IMG_2311.jpg)](../images/2012-10-08-cote-dopale-IMG_2311.jpg)
+[![](/post/images/thumbnails/2012-10-08-cote-dopale-IMG_2311.jpg)](/post/images/2012-10-08-cote-dopale-IMG_2311.jpg)
 
   
 
-[![](../images/thumbnails/2012-10-08-cote-dopale-IMG_2341.jpg)](../images/2012-10-08-cote-dopale-IMG_2341.jpg)
+[![](/post/images/thumbnails/2012-10-08-cote-dopale-IMG_2341.jpg)](/post/images/2012-10-08-cote-dopale-IMG_2341.jpg)
 
   
 
-[![](../images/thumbnails/2012-10-08-cote-dopale-IMG_2353.jpg)](../images/2012-10-08-cote-dopale-IMG_2353.jpg)
+[![](/post/images/thumbnails/2012-10-08-cote-dopale-IMG_2353.jpg)](/post/images/2012-10-08-cote-dopale-IMG_2353.jpg)
 
 Thanks to our companion Lars Oliviers for letting me put his pictures in
 this post.

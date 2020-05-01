@@ -38,11 +38,11 @@ this up with a small lunch at LA’s real farmer’s market.
 
   
 
-[![](../images/thumbnails/2013-07-04-to-live-die-in-l-a-blog1.jpg)](../images/2013-07-04-to-live-die-in-l-a-blog1.jpg)
+[![](/post/images/thumbnails/2013-07-04-to-live-die-in-l-a-blog1.jpg)](/post/images/2013-07-04-to-live-die-in-l-a-blog1.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-04-to-live-die-in-l-a-blog5.jpg)](../images/2013-07-04-to-live-die-in-l-a-blog5.jpg)
+[![](/post/images/thumbnails/2013-07-04-to-live-die-in-l-a-blog5.jpg)](/post/images/2013-07-04-to-live-die-in-l-a-blog5.jpg)
 
   
 
@@ -63,11 +63,11 @@ Batmobiles, even the Tumbler.
 
   
 
-[![](../images/thumbnails/2013-07-04-to-live-die-in-l-a-blog6.jpg)](../images/2013-07-04-to-live-die-in-l-a-blog6.jpg)
+[![](/post/images/thumbnails/2013-07-04-to-live-die-in-l-a-blog6.jpg)](/post/images/2013-07-04-to-live-die-in-l-a-blog6.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-04-to-live-die-in-l-a-blog7.jpg)](../images/2013-07-04-to-live-die-in-l-a-blog7.jpg)
+[![](/post/images/thumbnails/2013-07-04-to-live-die-in-l-a-blog7.jpg)](/post/images/2013-07-04-to-live-die-in-l-a-blog7.jpg)
 
   
 
@@ -78,7 +78,7 @@ just to stand where the stars once stood. 
 
   
 
-[![](../images/thumbnails/2013-07-04-to-live-die-in-l-a-blog4.jpg)](../images/2013-07-04-to-live-die-in-l-a-blog4.jpg)
+[![](/post/images/thumbnails/2013-07-04-to-live-die-in-l-a-blog4.jpg)](/post/images/2013-07-04-to-live-die-in-l-a-blog4.jpg)
 
   
 
@@ -88,7 +88,7 @@ hundreds of others apparently.
 
   
 
-[![](../images/thumbnails/2013-07-04-to-live-die-in-l-a-blog3.jpg)](../images/2013-07-04-to-live-die-in-l-a-blog3.jpg)
+[![](/post/images/thumbnails/2013-07-04-to-live-die-in-l-a-blog3.jpg)](/post/images/2013-07-04-to-live-die-in-l-a-blog3.jpg)
 
   
 
@@ -99,7 +99,7 @@ iron at Muscle Beach.
 
   
 
-[![](../images/thumbnails/2013-07-04-to-live-die-in-l-a-blog2.jpg)](../images/2013-07-04-to-live-die-in-l-a-blog2.jpg)
+[![](/post/images/thumbnails/2013-07-04-to-live-die-in-l-a-blog2.jpg)](/post/images/2013-07-04-to-live-die-in-l-a-blog2.jpg)
 
   
 

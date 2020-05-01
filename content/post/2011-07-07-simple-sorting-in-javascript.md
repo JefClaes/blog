@@ -302,4 +302,4 @@ You can **find the final result
 [here](http://dl.dropbox.com/u/19698383/Blog/JavaScriptAlgorithmsDataStructs/Implementations/SimpleSorting.html)**.
 If you have any remarks on these implementations, please let me know!  
   
-[![](../images/thumbnails/2011-07-07-simple-sorting-in-javascript-SortResult.PNG)](../images/2011-07-07-simple-sorting-in-javascript-SortResult.PNG)
+[![](/post/images/thumbnails/2011-07-07-simple-sorting-in-javascript-SortResult.PNG)](/post/images/2011-07-07-simple-sorting-in-javascript-SortResult.PNG)

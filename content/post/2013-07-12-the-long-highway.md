@@ -25,15 +25,15 @@ a lot like home, being surrounded by Dutch-speaking people. The
 temperature and the view gave away our true location though.  
   
 
-[![](../images/thumbnails/2013-07-12-the-long-highway-blog3.jpg)](../images/2013-07-12-the-long-highway-blog3.jpg)
+[![](/post/images/thumbnails/2013-07-12-the-long-highway-blog3.jpg)](/post/images/2013-07-12-the-long-highway-blog3.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-12-the-long-highway-blog4.jpg)](../images/2013-07-12-the-long-highway-blog4.jpg)
+[![](/post/images/thumbnails/2013-07-12-the-long-highway-blog4.jpg)](/post/images/2013-07-12-the-long-highway-blog4.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-12-the-long-highway-blog5.jpg)](../images/2013-07-12-the-long-highway-blog5.jpg)
+[![](/post/images/thumbnails/2013-07-12-the-long-highway-blog5.jpg)](/post/images/2013-07-12-the-long-highway-blog5.jpg)
 
   
 This morning, instead of hiking, we chose another means of
@@ -44,11 +44,11 @@ the Hell’s Revenge Trail, which lives up to its name; it was
 frighteningly exciting.  
   
 
-[![](../images/thumbnails/2013-07-12-the-long-highway-blog2.jpg)](../images/2013-07-12-the-long-highway-blog2.jpg)
+[![](/post/images/thumbnails/2013-07-12-the-long-highway-blog2.jpg)](/post/images/2013-07-12-the-long-highway-blog2.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-12-the-long-highway-blog1.jpg)](../images/2013-07-12-the-long-highway-blog1.jpg)
+[![](/post/images/thumbnails/2013-07-12-the-long-highway-blog1.jpg)](/post/images/2013-07-12-the-long-highway-blog1.jpg)
 
   
 Since this already took up a big chunk of our day and we still had a

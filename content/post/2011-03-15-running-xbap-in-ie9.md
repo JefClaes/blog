@@ -10,10 +10,10 @@ Applications](http://en.wikipedia.org/wiki/XAML_Browser_Applications) in
 IE9. You will get an "An error occurred in the application you were
 running" error.  
   
-[![](../images/thumbnails/2011-03-15-running-xbap-in-ie9-XBAP.PNG)](../images/2011-03-15-running-xbap-in-ie9-XBAP.PNG)  
+[![](/post/images/thumbnails/2011-03-15-running-xbap-in-ie9-XBAP.PNG)](/post/images/2011-03-15-running-xbap-in-ie9-XBAP.PNG)  
 To run an XBAP in IE9 you need to add the hosting site to your trusted
 sites..  
   
-[![](../images/thumbnails/2011-03-15-running-xbap-in-ie9-AddToTrustedSite.PNG)](../images/2011-03-15-running-xbap-in-ie9-AddToTrustedSite.PNG)  
+[![](/post/images/thumbnails/2011-03-15-running-xbap-in-ie9-AddToTrustedSite.PNG)](/post/images/2011-03-15-running-xbap-in-ie9-AddToTrustedSite.PNG)  
 .. or you could convert the application to Silverlight, or preferably
 HTML5 ;)

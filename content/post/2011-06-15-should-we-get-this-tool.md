@@ -22,7 +22,7 @@ developer productivity. Happy developers tend to get passionate about
 their profession, and therefor ship better software as a result. And
 that's what we are all after, right?  
   
-[![](../images/thumbnails/2011-06-15-should-we-get-this-tool-sad-monkey.jpg)](../images/2011-06-15-should-we-get-this-tool-sad-monkey.jpg)  
+[![](/post/images/thumbnails/2011-06-15-should-we-get-this-tool-sad-monkey.jpg)](/post/images/2011-06-15-should-we-get-this-tool-sad-monkey.jpg)  
 I also find that peers saying something along the lines of "What's wrong
 with notepad?" are foolish. If you are most productive and happy using
 notepad, that's perfectly fine, but don't go belittling people who enjoy

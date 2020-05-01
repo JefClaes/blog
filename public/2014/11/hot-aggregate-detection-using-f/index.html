@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Hot aggregate detection using F# - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Hot aggregate detection using F#">
+<meta itemprop="description" content="Last week, I wrote about splitting a hot aggregate. Discovering that specific hot aggregate was easy; it would cause transactional failures from time to time.
+Long-lived hot aggregates often are an indication of a missing concept and an opportunity for teasing things apart. Last week, I took one long-lived hot aggregate and pulled smaller short-lived hot aggregates out, identifying two missing concepts.
+Hunting for more hot aggregates, I could visualize event streams and use my eyes to detect bursts of activity, or I could have a little function analyze the event streams for me.">
+<meta itemprop="datePublished" content="2014-11-16T17:20:00&#43;01:00" />
+<meta itemprop="dateModified" content="2014-11-16T17:20:00&#43;01:00" />
+<meta itemprop="wordCount" content="190">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,DDD," /><meta property="og:title" content="Hot aggregate detection using F#" />
+<meta property="og:description" content="Last week, I wrote about splitting a hot aggregate. Discovering that specific hot aggregate was easy; it would cause transactional failures from time to time.
+Long-lived hot aggregates often are an indication of a missing concept and an opportunity for teasing things apart. Last week, I took one long-lived hot aggregate and pulled smaller short-lived hot aggregates out, identifying two missing concepts.
+Hunting for more hot aggregates, I could visualize event streams and use my eyes to detect bursts of activity, or I could have a little function analyze the event streams for me." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/11/hot-aggregate-detection-using-f/" />
+<meta property="article:published_time" content="2014-11-16T17:20:00+01:00" />
+<meta property="article:modified_time" content="2014-11-16T17:20:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hot aggregate detection using F#"/>
+<meta name="twitter:description" content="Last week, I wrote about splitting a hot aggregate. Discovering that specific hot aggregate was easy; it would cause transactional failures from time to time.
+Long-lived hot aggregates often are an indication of a missing concept and an opportunity for teasing things apart. Last week, I took one long-lived hot aggregate and pulled smaller short-lived hot aggregates out, identifying two missing concepts.
+Hunting for more hot aggregates, I could visualize event streams and use my eyes to detect bursts of activity, or I could have a little function analyze the event streams for me."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">16</span>
+							<span class="rest">Nov 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Hot aggregate detection using F#</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Last week, I wrote about <a href="http://www.jefclaes.be/2014/11/splitting-hot-aggregates.html">splitting a hot
+aggregate</a>.
+Discovering that specific hot aggregate was easy; it would cause
+transactional failures from time to time.</p>
+<p>Long-lived hot aggregates often are an indication of a missing concept
+and an opportunity for teasing things apart. Last week, I took one
+long-lived hot aggregate and pulled smaller short-lived hot aggregates
+out, identifying two missing concepts.</p>
+<p>Hunting for more hot aggregates, I could visualize event streams and use
+my eyes to detect bursts of activity, or I could have a little function
+analyze the event streams for me.</p>
+<p>Looking at an event stream, we can identify a hot aggregate by having a
+lot of events in a short window of time.</p>
+<p><a href="/post/images/2014-11-16-hot-aggregate-detection-using-f-HotAggregateDetection.png"><img src="/post/images/thumbnails/2014-11-16-hot-aggregate-detection-using-f-HotAggregateDetection.png" alt=""></a></p>
+<p>Let&rsquo;s say that when six events occur within five seconds from each
+other, we&rsquo;re dealing with a hot aggregate.</p>
+<p>What I came up with is a function that folds over an event stream. It
+will walk over each event, maintaining the time window, allowing us to
+look back in time. When the window size exceeds the treshold, the event
+stream will be identified as hot. Once identified, the remaining events
+won&rsquo;t be analyzed.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

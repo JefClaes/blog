@@ -23,7 +23,7 @@ Looking at an event stream, we can identify a hot aggregate by having a
 lot of events in a short window of time.  
   
 
-[![](../images/thumbnails/2014-11-16-hot-aggregate-detection-using-f-HotAggregateDetection.png)](../images/2014-11-16-hot-aggregate-detection-using-f-HotAggregateDetection.png)
+[![](/post/images/thumbnails/2014-11-16-hot-aggregate-detection-using-f-HotAggregateDetection.png)](/post/images/2014-11-16-hot-aggregate-detection-using-f-HotAggregateDetection.png)
 
   
 Let's say that when six events occur within five seconds from each

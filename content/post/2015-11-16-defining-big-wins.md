@@ -41,7 +41,7 @@ distributed.
 
   
 
-[![](../images/thumbnails/2015-11-16-defining-big-wins-hist1.PNG)](../images/2015-11-16-defining-big-wins-hist1.PNG)
+[![](/post/images/thumbnails/2015-11-16-defining-big-wins-hist1.PNG)](/post/images/2015-11-16-defining-big-wins-hist1.PNG)
 
   
   
@@ -52,7 +52,7 @@ help us here.
 
   
 
-[![](../images/thumbnails/2015-11-16-defining-big-wins-hist2.PNG)](../images/2015-11-16-defining-big-wins-hist2.PNG)
+[![](/post/images/thumbnails/2015-11-16-defining-big-wins-hist2.PNG)](/post/images/2015-11-16-defining-big-wins-hist2.PNG)
 
 This shows us a pretty fitting bell curve, meaning the multipliers are
 somewhat log normally distributed. We could now use the log standard

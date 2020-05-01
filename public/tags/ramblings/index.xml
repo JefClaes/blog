@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ramblings on Jef Claes</title>
+    <link>http://localhost:1313/tags/ramblings/</link>
+    <description>Recent content in Ramblings on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Dec 2014 17:29:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/ramblings/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>TDD as the crack cocaine of software</title>
+      <link>http://localhost:1313/2014/12/tdd-as-the-crack-cocaine-of-software/</link>
+      <pubDate>Sun, 28 Dec 2014 17:29:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/12/tdd-as-the-crack-cocaine-of-software/</guid>
+      <description>The psychologist Mihaly Csikszentmihalyi popularized the term &amp;ldquo;flow&amp;rdquo; to describe states of absorption in which attention is so narrowly focused on an activity that a sense of time fades, along with the troubles and concerns of day-to-day life. &amp;ldquo;Flow provides an escape from the chaos of the quotidian,&amp;rdquo; he wrote.  This is a snippet from the highly recommended book Addiction by Design, which not only gives you an incredibly complete overview of the gambling industry, but also insights into the human psyche which apply far outside the domain of gambling.</description>
+    </item>
+    
+    <item>
+      <title>Solomon, the architect</title>
+      <link>http://localhost:1313/2014/08/solomon-the-architect/</link>
+      <pubDate>Tue, 26 Aug 2014 19:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/08/solomon-the-architect/</guid>
+      <description>Two junior developers who started working for the company at the same time, had been quite competitive with each other from the get-go. They had once been assigned to the same team, but because of the constant bickering, which had put a serious amount of stress on the team, one of them was pulled off the project and reassigned.
+A good year later, just the two of them were assigned to a new smallish, but interesting in-house project.</description>
+    </item>
+    
+    <item>
+      <title>Thinking No Computers</title>
+      <link>http://localhost:1313/2014/08/thinking-no-computers/</link>
+      <pubDate>Tue, 19 Aug 2014 20:09:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/08/thinking-no-computers/</guid>
+      <description>The other day I happened to see a curious exchange in one of our businesses. The cashier swapped a torn, but carefully restored by taping it together again, Euro bill for a new one with the manager. Inquisitive, I asked the manager what he was planning to do with that Euro bill. &amp;ldquo;Once a month, I take all those ripped up or badly worn bills to the National Bank, and trade them for new ones.</description>
+    </item>
+    
+    <item>
+      <title>new YearPassed(2013);</title>
+      <link>http://localhost:1313/2014/01/new-yearpassed2013/</link>
+      <pubDate>Sun, 19 Jan 2014 17:54:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/01/new-yearpassed2013/</guid>
+      <description>I normally write this up at the end of the year, but circumstances made me push back this post for a few weeks. I use this annual post to look back at the year passed, and to look ahead to the year to come. I gave up on making resolutions in 2011. This year, I&amp;rsquo;m going to be naively ambitious again going into 2014.
+Compared to previous years, I feel more confident that I have a pretty good idea of what I want next.</description>
+    </item>
+    
+    <item>
+      <title>Databases are growing on me</title>
+      <link>http://localhost:1313/2013/12/databases-are-growing-on-me/</link>
+      <pubDate>Sun, 22 Dec 2013 21:53:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/12/databases-are-growing-on-me/</guid>
+      <description>I learned all about logical design of relational databases back in school; tables, columns, data types, views, normalization, constraints, primary keys, foreign keys&amp;hellip; At the same time, I learned how to use SQL to put data in, and how to get it out again; INSERT INTO, SELECT, FROM, WHERE, JOIN, GROUP&amp;hellip;
+In the first project I worked on just out of school, we weren&amp;rsquo;t doing anything interesting with databases; we didn&amp;rsquo;t have that many users, or that much data.</description>
+    </item>
+    
+    <item>
+      <title>Observations over assumptions</title>
+      <link>http://localhost:1313/2013/11/observations-over-assumptions/</link>
+      <pubDate>Sun, 24 Nov 2013 18:08:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/11/observations-over-assumptions/</guid>
+      <description>I heard a story once about an engineer who worked on the Disneyland site when it opened in Anaheim, CA in 1955.   A month before the park opened, the new grass and sod were being applied to the grounds as one of the last items to be completed before the big grand opening. The parking lot was some distance from the park&amp;rsquo;s gates and required a lot of turf.</description>
+    </item>
+    
+    <item>
+      <title>Actor Model in COBOL</title>
+      <link>http://localhost:1313/2013/09/actor-model-in-cobol/</link>
+      <pubDate>Sun, 22 Sep 2013 16:38:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/09/actor-model-in-cobol/</guid>
+      <description>In an Actor system, each Actor acts as a self-contained and autonomous component. An Actor can only communicate with other Actors by exchanging messages - they are not allowed to share state. Messages are handled asynchronously, and are nondeterministic. The location of Actors should be transparent; they can either live on the same machine, or on a distributed system. These properties make the Actor Model a great fit for parallel and distributed computing.</description>
+    </item>
+    
+    <item>
+      <title>The first DDDBE Modellathon</title>
+      <link>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</link>
+      <pubDate>Fri, 06 Sep 2013 13:24:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</guid>
+      <description>On our way back from DDD Exchange, heavily influenced by yet another immersive DDD experience, we searched for ways to keep the momentum going. Sure, we met up regularly for CQRS beers, but we felt that we could do more, better. That&amp;rsquo;s when we coined the term modellathon, something like a hackathon, but instead of writing code, we would build models.
+Thanks to the effort of Mathias, Stijn and Yves, Tuesday marked the first get-together of the Belgian DDD user group in its official form.</description>
+    </item>
+    
+    <item>
+      <title>Inheritance is like Jenga</title>
+      <link>http://localhost:1313/2013/08/inheritance-is-like-jenga/</link>
+      <pubDate>Sun, 25 Aug 2013 18:18:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/inheritance-is-like-jenga/</guid>
+      <description>These last few days, I have been working on a piece of our codebase that accidentally got very inheritance heavy.
+When it comes to inheritance versus composition, there are a few widely accepted rules of thumb out there. While prefer composition over inheritance doesn&amp;rsquo;t cover the nuances, it&amp;rsquo;s not terrible advice; composition will statistically often be the better solution. Steve McConnell&amp;rsquo;s composition defines a &amp;lsquo;has a&amp;rsquo;- relationship while inheritance defines an &amp;lsquo;is a&amp;rsquo;-relationship, gives you a more nuanced and simple tool to apply to a scenario.</description>
+    </item>
+    
+    <item>
+      <title>But I already wrote it</title>
+      <link>http://localhost:1313/2013/08/but-i-already-wrote-it/</link>
+      <pubDate>Sun, 18 Aug 2013 16:24:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/but-i-already-wrote-it/</guid>
+      <description>A few weeks ago, we set out to implement a feature that enabled back office users to set a new rate ahead of time. With our analyst and the involved user being out of the office for days, we had to solely rely on written requirements. Two of us skimmed the documents, but didn&amp;rsquo;t take the time to assure there wasn&amp;rsquo;t any ambiguity - it looked trivial really. I went back to what I was doing, while my colleague set out to implement this feature.</description>
+    </item>
+    
+    <item>
+      <title>When your commands spell CUD</title>
+      <link>http://localhost:1313/2013/08/when-your-commands-spell-cud/</link>
+      <pubDate>Sun, 04 Aug 2013 19:08:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/when-your-commands-spell-cud/</guid>
+      <description>A good while ago, I blogged on commands (and queries). After exploring various flavors, I eventually settled on this one; commands, handlers and an in-memory bus that serves as a command executor.
+Commands help you in supporting the ubiquitous language by explicitly capturing user intent at the boundaries of your system - think use cases. You can look at them as messages that are being sent to your domain. In this regard, they also serve as a layer over your domain - decoupling the inside from the outside, allowing you to gradually introduce concepts on the inside, without breaking the outside.</description>
+    </item>
+    
+    <item>
+      <title>Multiplayer Enterprise Architect</title>
+      <link>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</link>
+      <pubDate>Sun, 30 Jun 2013 17:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</guid>
+      <description>Hanging around in the pub after DDDX, I ended up talking to Alberto Brandolini. For those who have never met him; he&amp;rsquo;s very much into visualization. You will always see him carrying a drawing pad, with a dash of permanent marker on his cheek, and a few lost sticky notes on his back. I don&amp;rsquo;t know if it was the Italian accent and the strong gestures, or my mildly intoxicated condition, but the idea of visualization as an important tool grew on me even more that evening.</description>
+    </item>
+    
+    <item>
+      <title>Not handling edge cases, making them explicit instead</title>
+      <link>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</link>
+      <pubDate>Sun, 23 Jun 2013 16:49:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</guid>
+      <description>When I wrote about accidental entities earlier, we followed a consultant building software for a car rental company. In the meanwhile, he has finished implementing the registration of new cars. Next on the list is allowing customers to make a booking.
+We managed to get the CEO to set a whole hour apart to walk us over how the booking system should work.
+CEO: &amp;ldquo;I&amp;rsquo;m not sure this meeting is going to take a whole hour though.</description>
+    </item>
+    
+    <item>
+      <title>Feeds worth reading - saying goodbye to Google Reader</title>
+      <link>http://localhost:1313/2013/06/feeds-worth-reading-saying-goodbye-to-google-reader/</link>
+      <pubDate>Sun, 16 Jun 2013 22:18:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/feeds-worth-reading-saying-goodbye-to-google-reader/</guid>
+      <description>New to programming in the wild, and starving for hints on how to do it better, I would often stumble upon programmers documenting their journey on a personal blog. A big orange icon would incite readers to subscribe to their content using RSS. Taking the bait, I started using Google Reader, and found myself frantically hoarding feeds a bit later.
+After a while I got fed up with going through an abundance of subscriptions daily though; it was turning into a chore.</description>
+    </item>
+    
+    <item>
+      <title>Accidental entities - what about the UI?</title>
+      <link>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</link>
+      <pubDate>Sun, 02 Jun 2013 16:24:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</guid>
+      <description>This post is a follow-up to my previous blog post &amp;ldquo;[Accidental entities
+ you don&amp;rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&amp;quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&amp;rsquo;s color as a value, and does not care about a color&amp;rsquo;s identity.</description>
+    </item>
+    
+    <item>
+      <title>IDDD Tour notes (2/2)</title>
+      <link>http://localhost:1313/2013/05/iddd-tour-notes-2/2/</link>
+      <pubDate>Sun, 12 May 2013 15:44:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/iddd-tour-notes-2/2/</guid>
+      <description>This is the second and last part of my notes I scribbled down attending the IDDD Tour. The first part was published last week.
+A better model
+ Even if you come up with a better model, the fact that it has been the ubiquitous language of the domain for decades proves that it works for them.
+ This quote bothers me a bit. There definitely is truth to this, but modeling an existing process often presents such a great opportunity to revise and improve it.</description>
+    </item>
+    
+    <item>
+      <title>IDDD Tour notes (1/2)</title>
+      <link>http://localhost:1313/2013/05/iddd-tour-notes-1/2/</link>
+      <pubDate>Sun, 05 May 2013 17:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/iddd-tour-notes-1/2/</guid>
+      <description>Two weeks ago I got to spend four days attending the IDDD Tour by Vaughn Vernon. Although my book queue has only allowed me to shallowly browse the book, I had high hopes for this course. I anticipated a week of getting lectured on DDD with a few practical exercises, but was blown away by the openness and interaction promoted by Vaughn and his associate Alberto Brandolini. A passionate group, engaging workshops, long days and lots of sharing made these few days exceptionally satisfying and inspirational.</description>
+    </item>
+    
+    <item>
+      <title>Modeling the four-eye principle</title>
+      <link>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</link>
+      <pubDate>Sun, 21 Apr 2013 19:48:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</guid>
+      <description>Working in a financial domain over the last year, it was only a matter of time before I would be confronted with one of the variations of the two-man rule: the four-eye principle. Satisfying the principle is simple enough; an extra pair of eyes needs to approve of requested changes before they&amp;rsquo;re applied to the system. This measure should prevent mistakes such as a user nuking North Korea by accident, or transferring all corporate funds to a personal off-shore bank account.</description>
+    </item>
+    
+    <item>
+      <title>Designing entities: immutability first</title>
+      <link>http://localhost:1313/2013/04/designing-entities-immutability-first/</link>
+      <pubDate>Sun, 07 Apr 2013 17:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/designing-entities-immutability-first/</guid>
+      <description>The first year I wrote software for a living I spent my days mostly writing forms over data applications; most of my efforts were wasted just trying to make things work using ASP.NET and the Webforms engine. It was only after a year and graduating from the School of Hard Knocks that I learned there is a lot more to building clean and maintainable software than knowing the ins&amp;rsquo; and outs&amp;rsquo; of a proprietary UI technology.</description>
+    </item>
+    
+    <item>
+      <title>My Christmas holiday project postmortem</title>
+      <link>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem/</link>
+      <pubDate>Sun, 24 Feb 2013 16:42:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem/</guid>
+      <description>Somewhere over a year and a half ago I discovered the music of Dire Straits, which has sparked a fanatical love and fascination for the guitar in me, and basically for every piece of music Mark Knopfler has ever touched (*). A year ago, I finally had the courage to pick up the guitar myself. Not sure if I&amp;rsquo;d stick with it, I made an uninformed purchase of a rather inexpensive Squier Jazzmaster, just because it somewhat resembled the real object of desire, a Fender Stratocaster.</description>
+    </item>
+    
+    <item>
+      <title>Premature judgement</title>
+      <link>http://localhost:1313/2013/02/premature-judgement/</link>
+      <pubDate>Sun, 10 Feb 2013 16:46:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/02/premature-judgement/</guid>
+      <description>When I started my first job, I hardly ever judged my peers. After all, how could I? Everything was unknown for me; I couldn&amp;rsquo;t differentiate good from bad. Over the years that has changed a bit, but with that, I&amp;rsquo;ve also slowly become more judgemental towards peers, often prematurely, and not always deservedly.
+The first few months of last year, I found myself doing maintenance on a legacy code base between projects.</description>
+    </item>
+    
+    <item>
+      <title>2012 Annual Review</title>
+      <link>http://localhost:1313/2012/12/2012-annual-review/</link>
+      <pubDate>Mon, 31 Dec 2012 15:58:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/2012-annual-review/</guid>
+      <description>It&amp;rsquo;s that time of the year again where I take some time to look back on the year passed and peek at the year ahead. This is mostly a post I like to write up for myself, forcing reflection.
+The biggest personal changes this year were moving out of my parents&amp;rsquo; place, and my girlfriend&amp;rsquo;s decision to study medicine after graduating as a Master of Arts earlier this year. I had no idea how things would turn out once we lived together, but so far we have been doing great.</description>
+    </item>
+    
+    <item>
+      <title>It&#39;s not cake we are baking</title>
+      <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</link>
+      <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</guid>
+      <description>I recently watched a talk on Vimeo where Christin Gorman talks about how cookie dough relates to Hibernate; why use the generic, bloated and one-fits-all solution when you can mix together your own yummy cookie dough? We should aspire to be the Gordon Ramsey of software, not the college student who can only cook Ramen noodles. If you haven&amp;rsquo;t watched or listened to her talk, you should; it&amp;rsquo;s only a few minutes long, and she brings it really well.</description>
+    </item>
+    
+    <item>
+      <title>No trains today? No resources were found either.</title>
+      <link>http://localhost:1313/2012/11/no-trains-today-no-resources-were-found-either./</link>
+      <pubDate>Wed, 14 Nov 2012 12:26:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/no-trains-today-no-resources-were-found-either./</guid>
+      <description>Belgian&amp;rsquo;s National Railway has decided to strike again today to assail Europe&amp;rsquo;s oncoming austerity. I don&amp;rsquo;t think there is anything wrong with sticking it to the man, or fighting for your right to party, if you believe it is just, yet the preferred tactics don&amp;rsquo;t feel quite right. There must be more constructive ways to get your point across, instead of terribly inconveniencing all those people who give you a job in the first place, your customers.</description>
+    </item>
+    
+    <item>
+      <title>Commuting? Have you done the math?</title>
+      <link>http://localhost:1313/2012/11/commuting-have-you-done-the-math/</link>
+      <pubDate>Sun, 04 Nov 2012 20:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/commuting-have-you-done-the-math/</guid>
+      <description>On my first job interview, over four years ago, I was asked whether I would relocate if I was hired. Back then, I still lived in the Campine region with my parents, while the Ferranti Computer Systems headquarters are in Antwerp. I thought about it for a few seconds and told the interviewer that I didn&amp;rsquo;t plan on moving out of my parents&amp;rsquo; place in the first few years. Besides, the distance isn&amp;rsquo;t that great; it&amp;rsquo;s only 60km (=37 miles) of highway, how bad could it be?</description>
+    </item>
+    
+    <item>
+      <title>Post Web.NET Europe</title>
+      <link>http://localhost:1313/2012/10/post-web.net-europe/</link>
+      <pubDate>Mon, 22 Oct 2012 20:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/post-web.net-europe/</guid>
+      <description>I attended and spoke at Web.NET Europe in Milan over the weekend. This was only my fourth full day- or more conference (Techdays Belgium, TechEd Berlin and HTML5 WebCamps), but it was undoubtedly the best one so far.
+The quality of the sessions was definitely not inferior to those of bigger conferences. I especially enjoyed the talks on SignalR, OAuth and scaling data (I included some of my notes below). The strength of this conference doesn&amp;rsquo;t lie in the exceptional speakers or sessions though, but in its cozy size and the type of attendees it attracts.</description>
+    </item>
+    
+    <item>
+      <title>Commands, queries and testing</title>
+      <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
+      <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/commands-queries-and-testing/</guid>
+      <description>Also read:
+ Self-contained commands with dependencies Separating command data from logic and sending it on a bus  We need abstraction, but the amount of abstraction we really need depends, and should be assessed on a case-by-case basis. It seems advisable to grow abstractions, and to introduce them gradually.
+That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
+    </item>
+    
+    <item>
+      <title>On job titles</title>
+      <link>http://localhost:1313/2012/10/on-job-titles/</link>
+      <pubDate>Sun, 07 Oct 2012 19:22:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/on-job-titles/</guid>
+      <description>It didn&amp;rsquo;t take long before I noticed how little job titles mean. In my first job, you were assured to be granted a fancy title after only having acquired a minimum seniority, if you knew how to play the game. A more important sounding job title was HR&amp;rsquo;s default bribe that often kept people from leaving for greener pastures, for a short while. But even after being upgraded from a stable cleaner to a Senior Barn Hygiene Technician, you&amp;rsquo;re still cleaning shit though.</description>
+    </item>
+    
+    <item>
+      <title>To intellistumble</title>
+      <link>http://localhost:1313/2012/09/to-intellistumble/</link>
+      <pubDate>Thu, 20 Sep 2012 12:14:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/to-intellistumble/</guid>
+      <description>To accidentally or unexpectedly discover a method or property whilst using IntelliSense to browse through symbol names.
+ We should add this term to the Microsoft developer jargon.</description>
+    </item>
+    
+    <item>
+      <title>Value object obsession</title>
+      <link>http://localhost:1313/2012/09/value-object-obsession/</link>
+      <pubDate>Sun, 16 Sep 2012 17:20:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/value-object-obsession/</guid>
+      <description>Primitive obsession is one of the more popular (hyped?) code smells these days.
+ Primitive obsession is the name of a code smell that occurs when we use primitive data types to represent domain ideas. For example, we use a string to describe a message or an integer to represent an amount of money.
+ The antidote is creating a value object instead of using a primitive. A value object is an immutable object which (in its DDD definition) carries no identity, but is compared based on the value of its attributes.</description>
+    </item>
+    
+    <item>
+      <title>Is serialization really that expensive?</title>
+      <link>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</link>
+      <pubDate>Wed, 22 Aug 2012 13:19:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</guid>
+      <description>While wading through an exotic codebase, I stumbled upon a static class named Convert. This class contained somewhere around 2700 (non-generated) lines of code, where each method manually converted some object to a simple textual representation. These methods were then used to convert requests and reponses to and from a remote third party service before logging them to the database for auditing reasons.
+public static class Convert { public static string PaymentRequest(PaymentRequest req) { var sb = new StringBuilder(); sb.</description>
+    </item>
+    
+    <item>
+      <title>My learning resources distilled</title>
+      <link>http://localhost:1313/2012/08/my-learning-resources-distilled/</link>
+      <pubDate>Sun, 19 Aug 2012 16:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/my-learning-resources-distilled/</guid>
+      <description>I have picked up a few new tools this summer (MongoDB, NancyFx and WebAPI), and it occurred to me that I&amp;rsquo;ve built certain habits these last few years in how I make use of all the learning resources out there.
+I tried to identify all of them, to then categorize them, to finally order them according to in which phase of my study process I use them.
+The written and spoken word</description>
+    </item>
+    
+    <item>
+      <title>The &#39;everyone should learn to code&#39; dilemma</title>
+      <link>http://localhost:1313/2012/06/the-everyone-should-learn-to-code-dilemma/</link>
+      <pubDate>Sun, 03 Jun 2012 16:40:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/the-everyone-should-learn-to-code-dilemma/</guid>
+      <description>Back when I was working on software for fire departments, we started thinking about reworking a critical piece of our solution: deployment plans. In a fire department domain, deployment plans help to make a suggestion to the dispatcher about which units should be dispatched to a location when an incident is called in. The suggested composition of units depends on a wide range of variables: availability, response time, ranks, type of incident, required tools, &amp;hellip; , even politics.</description>
+    </item>
+    
+    <item>
+      <title>The open plan fallacy testimonials</title>
+      <link>http://localhost:1313/2012/05/the-open-plan-fallacy-testimonials/</link>
+      <pubDate>Sun, 27 May 2012 15:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/the-open-plan-fallacy-testimonials/</guid>
+      <description>I wrote an article titled &amp;lsquo;The open plan fallacy&amp;rsquo; just two weeks ago. Earlier this week a similar article was published by the New York Times. The content of that article wasn&amp;rsquo;t particularly extraordinary, but the comments were. I waded through all of them on my daily commute, and it&amp;rsquo;s really hard to find one in favor of open plan offices - people seem to be enraged.
+I handpicked some of the most interesting ones.</description>
+    </item>
+    
+    <item>
+      <title>The open plan fallacy</title>
+      <link>http://localhost:1313/2012/05/the-open-plan-fallacy/</link>
+      <pubDate>Sun, 13 May 2012 16:20:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/the-open-plan-fallacy/</guid>
+      <description>I haven&amp;rsquo;t worked in a whole lot of places, somewhere around four, but every single one of them used an open plan to structure their workplace. From what I hear from others, it&amp;rsquo;s the standard.
+There are a few things to say about the advantages of an open office layout. They should stimulate communication, create more opportunities for observing and learning from others and be more cost-effective. I&amp;rsquo;m afraid it&amp;rsquo;s the latter which is the biggest driver though.</description>
+    </item>
+    
+    <item>
+      <title>Why I will always love RSS</title>
+      <link>http://localhost:1313/2012/05/why-i-will-always-love-rss/</link>
+      <pubDate>Sun, 06 May 2012 16:50:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/why-i-will-always-love-rss/</guid>
+      <description>There has been a lot of noise in the tech community earlier this year about how RSS is supposedly having one foot in the grave. If that would be even remotely true, I hope it dies with its boots on. The herald would be browsers and social networking sites killing or hiding support for RSS. While that may be true, their motives shouldn&amp;rsquo;t rig our opinions.
+RSS has never worked out for the regular consumer, not directly anyways.</description>
+    </item>
+    
+    <item>
+      <title>Some Servicelocator pattern stinks</title>
+      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</link>
+      <pubDate>Tue, 17 Apr 2012 20:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</guid>
+      <description>I have been working on a somewhat legacy codebase which makes use of the Servicelocator pattern. Although I always thought of Dependecy Injection to be the superior pattern, I was pleased to find some Inversion of Control implementation in there. Working with the codebase, I discovered first hand how easily, when used without caution and discipline, the Servicelocator pattern can introduce code rot.
+I will walk you through some of the issues I have with the Servicelocator pattern, mostly looking at it from a test perspective.</description>
+    </item>
+    
+    <item>
+      <title>Sent from my phone</title>
+      <link>http://localhost:1313/2012/03/sent-from-my-phone/</link>
+      <pubDate>Sat, 17 Mar 2012 19:46:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/03/sent-from-my-phone/</guid>
+      <description>According to Matt from 37signals the line &amp;ldquo;Sent from my iPhone&amp;rdquo; at the bottom of an email means this:
+ Let’s be honest. “Sent from my iPhone” really means “I’m not going to bother to proofread and correct this because it would take me an extra 30 seconds.”
+ I agree. I too use this line as an excuse to write a terse message and omit proper salutations.
+However, I also think these four simple words greatly helped the viral growth of the mobile phone.</description>
+    </item>
+    
+    <item>
+      <title>A solar storm anecdote</title>
+      <link>http://localhost:1313/2012/02/a-solar-storm-anecdote/</link>
+      <pubDate>Wed, 01 Feb 2012 08:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/a-solar-storm-anecdote/</guid>
+      <description>Last week, several news channels reported on the strongest solar storm since 2005. This news item reminded me of a peculiar support ticket we received one gray Monday morning a few years ago, when I was still writing software for fire departments.
+ *********************************************************************************
+Ticket 7238
+Subject: AVL broken
+Status: New
+Description
+06:22 Vehicles stay mostly stationary on the map, even when we are
+positive they are en route.
+*********************************************************************************</description>
+    </item>
+    
+    <item>
+      <title>When should you take performance into consideration?</title>
+      <link>http://localhost:1313/2011/11/when-should-you-take-performance-into-consideration/</link>
+      <pubDate>Sun, 27 Nov 2011 17:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/when-should-you-take-performance-into-consideration/</guid>
+      <description>Before publishing my previous post on rewriting an if, I knew some people would hate it, because the refactored construct is less performant.
+Although I think performance is important, relevant performance improvements are, apart from in tight loops, hardly ever to find in language constructs. To put it more bluntly, they are a waste of time. When translating your thoughts into code, you should aim to make your intentions as clear as possible for the person who comes after you.</description>
+    </item>
+    
+    <item>
+      <title>Blame no one but yourself</title>
+      <link>http://localhost:1313/2011/11/blame-no-one-but-yourself/</link>
+      <pubDate>Wed, 23 Nov 2011 21:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/blame-no-one-but-yourself/</guid>
+      <description>Blame no one but yourself. This is one of the few quotes I remember months after reading this book. Although it&amp;rsquo;s a harsh statement, there definitely is some truth to it.
+Once I started observing my own behavior when faced with failure, I caught myself regularly blaming others for failures to which I am - at least - an accomplice.
+Think about it. You might be guilty of this too.</description>
+    </item>
+    
+    <item>
+      <title>Daydreaming about jQuery Mobile and the WebAPI</title>
+      <link>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</link>
+      <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</guid>
+      <description>I recently blogged about programming for the future of mobile with jQuery Mobile and the WebAPI. You probably heard that jQuery Mobile 1.0 was released earlier this week. Although it will take a while before we will see some actual results from the WebAPI initiative, that shouldn&amp;rsquo;t keep us from letting our minds play with things that might be possible one day using the WebAPI.
+The thoughts in this post were provoked by an interesting comment Kristof Claes left on my previous post.</description>
+    </item>
+    
+    <item>
+      <title>Programming for the future of mobile</title>
+      <link>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</link>
+      <pubDate>Wed, 09 Nov 2011 22:27:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</guid>
+      <description>I have been working on something small on the side lately. I hardly have anything to show for it though, most of it is still being shaped in my head.
+Anyhow, a very important part of the front-end is built using jQuery mobile. Although the framework hasn&amp;rsquo;t been released - release candidates are available though -, it&amp;rsquo;s something you should start looking into today. Why? Because the browser is the future of mobile applications.</description>
+    </item>
+    
+    <item>
+      <title>The gift of legacy</title>
+      <link>http://localhost:1313/2011/10/the-gift-of-legacy/</link>
+      <pubDate>Sun, 30 Oct 2011 13:36:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/10/the-gift-of-legacy/</guid>
+      <description>Just after graduating, I hated legacy with the heat of a thousand suns. I felt unfortunate, having to work on old code, built using outdated technologies, while software is all about making new and shiny things. Right, guys? Those naïve expectations of a rookie got crumbled very soon. Legacy is a constant in our industry. You can try to ignore it as long as possible, but it&amp;rsquo;s impossible to keep that up forever.</description>
+    </item>
+    
+    <item>
+      <title>Oops, Pluralsight</title>
+      <link>http://localhost:1313/2011/10/oops-pluralsight/</link>
+      <pubDate>Wed, 26 Oct 2011 21:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/10/oops-pluralsight/</guid>
+      <description>Only a few weeks ago, we got an annual Pluralsight subscription at Euricom. Since then, I have downloaded a couple of videos, raw wmv&amp;rsquo;s, to watch offline on my laptop, commuting.
+Yesterday, being out of material, I headed over to the Pluralsight website to download some more content. I discovered the site was redesigned, removing download links next to the videos.
+Heading over to their blog, I found out more.</description>
+    </item>
+    
+    <item>
+      <title>Should we get this tool?</title>
+      <link>http://localhost:1313/2011/06/should-we-get-this-tool/</link>
+      <pubDate>Wed, 15 Jun 2011 21:45:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/06/should-we-get-this-tool/</guid>
+      <description>This is a decision that often needs to be made by middle management. For managers the most natural way to make this call is by evaluating the return on investment. To calculate the ROI, you need to compare the gain of an investment relative to the amount of investment. And this is exactly where things get hard, if not impossible. Measuring developer productivity is one of the unsolvable problems in our industry.</description>
+    </item>
+    
+    <item>
+      <title>Doing the groceries in parallel</title>
+      <link>http://localhost:1313/2010/05/doing-the-groceries-in-parallel/</link>
+      <pubDate>Mon, 10 May 2010 20:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/doing-the-groceries-in-parallel/</guid>
+      <description>I&amp;rsquo;ve started reading the excellent paper &amp;ldquo;Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4&amp;quot;.
+There is a section in this whitepaper which explains perfectly why parallel programming was and still is such an interesting problem.
+ Consider an analogy: shopping with some friends at a grocery store. You come into the store with a grocery list, and you rip the list into one piece per friend, such that every friend is responsible for retrieving the elements on his or her list.</description>
+    </item>
+    
+    <item>
+      <title>Webforms lessons learned the hard way (Part 1)</title>
+      <link>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</link>
+      <pubDate>Sun, 14 Feb 2010 16:22:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</guid>
+      <description>I&amp;rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&amp;rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them.</description>
+    </item>
+    
+    <item>
+      <title>&#34;Excellence&#34; is a drive from inside, not outside</title>
+      <link>http://localhost:1313/2010/01/excellence-is-a-drive-from-inside-not-outside/</link>
+      <pubDate>Mon, 11 Jan 2010 15:06:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/excellence-is-a-drive-from-inside-not-outside/</guid>
+      <description>A little story I found which I think relates to software development in a way..
+ A tourist once visited a temple under construction where he saw a sculptor making an idol of God. Suddenly he noticed a similar idol lying nearby. Surprised, he asked the sculptor, &amp;ldquo;Do you need two statues of the same idol?&amp;rdquo; &amp;ldquo;No,&amp;rdquo; said the sculptor without looking up, &amp;ldquo;We need only one, but the first one got damaged at the last stage.</description>
+    </item>
+    
+    <item>
+      <title>Why the javascript beforeunload event is incomplete</title>
+      <link>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</link>
+      <pubDate>Sat, 12 Sep 2009 21:13:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</guid>
+      <description>The onbeforeunload event fires when a page is being unloaded.
+In the intranet webapplications world customers pretty often ask to show a warning when a user leaves a page (by closing the browser, closing a tab, clicking a link,..). This feature is specifically very interesting for data-input-driven webforms where one wrong click can make ten minutes of work undone.
+Last week I had to implement this feature in a huge webform which is causing lots of postbacks (firing the onbeforeunload event).</description>
+    </item>
+    
+    <item>
+      <title>Why code reviews should be a teamthing</title>
+      <link>http://localhost:1313/2009/08/why-code-reviews-should-be-a-teamthing/</link>
+      <pubDate>Sun, 23 Aug 2009 19:22:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/08/why-code-reviews-should-be-a-teamthing/</guid>
+      <description>Often code reviews are done by one person, the technical lead of your team.
+In my opinion it&amp;rsquo;s better to make each developer of your team do code reviews.
+My arguments Having all developers doing code reviews enforces well-documented coding standards.. Which also leads to discussions about what these codings tandards should be. Each developer is forced to understand the workflow of an application which isn&amp;rsquo;t his, which expands his domain knowledge.</description>
+    </item>
+    
+  </channel>
+</rss>

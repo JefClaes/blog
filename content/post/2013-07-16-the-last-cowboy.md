@@ -31,7 +31,7 @@ writing.
 
   
 
-[![](../images/thumbnails/2013-07-16-the-last-cowboy-San+Diego+Joshua+Three+061_2.jpg)](../images/2013-07-16-the-last-cowboy-San+Diego+Joshua+Three+061_2.jpg)
+[![](/post/images/thumbnails/2013-07-16-the-last-cowboy-San+Diego+Joshua+Three+061_2.jpg)](/post/images/2013-07-16-the-last-cowboy-San+Diego+Joshua+Three+061_2.jpg)
 
   
 

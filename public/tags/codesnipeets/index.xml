@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codesnipeets on Jef Claes</title>
+    <link>http://localhost:1313/tags/codesnipeets/</link>
+    <description>Recent content in Codesnipeets on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jul 2012 22:37:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/codesnipeets/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Should I unit- or integration test my ASP.NET Web API services?</title>
+      <link>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my-asp.net-web-api-services/</link>
+      <pubDate>Sun, 15 Jul 2012 22:37:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my-asp.net-web-api-services/</guid>
+      <description>Over the last two weeks, preparing for a talk, I have been doing some research on ASP.NET Web API. After working my way through the API, and the implementation of certain features, I looked at testing.
+Similar to ASP.NET MVC, Web API allows you to create relatively small building blocks, which can replace parts of, or be added to an existing default global setup. This makes it possible for us to test each component in isolation: controllers, dependency resolvers, filters, serialization, type formatters, messagehandlers and routing.</description>
+    </item>
+    
+  </channel>
+</rss>

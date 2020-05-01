@@ -114,7 +114,7 @@ Their site does give you a look into your queues though; you can't look
 at the messages, but you do get a nice overview.  
   
 
-[![](../images/thumbnails/2013-03-03-first-ironmq-impressions-IronMq.PNG)](../images/2013-03-03-first-ironmq-impressions-IronMq.PNG)
+[![](/post/images/thumbnails/2013-03-03-first-ironmq-impressions-IronMq.PNG)](/post/images/2013-03-03-first-ironmq-impressions-IronMq.PNG)
 
   
 I don't mind that it's not a turnkey solution though; I learn a lot from

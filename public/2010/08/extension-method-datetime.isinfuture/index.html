@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Extension method: DateTime.IsInFuture() - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Extension method: DateTime.IsInFuture()">
+<meta itemprop="description" content="In this post you can find a simple DateTime extension method. The IsInFuture method simply returns a boolean indicating whether the DateTime instance is in the future or not.
+ 1: public static class DateTimeExtensions 2: { 3: public static bool IsInFuture(this DateTime dateTime) 4: { 5: int compareResult = DateTime.Compare(dateTime, DateTime.Now); 6: 7: return compareResult != -1; 8: } 9: }  You can use it like this..
+ 1: DateTime dateTimeInPast = new DateTime(2010, 5, 20); 2: DateTime dateTimeInFuture = new DateTime(2025, 11, 20); 3: 4: Console.">
+<meta itemprop="datePublished" content="2010-08-22T13:03:00&#43;02:00" />
+<meta itemprop="dateModified" content="2010-08-22T13:03:00&#43;02:00" />
+<meta itemprop="wordCount" content="92">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,.NET," /><meta property="og:title" content="Extension method: DateTime.IsInFuture()" />
+<meta property="og:description" content="In this post you can find a simple DateTime extension method. The IsInFuture method simply returns a boolean indicating whether the DateTime instance is in the future or not.
+ 1: public static class DateTimeExtensions 2: { 3: public static bool IsInFuture(this DateTime dateTime) 4: { 5: int compareResult = DateTime.Compare(dateTime, DateTime.Now); 6: 7: return compareResult != -1; 8: } 9: }  You can use it like this..
+ 1: DateTime dateTimeInPast = new DateTime(2010, 5, 20); 2: DateTime dateTimeInFuture = new DateTime(2025, 11, 20); 3: 4: Console." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2010/08/extension-method-datetime.isinfuture/" />
+<meta property="article:published_time" content="2010-08-22T13:03:00+02:00" />
+<meta property="article:modified_time" content="2010-08-22T13:03:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Extension method: DateTime.IsInFuture()"/>
+<meta name="twitter:description" content="In this post you can find a simple DateTime extension method. The IsInFuture method simply returns a boolean indicating whether the DateTime instance is in the future or not.
+ 1: public static class DateTimeExtensions 2: { 3: public static bool IsInFuture(this DateTime dateTime) 4: { 5: int compareResult = DateTime.Compare(dateTime, DateTime.Now); 6: 7: return compareResult != -1; 8: } 9: }  You can use it like this..
+ 1: DateTime dateTimeInPast = new DateTime(2010, 5, 20); 2: DateTime dateTimeInFuture = new DateTime(2025, 11, 20); 3: 4: Console."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">22</span>
+							<span class="rest">Aug 2010</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Extension method: DateTime.IsInFuture()</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>In this post you can find a simple DateTime <a href="http://msdn.microsoft.com/en-us/library/bb383977.aspx">extension
+method</a>. The
+IsInFuture method simply returns a boolean indicating whether the
+DateTime instance is in the future or not.</p>
+<pre><code>   1:  public static class DateTimeExtensions
+
+   2:  {
+
+   3:      public static bool IsInFuture(this DateTime dateTime)
+
+   4:      {
+
+   5:          int compareResult = DateTime.Compare(dateTime, DateTime.Now);
+
+   6:   
+
+   7:          return compareResult != -1;
+
+   8:      }
+
+   9:  }
+</code></pre>
+<p>You can use it like this..</p>
+<pre><code>   1:  DateTime dateTimeInPast = new DateTime(2010, 5, 20);
+
+   2:  DateTime dateTimeInFuture = new DateTime(2025, 11, 20);
+
+   3:   
+
+   4:  Console.WriteLine(dateTimeInPast.IsInFuture()); //Prints False
+
+   5:  Console.WriteLine(dateTimeInFuture.IsInFuture()); //Prints True
+</code></pre>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2010  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

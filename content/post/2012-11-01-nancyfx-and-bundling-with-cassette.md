@@ -45,7 +45,7 @@ bundles](http://getcassette.net/documentation/v2/bundle-configuration) take
 little to no effort.  
   
 
-[![](../images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-asset_structure.PNG)](../images/2012-11-01-nancyfx-and-bundling-with-cassette-asset_structure.PNG)
+[![](/post/images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-asset_structure.PNG)](/post/images/2012-11-01-nancyfx-and-bundling-with-cassette-asset_structure.PNG)
 
     public class CassetteBundleConfiguration : IConfiguration<BundleCollection>
     {
@@ -92,7 +92,7 @@ When you now browse to your application, and view the source, you'll
 notice that Cassette is already in play, yet the assets are not bundled
 nor minified.  
   
-[![](../images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_not_bundled.PNG)](../images/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_not_bundled.PNG)  
+[![](/post/images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_not_bundled.PNG)](/post/images/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_not_bundled.PNG)  
   
 **5. Enable optimization**  
   
@@ -122,11 +122,11 @@ The best place to enable this, is probably in your bootstrapper.
 **This time around, the assets do get bundled and minified.  
   
 
-[![](../images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_bundled.PNG)](../images/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_bundled.PNG)
+[![](/post/images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_bundled.PNG)](/post/images/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_bundled.PNG)
 
   
 
-[![](../images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-minified.PNG)](../images/2012-11-01-nancyfx-and-bundling-with-cassette-minified.PNG)
+[![](/post/images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-minified.PNG)](/post/images/2012-11-01-nancyfx-and-bundling-with-cassette-minified.PNG)
 
   
 \* It wasn't until today that I noticed the asset in C**asset**te.

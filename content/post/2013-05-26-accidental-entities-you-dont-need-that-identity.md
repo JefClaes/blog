@@ -135,7 +135,7 @@ entity that defines a car. A car references a color.
 The generated schema looks like this.  
   
 
-[![](../images/thumbnails/2013-05-26-accidental-entities-you-dont-need-that-identity-V1.PNG)](../images/2013-05-26-accidental-entities-you-dont-need-that-identity-V1.PNG)
+[![](/post/images/thumbnails/2013-05-26-accidental-entities-you-dont-need-that-identity-V1.PNG)](/post/images/2013-05-26-accidental-entities-you-dont-need-that-identity-V1.PNG)
 
 And while this looks innocent at first, accidentally creating an entity
 raises a bunch of new concerns and questions. What happens if a color is
@@ -244,7 +244,7 @@ lose the id.
 The generated schema now looks like this; we're no longer referencing
 the Color table.  
   
-[![](../images/thumbnails/2013-05-26-accidental-entities-you-dont-need-that-identity-V2.PNG)](../images/2013-05-26-accidental-entities-you-dont-need-that-identity-V2.PNG)  
+[![](/post/images/thumbnails/2013-05-26-accidental-entities-you-dont-need-that-identity-V2.PNG)](/post/images/2013-05-26-accidental-entities-you-dont-need-that-identity-V2.PNG)  
   
 When we store a color now, it's an entity. But as soon as we put it on a
 car, it's a value object. When we pull the car back out of our

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NancyFx on Jef Claes</title>
+    <link>http://localhost:1313/tags/nancyfx/</link>
+    <description>Recent content in NancyFx on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Jan 2013 22:03:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/nancyfx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Separating command data from logic and sending it on a bus</title>
+      <link>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</link>
+      <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</guid>
+      <description>In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers.</description>
+    </item>
+    
+    <item>
+      <title>Keeping your AppHarbor application pool alive</title>
+      <link>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</link>
+      <pubDate>Sun, 06 Jan 2013 21:18:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</guid>
+      <description>By default, IIS will shut down your application pool when it has been idle for more than 20 minutes. This is annoying when your website is only visited sporadically; visitors might not have the patience to wait for your application pool to spin up again. When you&amp;rsquo;re running your own machine, you can higher or disable the idle-timeout, but when you&amp;rsquo;re running on a cloud service like AppHarbor you can&amp;rsquo;t.</description>
+    </item>
+    
+    <item>
+      <title>Released: My Antwerp Open Data submissions</title>
+      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
+      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
+      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
+    </item>
+    
+    <item>
+      <title>Released: Kill long meetings</title>
+      <link>http://localhost:1313/2012/11/released-kill-long-meetings/</link>
+      <pubDate>Sun, 25 Nov 2012 17:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/released-kill-long-meetings/</guid>
+      <description>A lot has already been said and written about meetings, and some have carried the message above par; &amp;lsquo;Meetings: where work goes to die&#39;. Today, I&amp;rsquo;m not going to foul the internet with another rant, but I&amp;rsquo;d like to show you a small application built over the last few weeks after work.
+I regularly find myself building small things as an antitoxin to the regular periods of not writing and shipping code at work.</description>
+    </item>
+    
+    <item>
+      <title>Released: Nancy.AspNetSprites.Razor</title>
+      <link>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</link>
+      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</guid>
+      <description>I was setting up a web application that shows an image for each listed product on the home page. When there were a few products, this worked pretty smooth, but as the number of products (and thereby images) increased, performance degraded. The problem is that each image initiates a separate request. The solution for this problem is to reduce the number of requests by combining the images using CSS sprites. Here is an in-detail explanation of how this works.</description>
+    </item>
+    
+    <item>
+      <title>NancyFx and bundling with Cassette</title>
+      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
+      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
+      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
+Since I struggled with the implementation a little bit, I documented the process below.
+1. Cassette.Nancy package
+**
+**Add the Cassette.Nancy package to the project.
+PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
+    </item>
+    
+    <item>
+      <title>Making my first NancyFx test pass</title>
+      <link>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/</link>
+      <pubDate>Mon, 11 Jun 2012 16:47:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/</guid>
+      <description>Like I already said last week, I have been dabbling a bit with NancyFx lately.
+This week I took a serious look at testing Nancy modules and Razor views. Due to Nancy&amp;rsquo;s defaults and conventions, it takes a little while to set up Nancy in a test context. Then again, Nancy&amp;rsquo;s granularity makes it simple enough to set up a solid test infrastructure by replacing some of its building blocks.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -88,4 +88,4 @@ using [jQuery](http://jquery.com/) and the ExtendedControls.
 
   
   
-[![](../images/thumbnails/2010-01-27-an-introduction-to-asp-net-ajax-4-client-controls-colorpicker.JPG)](../images/2010-01-27-an-introduction-to-asp-net-ajax-4-client-controls-colorpicker.JPG)
+[![](/post/images/thumbnails/2010-01-27-an-introduction-to-asp-net-ajax-4-client-controls-colorpicker.JPG)](/post/images/2010-01-27-an-introduction-to-asp-net-ajax-4-client-controls-colorpicker.JPG)

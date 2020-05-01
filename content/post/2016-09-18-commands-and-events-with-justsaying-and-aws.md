@@ -87,9 +87,9 @@ JustSaying will create two SNS topics and four SQS queues: two input
 queues and two error queues.  
   
 
-[![](../images/thumbnails/2016-09-18-commands-and-events-with-justsaying-and-aws-sns.PNG)](../images/2016-09-18-commands-and-events-with-justsaying-and-aws-sns.PNG)
+[![](/post/images/thumbnails/2016-09-18-commands-and-events-with-justsaying-and-aws-sns.PNG)](/post/images/2016-09-18-commands-and-events-with-justsaying-and-aws-sns.PNG)
 
-[![](../images/thumbnails/2016-09-18-commands-and-events-with-justsaying-and-aws-sqs.PNG)](../images/2016-09-18-commands-and-events-with-justsaying-and-aws-sqs.PNG)
+[![](/post/images/thumbnails/2016-09-18-commands-and-events-with-justsaying-and-aws-sqs.PNG)](/post/images/2016-09-18-commands-and-events-with-justsaying-and-aws-sqs.PNG)
 
 Those topic and queue names are not that descriptive once you introduce
 multiple components and might cause names to collide. JustSaying allows
@@ -101,7 +101,7 @@ queue.
 
   
 
-[![](../images/thumbnails/2016-09-18-commands-and-events-with-justsaying-and-aws-sqsnamingstrategy.PNG)](../images/2016-09-18-commands-and-events-with-justsaying-and-aws-sqsnamingstrategy.PNG)
+[![](/post/images/thumbnails/2016-09-18-commands-and-events-with-justsaying-and-aws-sqsnamingstrategy.PNG)](/post/images/2016-09-18-commands-and-events-with-justsaying-and-aws-sqsnamingstrategy.PNG)
 
   
 This whole experiment has had a scary low learning curve (maybe a bit

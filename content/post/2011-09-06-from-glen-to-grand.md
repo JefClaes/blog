@@ -25,15 +25,15 @@ Dam](http://en.wikipedia.org/wiki/Glen_Canyon_Dam). 
 
   
 
-[![](../images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0049.png)](../images/2011-09-06-from-glen-to-grand-LakePowell_0049.png)
+[![](/post/images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0049.png)](/post/images/2011-09-06-from-glen-to-grand-LakePowell_0049.png)
 
   
 
-[![](../images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0120.png)](../images/2011-09-06-from-glen-to-grand-LakePowell_0120.png)
+[![](/post/images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0120.png)](/post/images/2011-09-06-from-glen-to-grand-LakePowell_0120.png)
 
   
 
-[![](../images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0144.png)](../images/2011-09-06-from-glen-to-grand-LakePowell_0144.png)
+[![](/post/images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0144.png)](/post/images/2011-09-06-from-glen-to-grand-LakePowell_0144.png)
 
   
 
@@ -43,11 +43,11 @@ some interesting pictures. 
 
   
 
-[![](../images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0173.png)](../images/2011-09-06-from-glen-to-grand-LakePowell_0173.png)
+[![](/post/images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0173.png)](/post/images/2011-09-06-from-glen-to-grand-LakePowell_0173.png)
 
   
 
-[![](../images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0216.png)](../images/2011-09-06-from-glen-to-grand-LakePowell_0216.png)
+[![](/post/images/thumbnails/2011-09-06-from-glen-to-grand-LakePowell_0216.png)](/post/images/2011-09-06-from-glen-to-grand-LakePowell_0216.png)
 
   
 

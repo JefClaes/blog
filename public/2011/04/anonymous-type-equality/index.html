@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Anonymous type equality - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Anonymous type equality">
+<meta itemprop="description" content="Let&rsquo;s say you instantiate two variables (a and b) using anonymous types. They both have the same two properties (x and y) with equal values.
+ 1: var a = new { x = 1, y = 2 }; 2: var b = new { y = 2, x = 1 };  Do you think these two variables are equal?
+ 1: var areEquel = a.Equals(b); 2: Console.WriteLine(areEquel); //Prints false :O  These two variables are not equal.">
+<meta itemprop="datePublished" content="2011-04-23T15:15:00&#43;02:00" />
+<meta itemprop="dateModified" content="2011-04-23T15:15:00&#43;02:00" />
+<meta itemprop="wordCount" content="197">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,.NET," /><meta property="og:title" content="Anonymous type equality" />
+<meta property="og:description" content="Let&rsquo;s say you instantiate two variables (a and b) using anonymous types. They both have the same two properties (x and y) with equal values.
+ 1: var a = new { x = 1, y = 2 }; 2: var b = new { y = 2, x = 1 };  Do you think these two variables are equal?
+ 1: var areEquel = a.Equals(b); 2: Console.WriteLine(areEquel); //Prints false :O  These two variables are not equal." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2011/04/anonymous-type-equality/" />
+<meta property="article:published_time" content="2011-04-23T15:15:00+02:00" />
+<meta property="article:modified_time" content="2011-04-23T15:15:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Anonymous type equality"/>
+<meta name="twitter:description" content="Let&rsquo;s say you instantiate two variables (a and b) using anonymous types. They both have the same two properties (x and y) with equal values.
+ 1: var a = new { x = 1, y = 2 }; 2: var b = new { y = 2, x = 1 };  Do you think these two variables are equal?
+ 1: var areEquel = a.Equals(b); 2: Console.WriteLine(areEquel); //Prints false :O  These two variables are not equal."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">23</span>
+							<span class="rest">Apr 2011</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Anonymous type equality</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Let&rsquo;s say you instantiate two variables (a and b) using <a href="http://msdn.microsoft.com/en-us/library/bb397696.aspx">anonymous
+types</a>. They both
+have the same two properties (x and y) with equal values.</p>
+<pre><code>   1:  var a = new { x = 1, y = 2 };
+
+   2:  var b = new { y = 2, x = 1 };
+</code></pre>
+<p>Do you think these two variables are equal?</p>
+<pre><code>   1:  var areEquel = a.Equals(b);
+
+   2:  Console.WriteLine(areEquel); //Prints false :O
+</code></pre>
+<p>These two variables are not equal. Not something I expected!</p>
+<p>If we look at the IL the C# compiler produced, it starts making sense
+though.</p>
+<p><a href="/post/images/2011-04-23-anonymous-type-equality-AnonymousTypeEquality.PNG"><img src="/post/images/thumbnails/2011-04-23-anonymous-type-equality-AnonymousTypeEquality.PNG" alt=""></a><br>
+There are two different types generated, although the properties we
+assigned are the same. What differs is <strong>the sequence of the property
+assignment</strong>.</p>
+<p>This is defined in chapter <em>7.6.10.6 Anonymous object creation
+expressions</em> of the C# 4.0 specifications.</p>
+<blockquote>
+<p>Within the same program, two anonymous object initializers that
+specify a sequence of properties of the same names and compile-time
+types in the same order will produce instances of the same anonymous
+type.</p>
+</blockquote>
+<p><strong>Conclusion</strong></p>
+<p>When defining anonymous types, the sequence of the property assignment
+matters. If the sequence of the property assignment differs, different
+types are defined by the C# compiler.</p>
+<p><!-- raw HTML omitted -->Also read <a href="http://jclaes.blogspot.com/2011/04/anonymous-type-equality-follow-up.html">the
+follow-up</a>.<!-- raw HTML omitted --></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2011  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>An event sourced aggregate - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="An event sourced aggregate">
+<meta itemprop="description" content="Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
+In traditional systems, we only persist the current state of an object.
+
+In event sourced systems, we don&rsquo;t persist the current state of an object, but the sequence of events that caused the object to be in the current state.">
+<meta itemprop="datePublished" content="2013-10-13T18:36:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-10-13T18:36:00&#43;02:00" />
+<meta itemprop="wordCount" content="651">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,.NET,Architecture,DDD," /><meta property="og:title" content="An event sourced aggregate" />
+<meta property="og:description" content="Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
+In traditional systems, we only persist the current state of an object.
+
+In event sourced systems, we don&rsquo;t persist the current state of an object, but the sequence of events that caused the object to be in the current state." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/10/an-event-sourced-aggregate/" />
+<meta property="article:published_time" content="2013-10-13T18:36:00+02:00" />
+<meta property="article:modified_time" content="2013-10-13T18:36:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="An event sourced aggregate"/>
+<meta name="twitter:description" content="Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
+In traditional systems, we only persist the current state of an object.
+
+In event sourced systems, we don&rsquo;t persist the current state of an object, but the sequence of events that caused the object to be in the current state."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">13</span>
+							<span class="rest">Oct 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">An event sourced aggregate</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Last week I shared <a href="http://www.jefclaes.be/2013/10/my-understanding-of-event-sourcing.html">my theoretical understanding of event
+sourcing</a>.
+Today, I want to make an attempt at making that theory tangible by
+implementing an event sourced aggregate.</p>
+<p>In traditional systems, we only persist the current state of an
+object.</p>
+<p><a href="/post/images/2013-10-13-an-event-sourced-aggregate-TraditionalStorage.PNG"><img src="/post/images/thumbnails/2013-10-13-an-event-sourced-aggregate-TraditionalStorage.PNG" alt=""></a></p>
+<p>In event sourced systems, we don&rsquo;t persist the current state of an
+object, but <strong>the sequence of events that caused the object to be in the
+current state</strong>.</p>
+<p><a href="/post/images/2013-10-13-an-event-sourced-aggregate-EventSourcingStorage.PNG"><img src="/post/images/thumbnails/2013-10-13-an-event-sourced-aggregate-EventSourcingStorage.PNG" alt=""></a></p>
+<p>If we want an aggregate to be event sourced, it should be able to
+rebuild itself from a stream of events, and it should be able to record
+all the events it raises.</p>
+<pre><code>public interface IEventSourcedAggregate : IAggregate
+{
+    void Initialize(EventStream eventStream);
+
+    EventStream RecordedEvents();
+}
+</code></pre>
+<p>Let&rsquo;s implement the example aggregate we used last week: an account. An
+account owner can deposit and withdraw an amount from his account. There
+is a maximum amount policy for withdrawals though.</p>
+<pre><code>public class Account : IEventSourcedAggregate {
+    private readonly Guid _id;
+
+    public Account(Guid id) {
+        _id = id;
+    }
+
+    public Guid Id { get { return _id; } }
+
+    public void Initialize(EventStream eventStream) { 
+        throw new NotImplementedException();
+    }
+
+    public EventStream RecordedEvents() { 
+        throw new NotImplementedException(); 
+    }
+    
+    public void Deposit(Amount amount) { }
+    
+    public void Withdraw(Amount amount) { }
+}
+</code></pre>
+<p>Next to the Initialize and RecordedEvents method, our aggregate facade
+hasn&rsquo;t changed. We still have a Deposit and a Withdraw operation like we
+would have in a traditional aggregate. How those two methods get
+implemented differs though.</p>
+<p>When we deposit or withdraw an amount, we want to - instead of changing
+the state directly - apply events. When an event gets applied its
+handler will first be invoked, for the event then to be recorded.</p>
+<pre><code>public void Deposit(Amount amount) {
+    Apply(new AmountDeposited(amount));
+}
+
+public void Withdraw(Amount amount) {
+    if (amount.IsOver(AmountPolicy.Maximum))     {
+        Apply(new WithdrawalAmountExceeded(amount));
+
+        return;
+    }
+
+    Apply(new AmountWithdrawn(amount));
+}
+
+private void Apply(IEvent @event) {
+    When((dynamic)@event);
+    _eventRecorder.Record(@event);
+}
+</code></pre>
+<p>An event recorder is a small object that keeps track of recorded events.</p>
+<pre><code>public class EventRecorder
+{
+    private readonly List&lt;IEvent&gt; _events = new List&lt;IEvent&gt;();
+
+    public void Record(IEvent @event) {
+        _events.Add(@event);
+    }
+
+    public EventStream RecordedEvents() {
+        return new EventStream(_events);
+    }
+}
+</code></pre>
+<p>This object will be used to have our aggregate return a stream of
+recorded events.</p>
+<pre><code>public EventStream RecordedEvents() {
+    return _eventRecorder.RecordedEvents();
+}
+</code></pre>
+<p>We can now also implement initializing the aggregate from a stream of
+events.</p>
+<pre><code>public void Initialize(EventStream eventStream) {
+    foreach (var @event in eventStream)
+        When((dynamic)@event);
+}
+</code></pre>
+<p>Here too, event handlers are invoked by using the dynamic run-time to
+find the best overload.</p>
+<p>It&rsquo;s the event handlers that will change the aggregate&rsquo;s state. In this
+example, they can be implemented like this.</p>
+<pre><code>private void When(AmountWithdrawn @event) {
+    _amount = _amount.Substract(@event.Amount);
+}
+
+private void When(AmountDeposited @event) {
+    _amount = _amount.Add(@event.Amount);
+}
+
+private void When(WithdrawalAmountExceeded @event) { }
+</code></pre>
+<p>A test verifies that when I invoke operations on the aggregate, all the
+events are recorded, and the state has changed. When I use those
+recorded events to rebuild the same aggregate, we end up with the same
+state.</p>
+<pre><code>[TestMethod]
+public void ICanReplayTheEventsAndHaveTheStateRebuilt() {
+    var account = new Account(Guid.NewGuid());
+
+    account.Deposit(new Amount(2500));
+    account.Withdraw(new Amount(100));
+    account.Withdraw(new Amount(200));
+
+    Assert.AreEqual(3, account.RecordedEvents().Count());
+    Assert.AreEqual(new Amount(2200), account.Amount);
+
+    var events = account.RecordedEvents();
+
+    var secondAccount = new Account(Guid.NewGuid());
+    secondAccount.Initialize(events);
+
+    Assert.AreEqual(new Amount(2200), secondAccount.Amount);
+    Assert.AreEqual(0, secondAccount.RecordedEvents().Count());
+}
+</code></pre>
+<p>And this is all there is to an event sourced aggregate.</p>
+<p>For this exercise I tried to keep the number of concepts low. Many will
+have noticed that extracting a few concepts would benefit re-use and
+explicitness.</p>
+<p>Also using the DLR to invoke the correct event handlers might be frowned
+upon; it&rsquo;s not the most performant method, each event must have a
+handler, and in case a handler is missing the exception is not pretty.
+Experienced readers will also have noticed concepts such as versioning
+and snapshots are not implemented yet. I hope limiting the amount of
+concepts and indirections made this blog post easier to read.</p>
+<p><em>Any thoughts on this implementation?</em></p>
+<ul>
+<li></li>
+</ul>
+<p>Next week: where do I persist these events?*</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+							<li><a href="/tags/architecture">Architecture</a></li>
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

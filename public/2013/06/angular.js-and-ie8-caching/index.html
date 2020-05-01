@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Angular.js and IE8 caching - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Angular.js and IE8 caching">
+<meta itemprop="description" content="Older Internet Explorer versions are notorious for agressively caching AJAX requests. In this post, you&rsquo;ll find two techniques that combat this behaviour.
+The first option is to have your server explicitly set the caching headers.
+Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidUntilExpires(false); Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches); Response.Cache.SetCacheability(HttpCacheability.NoCache); Response.Cache.SetNoStore();  Since you don&rsquo;t necessarily own the server, or clients might already have cached some requests, you can trick the browser into thinking each request is a fresh one by making each url unique.">
+<meta itemprop="datePublished" content="2013-06-09T16:52:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-06-09T16:52:00&#43;02:00" />
+<meta itemprop="wordCount" content="243">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,ASP.NET MVC,AJAX,javascript," /><meta property="og:title" content="Angular.js and IE8 caching" />
+<meta property="og:description" content="Older Internet Explorer versions are notorious for agressively caching AJAX requests. In this post, you&rsquo;ll find two techniques that combat this behaviour.
+The first option is to have your server explicitly set the caching headers.
+Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidUntilExpires(false); Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches); Response.Cache.SetCacheability(HttpCacheability.NoCache); Response.Cache.SetNoStore();  Since you don&rsquo;t necessarily own the server, or clients might already have cached some requests, you can trick the browser into thinking each request is a fresh one by making each url unique." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/06/angular.js-and-ie8-caching/" />
+<meta property="article:published_time" content="2013-06-09T16:52:00+02:00" />
+<meta property="article:modified_time" content="2013-06-09T16:52:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Angular.js and IE8 caching"/>
+<meta name="twitter:description" content="Older Internet Explorer versions are notorious for agressively caching AJAX requests. In this post, you&rsquo;ll find two techniques that combat this behaviour.
+The first option is to have your server explicitly set the caching headers.
+Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidUntilExpires(false); Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches); Response.Cache.SetCacheability(HttpCacheability.NoCache); Response.Cache.SetNoStore();  Since you don&rsquo;t necessarily own the server, or clients might already have cached some requests, you can trick the browser into thinking each request is a fresh one by making each url unique."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">09</span>
+							<span class="rest">Jun 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Angular.js and IE8 caching</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Older Internet Explorer versions are notorious for agressively caching
+AJAX requests. In this post, you&rsquo;ll find two techniques that combat this
+behaviour.</p>
+<p>The first option is to have your server explicitly set the caching
+headers.</p>
+<pre><code>Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1));
+Response.Cache.SetValidUntilExpires(false);
+Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
+Response.Cache.SetCacheability(HttpCacheability.NoCache);
+Response.Cache.SetNoStore();
+</code></pre>
+<p>Since you don&rsquo;t necessarily own the server, or clients might already
+have cached some requests, you can trick the browser into thinking each
+request is a fresh one by making each url unique. Our old pal jQuery
+already learned <a href="http://stackoverflow.com/questions/4303829/how-to-prevent-jquery-ajax-caching-in-internet-explorer">this
+trick</a>
+years ago. Angular.js on the other hand seems to have forgotten. We can
+get around though.</p>
+<p>If you merge <!-- raw HTML omitted --><!-- raw HTML omitted --><a href="https://github.com/angular/angular.js/pull/2130">this pull
+request</a> <!-- raw HTML omitted --><!-- raw HTML omitted -->(or wait for angular.js version 1.2), you
+will find angular&rsquo;s HTTP provider augmented with request interceptors,
+enabling you to mold the request before it goes out.</p>
+<p>The interceptor we&rsquo;re adding to kill the cache only touches GET
+requests, appending a &lsquo;cacheSlayer&rsquo; querystring parameter with a
+timestamp to each url, making it unique and thus bypassing the cache. A
+factory is responsible for creating it, while a config block pushes it
+into a collection of interceptors.</p>
+<pre><code>var AppInfrastructure = angular.module('App.Infrastructure', []);
+
+AppInfrastructure
+    .config(function ($httpProvider) {
+        $httpProvider.requestInterceptors.push('httpRequestInterceptorCacheBuster');
+    })    
+    .factory('httpRequestInterceptorCacheBuster', function () {
+        return function (promise) {
+            return promise.then(function (request) {
+                if (request.method === 'GET') {
+                    var sep = request.url.indexOf('?') === -1 ? '?' : '&amp;';
+                    request.url = request.url + sep + 'cacheSlayer=' + new Date().getTime();
+                }
+
+                return request;
+            });
+        };
+    });    
+</code></pre>
+<p>I hope this helps someone spending time on more important matters.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/asp.net-mvc">ASP.NET MVC</a></li>
+							
+							<li><a href="/tags/ajax">AJAX</a></li>
+							
+							<li><a href="/tags/javascript">javascript</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

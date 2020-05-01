@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Notifications from an event log - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Notifications from an event log">
+<meta itemprop="description" content="User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
+In the domain I&rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website.">
+<meta itemprop="datePublished" content="2016-04-17T17:37:00&#43;02:00" />
+<meta itemprop="dateModified" content="2016-04-17T17:37:00&#43;02:00" />
+<meta itemprop="wordCount" content="450">
+
+
+
+<meta itemprop="keywords" content="DDD,F#," /><meta property="og:title" content="Notifications from an event log" />
+<meta property="og:description" content="User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
+In the domain I&rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2016/04/notifications-from-an-event-log/" />
+<meta property="article:published_time" content="2016-04-17T17:37:00+02:00" />
+<meta property="article:modified_time" content="2016-04-17T17:37:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Notifications from an event log"/>
+<meta name="twitter:description" content="User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
+In the domain I&rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">17</span>
+							<span class="rest">Apr 2016</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Notifications from an event log</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>User notifications are a feature that came as an afterthought, but
+turned out to be rather easy to implement - without touching (read:
+breaking) existing functionality - thanks to having an immutable event
+log.</p>
+<p>In the domain I&rsquo;m working in at the moment, we will often give users
+incentives to return to the website, or to extend their stay on the
+website. These incentives were only communicated by email at first, and
+this is a decent medium when you want users to return to the website.
+However, when you want to extend their stay on the website, you want to
+avoid users switching contexts between your website and their mail
+client. But also, as soon as they return to your website, you want to
+show them a crisp overview of all relevant calls to action. Having most
+calls to action map to a specific page, the list of notifications can
+serve as a one-click starting point, lowering the hurdle to browse to a
+relevant page.</p>
+<p>Notifying a user is one thing. Another use case we wanted to solve, is
+to dismiss notifications as soon as they are no longer relevant.</p>
+<p>Two examples of when a notification might no longer be considered
+relevant:</p>
+<ol>
+<li>When a bonus is awarded to a user, he might ignore the notification
+and activate the bonus by directly browsing to the specific page.</li>
+<li>When a bonus is awarded to a user, he might not visit the website
+before the bonus expires.</li>
+</ol>
+<p>In these cases, to avoid confusion and unsatisfied customers, we want to
+dismiss the notification automatically.</p>
+<p>Let&rsquo;s say that we&rsquo;re going to implement notifications for bonuses. We
+have these type of events to work with.</p>
+<p>On the other hand, we have a set of commands that interact with
+notifications.</p>
+<p>A notification has an identifier, references a user, contains some data,
+and most importantly can be linked to <em>something</em>.</p>
+<p>Working from an immutable event log, we can project the events to
+commands (to dispatch them eventually).</p>
+<p>When a bonus is awarded to a user, we will notify the user, providing
+the template id and data that can be used inside of the template. In
+this example, the notification can be linked to a specific bonus,
+leveraging the bonus identifier.</p>
+<p>The user might now see something like this.</p>
+<p><a href="/post/images/2016-04-17-notifications-from-an-event-log-Notification1.PNG"><img src="/post/images/thumbnails/2016-04-17-notifications-from-an-event-log-Notification1.PNG" alt=""></a></p>
+<p>Being aware of the events which a bonus produces over its lifetime, and
+their significance, we choose to dismiss the notification as soon as the
+bonus is activated or expired (leveraging the bonus identifier as the
+link again).</p>
+<p><a href="/post/images/2016-04-17-notifications-from-an-event-log-Notification2.PNG"><img src="/post/images/thumbnails/2016-04-17-notifications-from-an-event-log-Notification2.PNG" alt=""></a></p>
+<p>Now it&rsquo;s up to the UX team (if you&rsquo;re lucky enough to have one) to
+decide on how to visualize the difference between a read and a dismissed
+notification (if at all).</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+							<li><a href="/tags/f">F#</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2016  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

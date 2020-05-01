@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>HtmlHelper to generate a top-level menu for areas - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="HtmlHelper to generate a top-level menu for areas">
+<meta itemprop="description" content="Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them.">
+<meta itemprop="datePublished" content="2012-07-08T19:10:00&#43;02:00" />
+<meta itemprop="dateModified" content="2012-07-08T19:10:00&#43;02:00" />
+<meta itemprop="wordCount" content="584">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,ASP.NET MVC,CSS,ASP.NET," /><meta property="og:title" content="HtmlHelper to generate a top-level menu for areas" />
+<meta property="og:description" content="Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/" />
+<meta property="article:published_time" content="2012-07-08T19:10:00+02:00" />
+<meta property="article:modified_time" content="2012-07-08T19:10:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HtmlHelper to generate a top-level menu for areas"/>
+<meta name="twitter:description" content="Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">08</span>
+							<span class="rest">Jul 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">HtmlHelper to generate a top-level menu for areas</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Last week, we had to set up a new ASP.NET MVC web application, using a
+somewhat customized <a href="http://twitter.github.com/bootstrap/">Twitter
+Bootstrap</a> build. Because the
+application has multiple functional contexts, we divided it in multiple
+parts using areas. Since these areas were a one-to-one mapping with the
+top-level menu items, we tried abstracting the creation of the menu
+items, ánd the management of setting the active item, into an
+HtmlHelper.</p>
+<p>Let&rsquo;s say, for this example, that we have six areas: Images, Maps, Play,
+Search, Video and Blog, and we want to render a list item for each one
+of them.</p>
+<pre><code>&lt;div class=&quot;nav-collapse collapse&quot;&gt;
+    &lt;ul class=&quot;nav&quot;&gt;
+        // Add list items         
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+<p>The first solution we tried, assumed we needed an extreme
+low-maintenance solution, for which we would write some infrastructure
+once, and then be able to just create new areas without having to think
+about updating the top-level menu.</p>
+<p>This solution reflected over all the types looking for classes which
+inherit from the AreaRegistration class. Once you get a list of all the
+area names, you can iterate over them and create a list item for each
+one of them, using an instance of UrlHelper to resolve the associated
+url. You have to impose some routing convention to make the url lookup
+robust though; in this example, I assume the default route is
+sufficient. To be able to mark the active area with a css class, you can
+get the active areaname from the viewcontext, and use that to compare to
+the iterand value.</p>
+<pre><code>public static class TopMenuExtensions
+{
+    private static IEnumerable&lt;string&gt; _areaNames;
+
+    public static MvcHtmlString RenderTopMenuItems(this HtmlHelper helper)
+    {
+        var areaNames = GetAreaNames();
+        var currentArea = helper.ViewContext.RouteData.DataTokens[&quot;area&quot;] as string;
+
+        var html = new StringBuilder();
+        foreach (var areaName in areaNames)
+        {
+            var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
+            var url = urlHelper.Action(string.Empty, string.Empty, new { area = areaName });
+            // or similar
+            // var url = urlHelper.RouteUrl(areaName + &quot;_default&quot;);
+
+            html.AppendLine(areaName.Equals(
+                currentArea, StringComparison.OrdinalIgnoreCase) ? 
+                &quot;&lt;li class='active'&gt;&quot; : &quot;&lt;li&gt;&quot;);
+            html.AppendLine(string.Format(&quot;&lt;a href='{0}'&gt;{1}&lt;/a&gt;&quot;, url, areaName));
+            html.AppendLine(&quot;&lt;/li&gt;&quot;);
+        }
+
+        return new MvcHtmlString(html.ToString());
+    }
+
+    private static IEnumerable&lt;string&gt; GetAreaNames()
+    {
+        if (_areaNames == null)
+        {
+            _areaNames = Assembly
+                .GetExecutingAssembly()
+                .GetTypes()
+                .Where(t =&gt; t.IsClass &amp;&amp; typeof(AreaRegistration).IsAssignableFrom(t))
+                .Select(a =&gt; (AreaRegistration)Activator.CreateInstance(a))
+                .Select(r =&gt; r.AreaName);
+        }
+
+        return _areaNames;
+    }
+}
+</code></pre>
+<p>Now we can add following line to our _Layout file, and be done with
+it.</p>
+<pre><code>@Html.RenderTopMenuItems()  
+</code></pre>
+<p>While this works, we stumbled upon an annoyance pretty quickly: we
+wanted to change the order of the menu items, but couldn&rsquo;t. We took a
+step back, and momentarily considered decorating the arearegistrations
+with an attribute, but since the added value is so small compared to the
+extra complexity introduced, we decided just to throw the
+overengineering out.</p>
+<pre><code>public static MvcHtmlString RenderTopMenuItems(
+             this HtmlHelper helper, IEnumerable&lt;string&gt; areaNames)
+{        
+    var currentArea = helper.ViewContext.RouteData.DataTokens[&quot;area&quot;] as string;
+
+    var html = new StringBuilder();
+    foreach (var areaName in areaNames)
+    {
+        var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
+        var url = urlHelper.Action(string.Empty, string.Empty, new { area = areaName });
+        
+        if (url == null)
+            throw new NullReferenceException(
+                string.Format(&quot;Couldn't find an url for the area {0}.&quot;, areaName));                
+        html.AppendLine(areaName.Equals(
+                          currentArea, StringComparison.OrdinalIgnoreCase) ? 
+                          &quot;&lt;li class='active'&gt;&quot; : &quot;&lt;li&gt;&quot;);
+        html.AppendLine(string.Format(&quot;&lt;a href='{0}'&gt;{1}&lt;/a&gt;&quot;, url, areaName));
+        html.AppendLine(&quot;&lt;/li&gt;&quot;);
+    }
+
+    return new MvcHtmlString(html.ToString());
+}       
+</code></pre>
+<p>The top-level menu items can now be rendered like this.</p>
+<pre><code>@Html.RenderTopMenuItems(new [] { &quot;Search&quot;, &quot;Images&quot;, &quot;Blog&quot;, &quot;Maps&quot;, &quot;Play&quot;, &quot;Video&quot; } )
+</code></pre>
+<p>And the result looks like this.</p>
+<p><a href="/post/images/2012-07-08-htmlhelper-to-generate-a-top-level-menu-for-areas-TwitterBootstrapMenu.PNG"><img src="/post/images/thumbnails/2012-07-08-htmlhelper-to-generate-a-top-level-menu-for-areas-TwitterBootstrapMenu.PNG" alt=""></a></p>
+<p>While you can go at this problem in a lot of different ways, I think
+this is one of the most robust and most compact ways I have been able to
+write this so far. How have you solved this in the past?</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/asp.net-mvc">ASP.NET MVC</a></li>
+							
+							<li><a href="/tags/css">CSS</a></li>
+							
+							<li><a href="/tags/asp.net">ASP.NET</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -26,19 +26,19 @@ our drive through the Nevada desert.
 
   
 
-[![](../images/thumbnails/2011-09-03-sands-of-nevada-Zion_0044.png)](../images/2011-09-03-sands-of-nevada-Zion_0044.png)
+[![](/post/images/thumbnails/2011-09-03-sands-of-nevada-Zion_0044.png)](/post/images/2011-09-03-sands-of-nevada-Zion_0044.png)
 
   
 
-[![](../images/thumbnails/2011-09-03-sands-of-nevada-Zion_0010.png)](../images/2011-09-03-sands-of-nevada-Zion_0010.png)
+[![](/post/images/thumbnails/2011-09-03-sands-of-nevada-Zion_0010.png)](/post/images/2011-09-03-sands-of-nevada-Zion_0010.png)
 
   
 
-[![](../images/thumbnails/2011-09-03-sands-of-nevada-Zion_0051.png)](../images/2011-09-03-sands-of-nevada-Zion_0051.png)
+[![](/post/images/thumbnails/2011-09-03-sands-of-nevada-Zion_0051.png)](/post/images/2011-09-03-sands-of-nevada-Zion_0051.png)
 
   
 
-[![](../images/thumbnails/2011-09-03-sands-of-nevada-Zion_0064.png)](../images/2011-09-03-sands-of-nevada-Zion_0064.png)
+[![](/post/images/thumbnails/2011-09-03-sands-of-nevada-Zion_0064.png)](/post/images/2011-09-03-sands-of-nevada-Zion_0064.png)
 
   
 

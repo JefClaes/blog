@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reporting on Jef Claes</title>
+    <link>http://localhost:1313/tags/reporting/</link>
+    <description>Recent content in Reporting on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Feb 2011 17:50:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/reporting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reporting Services option grayed out on installing SSRS</title>
+      <link>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</link>
+      <pubDate>Sat, 12 Feb 2011 17:50:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</guid>
+      <description>Even though our title says Developer, it&amp;rsquo;s hard for most of us to escape doing a system administrator task once in a while.
+I had to add SQL Server Reporting Services to an existing SQL Server 2005 installation. This shouldn&amp;rsquo;t be a big deal. Mount the SQL Server installation image, run the setup and follow the installation wizard to add extra components. Arriving at the step where I should be able to select Reporting Services, the Reporting Services option was grayed out.</description>
+    </item>
+    
+    <item>
+      <title>Switching with non-constant cases in C#</title>
+      <link>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</link>
+      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</guid>
+      <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
+    </item>
+    
+    <item>
+      <title>Debugging &#34;SubReport could not be shown.&#34;</title>
+      <link>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</link>
+      <pubDate>Wed, 09 Sep 2009 18:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</guid>
+      <description>I&amp;rsquo;ve been upgrading a local report which contains multiple subreports, and yes I got that &amp;ldquo;SubReport could not be shown.&amp;rdquo; error more than once.
+Debugging this error is a pain in the a.. All you get is &amp;ldquo;SubReport could not be shown.&amp;quot;, making me want to punch my screen and scream &amp;ldquo;BUT WHY?&amp;ldquo;Just before breaking my screen and going on full tilt, I decided to take a step back and run through my checklist.</description>
+    </item>
+    
+  </channel>
+</rss>

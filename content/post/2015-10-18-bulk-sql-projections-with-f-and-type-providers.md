@@ -81,7 +81,7 @@ Executing this program, we can see the data was persisted like
 expected.  
   
 
-[![](../images/thumbnails/2015-10-18-bulk-sql-projections-with-f-and-type-providers-bulkprojection.PNG)](../images/2015-10-18-bulk-sql-projections-with-f-and-type-providers-bulkprojection.PNG)
+[![](/post/images/thumbnails/2015-10-18-bulk-sql-projections-with-f-and-type-providers-bulkprojection.PNG)](/post/images/2015-10-18-bulk-sql-projections-with-f-and-type-providers-bulkprojection.PNG)
 
   
 In the real world, you also want to take care of batching and logging,

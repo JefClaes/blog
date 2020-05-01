@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tips on Jef Claes</title>
+    <link>http://localhost:1313/tags/tips/</link>
+    <description>Recent content in Tips on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Dec 2012 16:44:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Released: My Antwerp Open Data submissions</title>
+      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
+      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
+      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
+    </item>
+    
+    <item>
+      <title>Some notes on performance tuning with NHibernate</title>
+      <link>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</link>
+      <pubDate>Sun, 02 Dec 2012 17:36:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</guid>
+      <description>A few weeks back, I spent an intensive day performance tuning parts of a, to me, relatively unfamiliar part of our codebase. Like it often is, the biggest optimizations were to be found in how we work with the database. Now, I don&amp;rsquo;t consider myself to be an NHibernate expert; I read this book and have used it on two projects, but in the end I just do my best to avoid doing stupid things with it.</description>
+    </item>
+    
+    <item>
+      <title>NancyFx and bundling with Cassette</title>
+      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
+      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
+      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
+Since I struggled with the implementation a little bit, I documented the process below.
+1. Cassette.Nancy package
+**
+**Add the Cassette.Nancy package to the project.
+PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Web API error detail policy now defaults to the custom errors configuration</title>
+      <link>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</link>
+      <pubDate>Mon, 20 Aug 2012 08:50:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</guid>
+      <description>While working on an already updated ASP.NET Web API project, I noticed an extra value in the IncludeErrorDetailPolicy enumeration. The IncludeErrorDetailPolicy configuration tells the Web API host when it&amp;rsquo;s allowed to include full error details in responses. Before updating, the RC version of the IncludeErrorDetailPolicy enumeration only had three possible values: LocalOnly, Always and Never. With the released version comes a new value: Default.
+// Summary: // Use the default behavior for the host environment.</description>
+    </item>
+    
+    <item>
+      <title>Add images to a GitHub readme</title>
+      <link>http://localhost:1313/2012/04/add-images-to-a-github-readme/</link>
+      <pubDate>Sun, 01 Apr 2012 19:32:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/add-images-to-a-github-readme/</guid>
+      <description>Today I wanted to add some screenshots to a GitHub readme for the sake of documenting. While this wasn&amp;rsquo;t particularly hard, I do had to iterate a few times before I got it right.
+Hosting the images
+You could simply add the images to your repository and reference them using the raw url&amp;rsquo;s, but this isn&amp;rsquo;t very efficient. Using this method, every request needs to go through GitHub&amp;rsquo;s application layer. It&amp;rsquo;s far better to make use of GitHub Pages, a feature purely designed to publish web content.</description>
+    </item>
+    
+    <item>
+      <title>Adding ELMAH to an AppHarbor application</title>
+      <link>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</link>
+      <pubDate>Sat, 04 Feb 2012 15:17:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</guid>
+      <description>For those who haven&amp;rsquo;t heard of ELMAH yet, here is the project description.
+ ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment.
+ While ELMAH is completely not AppHarbor specific, there do seem to be a fair amount of questions on the AppHarbor support forums on how to get ELMAH running.</description>
+    </item>
+    
+    <item>
+      <title>Commute hacking: Chromapaper</title>
+      <link>http://localhost:1313/2011/10/commute-hacking-chromapaper/</link>
+      <pubDate>Sat, 08 Oct 2011 17:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/10/commute-hacking-chromapaper/</guid>
+      <description>Since I changed jobs, I do my daily commute by train. This adds two hours of leasure time to the day, which I used to lose in traffic.
+So far, I have been spending these two won hours programming and/or reading. I have been looking for a way to read online content offline on my laptop. Searching for software that could make this happen, I mostly came across programs which would mirror a whole site locally.</description>
+    </item>
+    
+    <item>
+      <title>No more regions on implementing interface</title>
+      <link>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</link>
+      <pubDate>Tue, 28 Jun 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</guid>
+      <description>Something that has been irritating me tremendously lately, is that when I implement an interface using Visual Studio all the members of that interface get surrounded by a region.
+
+After poking around in the C# Text Editor options a little while, I found the switch that enables that behaviour.
+
+A little less friction every day..</description>
+    </item>
+    
+    <item>
+      <title>Using C# keywords as variables</title>
+      <link>http://localhost:1313/2011/04/using-c#-keywords-as-variables/</link>
+      <pubDate>Mon, 11 Apr 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/using-c#-keywords-as-variables/</guid>
+      <description>Hold it, don&amp;rsquo;t shoot me. I know this would be an awful practice, but it is an interesting C# compiler quirk nonetheless.
+ Keywords are predefined reserved identifiers that have special meanings to the compiler. They cannot be used as identifiers in your program unless they include @ as a prefix. For example, @if is a legal identifier but if is not because it is a keyword.
+ static void Main(string[] args) { var @if = &amp;quot;oh my.</description>
+    </item>
+    
+    <item>
+      <title>Reporting Services option grayed out on installing SSRS</title>
+      <link>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</link>
+      <pubDate>Sat, 12 Feb 2011 17:50:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</guid>
+      <description>Even though our title says Developer, it&amp;rsquo;s hard for most of us to escape doing a system administrator task once in a while.
+I had to add SQL Server Reporting Services to an existing SQL Server 2005 installation. This shouldn&amp;rsquo;t be a big deal. Mount the SQL Server installation image, run the setup and follow the installation wizard to add extra components. Arriving at the step where I should be able to select Reporting Services, the Reporting Services option was grayed out.</description>
+    </item>
+    
+    <item>
+      <title>Format JavaScript with the IE9 developer tools</title>
+      <link>http://localhost:1313/2010/12/format-javascript-with-the-ie9-developer-tools/</link>
+      <pubDate>Mon, 27 Dec 2010 19:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/format-javascript-with-the-ie9-developer-tools/</guid>
+      <description>One of the new features in the IE9 developer tools Giorgio Sardo demoed at TechEd Europe, is the Format JavaScript tool. This tool can be very useful when you want to reverse engineer a minified script.
+You can find this feature in the toolbox on the Script tab.
+
+This is how jquery.min.js looks after formatting.
+
+This feature is not available in the public beta (9.0.7.9360.16406), but should be available in the latest platform previews.</description>
+    </item>
+    
+    <item>
+      <title>Programmatically disable UpdatePanels</title>
+      <link>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</link>
+      <pubDate>Sat, 18 Dec 2010 14:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</guid>
+      <description>In this post I&amp;rsquo;ll show you how to programmatically disable all UpdatePanels in a page. I don&amp;rsquo;t know in which scenario you would want to use this, but I had to use it to hack around an issue with the ReportViewer control. I&amp;rsquo;ll save you the details, really.
+To disable all the UpdatePanels, you need to set the EnablePartialRendering property of the ScriptManager to false. You can get a reference to the current ScriptManager by using the GetCurrent() method passing in a reference to the current page.</description>
+    </item>
+    
+    <item>
+      <title>Add certifications to your LinkedIn profile</title>
+      <link>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</link>
+      <pubDate>Sun, 28 Nov 2010 20:27:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</guid>
+      <description>October 18th LinkedIn released five new sections that can be added to your profile. The most important for us developers might be the Certifications section. Although your peers aren&amp;rsquo;t easily impressed by a certification, future partners and employers might be.</description>
+    </item>
+    
+    <item>
+      <title>How to dock/pin IE9 developer tools</title>
+      <link>http://localhost:1313/2010/11/how-to-dock/pin-ie9-developer-tools/</link>
+      <pubDate>Sun, 28 Nov 2010 15:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/11/how-to-dock/pin-ie9-developer-tools/</guid>
+      <description>The first time you open the IE9 developer tools a new window opens.
+This isn&amp;rsquo;t always desirable, think laptop/small monitor. That&amp;rsquo;s why you can dock/pin the tools in your browser. It took me a few minutes of dragging and searching in menus before I found the way to do this. In the upper right corner of the window you find an extra button Pin. You can also use the shortcut CTRL + P.</description>
+    </item>
+    
+    <item>
+      <title>Things good to know about SQL State Server</title>
+      <link>http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/</link>
+      <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/</guid>
+      <description>While installing a SQL State Server last week, I came across a few things worth sharing about the installation and use of SQL State Server.
+Finding a good tutorialThere are lots of tutorials out there on how to install SQL State Server but most of them are not great. To do a basic installation you only need this Msdn documentation on how to run the Aspnet_regsql.exe tool and edit your web.</description>
+    </item>
+    
+    <item>
+      <title>Switching with non-constant cases in C#</title>
+      <link>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</link>
+      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</guid>
+      <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
+    </item>
+    
+    <item>
+      <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
+      <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
+      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
+      <description>Yesterday I blogged on &amp;lsquo;WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls&#39;. In this post I went from bad code to better code. A smart reader gave me some good pointers on how to improve this code some more. Another iteration was necessary.
+Losing the LinqIn the previous iteration I used Linq to search my dictionary.
+ 1: var res = mappings.Where(map =&amp;gt; map.Key.Equals((CheckBox)sender)).First();  This is overhead, because the dictionary implements an indexer.</description>
+    </item>
+    
+    <item>
+      <title>WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls</title>
+      <link>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
+      <pubDate>Mon, 12 Jul 2010 21:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
+      <description>Last week I came across a problem which seemed trivial at first sight, but turned out to be a pretty fun refactoring challenge.
+The scenarioThe real problem was a bit more complex, but for simplicity&amp;rsquo;s sake I made this example. In this form there are three checkboxes which map with the textboxes next to them. If the checkbox gets unchecked the corresponding textboxes should be cleared.
+
+First iterationI warn you.</description>
+    </item>
+    
+    <item>
+      <title>Handling the AggregateException</title>
+      <link>http://localhost:1313/2010/05/handling-the-aggregateexception/</link>
+      <pubDate>Sun, 23 May 2010 13:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/handling-the-aggregateexception/</guid>
+      <description>Last week I showed you how you can use the AggregateException to apply consistent exception handling in batch operations. You can find that post here.
+Bart De Smet read that post and pointed out that I should check out the Handle method of the AggregateException.
+The Handle methodAs found in the MSDN documentation.
+Description
+ Invokes a handler on each Exception contained by this AggregateException.
+ Parameters
+ System.Func&amp;lt;Exception, Boolean&amp;gt; predicate</description>
+    </item>
+    
+    <item>
+      <title>Quick and dirty tool for sending UDP packets</title>
+      <link>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</link>
+      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</guid>
+      <description>While I was playing with my UDPListener I needed a small tool which could send some UDP packets to a certain hostname and port. That&amp;rsquo;s why I wrote a console application which uses an UdpClient to send some UDP packets. It&amp;rsquo;s quick and dirty, but it serves the cause.
+ 1: namespace UdpSender 2: { 3: class Program 4: { 5: //Constants 6: private const string HOSTNAME = &amp;quot;LocalHost&amp;quot;; 7: private const int PORT = 800; 8: private const int TIMES = 5; 9: private const string MESSAGE = &amp;quot;This is a TestMessage&amp;quot;; 10: private const int SLEEP = 50; 11: 12: static void Main(string[] args) 13: { 14: using (UdpClient client = new UdpClient()) 15: { 16: //Connect 17: client.</description>
+    </item>
+    
+    <item>
+      <title>Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe)..</title>
+      <link>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</link>
+      <pubDate>Sat, 13 Mar 2010 16:36:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</guid>
+      <description>When you create a new Windows Service project and try to debug it, Visual Studio will show you a Windows Service Start Failure with the message &amp;ldquo;Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe) and then started with the Server Explorer, Windows Services Administrative tool or the NET START command.&amp;quot;.
+
+The trick my team and I use to workaround this problem, makes use of the service Debug flag.</description>
+    </item>
+    
+    <item>
+      <title>IE8-Fix: Disabled select not showing selected options</title>
+      <link>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</link>
+      <pubDate>Wed, 24 Feb 2010 19:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</guid>
+      <description>In this post a small workaround for disabled select not showing selected options in IE8. It&amp;rsquo;s probably not the cleanest fix, but it get&amp;rsquo;s the job done.
+ProblemA disabled select does not highlight the selected options.
+ 1: &amp;lt;select size=&amp;quot;3&amp;quot; multiple=&amp;quot;multiple&amp;quot; id=&amp;quot;mySelect&amp;quot; disabled=&amp;quot;disabled&amp;quot;&amp;gt; 2: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option1&amp;quot;&amp;gt;Option 1&amp;lt;/option&amp;gt; 3: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option2&amp;quot;&amp;gt;Option 2&amp;lt;/option&amp;gt; 4: &amp;lt;option value=&amp;quot;Option3&amp;quot;&amp;gt;Option 3&amp;lt;/option&amp;gt; 5: &amp;lt;/select&amp;gt;  
+SolutionThe following CSS provides a workaround. It looks pretty similar to the appearance we are used to.</description>
+    </item>
+    
+    <item>
+      <title>Log4Net: log.Debug(String.Format()) versus log.DebugFormat()</title>
+      <link>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</link>
+      <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</guid>
+      <description>Log4net is one of the most popular opensource logging frameworks available in the .NET world. I&amp;rsquo;ve been using this framework for over a year now, and today I discovered something new.
+I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.</description>
+    </item>
+    
+    <item>
+      <title>The problem that ViewStateMode solves</title>
+      <link>http://localhost:1313/2009/12/the-problem-that-viewstatemode-solves/</link>
+      <pubDate>Sun, 13 Dec 2009 16:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/12/the-problem-that-viewstatemode-solves/</guid>
+      <description>A new feature of ASP.NET 4.0 is the ViewStateMode property on a Control.
+ You can use the ViewStateMode property to enable view state for an individual control even if view state is disabled for the page.
+Source:Msdn
+ In this post I&amp;rsquo;ll try to give this new feature a chance to shine and show it&amp;rsquo;s use.
+Problem to solve: Disable ViewState on the Page and enable it on an individual Control.</description>
+    </item>
+    
+    <item>
+      <title>Add leading zeros to a number</title>
+      <link>http://localhost:1313/2009/12/add-leading-zeros-to-a-number/</link>
+      <pubDate>Mon, 07 Dec 2009 20:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/12/add-leading-zeros-to-a-number/</guid>
+      <description>Todays post is a very small tip.
+I saw the question &amp;ldquo;How to add leading zeros to a number&amp;rdquo; on the ASP.NET forums countless times before. And often the answers provide solutions that work, but are overkill as well.
+The two cleanest methods I know are String.Format and PadLeft.
+ 1: Console.WriteLine(&amp;quot;Using .ToString()&amp;quot;); 2: Console.WriteLine(String.Format(&amp;quot;{0:0000}&amp;quot;, 16)); 3: 4: Console.WriteLine(&amp;quot;-------------------&amp;quot;); 5: 6: Console.WriteLine(&amp;quot;Using .PadLeft()&amp;quot;); 7: Console.WriteLine(Convert.ToString(16).PadLeft(4, &#39;0&#39;));  You can see the result here.</description>
+    </item>
+    
+    <item>
+      <title>Debugging &#34;SubReport could not be shown.&#34;</title>
+      <link>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</link>
+      <pubDate>Wed, 09 Sep 2009 18:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</guid>
+      <description>I&amp;rsquo;ve been upgrading a local report which contains multiple subreports, and yes I got that &amp;ldquo;SubReport could not be shown.&amp;rdquo; error more than once.
+Debugging this error is a pain in the a.. All you get is &amp;ldquo;SubReport could not be shown.&amp;quot;, making me want to punch my screen and scream &amp;ldquo;BUT WHY?&amp;ldquo;Just before breaking my screen and going on full tilt, I decided to take a step back and run through my checklist.</description>
+    </item>
+    
+    <item>
+      <title>Three common mistakes you should avoid when starting with Web Page Resources in ASP.NET</title>
+      <link>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</link>
+      <pubDate>Tue, 08 Sep 2009 20:04:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</guid>
+      <description>This is a list of of three common mistakes made by developers who start using Web Page Resources in ASP.NET.
+1. Not using the right format for the name of a local resources fileThe format of the name of a local resources file should be: PageName.PageExtension.resx.
+If you don&amp;rsquo;t add the page extension (Aspx, Ascx), you will get the Exception &amp;ldquo;The resource object with key &amp;lsquo;PageTitle&amp;rsquo; was not found.&amp;quot;.
+2. Not adding an App_LocalResources folder to each subfolderEach subfolder must have it&amp;rsquo;s own App_LocalResources folder, else ASP.</description>
+    </item>
+    
+  </channel>
+</rss>

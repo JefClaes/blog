@@ -67,7 +67,7 @@ the server, right?".
 Good enough, after restarting the server, we were seeing no more packet
 loss and the vehicles started moving on the map again.  
   
-[![](../images/thumbnails/2012-02-01-a-solar-storm-anecdote-PokerFace.png)](../images/2012-02-01-a-solar-storm-anecdote-PokerFace.png)  
+[![](/post/images/thumbnails/2012-02-01-a-solar-storm-anecdote-PokerFace.png)](/post/images/2012-02-01-a-solar-storm-anecdote-PokerFace.png)  
 
 > \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*  
 > Ticket 7238  

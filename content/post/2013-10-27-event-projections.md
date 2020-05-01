@@ -21,7 +21,7 @@ is built from events committed to the write model; events are projected
 into one or more read models.  
   
 
-[![](../images/thumbnails/2013-10-27-event-projections-Projections.PNG)](../images/2013-10-27-event-projections-Projections.PNG)
+[![](/post/images/thumbnails/2013-10-27-event-projections-Projections.PNG)](/post/images/2013-10-27-event-projections-Projections.PNG)
 
   
 An interface for a projection could look like this.  

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Refactoring on Jef Claes</title>
+    <link>http://localhost:1313/tags/refactoring/</link>
+    <description>Recent content in Refactoring on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Sep 2013 16:34:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/refactoring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Slides from my talk on the Ubiquitous Language</title>
+      <link>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</link>
+      <pubDate>Sun, 15 Sep 2013 16:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</guid>
+      <description>I just returned from our yearly Euricom retreat. This year, all forty of us got to spend four days in the South of Spain. Where we had longish sessions and a few workshops last year, we experimented with shorter talks this year - a la lightning talks, TEDx style.
+This format made it possible for everyone to speak, but also forced the speaker to keep the scope of the talk focused, and to organize the information in a way that attendees can get the gist of it in only twelve minutes.</description>
+    </item>
+    
+    <item>
+      <title>Designing entities: immutability first</title>
+      <link>http://localhost:1313/2013/04/designing-entities-immutability-first/</link>
+      <pubDate>Sun, 07 Apr 2013 17:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/designing-entities-immutability-first/</guid>
+      <description>The first year I wrote software for a living I spent my days mostly writing forms over data applications; most of my efforts were wasted just trying to make things work using ASP.NET and the Webforms engine. It was only after a year and graduating from the School of Hard Knocks that I learned there is a lot more to building clean and maintainable software than knowing the ins&amp;rsquo; and outs&amp;rsquo; of a proprietary UI technology.</description>
+    </item>
+    
+    <item>
+      <title>Putting my IronMQ experiment under stress</title>
+      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</link>
+      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</guid>
+      <description>Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&amp;rsquo;t put it under stress yet; &amp;ldquo;First make it work, then make it fast&amp;rdquo;, and all of that.
+I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second.</description>
+    </item>
+    
+    <item>
+      <title>Organizing commands and queries</title>
+      <link>http://localhost:1313/2013/01/organizing-commands-and-queries/</link>
+      <pubDate>Sun, 27 Jan 2013 18:23:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/organizing-commands-and-queries/</guid>
+      <description>In the last few posts I settled on an architecture for handling commands and queries. A byproduct of the described approach, is that your codebase quickly racks up plentiful little classes; a class to hold data, and a handler to act on that data, for each use case.
+There are a few ways you can go at organizing things.
+Everything in one location
+**
+**When there is very little going on in your application, you can just dump everything in one location without getting hurt too much.</description>
+    </item>
+    
+    <item>
+      <title>Separating command data from logic and sending it on a bus</title>
+      <link>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</link>
+      <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</guid>
+      <description>In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers.</description>
+    </item>
+    
+    <item>
+      <title>Commands with dependencies</title>
+      <link>http://localhost:1313/2012/10/commands-with-dependencies/</link>
+      <pubDate>Mon, 15 Oct 2012 16:57:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/commands-with-dependencies/</guid>
+      <description>Also read: Separating command data from logic and sending it on a bus
+Yesterday I wrote about an architecture which limits abstractions by solely introducing commands and queries. I shared a dead simple variation of this pattern, the advantages I experienced, and how I could still unit test the controller if I wanted to.
+At the end of that post I wondered how I would be able to test commands in isolation; suppose the implementation doesn&amp;rsquo;t use a database this time, but a hairy, too low-level, third party webservice.</description>
+    </item>
+    
+    <item>
+      <title>Commands, queries and testing</title>
+      <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
+      <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/commands-queries-and-testing/</guid>
+      <description>Also read:
+ Self-contained commands with dependencies Separating command data from logic and sending it on a bus  We need abstraction, but the amount of abstraction we really need depends, and should be assessed on a case-by-case basis. It seems advisable to grow abstractions, and to introduce them gradually.
+That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
+    </item>
+    
+    <item>
+      <title>Value object obsession</title>
+      <link>http://localhost:1313/2012/09/value-object-obsession/</link>
+      <pubDate>Sun, 16 Sep 2012 17:20:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/value-object-obsession/</guid>
+      <description>Primitive obsession is one of the more popular (hyped?) code smells these days.
+ Primitive obsession is the name of a code smell that occurs when we use primitive data types to represent domain ideas. For example, we use a string to describe a message or an integer to represent an amount of money.
+ The antidote is creating a value object instead of using a primitive. A value object is an immutable object which (in its DDD definition) carries no identity, but is compared based on the value of its attributes.</description>
+    </item>
+    
+    <item>
+      <title>Some Servicelocator pattern stinks</title>
+      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</link>
+      <pubDate>Tue, 17 Apr 2012 20:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</guid>
+      <description>I have been working on a somewhat legacy codebase which makes use of the Servicelocator pattern. Although I always thought of Dependecy Injection to be the superior pattern, I was pleased to find some Inversion of Control implementation in there. Working with the codebase, I discovered first hand how easily, when used without caution and discipline, the Servicelocator pattern can introduce code rot.
+I will walk you through some of the issues I have with the Servicelocator pattern, mostly looking at it from a test perspective.</description>
+    </item>
+    
+    <item>
+      <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
+      <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
+      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
+      <description>Yesterday I blogged on &amp;lsquo;WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls&#39;. In this post I went from bad code to better code. A smart reader gave me some good pointers on how to improve this code some more. Another iteration was necessary.
+Losing the LinqIn the previous iteration I used Linq to search my dictionary.
+ 1: var res = mappings.Where(map =&amp;gt; map.Key.Equals((CheckBox)sender)).First();  This is overhead, because the dictionary implements an indexer.</description>
+    </item>
+    
+    <item>
+      <title>WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls</title>
+      <link>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
+      <pubDate>Mon, 12 Jul 2010 21:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
+      <description>Last week I came across a problem which seemed trivial at first sight, but turned out to be a pretty fun refactoring challenge.
+The scenarioThe real problem was a bit more complex, but for simplicity&amp;rsquo;s sake I made this example. In this form there are three checkboxes which map with the textboxes next to them. If the checkbox gets unchecked the corresponding textboxes should be cleared.
+
+First iterationI warn you.</description>
+    </item>
+    
+  </channel>
+</rss>

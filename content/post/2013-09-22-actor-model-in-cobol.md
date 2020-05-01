@@ -31,7 +31,7 @@ it recently came to me that how they have designed their systems over
 the years is compatible with a good amount of Actor laws.  
   
 
-[![](../images/thumbnails/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG)](../images/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG)
+[![](/post/images/thumbnails/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG)](/post/images/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG)
 
   
 **Composition**  

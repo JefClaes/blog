@@ -14,7 +14,7 @@ In traditional systems, we only persist the current state of an
 object.  
   
 
-[![](../images/thumbnails/2013-10-13-an-event-sourced-aggregate-TraditionalStorage.PNG)](../images/2013-10-13-an-event-sourced-aggregate-TraditionalStorage.PNG)
+[![](/post/images/thumbnails/2013-10-13-an-event-sourced-aggregate-TraditionalStorage.PNG)](/post/images/2013-10-13-an-event-sourced-aggregate-TraditionalStorage.PNG)
 
   
 In event sourced systems, we don't persist the current state of an
@@ -22,7 +22,7 @@ object, but **the sequence of events that caused the object to be in the
 current state**.  
   
 
-[![](../images/thumbnails/2013-10-13-an-event-sourced-aggregate-EventSourcingStorage.PNG)](../images/2013-10-13-an-event-sourced-aggregate-EventSourcingStorage.PNG)
+[![](/post/images/thumbnails/2013-10-13-an-event-sourced-aggregate-EventSourcingStorage.PNG)](/post/images/2013-10-13-an-event-sourced-aggregate-EventSourcingStorage.PNG)
 
   
 

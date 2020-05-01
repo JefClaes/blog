@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Repositories, where did we go wrong? - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Repositories, where did we go wrong?">
+<meta itemprop="description" content="In essence, repositories are a simple abstraction over aggregate storage. A repository will insert, update, delete or fetch an aggregate from the underlying persistence mechanism. This abstraction avoids that databases, SQL statements, Object Mappers and the like leak into your domain. Next to that, swapping out repositories for an in-memory version makes testing easier.
+Recently, the use of repositories is being questioned again.
+Why would we wrap Object Mappers in yet another abstraction?">
+<meta itemprop="datePublished" content="2014-01-26T18:00:00&#43;01:00" />
+<meta itemprop="dateModified" content="2014-01-26T18:00:00&#43;01:00" />
+<meta itemprop="wordCount" content="506">
+
+
+
+<meta itemprop="keywords" content="database,DDD," /><meta property="og:title" content="Repositories, where did we go wrong?" />
+<meta property="og:description" content="In essence, repositories are a simple abstraction over aggregate storage. A repository will insert, update, delete or fetch an aggregate from the underlying persistence mechanism. This abstraction avoids that databases, SQL statements, Object Mappers and the like leak into your domain. Next to that, swapping out repositories for an in-memory version makes testing easier.
+Recently, the use of repositories is being questioned again.
+Why would we wrap Object Mappers in yet another abstraction?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/" />
+<meta property="article:published_time" content="2014-01-26T18:00:00+01:00" />
+<meta property="article:modified_time" content="2014-01-26T18:00:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Repositories, where did we go wrong?"/>
+<meta name="twitter:description" content="In essence, repositories are a simple abstraction over aggregate storage. A repository will insert, update, delete or fetch an aggregate from the underlying persistence mechanism. This abstraction avoids that databases, SQL statements, Object Mappers and the like leak into your domain. Next to that, swapping out repositories for an in-memory version makes testing easier.
+Recently, the use of repositories is being questioned again.
+Why would we wrap Object Mappers in yet another abstraction?"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">26</span>
+							<span class="rest">Jan 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Repositories, where did we go wrong?</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>In essence, repositories are a simple abstraction over aggregate
+storage. A repository will insert, update, delete or fetch an aggregate
+from the underlying persistence mechanism. This abstraction avoids that
+databases, SQL statements, Object Mappers and the like leak into your
+domain. Next to that, swapping out repositories for an in-memory version
+makes testing easier.</p>
+<p>Recently, the use of repositories is being questioned again.</p>
+<p>Why would we wrap Object Mappers in yet another abstraction? Aren&rsquo;t
+Object Mappers already an implementation of the repository pattern? In a
+recent project, we left out repositories. In that project we&rsquo;re using
+RavenDB, which already has an expressive API, and which can be
+configured to use an in-memory database for testing. Even though LINQ
+and indexes help make simple queries expressive, a lot of cruft still
+leaks in, not doing the language any justice. In other projects, we did
+make use of repositories over our ORM. Partly because setting up
+in-memory tests without was awkward at best, but also because it removed
+constraints trying to capture the language. Next to testing and
+expressiveness, you should also consider how comfortable you feel gluing
+everything to a library or framework. When it comes to aggregate
+storage, having those repositories is a small price to pay to keep
+technicalities out.</p>
+<p>Another remark is that a repository makes it hard to control eager- and
+lazy loading, which is contextual. In general I think that lazy loading
+introduces unpredictable behaviour. Getting in trouble without lazy
+loading is a strong indication that your aggregates are just too big.</p>
+<p>The last and loudest argument is that once you have a view heavy
+application things get dirty really fast. It starts by adding a few
+badly named query methods on your repositories. Then, you start to see
+use cases where you need to query over multiple aggregates and deal with
+projections or aggregations. In these situations repositories won&rsquo;t help
+you.<br>
+Truth is that repositories were never intended for complex reads. Views
+on the data that your application needs rarely resemble the structure of
+your aggregates. Making your aggregates suited for querying inevitably
+steers away from behaviour thinking, back to data thinking. The trick is
+to separate read concerns from your domain. Instead of trying to use
+repositories for querying, make use of the best tool for the job,
+something as close to the database as possible. The implementation
+depends on your flavor, but what has worked for me is having use case
+optimized read models, a query object and a query handler that reads
+from the database and converts the result into a read model. The
+implementation of each query handler can differ; from raw SQL, to
+hibernate query language, to a micro ORM&hellip; whatever works best
+really.<br>
+Doing this, you allow your domain model to stay focused on the task at
+hand - handling complex business problems, staying far away from read
+concerns. Before you know it you&rsquo;re successfully applying <a href="http://www.jefclaes.be/2013/02/adding-r-to-cqs-some-storage-options.html">that popular
+four letter
+acronym</a>,
+enabling you to even try <a href="http://www.jefclaes.be/2013/10/my-understanding-of-event-sourcing.html">other
+concepts</a>
+without having to rewrite your model completely.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/database">database</a></li>
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

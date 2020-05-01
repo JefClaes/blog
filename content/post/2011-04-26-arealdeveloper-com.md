@@ -9,7 +9,7 @@ tags = [ "WebMatrix", "ARealDeveloper", "LOL",]
 over the weekend poking around with
 [WebMatrix](http://www.asp.net/webmatrix).  
   
-[![](../images/thumbnails/2011-04-26-arealdeveloper-com-arealdevss.PNG)](../images/2011-04-26-arealdeveloper-com-arealdevss.PNG)  
+[![](/post/images/thumbnails/2011-04-26-arealdeveloper-com-arealdevss.PNG)](/post/images/2011-04-26-arealdeveloper-com-arealdevss.PNG)  
 It got a little out of hand. After publishing, I showed it to a few
 popular tweeps, and they were kind enough to mention it. 24 hours after
 the launch it has gotten over 3.5k unique visitors, 39k page views (see

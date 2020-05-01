@@ -32,13 +32,13 @@ driving experience. Not once did I hear the trademark roar of a Porsche
 engine, which I learned to love playing video games.  
   
 
-[![](../images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B123.jpg)](../images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B123.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B123.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B123.jpg)
 
-[![](../images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B124.jpg)](../images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B124.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B124.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B124.jpg)
 
   
 
-[![](../images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B127.jpg)](../images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B127.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B127.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Stuttgart%2B-%2B127.jpg)
 
   
 
@@ -51,15 +51,15 @@ what has made it possible to preserve the charm of this little place.
 
   
 
-[![](../images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B109.jpg)](../images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B109.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B109.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B109.jpg)
 
   
 
-[![](../images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B174.jpg)](../images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B174.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B174.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B174.jpg)
 
   
 
-[![](../images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B175.jpg)](../images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B175.jpg)
+[![](/post/images/thumbnails/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B175.jpg)](/post/images/2014-09-02-porsches-and-a-setting-that-sells-them-Hallstatt%2B-%2B175.jpg)
 
   
 

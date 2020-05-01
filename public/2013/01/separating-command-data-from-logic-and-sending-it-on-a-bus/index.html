@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Separating command data from logic and sending it on a bus - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Separating command data from logic and sending it on a bus">
+<meta itemprop="description" content="In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers.">
+<meta itemprop="datePublished" content="2013-01-20T22:03:00&#43;01:00" />
+<meta itemprop="dateModified" content="2013-01-20T22:03:00&#43;01:00" />
+<meta itemprop="wordCount" content="624">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,.NET,Refactoring,DDD,NancyFx," /><meta property="og:title" content="Separating command data from logic and sending it on a bus" />
+<meta property="og:description" content="In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/" />
+<meta property="article:published_time" content="2013-01-20T22:03:00+01:00" />
+<meta property="article:modified_time" content="2013-01-20T22:03:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Separating command data from logic and sending it on a bus"/>
+<meta name="twitter:description" content="In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">20</span>
+							<span class="rest">Jan 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Separating command data from logic and sending it on a bus</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>In <a href="http://www.jefclaes.be/2012/10/commands-queries-and-testing.html">my first post on this
+topic</a>,
+I started out with an attempt to limit abstractions to solely commands
+and queries. Commands and queries were self-contained and could be
+invoked by passing them to a context-providing generic handler. The
+drawback of this approach was that it made constructor dependency
+injection impossible. In a <a href="http://www.jefclaes.be/2012/10/commands-with-dependencies.html">next
+post</a>, I
+separated data from logic, but never got around to writing a dispatcher
+that associates command data with their handlers. Last week, <a href="http://www.jefclaes.be/2013/01/self-contained-commands-with.html">I
+revisited the first
+approach</a>,
+and added an unconventional implementation of injecting dependencies by
+an Inject method convention.</p>
+<p>I still believe that last approach is very simple and works fine if
+extra dependencies are exceptional. I do admit that it will make
+architectural shoots harder to handle; everything is rather tightly
+coupled. So let&rsquo;s look at an alternative architecture which pulls all
+the bits apart, and should be better equipped to handle change.</p>
+<p>Let&rsquo;s first separate command data from logic.</p>
+<pre><code>public class CreateSubscriptionCommand 
+{     
+    public CreateSubscriptionCommand(string value, string category, string emailAddress)
+    {
+        Guard.StringIsNullOrEmpty(value, &quot;value&quot;);
+        Guard.StringIsNullOrEmpty(category, &quot;category&quot;);
+        Guard.StringIsNullOrEmpty(emailAddress, &quot;emailAddress&quot;);
+
+        Value = value;
+        Category = category;
+        EmailAddress = emailAddress;
+    }
+
+    public string Value { get; private set; }
+
+    public string Category { get; private set; }
+
+    public string EmailAddress { get; private set; }
+
+    public override bool Equals(Object other)
+    {
+        if (other == null)
+            return false;
+
+        var otherCommand = other as CreateSubscriptionCommand;
+        if (otherCommand == null)
+            return false;
+
+        return otherCommand.Value == Value &amp;&amp; 
+            otherCommand.Category == Category &amp;&amp; 
+            otherCommand.EmailAddress == EmailAddress;
+    }    
+
+    public override int GetHashCode()
+    {
+        return Value.GetHashCode() ^ 
+            Category.GetHashCode() ^ 
+            EmailAddress.GetHashCode();
+    }
+}
+</code></pre>
+<p>The data is just a POCO. Notice the equality overrides; this comes in
+handy when you&rsquo;re testing.</p>
+<p>The class that handles on the data needs to implement the
+ICommandHandler interface.</p>
+<pre><code>public class CreateSubscriptionCommandHandler 
+    : ICommandHandler&lt;CreateSubscriptionCommand&gt;
+{    
+    private IDocumentSession _session;
+
+    public CreateSubscriptionCommandHandler(IDocumentSession session)
+    {
+        _session = session;
+    }
+
+    public void Handle(CreateSubscriptionCommand command)
+    {
+        var subscription = new Documents.Subscription(
+            command.Value, command.Category, command.EmailAddress);
+
+        _session.Store(subscription);    
+    }
+}
+</code></pre>
+<p>Compared to the previous approach, we&rsquo;re now injecting the session
+instead of having it handy as a property; that coupling is now
+completely gone.</p>
+<p>Last thing left to do is create an interface that consumers can use to
+send commands on: a bus.</p>
+<pre><code>public class Bus : IBus
+{
+    private readonly IKernel _kernel;
+    private readonly IDocumentSession _session;
+
+    public Bus(IKernel kernel, IDocumentSession session)
+    {
+        _kernel = kernel;
+        _session = session;
+    }
+
+    public void ExecuteCommand&lt;T&gt;(T command) where T : class
+    {
+        var handler = _kernel.Get&lt;ICommandHandler&lt;T&gt;&gt;();
+
+        handler.Handle(command);
+
+        _session.SaveChanges();
+    }
+}
+</code></pre>
+<p>The ExecuteCommand method dispatches data to the correct handler by
+resolving it from the container, and also commits the unit of work.</p>
+<p>The consumer can execute commands like this.</p>
+<pre><code>bus.ExecuteCommand(
+    new CreateQueryCommand(queryValue, category, emailAddress));
+</code></pre>
+<p>With this approach having all the bits spread, we have a bit more work
+gluing all the pieces together. The session is now known in the
+container, and is request scoped. The commandhandlers are also all
+registered in the container.</p>
+<pre><code>protected override void ConfigureRequestContainer(IKernel container, NancyContext context)
+{        
+        // you don't want to register them all individually
+        container
+            .Bind&lt;ICommandHandler&lt;CreateSubscriptionCommand&gt;&gt;()
+            .To&lt;CreateSubscriptionCommandHandler&gt;();        
+        // snip..
+        container.Bind&lt;IDocumentSession&gt;()
+            .ToMethod((ctx) =&gt; { 
+                return ctx.Kernel.Get&lt;IDocumentStore&gt;().OpenSession();    
+            })
+            .InSingletonScope();                          
+}
+</code></pre>
+<p>I think this approach might suit a lot of projects better if your
+commands are dependency heavy.<br>
+What I like most is that handling architectural shoots will be easier.
+For example: right now, all behaviour is in my entities and in my
+commands; the segregation of application services and domain services is
+non-existent. And this works fine so far; I yet have to find a use case
+where I would benefit from more separation. If that would change in the
+future though, I can introduce abstractions, and concepts, without
+breaking consumer code, and without having to do awkward stuff managing
+the newly introduced dependencies.</p>
+<p><em>As always, your thoughts are appreciated.</em></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+							<li><a href="/tags/refactoring">Refactoring</a></li>
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+							<li><a href="/tags/nancyfx">NancyFx</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

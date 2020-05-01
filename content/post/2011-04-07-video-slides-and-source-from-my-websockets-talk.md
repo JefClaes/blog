@@ -14,7 +14,7 @@ I got [a lot of](http://twitter.com/8x3h/statuses/55644413145268224)
 [feedback](http://twitter.com/b_d_m/statuses/55725260527505408) on
 Twitter, which makes me a very happy panda!  
   
-[![](../images/thumbnails/2011-04-07-video-slides-and-source-from-my-websockets-talk-HappyPanda.jpg)](../images/2011-04-07-video-slides-and-source-from-my-websockets-talk-HappyPanda.jpg)  
+[![](/post/images/thumbnails/2011-04-07-video-slides-and-source-from-my-websockets-talk-HappyPanda.jpg)](/post/images/2011-04-07-video-slides-and-source-from-my-websockets-talk-HappyPanda.jpg)  
 You can already find the video of my session on
 [Channel9](http://channel9.msdn.com/Blogs/liese/HTML5-Web-Camp-Belgium-WebSockts-on-Fire).  
   

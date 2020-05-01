@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.NET on Jef Claes</title>
+    <link>http://localhost:1313/tags/.net/</link>
+    <description>Recent content in .NET on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Sep 2016 20:52:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Commands and events with JustSaying and AWS</title>
+      <link>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and-aws/</link>
+      <pubDate>Sun, 18 Sep 2016 20:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and-aws/</guid>
+      <description>I&amp;rsquo;ve been looking into handing a bit of our messaging infrastructure over to a managed alternative. Managing your own messaging infrastructure that should be highly available is not always an investment you want to make in this day and age. Going through the documentation and relying on experiences from some people I trust, I ended up looking at AWS and SNS/SQS.
+Making the Github repository rounds, looking for inspiration, I stumbled on JustSaying: a library by the people from JustEat implementing a message bus on top of AWS.</description>
+    </item>
+    
+    <item>
+      <title>Scaling promotion codes</title>
+      <link>http://localhost:1313/2015/03/scaling-promotion-codes/</link>
+      <pubDate>Sun, 15 Mar 2015 18:01:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/03/scaling-promotion-codes/</guid>
+      <description>In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
+In code these requirements translated into a promotion code aggregate which would guard three invariants.</description>
+    </item>
+    
+    <item>
+      <title>Read an Event Store stream as a sequence of slices using F#</title>
+      <link>http://localhost:1313/2014/10/read-an-event-store-stream-as-a-sequence-of-slices-using-f/</link>
+      <pubDate>Sun, 05 Oct 2014 15:21:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/10/read-an-event-store-stream-as-a-sequence-of-slices-using-f/</guid>
+      <description>I&amp;rsquo;m slowly working on some ideas I&amp;rsquo;ve been playing around with whole Summer. Since that&amp;rsquo;s taking me to unknown territory, I guess I&amp;rsquo;ll be putting out more technical bits here in the next few weeks.
+Using the Event Store, I tried to read all events of a specific event type. This stream turned out to be a tad too large to be sent over the wire in one piece, leading to a PackageFramingException: Package size is out of bounds.</description>
+    </item>
+    
+    <item>
+      <title>Paper notes: A Study and Toolkit for Asynchronous Programming in C#</title>
+      <link>http://localhost:1313/2014/06/paper-notes-a-study-and-toolkit-for-asynchronous-programming-in-c/</link>
+      <pubDate>Sun, 08 Jun 2014 18:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/06/paper-notes-a-study-and-toolkit-for-asynchronous-programming-in-c/</guid>
+      <description>The .NET framework mainly provides two models for asynchronous programming: (1) the Asynchronous Programming Model (APM), that uses callbacks, and (2) the Task Asynchronous Pattern (TAP), that uses Tasks, which are similar to the concept of futures.
+The Task represents the operation in progress, and its future result. The Task can be (1) queried for the status of the operation, (2) synchronized upon to wait for the result of the operation, or (3) set up with a continuation that resumes in the background when the task completes.</description>
+    </item>
+    
+    <item>
+      <title>What if we stored events instead of state? - slides</title>
+      <link>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</link>
+      <pubDate>Mon, 12 May 2014 17:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</guid>
+      <description>I just returned from Croatia, where I got to speak twice at the second edition of The Geek Gathering.
+Being such a young conference, I had no idea what to expect really. Turns out they have a good thing going on; a small, local and very personal approach to conferences. Speakers both local and international, covering topics that serve the community, not their employer.
+Together with Tom, I preached Alberto&amp;lsquo;s Event Storming during a four hour long workshop.</description>
+    </item>
+    
+    <item>
+      <title>Glueing the browser and POS devices together </title>
+      <link>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</link>
+      <pubDate>Sun, 04 May 2014 18:23:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</guid>
+      <description>I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
+Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&amp;rsquo;s asynchronous programming model and its incredible rich ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Alternatives to Udi&#39;s domain events</title>
+      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</link>
+      <pubDate>Sun, 02 Mar 2014 18:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</guid>
+      <description>Almost four years ago Udi Dahan introduced an elegant technique that allows you to have your domain model dispatch events without injecting a dispatcher into the model - keeping your model focused on the business at hand.
+This works by having a static DomainEvents class which dispatches raised events.
+This customer aggregate raises an event when a customer moves to a new address.
+public class Customer { private readonly string _id; private Address _address; private Name _name; public Customer(string id, Name name, Address address) { Guard.</description>
+    </item>
+    
+    <item>
+      <title>An event store with optimistic concurrency</title>
+      <link>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</link>
+      <pubDate>Sun, 10 Nov 2013 18:25:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</guid>
+      <description>Like I mentioned last week - after only five posts on the subject - there still are a great deal of event sourcing nuances left to be discovered.
+My current event store implementation only supports a single user. Due to an aggressive file lock, concurrently accessing an aggregate will throw an exception. Can we allow multiple users to write to and read from an event stream? Also, what can we do about users making changes to the same aggregate; can we somehow detect conflicts and avoid changes to be committed?</description>
+    </item>
+    
+    <item>
+      <title>Event projections</title>
+      <link>http://localhost:1313/2013/10/event-projections/</link>
+      <pubDate>Sun, 27 Oct 2013 17:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/event-projections/</guid>
+      <description>In my first two posts on event sourcing, I implemented an event sourced aggregate from scratch. After being able to have an aggregate record and play events, I looked at persisting them in an event store. Logically, the next question is: how do I query my aggregates, how do I get my state out?
+In traditional systems, write and read models are not separated, they are one and the same. Event sourced systems on the other hand have a write model - event streams, and a separate read model.</description>
+    </item>
+    
+    <item>
+      <title>An event store</title>
+      <link>http://localhost:1313/2013/10/an-event-store/</link>
+      <pubDate>Sun, 20 Oct 2013 17:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/an-event-store/</guid>
+      <description>Last week, I implemented an event sourced aggregate from scratch. There I learned, that there isn&amp;rsquo;t much to a naively implemented event sourced aggregate; it should be able to initialize itself from a stream of events, and it should be able to record all the events it raises.
+public interface IEventSourcedAggregate : IAggregate { void Initialize(EventStream eventStream); EventStream RecordedEvents(); }  The question I want to answer today is: how do I persist those event sourced aggregates?</description>
+    </item>
+    
+    <item>
+      <title>An event sourced aggregate</title>
+      <link>http://localhost:1313/2013/10/an-event-sourced-aggregate/</link>
+      <pubDate>Sun, 13 Oct 2013 18:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/an-event-sourced-aggregate/</guid>
+      <description>Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
+In traditional systems, we only persist the current state of an object.
+
+In event sourced systems, we don&amp;rsquo;t persist the current state of an object, but the sequence of events that caused the object to be in the current state.</description>
+    </item>
+    
+    <item>
+      <title>Slides from my talk on the Ubiquitous Language</title>
+      <link>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</link>
+      <pubDate>Sun, 15 Sep 2013 16:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</guid>
+      <description>I just returned from our yearly Euricom retreat. This year, all forty of us got to spend four days in the South of Spain. Where we had longish sessions and a few workshops last year, we experimented with shorter talks this year - a la lightning talks, TEDx style.
+This format made it possible for everyone to speak, but also forced the speaker to keep the scope of the talk focused, and to organize the information in a way that attendees can get the gist of it in only twelve minutes.</description>
+    </item>
+    
+    <item>
+      <title>Inheritance is like Jenga</title>
+      <link>http://localhost:1313/2013/08/inheritance-is-like-jenga/</link>
+      <pubDate>Sun, 25 Aug 2013 18:18:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/inheritance-is-like-jenga/</guid>
+      <description>These last few days, I have been working on a piece of our codebase that accidentally got very inheritance heavy.
+When it comes to inheritance versus composition, there are a few widely accepted rules of thumb out there. While prefer composition over inheritance doesn&amp;rsquo;t cover the nuances, it&amp;rsquo;s not terrible advice; composition will statistically often be the better solution. Steve McConnell&amp;rsquo;s composition defines a &amp;lsquo;has a&amp;rsquo;- relationship while inheritance defines an &amp;lsquo;is a&amp;rsquo;-relationship, gives you a more nuanced and simple tool to apply to a scenario.</description>
+    </item>
+    
+    <item>
+      <title>Eventual consistent domain events with RavenDB and IronMQ</title>
+      <link>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</link>
+      <pubDate>Thu, 15 Aug 2013 14:03:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</guid>
+      <description>Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&amp;rsquo;m working on right now makes use of domain events. As an example, I&amp;rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.</description>
+    </item>
+    
+    <item>
+      <title>When your commands spell CUD</title>
+      <link>http://localhost:1313/2013/08/when-your-commands-spell-cud/</link>
+      <pubDate>Sun, 04 Aug 2013 19:08:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/when-your-commands-spell-cud/</guid>
+      <description>A good while ago, I blogged on commands (and queries). After exploring various flavors, I eventually settled on this one; commands, handlers and an in-memory bus that serves as a command executor.
+Commands help you in supporting the ubiquitous language by explicitly capturing user intent at the boundaries of your system - think use cases. You can look at them as messages that are being sent to your domain. In this regard, they also serve as a layer over your domain - decoupling the inside from the outside, allowing you to gradually introduce concepts on the inside, without breaking the outside.</description>
+    </item>
+    
+    <item>
+      <title>Not handling edge cases, making them explicit instead</title>
+      <link>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</link>
+      <pubDate>Sun, 23 Jun 2013 16:49:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</guid>
+      <description>When I wrote about accidental entities earlier, we followed a consultant building software for a car rental company. In the meanwhile, he has finished implementing the registration of new cars. Next on the list is allowing customers to make a booking.
+We managed to get the CEO to set a whole hour apart to walk us over how the booking system should work.
+CEO: &amp;ldquo;I&amp;rsquo;m not sure this meeting is going to take a whole hour though.</description>
+    </item>
+    
+    <item>
+      <title>Accidental entities - you don&#39;t need that identity</title>
+      <link>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</link>
+      <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</guid>
+      <description>An entity is identified by an identifier, while value objects are identified by their value.
+If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&amp;hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
+However, if I were a car paint manufacturer, I would care a great deal about the identity of a color.</description>
+    </item>
+    
+    <item>
+      <title>Modeling the four-eye principle</title>
+      <link>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</link>
+      <pubDate>Sun, 21 Apr 2013 19:48:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</guid>
+      <description>Working in a financial domain over the last year, it was only a matter of time before I would be confronted with one of the variations of the two-man rule: the four-eye principle. Satisfying the principle is simple enough; an extra pair of eyes needs to approve of requested changes before they&amp;rsquo;re applied to the system. This measure should prevent mistakes such as a user nuking North Korea by accident, or transferring all corporate funds to a personal off-shore bank account.</description>
+    </item>
+    
+    <item>
+      <title>Designing entities: immutability first</title>
+      <link>http://localhost:1313/2013/04/designing-entities-immutability-first/</link>
+      <pubDate>Sun, 07 Apr 2013 17:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/designing-entities-immutability-first/</guid>
+      <description>The first year I wrote software for a living I spent my days mostly writing forms over data applications; most of my efforts were wasted just trying to make things work using ASP.NET and the Webforms engine. It was only after a year and graduating from the School of Hard Knocks that I learned there is a lot more to building clean and maintainable software than knowing the ins&amp;rsquo; and outs&amp;rsquo; of a proprietary UI technology.</description>
+    </item>
+    
+    <item>
+      <title>Reading large files in chunks with proper encapsulation</title>
+      <link>http://localhost:1313/2013/03/reading-large-files-in-chunks-with-proper-encapsulation/</link>
+      <pubDate>Sun, 24 Mar 2013 18:16:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/reading-large-files-in-chunks-with-proper-encapsulation/</guid>
+      <description>I&amp;rsquo;ve been doing some work lately which involves sequentially reading large files (&amp;gt; 2 to 5GB). This entails that it&amp;rsquo;s not an option to read the whole structure in memory; it&amp;rsquo;s more reliable to process the file in chunks. I occasionally come across legacy that solves exactly this problem, but in a procedural way, resulting in tangled spaghetti. To be honest, the first piece of software I ever wrote in a professional setting also went at it in the wrong way.</description>
+    </item>
+    
+    <item>
+      <title>Putting my IronMQ experiment under stress</title>
+      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</link>
+      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</guid>
+      <description>Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&amp;rsquo;t put it under stress yet; &amp;ldquo;First make it work, then make it fast&amp;rdquo;, and all of that.
+I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second.</description>
+    </item>
+    
+    <item>
+      <title>Some experimental infrastructure for IronMQ pull </title>
+      <link>http://localhost:1313/2013/03/some-experimental-infrastructure-for-ironmq-pull/</link>
+      <pubDate>Sun, 10 Mar 2013 17:29:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/some-experimental-infrastructure-for-ironmq-pull/</guid>
+      <description>I wrote about using IronMQ as a cloud-based message queue last week. In that post I explained that you can go at using IronMQ in two ways; either you pull from the queue yourself, or you let IronMQ push messages from the queue to your HTTP endpoints. At first sight, the latter allows you to outsource more infrastructure to their side, but upon closer inspection it also introduces other concerns: security, local debugging and scalability.</description>
+    </item>
+    
+    <item>
+      <title>Raising events in commandhandlers</title>
+      <link>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</link>
+      <pubDate>Sun, 03 Feb 2013 17:49:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</guid>
+      <description>I&amp;rsquo;ve explored quite a few options on how to handle commands and queries in the last few posts. I finally settled on this approach. The example used in that post looked like this.
+public class CreateSubscriptionCommandHandler : ICommandHandler&amp;lt;CreateSubscriptionCommand&amp;gt; { private IDocumentSession _session; public CreateSubscriptionCommandHandler(IDocumentSession session) { _session = session; } public void Handle(CreateSubscriptionCommand command) { var subscription = new Documents.Subscription( command.Value, command.Category, command.EmailAddress); _session.Store(subscription); } }  Now imagine I would want to do some extra stuff after creating the subscription; update the sales statistics, append the email address to a mailing list, send out a confirmation email, etc.</description>
+    </item>
+    
+    <item>
+      <title>Organizing commands and queries</title>
+      <link>http://localhost:1313/2013/01/organizing-commands-and-queries/</link>
+      <pubDate>Sun, 27 Jan 2013 18:23:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/organizing-commands-and-queries/</guid>
+      <description>In the last few posts I settled on an architecture for handling commands and queries. A byproduct of the described approach, is that your codebase quickly racks up plentiful little classes; a class to hold data, and a handler to act on that data, for each use case.
+There are a few ways you can go at organizing things.
+Everything in one location
+**
+**When there is very little going on in your application, you can just dump everything in one location without getting hurt too much.</description>
+    </item>
+    
+    <item>
+      <title>Separating command data from logic and sending it on a bus</title>
+      <link>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</link>
+      <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</guid>
+      <description>In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers.</description>
+    </item>
+    
+    <item>
+      <title>Self-contained commands with dependencies </title>
+      <link>http://localhost:1313/2013/01/self-contained-commands-with-dependencies/</link>
+      <pubDate>Sun, 13 Jan 2013 18:17:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/self-contained-commands-with-dependencies/</guid>
+      <description>Also read: separating command data from logic and sending it on a bus
+In October I looked at an architecture that limits abstractions to solely commands and queries. In that post, I had some infrastructure that looked like this.
+public abstract class Command { public abstract void Execute(); } public abstract class Query&amp;lt;T&amp;gt; { public abstract T Execute(); } public interface ICommandHandler { void Execute(Command command); } public class CommandHandler : ICommandHandler { public void Execute(Command command) { command.</description>
+    </item>
+    
+    <item>
+      <title>Keeping your AppHarbor application pool alive</title>
+      <link>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</link>
+      <pubDate>Sun, 06 Jan 2013 21:18:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</guid>
+      <description>By default, IIS will shut down your application pool when it has been idle for more than 20 minutes. This is annoying when your website is only visited sporadically; visitors might not have the patience to wait for your application pool to spin up again. When you&amp;rsquo;re running your own machine, you can higher or disable the idle-timeout, but when you&amp;rsquo;re running on a cloud service like AppHarbor you can&amp;rsquo;t.</description>
+    </item>
+    
+    <item>
+      <title>Released: My Antwerp Open Data submissions</title>
+      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
+      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
+      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
+    </item>
+    
+    <item>
+      <title>It&#39;s not cake we are baking</title>
+      <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</link>
+      <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</guid>
+      <description>I recently watched a talk on Vimeo where Christin Gorman talks about how cookie dough relates to Hibernate; why use the generic, bloated and one-fits-all solution when you can mix together your own yummy cookie dough? We should aspire to be the Gordon Ramsey of software, not the college student who can only cook Ramen noodles. If you haven&amp;rsquo;t watched or listened to her talk, you should; it&amp;rsquo;s only a few minutes long, and she brings it really well.</description>
+    </item>
+    
+    <item>
+      <title>Some notes on performance tuning with NHibernate</title>
+      <link>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</link>
+      <pubDate>Sun, 02 Dec 2012 17:36:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</guid>
+      <description>A few weeks back, I spent an intensive day performance tuning parts of a, to me, relatively unfamiliar part of our codebase. Like it often is, the biggest optimizations were to be found in how we work with the database. Now, I don&amp;rsquo;t consider myself to be an NHibernate expert; I read this book and have used it on two projects, but in the end I just do my best to avoid doing stupid things with it.</description>
+    </item>
+    
+    <item>
+      <title>Released: Kill long meetings</title>
+      <link>http://localhost:1313/2012/11/released-kill-long-meetings/</link>
+      <pubDate>Sun, 25 Nov 2012 17:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/released-kill-long-meetings/</guid>
+      <description>A lot has already been said and written about meetings, and some have carried the message above par; &amp;lsquo;Meetings: where work goes to die&#39;. Today, I&amp;rsquo;m not going to foul the internet with another rant, but I&amp;rsquo;d like to show you a small application built over the last few weeks after work.
+I regularly find myself building small things as an antitoxin to the regular periods of not writing and shipping code at work.</description>
+    </item>
+    
+    <item>
+      <title>Released: Nancy.AspNetSprites.Razor</title>
+      <link>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</link>
+      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</guid>
+      <description>I was setting up a web application that shows an image for each listed product on the home page. When there were a few products, this worked pretty smooth, but as the number of products (and thereby images) increased, performance degraded. The problem is that each image initiates a separate request. The solution for this problem is to reduce the number of requests by combining the images using CSS sprites. Here is an in-detail explanation of how this works.</description>
+    </item>
+    
+    <item>
+      <title>NancyFx and bundling with Cassette</title>
+      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
+      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
+      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
+Since I struggled with the implementation a little bit, I documented the process below.
+1. Cassette.Nancy package
+**
+**Add the Cassette.Nancy package to the project.
+PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
+    </item>
+    
+    <item>
+      <title>Post Web.NET Europe</title>
+      <link>http://localhost:1313/2012/10/post-web.net-europe/</link>
+      <pubDate>Mon, 22 Oct 2012 20:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/post-web.net-europe/</guid>
+      <description>I attended and spoke at Web.NET Europe in Milan over the weekend. This was only my fourth full day- or more conference (Techdays Belgium, TechEd Berlin and HTML5 WebCamps), but it was undoubtedly the best one so far.
+The quality of the sessions was definitely not inferior to those of bigger conferences. I especially enjoyed the talks on SignalR, OAuth and scaling data (I included some of my notes below). The strength of this conference doesn&amp;rsquo;t lie in the exceptional speakers or sessions though, but in its cozy size and the type of attendees it attracts.</description>
+    </item>
+    
+    <item>
+      <title>Slides and code from my Web.NET Europe REST and ASP.NET Web API session</title>
+      <link>http://localhost:1313/2012/10/slides-and-code-from-my-web.net-europe-rest-and-asp.net-web-api-session/</link>
+      <pubDate>Sun, 21 Oct 2012 00:16:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/slides-and-code-from-my-web.net-europe-rest-and-asp.net-web-api-session/</guid>
+      <description>I just returned to the hotel after attending and speaking at Web.NET Europe 2012. There were multiple sessions on ASP.NET Web API today, and I was responsible for delivering the first one of the day. Being first, and to avoid overlap with others, I tried to lay a solid foundation by focusing on the REST and ASP.NET Web API basics: resources, identifiers, representations, verbs and hypermedia.
+More people than I expected showed up for my talk; somewhere around 50 to 70 attendees, I guess.</description>
+    </item>
+    
+    <item>
+      <title>Commands with dependencies</title>
+      <link>http://localhost:1313/2012/10/commands-with-dependencies/</link>
+      <pubDate>Mon, 15 Oct 2012 16:57:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/commands-with-dependencies/</guid>
+      <description>Also read: Separating command data from logic and sending it on a bus
+Yesterday I wrote about an architecture which limits abstractions by solely introducing commands and queries. I shared a dead simple variation of this pattern, the advantages I experienced, and how I could still unit test the controller if I wanted to.
+At the end of that post I wondered how I would be able to test commands in isolation; suppose the implementation doesn&amp;rsquo;t use a database this time, but a hairy, too low-level, third party webservice.</description>
+    </item>
+    
+    <item>
+      <title>Commands, queries and testing</title>
+      <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
+      <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/commands-queries-and-testing/</guid>
+      <description>Also read:
+ Self-contained commands with dependencies Separating command data from logic and sending it on a bus  We need abstraction, but the amount of abstraction we really need depends, and should be assessed on a case-by-case basis. It seems advisable to grow abstractions, and to introduce them gradually.
+That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
+    </item>
+    
+    <item>
+      <title>Finding the gaps in a sequence of dates</title>
+      <link>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</link>
+      <pubDate>Sun, 23 Sep 2012 20:42:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</guid>
+      <description>Somewhere earlier this week I had to find the gaps in a sequence of dates. Admittedly, my first action was to search Stackoverflow for a clean solution. But since no one asked the question there yet, I had to implement it myself.
+The solution comes in the form of an extension method on IEnumerable&amp;lt;DateTime&amp;gt;, which takes a lower bound and an upper bound, and returns an enumerable of dates.
+public static IEnumerable&amp;lt;DateTime&amp;gt; GetGaps( this IEnumerable&amp;lt;DateTime&amp;gt; sequence, DateTime lowerbound, DateTime upperbound) { var completeSequence = new List&amp;lt;DateTime&amp;gt;(); var tmpDay = lowerbound.</description>
+    </item>
+    
+    <item>
+      <title>To intellistumble</title>
+      <link>http://localhost:1313/2012/09/to-intellistumble/</link>
+      <pubDate>Thu, 20 Sep 2012 12:14:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/to-intellistumble/</guid>
+      <description>To accidentally or unexpectedly discover a method or property whilst using IntelliSense to browse through symbol names.
+ We should add this term to the Microsoft developer jargon.</description>
+    </item>
+    
+    <item>
+      <title>Value object obsession</title>
+      <link>http://localhost:1313/2012/09/value-object-obsession/</link>
+      <pubDate>Sun, 16 Sep 2012 17:20:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/value-object-obsession/</guid>
+      <description>Primitive obsession is one of the more popular (hyped?) code smells these days.
+ Primitive obsession is the name of a code smell that occurs when we use primitive data types to represent domain ideas. For example, we use a string to describe a message or an integer to represent an amount of money.
+ The antidote is creating a value object instead of using a primitive. A value object is an immutable object which (in its DDD definition) carries no identity, but is compared based on the value of its attributes.</description>
+    </item>
+    
+    <item>
+      <title>Slides and code from my Tunisia REST and ASP.NET Web API session</title>
+      <link>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</link>
+      <pubDate>Thu, 13 Sep 2012 08:55:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</guid>
+      <description>I just returned from a four day trip to Tunisia with Euricom. Next to indulging on the sun, food and all-inclusive cocktails, getting to know each other in a less professional setting, we spent somewhere around half of our days - and this is a rather generous estimate - doing technical sessions and workshops.I gave a 90 minute long crash course on REST and ASP.NET Web API.
+Content
+REST Concepts Architectural values Left overs  ASP.</description>
+    </item>
+    
+    <item>
+      <title>Is serialization really that expensive?</title>
+      <link>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</link>
+      <pubDate>Wed, 22 Aug 2012 13:19:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</guid>
+      <description>While wading through an exotic codebase, I stumbled upon a static class named Convert. This class contained somewhere around 2700 (non-generated) lines of code, where each method manually converted some object to a simple textual representation. These methods were then used to convert requests and reponses to and from a remote third party service before logging them to the database for auditing reasons.
+public static class Convert { public static string PaymentRequest(PaymentRequest req) { var sb = new StringBuilder(); sb.</description>
+    </item>
+    
+    <item>
+      <title>A really quick look at ASP.NET Web API Help Pages</title>
+      <link>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</link>
+      <pubDate>Thu, 16 Aug 2012 21:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</guid>
+      <description>While skimming over future features of ASP.NET Web API, I came across the ASP.NET Web API Help Page feature. I couldn&amp;rsquo;t find an introduction online, and the Nuget package has only been downloaded 16 times, so I had to have a really quick look. I documented my baby steps below.
+So, I had a really simple ASP.NET MVC4 project, with one API controller exposing tweets.
+public class TweetsController : ApiController { /// &amp;lt;summary&amp;gt; /// Get a &amp;lt;c&amp;gt;Tweet&amp;lt;/c&amp;gt; by its identifier.</description>
+    </item>
+    
+    <item>
+      <title>Making my first NancyFx test pass</title>
+      <link>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/</link>
+      <pubDate>Mon, 11 Jun 2012 16:47:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/</guid>
+      <description>Like I already said last week, I have been dabbling a bit with NancyFx lately.
+This week I took a serious look at testing Nancy modules and Razor views. Due to Nancy&amp;rsquo;s defaults and conventions, it takes a little while to set up Nancy in a test context. Then again, Nancy&amp;rsquo;s granularity makes it simple enough to set up a solid test infrastructure by replacing some of its building blocks.</description>
+    </item>
+    
+    <item>
+      <title>Painless database logging with mongoDB</title>
+      <link>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</link>
+      <pubDate>Sun, 20 May 2012 17:18:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</guid>
+      <description>While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
+From the mongoDB documentation:
+ Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging.</description>
+    </item>
+    
+    <item>
+      <title>Some Servicelocator pattern stinks</title>
+      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</link>
+      <pubDate>Tue, 17 Apr 2012 20:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</guid>
+      <description>I have been working on a somewhat legacy codebase which makes use of the Servicelocator pattern. Although I always thought of Dependecy Injection to be the superior pattern, I was pleased to find some Inversion of Control implementation in there. Working with the codebase, I discovered first hand how easily, when used without caution and discipline, the Servicelocator pattern can introduce code rot.
+I will walk you through some of the issues I have with the Servicelocator pattern, mostly looking at it from a test perspective.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Working with NHibernate 3.0</title>
+      <link>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</link>
+      <pubDate>Wed, 08 Feb 2012 20:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</guid>
+      <description>It&amp;rsquo;s been a while since I wrote my last book review, mostly because I&amp;rsquo;m still trying to figure out when it adds value to write one. For this one it was pretty obvious, there are far too little reviews out there.
+Being new to NHibernate, and NHibernate being known as having a steep learning curve, I thought it would be a good idea to do some reading. Searching for books on NHibernate 3.</description>
+    </item>
+    
+    <item>
+      <title>Testing DI bootstrappers</title>
+      <link>http://localhost:1313/2012/02/testing-di-bootstrappers/</link>
+      <pubDate>Mon, 06 Feb 2012 08:59:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/testing-di-bootstrappers/</guid>
+      <description>While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&amp;rsquo;t see any reason why they shouldn&amp;rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
+I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot.</description>
+    </item>
+    
+    <item>
+      <title>Rewriting an if</title>
+      <link>http://localhost:1313/2011/11/rewriting-an-if/</link>
+      <pubDate>Thu, 24 Nov 2011 21:12:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/rewriting-an-if/</guid>
+      <description>Yesterday I came across an if statement that looked something like this.
+if (arg == &amp;quot;a&amp;quot; || arg == &amp;quot;b&amp;quot; || arg == &amp;quot;c&amp;quot; || arg == &amp;quot;d&amp;quot; || arg == &amp;quot;e&amp;quot;) { Console.WriteLine(true); }  An alternative way of writing this could look like this.
+if (new [] { &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;e&amp;quot; }.Contains(arg)) Console.WriteLine(true);  I can&amp;rsquo;t remember in which Github repository I spotted this technique, but I&amp;rsquo;m sure it was written in something other than C#.</description>
+    </item>
+    
+    <item>
+      <title>Book review: The Art of Unit Testing</title>
+      <link>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</link>
+      <pubDate>Thu, 06 Oct 2011 21:08:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</guid>
+      <description>I think The Art of Unit Testing targets a broad audience. Beginners will find every part of the book useful, where intermediates might be more interested in the final two parts.
+Roy Osherove starts this book by laying a solid foundation of the unit testing concept. Why is testing important? What defines a good unit test, and how does a unit test differ from an integration test? In the second part of the book, he demonstrates the use of two core unit testing techniques: stubs and mocks.</description>
+    </item>
+    
+    <item>
+      <title>No more regions on implementing interface</title>
+      <link>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</link>
+      <pubDate>Tue, 28 Jun 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</guid>
+      <description>Something that has been irritating me tremendously lately, is that when I implement an interface using Visual Studio all the members of that interface get surrounded by a region.
+
+After poking around in the C# Text Editor options a little while, I found the switch that enables that behaviour.
+
+A little less friction every day..</description>
+    </item>
+    
+    <item>
+      <title>Checking for anonymous types</title>
+      <link>http://localhost:1313/2011/05/checking-for-anonymous-types/</link>
+      <pubDate>Sat, 21 May 2011 18:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/05/checking-for-anonymous-types/</guid>
+      <description>Because I blogged about anonymous types last month, I thought following method would also make an interesting post.
+private static bool IsAnonymousType(Type type) { Debug.Assert(type != null, &amp;quot;Type should not be null&amp;quot;); // HACK: The only way to detect anonymous types right now. return Attribute.IsDefined(type, typeof(CompilerGeneratedAttribute), false) &amp;amp;&amp;amp; type.IsGenericType &amp;amp;&amp;amp; type.Name.Contains(&amp;quot;AnonymousType&amp;quot;) &amp;amp;&amp;amp; (type.Name.StartsWith(&amp;quot;&amp;lt;&amp;gt;&amp;quot;, StringComparison.OrdinalIgnoreCase) || type.Name.StartsWith(&amp;quot;VB$&amp;quot;, StringComparison.OrdinalIgnoreCase)) &amp;amp;&amp;amp; (type.Attributes &amp;amp; TypeAttributes.NotPublic) == TypeAttributes.NotPublic; }  For a type to be anonymous:</description>
+    </item>
+    
+    <item>
+      <title>Anonymous type equality follow-up: Equals()</title>
+      <link>http://localhost:1313/2011/04/anonymous-type-equality-follow-up-equals/</link>
+      <pubDate>Sun, 24 Apr 2011 12:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/anonymous-type-equality-follow-up-equals/</guid>
+      <description>After publishing yesterday&amp;rsquo;s post on anonymous type equality, I received an interesting comment from a fellow redditor. He stated that even if the sequence of the property assignment were the same, the equality comparison would still return false, because the types generated by the C# compiler are reference types, making their references being tested for equality and not their data.
+This is very true, unless the Equals() method is overridden. And this is exactly what the compiler does for us when we define anonymous types.</description>
+    </item>
+    
+    <item>
+      <title>Anonymous type equality</title>
+      <link>http://localhost:1313/2011/04/anonymous-type-equality/</link>
+      <pubDate>Sat, 23 Apr 2011 15:15:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/anonymous-type-equality/</guid>
+      <description>Let&amp;rsquo;s say you instantiate two variables (a and b) using anonymous types. They both have the same two properties (x and y) with equal values.
+ 1: var a = new { x = 1, y = 2 }; 2: var b = new { y = 2, x = 1 };  Do you think these two variables are equal?
+ 1: var areEquel = a.Equals(b); 2: Console.WriteLine(areEquel); //Prints false :O  These two variables are not equal.</description>
+    </item>
+    
+    <item>
+      <title>Using C# keywords as variables</title>
+      <link>http://localhost:1313/2011/04/using-c#-keywords-as-variables/</link>
+      <pubDate>Mon, 11 Apr 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/using-c#-keywords-as-variables/</guid>
+      <description>Hold it, don&amp;rsquo;t shoot me. I know this would be an awful practice, but it is an interesting C# compiler quirk nonetheless.
+ Keywords are predefined reserved identifiers that have special meanings to the compiler. They cannot be used as identifiers in your program unless they include @ as a prefix. For example, @if is a legal identifier but if is not because it is a keyword.
+ static void Main(string[] args) { var @if = &amp;quot;oh my.</description>
+    </item>
+    
+    <item>
+      <title>Using JSON serialization outside a web context</title>
+      <link>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</link>
+      <pubDate>Sun, 06 Feb 2011 16:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</guid>
+      <description>You usually are in a web context if you are working with JSON, where JSON serialization almost always is encapsulated by the framework. You might accidentally come across scenarios where you want to serialize and deserialize JSON in a non-web context though.
+Turns out this is fairly trivial since .NET 3.5. .NET 3.5 added the JavaScriptSerializer class. You can find this class in the System.Web.Script.Serialization namespace. To access this namespace you need to reference the System.</description>
+    </item>
+    
+    <item>
+      <title>Hello world with Kayak and OWIN</title>
+      <link>http://localhost:1313/2011/01/hello-world-with-kayak-and-owin/</link>
+      <pubDate>Sun, 23 Jan 2011 19:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/01/hello-world-with-kayak-and-owin/</guid>
+      <description>Kayak is a lightweight opensource C# webserver which implements OWIN. OWIN stands for Open Web Interface for .NET.
+Hello World
+Hosting your own application using Kayak is relatively simple.
+In this example I&amp;rsquo;m using a console application to run the Kayak webserver. This application has one dependency: the Kayak project.
+First create a new instance of the DotNetServer. This class is an IKayakServer implementation using System.NET.Sockets.Socket. Once the instance is created you can call the Start() method.</description>
+    </item>
+    
+    <item>
+      <title>Extension method: IEnumerable&lt;DateTime?&gt;.AreChronological()</title>
+      <link>http://localhost:1313/2010/08/extension-method-ienumerabledatetime.arechronological/</link>
+      <pubDate>Sun, 22 Aug 2010 13:54:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/08/extension-method-ienumerabledatetime.arechronological/</guid>
+      <description>In this post you can find an extension method which extends IEnumerable&amp;lt;DateTime?&amp;gt;. The AreChronological extension method tests if the items in the IEnumerable&amp;lt;DateTime?&amp;gt; are in chronological order.
+There are multiple ways you can solve this problem.
+Imperative solution 1: public static class DateTimeExtensions 2: { 3: public static bool AreChronological(this IEnumerable&amp;lt;DateTime?&amp;gt; dateTimes) 4: { 5: var prev = (DateTime?)DateTime.MinValue; 6: 7: foreach (var dateTime in dateTimes) 8: { 9: if (dateTime !</description>
+    </item>
+    
+    <item>
+      <title>Extension method: DateTime.IsInFuture()</title>
+      <link>http://localhost:1313/2010/08/extension-method-datetime.isinfuture/</link>
+      <pubDate>Sun, 22 Aug 2010 13:03:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/08/extension-method-datetime.isinfuture/</guid>
+      <description>In this post you can find a simple DateTime extension method. The IsInFuture method simply returns a boolean indicating whether the DateTime instance is in the future or not.
+ 1: public static class DateTimeExtensions 2: { 3: public static bool IsInFuture(this DateTime dateTime) 4: { 5: int compareResult = DateTime.Compare(dateTime, DateTime.Now); 6: 7: return compareResult != -1; 8: } 9: }  You can use it like this..
+ 1: DateTime dateTimeInPast = new DateTime(2010, 5, 20); 2: DateTime dateTimeInFuture = new DateTime(2025, 11, 20); 3: 4: Console.</description>
+    </item>
+    
+    <item>
+      <title>Switching with non-constant cases in C#</title>
+      <link>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</link>
+      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</guid>
+      <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
+    </item>
+    
+    <item>
+      <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
+      <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
+      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
+      <description>Yesterday I blogged on &amp;lsquo;WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls&#39;. In this post I went from bad code to better code. A smart reader gave me some good pointers on how to improve this code some more. Another iteration was necessary.
+Losing the LinqIn the previous iteration I used Linq to search my dictionary.
+ 1: var res = mappings.Where(map =&amp;gt; map.Key.Equals((CheckBox)sender)).First();  This is overhead, because the dictionary implements an indexer.</description>
+    </item>
+    
+    <item>
+      <title>WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls</title>
+      <link>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
+      <pubDate>Mon, 12 Jul 2010 21:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
+      <description>Last week I came across a problem which seemed trivial at first sight, but turned out to be a pretty fun refactoring challenge.
+The scenarioThe real problem was a bit more complex, but for simplicity&amp;rsquo;s sake I made this example. In this form there are three checkboxes which map with the textboxes next to them. If the checkbox gets unchecked the corresponding textboxes should be cleared.
+
+First iterationI warn you.</description>
+    </item>
+    
+    <item>
+      <title>.NET API for PasteHTML</title>
+      <link>http://localhost:1313/2010/06/.net-api-for-pastehtml/</link>
+      <pubDate>Sun, 20 Jun 2010 16:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/06/.net-api-for-pastehtml/</guid>
+      <description>PasteHTML is a website which lets you upload and share HTML pages. It&amp;rsquo;s free, anonymous and without registration. The uploaded pages should stay online forever.
+The only drawback is that you can&amp;rsquo;t edit or delete your uploaded pages in an easy way yet. It is ad free, but I guess there will be some advertisements in the future when hosting costs increase.
+You can make a POST request to upload a page through their public API.</description>
+    </item>
+    
+    <item>
+      <title>Handling the AggregateException</title>
+      <link>http://localhost:1313/2010/05/handling-the-aggregateexception/</link>
+      <pubDate>Sun, 23 May 2010 13:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/handling-the-aggregateexception/</guid>
+      <description>Last week I showed you how you can use the AggregateException to apply consistent exception handling in batch operations. You can find that post here.
+Bart De Smet read that post and pointed out that I should check out the Handle method of the AggregateException.
+The Handle methodAs found in the MSDN documentation.
+Description
+ Invokes a handler on each Exception contained by this AggregateException.
+ Parameters
+ System.Func&amp;lt;Exception, Boolean&amp;gt; predicate</description>
+    </item>
+    
+    <item>
+      <title>Exception handling in batch operations with the AggregateException</title>
+      <link>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</link>
+      <pubDate>Sat, 15 May 2010 18:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</guid>
+      <description>Doing batch operations and elegantly handling exceptions is a problem which every developer has faced before. In .NET 3.5 or older there is no out-of-the-box solution to handle exceptions in these types of scenarios, without being inconsistent to the normal flow of exception handling. .NET 4 introduces the AggregateException; an exception representing multiple exceptions. The AggregateException was introduced in the first place to be used with the parallel framework, but it can be used in other scenarios as well, such as batch operations.</description>
+    </item>
+    
+    <item>
+      <title>Doing the groceries in parallel</title>
+      <link>http://localhost:1313/2010/05/doing-the-groceries-in-parallel/</link>
+      <pubDate>Mon, 10 May 2010 20:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/doing-the-groceries-in-parallel/</guid>
+      <description>I&amp;rsquo;ve started reading the excellent paper &amp;ldquo;Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4&amp;quot;.
+There is a section in this whitepaper which explains perfectly why parallel programming was and still is such an interesting problem.
+ Consider an analogy: shopping with some friends at a grocery store. You come into the store with a grocery list, and you rip the list into one piece per friend, such that every friend is responsible for retrieving the elements on his or her list.</description>
+    </item>
+    
+    <item>
+      <title>Quick and dirty tool for sending UDP packets</title>
+      <link>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</link>
+      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</guid>
+      <description>While I was playing with my UDPListener I needed a small tool which could send some UDP packets to a certain hostname and port. That&amp;rsquo;s why I wrote a console application which uses an UdpClient to send some UDP packets. It&amp;rsquo;s quick and dirty, but it serves the cause.
+ 1: namespace UdpSender 2: { 3: class Program 4: { 5: //Constants 6: private const string HOSTNAME = &amp;quot;LocalHost&amp;quot;; 7: private const int PORT = 800; 8: private const int TIMES = 5; 9: private const string MESSAGE = &amp;quot;This is a TestMessage&amp;quot;; 10: private const int SLEEP = 50; 11: 12: static void Main(string[] args) 13: { 14: using (UdpClient client = new UdpClient()) 15: { 16: //Connect 17: client.</description>
+    </item>
+    
+    <item>
+      <title>Listening for UDP packets in a Windows service using an UdpClient</title>
+      <link>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</link>
+      <pubDate>Sun, 14 Mar 2010 16:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</guid>
+      <description>In this post, I&amp;rsquo;ll show you how can you listen for UDP packets in a Windows service.
+OnStartWhen the service starts, I set the started flag to true, initialize the ManualResetEvent, initialize an UdpClient and a WorkingThread. The ManualResetEvent will help us on a later stage to make our service stop elegantly.
+ 1: protected override void OnStart(string[] args) 2: { 3: Start(); 4: } 5: 6: public void Start() 7: { 8: m_started = true; 9: 10: m_stop = new ManualResetEvent(false); 11: 12: InitializeUdpListener(); 13: InitializeWorkingThread(); 14: }  InitializingFirst we need to initialize an IPEndpoint.</description>
+    </item>
+    
+    <item>
+      <title>Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe)..</title>
+      <link>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</link>
+      <pubDate>Sat, 13 Mar 2010 16:36:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</guid>
+      <description>When you create a new Windows Service project and try to debug it, Visual Studio will show you a Windows Service Start Failure with the message &amp;ldquo;Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe) and then started with the Server Explorer, Windows Services Administrative tool or the NET START command.&amp;quot;.
+
+The trick my team and I use to workaround this problem, makes use of the service Debug flag.</description>
+    </item>
+    
+    <item>
+      <title>Add leading zeros to a number</title>
+      <link>http://localhost:1313/2009/12/add-leading-zeros-to-a-number/</link>
+      <pubDate>Mon, 07 Dec 2009 20:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/12/add-leading-zeros-to-a-number/</guid>
+      <description>Todays post is a very small tip.
+I saw the question &amp;ldquo;How to add leading zeros to a number&amp;rdquo; on the ASP.NET forums countless times before. And often the answers provide solutions that work, but are overkill as well.
+The two cleanest methods I know are String.Format and PadLeft.
+ 1: Console.WriteLine(&amp;quot;Using .ToString()&amp;quot;); 2: Console.WriteLine(String.Format(&amp;quot;{0:0000}&amp;quot;, 16)); 3: 4: Console.WriteLine(&amp;quot;-------------------&amp;quot;); 5: 6: Console.WriteLine(&amp;quot;Using .PadLeft()&amp;quot;); 7: Console.WriteLine(Convert.ToString(16).PadLeft(4, &#39;0&#39;));  You can see the result here.</description>
+    </item>
+    
+    <item>
+      <title>Response.RedirectPermanent in .NET 3.5 and older</title>
+      <link>http://localhost:1313/2009/12/response.redirectpermanent-in-.net-3.5-and-older/</link>
+      <pubDate>Sat, 05 Dec 2009 17:50:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/12/response.redirectpermanent-in-.net-3.5-and-older/</guid>
+      <description>One of the new features in ASP.NET 4.0 is permanently redirecting to a page using Response.RedirectPermanent.
+ It is common practice in Web applications to move pages and other content around over time, which can lead to an accumulation of stale links in search engines. In ASP.NET, developers have traditionally handled requests to old URLs by using by using the Response.Redirect method to forward a request to the new URL. However, the Redirect method issues an HTTP 302 Found (temporary redirect) response, which results in an extra HTTP round trip when users attempt to access the old URLs.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Professional Refactoring in C# &amp; ASP.NET</title>
+      <link>http://localhost:1313/2009/11/book-review-professional-refactoring-in-c#-asp.net/</link>
+      <pubDate>Tue, 17 Nov 2009 19:37:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/11/book-review-professional-refactoring-in-c#-asp.net/</guid>
+      <description>Three months ago I was looking up to refactoring a legacy ASP.NET Webforms application. Although I was familiar with refactoring, I ordered &amp;ldquo;Professional Refactoring in C# &amp;amp; ASP.NET&amp;rdquo; by Daniejel Arsenovski to get deeper into refactoring.
+The titleAlthough the title states &amp;ldquo;Professional&amp;rdquo;, I think this book should find it&amp;rsquo;s main audience in coding novices. Another problem with the title is the word ASP.NET in it. The book has one chapter covering ASP.</description>
+    </item>
+    
+    <item>
+      <title>Debugging &#34;SubReport could not be shown.&#34;</title>
+      <link>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</link>
+      <pubDate>Wed, 09 Sep 2009 18:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</guid>
+      <description>I&amp;rsquo;ve been upgrading a local report which contains multiple subreports, and yes I got that &amp;ldquo;SubReport could not be shown.&amp;rdquo; error more than once.
+Debugging this error is a pain in the a.. All you get is &amp;ldquo;SubReport could not be shown.&amp;quot;, making me want to punch my screen and scream &amp;ldquo;BUT WHY?&amp;ldquo;Just before breaking my screen and going on full tilt, I decided to take a step back and run through my checklist.</description>
+    </item>
+    
+    <item>
+      <title>Three common mistakes you should avoid when starting with Web Page Resources in ASP.NET</title>
+      <link>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</link>
+      <pubDate>Tue, 08 Sep 2009 20:04:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</guid>
+      <description>This is a list of of three common mistakes made by developers who start using Web Page Resources in ASP.NET.
+1. Not using the right format for the name of a local resources fileThe format of the name of a local resources file should be: PageName.PageExtension.resx.
+If you don&amp;rsquo;t add the page extension (Aspx, Ascx), you will get the Exception &amp;ldquo;The resource object with key &amp;lsquo;PageTitle&amp;rsquo; was not found.&amp;quot;.
+2. Not adding an App_LocalResources folder to each subfolderEach subfolder must have it&amp;rsquo;s own App_LocalResources folder, else ASP.</description>
+    </item>
+    
+    <item>
+      <title>Stored Procedures: Make them or break them</title>
+      <link>http://localhost:1313/2009/02/stored-procedures-make-them-or-break-them/</link>
+      <pubDate>Sun, 15 Feb 2009 18:58:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/02/stored-procedures-make-them-or-break-them/</guid>
+      <description>I&amp;rsquo;ve been thinking about the use of stored procedures lately.
+Some questions that popped up in my head: What are the advantages/disadvantages? When and how should they be used? Will they extinct with LINQ to SQL becoming more and more popular? Why should you store your queries in your database, instead of in your code..
+I asked the opinion of a few ASP.NET/.NET professionals. Hope you find this interesting!
+Kris Van Der Mast (Blog) Since I&amp;rsquo;m a consultant I have to go with the specifications of my clients.</description>
+    </item>
+    
+    <item>
+      <title>Interview with Curt Christianson (Part II)</title>
+      <link>http://localhost:1313/2009/01/interview-with-curt-christianson-part-ii/</link>
+      <pubDate>Mon, 12 Jan 2009 20:34:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/01/interview-with-curt-christianson-part-ii/</guid>
+      <description>This is part II of the interview with Curt Christianson. For Part I go here.
+Part 2: Technology Let me ask you some general questions about building a web application. What is your advise on setting up the layers of a web application. In the web application I&amp;rsquo;m currently working on we chose a not so standard architecture I guess. We have multiple &amp;ldquo;modules&amp;rdquo;, which are folders in practice. In the root of these modules we hold our aspx pages.</description>
+    </item>
+    
+    <item>
+      <title>Interview with Curt Christianson (Part I)</title>
+      <link>http://localhost:1313/2009/01/interview-with-curt-christianson-part-i/</link>
+      <pubDate>Thu, 08 Jan 2009 19:42:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/01/interview-with-curt-christianson-part-i/</guid>
+      <description>Curt Christianson is one of the administrators of forums.asp.net. Last month I stumbled across his blog, and felt like I had to do an interview with him. And here we are!
+I have divided his interview in two parts:
+ His career and his life Some techtalk on mainly ASP.NET webproject-architecture mixed with a bit of AJAX and WPF  Part 1: Career and life Who are you? Where do you live?</description>
+    </item>
+    
+  </channel>
+</rss>

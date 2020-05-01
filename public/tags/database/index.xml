@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>database on Jef Claes</title>
+    <link>http://localhost:1313/tags/database/</link>
+    <description>Recent content in database on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Aug 2018 14:58:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GES scavenging and the hidden cost of link events</title>
+      <link>http://localhost:1313/2018/08/ges-scavenging-and-the-hidden-cost-of-link-events/</link>
+      <pubDate>Sun, 12 Aug 2018 14:58:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2018/08/ges-scavenging-and-the-hidden-cost-of-link-events/</guid>
+      <description>Somewhere around a year ago, we started using GES in production as the primary data store of our new loyalty system. The system stores two types of data.
+ External services push batches of dumb downed events to the loyalty system. For example: a user logged on, played a game or participated in a competition. These events are transient by nature. Once the loyalty system has processed them, they only need to be kept around for a few days.</description>
+    </item>
+    
+    <item>
+      <title>Amazon Redshift - Fundamentals</title>
+      <link>http://localhost:1313/2018/05/amazon-redshift-fundamentals/</link>
+      <pubDate>Tue, 01 May 2018 14:17:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2018/05/amazon-redshift-fundamentals/</guid>
+      <description>Late 2017, we set out to replace and upgrade our existing reporting and analytics infrastructure with something that would be a better fit for our workloads. Keeping costs and required maintenance at a minimum would be a nice plus, making for an easy sell. After a bit of research, it was obvious Amazon Redshift had the potential to tick all the right boxes. While steadily porting the most problematic workloads away from our existing infrastructure, I started writing an investigative article on the fundamental concepts of Amazon Redshift.</description>
+    </item>
+    
+    <item>
+      <title>Repositories, where did we go wrong?</title>
+      <link>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</link>
+      <pubDate>Sun, 26 Jan 2014 18:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</guid>
+      <description>In essence, repositories are a simple abstraction over aggregate storage. A repository will insert, update, delete or fetch an aggregate from the underlying persistence mechanism. This abstraction avoids that databases, SQL statements, Object Mappers and the like leak into your domain. Next to that, swapping out repositories for an in-memory version makes testing easier.
+Recently, the use of repositories is being questioned again.
+Why would we wrap Object Mappers in yet another abstraction?</description>
+    </item>
+    
+    <item>
+      <title>Databases are growing on me</title>
+      <link>http://localhost:1313/2013/12/databases-are-growing-on-me/</link>
+      <pubDate>Sun, 22 Dec 2013 21:53:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/12/databases-are-growing-on-me/</guid>
+      <description>I learned all about logical design of relational databases back in school; tables, columns, data types, views, normalization, constraints, primary keys, foreign keys&amp;hellip; At the same time, I learned how to use SQL to put data in, and how to get it out again; INSERT INTO, SELECT, FROM, WHERE, JOIN, GROUP&amp;hellip;
+In the first project I worked on just out of school, we weren&amp;rsquo;t doing anything interesting with databases; we didn&amp;rsquo;t have that many users, or that much data.</description>
+    </item>
+    
+    <item>
+      <title>An event store with optimistic concurrency</title>
+      <link>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</link>
+      <pubDate>Sun, 10 Nov 2013 18:25:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</guid>
+      <description>Like I mentioned last week - after only five posts on the subject - there still are a great deal of event sourcing nuances left to be discovered.
+My current event store implementation only supports a single user. Due to an aggressive file lock, concurrently accessing an aggregate will throw an exception. Can we allow multiple users to write to and read from an event stream? Also, what can we do about users making changes to the same aggregate; can we somehow detect conflicts and avoid changes to be committed?</description>
+    </item>
+    
+    <item>
+      <title>Event projections</title>
+      <link>http://localhost:1313/2013/10/event-projections/</link>
+      <pubDate>Sun, 27 Oct 2013 17:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/event-projections/</guid>
+      <description>In my first two posts on event sourcing, I implemented an event sourced aggregate from scratch. After being able to have an aggregate record and play events, I looked at persisting them in an event store. Logically, the next question is: how do I query my aggregates, how do I get my state out?
+In traditional systems, write and read models are not separated, they are one and the same. Event sourced systems on the other hand have a write model - event streams, and a separate read model.</description>
+    </item>
+    
+    <item>
+      <title>It&#39;s not cake we are baking</title>
+      <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</link>
+      <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</guid>
+      <description>I recently watched a talk on Vimeo where Christin Gorman talks about how cookie dough relates to Hibernate; why use the generic, bloated and one-fits-all solution when you can mix together your own yummy cookie dough? We should aspire to be the Gordon Ramsey of software, not the college student who can only cook Ramen noodles. If you haven&amp;rsquo;t watched or listened to her talk, you should; it&amp;rsquo;s only a few minutes long, and she brings it really well.</description>
+    </item>
+    
+    <item>
+      <title>Painless database logging with mongoDB</title>
+      <link>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</link>
+      <pubDate>Sun, 20 May 2012 17:18:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</guid>
+      <description>While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
+From the mongoDB documentation:
+ Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging.</description>
+    </item>
+    
+  </channel>
+</rss>

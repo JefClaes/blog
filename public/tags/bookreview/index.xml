@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bookreview on Jef Claes</title>
+    <link>http://localhost:1313/tags/bookreview/</link>
+    <description>Recent content in Bookreview on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Jan 2018 21:28:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/bookreview/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Consumed in 2017</title>
+      <link>http://localhost:1313/2018/01/consumed-in-2017/</link>
+      <pubDate>Wed, 03 Jan 2018 21:28:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2018/01/consumed-in-2017/</guid>
+      <description>Another year, another 17 books, 6 shows and 3 movies consumed. Here&amp;rsquo;s this year&amp;rsquo;s highlights.
+
+**
+**
+Books **
+**
+1. The Zen and Art of Motor Cycle Maintenance
+**
+**
+The author is a tormented soul on a quest to define quality. You&amp;rsquo;re his passenger, driving shot gun on a CB77 Super Hawk, in for an exhausting intellectual journey through the high mountains of reasoning. You will often fear getting lost and feel slightly anxious that the driver might drive of a cliff any moment, but he won&amp;rsquo;t.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in Systems</title>
+      <link>http://localhost:1313/2014/02/thinking-in-systems/</link>
+      <pubDate>Sun, 02 Feb 2014 18:19:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/02/thinking-in-systems/</guid>
+      <description>We are surrounded by systems day in, day out. As software developers, we even get to spend a big portion of our day actively building and changing systems - be it software, teams, communities or businesses. Seeing the whole, but more importantly understanding how systems exist of inter-related parts that affect each other in all kinds of interesting ways, is crucial to growing sustainable systems.
+Thinking in Systems is a primer on the subject of system thinking written by Donella H.</description>
+    </item>
+    
+    <item>
+      <title>Happiness before success</title>
+      <link>http://localhost:1313/2014/01/happiness-before-success/</link>
+      <pubDate>Sun, 12 Jan 2014 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/01/happiness-before-success/</guid>
+      <description>Somewhere in the beginning of last century, two shoes salesmen were sent to Africa hoping to expand their employer&amp;rsquo;s market. Both salesmen reported home within days of their arrival. The first salesman wrote: &amp;ldquo;This trip turned out to be a waste of time; the locals are not wearing any shoes.&amp;rdquo; The second salesman wrote something similar, yet very different: &amp;ldquo;This is looking very promising; people aren&amp;rsquo;t wearing any shoes yet!&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>Databases are growing on me</title>
+      <link>http://localhost:1313/2013/12/databases-are-growing-on-me/</link>
+      <pubDate>Sun, 22 Dec 2013 21:53:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/12/databases-are-growing-on-me/</guid>
+      <description>I learned all about logical design of relational databases back in school; tables, columns, data types, views, normalization, constraints, primary keys, foreign keys&amp;hellip; At the same time, I learned how to use SQL to put data in, and how to get it out again; INSERT INTO, SELECT, FROM, WHERE, JOIN, GROUP&amp;hellip;
+In the first project I worked on just out of school, we weren&amp;rsquo;t doing anything interesting with databases; we didn&amp;rsquo;t have that many users, or that much data.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Antifragile</title>
+      <link>http://localhost:1313/2013/12/book-review-antifragile/</link>
+      <pubDate>Sun, 08 Dec 2013 17:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/12/book-review-antifragile/</guid>
+      <description>When things are fragile, they break easily. We often see fragility as a bad thing and design things to be robust. But this isn&amp;rsquo;t what we&amp;rsquo;re really after either; things that are robust might be hard to break, but they&amp;rsquo;re also hard to change, making them fail to adapt to new stressors over time. The model that we&amp;rsquo;re really after is antifragility; when something is antifragile it will benefit from stressors and get better over time.</description>
+    </item>
+    
+    <item>
+      <title>Multiplayer Enterprise Architect</title>
+      <link>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</link>
+      <pubDate>Sun, 30 Jun 2013 17:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</guid>
+      <description>Hanging around in the pub after DDDX, I ended up talking to Alberto Brandolini. For those who have never met him; he&amp;rsquo;s very much into visualization. You will always see him carrying a drawing pad, with a dash of permanent marker on his cheek, and a few lost sticky notes on his back. I don&amp;rsquo;t know if it was the Italian accent and the strong gestures, or my mildly intoxicated condition, but the idea of visualization as an important tool grew on me even more that evening.</description>
+    </item>
+    
+    <item>
+      <title>Book review: The Art of Agile Development</title>
+      <link>http://localhost:1313/2012/06/book-review-the-art-of-agile-development/</link>
+      <pubDate>Sun, 10 Jun 2012 19:42:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/book-review-the-art-of-agile-development/</guid>
+      <description>While I have - obviously - read the Agile Manifesto before, and regularly click through to articles on agile, I had never read an extensive work on it. Browsing for a good book, I was advised by a peer to get The Art of Agile Development.
+I wholeheartedly believe in the Agile Manifesto, but somewhere along the way Agile - with a capital A - got somewhat of a bad rep.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Working with NHibernate 3.0</title>
+      <link>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</link>
+      <pubDate>Wed, 08 Feb 2012 20:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</guid>
+      <description>It&amp;rsquo;s been a while since I wrote my last book review, mostly because I&amp;rsquo;m still trying to figure out when it adds value to write one. For this one it was pretty obvious, there are far too little reviews out there.
+Being new to NHibernate, and NHibernate being known as having a steep learning curve, I thought it would be a good idea to do some reading. Searching for books on NHibernate 3.</description>
+    </item>
+    
+    <item>
+      <title>Book review: The Art of Unit Testing</title>
+      <link>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</link>
+      <pubDate>Thu, 06 Oct 2011 21:08:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</guid>
+      <description>I think The Art of Unit Testing targets a broad audience. Beginners will find every part of the book useful, where intermediates might be more interested in the final two parts.
+Roy Osherove starts this book by laying a solid foundation of the unit testing concept. Why is testing important? What defines a good unit test, and how does a unit test differ from an integration test? In the second part of the book, he demonstrates the use of two core unit testing techniques: stubs and mocks.</description>
+    </item>
+    
+    <item>
+      <title>Book review: More Joel on Software</title>
+      <link>http://localhost:1313/2011/06/book-review-more-joel-on-software/</link>
+      <pubDate>Tue, 07 Jun 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/06/book-review-more-joel-on-software/</guid>
+      <description>I was lucky to pick up a copy of More Joel on Software for only 5 euros at a bookfest last week. Turns out the book ships pretty cheap on Amazon as well.
+More Joel on Software was written by Joel Spolsky, already a legend for launching The Stack Exchange Network with Jeff Atwood. Although it&amp;rsquo;s hard to not know him, I admittedly hadn&amp;rsquo;t read a lot of his material so far.</description>
+    </item>
+    
+    <item>
+      <title>It&#39;s not how good you are, it&#39;s how good you want to be</title>
+      <link>http://localhost:1313/2011/04/its-not-how-good-you-are-its-how-good-you-want-to-be/</link>
+      <pubDate>Sun, 10 Apr 2011 20:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/its-not-how-good-you-are-its-how-good-you-want-to-be/</guid>
+      <description>This Christmas, my girlfriend and I got this little book called It&amp;rsquo;s not how good you are, it&amp;rsquo;s how good you want to be. This book is mainly directed to (advertisement) designers, but since I feel that designers and developers do have a few things in common, we both like to create things, I also read it.
+The content of this book is a collection of Paul Ardens observations on business and life presented in a very consumable format.</description>
+    </item>
+    
+    <item>
+      <title>Why I still buy real books</title>
+      <link>http://localhost:1313/2011/02/why-i-still-buy-real-books/</link>
+      <pubDate>Tue, 01 Feb 2011 08:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/02/why-i-still-buy-real-books/</guid>
+      <description>As a technology geek, it should be hard to keep ignoring the latest generation of eReaders (read: the Kindle). With over three million devices sold, the Kindle has proven that it adds value to people&amp;rsquo;s lives, and that it&amp;rsquo;s a lot more than just a gadget.
+Some of the most obvious benefits&amp;hellip; You can carry a whole library in your backpack. The price of an eBook often is substantially less than the hardcover version.</description>
+    </item>
+    
+    <item>
+      <title>Book review: The Art of Non-Conformity</title>
+      <link>http://localhost:1313/2011/01/book-review-the-art-of-non-conformity/</link>
+      <pubDate>Sat, 22 Jan 2011 14:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/01/book-review-the-art-of-non-conformity/</guid>
+      <description>The book The Art of Non-Conformity: Set Your Own Rules, Live the Life You Want, and Change the World was written by Chris Guillebeau.
+I learned about this book through Chris&amp;rsquo; blog. He hosts a very popular blog where he writes on lifehacking, entrepreneurship and his goal to travel to each country in the world.
+In this book Chris tries to show the reader that you don&amp;rsquo;t have the live your life the way other people expect you to.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Got Fight?</title>
+      <link>http://localhost:1313/2011/01/book-review-got-fight/</link>
+      <pubDate>Sat, 15 Jan 2011 18:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/01/book-review-got-fight/</guid>
+      <description>I rarely review books with non-technical content here, but I just felt like I had to with this one.
+The book Got Fight? was written by Forrest Griffin, assisted by Erich Krauss.
+Forrest Griffin is one of the toughest light-heavyweight mixed martial artists competing in the UFC. If you are unfamiliar with MMA and UFC, I encourage you to watch one of the Forrest Griffin tribute videos on Youtube.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Pro HTML5 Programming</title>
+      <link>http://localhost:1313/2011/01/book-review-pro-html5-programming/</link>
+      <pubDate>Thu, 06 Jan 2011 14:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/01/book-review-pro-html5-programming/</guid>
+      <description>The Apress book Pro HTML5 Programming was written by three authors: Peter Lubbers, Brian Albers and Frank Salim. In this book the authors introduce the reader to the most popular and useful features of HTML5.
+The book contains 11 concise chapters: An overview of HTML5, the Canvas API, audio and video, the Geolocation API, the Communication API, the WebSocket API, Forms, the Web Workers API, the Web Storage API, Offline Web Applications and the future of HTML5.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Object-Oriented JavaScript</title>
+      <link>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</link>
+      <pubDate>Mon, 22 Feb 2010 19:47:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</guid>
+      <description>Although I&amp;rsquo;ve made my feet wet with various JavaScript frameworks, I am not a JavaScript hero at all. This might be one of the disadvantages of being a WebForms developer and having great toolkits at hand like the AJAX Control Toolkit and Telerik RADControls.
+Because you really can&amp;rsquo;t call yourself a webdeveloper without having some understanding of JavaScript I decided to order Object-Oriented Javascript by Stoyan Stefanov.
+This book really handles the language itself.</description>
+    </item>
+    
+    <item>
+      <title>Book review: Professional Refactoring in C# &amp; ASP.NET</title>
+      <link>http://localhost:1313/2009/11/book-review-professional-refactoring-in-c#-asp.net/</link>
+      <pubDate>Tue, 17 Nov 2009 19:37:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/11/book-review-professional-refactoring-in-c#-asp.net/</guid>
+      <description>Three months ago I was looking up to refactoring a legacy ASP.NET Webforms application. Although I was familiar with refactoring, I ordered &amp;ldquo;Professional Refactoring in C# &amp;amp; ASP.NET&amp;rdquo; by Daniejel Arsenovski to get deeper into refactoring.
+The titleAlthough the title states &amp;ldquo;Professional&amp;rdquo;, I think this book should find it&amp;rsquo;s main audience in coding novices. Another problem with the title is the word ASP.NET in it. The book has one chapter covering ASP.</description>
+    </item>
+    
+  </channel>
+</rss>

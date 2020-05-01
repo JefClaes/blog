@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Reading large files in chunks with proper encapsulation - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Reading large files in chunks with proper encapsulation">
+<meta itemprop="description" content="I&rsquo;ve been doing some work lately which involves sequentially reading large files (&gt; 2 to 5GB). This entails that it&rsquo;s not an option to read the whole structure in memory; it&rsquo;s more reliable to process the file in chunks. I occasionally come across legacy that solves exactly this problem, but in a procedural way, resulting in tangled spaghetti. To be honest, the first piece of software I ever wrote in a professional setting also went at it in the wrong way.">
+<meta itemprop="datePublished" content="2013-03-24T18:16:00&#43;01:00" />
+<meta itemprop="dateModified" content="2013-03-24T18:16:00&#43;01:00" />
+<meta itemprop="wordCount" content="361">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,.NET," /><meta property="og:title" content="Reading large files in chunks with proper encapsulation" />
+<meta property="og:description" content="I&rsquo;ve been doing some work lately which involves sequentially reading large files (&gt; 2 to 5GB). This entails that it&rsquo;s not an option to read the whole structure in memory; it&rsquo;s more reliable to process the file in chunks. I occasionally come across legacy that solves exactly this problem, but in a procedural way, resulting in tangled spaghetti. To be honest, the first piece of software I ever wrote in a professional setting also went at it in the wrong way." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/03/reading-large-files-in-chunks-with-proper-encapsulation/" />
+<meta property="article:published_time" content="2013-03-24T18:16:00+01:00" />
+<meta property="article:modified_time" content="2013-03-24T18:16:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reading large files in chunks with proper encapsulation"/>
+<meta name="twitter:description" content="I&rsquo;ve been doing some work lately which involves sequentially reading large files (&gt; 2 to 5GB). This entails that it&rsquo;s not an option to read the whole structure in memory; it&rsquo;s more reliable to process the file in chunks. I occasionally come across legacy that solves exactly this problem, but in a procedural way, resulting in tangled spaghetti. To be honest, the first piece of software I ever wrote in a professional setting also went at it in the wrong way."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">24</span>
+							<span class="rest">Mar 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Reading large files in chunks with proper encapsulation</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>I&rsquo;ve been doing some work lately which involves sequentially reading
+large files (&gt; 2 to 5GB). This entails that it&rsquo;s not an option to
+read the whole structure in memory; it&rsquo;s more reliable to process the
+file in chunks. I occasionally come across legacy that solves exactly
+this problem, but in a procedural way, resulting in tangled spaghetti.
+To be honest, the first piece of software I ever wrote in a professional
+setting also went at it in the wrong way.</p>
+<p>There is no reason to let it come to this though; you can use the often
+overlooked <a href="http://msdn.microsoft.com/en-us/library/vstudio/9k7k7cf0.aspx">yield return
+keyword</a>
+to improve encapsulation.</p>
+<blockquote>
+<p>When you use the yield keyword in a statement, you indicate that the
+method, operator, or get accessor in which it appears is an iterator.
+You consume an iterator method by using a foreach statement or LINQ
+query. Each iteration of the foreach loop calls the iterator method.
+When a yield return statement is reached in the iterator method,
+expression is returned, and the current location in code is retained.
+Execution is restarted from that location the next time that the
+iterator function is called.</p>
+</blockquote>
+<p>Have a look at the following Reader class which takes advantage of yield
+returning. This class reads from file, line by line, building a chunk,
+to return it when the desired chunk size is attained. In the next
+iteration, the call will continue by clearing the lines - thereby
+releasing memory, and rebuilding the next chunk.</p>
+<pre><code>public class Reader
+{
+    private int _chunkSize;
+
+    public Reader(int chunkSize) 
+    {
+        _chunkSize = chunkSize;
+    }
+
+    public IEnumerable&lt;Chunk&gt; Read(string path)
+    {
+        if (string.IsNullOrEmpty(path))
+            throw new NullReferenceException(&quot;path&quot;);
+
+        var lines = new List&lt;string&gt;();
+
+        using (var reader = new StreamReader(path))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                lines.Add(line);
+
+                if (lines.Count == _chunkSize)
+                {
+                    yield return new Chunk(lines);
+
+                    lines.Clear();
+                }
+            }                
+        }
+
+        yield return new Chunk(lines);
+    }
+}
+
+public class Chunk
+{
+    public Chunk(List&lt;string&gt; lines) 
+    {
+        Lines = lines;
+    }
+
+    public List&lt;string&gt; Lines { get; private set; }
+}
+</code></pre>
+<p>And that&rsquo;s one way to achieve clean encapsulation without starving your
+machine&rsquo;s memory.</p>
+<pre><code>var reader = new Reader(chunkSize: 1000);
+var chunks = reader.Read(@&quot;C:\big_file.txt&quot;);
+
+foreach (var chunk in chunks)            
+    Console.WriteLine(chunk.Lines.Count);
+</code></pre>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

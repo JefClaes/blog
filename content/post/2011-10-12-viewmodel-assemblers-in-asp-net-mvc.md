@@ -31,7 +31,7 @@ unnecessary abstraction where possible.
 I tried representing this into a nice PowerPoint drawing.  
   
 
-[![](../images/thumbnails/2011-10-12-viewmodel-assemblers-in-asp-net-mvc-ViewModelAssemblers.PNG)](../images/2011-10-12-viewmodel-assemblers-in-asp-net-mvc-ViewModelAssemblers.PNG)
+[![](/post/images/thumbnails/2011-10-12-viewmodel-assemblers-in-asp-net-mvc-ViewModelAssemblers.PNG)](/post/images/2011-10-12-viewmodel-assemblers-in-asp-net-mvc-ViewModelAssemblers.PNG)
 
   
 Something for me to find out in the coming days, is how

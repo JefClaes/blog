@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Event on Jef Claes</title>
+    <link>http://localhost:1313/tags/event/</link>
+    <description>Recent content in Event on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Sep 2013 16:34:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/event/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Slides from my talk on the Ubiquitous Language</title>
+      <link>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</link>
+      <pubDate>Sun, 15 Sep 2013 16:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</guid>
+      <description>I just returned from our yearly Euricom retreat. This year, all forty of us got to spend four days in the South of Spain. Where we had longish sessions and a few workshops last year, we experimented with shorter talks this year - a la lightning talks, TEDx style.
+This format made it possible for everyone to speak, but also forced the speaker to keep the scope of the talk focused, and to organize the information in a way that attendees can get the gist of it in only twelve minutes.</description>
+    </item>
+    
+    <item>
+      <title>Slides and code from my Tunisia REST and ASP.NET Web API session</title>
+      <link>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</link>
+      <pubDate>Thu, 13 Sep 2012 08:55:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</guid>
+      <description>I just returned from a four day trip to Tunisia with Euricom. Next to indulging on the sun, food and all-inclusive cocktails, getting to know each other in a less professional setting, we spent somewhere around half of our days - and this is a rather generous estimate - doing technical sessions and workshops.I gave a 90 minute long crash course on REST and ASP.NET Web API.
+Content
+REST Concepts Architectural values Left overs  ASP.</description>
+    </item>
+    
+    <item>
+      <title>Video, slides and source from my WebSockets talk</title>
+      <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
+      <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</guid>
+      <description>Yesterday, I gave a talk on WebSockets at HTML5 WebCamps Belgium.
+I got a lot of positive feedback on Twitter, which makes me a very happy panda!
+
+You can already find the video of my session on Channel9.
+The slides can be found on SlideShare.
+If you want to play with the demo yourself, you can download the source:
+ Make sure your firewall allows incoming TCP traffic on port 4502 Deploy the client access policy file to IIS Also host the Demo.</description>
+    </item>
+    
+    <item>
+      <title>I will be talking at HTML5 WebCamps!</title>
+      <link>http://localhost:1313/2011/03/i-will-be-talking-at-html5-webcamps/</link>
+      <pubDate>Tue, 01 Mar 2011 12:56:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/03/i-will-be-talking-at-html5-webcamps/</guid>
+      <description>HTML5 WebCamps is a free event organized by Microsoft Belgium and will take place on April 6th at Living Tomorrow.
+In my session I will be talking about WebSockets.
+ WebSockets on Fire
+While the WebSockets API specification is not stable yet, various browser vendors have already implemented a prototype in their latest browser versions. Microsoft released their WebSockets prototype in December 2010. While there is no native implementation of WebSockets in IE9 just yet, for now they are providing a solution which works cross-browser, relying on a Silverlight client.</description>
+    </item>
+    
+  </channel>
+</rss>

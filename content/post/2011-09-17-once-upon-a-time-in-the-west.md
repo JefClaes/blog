@@ -36,7 +36,7 @@ Here is an overview of our posts exploring the West Coast:
 -   [City of fallen
     angels](http://jclaes.blogspot.com/2011/09/city-of-fallen-angels.html)
 
-[![](../images/thumbnails/2011-09-17-once-upon-a-time-in-the-west-Yosemite_0210.png)](../images/2011-09-17-once-upon-a-time-in-the-west-Yosemite_0210.png)
+[![](/post/images/thumbnails/2011-09-17-once-upon-a-time-in-the-west-Yosemite_0210.png)](/post/images/2011-09-17-once-upon-a-time-in-the-west-Yosemite_0210.png)
 
   
 

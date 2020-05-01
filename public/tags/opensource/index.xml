@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Opensource on Jef Claes</title>
+    <link>http://localhost:1313/tags/opensource/</link>
+    <description>Recent content in Opensource on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2013 17:02:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Validating composite models with knockout validation</title>
+      <link>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</link>
+      <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</guid>
+      <description>When you use knockout validation to extend observables with validation rules, it will add a few functions to these observables - the most important ones being; error and isValid. You can use these functions to verify if any of the validation rules were violated, and to extract an error message.
+To extract all of the error messages out of a composite model, you can use a grouping function.
+function BookingModel() { var self = this; self.</description>
+    </item>
+    
+    <item>
+      <title>Released: My Antwerp Open Data submissions</title>
+      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
+      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
+      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
+    </item>
+    
+    <item>
+      <title>Released: Kill long meetings</title>
+      <link>http://localhost:1313/2012/11/released-kill-long-meetings/</link>
+      <pubDate>Sun, 25 Nov 2012 17:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/released-kill-long-meetings/</guid>
+      <description>A lot has already been said and written about meetings, and some have carried the message above par; &amp;lsquo;Meetings: where work goes to die&#39;. Today, I&amp;rsquo;m not going to foul the internet with another rant, but I&amp;rsquo;d like to show you a small application built over the last few weeks after work.
+I regularly find myself building small things as an antitoxin to the regular periods of not writing and shipping code at work.</description>
+    </item>
+    
+    <item>
+      <title>Released: Nancy.AspNetSprites.Razor</title>
+      <link>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</link>
+      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</guid>
+      <description>I was setting up a web application that shows an image for each listed product on the home page. When there were a few products, this worked pretty smooth, but as the number of products (and thereby images) increased, performance degraded. The problem is that each image initiates a separate request. The solution for this problem is to reduce the number of requests by combining the images using CSS sprites. Here is an in-detail explanation of how this works.</description>
+    </item>
+    
+    <item>
+      <title>Log4Net: log.Debug(String.Format()) versus log.DebugFormat()</title>
+      <link>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</link>
+      <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</guid>
+      <description>Log4net is one of the most popular opensource logging frameworks available in the .NET world. I&amp;rsquo;ve been using this framework for over a year now, and today I discovered something new.
+I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.</description>
+    </item>
+    
+  </channel>
+</rss>

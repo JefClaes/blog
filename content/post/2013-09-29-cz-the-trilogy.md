@@ -25,7 +25,7 @@ crushed to death though). Next to those species, the forest was heavily
 occupied by locals gathering mushrooms - must be the season?  
   
 
-[![](../images/thumbnails/2013-09-29-cz-the-trilogy-IMG_7298.jpg)](../images/2013-09-29-cz-the-trilogy-IMG_7298.jpg)
+[![](/post/images/thumbnails/2013-09-29-cz-the-trilogy-IMG_7298.jpg)](/post/images/2013-09-29-cz-the-trilogy-IMG_7298.jpg)
 
   
 We used the remaining two days to stroll through Prague, and to live
@@ -34,11 +34,11 @@ cost less than half of what they do in Belgium. There is a
 zero-tolerance alcohol policy for drivers though - I got pulled over
 too, so they seem to be pretty serious about it.  
   
-[![](../images/thumbnails/2013-09-29-cz-the-trilogy-IMG_7479.jpg)](../images/2013-09-29-cz-the-trilogy-IMG_7479.jpg)  
+[![](/post/images/thumbnails/2013-09-29-cz-the-trilogy-IMG_7479.jpg)](/post/images/2013-09-29-cz-the-trilogy-IMG_7479.jpg)  
   
 
-[![](../images/thumbnails/2013-09-29-cz-the-trilogy-IMG_7190.jpg)](../images/2013-09-29-cz-the-trilogy-IMG_7190.jpg)
+[![](/post/images/thumbnails/2013-09-29-cz-the-trilogy-IMG_7190.jpg)](/post/images/2013-09-29-cz-the-trilogy-IMG_7190.jpg)
 
   
 
-[![](../images/thumbnails/2013-09-29-cz-the-trilogy-IMG_7418.jpg)](../images/2013-09-29-cz-the-trilogy-IMG_7418.jpg)
+[![](/post/images/thumbnails/2013-09-29-cz-the-trilogy-IMG_7418.jpg)](/post/images/2013-09-29-cz-the-trilogy-IMG_7418.jpg)

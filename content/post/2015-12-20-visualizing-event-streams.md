@@ -40,7 +40,7 @@ timeline.
   
 
   
-[![](../images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_viz_1.PNG)](../images/2015-12-20-visualizing-event-streams-eventstream_viz_1.PNG)  
+[![](/post/images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_viz_1.PNG)](/post/images/2015-12-20-visualizing-event-streams-eventstream_viz_1.PNG)  
   
 The result tells a small story: a withdrawal to a casino was requested
 at 9:44PM, approved at 12:15PM the next day, and eventually completed 7
@@ -65,7 +65,7 @@ problems:
     (or pessimistic) concurrency very annoying
 
   
-[![](../images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_vis_1_1.PNG)](../images/2015-12-20-visualizing-event-streams-eventstream_vis_1_1.PNG)  
+[![](/post/images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_vis_1_1.PNG)](/post/images/2015-12-20-visualizing-event-streams-eventstream_vis_1_1.PNG)  
   
 Spotting one of these instances is an invitation to review your model,
 to revise true invariants and to break things apart.  
@@ -83,7 +83,7 @@ sequence.
 
 This one extra step makes the result even more useful.  
   
-[![](../images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_viz_2.PNG)](../images/2015-12-20-visualizing-event-streams-eventstream_viz_2.PNG)  
+[![](/post/images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_viz_2.PNG)](/post/images/2015-12-20-visualizing-event-streams-eventstream_viz_2.PNG)  
   
 There's more potential though; consider showing the payload when
 hovering over an event, adding commands in the mix, zooming out, zooming

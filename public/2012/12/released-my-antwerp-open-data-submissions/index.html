@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Released: My Antwerp Open Data submissions - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Released: My Antwerp Open Data submissions">
+<meta itemprop="description" content="A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?">
+<meta itemprop="datePublished" content="2012-12-16T16:44:00&#43;01:00" />
+<meta itemprop="dateModified" content="2012-12-16T16:44:00&#43;01:00" />
+<meta itemprop="wordCount" content="1595">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,Tools,.NET,Hacking,javascript,NancyFx,Opensource,Browser,Tips," /><meta property="og:title" content="Released: My Antwerp Open Data submissions" />
+<meta property="og:description" content="A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/" />
+<meta property="article:published_time" content="2012-12-16T16:44:00+01:00" />
+<meta property="article:modified_time" content="2012-12-16T16:44:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Released: My Antwerp Open Data submissions"/>
+<meta name="twitter:description" content="A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">16</span>
+							<span class="rest">Dec 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Released: My Antwerp Open Data submissions</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>A little while ago the city of Antwerp released their <a href="http://opendata.antwerpen.be/">Open
+Data</a> initiative, and it included a
+meetup where you could show something you built, build something on the
+spot, or pitch your ideas. When I first heard of the initiative I had
+nothing going on the side, and was looking for something tangible I
+could build to try out a few technologies. I couldn&rsquo;t come up with an
+original idea, and ended up building two web applications using the Open
+Data datasets: Culture Mosaic, and Where to pee in Antwerp?<br>
+Since I was bedridden due to the flu, and my ideas were not that great,
+I eventually ended up not going to the meetup, but I figured I would
+share some stuff I picked up along the way here.</p>
+<p><strong>Culture Mosaic</strong><br>
+**<br>
+**The first web application uses the <a href="http://api.antwerpen.be/v1/infrastructuur/cultuur.json">culture
+dataset</a> to
+display a masonry of cultural attraction images.</p>
+<p><a href="/post/images/2012-12-16-released-my-antwerp-open-data-submissions-antwerp+culre.PNG"><img src="/post/images/thumbnails/2012-12-16-released-my-antwerp-open-data-submissions-antwerp+culre.PNG" alt=""></a></p>
+<p>The images available vary in size, and some turned out to be quite
+large. If I wanted to display all the images at once, I had to make them
+smaller; resize them. For this task, I found the
+<a href="http://imageresizing.net/">ImageResizer</a> library <a href="http://nuget.org/packages/ImageResizer">on
+Nuget</a>. Although you can
+reference remote images using an ImageResizer extension, I chose to
+download the images locally, to then resize them and to finally cache
+them on disk.</p>
+<p>I run these tasks in parallel and wait for all of them to finish, using
+the <a href="http://msdn.microsoft.com/en-us/library/dd537609.aspx">TPL</a>.</p>
+<pre><code>private void TryToDownloadAllImages(Culture culture)
+{
+    var tasks = new List&lt;Task&gt;();
+
+    foreach (var item in culture.Items)
+    {
+        var localPath = Path.Combine(_pathConfiguration.ImagesFolderPath, item.ImageName);
+        if (!File.Exists(localPath))
+            tasks.Add(CreateImageDownloadTask(item.Image, localPath));
+    }
+
+    Task.WaitAll(tasks.ToArray());     
+}
+</code></pre>
+<p>Downloading a remote file is straightforward using the
+<a href="http://msdn.microsoft.com/en-us/library/ez801hhe.aspx">WebClient</a>
+class. Right after downloading the image, I use the ImageBuilder
+singleton to resize the image to a width of 340px.</p>
+<pre><code>private Task CreateImageDownloadTask(string imageUrl, string localPath)
+{
+    return Task.Factory.StartNew(() =&gt;
+    {
+        using (var client = new WebClient())
+        {
+            try
+            {                        
+                client.DownloadFile(imageUrl, localPath);
+
+                ImageBuilder.Current.Build(
+                    localPath, 
+                    localPath, 
+                    new ResizeSettings(&quot;maxwidth=340&quot;));
+            }            
+            catch (ArgumentException) 
+            {
+                // filename malformatted; swallow
+            }
+        }
+    });                    
+}                
+</code></pre>
+<p>Now that I have my resized images, I can render them in my view. This is
+<a href="http://nancyfx.org/">NancyFx</a> with the Razor view engine by the way.</p>
+<pre><code>&lt;div id=&quot;loading&quot;&gt;
+    Loading..
+&lt;/div&gt;      
+&lt;div id=&quot;container&quot; style=&quot;display:none;&quot;&gt;
+    @foreach (var item in Model.Items)
+    {               
+       &lt;a href=&quot;@item.Url&quot;&gt;
+          &lt;img src=&quot;/Content/images/@item.ImageName&quot; alt=&quot;@item.Name&quot; title=&quot;@item.Name&quot; /&gt;
+       &lt;/a&gt;             
+    }
+&lt;/div&gt;
+</code></pre>
+<p>To achieve the masonry effect, I used this <a href="http://masonry.desandro.com/">jQuery
+plug-in</a>. The one tricky part here is to
+only initialize the effect after all the images have really loaded. For
+this, I used the
+<a href="https://github.com/desandro/imagesloaded">imagesLoaded</a> plug-in. </p>
+<pre><code>$container.imagesLoaded(function () {
+    $loading.hide();
+    $container.show();
+    $container.masonry({
+        itemSelector: 'img'
+    });
+});
+</code></pre>
+<p>One last thing I wanted, was to center the masonry on screen, but since
+I didn&rsquo;t want to use a fixed width, I had to dynamically recalculate the
+optimal width each time the window is resized. </p>
+<pre><code>var setContainerWidth = function (container) {
+    var imageWidth = 340;
+    var bodyWidth = $(&quot;body&quot;).width();
+
+    var numberOfImagesNextToEachother = Math.floor(bodyWidth / imageWidth);
+    var optimalWidth = (imageWidth * numberOfImagesNextToEachother) + (numberOfImagesNextToEachother * 4);
+
+    container.css(&quot;width&quot;, optimalWidth + &quot;px&quot;);
+};
+
+$(window).resize(function () {
+    setContainerWidth($container);
+});
+</code></pre>
+<p>Since we have the width of the images (340px), we can use trivial math
+to calculate the optimal amount of width we can consume.</p>
+<p><em>You can find the <a href="http://antwerp-culture.apphb.com/">working bits on
+AppHarbor</a>. Source is <a href="https://github.com/JefClaes/Antwerp.Apps.CultureMosaic">on
+GitHub</a>.</em></p>
+<p><strong>Where to pee in Antwerp?</strong><br>
+**<br>
+**The next application is a mobile web application that uses <a href="http://api.antwerpen.be/v1/infrastructuur/openbaartoilet.json">the public
+toilets
+dataset</a>
+to show the nearest toilets based on your location.</p>
+<p><a href="/post/images/2012-12-16-released-my-antwerp-open-data-submissions-wheretopee.PNG"><img src="/post/images/thumbnails/2012-12-16-released-my-antwerp-open-data-submissions-wheretopee.PNG" alt=""></a></p>
+<p>I wanted to introduce a constraint client-side of having to work with a
+somewhat crooked dataset, that&rsquo;s why I just return the dataset using
+Nancy as is.</p>
+<pre><code>public ToiletsModule()
+{
+    Get[&quot;/Toilets&quot;] = p =&gt;
+    {
+        var response = Response.AsFile(@&quot;Content\json\toilets.json&quot;);
+        response.ContentType = &quot;application/json&quot;;
+
+        return response;
+    };
+}
+</code></pre>
+<p>At the client, I&rsquo;m using <a href="http://jquerymobile.com/">jQuery Mobile</a> and
+<a href="http://angularjs.org/">angular.js</a>. It had been a while since I had
+done something with jQuery Mobile, but this version felt very solid
+(compared to the beta versions I played with before). Turns out though,
+that to make jQuery Mobile and angular.js play nice, you have to include
+the <a href="https://github.com/tigbro/jquery-mobile-angular-adapter">jQuery Mobile Angular
+adapter</a>. The
+size of all these libraries unminified was a performance hog;
+<a href="http://www.jefclaes.be/2012/11/nancyfx-and-bundling-with-cassette.html">Cassette</a>
+to the rescue.</p>
+<p>The first thing you do with angular, is defining a module. <a href="http://docs.angularjs.org/guide/module">A
+module</a> instantiates, wires and
+bootstraps the application.</p>
+<pre><code>var toiletApp = { };        
+toiletApp.module = angular.module('toiletModule', []);
+</code></pre>
+<p>To separate concerns, and make things testable, angular <a href="http://docs.angularjs.org/guide/dev_guide.services.creating_services">lets you define
+services</a>
+for your application using a factory. By using a factory you also make
+your service an <a href="http://docs.angularjs.org/guide/di">injectable
+dependency</a> for other parts of your
+application.<br>
+I added a toilet service to this module which makes the ajax call, sorts
+the results based on nearest by, to eventually make them available to
+the caller by invoking a callback. The
+<a href="http://docs.angularjs.org/api/ng.$http">$http</a> dependency is one of
+angular&rsquo;s core services that lets you do ajax requests.</p>
+<pre><code>toiletApp.module.factory('toiletService', function ($http, Toilet) {
+
+return {
+
+    getToilets: function (onSucess, onError, coordinates) {
+
+        $http
+            .get('toilets')
+            .success(function (data) {
+
+                var toilets = [];
+
+                for (var i = 0; i &lt; data.openbaartoilet.length; i++) {
+                    var toilet = data.openbaartoilet[i];
+
+                    var ourToilet = new Toilet(
+                        toilet.omschrijving,
+                        toilet.point_lat,
+                        toilet.point_lng,
+                        toilet.betalend === &quot;niet betalend&quot; ? false : true,
+                        toilet.straat,
+                        toilet.huisnummer);
+
+                    toilets.push(ourToilet);
+                }
+
+                if (coordinates) {
+
+                    toilets.sort(function (a, b) {
+                        var aDistance = a.calculateDistance(coordinates);
+                        var bDistance = b.calculateDistance(coordinates);
+
+                        if (aDistance &lt; bDistance)
+                            return -1;
+                        if (aDistance &gt; bDistance)
+                            return 1;
+                        return 0;
+                    });
+
+                }
+
+                onSucess(toilets);
+            })
+            .error(function() { onError() });
+
+    }
+
+};
+</code></pre>
+<p>You might have noticed the Toilet dependency; into this class I project
+the items returned from the ajax call.</p>
+<pre><code>toiletApp.module.factory('Toilet', function () {               
+
+var Toilet = function (name, lat, lng, isPaying, street, houseNumber) {
+    var lastCalculatedCoord;
+    var lastCalculatedDistance;
+
+    this.name = name;
+    this.latitude = lat;
+    this.longitude = lng;
+    this.isPaying = isPaying;
+    this.street = street;
+    this.houseNumber = houseNumber;
+    this.lastCalculatedDistance = function () {
+        return lastCalculatedDistance;
+    };
+    this.calculateDistance = function (coordinates) {
+        if (coordinates) {
+            if (lastCalculatedCoord == coordinates) {
+                return lastCalculatedDistance;
+            }
+
+            var currentPosLatLon = new LatLon(coordinates.latitude, coordinates.longitude);
+            var destinationPosLatLon = new LatLon(this.latitude, this.longitude);
+            var dist = Math.ceil(currentPosLatLon.distanceTo(destinationPosLatLon) * 1000);
+
+            lastCalculatedCoord = coordinates;
+            lastCalculatedDistance = dist;
+
+            return lastCalculatedDistance;
+        }
+        return null;
+    };
+    this.getMapUrl = function () {
+        var coord = this.latitude + &quot;,&quot; + this.longitude;
+
+        return &quot;...&quot;;
+    };
+};
+</code></pre>
+<p>The Toilet class also has a method to calculate the distance from the
+item to any given coordinate. I first wanted to make use of the <a href="https://developers.google.com/maps/documentation/distancematrix/">Google
+Distance Matrix
+API</a>
+to calculate the actual travel distance, but that didn&rsquo;t really work out
+to well for more than 100 items; you can&rsquo;t batch your requests, and the
+free version of the API has a threshold on the amount of queries. I
+turned to calculating the great-circle distance instead, using <a href="http://www.movable-type.co.uk/scripts/latlong.html">this
+library</a>.</p>
+<p>Since we want to make use of the client&rsquo;s coordinates, I also defined a
+geo service, which makes use of the <a href="http://www.jefclaes.be/2010/12/html5-geolocation-api-is-scary-good.html">HTML5 GeoLocation
+API</a>
+to query for the user&rsquo;s coordinates.</p>
+<pre><code>toiletApp.module.factory('geoService', function() {
+
+    return {
+
+        getLocation: function (onSucess, onError, onNotAllowed) {
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+
+                    function (position) {
+                        onSucess(position);
+                    },
+
+                    function (err) {
+                        onError(err);
+                    }
+
+                );
+
+            } else {
+                onNotAllowed(message);
+            }
+        }
+
+    };
+
+});
+</code></pre>
+<p>After defining these pieces, I injected them into the ContentController.
+The
+<a href="http://docs.angularjs.org/guide/dev_guide.mvc.understanding_controller">controller</a>
+is responsible for augmenting angular&rsquo;s scope, which is the connection
+to our view, our model. Properties and methods are made available to the
+view by augmenting the $scope variable. There is quite some not that
+interesting tinkering going on in the controller, so I left it out for
+brevity.</p>
+<pre><code>toiletApp.ContentController = function ($scope, geoService, toiletService) {
+    $scope.toilets = [];
+    ...
+}
+</code></pre>
+<p>After setting ng-app and ng-controller, we can make use of angular&rsquo;s
+<a href="http://docs.angularjs.org/guide/directive">directives</a> and
+<a href="http://docs.angularjs.org/guide/dev_guide.templates.filters.using_filters">filters</a>
+to render our page. Directives are - as the documentation puts it - a
+way to teach HTML new tricks. Think of it as HTML helpers. Filters are
+used to format data.</p>
+<p>The view binds each toilet to a new collapsible div. The content of the
+div shows some basic information, and a button which shows the toilet on
+a map.</p>
+<pre><code>&lt;html ng-app=&quot;toiletModule&quot;&gt;
+    &lt;head&gt;
+        ....
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;div data-role=&quot;page&quot; id=&quot;home&quot; ng-controller=&quot;toiletApp.ContentController&quot;&gt; 
+            
+            &lt;div data-role=&quot;header&quot;&gt;
+                &lt;h1&gt;Where to pee in Antwerp?&lt;/h1&gt;
+                &lt;a href=&quot;#&quot; data-icon=&quot;refresh&quot; ng-click=&quot;reload()&quot;&gt;Reload&lt;/a&gt;                
+            &lt;/div&gt; 
+            
+            &lt;div data-role=&quot;content&quot;&gt;
+                
+                &lt;div class=&quot;content-primary&quot;&gt;    
+                    &lt;p&gt;{{ message }}&lt;/p&gt;
+                   
+                    &lt;div data-role=&quot;collapsible&quot; 
+                         ng-repeat=&quot;toilet in toilets | limitTo: itemsLimit()&quot;&gt;
+                        &lt;h3&gt;
+                            {{ toilet.name }} 
+                            ({{ toilet.lastCalculatedDistance() | distance }}) 
+                            {{ toilet.isPaying | isPayingDollarSign }} 
+                        &lt;/h3&gt;                        
+                        &lt;p&gt;&lt;strong&gt;Name: &lt;/strong&gt;{{ toilet.name }}&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Distance: &lt;/strong&gt;{{ toilet.last..() | distance }}&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Paying: &lt;/strong&gt;{{ toilet.isPaying | isPayingYesNo }}&lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Street: &lt;/strong&gt;{{ toilet.street }} &lt;/p&gt;
+                        &lt;p&gt;&lt;strong&gt;Housenumber: &lt;/strong&gt;{{ toilet.houseNumber }} &lt;/p&gt;
+                        &lt;a href=&quot;{{ toilet.getMapUrl() }}&quot; data-role=&quot;button&quot;&gt;
+                            Show location on a map
+                        &lt;/a&gt;
+                    &lt;/div&gt;                     
+                             
+                    &lt;div ng-show=&quot;hasMoreItemsToShow()&quot;&gt;
+                        &lt;button ng-click=&quot;showMoreItems()&quot;&gt;Show more toilets&lt;/button&gt;    
+                    &lt;/div&gt;        
+                &lt;/div&gt;        
+
+            &lt;/div&gt; 
+            
+            &lt;div data-role=&quot;footer&quot;&gt;
+                &lt;h4&gt;Made possible by Antwerp Open Data&lt;/h4&gt;
+            &lt;/div&gt; 
+        &lt;/div&gt;
+    &lt;/body&gt;    
+&lt;/html&gt;
+</code></pre>
+<p>You might notice how I used filters to format the isPaying and distance
+property. These are also defined in the module.</p>
+<pre><code>toiletApp.module.filter('isPayingDollarSign', function () {
+    return function (value) {
+        return value ? &quot;$&quot; : &quot;&quot;;
+    }
+});
+
+toiletApp.module.filter('isPayingYesNo', function () {
+    return function (value) {
+        return value ? &quot;Yes&quot; : &quot;No&quot;;
+    }
+});
+
+toiletApp.module.filter('distance', function () {
+    return function (value) {
+        return value ? value + &quot;m&quot; : &quot;&quot;;
+    }
+});
+</code></pre>
+<p><strong>Summary</strong></p>
+<p>I can only applaud the Open Data initiative; my hope is that the
+datasets get more interesting though. Which also makes me wonder if the
+government is even measuring the more interesting stuff?</p>
+<p>All in all, these two applications aren&rsquo;t very innovative. Yet, they did
+give me the opportunity to experiment with some stuff I can&rsquo;t play with
+on the day job (yet). I&rsquo;m always amazed how quickly you can slap
+together a small application using the available building blocks out
+there. I&rsquo;m most content with picking up angular.js; I will be
+advertising this framework in a professional context from now on.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/tools">Tools</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+							<li><a href="/tags/hacking">Hacking</a></li>
+							
+							<li><a href="/tags/javascript">javascript</a></li>
+							
+							<li><a href="/tags/nancyfx">NancyFx</a></li>
+							
+							<li><a href="/tags/opensource">Opensource</a></li>
+							
+							<li><a href="/tags/browser">Browser</a></li>
+							
+							<li><a href="/tags/tips">Tips</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQLServer on Jef Claes</title>
+    <link>http://localhost:1313/tags/sqlserver/</link>
+    <description>Recent content in SQLServer on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 24 Apr 2016 22:43:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/sqlserver/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using a batch layer for fast(er) aggregations </title>
+      <link>http://localhost:1313/2016/04/using-a-batch-layer-for-faster-aggregations/</link>
+      <pubDate>Sun, 24 Apr 2016 22:43:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/04/using-a-batch-layer-for-faster-aggregations/</guid>
+      <description>In the oldest system I&amp;rsquo;m maintaining right now, we have an account aggregate that, next to mutating various balances, produces immutable financial transactions. These transactions are persisted together with the aggregate itself to a relational database. The transactions can be queried by the owner of the account in an immediate consistent fashion.
+The table with these transactions looks similar to this:
+There&amp;rsquo;s an index on the timestamp, the account identifier and the transaction type, which allows for fast enough reads for the most common access patterns which only return a small subset.</description>
+    </item>
+    
+    <item>
+      <title>Programmatically force create a new LocalDB database</title>
+      <link>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</link>
+      <pubDate>Sun, 26 Oct 2014 16:59:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</guid>
+      <description>I have spent the last week working in an integration test suite that seemed to be taking ages to run its first test. I ran a profiler on the setup, and noticed a few things that were cheap to improve. The first one was how a new LocalDB database was being created.
+An empty database file was included into the project. When running the setup, this file would replace the existing test database.</description>
+    </item>
+    
+    <item>
+      <title>On crime and document stores</title>
+      <link>http://localhost:1313/2012/07/on-crime-and-document-stores/</link>
+      <pubDate>Sun, 01 Jul 2012 16:04:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/on-crime-and-document-stores/</guid>
+      <description>Having worked with several storage paradigms over these last few months
+ from flatfiles, to NoSQL, to the big enterprisey relational databases -, I have spent plenty of time trying to make sense of all the options out there. It wasn&amp;rsquo;t until I watched one of the last episodes of The Wire season 3 that I had an epiphany regarding modeling data in document stores. Yes, I know, I tend to take those things home with me.</description>
+    </item>
+    
+  </channel>
+</rss>

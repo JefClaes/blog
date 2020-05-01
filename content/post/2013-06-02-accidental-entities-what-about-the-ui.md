@@ -44,7 +44,7 @@ car's current color to the available colors with a default value of -1.
 This allows us to determine if the color needs to be changed.  
   
 
-[![](../images/thumbnails/2013-06-02-accidental-entities-what-about-the-ui-EditCar.PNG)](../images/2013-06-02-accidental-entities-what-about-the-ui-EditCar.PNG)
+[![](/post/images/thumbnails/2013-06-02-accidental-entities-what-about-the-ui-EditCar.PNG)](/post/images/2013-06-02-accidental-entities-what-about-the-ui-EditCar.PNG)
 
   
 Relational databases, RAD tools, scaffolding and anemic models have
@@ -93,7 +93,7 @@ UI](http://cqrs.wordpress.com/documents/task-based-ui/), something that
 looks like this.  
   
 
-[![](../images/thumbnails/2013-06-02-accidental-entities-what-about-the-ui-EditCarExplicit.PNG)](../images/2013-06-02-accidental-entities-what-about-the-ui-EditCarExplicit.PNG)
+[![](/post/images/thumbnails/2013-06-02-accidental-entities-what-about-the-ui-EditCarExplicit.PNG)](/post/images/2013-06-02-accidental-entities-what-about-the-ui-EditCarExplicit.PNG)
 
   
 The UI now does a far better job supporting the language and

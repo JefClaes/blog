@@ -21,7 +21,7 @@ they trade, so people don't go ripping up bank notes with the intent of
 trading them twice. That seems easy enough, no?  
   
 
-[![](../images/thumbnails/2014-08-19-thinking-no-computers-Papernote.png)](../images/2014-08-19-thinking-no-computers-Papernote.png)
+[![](/post/images/thumbnails/2014-08-19-thinking-no-computers-Papernote.png)](/post/images/2014-08-19-thinking-no-computers-Papernote.png)
 
   
 Once the manager finished up his paperwork, I wanted to confirm my idea

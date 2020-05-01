@@ -29,7 +29,7 @@ and the
 in the Chrome Web Store.  
   
 
-[![](../images/thumbnails/2011-10-08-commute-hacking-chromapaper-InstaChromeOfflineSync.PNG)](../images/2011-10-08-commute-hacking-chromapaper-InstaChromeOfflineSync.PNG)
+[![](/post/images/thumbnails/2011-10-08-commute-hacking-chromapaper-InstaChromeOfflineSync.PNG)](/post/images/2011-10-08-commute-hacking-chromapaper-InstaChromeOfflineSync.PNG)
 
   
 
@@ -37,7 +37,7 @@ in the Chrome Web Store.
 
   
 
-[![](../images/thumbnails/2011-10-08-commute-hacking-chromapaper-ChromePaperOffline.PNG)](../images/2011-10-08-commute-hacking-chromapaper-ChromePaperOffline.PNG)
+[![](/post/images/thumbnails/2011-10-08-commute-hacking-chromapaper-ChromePaperOffline.PNG)](/post/images/2011-10-08-commute-hacking-chromapaper-ChromePaperOffline.PNG)
 
   
 

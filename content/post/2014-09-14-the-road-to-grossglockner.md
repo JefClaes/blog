@@ -22,14 +22,14 @@ It has been quite the trip. I had never expected to give my eyes such a
 show so close to home.  
   
 
-[![](../images/thumbnails/2014-09-14-the-road-to-grossglockner-grossglockner_1.jpg)](../images/2014-09-14-the-road-to-grossglockner-grossglockner_1.jpg)
+[![](/post/images/thumbnails/2014-09-14-the-road-to-grossglockner-grossglockner_1.jpg)](/post/images/2014-09-14-the-road-to-grossglockner-grossglockner_1.jpg)
 
-[![](../images/thumbnails/2014-09-14-the-road-to-grossglockner-gross_glockner2.jpg)](../images/2014-09-14-the-road-to-grossglockner-gross_glockner2.jpg)
-
-  
-
-[![](../images/thumbnails/2014-09-14-the-road-to-grossglockner-gross_glockner3.jpg)](../images/2014-09-14-the-road-to-grossglockner-gross_glockner3.jpg)
+[![](/post/images/thumbnails/2014-09-14-the-road-to-grossglockner-gross_glockner2.jpg)](/post/images/2014-09-14-the-road-to-grossglockner-gross_glockner2.jpg)
 
   
 
-[![](../images/thumbnails/2014-09-14-the-road-to-grossglockner-gross_glockner4.jpg)](../images/2014-09-14-the-road-to-grossglockner-gross_glockner4.jpg)
+[![](/post/images/thumbnails/2014-09-14-the-road-to-grossglockner-gross_glockner3.jpg)](/post/images/2014-09-14-the-road-to-grossglockner-gross_glockner3.jpg)
+
+  
+
+[![](/post/images/thumbnails/2014-09-14-the-road-to-grossglockner-gross_glockner4.jpg)](/post/images/2014-09-14-the-road-to-grossglockner-gross_glockner4.jpg)

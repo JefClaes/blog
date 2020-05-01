@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML5 on Jef Claes</title>
+    <link>http://localhost:1313/tags/html5/</link>
+    <description>Recent content in HTML5 on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Mar 2014 21:23:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building a live dashboard with some knockout</title>
+      <link>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</link>
+      <pubDate>Sun, 16 Mar 2014 21:23:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</guid>
+      <description>Last week, we added a dashboard to our back office application that shows some actionable data about what&amp;rsquo;s going on in our system. Although we have infrastructure in place to push changes to the browser, it seemed more reasonable to have the browser fetch fresh data every few minutes.
+We split the dashboard up in a few functional cohesive widgets. On the server, we built a view-optimized read model for each widget.</description>
+    </item>
+    
+    <item>
+      <title>My InfoQ article on HTML5 offline web applications</title>
+      <link>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</link>
+      <pubDate>Wed, 02 May 2012 20:09:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</guid>
+      <description>After writing a few things on HTML5 offline web applications earlier this year, I got contacted by InfoQ to write an in-detail article on the subject for them. I hesitated at first, because I was afraid that it would feel too much like work, taking the fun out of my writing. Turns out it wasn&amp;rsquo;t like that at all. The guys at infoQ were really relaxed to work with, asking interesting questions and giving useful feedback, without forcing me into a certain direction.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing the offline application cache update progress</title>
+      <link>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</link>
+      <pubDate>Wed, 11 Apr 2012 16:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</guid>
+      <description>I wrote about using the HTML5 application cache earlier, mostly focusing on generating and serving the manifest file using ASP.NET MVC. I also bitched about how not one browser I know of gives an indication of the application cache update progress. Today I wanted to write something about how you can visualize the application cache update progress yourself.
+The applicationCache API has several useful and rather straightforward events we can handle to inform the user of the update progress.</description>
+    </item>
+    
+    <item>
+      <title>How a web application can download and store over 2GB without you even knowing it</title>
+      <link>http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/</link>
+      <pubDate>Sun, 25 Mar 2012 13:11:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/</guid>
+      <description>I have been experimenting with the HTML5 offline application cache some more over the last few days, doing boundary tests in an attempt to learn more about browser behaviour in edge cases.
+One of these experiments was testing the cache quota.
+Two weeks ago, I blogged about generating and serving an offline application manifest using ASP.NET MVC. I reused that code to add hundreds of 7MB PDF files to the cache.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Offline Web applications as an afterthought in ASP.NET MVC</title>
+      <link>http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/</link>
+      <pubDate>Wed, 14 Mar 2012 15:39:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/</guid>
+      <description>Recently I prototyped a mobile web application using ASP.NET MVC, jQuery Mobile and some HTML5 features. One of the key goals was to find out how far you can push a web &amp;lsquo;application&amp;rsquo; until the browser starts getting in the way. Working disconnected is one of these things that appear to be a major showstopper at first.
+However - to my surprise honestly - the HTML5 Offline Web applications API seems to be widely implemented across modern browsers already.</description>
+    </item>
+    
+    <item>
+      <title>How Wikipedia uses HTML5 to save bandwidth</title>
+      <link>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save-bandwidth/</link>
+      <pubDate>Thu, 19 Jan 2012 20:56:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save-bandwidth/</guid>
+      <description>Something I hadn&amp;rsquo;t noticed until recently is that Wikipedia tries to use the browser&amp;rsquo;s native SVG support to render certain images. For example, if you search for a high resolution image of your country&amp;rsquo;s flag, you will probably end up viewing an SVG. Wikipedia also offers downloads to the image rendered as a PNG though.
+Next to being able to scale to an arbitrary size without suffering data loss, the SVG data format allows images to be far more compact.</description>
+    </item>
+    
+    <item>
+      <title>Recursively spawning Web Workers</title>
+      <link>http://localhost:1313/2011/07/recursively-spawning-web-workers/</link>
+      <pubDate>Thu, 21 Jul 2011 15:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/recursively-spawning-web-workers/</guid>
+      <description>I like to think of HTML5 Web Workers simply as &amp;lsquo;threading for the Web&amp;rsquo;.
+Wikipedia describes it a bit more in detail.
+ Web Workers define an API for running scripts, basically JavaScript, in the background independently of any user interface scripts. This allows for long-running scripts that are not interrupted by scripts that respond to clicks or other user interactions, and allows long tasks to be executed without yielding to keep the page responsive.</description>
+    </item>
+    
+    <item>
+      <title>Video, slides and source from my WebSockets talk</title>
+      <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
+      <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</guid>
+      <description>Yesterday, I gave a talk on WebSockets at HTML5 WebCamps Belgium.
+I got a lot of positive feedback on Twitter, which makes me a very happy panda!
+
+You can already find the video of my session on Channel9.
+The slides can be found on SlideShare.
+If you want to play with the demo yourself, you can download the source:
+ Make sure your firewall allows incoming TCP traffic on port 4502 Deploy the client access policy file to IIS Also host the Demo.</description>
+    </item>
+    
+    <item>
+      <title>How will IE9 maintain momentum?</title>
+      <link>http://localhost:1313/2011/03/how-will-ie9-maintain-momentum/</link>
+      <pubDate>Sat, 19 Mar 2011 12:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/03/how-will-ie9-maintain-momentum/</guid>
+      <description>Unless you live under a rock, you must have noticed that Microsoft released Internet Explorer 9 this week.
+I have been using IE9 since the first platform preview, and I think it&amp;rsquo;s a very solid browser, outclassing every previous Microsoft browser by far. Microsoft finally built a browser which is capable of competing with other modern browsers.
+
+The global consensus seems to be that Internet Explorer has regained serious momentum.</description>
+    </item>
+    
+    <item>
+      <title>Keeping WebSockets alive</title>
+      <link>http://localhost:1313/2011/03/keeping-websockets-alive/</link>
+      <pubDate>Sat, 12 Mar 2011 17:40:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/03/keeping-websockets-alive/</guid>
+      <description>The problem with using stateful connections on an imperfect place as the internet is that connections might drop. The server or an intermediary can drop the connection due to an idle timeout. Even a temporary problem at the server or a local network hiccup might kill your connection.
+If you aren&amp;rsquo;t prepared to handle these scenarios, you will not be able to fully rely on WebSockets.
+A simple solution
+The simplest solution is checking every few seconds whether the WebSocket is still opened.</description>
+    </item>
+    
+    <item>
+      <title>I will be talking at HTML5 WebCamps!</title>
+      <link>http://localhost:1313/2011/03/i-will-be-talking-at-html5-webcamps/</link>
+      <pubDate>Tue, 01 Mar 2011 12:56:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/03/i-will-be-talking-at-html5-webcamps/</guid>
+      <description>HTML5 WebCamps is a free event organized by Microsoft Belgium and will take place on April 6th at Living Tomorrow.
+In my session I will be talking about WebSockets.
+ WebSockets on Fire
+While the WebSockets API specification is not stable yet, various browser vendors have already implemented a prototype in their latest browser versions. Microsoft released their WebSockets prototype in December 2010. While there is no native implementation of WebSockets in IE9 just yet, for now they are providing a solution which works cross-browser, relying on a Silverlight client.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: The WebSockets prototype with Silverlight, HTML Bridges and JavaScript</title>
+      <link>http://localhost:1313/2011/01/html5-the-websockets-prototype-with-silverlight-html-bridges-and-javascript/</link>
+      <pubDate>Wed, 12 Jan 2011 19:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/01/html5-the-websockets-prototype-with-silverlight-html-bridges-and-javascript/</guid>
+      <description>Last weekend, I blogged on installing the WebSockets prototype and rebuilding the WebSockets chat server. In this post I will try to decompose the client-side chat sample to get a better feel of what&amp;rsquo;s going on in the browser.
+If you have installed the WebSockets prototype, you should be able to browse to http://localhost/chat/wsdemo.html and stroll through the internals with me.
+
+Dependencies
+The chat sample has four script dependencies:</description>
+    </item>
+    
+    <item>
+      <title>HTML5: Rebuilding the WebSockets Server prototype</title>
+      <link>http://localhost:1313/2011/01/html5-rebuilding-the-websockets-server-prototype/</link>
+      <pubDate>Sun, 09 Jan 2011 18:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/01/html5-rebuilding-the-websockets-server-prototype/</guid>
+      <description>Yesterday I blogged on installing the Microsoft WebSockets prototype with the Chat sample. The Chat sample needs a ChatService to broadcast the messages to all active sessions. The source code of this ChatService is not included in the package, that&amp;rsquo;s why I decompiled the executable using Reflector and rebuilt it.
+In this post you can find how to rebuild the Chat Websockets Server.
+Class diagram
+Once we are finished, our class diagram should look like this.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: Installing the Microsoft WebSockets prototype</title>
+      <link>http://localhost:1313/2011/01/html5-installing-the-microsoft-websockets-prototype/</link>
+      <pubDate>Sat, 08 Jan 2011 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/01/html5-installing-the-microsoft-websockets-prototype/</guid>
+      <description>In December Microsoft launched the HTML5 Labs for experimental HTML5 technologies still under development. With the launch, they also released a WebSockets prototype.
+In this post I will lead you through the process of installing the WebSockets prototype on your machine. By the end of this tutorial you should have a working chat web application sample.
+Download
+First you need to download and run the WebSockets prototype installer.
+This package installs the binaries and samples in the %ProgramFiles%\Microsoft SDKs\WCF WebSockets\10.</description>
+    </item>
+    
+  </channel>
+</rss>

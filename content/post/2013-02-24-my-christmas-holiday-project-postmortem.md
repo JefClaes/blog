@@ -55,7 +55,7 @@ unlikely).
 Two weeks later, I had something working online.  
   
 
-[![](../images/thumbnails/2013-02-24-my-christmas-holiday-project-postmortem-tweedehandsmeldingen.PNG)](../images/2013-02-24-my-christmas-holiday-project-postmortem-tweedehandsmeldingen.PNG)
+[![](/post/images/thumbnails/2013-02-24-my-christmas-holiday-project-postmortem-tweedehandsmeldingen.PNG)](/post/images/2013-02-24-my-christmas-holiday-project-postmortem-tweedehandsmeldingen.PNG)
 
   
 But how do I inform people of its existence? I first thought of using
@@ -72,11 +72,11 @@ campaign were sobering, but extremely valuable; people just didn't care.
 As a side note; secondhand seems to be quite an expensive keyword!  
   
 
-[![](../images/thumbnails/2013-02-24-my-christmas-holiday-project-postmortem-meldingenblog.PNG)](../images/2013-02-24-my-christmas-holiday-project-postmortem-meldingenblog.PNG)
+[![](/post/images/thumbnails/2013-02-24-my-christmas-holiday-project-postmortem-meldingenblog.PNG)](/post/images/2013-02-24-my-christmas-holiday-project-postmortem-meldingenblog.PNG)
 
   
 
-[![](../images/thumbnails/2013-02-24-my-christmas-holiday-project-postmortem-adwords_results.PNG)](../images/2013-02-24-my-christmas-holiday-project-postmortem-adwords_results.PNG)
+[![](/post/images/thumbnails/2013-02-24-my-christmas-holiday-project-postmortem-adwords_results.PNG)](/post/images/2013-02-24-my-christmas-holiday-project-postmortem-adwords_results.PNG)
 
   
 In hindsight, I can think of plenty of reasons why this somewhat useful

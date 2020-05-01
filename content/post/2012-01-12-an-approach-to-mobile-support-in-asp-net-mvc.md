@@ -35,7 +35,7 @@ separate areas: desktop and mobile. Because some things do overlap, I
 share a few abstract base controllers between the areas.  
   
 
-[![](../images/thumbnails/2012-01-12-an-approach-to-mobile-support-in-asp-net-mvc-Areas_Mobile_Solution.PNG)](../images/2012-01-12-an-approach-to-mobile-support-in-asp-net-mvc-Areas_Mobile_Solution.PNG)
+[![](/post/images/thumbnails/2012-01-12-an-approach-to-mobile-support-in-asp-net-mvc-Areas_Mobile_Solution.PNG)](/post/images/2012-01-12-an-approach-to-mobile-support-in-asp-net-mvc-Areas_Mobile_Solution.PNG)
 
   
 So when I look at the root of my application now, I see no more views.

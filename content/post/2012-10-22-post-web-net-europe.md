@@ -38,7 +38,7 @@ Lattanzi](https://twitter.com/imperugo) for making this happen. I'm
 already looking forward to the next edition.  
   
 
-[![](../images/thumbnails/2012-10-22-post-web-net-europe-WebDotNet.jpg)](../images/2012-10-22-post-web-net-europe-WebDotNet.jpg)
+[![](/post/images/thumbnails/2012-10-22-post-web-net-europe-WebDotNet.jpg)](/post/images/2012-10-22-post-web-net-europe-WebDotNet.jpg)
 
   
 

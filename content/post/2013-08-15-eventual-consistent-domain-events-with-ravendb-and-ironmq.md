@@ -94,7 +94,7 @@ committed in the same transaction as the booking.
         }
     }
 
-[![](../images/thumbnails/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG)](../images/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG)
+[![](/post/images/thumbnails/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG)](/post/images/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG)
 
   
 **Getting the events out**  

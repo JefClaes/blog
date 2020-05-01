@@ -22,9 +22,9 @@ of cars queue to enter the village, pizzerias and ristorantes on every
 corner, Germans galore. This doesn't take away that this location is a
 great launching point to visit other places in northern Italy though.  
   
-[![](../images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0002.jpg)](../images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0002.jpg)  
+[![](/post/images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0002.jpg)](/post/images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0002.jpg)  
   
-[![](../images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0010.jpg)](../images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0010.jpg)  
+[![](/post/images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0010.jpg)](/post/images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0010.jpg)  
   
 After a lazy day yesterday, we drove two hours South today, to
 Sant'Agata Bolognese and Maranello, to visit two legendary car
@@ -36,12 +36,12 @@ Lamborghini museum. Compared to the Ferrari museum, the Lamborghini
 museum seemed to exhibit far more (non-racing) eccentric and rare
 models.  
   
-[![](../images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0065.jpg)](../images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0065.jpg)  
+[![](/post/images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0065.jpg)](/post/images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0065.jpg)  
   
-[![](../images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0083.jpg)](../images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0083.jpg)  
+[![](/post/images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0083.jpg)](/post/images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0083.jpg)  
   
 
-[![](../images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0145.jpg)](../images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0145.jpg)
+[![](/post/images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0145.jpg)](/post/images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0145.jpg)
 
   
 
@@ -53,7 +53,7 @@ square to pay way too much for an iced cappuccino which was served
 lukewarm.  
   
 
-[![](../images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0171.jpg)](../images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0171.jpg)  
+[![](/post/images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0171.jpg)](/post/images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0171.jpg)  
 
 <span
 style="background-color: white;">[Arrivederci](http://www.youtube.com/watch?v=4aXIFFaWNjM).</span>

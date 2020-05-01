@@ -22,7 +22,7 @@ helped me land five headshots. 
   
   
 
-[![](../images/thumbnails/2013-07-09-she-said-yes-blog5.jpg)](../images/2013-07-09-she-said-yes-blog5.jpg)
+[![](/post/images/thumbnails/2013-07-09-she-said-yes-blog5.jpg)](/post/images/2013-07-09-she-said-yes-blog5.jpg)
 
   
 <span id="goog_402305940"></span>
@@ -52,16 +52,16 @@ as a happy newly engaged couple.
   
   
 
-[![](../images/thumbnails/2013-07-09-she-said-yes-blog4.jpg)](../images/2013-07-09-she-said-yes-blog4.jpg)
+[![](/post/images/thumbnails/2013-07-09-she-said-yes-blog4.jpg)](/post/images/2013-07-09-she-said-yes-blog4.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-09-she-said-yes-blog2.jpg)](../images/2013-07-09-she-said-yes-blog2.jpg)
+[![](/post/images/thumbnails/2013-07-09-she-said-yes-blog2.jpg)](/post/images/2013-07-09-she-said-yes-blog2.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-09-she-said-yes-blog3.jpg)](../images/2013-07-09-she-said-yes-blog3.jpg)
+[![](/post/images/thumbnails/2013-07-09-she-said-yes-blog3.jpg)](/post/images/2013-07-09-she-said-yes-blog3.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-09-she-said-yes-blog1.jpg)](../images/2013-07-09-she-said-yes-blog1.jpg)
+[![](/post/images/thumbnails/2013-07-09-she-said-yes-blog1.jpg)](/post/images/2013-07-09-she-said-yes-blog1.jpg)

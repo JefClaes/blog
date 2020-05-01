@@ -23,7 +23,7 @@ link in the masterpage. I figured out that the beforeunload event must
 have some convenient properties, but as you can see below, it had no
 properties which I could use.  
   
-[![](../images/thumbnails/2009-09-12-why-the-javascript-beforeunload-event-is-incomplete-eventprop.JPG)](../images/2009-09-12-why-the-javascript-beforeunload-event-is-incomplete-eventprop.JPG)  
+[![](/post/images/thumbnails/2009-09-12-why-the-javascript-beforeunload-event-is-incomplete-eventprop.JPG)](/post/images/2009-09-12-why-the-javascript-beforeunload-event-is-incomplete-eventprop.JPG)  
   
 Of course there are workarounds for this problem, like there are
 workarounds for almost all technology problems. But these workarounds

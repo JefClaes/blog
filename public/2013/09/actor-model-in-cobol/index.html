@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Actor Model in COBOL - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Actor Model in COBOL">
+<meta itemprop="description" content="In an Actor system, each Actor acts as a self-contained and autonomous component. An Actor can only communicate with other Actors by exchanging messages - they are not allowed to share state. Messages are handled asynchronously, and are nondeterministic. The location of Actors should be transparent; they can either live on the same machine, or on a distributed system. These properties make the Actor Model a great fit for parallel and distributed computing.">
+<meta itemprop="datePublished" content="2013-09-22T16:38:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-09-22T16:38:00&#43;02:00" />
+<meta itemprop="wordCount" content="567">
+
+
+
+<meta itemprop="keywords" content="Architecture,DDD,Ramblings," /><meta property="og:title" content="Actor Model in COBOL" />
+<meta property="og:description" content="In an Actor system, each Actor acts as a self-contained and autonomous component. An Actor can only communicate with other Actors by exchanging messages - they are not allowed to share state. Messages are handled asynchronously, and are nondeterministic. The location of Actors should be transparent; they can either live on the same machine, or on a distributed system. These properties make the Actor Model a great fit for parallel and distributed computing." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/09/actor-model-in-cobol/" />
+<meta property="article:published_time" content="2013-09-22T16:38:00+02:00" />
+<meta property="article:modified_time" content="2013-09-22T16:38:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Actor Model in COBOL"/>
+<meta name="twitter:description" content="In an Actor system, each Actor acts as a self-contained and autonomous component. An Actor can only communicate with other Actors by exchanging messages - they are not allowed to share state. Messages are handled asynchronously, and are nondeterministic. The location of Actors should be transparent; they can either live on the same machine, or on a distributed system. These properties make the Actor Model a great fit for parallel and distributed computing."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">22</span>
+							<span class="rest">Sep 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Actor Model in COBOL</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>In an Actor system, each Actor acts as a self-contained and autonomous
+component. An Actor can only communicate with other Actors by exchanging
+messages - they are not allowed to share state. Messages are handled
+asynchronously, and are nondeterministic. The location of Actors should
+be transparent; they can either live on the same machine, or on a
+distributed system. These properties make the Actor Model a great fit
+for parallel and distributed computing.</p>
+<p>Even without considering parallelism and distribution, the Actor Model
+appeals to me. If you take an existing system, and make each aggregate
+in that system an Actor, what would the impact be? You can get rid of
+all the messaging and queuing infrastructure; messages and asynchrony
+are now first class citizens. Where you had to have discipline abiding
+the aggregate rules of thumb - modifying one aggregate per transaction,
+no references to other aggregates, Tell Don&rsquo;t Ask&hellip; - the very nature
+of Actors will guide you into doing the right thing.<br>
+Next to these implementation concerns, the model itself can be used as a
+framework for modeling and reasoning about complex systems. Once they
+are well educated on the constraints, it must come natural for domain
+experts as well.</p>
+<p>Having worked with a team of mainframe programmers over the last year,
+it recently came to me that how they have designed their systems over
+the years is compatible with a good amount of Actor laws.</p>
+<p><a href="/post/images/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG"><img src="/post/images/thumbnails/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG" alt=""></a></p>
+<p><strong>Composition</strong><br>
+**<br>
+**A good thing about COBOL seems to be that it&rsquo;s nearly impossible to
+write maintainable big programs, so you&rsquo;re forced to decompose your
+program into smallish autonomous components - into jobs.</p>
+<p><strong>Messages</strong><br>
+**<br>
+**Communication between these jobs happens by passing flat files around</p>
+<ul>
+<li>the only format that&rsquo;s supported out-of-the-box.<br>
+Messages come in, and new messages go out. Jobs will never mutate the
+incoming payload, a new copy is created instead; pipes and filters.<br>
+Folders serve as a queue, allowing files to be processed asynchronously
+and nondeterministic.</li>
+</ul>
+<p>Staying clear of mutating messages makes debugging extremely easy;
+you&rsquo;ll never hear someone on the team asking for reproduction steps,
+they just restore the production archives locally.</p>
+<p><strong>Addresses</strong><br>
+**<br>
+**Actors send messages to other Actors using their addresses. This can
+be a memory or disk address, a network address, email address, whatever
+really. In mainframe land, file system paths serve as addresses.</p>
+<p><strong>No shared state</strong><br>
+**<br>
+**In general they stay away from jobs sharing state; the default is to
+lock files exclusively, so sharing them is highly impractical. Even most
+static data gets synchronized instead of shared - banking reference
+data, customer addresses, configuration etc&hellip;</p>
+<p><strong>Scheduling</strong><br>
+**<br>
+**A scheduler sits on top of all these jobs. Its responsibility is to
+start a job when a new file arrives. If a job fails, the scheduler acts
+as a supervisor and will notify operations, which will investigate the
+issue - probably look at what&rsquo;s on the file system, and use the same
+scheduler to restart the failed job. Notice that one failing job doesn&rsquo;t
+impact other jobs.</p>
+<p>All of this gives you an automated, highly observable and fault-tolerant
+system.</p>
+<p>*Although COBOL remains to be a horrible language, mainframe systems do
+have their strengths. There must be some good reason a lot of core
+business functions are still running on mainframes, right? Maybe
+similarities with the Actor Model are far-fetched and merely a figment
+of my imagination. Feel free to share your thoughts. *</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/architecture">Architecture</a></li>
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+							<li><a href="/tags/ramblings">Ramblings</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

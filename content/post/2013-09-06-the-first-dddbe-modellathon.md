@@ -66,7 +66,7 @@ learning along the way does.*
 *  
 *  
 
-[![](../images/thumbnails/2013-09-06-the-first-dddbe-modellathon-Modellathon.jpg)](../images/2013-09-06-the-first-dddbe-modellathon-Modellathon.jpg)
+[![](/post/images/thumbnails/2013-09-06-the-first-dddbe-modellathon-Modellathon.jpg)](/post/images/2013-09-06-the-first-dddbe-modellathon-Modellathon.jpg)
 
   
 

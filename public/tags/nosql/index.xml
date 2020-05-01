@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NoSql on Jef Claes</title>
+    <link>http://localhost:1313/tags/nosql/</link>
+    <description>Recent content in NoSql on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Oct 2013 17:43:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Event projections</title>
+      <link>http://localhost:1313/2013/10/event-projections/</link>
+      <pubDate>Sun, 27 Oct 2013 17:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/event-projections/</guid>
+      <description>In my first two posts on event sourcing, I implemented an event sourced aggregate from scratch. After being able to have an aggregate record and play events, I looked at persisting them in an event store. Logically, the next question is: how do I query my aggregates, how do I get my state out?
+In traditional systems, write and read models are not separated, they are one and the same. Event sourced systems on the other hand have a write model - event streams, and a separate read model.</description>
+    </item>
+    
+    <item>
+      <title>Eventual consistent domain events with RavenDB and IronMQ</title>
+      <link>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</link>
+      <pubDate>Thu, 15 Aug 2013 14:03:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</guid>
+      <description>Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&amp;rsquo;m working on right now makes use of domain events. As an example, I&amp;rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.</description>
+    </item>
+    
+    <item>
+      <title>Adding the R to CQS: some storage options</title>
+      <link>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</link>
+      <pubDate>Sun, 17 Feb 2013 17:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</guid>
+      <description>I&amp;rsquo;ve been writing quite a bit about CQS (or command and query separation) lately. In my last post on using events, I already hinted towards bringing in the R; command and query responsibility separation.
+With CQS, commands can mutate data, while queries can only read that data. CQRS takes this one step further, and assigns commands and queries each a dedicated model; we now talk of a write side, and a read side.</description>
+    </item>
+    
+    <item>
+      <title>RavenDB: Drop all collections</title>
+      <link>http://localhost:1313/2013/01/ravendb-drop-all-collections/</link>
+      <pubDate>Thu, 24 Jan 2013 20:08:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/ravendb-drop-all-collections/</guid>
+      <description>I never stub or mock the database when I&amp;rsquo;m using RavenDB. Generally, I use an embeddable documentstore running in memory, and initialize a new instance on every test. However, I like to run some stress tests against a real instance, and here I found myself wanting to wipe clean the state of previous tests, without having to create a new database (which is rather slow).
+First I create the default DocumentsByEntityName index to make sure it&amp;rsquo;s there - it normally gets created when you open the studio for the first time.</description>
+    </item>
+    
+    <item>
+      <title>On crime and document stores</title>
+      <link>http://localhost:1313/2012/07/on-crime-and-document-stores/</link>
+      <pubDate>Sun, 01 Jul 2012 16:04:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/on-crime-and-document-stores/</guid>
+      <description>Having worked with several storage paradigms over these last few months
+ from flatfiles, to NoSQL, to the big enterprisey relational databases -, I have spent plenty of time trying to make sense of all the options out there. It wasn&amp;rsquo;t until I watched one of the last episodes of The Wire season 3 that I had an epiphany regarding modeling data in document stores. Yes, I know, I tend to take those things home with me.</description>
+    </item>
+    
+  </channel>
+</rss>

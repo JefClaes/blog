@@ -30,7 +30,7 @@ Casinos now define a second set of virtual indexes that map to the
 indexes of the physical wheel.  
   
 
-[![](../images/thumbnails/2014-12-11-spinning-the-wheel-manipulating-the-odds-SpinningTheWheelManipulatingTheOdds.png)](../images/2014-12-11-spinning-the-wheel-manipulating-the-odds-SpinningTheWheelManipulatingTheOdds.png)
+[![](/post/images/thumbnails/2014-12-11-spinning-the-wheel-manipulating-the-odds-SpinningTheWheelManipulatingTheOdds.png)](/post/images/2014-12-11-spinning-the-wheel-manipulating-the-odds-SpinningTheWheelManipulatingTheOdds.png)
 
   
 

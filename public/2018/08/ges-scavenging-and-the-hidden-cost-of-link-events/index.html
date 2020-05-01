@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>GES scavenging and the hidden cost of link events - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="GES scavenging and the hidden cost of link events">
+<meta itemprop="description" content="Somewhere around a year ago, we started using GES in production as the primary data store of our new loyalty system. The system stores two types of data.
+ External services push batches of dumb downed events to the loyalty system. For example: a user logged on, played a game or participated in a competition. These events are transient by nature. Once the loyalty system has processed them, they only need to be kept around for a few days.">
+<meta itemprop="datePublished" content="2018-08-12T14:58:00&#43;02:00" />
+<meta itemprop="dateModified" content="2018-08-12T14:58:00&#43;02:00" />
+<meta itemprop="wordCount" content="827">
+
+
+
+<meta itemprop="keywords" content="database," /><meta property="og:title" content="GES scavenging and the hidden cost of link events" />
+<meta property="og:description" content="Somewhere around a year ago, we started using GES in production as the primary data store of our new loyalty system. The system stores two types of data.
+ External services push batches of dumb downed events to the loyalty system. For example: a user logged on, played a game or participated in a competition. These events are transient by nature. Once the loyalty system has processed them, they only need to be kept around for a few days." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2018/08/ges-scavenging-and-the-hidden-cost-of-link-events/" />
+<meta property="article:published_time" content="2018-08-12T14:58:00+02:00" />
+<meta property="article:modified_time" content="2018-08-12T14:58:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GES scavenging and the hidden cost of link events"/>
+<meta name="twitter:description" content="Somewhere around a year ago, we started using GES in production as the primary data store of our new loyalty system. The system stores two types of data.
+ External services push batches of dumb downed events to the loyalty system. For example: a user logged on, played a game or participated in a competition. These events are transient by nature. Once the loyalty system has processed them, they only need to be kept around for a few days."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">12</span>
+							<span class="rest">Aug 2018</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">GES scavenging and the hidden cost of link events</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Somewhere around a year ago, we started using
+<a href="https://eventstore.org/">GES</a> in production as the primary data store
+of our new loyalty system. The system stores two types of data.</p>
+<ol>
+<li>External services push batches of dumb downed events to the loyalty
+system. For example: a user logged on, played a game or participated
+in a competition. These events are <strong>transient</strong> by nature. Once the
+loyalty system has processed them, they only need to be kept around
+for a few days.</li>
+<li>When these ingress events are processed, they go through a mini
+pipeline in which each event is assigned a specific weight, for then
+to be aggregated and translated to a command. This command awards a
+user with virtual currency to spend in the loyalty shop and a number
+of points contributing to a higher rank - unlocking more priviliges.
+The state machine that stores a user&rsquo;s balance and points is backed
+by a stream which is <strong>stored indefinitely</strong>. Unless the user asks
+to be forgotten that is.</li>
+</ol>
+<p>As a rough estimate, for every 1000 ingress transient events, only 1
+needs to be stored indefinitely as part of a state machine.</p>
+<p>When implementing this more than a year ago, I thought I had done my
+homework and knew how to make sure the ingress events would get cleaned
+up. First you make sure the <em>$maxAge</em> metadata is set on the streams you
+want to clean up, for then to schedule the scavenging process (other
+databases use the term vacuum). This worked without any surprises. Once
+scavenging had been run, I could see disk space being released. However,
+after a few months I started to become a bit suspicious of my
+understanding of the scavening process. GES was releasing less disk
+space than I expected.</p>
+<p>Even though, we had been quite generous while provisioning the nodes
+with disk space, we would run out very soon. Much to my frustration, the
+&ldquo;Storage is cheap&rdquo; mantra gets thrown around too lightly. While the
+statement in essence is not wrong, for a database like GES that&rsquo;s built
+on top of a log, more data also means slower node restarts (index
+verification), slower scavenges and slower <em>$all</em> subscriptions.</p>
+<p>GES has no built-in system catalog that allows you to discover which
+streams are taking up all this space. However, you can implement an $all
+subscription and count events per stream or even count the bytes in the
+event payload.</p>
+<pre><code>static void Main(string[] args) {
+    using (var conn = EventStoreConnection.Create(
+        ConnectionSettings.Create().Build(),
+        new IPEndPoint(IPAddress.Parse(&quot;127.0.0.1&quot;), 1113))) {
+
+        conn.ConnectAsync().Wait(5000);
+
+        conn.SubscribeToAllFrom(
+            Position.Start,
+            CatchUpSubscriptionSettings.Default,
+            eventAppeared: Count, liveProcessingStarted: Print, subscriptionDropped: Warn,
+            userCredentials: new UserCredentials(&quot;admin&quot;, &quot;changeit&quot;));
+
+        Console.ReadLine();
+    }
+}
+
+private static void Print(EventStoreCatchUpSubscription sub) {
+    foreach (var count in  counts.ToList().OrderByDescending(x =&gt; x.Value)) {
+        Console.WriteLine($&quot;{count.Key}: {count.Value}&quot;);
+    }
+}
+
+private static Task Count(EventStoreCatchUpSubscription sub, ResolvedEvent e) {
+    var ev = e.Link ?? e.Event;
+    if (!counts.ContainsKey(ev.EventStreamId)) {
+        counts.Add(ev.EventStreamId, 1);
+    } else {
+        counts[ev.EventStreamId] += 1;
+    }
+
+    return Task.CompletedTask;
+}
+
+// Output
+// $et-LoggedIn : ...
+// $et-GamePlayed : ...
+// ...
+</code></pre><p>Inspecting the results, we found that the streams emitted by the
+built-in system projections contained a disproportionate amount of
+events. Most of them were ingress events and should have been long
+scavenged! As it turns out, this was a wrong assumption on my part.
+Built-in projections build new streams by linking to the original event
+(instead of a emitting a new one). But when an event is scavenged,
+events linking to the original event still linger around on disk.
+Although link events are much smaller than the original event usually -
+it&rsquo;s just a pointer, the bytes used to store the pointer <em>and</em> the event
+envelope still take up quite some space when there&rsquo;s billions of them!</p>
+<p>Luckily, I was only using a small portion of the built-in projections. I
+created a custom projection that only created streams I was actually
+interested in, pointed my code in the right direction, stopped the
+built-in projections and deleted the now irrelevant streams.</p>
+<p>Running the scavenging process after being able to delete all these
+streams was very satisfying. The scavenging process loops through all
+the transaction file chunks one by one. It reads a chunk and writes a
+temporary new one, only containing the events that haven&rsquo;t been deleted.
+Once it reaches the end of the file, it swaps out the newly written file
+with the old one. Since writes are slower than reads, this makes that
+scavenging is actually way faster when there&rsquo;s more to scavenge - or
+less data to be written to a new file. After all the chunks have been
+scavenged, the process merges the now smaller files into new chunks when
+possible. This process is quite transparant by design; all you have to
+do is list the files in the data directory when scavenging.</p>
+<p>When this whole process was complete, used disk space went down from
+410GB to 47GB! Having trimmed all this excessive data, scavenging is
+faster (hours not days), node restarts are faster and resetting an $all
+subscription makes me less anxious.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/database">database</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2018  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

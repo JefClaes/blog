@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ASP.NET MVC on Jef Claes</title>
+    <link>http://localhost:1313/tags/asp.net-mvc/</link>
+    <description>Recent content in ASP.NET MVC on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 06 Apr 2014 18:43:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/asp.net-mvc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rebinding a knockout view model</title>
+      <link>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</link>
+      <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</guid>
+      <description>As you might have noticed reading my last two posts, I have been doing a bit of front-end work using knockout.js. Here is something that had me scratching my head for a little while..
+In one of our pages we&amp;rsquo;re subscribing to a specific event. As soon as that event arrives, we need to reinitialize the model that is bound to our container element. Going through snippets earlier, I remembered seeing the cleanNode function being used a few times - which I thought would remove all knockout data and event handlers from an element.</description>
+    </item>
+    
+    <item>
+      <title>Angular.js and IE8 caching</title>
+      <link>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</link>
+      <pubDate>Sun, 09 Jun 2013 16:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</guid>
+      <description>Older Internet Explorer versions are notorious for agressively caching AJAX requests. In this post, you&amp;rsquo;ll find two techniques that combat this behaviour.
+The first option is to have your server explicitly set the caching headers.
+Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidUntilExpires(false); Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches); Response.Cache.SetCacheability(HttpCacheability.NoCache); Response.Cache.SetNoStore();  Since you don&amp;rsquo;t necessarily own the server, or clients might already have cached some requests, you can trick the browser into thinking each request is a fresh one by making each url unique.</description>
+    </item>
+    
+    <item>
+      <title>Customizing a knockout validation message</title>
+      <link>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</link>
+      <pubDate>Sun, 28 Apr 2013 18:56:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</guid>
+      <description>Knockout validation is a plugin that allows you to extend observables with validation. If you&amp;rsquo;re familiar with jQuery validation, you will notice that most provided validation rules are very similar.
+One of the validation rules available out-of-the-box is pattern validation. By default the error message for violating this rule doesn&amp;rsquo;t mention the expected pattern. And in general, showing the expected pattern probably isn&amp;rsquo;t a good idea since your users will have no idea what you&amp;rsquo;re talking about.</description>
+    </item>
+    
+    <item>
+      <title>Show More pagination with angular.js</title>
+      <link>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</link>
+      <pubDate>Wed, 12 Dec 2012 19:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</guid>
+      <description>I built my first application with angular.js over these last few weeks (not during business hours), and although I still have lots and lots to discover and learn, I think I somewhat grasp the basics.
+In the application I built, I had to implement paging because rendering all the items at once was too slow on mobile devices (on my Windows Phone 7 anyways). The paging variant I decided on was the &amp;lsquo;Show More&amp;rsquo; technique.</description>
+    </item>
+    
+    <item>
+      <title>jQuery-validate error messages in Twitter bootstrap tooltips</title>
+      <link>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</link>
+      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</guid>
+      <description>At work, we&amp;rsquo;re using the combination of ASP.NET MVC3, jQuery, jQuery-validate, knockout and Twitter Bootstrap on one of our projects. Having postponed looking at the aesthetics of the client-side validation for too long, we eventually found ourselves unsatisfied with the default error labels. Wanting to save on space, we&amp;rsquo;re experimenting with the error messages being shown in a Twitter Bootstrap tooltip. After poking around for some while, I came up with something satisfactory.</description>
+    </item>
+    
+    <item>
+      <title>Commands with dependencies</title>
+      <link>http://localhost:1313/2012/10/commands-with-dependencies/</link>
+      <pubDate>Mon, 15 Oct 2012 16:57:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/commands-with-dependencies/</guid>
+      <description>Also read: Separating command data from logic and sending it on a bus
+Yesterday I wrote about an architecture which limits abstractions by solely introducing commands and queries. I shared a dead simple variation of this pattern, the advantages I experienced, and how I could still unit test the controller if I wanted to.
+At the end of that post I wondered how I would be able to test commands in isolation; suppose the implementation doesn&amp;rsquo;t use a database this time, but a hairy, too low-level, third party webservice.</description>
+    </item>
+    
+    <item>
+      <title>Commands, queries and testing</title>
+      <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
+      <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/commands-queries-and-testing/</guid>
+      <description>Also read:
+ Self-contained commands with dependencies Separating command data from logic and sending it on a bus  We need abstraction, but the amount of abstraction we really need depends, and should be assessed on a case-by-case basis. It seems advisable to grow abstractions, and to introduce them gradually.
+That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
+    </item>
+    
+    <item>
+      <title>The 7 R&#39;s of Hypermedia</title>
+      <link>http://localhost:1313/2012/09/the-7-rs-of-hypermedia/</link>
+      <pubDate>Mon, 17 Sep 2012 21:42:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/the-7-rs-of-hypermedia/</guid>
+      <description>While most REST concepts are rather easy to grok, there is one concept which I found harder to understand at first: Hypermedia. Let it be that without this concept, you&amp;rsquo;re missing out on an extremely important strength of REST. Hypermedia enables you to build dumb - or smart, depending on your perspective - clients, which are mostly driven by the server. Practically, this is implemented as resources embedding links which allow the client to discover and navigate through your RESTful service.</description>
+    </item>
+    
+    <item>
+      <title>Supporting the OPTIONS verb in ASP.NET Web API</title>
+      <link>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</link>
+      <pubDate>Sun, 02 Sep 2012 18:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</guid>
+      <description>ASP.NET Web API controllers support only four HTTP verbs by convention: GET, PUT, POST and DELETE. The full list of existing HTTP verbs is more extensive though. One of those unsupported verbs which can be particularly useful for API discovery and documentation is the OPTIONS verb.
+ The OPTIONS method represents a request for information about the communication options available on the request/response chain identified by the Request-URI. This method allows the client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Web API error detail policy now defaults to the custom errors configuration</title>
+      <link>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</link>
+      <pubDate>Mon, 20 Aug 2012 08:50:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</guid>
+      <description>While working on an already updated ASP.NET Web API project, I noticed an extra value in the IncludeErrorDetailPolicy enumeration. The IncludeErrorDetailPolicy configuration tells the Web API host when it&amp;rsquo;s allowed to include full error details in responses. Before updating, the RC version of the IncludeErrorDetailPolicy enumeration only had three possible values: LocalOnly, Always and Never. With the released version comes a new value: Default.
+// Summary: // Use the default behavior for the host environment.</description>
+    </item>
+    
+    <item>
+      <title>A really quick look at ASP.NET Web API Help Pages</title>
+      <link>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</link>
+      <pubDate>Thu, 16 Aug 2012 21:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</guid>
+      <description>While skimming over future features of ASP.NET Web API, I came across the ASP.NET Web API Help Page feature. I couldn&amp;rsquo;t find an introduction online, and the Nuget package has only been downloaded 16 times, so I had to have a really quick look. I documented my baby steps below.
+So, I had a really simple ASP.NET MVC4 project, with one API controller exposing tweets.
+public class TweetsController : ApiController { /// &amp;lt;summary&amp;gt; /// Get a &amp;lt;c&amp;gt;Tweet&amp;lt;/c&amp;gt; by its identifier.</description>
+    </item>
+    
+    <item>
+      <title>HtmlHelper to generate a top-level menu for areas</title>
+      <link>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</link>
+      <pubDate>Sun, 08 Jul 2012 19:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</guid>
+      <description>Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&amp;rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them.</description>
+    </item>
+    
+    <item>
+      <title>Persisting model state when using PRG</title>
+      <link>http://localhost:1313/2012/06/persisting-model-state-when-using-prg/</link>
+      <pubDate>Sun, 17 Jun 2012 16:48:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/persisting-model-state-when-using-prg/</guid>
+      <description>I&amp;rsquo;ve been working on an ASP.NET MVC application in which we frequently apply the Post/Redirect/Get pattern. One of the direct consequences of applying this pattern is that you often want to persist the model state across redirects, so that you don&amp;rsquo;t lose validation errors, or the values of input fields.
+To persist the model state across redirects, we can put TempData to work. The sole purpose of TempData is exactly this; persisting state until the next request.</description>
+    </item>
+    
+    <item>
+      <title>NancyFx Appharbor builds timing out</title>
+      <link>http://localhost:1313/2012/06/nancyfx-appharbor-builds-timing-out/</link>
+      <pubDate>Tue, 05 Jun 2012 21:26:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/nancyfx-appharbor-builds-timing-out/</guid>
+      <description>I have been working on a petite portfolio site for my girlfriend which is implemented in NancyFx, hosted in ASP.NET. On deploying the project to Appharbor, my builds kept timing out. Since the build log was empty, I turned to Twitter for help. This fine gentleman provided me with a solution.
+When you add the Razor view engine to your project using the Nuget package, the postbuild event of your project will be modified to xcopy some assemblies into the bin - which apparently is an Intellisense and precompilation thing.</description>
+    </item>
+    
+    <item>
+      <title>My InfoQ article on HTML5 offline web applications</title>
+      <link>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</link>
+      <pubDate>Wed, 02 May 2012 20:09:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</guid>
+      <description>After writing a few things on HTML5 offline web applications earlier this year, I got contacted by InfoQ to write an in-detail article on the subject for them. I hesitated at first, because I was afraid that it would feel too much like work, taking the fun out of my writing. Turns out it wasn&amp;rsquo;t like that at all. The guys at infoQ were really relaxed to work with, asking interesting questions and giving useful feedback, without forcing me into a certain direction.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Offline Web applications as an afterthought in ASP.NET MVC</title>
+      <link>http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/</link>
+      <pubDate>Wed, 14 Mar 2012 15:39:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/</guid>
+      <description>Recently I prototyped a mobile web application using ASP.NET MVC, jQuery Mobile and some HTML5 features. One of the key goals was to find out how far you can push a web &amp;lsquo;application&amp;rsquo; until the browser starts getting in the way. Working disconnected is one of these things that appear to be a major showstopper at first.
+However - to my surprise honestly - the HTML5 Offline Web applications API seems to be widely implemented across modern browsers already.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET MVC4 bundling in ASP.NET MVC3</title>
+      <link>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</link>
+      <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</guid>
+      <description>One of the new wildly evangelized features of ASP.NET MVC4 is the built-in support for bundling and minification of scripts and stylesheets.
+I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work for ASP.NET MVC3 though. If you open the packages config of an ASP.NET MVC4 beta project, you will find that bundling support lives in the Microsoft.Web.Optimization package.
+&amp;lt;package id=&amp;quot;Microsoft.Web.Optimization&amp;quot; version=&amp;quot;1.0.0-beta&amp;quot; /&amp;gt;  So we should just be able to install this package for an ASP.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5</title>
+      <link>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</link>
+      <pubDate>Sun, 19 Feb 2012 16:52:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</guid>
+      <description>I tried installing ASP.NET MVC4 beta today, but seconds into the installation the WebPI already halted the process.
+ ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5
+ Apparently, this was documented in the ASP.NET MVC4 installation notes.
+ This release is not compatible with the .NET Framework 4.5 Developer Preview. You must uninstall the .NET 4.5 Developer Preview before installing the ASP.NET MVC 4 Beta.
+ I guess you have to be forgiving if you want to play with the early bits.</description>
+    </item>
+    
+    <item>
+      <title>Testing DI bootstrappers</title>
+      <link>http://localhost:1313/2012/02/testing-di-bootstrappers/</link>
+      <pubDate>Mon, 06 Feb 2012 08:59:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/testing-di-bootstrappers/</guid>
+      <description>While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&amp;rsquo;t see any reason why they shouldn&amp;rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
+I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot.</description>
+    </item>
+    
+    <item>
+      <title>Adding ELMAH to an AppHarbor application</title>
+      <link>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</link>
+      <pubDate>Sat, 04 Feb 2012 15:17:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</guid>
+      <description>For those who haven&amp;rsquo;t heard of ELMAH yet, here is the project description.
+ ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment.
+ While ELMAH is completely not AppHarbor specific, there do seem to be a fair amount of questions on the AppHarbor support forums on how to get ELMAH running.</description>
+    </item>
+    
+    <item>
+      <title>Autocorrecting unknown actions using the Levenshtein distance</title>
+      <link>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</link>
+      <pubDate>Sun, 15 Jan 2012 16:04:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</guid>
+      <description>This weekend I prototyped an idea I had earlier this week: autocorrecting unknown actions in ASP.NET MVC.
+**Handling unknown actions
+**
+To give you an example, let&amp;rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method.</description>
+    </item>
+    
+    <item>
+      <title>An approach to mobile support in ASP.NET MVC</title>
+      <link>http://localhost:1313/2012/01/an-approach-to-mobile-support-in-asp.net-mvc/</link>
+      <pubDate>Thu, 12 Jan 2012 21:16:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/01/an-approach-to-mobile-support-in-asp.net-mvc/</guid>
+      <description>I have been spending a decent amount of time working on a side project in ASP.NET MVC lately. From the start, I planned on supporting mobile. There are lots of ways you can use or extend ASP.NET MVC to support mobile. Having tried several, I can say they all have their merits, and the solution that will work for you very much depends on your requirements. In this post I will run you over the implementation that worked for me, for my specific requirements.</description>
+    </item>
+    
+  </channel>
+</rss>

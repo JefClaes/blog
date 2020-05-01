@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML on Jef Claes</title>
+    <link>http://localhost:1313/tags/html/</link>
+    <description>Recent content in HTML on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Mar 2014 21:23:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Building a live dashboard with some knockout</title>
+      <link>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</link>
+      <pubDate>Sun, 16 Mar 2014 21:23:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</guid>
+      <description>Last week, we added a dashboard to our back office application that shows some actionable data about what&amp;rsquo;s going on in our system. Although we have infrastructure in place to push changes to the browser, it seemed more reasonable to have the browser fetch fresh data every few minutes.
+We split the dashboard up in a few functional cohesive widgets. On the server, we built a view-optimized read model for each widget.</description>
+    </item>
+    
+    <item>
+      <title>Validating composite models with knockout validation</title>
+      <link>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</link>
+      <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</guid>
+      <description>When you use knockout validation to extend observables with validation rules, it will add a few functions to these observables - the most important ones being; error and isValid. You can use these functions to verify if any of the validation rules were violated, and to extract an error message.
+To extract all of the error messages out of a composite model, you can use a grouping function.
+function BookingModel() { var self = this; self.</description>
+    </item>
+    
+    <item>
+      <title>Customizing a knockout validation message</title>
+      <link>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</link>
+      <pubDate>Sun, 28 Apr 2013 18:56:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</guid>
+      <description>Knockout validation is a plugin that allows you to extend observables with validation. If you&amp;rsquo;re familiar with jQuery validation, you will notice that most provided validation rules are very similar.
+One of the validation rules available out-of-the-box is pattern validation. By default the error message for violating this rule doesn&amp;rsquo;t mention the expected pattern. And in general, showing the expected pattern probably isn&amp;rsquo;t a good idea since your users will have no idea what you&amp;rsquo;re talking about.</description>
+    </item>
+    
+  </channel>
+</rss>

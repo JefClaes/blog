@@ -14,10 +14,10 @@ want to reverse engineer a minified script.
   
 You can find this feature in the toolbox on the Script tab.  
   
-[![](../images/thumbnails/2010-12-27-format-javascript-with-the-ie9-developer-tools-format.png)](../images/2010-12-27-format-javascript-with-the-ie9-developer-tools-format.png)  
+[![](/post/images/thumbnails/2010-12-27-format-javascript-with-the-ie9-developer-tools-format.png)](/post/images/2010-12-27-format-javascript-with-the-ie9-developer-tools-format.png)  
 This is how jquery.min.js looks after formatting.  
   
-[![](../images/thumbnails/2010-12-27-format-javascript-with-the-ie9-developer-tools-jquery.PNG)](../images/2010-12-27-format-javascript-with-the-ie9-developer-tools-jquery.PNG)  
+[![](/post/images/thumbnails/2010-12-27-format-javascript-with-the-ie9-developer-tools-jquery.PNG)](/post/images/2010-12-27-format-javascript-with-the-ie9-developer-tools-jquery.PNG)  
 <s>This feature is not available in the public beta (9.0.7.9360.16406),
 but should be available in the [latest platform
 previews](http://ie.microsoft.com/testdrive/info/downloads/Default.html)</s>.  

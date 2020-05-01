@@ -60,18 +60,18 @@ package](http://nuget.org/packages/Microsoft.AspNet.WebApi.HelpPage) to
 my MVC project. This adds a new area, containing a bunch of code.  
   
 
-[![](../images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-Area.PNG)](../images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-Area.PNG)
+[![](/post/images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-Area.PNG)](/post/images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-Area.PNG)
 
   
 Browsing to the area's default url now, you already get to see something
 like this.  
   
 
-[![](../images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-HelpPage.PNG)](../images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-HelpPage.PNG)
+[![](/post/images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-HelpPage.PNG)](/post/images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-HelpPage.PNG)
 
   
 
-[![](../images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-HelpPage2.PNG)](../images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-HelpPage2.PNG)
+[![](/post/images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-HelpPage2.PNG)](/post/images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-HelpPage2.PNG)
 
   
 There are a few things missing though. Most importantly, where is the
@@ -81,7 +81,7 @@ To expose the existing documentation, enable generation of the XML
 output.  
   
 
-[![](../images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-XMLDocumentationFile.PNG)](../images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-XMLDocumentationFile.PNG)
+[![](/post/images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-XMLDocumentationFile.PNG)](/post/images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-XMLDocumentationFile.PNG)
 
   
 Then open the HelpPageConfig class, and set the documentation provider -
@@ -92,11 +92,11 @@ we can use the default implementation included in the package.
 
   
 
-[![](../images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-workingdocumentation.PNG)](../images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-workingdocumentation.PNG)
+[![](/post/images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-workingdocumentation.PNG)](/post/images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-workingdocumentation.PNG)
 
   
 
-[![](../images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-workingdocumentation2.PNG)](../images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-workingdocumentation2.PNG)
+[![](/post/images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-workingdocumentation2.PNG)](/post/images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-workingdocumentation2.PNG)
 
   
 That looks better. There is one more thing I'd like to get working:
@@ -118,7 +118,7 @@ This can also be configured in the HelpPageConfig class.
 This produces a nice sample for consumers of the API.  
   
 
-[![](../images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-representations.PNG)](../images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-representations.PNG)
+[![](/post/images/thumbnails/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-representations.PNG)](/post/images/2012-08-16-a-really-quick-look-at-asp-net-web-api-help-pages-representations.PNG)
 
   
 All of this took me five minutes to get working. There seems to be a lot

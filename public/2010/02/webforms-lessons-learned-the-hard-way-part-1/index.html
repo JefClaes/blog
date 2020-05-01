@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Webforms lessons learned the hard way (Part 1) - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Webforms lessons learned the hard way (Part 1)">
+<meta itemprop="description" content="I&rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them.">
+<meta itemprop="datePublished" content="2010-02-14T16:22:00&#43;01:00" />
+<meta itemprop="dateModified" content="2010-02-14T16:22:00&#43;01:00" />
+<meta itemprop="wordCount" content="627">
+
+
+
+<meta itemprop="keywords" content="ASP.NET,Ramblings,Best Practices," /><meta property="og:title" content="Webforms lessons learned the hard way (Part 1)" />
+<meta property="og:description" content="I&rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/" />
+<meta property="article:published_time" content="2010-02-14T16:22:00+01:00" />
+<meta property="article:modified_time" content="2010-02-14T16:22:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Webforms lessons learned the hard way (Part 1)"/>
+<meta name="twitter:description" content="I&rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">14</span>
+							<span class="rest">Feb 2010</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Webforms lessons learned the hard way (Part 1)</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>I&rsquo;ve been spending a lot of my days in Webforms the last two years. In
+this post I want to share some best practices I&rsquo;ve learned the hard way
+over these years. A lot of MVC developers might think this post comes a
+bit late (who still cares about Webforms?!), I do think (in the real
+world) a lot of the ASP.NET developers are still using Webforms. This
+post is directly targeting them.</p>
+<p><!-- raw HTML omitted -->Keep your pages light<!-- raw HTML omitted --></p>
+<p>There are a few things where you should pay attention to.</p>
+<p>Most of the times the
+<a href="http://msdn.microsoft.com/en-us/library/ms972976.aspx">Viewstate</a> is
+the number one performance killer. Although most developers know storing
+a lot of ViewState on the page has issues, and that there are numerous
+<a href="http://www.eggheadcafe.com/articles/20040613.asp">alternatives</a>. Most
+developers don&rsquo;t take the time to think about the Viewstate. I don&rsquo;t
+blame them. Persisting the ViewState to another medium is not as easy as
+it should be. The Viewstate is enabled by default, disabling the
+Viewstate on each control is a hassle.. In ASP.NET 4 the
+<a href="http://jclaes.blogspot.com/2009/12/problem-that-viewstatemode-solves.html">ViewStateMode</a>
+will make it much easier though. Once the users start complaining about
+performance, you are too late. I really encourage you to start thinking
+about the Viewstate as early as possible. Only use it when you need to
+persist changes across Postbacks. You will be surprised how little you
+really need to persist.</p>
+<p>A <a href="http://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx">Masterpage</a> is
+great for applying a consistent style to your pages. But be careful with
+what you put in the head tag of your Masterpage. Often you only need a
+certain stylesheet or javascript library in a few pages. Avoid including
+references to these stylesheets and javascript libraries in your
+Masterpage. Better is to put a
+<a href="http://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.contentplaceholder.aspx">ContentPlaceHolder</a>
+in the head tag of your Masterpage and use that for your conditional
+resources.</p>
+<p><a href="http://www.asp.net/Ajax/Documentation/Live/overview/UpdatePanelOverview.aspx">Updatepanels</a>
+are great controls, but you should apply them wisely. Don&rsquo;t blindly wrap
+your whole form in an Updatepanel. Think about which part of your page
+really needs to be refreshed. The less HTML and ViewState (!) coming
+back from the server the better.</p>
+<p>Use javascript. I think to many Webforms developers are uncomfortable
+leaving their serverside habitat. Avoid a postback whenever you can.
+That&rsquo;s one of the rules I try to apply.</p>
+<p><!-- raw HTML omitted -->Stay away from the designer<!-- raw HTML omitted --></p>
+<p>Creating pages using the designer doesn&rsquo;t work on so many levels.</p>
+<p>The Design view doesn&rsquo;t always give a correct representation of how the
+page will look like when it&rsquo;s rendered by the browser.</p>
+<p>Using drag-and-drop, databinding wizards.. does not end well. I have a
+big problem with defining
+<a href="http://www.beansoftware.com/asp.net-tutorials/data-source-controls.aspx">datasources</a>
+in the ASPX markup. In my opinion the ASPX markup should be as clean as
+possible. It should serve as a view, and as a view only. Another
+downside of defining your datasources in your ASPX markup is that your
+application tends to be more fragile.</p>
+<p>Let me prove this by this example..</p>
+<p>In this example I&rsquo;m binding a List of FireStationEvents to a GridView.
+Notice the TypeName and SelectMethods are strings.</p>
+<pre><code>   1:  &lt;form id=&quot;form1&quot; runat=&quot;server&quot;&gt;
+
+   2:      &lt;div&gt;           
+
+   3:          &lt;asp:GridView ID=&quot;gvEvents&quot; runat=&quot;server&quot; DataSourceID=&quot;odsEvents&quot;&gt;
+
+   4:          &lt;/asp:GridView&gt;        
+
+   5:      &lt;/div&gt;
+
+   6:      &lt;asp:ObjectDataSource ID=&quot;odsEvents&quot; runat=&quot;server&quot; 
+
+   7:          SelectMethod=&quot;Load&quot; 
+
+   8:          TypeName=&quot;WFDemo.BusinessLogic.FireStationEvents&quot;&gt;
+
+   9:      &lt;/asp:ObjectDataSource&gt;
+
+  10:  &lt;/form&gt;
+</code></pre>
+<p>A few weeks later I decide to change the methodname Load to LoadAll. I
+rebuild and all is good. I publish my site to production, and a few
+hours later I get a critical bugreport assigned to me. After looking
+into it, I discover I forgot to change the SelectMethod property of the
+DataSource. Loading the page throws an unhandled Exception at runtime:
+ObjectDataSource &lsquo;odsEvents&rsquo; could not find a non-generic method &lsquo;Load&rsquo;
+that has no parameters. One small refactoring made the application fail
+big time and I didn&rsquo;t even have a clue.</p>
+<p>Stay posted for Part 2 tomorrow! What are some of your Webforms lessons
+learned the hard way?</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/asp.net">ASP.NET</a></li>
+							
+							<li><a href="/tags/ramblings">Ramblings</a></li>
+							
+							<li><a href="/tags/best-practices">Best Practices</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2010  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

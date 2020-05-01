@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>F# on Jef Claes</title>
+    <link>http://localhost:1313/tags/f#/</link>
+    <description>Recent content in F# on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Apr 2016 17:37:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/f#/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Notifications from an event log</title>
+      <link>http://localhost:1313/2016/04/notifications-from-an-event-log/</link>
+      <pubDate>Sun, 17 Apr 2016 17:37:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/04/notifications-from-an-event-log/</guid>
+      <description>User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
+In the domain I&amp;rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website.</description>
+    </item>
+    
+    <item>
+      <title>Functional one-liner for running totals in C#</title>
+      <link>http://localhost:1313/2016/03/functional-one-liner-for-running-totals-in-c/</link>
+      <pubDate>Mon, 28 Mar 2016 16:22:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/03/functional-one-liner-for-running-totals-in-c/</guid>
+      <description>Visualizing some data earlier this week I had to compute the running total of a sequence of numbers.
+For example, if the input sequence was [ 100; 50; 25 ] the result of the computation would be a new sequence of [ 100; 150; 175 ].
+Muscle memory made me take a procedural approach, which works, but made me wonder if I could get away with less lines of code and without mutable state.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing event streams</title>
+      <link>http://localhost:1313/2015/12/visualizing-event-streams/</link>
+      <pubDate>Sun, 20 Dec 2015 17:59:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/12/visualizing-event-streams/</guid>
+      <description>In my recent talk on Evil by Design, I showed how I&amp;rsquo;ve been visualizing event streams as a means to get a better grip on how aggregates behave in production. The talk&amp;rsquo;s scope kept me from showing the code that goes together with the examples shown. Consider this post as an addendum to that talk.
+First off, we need a few types: a string that identifies a stream, an event containing a timestamp and its name.</description>
+    </item>
+    
+    <item>
+      <title>Bulk SQL projections with F# and type providers</title>
+      <link>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</link>
+      <pubDate>Sun, 18 Oct 2015 15:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</guid>
+      <description>Early Summer, I had to set up an integration with an external partner. They required of us to daily provide them with a relational dataset stored in SQL Server. Most, if not all of the data was temporal, append-only by nature; think logins, financial transactions..
+Since the data required largely lived in an eventstore on our end, I needed fast bulk projections. Having experimented with a few approaches, I eventually settled on projections in F# taking advantage of type providers.</description>
+    </item>
+    
+    <item>
+      <title>Aspect ratio calculation</title>
+      <link>http://localhost:1313/2015/09/aspect-ratio-calculation/</link>
+      <pubDate>Fri, 11 Sep 2015 23:40:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/09/aspect-ratio-calculation/</guid>
+      <description>Earlier today I was writing a migration script in F# where I had to calculate the aspect ratio based on the given screen dimensions. This is one of those problems where I don&amp;rsquo;t even mind breaking my head over, but directly head over to Stackoverflow to find an accepted answer which I can just copy paste. Since I didn&amp;rsquo;t find an F# snippet I could use, I ported some JavaScript, and embedded the result below for future snippet hunters.</description>
+    </item>
+    
+    <item>
+      <title>Basic casino math</title>
+      <link>http://localhost:1313/2015/06/basic-casino-math/</link>
+      <pubDate>Mon, 22 Jun 2015 22:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/06/basic-casino-math/</guid>
+      <description>In a previous series of posts, I went over the models used by casinos to spin a wheel (spinning, manipulating the odds, clustering and near misses). I did not yet expand on the basic mathematical models that ensure a casino makes money.
+Let&amp;rsquo;s pretend we are spinning the wheel again. The wheel has 5 pockets, and just one of those is the winning one. Given we will be using an unmodified wheel, you win 1 out of 5 spins.</description>
+    </item>
+    
+    <item>
+      <title>Consumed: Queries and projections (F#)</title>
+      <link>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</link>
+      <pubDate>Sun, 24 May 2015 18:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</guid>
+      <description>This is the third post in my series on porting a node.js application to an F# application.
+So far, I&amp;rsquo;ve looked at parsing command line arguments, handling commands and storing events. Today, I want to project those events into something useful that can be formatted and printed to the console.
+In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically</description>
+    </item>
+    
+    <item>
+      <title>Consumed: Handling commands (F#)</title>
+      <link>http://localhost:1313/2015/05/consumed-handling-commands-f/</link>
+      <pubDate>Sun, 17 May 2015 17:51:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/05/consumed-handling-commands-f/</guid>
+      <description>As I wrote earlier, I&amp;rsquo;ve been working on porting a node.js web application to an F# console application. It&amp;rsquo;s an application I wrote to learn node.js but still use today to keep track of all the things I consume.
+The application is able to consume an item, to remove a consumed item and to query all consumed items.
+In the previous post, I parsed command line arguments into typed commands and queries.</description>
+    </item>
+    
+    <item>
+      <title>Finding unused code (F#)</title>
+      <link>http://localhost:1313/2015/04/finding-unused-code-f/</link>
+      <pubDate>Sun, 26 Apr 2015 18:06:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/04/finding-unused-code-f/</guid>
+      <description>Coming from C#, I&amp;rsquo;m used to the compiler warning me about unused variables. Relying on the compiler to help me with checked exceptions in F#, I noticed that unused values (and functions) would go unnoticed. Having accidentally read earlier that Haskell has a compiler flag to check for unused bindings, I looked for the F# equivalent but failed to find it, until Scott Wlaschin pointed me in the right direction.</description>
+    </item>
+    
+    <item>
+      <title>Consumed: Parsing command line arguments (F#)</title>
+      <link>http://localhost:1313/2015/04/consumed-parsing-command-line-arguments-f/</link>
+      <pubDate>Sun, 19 Apr 2015 16:54:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/04/consumed-parsing-command-line-arguments-f/</guid>
+      <description>Last year, I set out to write my first node.js application; a small web application for keeping lists of everything I consume. I had something working pretty quickly, deployed it to Heroku and still find myself using it today. Since there&amp;rsquo;s very little use for having it running on a server, and because I wanted something to toy with getting better at F#, I decided to port it to an F# console application.</description>
+    </item>
+    
+    <item>
+      <title>Checked errors in F#</title>
+      <link>http://localhost:1313/2015/03/checked-errors-in-f/</link>
+      <pubDate>Sun, 29 Mar 2015 17:19:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/03/checked-errors-in-f/</guid>
+      <description>In the land of C#, exceptions are king. By definition exceptions help us deal with &amp;ldquo;unexpected or exceptional situations that arise while a program is running&amp;rdquo;. In that regard, we&amp;rsquo;re often optimistic, overoptimistic. Most code bases treat errors as exceptional while they&amp;rsquo;re often commonplace. We are so confident about the likelyhood of things going wrong, we don&amp;rsquo;t even feel the need to communicate to consumers what might go wrong. If a consumer of a method wants to know what exceptions might be thrown, he needs to resort to reading the documentation (or source) and hope it&amp;rsquo;s up-to-date.</description>
+    </item>
+    
+    <item>
+      <title>Domain Language: The Playthrough Bonus</title>
+      <link>http://localhost:1313/2015/02/domain-language-the-playthrough-bonus/</link>
+      <pubDate>Mon, 23 Feb 2015 19:05:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/02/domain-language-the-playthrough-bonus/</guid>
+      <description>Since online gambling has been regulated in Belgium, basically each eligible license holder has complemented their land based operations with an online counterpart. Being such a small country, everyone wants to secure their market share as soon as possible. The big players have been pouring tons of money in to marketing and advertising, it&amp;rsquo;s everywhere: radio, television, (online) newspapers, bus stops, billboards, sport events, airplane vouchers - you name it. While regulations for land based casinos are very strict and almost overprotective, regulations for online play are much more permissive.</description>
+    </item>
+    
+    <item>
+      <title>Averages are not good enough (F#)</title>
+      <link>http://localhost:1313/2015/01/averages-are-not-good-enough-f/</link>
+      <pubDate>Sun, 18 Jan 2015 18:40:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/01/averages-are-not-good-enough-f/</guid>
+      <description>Let&amp;rsquo;s (no pun intended) look at a set of response times of a web service.
+People like having a single number to summarize a piece of data. The average is the most popular candidate. The average is calculated by dividing the sum of the input elements by the number of input elements.
+The average is a measure of centre which is fragile to outliers; one or two odd irregular values might skew the outcome.</description>
+    </item>
+    
+    <item>
+      <title>Spinning the wheel: clustering and near misses</title>
+      <link>http://localhost:1313/2014/12/spinning-the-wheel-clustering-and-near-misses/</link>
+      <pubDate>Sun, 14 Dec 2014 17:13:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/12/spinning-the-wheel-clustering-and-near-misses/</guid>
+      <description>The previous post showed a simple model casinos use to manipulate the odds. Instead of relying on the physical wheel for randomness, they rely on a virtual list of indexes that maps to the physical wheel.
+Using that same model, it&amp;rsquo;s easy to fiddle with the virtual indexes so that they map to misses right next to the winning pocket, creating &amp;ldquo;near misses&amp;rdquo;. &amp;ldquo;Near misses&amp;rdquo; make players feel less like losing, since you &amp;ldquo;almost won&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>Spinning the wheel: manipulating the odds</title>
+      <link>http://localhost:1313/2014/12/spinning-the-wheel-manipulating-the-odds/</link>
+      <pubDate>Thu, 11 Dec 2014 19:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/12/spinning-the-wheel-manipulating-the-odds/</guid>
+      <description>The previous post defined a basic set of data structures and functions to spin a wheel of fortune in F#.
+There was very little mystery to that implementation though. The physical wheel had four pockets and spinning the wheel would land you a win one out of four spins. As a casino, it&amp;rsquo;s impossible to come up with an interesting payout using this model.
+To juice up the pot, casinos started adding more pockets to the wheel of fortune.</description>
+    </item>
+    
+    <item>
+      <title>Spinning the wheel</title>
+      <link>http://localhost:1313/2014/12/spinning-the-wheel/</link>
+      <pubDate>Tue, 09 Dec 2014 19:56:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/12/spinning-the-wheel/</guid>
+      <description>In this post, I&amp;rsquo;ll define a basic set of data structures and functions to spin a wheel of fortune. In the next post, I&amp;rsquo;ll show you the simple model casinos use to build a bigger, more attractive pot, without touching the physical wheel and without losing money. Finally, I&amp;rsquo;ll show you how casinos tweak that model to bend the odds and create near misses.
+
+Let&amp;rsquo;s say we have a physical wheel with four pockets, which are labeled either miss or win.</description>
+    </item>
+    
+    <item>
+      <title>Print out the maximum depth of recursion allowed</title>
+      <link>http://localhost:1313/2014/10/print-out-the-maximum-depth-of-recursion-allowed/</link>
+      <pubDate>Sun, 19 Oct 2014 17:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/10/print-out-the-maximum-depth-of-recursion-allowed/</guid>
+      <description>Karl Seguin tweeted the following earlier this week: &amp;ldquo;An interview question I sometimes ask: Write code that prints out the maximum depth of recursion allowed.&amp;rdquo;
+This question is interesting for a couple of reasons. First, it&amp;rsquo;s a shorter FizzBuzz; can the candidate open an IDE, write a few lines of code, compile and run them? And second, does he know what recursion is?
+Now let&amp;rsquo;s say, the interviewee knows how to write code and is familiar with the concept of recursion.</description>
+    </item>
+    
+  </channel>
+</rss>

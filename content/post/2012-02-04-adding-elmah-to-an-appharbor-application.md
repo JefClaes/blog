@@ -104,7 +104,7 @@ the authorization configuration to the **relevant values**.
 Push these changes, and you should be done. Navigate to elmah.axd in the
 root of your web application and you should see something like this.  
   
-[![](../images/thumbnails/2012-02-04-adding-elmah-to-an-appharbor-application-Elmah.PNG)](../images/2012-02-04-adding-elmah-to-an-appharbor-application-Elmah.PNG)  
+[![](/post/images/thumbnails/2012-02-04-adding-elmah-to-an-appharbor-application-Elmah.PNG)](/post/images/2012-02-04-adding-elmah-to-an-appharbor-application-Elmah.PNG)  
   
 It should be easier now to start playing with [more advanced ELMAH
 options](http://code.google.com/p/elmah/wiki).

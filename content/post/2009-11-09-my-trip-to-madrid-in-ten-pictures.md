@@ -29,8 +29,8 @@ lots of pictures, you can find my favorites below. Enjoy :)
   
 <span style="font-weight:bold;">Stadium Real Madrid</span>  
   
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0227.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0227.JPG)  
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0242.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0242.JPG)  
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0227.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0227.JPG)  
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0242.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0242.JPG)  
 
 <span style="font-style:italic;">Pay attention to the stitching "Jesus
 in first place"</span>
@@ -39,19 +39,19 @@ in first place"</span>
   
 <span style="font-weight:bold;">Royal Palace</span>  
   
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0178.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0178.JPG)  
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0163.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0163.JPG)  
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0186.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0186.JPG)  
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0178.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0178.JPG)  
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0163.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0163.JPG)  
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0186.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0186.JPG)  
   
 <span style="font-weight:bold;">Ruïnes of an Egyptian temple</span>  
   
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0026.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0026.JPG)  
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0026.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Madrid_0026.JPG)  
   
 <span style="font-weight:bold;">Buen Retiro Park</span>  
   
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0435.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0435.JPG)  
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0429.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0429.JPG)  
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0415.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0415.JPG)  
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0435.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0435.JPG)  
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0429.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0429.JPG)  
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0415.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0415.JPG)  
 
 <span style="font-style:italic;">Older lady feeding the birds. I wonder
 what her trick is.. Four of us tried letting them eat out of our hands,
@@ -59,4 +59,4 @@ but we all failed. </span>
 
   
   
-[![](../images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0408.JPG)](../images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0408.JPG)
+[![](/post/images/thumbnails/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0408.JPG)](/post/images/2009-11-09-my-trip-to-madrid-in-ten-pictures-Interactieve_0408.JPG)

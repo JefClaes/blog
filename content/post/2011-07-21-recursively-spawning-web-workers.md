@@ -44,6 +44,6 @@ So in worker.js, you can do this.
   
 And as you can guess, this has some interesting effects.  
   
-[![](../images/thumbnails/2011-07-21-recursively-spawning-web-workers-WebWorkersSpawning.PNG)](../images/2011-07-21-recursively-spawning-web-workers-WebWorkersSpawning.PNG)  
+[![](/post/images/thumbnails/2011-07-21-recursively-spawning-web-workers-WebWorkersSpawning.PNG)](/post/images/2011-07-21-recursively-spawning-web-workers-WebWorkersSpawning.PNG)  
 Try it yourself
 [here](http://dl.dropbox.com/u/19698383/Blog/Workers/default.html).

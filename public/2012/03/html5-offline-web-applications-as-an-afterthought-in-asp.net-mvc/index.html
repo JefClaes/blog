@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>HTML5 Offline Web applications as an afterthought in ASP.NET MVC - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="HTML5 Offline Web applications as an afterthought in ASP.NET MVC">
+<meta itemprop="description" content="Recently I prototyped a mobile web application using ASP.NET MVC, jQuery Mobile and some HTML5 features. One of the key goals was to find out how far you can push a web &lsquo;application&rsquo; until the browser starts getting in the way. Working disconnected is one of these things that appear to be a major showstopper at first.
+However - to my surprise honestly - the HTML5 Offline Web applications API seems to be widely implemented across modern browsers already.">
+<meta itemprop="datePublished" content="2012-03-14T15:39:00&#43;01:00" />
+<meta itemprop="dateModified" content="2012-03-14T15:39:00&#43;01:00" />
+<meta itemprop="wordCount" content="1016">
+
+
+
+<meta itemprop="keywords" content="ASP.NET MVC,ASP.NET,HTML5," /><meta property="og:title" content="HTML5 Offline Web applications as an afterthought in ASP.NET MVC" />
+<meta property="og:description" content="Recently I prototyped a mobile web application using ASP.NET MVC, jQuery Mobile and some HTML5 features. One of the key goals was to find out how far you can push a web &lsquo;application&rsquo; until the browser starts getting in the way. Working disconnected is one of these things that appear to be a major showstopper at first.
+However - to my surprise honestly - the HTML5 Offline Web applications API seems to be widely implemented across modern browsers already." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/" />
+<meta property="article:published_time" content="2012-03-14T15:39:00+01:00" />
+<meta property="article:modified_time" content="2012-03-14T15:39:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML5 Offline Web applications as an afterthought in ASP.NET MVC"/>
+<meta name="twitter:description" content="Recently I prototyped a mobile web application using ASP.NET MVC, jQuery Mobile and some HTML5 features. One of the key goals was to find out how far you can push a web &lsquo;application&rsquo; until the browser starts getting in the way. Working disconnected is one of these things that appear to be a major showstopper at first.
+However - to my surprise honestly - the HTML5 Offline Web applications API seems to be widely implemented across modern browsers already."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">14</span>
+							<span class="rest">Mar 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">HTML5 Offline Web applications as an afterthought in ASP.NET MVC</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Recently I prototyped a mobile web application using ASP.NET MVC,
+<a href="http://jquerymobile.com/">jQuery Mobile</a> and some HTML5 features. One
+of the key goals was to find out how far you can push a web
+&lsquo;application&rsquo; until the browser starts getting in the way. Working
+disconnected is one of these things that appear to be a major
+showstopper at first.</p>
+<p>However - to my surprise honestly - the <a href="http://dev.w3.org/html5/spec/offline.html">HTML5 Offline Web applications
+API</a> seems to be <a href="http://caniuse.com/#search=offline">widely
+implemented</a> across modern browsers
+already. <a href="https://picasaweb.google.com/lh/photo/lVnWvGLepGsFhIc2Z4SKdcdrvCRMWyke7-RbgGXMEiI?feat=directlink">Not of all of them
+though</a>.
+Looking into the specifics, the API itself is fairly straightforward. At
+his core, you will find the manifest file, which dictates which files
+should be cached by the browser. The API provides other useful events
+and methods for inspecting the status of the cache and swapping the
+cache for a newer version, but they are out of scope today. A useful
+resource to read up on the full API can be found
+<a href="http://dev.opera.com/articles/view/offline-applications-html5-appcache/">here</a>,
+and a working example implementation can be found
+<a href="http://html5demos.com/offlineapp">here</a>.</p>
+<p><strong>The manifest file</strong></p>
+<p>Back to the manifest file. A manifest file could look like this.</p>
+<p><a href="/post/images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestFile.PNG"><img src="/post/images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestFile.PNG" alt=""></a></p>
+<p>The first line in the file should say CACHE MANIFEST. If you want to
+write comments, you should prefix the lines with a number sign.</p>
+<p>In the CACHE section you declare which files should be cached. An
+important and interesting note is that these files will be served from
+the cache, even if you&rsquo;re online.</p>
+<p>In the NETWORK section you declare which files the browser should try to
+download from the server, regardless of whether the user is online or
+offline.</p>
+<p>In the last section, the FALLBACK section, you can define fallback
+resources to be used when the user is offline.</p>
+<p><strong>Serving and generating the manifest file</strong></p>
+<p>Now that we got all this theory out of the way, let&rsquo;s look at generating
+and serving the manifest file using ASP.NET MVC.</p>
+<p>I started by adding a ResourcesController with one action named
+Manifest.</p>
+<pre><code>public class ResourcesController : Controller
+{             
+    public ActionResult Manifest() { }
+}
+</code></pre>
+<p>This action should serve a text file, using a specific cache-manifest
+MIME type. To accommodate this I created a new action result, which
+inherits from the
+<a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.fileresult.aspx">FileResult</a>
+class, and overwrites the content type.</p>
+<pre><code>public class ManifestResult : FileResult
+{
+    public ManifestResult(string version)
+        : base(&quot;text/cache-manifest&quot;) { }    
+}
+</code></pre>
+<p>I also made this same class (for the sake of example) responsible for
+formatting and writing the manifest file to the output stream. That&rsquo;s
+why I added a few extra properties to the manifest result, one for each
+section and one for versioning. Versioning the file comes in handy when
+you want to expire the cache, because it only expires when the manifest
+file changes.</p>
+<pre><code>public class ManifestResult : FileResult
+{
+    public ManifestResult(string version)
+        : base(&quot;text/cache-manifest&quot;)
+    {
+        CacheResources = new List&lt;string&gt;();
+        NetworkResources = new List&lt;string&gt;();
+        FallbackResources = new Dictionary&lt;string, string&gt;();
+        Version = version;
+    }
+
+    public string Version { get; set; }
+
+    public IEnumerable&lt;string&gt; CacheResources { get; set; }
+
+    public IEnumerable&lt;string&gt; NetworkResources { get; set; }       
+
+    public Dictionary&lt;string, string&gt; FallbackResources { get; set; }        
+}
+</code></pre>
+<p>To write the file to the output stream, I had to override the WriteFile
+method.</p>
+<pre><code>protected override void WriteFile(HttpResponseBase response)
+{
+    WriteManifestHeader(response);            
+    WriteCacheResources(response);
+    WriteNetwork(response);
+    WriteFallback(response);
+}
+
+private void WriteManifestHeader(HttpResponseBase response)
+{
+    response.Output.WriteLine(&quot;CACHE MANIFEST&quot;);
+    response.Output.WriteLine(&quot;#V&quot; + Version ?? string.Empty);            
+}
+
+private void WriteCacheResources(HttpResponseBase response)
+{
+    response.Output.WriteLine(&quot;CACHE:&quot;);           
+    foreach (var cacheResource in CacheResources)
+        response.Output.WriteLine(cacheResource);
+}
+
+private void WriteNetwork(HttpResponseBase response)
+{
+    response.Output.WriteLine();
+    response.Output.WriteLine(&quot;NETWORK:&quot;);            
+    foreach (var networkResource in NetworkResources)
+        response.Output.WriteLine(networkResource);
+}
+
+private void WriteFallback(HttpResponseBase response)
+{
+    response.Output.WriteLine();
+    response.Output.WriteLine(&quot;FALLBACK:&quot;);
+    foreach (var fallbackResource in FallbackResources)
+        response.Output.WriteLine(fallbackResource.Key + &quot; &quot; + fallbackResource.Value);
+}
+</code></pre>
+<p>In the CACHE section I wanted to include all my static resources,
+meaning the contents of the Scripts and Content folder. To do this in a
+simple and low-maintenace fashion I introduced the
+GetRelativePathsToRoot method. This method takes the path of a virtual
+folder, recursively scans its content and returns a list of relative
+paths for each file.</p>
+<pre><code>private IEnumerable&lt;string&gt; GetRelativePathsToRoot(string virtualPath)
+{
+    var physicalPath = Server.MapPath(virtualPath);
+    var absolutePaths = Directory.GetFiles(physicalPath, &quot;*.*&quot;,   SearchOption.AllDirectories);
+
+    return absolutePaths.Select(
+        x =&gt; Url.Content(virtualPath + x.Replace(physicalPath, &quot;&quot;))
+    );
+}
+</code></pre>
+<p>For the Content folder, the result could look something like this.</p>
+<p><a href="/post/images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ContentFolder.png"><img src="/post/images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ContentFolder.png" alt=""></a></p>
+<p>To add pages to the CACHE section, I used the Url.Action method.</p>
+<p>For the NETWORK resources, I added an asterisk, which basically means
+that the cache shouldn&rsquo;t be used when the user is online. I didn&rsquo;t
+specify any fallback resources in this example.</p>
+<pre><code>public ActionResult Manifest()
+{
+    var pages = new List&lt;string&gt;();
+    pages.Add(Url.Action(&quot;SomeAction&quot;, &quot;ControllerName&quot;));    
+
+    var scriptsPaths = GetRelativePathsToRoot(&quot;~/Scripts/&quot;);
+    var contentPaths = GetRelativePathsToRoot(&quot;~/Content/&quot;);
+
+    var cacheResources = new List&lt;string&gt;();
+    cacheResources.AddRange(pages);
+    cacheResources.AddRange(contentPaths);
+    cacheResources.AddRange(scriptsPaths);
+    
+    var manifestResult = new ManifestResult(&quot;1.0&quot;)
+    {
+        NetworkResources = new string[] { &quot;*&quot; },
+        CacheResources = cacheResources
+    };            
+
+    return manifestResult;
+}
+</code></pre>
+<p><strong>Setting up a route and including the manifest</strong></p>
+<p>Now that we are able to generate and serve a manifest file, we should
+set up a specific route for the manifest file; some browsers aren&rsquo;t very
+forgiving and expect it to have a specific name and location:
+/cache.manifest.</p>
+<pre><code>routes.MapRoute(&quot;cache.manifest&quot;, &quot;cache.manifest&quot;, new { controller = &quot;Resources&quot;, action = &quot;Manifest&quot; });
+</code></pre>
+<p>The last step I had to take was include a reference to the manifest file
+in the html element.</p>
+<pre><code>&lt;html manifest=&quot;@Url.RouteUrl(&quot;cache.manifest&quot;)&quot;)/&gt;
+</code></pre>
+<p><strong>Poor man&rsquo;s testing</strong></p>
+<p>To verify if all of this works, you can look at the console of the
+Chrome developer tools. You should see something like this.</p>
+<p><a href="/post/images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestDownloading.PNG"><img src="/post/images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestDownloading.PNG" alt=""></a></p>
+<p>That console logging has proven to be extremely useful when debugging
+the manifest file.</p>
+<p>You could also just browse to the manifest file to inspect its content.
+Don&rsquo;t mind this screenshot too much, obviously there&rsquo;s plenty of
+cleaning up to do in my Scripts folder.</p>
+<p><a href="/post/images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-BrowsetoManifestFile.PNG"><img src="/post/images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-BrowsetoManifestFile.PNG" alt=""></a></p>
+<p><strong>Summary</strong></p>
+<p>In this post I showed you a technique I came up with to take advantage
+of ASP.NET MVC to easily generate, maintain and serve an HTML5 Offline
+Webappliction manifest file:</p>
+<ul>
+<li>Create a controller and action that can serve the file</li>
+<li>Create a new action result, which returns the correct MIME type and
+formats the file</li>
+<li>Set up a specific route</li>
+<li>Include a reference to the manifest in the html tag</li>
+</ul>
+<p>Remember, this is a proof of concept, it&rsquo;s not perfect. I look forward
+to any feedback you might have!</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/asp.net-mvc">ASP.NET MVC</a></li>
+							
+							<li><a href="/tags/asp.net">ASP.NET</a></li>
+							
+							<li><a href="/tags/html5">HTML5</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

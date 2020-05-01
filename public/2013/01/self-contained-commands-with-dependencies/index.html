@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Self-contained commands with dependencies  - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Self-contained commands with dependencies ">
+<meta itemprop="description" content="Also read: separating command data from logic and sending it on a bus
+In October I looked at an architecture that limits abstractions to solely commands and queries. In that post, I had some infrastructure that looked like this.
+public abstract class Command { public abstract void Execute(); } public abstract class Query&lt;T&gt; { public abstract T Execute(); } public interface ICommandHandler { void Execute(Command command); } public class CommandHandler : ICommandHandler { public void Execute(Command command) { command.">
+<meta itemprop="datePublished" content="2013-01-13T18:17:00&#43;01:00" />
+<meta itemprop="dateModified" content="2013-01-13T18:17:00&#43;01:00" />
+<meta itemprop="wordCount" content="822">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,.NET," /><meta property="og:title" content="Self-contained commands with dependencies " />
+<meta property="og:description" content="Also read: separating command data from logic and sending it on a bus
+In October I looked at an architecture that limits abstractions to solely commands and queries. In that post, I had some infrastructure that looked like this.
+public abstract class Command { public abstract void Execute(); } public abstract class Query&lt;T&gt; { public abstract T Execute(); } public interface ICommandHandler { void Execute(Command command); } public class CommandHandler : ICommandHandler { public void Execute(Command command) { command." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/01/self-contained-commands-with-dependencies/" />
+<meta property="article:published_time" content="2013-01-13T18:17:00+01:00" />
+<meta property="article:modified_time" content="2013-01-13T18:17:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Self-contained commands with dependencies "/>
+<meta name="twitter:description" content="Also read: separating command data from logic and sending it on a bus
+In October I looked at an architecture that limits abstractions to solely commands and queries. In that post, I had some infrastructure that looked like this.
+public abstract class Command { public abstract void Execute(); } public abstract class Query&lt;T&gt; { public abstract T Execute(); } public interface ICommandHandler { void Execute(Command command); } public class CommandHandler : ICommandHandler { public void Execute(Command command) { command."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">13</span>
+							<span class="rest">Jan 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Self-contained commands with dependencies </h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p><em>Also read: <a href="http://www.jefclaes.be/2013/01/separating-command-data-from-logic-and.html">separating command data from logic and sending it on a
+bus</a></em></p>
+<p>In October I looked at <a href="http://www.jefclaes.be/2012/10/commands-queries-and-testing.html">an architecture that limits abstractions to
+solely commands and
+queries</a>. In
+that post, I had some infrastructure that looked like this.</p>
+<pre><code>public abstract class Command
+{
+    public abstract void Execute();
+}
+
+public abstract class Query&lt;T&gt;
+{
+    public abstract T Execute();
+}
+
+public interface ICommandHandler
+{
+    void Execute(Command command);
+}
+
+public class CommandHandler : ICommandHandler
+{
+    public void Execute(Command command)
+    {
+        command.Execute();
+    }
+}
+
+public interface IQueryHandler 
+{
+    T Execute&lt;T&gt;(Query&lt;T&gt; query);
+}
+
+public class QueryHandler : IQueryHandler
+{
+    public T Execute&lt;T&gt;(Query&lt;T&gt; query)
+    {
+        return query.Execute();
+    }
+}
+</code></pre>
+<p>Commands and queries are both accompanied by their specific handler. In
+this example, the handler does nothing but invoking the command or
+query. In reality, you want your handlers to do a little more. For
+example: provide the commands and queries with a context to work with,
+add logging, handle your unit of work and all of that good stuff.</p>
+<p>Let&rsquo;s look at the infrastructure, and particularly the handlers of a
+project that uses RavenDB to store its data.</p>
+<pre><code>public abstract class Command
+{
+    public IDocumentSession Session { get; set; }
+
+    public abstract void Execute();           
+}
+
+public abstract class Query&lt;T&gt;
+{
+    public IDocumentSession Session { get; set; }
+
+    public abstract T Execute();
+}
+
+public class CommandHandler : ICommandHandler
+{
+    public void Execute(Command command)
+    {            
+        var store = DocumentStore.Get();
+        using (var session = store.OpenSession())
+        {
+            command.Session = session;
+            command.Execute();
+
+            session.SaveChanges();
+        }
+    }
+}
+    
+public class QueryHandler : IQueryHandler
+{    
+    public T Execute&lt;T&gt;(Query&lt;T&gt; query)
+    {
+        var store = DocumentStore.Get();
+        using (var session = store.OpenSession())
+        {
+            query.Session = session;
+
+            return query.Execute();
+        }
+    }
+}
+</code></pre>
+<p>The handlers take care of creating and managing the session, but also
+provide the commands and queries with a reference to the session.</p>
+<p>An actual command could look like this.</p>
+<pre><code>public class ConfirmOrderCommand : Command
+{
+    private Guid _token;
+
+    public ConfirmOrderCommand(Guid token)
+    {
+        _token = token;
+    }
+
+    public override void Execute()
+    {
+        var order = Session.Query&lt;Documents.Order&gt;().Where(x =&gt; x.Token == _token).First();
+
+        order.ChangeStatus(Documents.Status.Confirmed);
+    }
+}
+</code></pre>
+<p>I really like this style of command and queries; very little ceremony.
+The downside though, is that you can&rsquo;t use constructor dependency
+injection. <a href="http://www.jefclaes.be/2012/10/commands-with-dependencies.html">Like discussed in this
+post</a>,
+you could split your classes in two parts: the handler and the data, and
+you would solve that problem.</p>
+<p>I wasn&rsquo;t that keen on that approach. Also, now that I&rsquo;m so accustomed to
+having fast in-memory integration tests with RavenDB, it&rsquo;s exceptional
+that I have the need to inject dependencies. I worked out an alternative
+which allows me to inject dependencies without having to put my data
+somewhere else.</p>
+<p>Instead of injecting the dependencies through the constructor, we&rsquo;re
+going to use an Inject method. This is a convention; there is no
+interface that enforces this. Returning to our ConfirmOrderCommand,
+we&rsquo;ll add support for creating a new folder on the file system.</p>
+<pre><code>public class ConfirmOrderCommand : Command
+{
+    private IFileSystem _fileSystem;
+
+    private Guid _token;
+
+    public ConfirmOrderCommand(Guid token)
+    {
+        _token = token;
+    }
+
+    public override void Execute()
+    {    
+        var order = Session.Query&lt;Documents.Order&gt;().Where(x =&gt; x.Token == _token).First();
+        
+        _fileSystem.CreateDirectory(Path.Combine(&quot;D:\&quot;, order.Customer.Id));
+
+        order.ChangeStatus(Documents.Status.Confirmed);
+    }
+    
+    public void Inject(IFileSystem fileSystem) 
+    {
+        _fileSystem = fileSystem;
+    }
+}
+</code></pre>
+<p>We can now amplify the commandhandler to automatically resolve and
+inject the dependencies into our commands. The handler uses reflection
+to look for a method named Inject on the type. If this method exists, it
+will inspect the method for its expected arguments and try to resolve
+those, to finally invoke the Inject method with its resolved arguments. </p>
+<pre><code>public class CommandHandler : ICommandHandler
+{
+    private IKernel _kernel;
+
+    public CommandHandler() { }
+
+    public CommandHandler(IKernel kernel)
+    {
+        _kernel = kernel;
+    }
+
+    public void Execute(Command command)
+    {
+        if (_kernel != null)
+            ResolveDependenciesIfNeeded(command);
+            
+        var store = DocumentStore.Get();
+        using (var session = store.OpenSession())
+        {
+            command.Session = session;
+            command.Execute();
+
+            session.SaveChanges();
+        }
+    }
+
+    private void ResolveDependenciesIfNeeded(Command command)
+    {
+        var method = command.GetType().GetMethod(&quot;Inject&quot;);
+        if (method != null)
+        {
+            var parameters = method.GetParameters();
+            var parameterInstances = new List&lt;object&gt;();
+
+            foreach (var parameter in parameters)
+            {
+                var type = parameter.ParameterType;
+                var instance = _kernel.Get(type);
+
+                parameterInstances.Add(instance);
+            }
+
+            method.Invoke(command, parameterInstances.ToArray());
+        }
+    }
+}
+</code></pre>
+<p>Consumers now don&rsquo;t have to care about the dependencies; they just have
+to be registered in the container. In the tests however, we can now
+explicitly inject mocks or stubs, and take advantage of having
+discoverable dependencies though the Inject convention.</p>
+<pre><code>[TestClass]
+public class When_confirming_an_order
+{
+    private Mock&lt;IFileSystem&gt; _fileSystem;
+
+    [TestInitialize]
+    public void When()
+    {
+        DocumentStore.InitializeEmbedded();
+
+        var cmd = new ConfirmOrderCommand(&quot;_token_&quot;);
+        
+        // Inject mock
+        _fileSystem = new Mock&lt;IFileSystem&gt;();    
+        cmd.Inject(_fileSystem.Object);
+
+        new CommandHandler().Execute(cmd);
+    }
+
+    [TestMethod]
+    public void the_status_is_changed_to_confirmed()
+    {
+        ...
+    }
+    
+    [TestMethod]
+    public void a_new_folder_is_created()
+    {
+        _fileSystem.Verify(...);
+    }
+}
+</code></pre>
+<p>Although I haven&rsquo;t really gone the distance with this implementation - I
+only have one command that has extra dependencies, I find this technique
+showing lots of promise. You get the leanness of self-contained commands
+and queries, while you still allow discoverable dependency injection by
+convention, supported by a tiny bit of infrastructure in the handlers.</p>
+<p><em>I&rsquo;d like to hear your opinion.</em></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

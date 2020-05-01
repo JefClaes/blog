@@ -125,8 +125,8 @@ return false.
 When we run this example a new AggregateException is thrown with the
 exceptions I didn't handle.  
   
-[![](../images/thumbnails/2010-05-23-handling-the-aggregateexception-ConsoleOut.bmp)](../images/2010-05-23-handling-the-aggregateexception-ConsoleOut.bmp)  
-[![](../images/thumbnails/2010-05-23-handling-the-aggregateexception-Rethrown.bmp)](../images/2010-05-23-handling-the-aggregateexception-Rethrown.bmp)  
+[![](/post/images/thumbnails/2010-05-23-handling-the-aggregateexception-ConsoleOut.bmp)](/post/images/2010-05-23-handling-the-aggregateexception-ConsoleOut.bmp)  
+[![](/post/images/thumbnails/2010-05-23-handling-the-aggregateexception-Rethrown.bmp)](/post/images/2010-05-23-handling-the-aggregateexception-Rethrown.bmp)  
   
 <span style="font-weight:bold;">Conclusion</span>  
   

@@ -28,9 +28,9 @@ notes](http://blog.jquery.com/2010/10/16/jquery-143-released/)..
 > and filing bugs) and the whole community gets to reap the excellent
 > performance benefits now.  
 >   
-> [![](../images/thumbnails/2010-12-12-html5-selectors-and-jquery-jqueryClosestResults.jpg)](../images/2010-12-12-html5-selectors-and-jquery-jqueryClosestResults.jpg)  
-> [![](../images/thumbnails/2010-12-12-html5-selectors-and-jquery-jQueryFilterResult.jpg)](../images/2010-12-12-html5-selectors-and-jquery-jQueryFilterResult.jpg)  
-> [![](../images/thumbnails/2010-12-12-html5-selectors-and-jquery-jqueryFindResults.jpg)](../images/2010-12-12-html5-selectors-and-jquery-jqueryFindResults.jpg)  
+> [![](/post/images/thumbnails/2010-12-12-html5-selectors-and-jquery-jqueryClosestResults.jpg)](/post/images/2010-12-12-html5-selectors-and-jquery-jqueryClosestResults.jpg)  
+> [![](/post/images/thumbnails/2010-12-12-html5-selectors-and-jquery-jQueryFilterResult.jpg)](/post/images/2010-12-12-html5-selectors-and-jquery-jQueryFilterResult.jpg)  
+> [![](/post/images/thumbnails/2010-12-12-html5-selectors-and-jquery-jqueryFindResults.jpg)](/post/images/2010-12-12-html5-selectors-and-jquery-jqueryFindResults.jpg)  
 > The above performance results specifically look at three very common
 > cases in jQuery code: Using .closest() on a single DOM node, using
 > .filter() (or .is()) on a single DOM node, and using .find() rooted on

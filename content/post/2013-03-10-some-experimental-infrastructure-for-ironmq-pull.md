@@ -23,7 +23,7 @@ direction it's going.
 A high-level overview of the components looks like this.  
   
 
-[![](../images/thumbnails/2013-03-10-some-experimental-infrastructure-for-ironmq-pull-IronMQPoll.PNG)](../images/2013-03-10-some-experimental-infrastructure-for-ironmq-pull-IronMQPoll.PNG)
+[![](/post/images/thumbnails/2013-03-10-some-experimental-infrastructure-for-ironmq-pull-IronMQPoll.PNG)](/post/images/2013-03-10-some-experimental-infrastructure-for-ironmq-pull-IronMQPoll.PNG)
 
   
 A queue host hosts multiple queue consumers. Each queue consumer will

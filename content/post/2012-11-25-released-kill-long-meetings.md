@@ -20,7 +20,7 @@ not-so-serious application that aims to kill long meetings by
 visualizing the amount of time and money burned in a meeting.  
   
 
-[![](../images/thumbnails/2012-11-25-released-kill-long-meetings-killlongmeetings.PNG)](../images/2012-11-25-released-kill-long-meetings-killlongmeetings.PNG)
+[![](/post/images/thumbnails/2012-11-25-released-kill-long-meetings-killlongmeetings.PNG)](/post/images/2012-11-25-released-kill-long-meetings-killlongmeetings.PNG)
 
 While the application in itself probably will never attract a
 sustainable user base, development sprouted two useful Twitter Bootstrap

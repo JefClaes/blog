@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CodeSnippets on Jef Claes</title>
+    <link>http://localhost:1313/tags/codesnippets/</link>
+    <description>Recent content in CodeSnippets on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Jul 2017 14:34:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/codesnippets/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fast projections</title>
+      <link>http://localhost:1313/2017/07/fast-projections/</link>
+      <pubDate>Sun, 30 Jul 2017 14:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2017/07/fast-projections/</guid>
+      <description>Most EventStore client libraries allow you to subscribe to a stream by passing in a callback which is invoked when an event occurs (either a live or historic event).
+Let&amp;rsquo;s say we subscribe to a stream of a popular video service, and we want to project a read model that shows how many videos a viewer has watched. We don&amp;rsquo;t care about the bookmarked videos for now.
+We&amp;rsquo;re sitting on top of storage that can execute a single statement and a batch of statements.</description>
+    </item>
+    
+    <item>
+      <title>Functional one-liner for running totals in C#</title>
+      <link>http://localhost:1313/2016/03/functional-one-liner-for-running-totals-in-c/</link>
+      <pubDate>Mon, 28 Mar 2016 16:22:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/03/functional-one-liner-for-running-totals-in-c/</guid>
+      <description>Visualizing some data earlier this week I had to compute the running total of a sequence of numbers.
+For example, if the input sequence was [ 100; 50; 25 ] the result of the computation would be a new sequence of [ 100; 150; 175 ].
+Muscle memory made me take a procedural approach, which works, but made me wonder if I could get away with less lines of code and without mutable state.</description>
+    </item>
+    
+    <item>
+      <title>Bulk SQL projections with F# and type providers</title>
+      <link>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</link>
+      <pubDate>Sun, 18 Oct 2015 15:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</guid>
+      <description>Early Summer, I had to set up an integration with an external partner. They required of us to daily provide them with a relational dataset stored in SQL Server. Most, if not all of the data was temporal, append-only by nature; think logins, financial transactions..
+Since the data required largely lived in an eventstore on our end, I needed fast bulk projections. Having experimented with a few approaches, I eventually settled on projections in F# taking advantage of type providers.</description>
+    </item>
+    
+    <item>
+      <title>Aspect ratio calculation</title>
+      <link>http://localhost:1313/2015/09/aspect-ratio-calculation/</link>
+      <pubDate>Fri, 11 Sep 2015 23:40:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/09/aspect-ratio-calculation/</guid>
+      <description>Earlier today I was writing a migration script in F# where I had to calculate the aspect ratio based on the given screen dimensions. This is one of those problems where I don&amp;rsquo;t even mind breaking my head over, but directly head over to Stackoverflow to find an accepted answer which I can just copy paste. Since I didn&amp;rsquo;t find an F# snippet I could use, I ported some JavaScript, and embedded the result below for future snippet hunters.</description>
+    </item>
+    
+    <item>
+      <title>Consumed: Queries and projections (F#)</title>
+      <link>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</link>
+      <pubDate>Sun, 24 May 2015 18:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</guid>
+      <description>This is the third post in my series on porting a node.js application to an F# application.
+So far, I&amp;rsquo;ve looked at parsing command line arguments, handling commands and storing events. Today, I want to project those events into something useful that can be formatted and printed to the console.
+In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically</description>
+    </item>
+    
+    <item>
+      <title>Consumed: Handling commands (F#)</title>
+      <link>http://localhost:1313/2015/05/consumed-handling-commands-f/</link>
+      <pubDate>Sun, 17 May 2015 17:51:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/05/consumed-handling-commands-f/</guid>
+      <description>As I wrote earlier, I&amp;rsquo;ve been working on porting a node.js web application to an F# console application. It&amp;rsquo;s an application I wrote to learn node.js but still use today to keep track of all the things I consume.
+The application is able to consume an item, to remove a consumed item and to query all consumed items.
+In the previous post, I parsed command line arguments into typed commands and queries.</description>
+    </item>
+    
+    <item>
+      <title>Consumed: Parsing command line arguments (F#)</title>
+      <link>http://localhost:1313/2015/04/consumed-parsing-command-line-arguments-f/</link>
+      <pubDate>Sun, 19 Apr 2015 16:54:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/04/consumed-parsing-command-line-arguments-f/</guid>
+      <description>Last year, I set out to write my first node.js application; a small web application for keeping lists of everything I consume. I had something working pretty quickly, deployed it to Heroku and still find myself using it today. Since there&amp;rsquo;s very little use for having it running on a server, and because I wanted something to toy with getting better at F#, I decided to port it to an F# console application.</description>
+    </item>
+    
+    <item>
+      <title>Checked errors in F#</title>
+      <link>http://localhost:1313/2015/03/checked-errors-in-f/</link>
+      <pubDate>Sun, 29 Mar 2015 17:19:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2015/03/checked-errors-in-f/</guid>
+      <description>In the land of C#, exceptions are king. By definition exceptions help us deal with &amp;ldquo;unexpected or exceptional situations that arise while a program is running&amp;rdquo;. In that regard, we&amp;rsquo;re often optimistic, overoptimistic. Most code bases treat errors as exceptional while they&amp;rsquo;re often commonplace. We are so confident about the likelyhood of things going wrong, we don&amp;rsquo;t even feel the need to communicate to consumers what might go wrong. If a consumer of a method wants to know what exceptions might be thrown, he needs to resort to reading the documentation (or source) and hope it&amp;rsquo;s up-to-date.</description>
+    </item>
+    
+    <item>
+      <title>Scaling promotion codes</title>
+      <link>http://localhost:1313/2015/03/scaling-promotion-codes/</link>
+      <pubDate>Sun, 15 Mar 2015 18:01:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/03/scaling-promotion-codes/</guid>
+      <description>In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
+In code these requirements translated into a promotion code aggregate which would guard three invariants.</description>
+    </item>
+    
+    <item>
+      <title>Averages are not good enough (F#)</title>
+      <link>http://localhost:1313/2015/01/averages-are-not-good-enough-f/</link>
+      <pubDate>Sun, 18 Jan 2015 18:40:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/01/averages-are-not-good-enough-f/</guid>
+      <description>Let&amp;rsquo;s (no pun intended) look at a set of response times of a web service.
+People like having a single number to summarize a piece of data. The average is the most popular candidate. The average is calculated by dividing the sum of the input elements by the number of input elements.
+The average is a measure of centre which is fragile to outliers; one or two odd irregular values might skew the outcome.</description>
+    </item>
+    
+    <item>
+      <title>Hot aggregate detection using F#</title>
+      <link>http://localhost:1313/2014/11/hot-aggregate-detection-using-f/</link>
+      <pubDate>Sun, 16 Nov 2014 17:20:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/11/hot-aggregate-detection-using-f/</guid>
+      <description>Last week, I wrote about splitting a hot aggregate. Discovering that specific hot aggregate was easy; it would cause transactional failures from time to time.
+Long-lived hot aggregates often are an indication of a missing concept and an opportunity for teasing things apart. Last week, I took one long-lived hot aggregate and pulled smaller short-lived hot aggregates out, identifying two missing concepts.
+Hunting for more hot aggregates, I could visualize event streams and use my eyes to detect bursts of activity, or I could have a little function analyze the event streams for me.</description>
+    </item>
+    
+    <item>
+      <title>Programmatically force create a new LocalDB database</title>
+      <link>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</link>
+      <pubDate>Sun, 26 Oct 2014 16:59:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/10/programmatically-force-create-a-new-localdb-database/</guid>
+      <description>I have spent the last week working in an integration test suite that seemed to be taking ages to run its first test. I ran a profiler on the setup, and noticed a few things that were cheap to improve. The first one was how a new LocalDB database was being created.
+An empty database file was included into the project. When running the setup, this file would replace the existing test database.</description>
+    </item>
+    
+    <item>
+      <title>Print out the maximum depth of recursion allowed</title>
+      <link>http://localhost:1313/2014/10/print-out-the-maximum-depth-of-recursion-allowed/</link>
+      <pubDate>Sun, 19 Oct 2014 17:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/10/print-out-the-maximum-depth-of-recursion-allowed/</guid>
+      <description>Karl Seguin tweeted the following earlier this week: &amp;ldquo;An interview question I sometimes ask: Write code that prints out the maximum depth of recursion allowed.&amp;rdquo;
+This question is interesting for a couple of reasons. First, it&amp;rsquo;s a shorter FizzBuzz; can the candidate open an IDE, write a few lines of code, compile and run them? And second, does he know what recursion is?
+Now let&amp;rsquo;s say, the interviewee knows how to write code and is familiar with the concept of recursion.</description>
+    </item>
+    
+    <item>
+      <title>Read an Event Store stream as a sequence of slices using F#</title>
+      <link>http://localhost:1313/2014/10/read-an-event-store-stream-as-a-sequence-of-slices-using-f/</link>
+      <pubDate>Sun, 05 Oct 2014 15:21:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/10/read-an-event-store-stream-as-a-sequence-of-slices-using-f/</guid>
+      <description>I&amp;rsquo;m slowly working on some ideas I&amp;rsquo;ve been playing around with whole Summer. Since that&amp;rsquo;s taking me to unknown territory, I guess I&amp;rsquo;ll be putting out more technical bits here in the next few weeks.
+Using the Event Store, I tried to read all events of a specific event type. This stream turned out to be a tad too large to be sent over the wire in one piece, leading to a PackageFramingException: Package size is out of bounds.</description>
+    </item>
+    
+    <item>
+      <title>Rebinding a knockout view model</title>
+      <link>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</link>
+      <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</guid>
+      <description>As you might have noticed reading my last two posts, I have been doing a bit of front-end work using knockout.js. Here is something that had me scratching my head for a little while..
+In one of our pages we&amp;rsquo;re subscribing to a specific event. As soon as that event arrives, we need to reinitialize the model that is bound to our container element. Going through snippets earlier, I remembered seeing the cleanNode function being used a few times - which I thought would remove all knockout data and event handlers from an element.</description>
+    </item>
+    
+    <item>
+      <title>Sending commands from a knockout.js view model</title>
+      <link>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</link>
+      <pubDate>Sun, 23 Mar 2014 18:31:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</guid>
+      <description>While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&amp;rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&amp;rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&amp;rsquo;ll end up with a lot less.</description>
+    </item>
+    
+    <item>
+      <title>Building a live dashboard with some knockout</title>
+      <link>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</link>
+      <pubDate>Sun, 16 Mar 2014 21:23:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</guid>
+      <description>Last week, we added a dashboard to our back office application that shows some actionable data about what&amp;rsquo;s going on in our system. Although we have infrastructure in place to push changes to the browser, it seemed more reasonable to have the browser fetch fresh data every few minutes.
+We split the dashboard up in a few functional cohesive widgets. On the server, we built a view-optimized read model for each widget.</description>
+    </item>
+    
+    <item>
+      <title>Alternatives to Udi&#39;s domain events</title>
+      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</link>
+      <pubDate>Sun, 02 Mar 2014 18:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</guid>
+      <description>Almost four years ago Udi Dahan introduced an elegant technique that allows you to have your domain model dispatch events without injecting a dispatcher into the model - keeping your model focused on the business at hand.
+This works by having a static DomainEvents class which dispatches raised events.
+This customer aggregate raises an event when a customer moves to a new address.
+public class Customer { private readonly string _id; private Address _address; private Name _name; public Customer(string id, Name name, Address address) { Guard.</description>
+    </item>
+    
+    <item>
+      <title>Reading an EventStore stream using JavaScript</title>
+      <link>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</link>
+      <pubDate>Sun, 09 Feb 2014 18:07:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</guid>
+      <description>Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
+An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable.</description>
+    </item>
+    
+    <item>
+      <title>An event store with optimistic concurrency</title>
+      <link>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</link>
+      <pubDate>Sun, 10 Nov 2013 18:25:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</guid>
+      <description>Like I mentioned last week - after only five posts on the subject - there still are a great deal of event sourcing nuances left to be discovered.
+My current event store implementation only supports a single user. Due to an aggressive file lock, concurrently accessing an aggregate will throw an exception. Can we allow multiple users to write to and read from an event stream? Also, what can we do about users making changes to the same aggregate; can we somehow detect conflicts and avoid changes to be committed?</description>
+    </item>
+    
+    <item>
+      <title>Event projections</title>
+      <link>http://localhost:1313/2013/10/event-projections/</link>
+      <pubDate>Sun, 27 Oct 2013 17:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/event-projections/</guid>
+      <description>In my first two posts on event sourcing, I implemented an event sourced aggregate from scratch. After being able to have an aggregate record and play events, I looked at persisting them in an event store. Logically, the next question is: how do I query my aggregates, how do I get my state out?
+In traditional systems, write and read models are not separated, they are one and the same. Event sourced systems on the other hand have a write model - event streams, and a separate read model.</description>
+    </item>
+    
+    <item>
+      <title>An event store</title>
+      <link>http://localhost:1313/2013/10/an-event-store/</link>
+      <pubDate>Sun, 20 Oct 2013 17:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/an-event-store/</guid>
+      <description>Last week, I implemented an event sourced aggregate from scratch. There I learned, that there isn&amp;rsquo;t much to a naively implemented event sourced aggregate; it should be able to initialize itself from a stream of events, and it should be able to record all the events it raises.
+public interface IEventSourcedAggregate : IAggregate { void Initialize(EventStream eventStream); EventStream RecordedEvents(); }  The question I want to answer today is: how do I persist those event sourced aggregates?</description>
+    </item>
+    
+    <item>
+      <title>An event sourced aggregate</title>
+      <link>http://localhost:1313/2013/10/an-event-sourced-aggregate/</link>
+      <pubDate>Sun, 13 Oct 2013 18:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/10/an-event-sourced-aggregate/</guid>
+      <description>Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
+In traditional systems, we only persist the current state of an object.
+
+In event sourced systems, we don&amp;rsquo;t persist the current state of an object, but the sequence of events that caused the object to be in the current state.</description>
+    </item>
+    
+    <item>
+      <title>Eventual consistent domain events with RavenDB and IronMQ</title>
+      <link>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</link>
+      <pubDate>Thu, 15 Aug 2013 14:03:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</guid>
+      <description>Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&amp;rsquo;m working on right now makes use of domain events. As an example, I&amp;rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.</description>
+    </item>
+    
+    <item>
+      <title>Not handling edge cases, making them explicit instead</title>
+      <link>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</link>
+      <pubDate>Sun, 23 Jun 2013 16:49:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</guid>
+      <description>When I wrote about accidental entities earlier, we followed a consultant building software for a car rental company. In the meanwhile, he has finished implementing the registration of new cars. Next on the list is allowing customers to make a booking.
+We managed to get the CEO to set a whole hour apart to walk us over how the booking system should work.
+CEO: &amp;ldquo;I&amp;rsquo;m not sure this meeting is going to take a whole hour though.</description>
+    </item>
+    
+    <item>
+      <title>Angular.js and IE8 caching</title>
+      <link>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</link>
+      <pubDate>Sun, 09 Jun 2013 16:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</guid>
+      <description>Older Internet Explorer versions are notorious for agressively caching AJAX requests. In this post, you&amp;rsquo;ll find two techniques that combat this behaviour.
+The first option is to have your server explicitly set the caching headers.
+Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidUntilExpires(false); Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches); Response.Cache.SetCacheability(HttpCacheability.NoCache); Response.Cache.SetNoStore();  Since you don&amp;rsquo;t necessarily own the server, or clients might already have cached some requests, you can trick the browser into thinking each request is a fresh one by making each url unique.</description>
+    </item>
+    
+    <item>
+      <title>Accidental entities - you don&#39;t need that identity</title>
+      <link>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</link>
+      <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</guid>
+      <description>An entity is identified by an identifier, while value objects are identified by their value.
+If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&amp;hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
+However, if I were a car paint manufacturer, I would care a great deal about the identity of a color.</description>
+    </item>
+    
+    <item>
+      <title>Validating composite models with knockout validation</title>
+      <link>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</link>
+      <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</guid>
+      <description>When you use knockout validation to extend observables with validation rules, it will add a few functions to these observables - the most important ones being; error and isValid. You can use these functions to verify if any of the validation rules were violated, and to extract an error message.
+To extract all of the error messages out of a composite model, you can use a grouping function.
+function BookingModel() { var self = this; self.</description>
+    </item>
+    
+    <item>
+      <title>Customizing a knockout validation message</title>
+      <link>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</link>
+      <pubDate>Sun, 28 Apr 2013 18:56:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</guid>
+      <description>Knockout validation is a plugin that allows you to extend observables with validation. If you&amp;rsquo;re familiar with jQuery validation, you will notice that most provided validation rules are very similar.
+One of the validation rules available out-of-the-box is pattern validation. By default the error message for violating this rule doesn&amp;rsquo;t mention the expected pattern. And in general, showing the expected pattern probably isn&amp;rsquo;t a good idea since your users will have no idea what you&amp;rsquo;re talking about.</description>
+    </item>
+    
+    <item>
+      <title>Modeling the four-eye principle</title>
+      <link>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</link>
+      <pubDate>Sun, 21 Apr 2013 19:48:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</guid>
+      <description>Working in a financial domain over the last year, it was only a matter of time before I would be confronted with one of the variations of the two-man rule: the four-eye principle. Satisfying the principle is simple enough; an extra pair of eyes needs to approve of requested changes before they&amp;rsquo;re applied to the system. This measure should prevent mistakes such as a user nuking North Korea by accident, or transferring all corporate funds to a personal off-shore bank account.</description>
+    </item>
+    
+    <item>
+      <title>Reading large files in chunks with proper encapsulation</title>
+      <link>http://localhost:1313/2013/03/reading-large-files-in-chunks-with-proper-encapsulation/</link>
+      <pubDate>Sun, 24 Mar 2013 18:16:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/reading-large-files-in-chunks-with-proper-encapsulation/</guid>
+      <description>I&amp;rsquo;ve been doing some work lately which involves sequentially reading large files (&amp;gt; 2 to 5GB). This entails that it&amp;rsquo;s not an option to read the whole structure in memory; it&amp;rsquo;s more reliable to process the file in chunks. I occasionally come across legacy that solves exactly this problem, but in a procedural way, resulting in tangled spaghetti. To be honest, the first piece of software I ever wrote in a professional setting also went at it in the wrong way.</description>
+    </item>
+    
+    <item>
+      <title>Putting my IronMQ experiment under stress</title>
+      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</link>
+      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</guid>
+      <description>Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&amp;rsquo;t put it under stress yet; &amp;ldquo;First make it work, then make it fast&amp;rdquo;, and all of that.
+I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second.</description>
+    </item>
+    
+    <item>
+      <title>Raising events in commandhandlers</title>
+      <link>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</link>
+      <pubDate>Sun, 03 Feb 2013 17:49:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</guid>
+      <description>I&amp;rsquo;ve explored quite a few options on how to handle commands and queries in the last few posts. I finally settled on this approach. The example used in that post looked like this.
+public class CreateSubscriptionCommandHandler : ICommandHandler&amp;lt;CreateSubscriptionCommand&amp;gt; { private IDocumentSession _session; public CreateSubscriptionCommandHandler(IDocumentSession session) { _session = session; } public void Handle(CreateSubscriptionCommand command) { var subscription = new Documents.Subscription( command.Value, command.Category, command.EmailAddress); _session.Store(subscription); } }  Now imagine I would want to do some extra stuff after creating the subscription; update the sales statistics, append the email address to a mailing list, send out a confirmation email, etc.</description>
+    </item>
+    
+    <item>
+      <title>RavenDB: Drop all collections</title>
+      <link>http://localhost:1313/2013/01/ravendb-drop-all-collections/</link>
+      <pubDate>Thu, 24 Jan 2013 20:08:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/ravendb-drop-all-collections/</guid>
+      <description>I never stub or mock the database when I&amp;rsquo;m using RavenDB. Generally, I use an embeddable documentstore running in memory, and initialize a new instance on every test. However, I like to run some stress tests against a real instance, and here I found myself wanting to wipe clean the state of previous tests, without having to create a new database (which is rather slow).
+First I create the default DocumentsByEntityName index to make sure it&amp;rsquo;s there - it normally gets created when you open the studio for the first time.</description>
+    </item>
+    
+    <item>
+      <title>Separating command data from logic and sending it on a bus</title>
+      <link>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</link>
+      <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</guid>
+      <description>In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers.</description>
+    </item>
+    
+    <item>
+      <title>Self-contained commands with dependencies </title>
+      <link>http://localhost:1313/2013/01/self-contained-commands-with-dependencies/</link>
+      <pubDate>Sun, 13 Jan 2013 18:17:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/01/self-contained-commands-with-dependencies/</guid>
+      <description>Also read: separating command data from logic and sending it on a bus
+In October I looked at an architecture that limits abstractions to solely commands and queries. In that post, I had some infrastructure that looked like this.
+public abstract class Command { public abstract void Execute(); } public abstract class Query&amp;lt;T&amp;gt; { public abstract T Execute(); } public interface ICommandHandler { void Execute(Command command); } public class CommandHandler : ICommandHandler { public void Execute(Command command) { command.</description>
+    </item>
+    
+    <item>
+      <title>Released: My Antwerp Open Data submissions</title>
+      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
+      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
+      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
+    </item>
+    
+    <item>
+      <title>Show More pagination with angular.js</title>
+      <link>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</link>
+      <pubDate>Wed, 12 Dec 2012 19:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</guid>
+      <description>I built my first application with angular.js over these last few weeks (not during business hours), and although I still have lots and lots to discover and learn, I think I somewhat grasp the basics.
+In the application I built, I had to implement paging because rendering all the items at once was too slow on mobile devices (on my Windows Phone 7 anyways). The paging variant I decided on was the &amp;lsquo;Show More&amp;rsquo; technique.</description>
+    </item>
+    
+    <item>
+      <title>jQuery-validate error messages in Twitter bootstrap tooltips</title>
+      <link>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</link>
+      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</guid>
+      <description>At work, we&amp;rsquo;re using the combination of ASP.NET MVC3, jQuery, jQuery-validate, knockout and Twitter Bootstrap on one of our projects. Having postponed looking at the aesthetics of the client-side validation for too long, we eventually found ourselves unsatisfied with the default error labels. Wanting to save on space, we&amp;rsquo;re experimenting with the error messages being shown in a Twitter Bootstrap tooltip. After poking around for some while, I came up with something satisfactory.</description>
+    </item>
+    
+    <item>
+      <title>NancyFx and bundling with Cassette</title>
+      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
+      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
+      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
+Since I struggled with the implementation a little bit, I documented the process below.
+1. Cassette.Nancy package
+**
+**Add the Cassette.Nancy package to the project.
+PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
+    </item>
+    
+    <item>
+      <title>Commands, queries and testing</title>
+      <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
+      <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/10/commands-queries-and-testing/</guid>
+      <description>Also read:
+ Self-contained commands with dependencies Separating command data from logic and sending it on a bus  We need abstraction, but the amount of abstraction we really need depends, and should be assessed on a case-by-case basis. It seems advisable to grow abstractions, and to introduce them gradually.
+That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
+    </item>
+    
+    <item>
+      <title>Finding the gaps in a sequence of dates</title>
+      <link>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</link>
+      <pubDate>Sun, 23 Sep 2012 20:42:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</guid>
+      <description>Somewhere earlier this week I had to find the gaps in a sequence of dates. Admittedly, my first action was to search Stackoverflow for a clean solution. But since no one asked the question there yet, I had to implement it myself.
+The solution comes in the form of an extension method on IEnumerable&amp;lt;DateTime&amp;gt;, which takes a lower bound and an upper bound, and returns an enumerable of dates.
+public static IEnumerable&amp;lt;DateTime&amp;gt; GetGaps( this IEnumerable&amp;lt;DateTime&amp;gt; sequence, DateTime lowerbound, DateTime upperbound) { var completeSequence = new List&amp;lt;DateTime&amp;gt;(); var tmpDay = lowerbound.</description>
+    </item>
+    
+    <item>
+      <title>Slides and code from my Tunisia REST and ASP.NET Web API session</title>
+      <link>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</link>
+      <pubDate>Thu, 13 Sep 2012 08:55:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</guid>
+      <description>I just returned from a four day trip to Tunisia with Euricom. Next to indulging on the sun, food and all-inclusive cocktails, getting to know each other in a less professional setting, we spent somewhere around half of our days - and this is a rather generous estimate - doing technical sessions and workshops.I gave a 90 minute long crash course on REST and ASP.NET Web API.
+Content
+REST Concepts Architectural values Left overs  ASP.</description>
+    </item>
+    
+    <item>
+      <title>Supporting the OPTIONS verb in ASP.NET Web API</title>
+      <link>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</link>
+      <pubDate>Sun, 02 Sep 2012 18:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</guid>
+      <description>ASP.NET Web API controllers support only four HTTP verbs by convention: GET, PUT, POST and DELETE. The full list of existing HTTP verbs is more extensive though. One of those unsupported verbs which can be particularly useful for API discovery and documentation is the OPTIONS verb.
+ The OPTIONS method represents a request for information about the communication options available on the request/response chain identified by the Request-URI. This method allows the client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval.</description>
+    </item>
+    
+    <item>
+      <title>Is serialization really that expensive?</title>
+      <link>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</link>
+      <pubDate>Wed, 22 Aug 2012 13:19:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</guid>
+      <description>While wading through an exotic codebase, I stumbled upon a static class named Convert. This class contained somewhere around 2700 (non-generated) lines of code, where each method manually converted some object to a simple textual representation. These methods were then used to convert requests and reponses to and from a remote third party service before logging them to the database for auditing reasons.
+public static class Convert { public static string PaymentRequest(PaymentRequest req) { var sb = new StringBuilder(); sb.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Web API error detail policy now defaults to the custom errors configuration</title>
+      <link>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</link>
+      <pubDate>Mon, 20 Aug 2012 08:50:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</guid>
+      <description>While working on an already updated ASP.NET Web API project, I noticed an extra value in the IncludeErrorDetailPolicy enumeration. The IncludeErrorDetailPolicy configuration tells the Web API host when it&amp;rsquo;s allowed to include full error details in responses. Before updating, the RC version of the IncludeErrorDetailPolicy enumeration only had three possible values: LocalOnly, Always and Never. With the released version comes a new value: Default.
+// Summary: // Use the default behavior for the host environment.</description>
+    </item>
+    
+    <item>
+      <title>A really quick look at ASP.NET Web API Help Pages</title>
+      <link>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</link>
+      <pubDate>Thu, 16 Aug 2012 21:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</guid>
+      <description>While skimming over future features of ASP.NET Web API, I came across the ASP.NET Web API Help Page feature. I couldn&amp;rsquo;t find an introduction online, and the Nuget package has only been downloaded 16 times, so I had to have a really quick look. I documented my baby steps below.
+So, I had a really simple ASP.NET MVC4 project, with one API controller exposing tweets.
+public class TweetsController : ApiController { /// &amp;lt;summary&amp;gt; /// Get a &amp;lt;c&amp;gt;Tweet&amp;lt;/c&amp;gt; by its identifier.</description>
+    </item>
+    
+    <item>
+      <title>HtmlHelper to generate a top-level menu for areas</title>
+      <link>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</link>
+      <pubDate>Sun, 08 Jul 2012 19:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</guid>
+      <description>Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&amp;rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them.</description>
+    </item>
+    
+    <item>
+      <title>Persisting model state when using PRG</title>
+      <link>http://localhost:1313/2012/06/persisting-model-state-when-using-prg/</link>
+      <pubDate>Sun, 17 Jun 2012 16:48:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/persisting-model-state-when-using-prg/</guid>
+      <description>I&amp;rsquo;ve been working on an ASP.NET MVC application in which we frequently apply the Post/Redirect/Get pattern. One of the direct consequences of applying this pattern is that you often want to persist the model state across redirects, so that you don&amp;rsquo;t lose validation errors, or the values of input fields.
+To persist the model state across redirects, we can put TempData to work. The sole purpose of TempData is exactly this; persisting state until the next request.</description>
+    </item>
+    
+    <item>
+      <title>Painless database logging with mongoDB</title>
+      <link>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</link>
+      <pubDate>Sun, 20 May 2012 17:18:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</guid>
+      <description>While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
+From the mongoDB documentation:
+ Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging.</description>
+    </item>
+    
+    <item>
+      <title>Some Servicelocator pattern stinks</title>
+      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</link>
+      <pubDate>Tue, 17 Apr 2012 20:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</guid>
+      <description>I have been working on a somewhat legacy codebase which makes use of the Servicelocator pattern. Although I always thought of Dependecy Injection to be the superior pattern, I was pleased to find some Inversion of Control implementation in there. Working with the codebase, I discovered first hand how easily, when used without caution and discipline, the Servicelocator pattern can introduce code rot.
+I will walk you through some of the issues I have with the Servicelocator pattern, mostly looking at it from a test perspective.</description>
+    </item>
+    
+    <item>
+      <title>ASP.NET MVC4 bundling in ASP.NET MVC3</title>
+      <link>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</link>
+      <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</guid>
+      <description>One of the new wildly evangelized features of ASP.NET MVC4 is the built-in support for bundling and minification of scripts and stylesheets.
+I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work for ASP.NET MVC3 though. If you open the packages config of an ASP.NET MVC4 beta project, you will find that bundling support lives in the Microsoft.Web.Optimization package.
+&amp;lt;package id=&amp;quot;Microsoft.Web.Optimization&amp;quot; version=&amp;quot;1.0.0-beta&amp;quot; /&amp;gt;  So we should just be able to install this package for an ASP.</description>
+    </item>
+    
+    <item>
+      <title>Autocorrecting unknown actions using the Levenshtein distance</title>
+      <link>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</link>
+      <pubDate>Sun, 15 Jan 2012 16:04:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</guid>
+      <description>This weekend I prototyped an idea I had earlier this week: autocorrecting unknown actions in ASP.NET MVC.
+**Handling unknown actions
+**
+To give you an example, let&amp;rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method.</description>
+    </item>
+    
+    <item>
+      <title>An approach to mobile support in ASP.NET MVC</title>
+      <link>http://localhost:1313/2012/01/an-approach-to-mobile-support-in-asp.net-mvc/</link>
+      <pubDate>Thu, 12 Jan 2012 21:16:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/01/an-approach-to-mobile-support-in-asp.net-mvc/</guid>
+      <description>I have been spending a decent amount of time working on a side project in ASP.NET MVC lately. From the start, I planned on supporting mobile. There are lots of ways you can use or extend ASP.NET MVC to support mobile. Having tried several, I can say they all have their merits, and the solution that will work for you very much depends on your requirements. In this post I will run you over the implementation that worked for me, for my specific requirements.</description>
+    </item>
+    
+    <item>
+      <title>Rewriting an if</title>
+      <link>http://localhost:1313/2011/11/rewriting-an-if/</link>
+      <pubDate>Thu, 24 Nov 2011 21:12:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/rewriting-an-if/</guid>
+      <description>Yesterday I came across an if statement that looked something like this.
+if (arg == &amp;quot;a&amp;quot; || arg == &amp;quot;b&amp;quot; || arg == &amp;quot;c&amp;quot; || arg == &amp;quot;d&amp;quot; || arg == &amp;quot;e&amp;quot;) { Console.WriteLine(true); }  An alternative way of writing this could look like this.
+if (new [] { &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;e&amp;quot; }.Contains(arg)) Console.WriteLine(true);  I can&amp;rsquo;t remember in which Github repository I spotted this technique, but I&amp;rsquo;m sure it was written in something other than C#.</description>
+    </item>
+    
+    <item>
+      <title>Merge sorting in JavaScript</title>
+      <link>http://localhost:1313/2011/07/merge-sorting-in-javascript/</link>
+      <pubDate>Tue, 26 Jul 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/merge-sorting-in-javascript/</guid>
+      <description>The latest addition to my data structures and algorithms in JavaScript is the merge sort algorithm.
+There are four main steps in the merge sort algorithm (from Wikipedia):
+ If the list is of length 0 or 1, then it is already sorted. Otherwise: Divide the unsorted list into two sublists of about half the size. Sort each sublist recursively by re-applying the merge sort. Merge the two sublists back into one sorted list.</description>
+    </item>
+    
+    <item>
+      <title>My js data structures and algorithms now on GitHub</title>
+      <link>http://localhost:1313/2011/07/my-js-data-structures-and-algorithms-now-on-github/</link>
+      <pubDate>Sat, 23 Jul 2011 15:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/my-js-data-structures-and-algorithms-now-on-github/</guid>
+      <description>If you have been reading my blog lately, you know that I&amp;rsquo;m implementing some data structures and algorithms in JavaScript. So far, I have blogged about simple sorting algorithms, the stack data structure and the queue data structure. This week I have also implemented a doubly linked list. I started writing a post about that last implementation, but I didn&amp;rsquo;t like where it was going, so instead of writing about it, I have pushed everything to a public Git repository.</description>
+    </item>
+    
+    <item>
+      <title>Recursively spawning Web Workers</title>
+      <link>http://localhost:1313/2011/07/recursively-spawning-web-workers/</link>
+      <pubDate>Thu, 21 Jul 2011 15:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/recursively-spawning-web-workers/</guid>
+      <description>I like to think of HTML5 Web Workers simply as &amp;lsquo;threading for the Web&amp;rsquo;.
+Wikipedia describes it a bit more in detail.
+ Web Workers define an API for running scripts, basically JavaScript, in the background independently of any user interface scripts. This allows for long-running scripts that are not interrupted by scripts that respond to clicks or other user interactions, and allows long tasks to be executed without yielding to keep the page responsive.</description>
+    </item>
+    
+    <item>
+      <title>Overoptimizing my JavaScript stack implementation for fun</title>
+      <link>http://localhost:1313/2011/07/overoptimizing-my-javascript-stack-implementation-for-fun/</link>
+      <pubDate>Mon, 18 Jul 2011 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/overoptimizing-my-javascript-stack-implementation-for-fun/</guid>
+      <description>Davy Brion made a comment on my JavaScript stack/queue implementation on Twitter last night: Any reason why you don&amp;rsquo;t immediately set elements to [] at declaration in your stack/queue example?
+var elements; this.push = function(element) { if (typeof(elements) === &#39;undefined&#39;) { elements = []; } elements.push(element); }  Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&amp;rsquo;t push elements.</description>
+    </item>
+    
+    <item>
+      <title>Stacks and queues in JavaScript</title>
+      <link>http://localhost:1313/2011/07/stacks-and-queues-in-javascript/</link>
+      <pubDate>Tue, 12 Jul 2011 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/stacks-and-queues-in-javascript/</guid>
+      <description>The second assignment in my &amp;lsquo;implementing data structures and algorithms in JavaScript&amp;rsquo; quest consists of two popular data structures: the stack and the queue.
+The stack
+ A stack is a last in, first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only three fundamental operations: push, pop and stack top.
+ Implementing this turned out to be pretty easy.</description>
+    </item>
+    
+    <item>
+      <title>Simple sorting in JavaScript</title>
+      <link>http://localhost:1313/2011/07/simple-sorting-in-javascript/</link>
+      <pubDate>Thu, 07 Jul 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/simple-sorting-in-javascript/</guid>
+      <description>About three years ago I graduated and got my degree in Applied Computer Science. Although it says Computer Science, we hardly ever focused on data structures and algorithms. Obviously, I now see that as a shortcoming. So I plan to make up for that by reading up on some of the basics. While at it, I might be blogging on some of the topics.
+I am going to start by implementing some of the simple sorting algorithms in JavaScript.</description>
+    </item>
+    
+    <item>
+      <title>Anonymous type equality follow-up: Equals()</title>
+      <link>http://localhost:1313/2011/04/anonymous-type-equality-follow-up-equals/</link>
+      <pubDate>Sun, 24 Apr 2011 12:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/anonymous-type-equality-follow-up-equals/</guid>
+      <description>After publishing yesterday&amp;rsquo;s post on anonymous type equality, I received an interesting comment from a fellow redditor. He stated that even if the sequence of the property assignment were the same, the equality comparison would still return false, because the types generated by the C# compiler are reference types, making their references being tested for equality and not their data.
+This is very true, unless the Equals() method is overridden. And this is exactly what the compiler does for us when we define anonymous types.</description>
+    </item>
+    
+    <item>
+      <title>Anonymous type equality</title>
+      <link>http://localhost:1313/2011/04/anonymous-type-equality/</link>
+      <pubDate>Sat, 23 Apr 2011 15:15:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/anonymous-type-equality/</guid>
+      <description>Let&amp;rsquo;s say you instantiate two variables (a and b) using anonymous types. They both have the same two properties (x and y) with equal values.
+ 1: var a = new { x = 1, y = 2 }; 2: var b = new { y = 2, x = 1 };  Do you think these two variables are equal?
+ 1: var areEquel = a.Equals(b); 2: Console.WriteLine(areEquel); //Prints false :O  These two variables are not equal.</description>
+    </item>
+    
+    <item>
+      <title>Using C# keywords as variables</title>
+      <link>http://localhost:1313/2011/04/using-c#-keywords-as-variables/</link>
+      <pubDate>Mon, 11 Apr 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/using-c#-keywords-as-variables/</guid>
+      <description>Hold it, don&amp;rsquo;t shoot me. I know this would be an awful practice, but it is an interesting C# compiler quirk nonetheless.
+ Keywords are predefined reserved identifiers that have special meanings to the compiler. They cannot be used as identifiers in your program unless they include @ as a prefix. For example, @if is a legal identifier but if is not because it is a keyword.
+ static void Main(string[] args) { var @if = &amp;quot;oh my.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: Exception handling with the Geolocation API</title>
+      <link>http://localhost:1313/2010/12/html5-exception-handling-with-the-geolocation-api/</link>
+      <pubDate>Sun, 26 Dec 2010 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-exception-handling-with-the-geolocation-api/</guid>
+      <description>In my previous post on the Geolocation API I passed in a PositionErrorCallback to the geolocation.getCurrentPosition() method. When I received this callback I displayed a generic message informing the user something went wrong. In real-world scenarios you probably want the message to be more specific. You might also want to call a specific fallback method depending on what went wrong.
+This is where the PositionError argument of the PositionErrorCallback comes in handy.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: The Geolocation API is scary (good)</title>
+      <link>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</link>
+      <pubDate>Sun, 19 Dec 2010 17:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</guid>
+      <description>I read about the HTML5 Geolocation API in the Pro HTML5 Programming book a while ago, and decided to play with it on this lazy Sunday.
+Using the Geolocation API to make a one-shot position request is very straight-forward. Get a reference to the navigator.geolocation object and call the getCurrentPosition() method, passing in at least a PositionCallback. In this example I&amp;rsquo;m also passing in a PositionErrorCallback. In the PositionCallback you can examine the properties of the position object.</description>
+    </item>
+    
+    <item>
+      <title>Programmatically disable UpdatePanels</title>
+      <link>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</link>
+      <pubDate>Sat, 18 Dec 2010 14:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</guid>
+      <description>In this post I&amp;rsquo;ll show you how to programmatically disable all UpdatePanels in a page. I don&amp;rsquo;t know in which scenario you would want to use this, but I had to use it to hack around an issue with the ReportViewer control. I&amp;rsquo;ll save you the details, really.
+To disable all the UpdatePanels, you need to set the EnablePartialRendering property of the ScriptManager to false. You can get a reference to the current ScriptManager by using the GetCurrent() method passing in a reference to the current page.</description>
+    </item>
+    
+    <item>
+      <title>More accurate javascript execution time measurement with the msPerformance API</title>
+      <link>http://localhost:1313/2010/12/more-accurate-javascript-execution-time-measurement-with-the-msperformance-api/</link>
+      <pubDate>Fri, 10 Dec 2010 20:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/more-accurate-javascript-execution-time-measurement-with-the-msperformance-api/</guid>
+      <description>A cool feature of Internet Explorer 9 is the msPerformance API. This API helps you to accurately measure the performance of a webpage. A lot of developers have built their own performance measurement constructs over the years, based on the Date function, but the results of these constructs can be way off!
+John Resig (jQuery inventor) has an in detail blogpost where he discovers where custom javascript execution time measurement goes wrong.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: Drawing images to the canvas gotcha</title>
+      <link>http://localhost:1313/2010/12/html5-drawing-images-to-the-canvas-gotcha/</link>
+      <pubDate>Sun, 05 Dec 2010 19:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-drawing-images-to-the-canvas-gotcha/</guid>
+      <description>While I was playing with the Canvas API I came across a weird issue: I was trying to draw an image to the canvas, but the image failed to render very often.
+Have a look at the source. Do you spot the problem?
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;HTML5: Canvas&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.addEventListener(&amp;quot;load&amp;quot;, draw, true); function draw(){ var canvas = document.getElementById(&#39;canvas&#39;); var context = canvas.getContext(&#39;2d&#39;); var img = new Image(); img.src = &amp;quot;http://3.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: More on selectors</title>
+      <link>http://localhost:1313/2010/12/html5-more-on-selectors/</link>
+      <pubDate>Sun, 05 Dec 2010 13:15:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-more-on-selectors/</guid>
+      <description>Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&amp;rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&amp;rsquo;s impossible to show you all of the selectors usages in just one post, that&amp;rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: New in the javascript Selector API</title>
+      <link>http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/</link>
+      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/</guid>
+      <description>Because I finally got the MCTS 70-536 certification out of the way, I can start experimenting with some fun stuff again. One of the things on the top of my list is HTML5. I started reading the book Pro HTML5 Programming, so expect more posts on HTML5 in the near future.
+In this post I will show you two new methods in the javascript Selector API which are extremely useful to find elements.</description>
+    </item>
+    
+    <item>
+      <title>Building a tagcloud with jQuery and ASMX Webservices</title>
+      <link>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</link>
+      <pubDate>Sat, 18 Sep 2010 18:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</guid>
+      <description>Generating tagclouds is nothing new. People have been generating tagclouds server-side since the seventies. Lately more and more tagclouds are being generated client-side.
+There is nothing wrong with generating tagclouds server-side. Telerik has a great tagcloud server control. Generating tagclouds server-side can bring some overhead though, so depending on the scenario and the requirements you might decide to do it client-side. There are a ton of fancy ready-to-use jQuery tagcloud plug-ins out there.</description>
+    </item>
+    
+    <item>
+      <title>Extension method: IEnumerable&lt;DateTime?&gt;.AreChronological()</title>
+      <link>http://localhost:1313/2010/08/extension-method-ienumerabledatetime.arechronological/</link>
+      <pubDate>Sun, 22 Aug 2010 13:54:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/08/extension-method-ienumerabledatetime.arechronological/</guid>
+      <description>In this post you can find an extension method which extends IEnumerable&amp;lt;DateTime?&amp;gt;. The AreChronological extension method tests if the items in the IEnumerable&amp;lt;DateTime?&amp;gt; are in chronological order.
+There are multiple ways you can solve this problem.
+Imperative solution 1: public static class DateTimeExtensions 2: { 3: public static bool AreChronological(this IEnumerable&amp;lt;DateTime?&amp;gt; dateTimes) 4: { 5: var prev = (DateTime?)DateTime.MinValue; 6: 7: foreach (var dateTime in dateTimes) 8: { 9: if (dateTime !</description>
+    </item>
+    
+    <item>
+      <title>Extension method: DateTime.IsInFuture()</title>
+      <link>http://localhost:1313/2010/08/extension-method-datetime.isinfuture/</link>
+      <pubDate>Sun, 22 Aug 2010 13:03:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/08/extension-method-datetime.isinfuture/</guid>
+      <description>In this post you can find a simple DateTime extension method. The IsInFuture method simply returns a boolean indicating whether the DateTime instance is in the future or not.
+ 1: public static class DateTimeExtensions 2: { 3: public static bool IsInFuture(this DateTime dateTime) 4: { 5: int compareResult = DateTime.Compare(dateTime, DateTime.Now); 6: 7: return compareResult != -1; 8: } 9: }  You can use it like this..
+ 1: DateTime dateTimeInPast = new DateTime(2010, 5, 20); 2: DateTime dateTimeInFuture = new DateTime(2025, 11, 20); 3: 4: Console.</description>
+    </item>
+    
+    <item>
+      <title>Switching with non-constant cases in C#</title>
+      <link>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</link>
+      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</guid>
+      <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
+    </item>
+    
+    <item>
+      <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
+      <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
+      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
+      <description>Yesterday I blogged on &amp;lsquo;WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls&#39;. In this post I went from bad code to better code. A smart reader gave me some good pointers on how to improve this code some more. Another iteration was necessary.
+Losing the LinqIn the previous iteration I used Linq to search my dictionary.
+ 1: var res = mappings.Where(map =&amp;gt; map.Key.Equals((CheckBox)sender)).First();  This is overhead, because the dictionary implements an indexer.</description>
+    </item>
+    
+    <item>
+      <title>WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls</title>
+      <link>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
+      <pubDate>Mon, 12 Jul 2010 21:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
+      <description>Last week I came across a problem which seemed trivial at first sight, but turned out to be a pretty fun refactoring challenge.
+The scenarioThe real problem was a bit more complex, but for simplicity&amp;rsquo;s sake I made this example. In this form there are three checkboxes which map with the textboxes next to them. If the checkbox gets unchecked the corresponding textboxes should be cleared.
+
+First iterationI warn you.</description>
+    </item>
+    
+    <item>
+      <title>Handling the AggregateException</title>
+      <link>http://localhost:1313/2010/05/handling-the-aggregateexception/</link>
+      <pubDate>Sun, 23 May 2010 13:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/handling-the-aggregateexception/</guid>
+      <description>Last week I showed you how you can use the AggregateException to apply consistent exception handling in batch operations. You can find that post here.
+Bart De Smet read that post and pointed out that I should check out the Handle method of the AggregateException.
+The Handle methodAs found in the MSDN documentation.
+Description
+ Invokes a handler on each Exception contained by this AggregateException.
+ Parameters
+ System.Func&amp;lt;Exception, Boolean&amp;gt; predicate</description>
+    </item>
+    
+    <item>
+      <title>Quick and dirty tool for sending UDP packets</title>
+      <link>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</link>
+      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</guid>
+      <description>While I was playing with my UDPListener I needed a small tool which could send some UDP packets to a certain hostname and port. That&amp;rsquo;s why I wrote a console application which uses an UdpClient to send some UDP packets. It&amp;rsquo;s quick and dirty, but it serves the cause.
+ 1: namespace UdpSender 2: { 3: class Program 4: { 5: //Constants 6: private const string HOSTNAME = &amp;quot;LocalHost&amp;quot;; 7: private const int PORT = 800; 8: private const int TIMES = 5; 9: private const string MESSAGE = &amp;quot;This is a TestMessage&amp;quot;; 10: private const int SLEEP = 50; 11: 12: static void Main(string[] args) 13: { 14: using (UdpClient client = new UdpClient()) 15: { 16: //Connect 17: client.</description>
+    </item>
+    
+    <item>
+      <title>Listening for UDP packets in a Windows service using an UdpClient</title>
+      <link>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</link>
+      <pubDate>Sun, 14 Mar 2010 16:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</guid>
+      <description>In this post, I&amp;rsquo;ll show you how can you listen for UDP packets in a Windows service.
+OnStartWhen the service starts, I set the started flag to true, initialize the ManualResetEvent, initialize an UdpClient and a WorkingThread. The ManualResetEvent will help us on a later stage to make our service stop elegantly.
+ 1: protected override void OnStart(string[] args) 2: { 3: Start(); 4: } 5: 6: public void Start() 7: { 8: m_started = true; 9: 10: m_stop = new ManualResetEvent(false); 11: 12: InitializeUdpListener(); 13: InitializeWorkingThread(); 14: }  InitializingFirst we need to initialize an IPEndpoint.</description>
+    </item>
+    
+    <item>
+      <title>Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe)..</title>
+      <link>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</link>
+      <pubDate>Sat, 13 Mar 2010 16:36:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</guid>
+      <description>When you create a new Windows Service project and try to debug it, Visual Studio will show you a Windows Service Start Failure with the message &amp;ldquo;Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe) and then started with the Server Explorer, Windows Services Administrative tool or the NET START command.&amp;quot;.
+
+The trick my team and I use to workaround this problem, makes use of the service Debug flag.</description>
+    </item>
+    
+    <item>
+      <title>Log4Net: log.Debug(String.Format()) versus log.DebugFormat()</title>
+      <link>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</link>
+      <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</guid>
+      <description>Log4net is one of the most popular opensource logging frameworks available in the .NET world. I&amp;rsquo;ve been using this framework for over a year now, and today I discovered something new.
+I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.</description>
+    </item>
+    
+  </channel>
+</rss>

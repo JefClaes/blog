@@ -18,7 +18,7 @@ to have a look at the [W3C Selectors
 specifications](http://www.w3.org/TR/css3-selectors/).  
   
   
-[![](../images/thumbnails/2010-12-05-html5-more-on-selectors-aspnethomepageplusdevtools.PNG)](../images/2010-12-05-html5-more-on-selectors-aspnethomepageplusdevtools.PNG)  
+[![](/post/images/thumbnails/2010-12-05-html5-more-on-selectors-aspnethomepageplusdevtools.PNG)](/post/images/2010-12-05-html5-more-on-selectors-aspnethomepageplusdevtools.PNG)  
 I experimented on the [asp.net homepage](http://www.asp.net/) using the
 [IE9 developer
 tools](http://msdn.microsoft.com/en-us/ie/aa740478.aspx).  

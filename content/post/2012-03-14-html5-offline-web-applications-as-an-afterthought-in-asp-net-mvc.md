@@ -32,7 +32,7 @@ and a working example implementation can be found
 Back to the manifest file. A manifest file could look like this.  
   
 
-[![](../images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestFile.PNG)](../images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestFile.PNG)
+[![](/post/images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestFile.PNG)](/post/images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestFile.PNG)
 
   
 
@@ -162,7 +162,7 @@ paths for each file.
 For the Content folder, the result could look something like this.  
   
 
-[![](../images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ContentFolder.png)](../images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ContentFolder.png)
+[![](/post/images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ContentFolder.png)](/post/images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ContentFolder.png)
 
   
 To add pages to the CACHE section, I used the Url.Action method.  
@@ -213,7 +213,7 @@ To verify if all of this works, you can look at the console of the
 Chrome developer tools. You should see something like this.  
   
 
-[![](../images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestDownloading.PNG)](../images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestDownloading.PNG)
+[![](/post/images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestDownloading.PNG)](/post/images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-ManifestDownloading.PNG)
 
   
 
@@ -225,7 +225,7 @@ Don't mind this screenshot too much, obviously there's plenty of
 cleaning up to do in my Scripts folder.  
   
 
-[![](../images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-BrowsetoManifestFile.PNG)](../images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-BrowsetoManifestFile.PNG)
+[![](/post/images/thumbnails/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-BrowsetoManifestFile.PNG)](/post/images/2012-03-14-html5-offline-web-applications-as-an-afterthought-in-asp-net-mvc-BrowsetoManifestFile.PNG)
 
   
 **Summary**  

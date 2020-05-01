@@ -16,7 +16,7 @@ installation wizard to add extra components. Arriving at the step where
 I should be able to select Reporting Services, the Reporting Services
 option was grayed out.  
   
-[![](../images/thumbnails/2011-02-12-reporting-services-option-grayed-out-on-installing-ssrs-ReportingServicesGrayedOut.PNG)](../images/2011-02-12-reporting-services-option-grayed-out-on-installing-ssrs-ReportingServicesGrayedOut.PNG)  
+[![](/post/images/thumbnails/2011-02-12-reporting-services-option-grayed-out-on-installing-ssrs-ReportingServicesGrayedOut.PNG)](/post/images/2011-02-12-reporting-services-option-grayed-out-on-installing-ssrs-ReportingServicesGrayedOut.PNG)  
 After some Googling I found out that IIS needs to be installed to be
 able to install Reporting Services. I opened the [Services
 snap-in](http://technet.microsoft.com/en-us/library/cc757797(WS.10).aspx)

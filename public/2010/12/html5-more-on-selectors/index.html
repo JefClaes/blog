@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>HTML5: More on selectors - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="HTML5: More on selectors">
+<meta itemprop="description" content="Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&rsquo;s impossible to show you all of the selectors usages in just one post, that&rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications.">
+<meta itemprop="datePublished" content="2010-12-05T13:15:00&#43;01:00" />
+<meta itemprop="dateModified" content="2010-12-05T13:15:00&#43;01:00" />
+<meta itemprop="wordCount" content="458">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,javascript,Browsers," /><meta property="og:title" content="HTML5: More on selectors" />
+<meta property="og:description" content="Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&rsquo;s impossible to show you all of the selectors usages in just one post, that&rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2010/12/html5-more-on-selectors/" />
+<meta property="article:published_time" content="2010-12-05T13:15:00+01:00" />
+<meta property="article:modified_time" content="2010-12-05T13:15:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML5: More on selectors"/>
+<meta name="twitter:description" content="Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&rsquo;s impossible to show you all of the selectors usages in just one post, that&rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">05</span>
+							<span class="rest">Dec 2010</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">HTML5: More on selectors</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p><a href="http://jclaes.blogspot.com/2010/11/html5-new-in-javascript-selector-api.html">Last weekend I
+blogged</a>
+on new addittions to the javascript Selector API: querySelector() and
+querySelectorAll(). These two new methods enable you to find elements by
+matching against a group of selectors. I only scratched the surface in
+the previous post, that&rsquo;s why you can find a few more examples in this
+post. These examples should demonstrate the power and ease of use of the
+new Selector API features. It&rsquo;s impossible to show you all of the
+selectors usages in just one post, that&rsquo;s why I strongly encourage you
+to have a look at the <a href="http://www.w3.org/TR/css3-selectors/">W3C Selectors
+specifications</a>.</p>
+<p><a href="/post/images/2010-12-05-html5-more-on-selectors-aspnethomepageplusdevtools.PNG"><img src="/post/images/thumbnails/2010-12-05-html5-more-on-selectors-aspnethomepageplusdevtools.PNG" alt=""></a><br>
+I experimented on the <a href="http://www.asp.net/">asp.net homepage</a> using the
+<a href="http://msdn.microsoft.com/en-us/ie/aa740478.aspx">IE9 developer
+tools</a>.</p>
+<p><strong>Attribute selectors</strong></p>
+<p>Select all elements which have an attribute named <em>title</em>.</p>
+<pre><code>&gt;&gt;document.querySelectorAll('[title]');
+
+[object] {
+
+    length : 5,
+
+    0 : http://www.asp.net/,
+
+    1 : [object HTMLImageElement],
+
+    2 : http://www.asp.net/get-started,
+
+    3 : http://www.asp.net/downloads,
+
+    4 : http://www.asp.net/rss/spotlight
+
+}
+</code></pre>
+<p>Select all elements where the <em>title</em> attribute has the value set to
+<em>Rss</em>.</p>
+<pre><code>&gt;&gt;document.querySelectorAll('[title=Rss]');
+
+[object] {
+
+    length : 1,
+
+    0 : http://www.asp.net/rss/spotlight
+
+}
+</code></pre>
+<p>Select all elements where the <em>href</em> attribute is set to
+<a href="http://umbraco.org/">http://umbraco.org/</a> and where the <em>target</em> attribute is set to
+_blank.</p>
+<pre><code>&gt;&gt;document.querySelectorAll('[href=&quot;http://umbraco.org/&quot;][target=&quot;_blank&quot;]');
+
+[object] {
+
+    length : 1,
+
+    0 : http://umbraco.org/
+
+}
+</code></pre>
+<p>Select all elements where the <em>href</em> attribute contains <em>umbraco</em>.</p>
+<pre><code>&gt;&gt;document.querySelectorAll('[href*=&quot;umbraco&quot;]');
+
+[object] {
+
+    length : 3,
+
+    0 : [object HTMLLinkElement],
+
+    1 : [object HTMLLinkElement],
+
+    2 : http://umbraco.org/
+
+}
+</code></pre>
+<p><strong>Class selectors</strong></p>
+<p>Find the first element where the <em>class</em> is set to <em>.search_box</em>.</p>
+<pre><code>&gt;&gt;document.querySelector('.search_box')
+
+[object HTMLInputElement] {
+
+    jQuery1291484082884 : 1,
+
+    align : &quot;&quot;,
+
+    border : &quot;&quot;,
+
+    hspace : 0,
+
+    vspace : 0,
+
+    accept : &quot;&quot;,
+
+    alt : &quot;&quot;,
+
+    checked : false,
+
+    defaultChecked : false,
+
+    defaultValue : &quot;Search&quot;
+
+    ...
+
+}
+</code></pre>
+<p><strong>Id selectors</strong></p>
+<p>Find the first element with the id <em>#WLSearchBoxInput</em>.</p>
+<pre><code>&gt;&gt;document.querySelector('#WLSearchBoxInput')
+
+[object HTMLInputElement] {
+
+    jQuery1291484082884 : 1,
+
+    align : &quot;&quot;,
+
+    border : &quot;&quot;,
+
+    hspace : 0,
+
+    vspace : 0,
+
+    accept : &quot;&quot;,
+
+    alt : &quot;&quot;,
+
+    checked : false,
+
+    defaultChecked : false,
+
+    defaultValue : &quot;Search&quot;
+
+    ...
+
+}
+</code></pre>
+<p><strong>Pseudo classes</strong></p>
+<p>Select the first hyperlink that is being hovered over.</p>
+<pre><code>&gt;&gt;document.querySelector('a:hover')
+
+http://umbraco.org/ {
+
+    charset : &quot;&quot;,
+
+    coords : &quot;&quot;,
+
+    hash : &quot;&quot;,
+
+    host : &quot;umbraco.org:80&quot;,
+
+    hostname : &quot;umbraco.org&quot;,
+
+    href : &quot;http://umbraco.org/&quot;,
+
+    hreflang : &quot;&quot;,
+
+    name : &quot;&quot;,
+
+    pathname : &quot;&quot;,
+
+    port : &quot;80&quot;
+
+    ...
+
+}
+</code></pre>
+<p>Select the third child element from the first element with the class
+<em>.welcom_nav</em>.</p>
+<pre><code>&gt;&gt;document.querySelector('.welcome_nav:nth-child(3)')
+
+    type : &quot;&quot;,
+
+    compact : false,
+
+    currentStyle : [object MSCurrentStyleCSSProperties],
+
+    runtimeStyle : [object MSStyleCSSProperties],
+
+    accessKey : &quot;&quot;,
+
+    className : &quot;welcome_nav&quot;,
+
+    contentEditable : &quot;inherit&quot;,
+
+    dir : &quot;&quot;,
+
+    disabled : false,
+
+    id : &quot;&quot;
+
+    ...
+
+}
+</code></pre>
+<p>As you can see searching for elements with native javascript has become
+a lot easier. I tried to show some examples which can be applied to real
+life scenarios. Examples based on more complex scenarios can be found in
+the <a href="http://www.w3.org/TR/css3-selectors/">W3C Selectors
+specifications</a>.</p>
+<p><strong>What do you think?</strong></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/javascript">javascript</a></li>
+							
+							<li><a href="/tags/browsers">Browsers</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2010  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

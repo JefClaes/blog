@@ -37,7 +37,7 @@ visualize its lifecycle and usage patterns. When we did this for an
 account, we came up with something that looked like this.  
   
 
-[![](../images/thumbnails/2014-11-09-splitting-hot-aggregates-AggregateTimeline.png)](../images/2014-11-09-splitting-hot-aggregates-AggregateTimeline.png)
+[![](/post/images/thumbnails/2014-11-09-splitting-hot-aggregates-AggregateTimeline.png)](/post/images/2014-11-09-splitting-hot-aggregates-AggregateTimeline.png)
 
   
 Activity peaks when a user starts a game. Each bet and each win drags in
@@ -63,7 +63,7 @@ until the end of their lifecycles, that we would involve the account
 aggregate to move money around.  
   
 
-[![](../images/thumbnails/2014-11-09-splitting-hot-aggregates-AggregateTimeline2.png)](../images/2014-11-09-splitting-hot-aggregates-AggregateTimeline2.png)
+[![](/post/images/thumbnails/2014-11-09-splitting-hot-aggregates-AggregateTimeline2.png)](/post/images/2014-11-09-splitting-hot-aggregates-AggregateTimeline2.png)
 
   
 By spreading activity to other and shorter lived aggregates, and having

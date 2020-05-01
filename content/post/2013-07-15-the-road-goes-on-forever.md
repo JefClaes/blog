@@ -32,19 +32,19 @@ Tomorrow will be our last day, which we will spend in Cody, Wyoming.
 
   
 
-[![](../images/thumbnails/2013-07-15-the-road-goes-on-forever-Yellowstone1.jpg)](../images/2013-07-15-the-road-goes-on-forever-Yellowstone1.jpg)
+[![](/post/images/thumbnails/2013-07-15-the-road-goes-on-forever-Yellowstone1.jpg)](/post/images/2013-07-15-the-road-goes-on-forever-Yellowstone1.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-15-the-road-goes-on-forever-Yellowstone2.jpg)](../images/2013-07-15-the-road-goes-on-forever-Yellowstone2.jpg)
+[![](/post/images/thumbnails/2013-07-15-the-road-goes-on-forever-Yellowstone2.jpg)](/post/images/2013-07-15-the-road-goes-on-forever-Yellowstone2.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-15-the-road-goes-on-forever-Yellowstone3.jpg)](../images/2013-07-15-the-road-goes-on-forever-Yellowstone3.jpg)
+[![](/post/images/thumbnails/2013-07-15-the-road-goes-on-forever-Yellowstone3.jpg)](/post/images/2013-07-15-the-road-goes-on-forever-Yellowstone3.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-15-the-road-goes-on-forever-Yellowstone4.jpg)](../images/2013-07-15-the-road-goes-on-forever-Yellowstone4.jpg)
+[![](/post/images/thumbnails/2013-07-15-the-road-goes-on-forever-Yellowstone4.jpg)](/post/images/2013-07-15-the-road-goes-on-forever-Yellowstone4.jpg)
 
   
 

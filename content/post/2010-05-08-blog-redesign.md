@@ -13,11 +13,11 @@ a little. Hope you like the new design!
   
 <span style="font-weight:bold;">Before..</span>  
   
-[![](../images/thumbnails/2010-05-08-blog-redesign-Blog_Before.bmp)](../images/2010-05-08-blog-redesign-Blog_Before.bmp)  
+[![](/post/images/thumbnails/2010-05-08-blog-redesign-Blog_Before.bmp)](/post/images/2010-05-08-blog-redesign-Blog_Before.bmp)  
   
 <span style="font-weight:bold;">..and after</span>  
   
-[![](../images/thumbnails/2010-05-08-blog-redesign-blog_After.bmp)](../images/2010-05-08-blog-redesign-blog_After.bmp)  
+[![](/post/images/thumbnails/2010-05-08-blog-redesign-blog_After.bmp)](/post/images/2010-05-08-blog-redesign-blog_After.bmp)  
   
 <span style="font-weight:bold;">Your opinion</span>  
   

@@ -5,7 +5,7 @@ published = 2011-09-02T07:10:00+02:00
 author = "Jef Claes"
 tags = [ "Travel",]
 +++
-[![](../images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0166.png)](../images/2011-09-02-yosemite-skyscrapers-Yosemite_0166.png)
+[![](/post/images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0166.png)](/post/images/2011-09-02-yosemite-skyscrapers-Yosemite_0166.png)
 
   
 
@@ -17,7 +17,7 @@ impossible to capture these giants on camera. 
 
   
 
-[![](../images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0058.png)](../images/2011-09-02-yosemite-skyscrapers-Yosemite_0058.png)
+[![](/post/images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0058.png)](/post/images/2011-09-02-yosemite-skyscrapers-Yosemite_0058.png)
 
   
 
@@ -28,7 +28,7 @@ they were still worth visiting. 
 
   
 
-[![](../images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0093.png)](../images/2011-09-02-yosemite-skyscrapers-Yosemite_0093.png)
+[![](/post/images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0093.png)](/post/images/2011-09-02-yosemite-skyscrapers-Yosemite_0093.png)
 
   
 
@@ -38,7 +38,7 @@ breathtaking swirling roads. 
 
   
 
-[![](../images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0204.png)](../images/2011-09-02-yosemite-skyscrapers-Yosemite_0204.png)
+[![](/post/images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0204.png)](/post/images/2011-09-02-yosemite-skyscrapers-Yosemite_0204.png)
 
   
 
@@ -47,7 +47,7 @@ Lake](http://en.wikipedia.org/wiki/Mono_Lake) vista points.
 
   
 
-[![](../images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0231.png)](../images/2011-09-02-yosemite-skyscrapers-Yosemite_0231.png)
+[![](/post/images/thumbnails/2011-09-02-yosemite-skyscrapers-Yosemite_0231.png)](/post/images/2011-09-02-yosemite-skyscrapers-Yosemite_0231.png)
 
   
 

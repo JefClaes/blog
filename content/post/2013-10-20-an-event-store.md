@@ -156,7 +156,7 @@ it again without losing any data.
 This produced the following artifact on disk.  
   
 
-[![](../images/thumbnails/2013-10-20-an-event-store-AnEventStore.PNG)](../images/2013-10-20-an-event-store-AnEventStore.PNG)
+[![](/post/images/thumbnails/2013-10-20-an-event-store-AnEventStore.PNG)](/post/images/2013-10-20-an-event-store-AnEventStore.PNG)
 
   
 While this implementation is far from ideal - dangerous really, it does

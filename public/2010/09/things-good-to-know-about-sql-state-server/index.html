@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Things good to know about SQL State Server - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Things good to know about SQL State Server">
+<meta itemprop="description" content="While installing a SQL State Server last week, I came across a few things worth sharing about the installation and use of SQL State Server.
+Finding a good tutorialThere are lots of tutorials out there on how to install SQL State Server but most of them are not great. To do a basic installation you only need this Msdn documentation on how to run the Aspnet_regsql.exe tool and edit your web.">
+<meta itemprop="datePublished" content="2010-09-23T19:31:00&#43;02:00" />
+<meta itemprop="dateModified" content="2010-09-23T19:31:00&#43;02:00" />
+<meta itemprop="wordCount" content="347">
+
+
+
+<meta itemprop="keywords" content="SQL,ASP.NET,Tips," /><meta property="og:title" content="Things good to know about SQL State Server" />
+<meta property="og:description" content="While installing a SQL State Server last week, I came across a few things worth sharing about the installation and use of SQL State Server.
+Finding a good tutorialThere are lots of tutorials out there on how to install SQL State Server but most of them are not great. To do a basic installation you only need this Msdn documentation on how to run the Aspnet_regsql.exe tool and edit your web." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/" />
+<meta property="article:published_time" content="2010-09-23T19:31:00+02:00" />
+<meta property="article:modified_time" content="2010-09-23T19:31:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Things good to know about SQL State Server"/>
+<meta name="twitter:description" content="While installing a SQL State Server last week, I came across a few things worth sharing about the installation and use of SQL State Server.
+Finding a good tutorialThere are lots of tutorials out there on how to install SQL State Server but most of them are not great. To do a basic installation you only need this Msdn documentation on how to run the Aspnet_regsql.exe tool and edit your web."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">23</span>
+							<span class="rest">Sep 2010</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Things good to know about SQL State Server</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>While installing a <a href="http://msdn.microsoft.com/en-us/library/ms178586.aspx">SQL State
+Server</a> last
+week, I came across a few things worth sharing about the installation
+and use of SQL State Server.</p>
+<p><!-- raw HTML omitted -->Finding a good tutorial<!-- raw HTML omitted --></p>
+<p>There are lots of tutorials out there on how to install SQL State Server
+but most of them are not great. To do a basic installation you only need
+this Msdn documentation on how to <a href="http://msdn.microsoft.com/en-us/library/h6bb9cz9(VS.71).aspx">run the Aspnet_regsql.exe
+tool</a> and
+<a href="http://msdn.microsoft.com/en-us/library/h6bb9cz9(VS.71).aspx">edit your
+web.config</a>.</p>
+<p><!-- raw HTML omitted -->All the objects in Session need to be
+serializable<!-- raw HTML omitted --></p>
+<p>If you try to store an object in Session which isn&rsquo;t marked as
+serializible an
+<a href="http://msdn.microsoft.com/en-us/library/system.web.httpexception.aspx">HttpException</a>
+will get thrown with following message.</p>
+<blockquote>
+<p>Unable to serialize the session state. In &lsquo;StateServer&rsquo; and
+&lsquo;SQLServer&rsquo; mode, ASP.NET will serialize the session state objects,
+and as a result non-serializable objects or MarshalByRef objects are
+not permitted. The same restriction applies if similar serialization
+is done by the custom session state store in &lsquo;Custom&rsquo; mode.</p>
+</blockquote>
+<p>Marking your classes with the <a href="http://msdn.microsoft.com/en-us/library/system.serializableattribute.aspx">Serializible
+attribute</a>
+shouldn&rsquo;t be a problem. Be careful when storing WebControls in Session
+though, most of these aren&rsquo;t marked as serializible!</p>
+<p>When you are using UpdatePanels this exception doesn&rsquo;t fully propagate
+to the front-end. The javascript error shown will have following
+message.</p>
+<blockquote>
+<p>Error: Sys.WebForms.PageRequestManagerServerErrorException: An unknown
+error occurred while processing the request on the server. The status
+code returned from the server was: 500</p>
+</blockquote>
+<p><!-- raw HTML omitted -->Use the same machinekey on multiple
+servers<!-- raw HTML omitted --></p>
+<p>To make the SQL State Server work across servers hosting the same
+application, you need to make sure the <a href="http://msdn.microsoft.com/en-us/library/w8h3skw9.aspx">machineKey
+element</a> in the
+machine.config is identical.</p>
+<p><!-- raw HTML omitted -->Redundancy options are limited<!-- raw HTML omitted --></p>
+<p>Looking at the <a href="http://msdn.microsoft.com/en-us/library/ms178586.aspx">Msdn
+documentation</a>,
+it looks like only <a href="http://www.sql-server-performance.com/articles/clustering/clustering_intro_p1.aspx">SQL Server
+clustering</a>
+is supported. You can&rsquo;t specify a Failover Partner, so <a href="http://msdn.microsoft.com/en-us/library/ms131373.aspx">SQL Server
+mirroring</a> isn&rsquo;t
+supported.</p>
+<blockquote>
+<p>In SQLServer mode, you can configure several computers running SQL
+Server to work as a failover cluster, which is two or more identical
+computers running SQL Server that store data for a single database. If
+one computer running SQL Server fails, another server in the cluster
+can take over and serve requests without session-data loss.</p>
+</blockquote>
+<p><!-- raw HTML omitted -->More experience?<!-- raw HTML omitted --></p>
+<p>Do you know more things good to know about SQL State Server?</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/sql">SQL</a></li>
+							
+							<li><a href="/tags/asp.net">ASP.NET</a></li>
+							
+							<li><a href="/tags/tips">Tips</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2010  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

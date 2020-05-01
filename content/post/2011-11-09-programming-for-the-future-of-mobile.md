@@ -53,7 +53,7 @@ To give you an idea, this would result in something that looks like
 this. Clean, right?  
   
 
-[![](../images/thumbnails/2011-11-09-programming-for-the-future-of-mobile-jQueryMobile.PNG)](../images/2011-11-09-programming-for-the-future-of-mobile-jQueryMobile.PNG)
+[![](/post/images/thumbnails/2011-11-09-programming-for-the-future-of-mobile-jQueryMobile.PNG)](/post/images/2011-11-09-programming-for-the-future-of-mobile-jQueryMobile.PNG)
 
   
 Now that these problems are out of the way soon, the only barrier left

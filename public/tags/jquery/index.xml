@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jQuery on Jef Claes</title>
+    <link>http://localhost:1313/tags/jquery/</link>
+    <description>Recent content in jQuery on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Nov 2012 17:45:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Released: Kill long meetings</title>
+      <link>http://localhost:1313/2012/11/released-kill-long-meetings/</link>
+      <pubDate>Sun, 25 Nov 2012 17:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/released-kill-long-meetings/</guid>
+      <description>A lot has already been said and written about meetings, and some have carried the message above par; &amp;lsquo;Meetings: where work goes to die&#39;. Today, I&amp;rsquo;m not going to foul the internet with another rant, but I&amp;rsquo;d like to show you a small application built over the last few weeks after work.
+I regularly find myself building small things as an antitoxin to the regular periods of not writing and shipping code at work.</description>
+    </item>
+    
+    <item>
+      <title>jQuery-validate error messages in Twitter bootstrap tooltips</title>
+      <link>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</link>
+      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</guid>
+      <description>At work, we&amp;rsquo;re using the combination of ASP.NET MVC3, jQuery, jQuery-validate, knockout and Twitter Bootstrap on one of our projects. Having postponed looking at the aesthetics of the client-side validation for too long, we eventually found ourselves unsatisfied with the default error labels. Wanting to save on space, we&amp;rsquo;re experimenting with the error messages being shown in a Twitter Bootstrap tooltip. After poking around for some while, I came up with something satisfactory.</description>
+    </item>
+    
+    <item>
+      <title>Daydreaming about jQuery Mobile and the WebAPI</title>
+      <link>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</link>
+      <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</guid>
+      <description>I recently blogged about programming for the future of mobile with jQuery Mobile and the WebAPI. You probably heard that jQuery Mobile 1.0 was released earlier this week. Although it will take a while before we will see some actual results from the WebAPI initiative, that shouldn&amp;rsquo;t keep us from letting our minds play with things that might be possible one day using the WebAPI.
+The thoughts in this post were provoked by an interesting comment Kristof Claes left on my previous post.</description>
+    </item>
+    
+    <item>
+      <title>Programming for the future of mobile</title>
+      <link>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</link>
+      <pubDate>Wed, 09 Nov 2011 22:27:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</guid>
+      <description>I have been working on something small on the side lately. I hardly have anything to show for it though, most of it is still being shaped in my head.
+Anyhow, a very important part of the front-end is built using jQuery mobile. Although the framework hasn&amp;rsquo;t been released - release candidates are available though -, it&amp;rsquo;s something you should start looking into today. Why? Because the browser is the future of mobile applications.</description>
+    </item>
+    
+    <item>
+      <title>My first jQuery plugin: jRoll</title>
+      <link>http://localhost:1313/2011/05/my-first-jquery-plugin-jroll/</link>
+      <pubDate>Sat, 14 May 2011 17:45:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/05/my-first-jquery-plugin-jroll/</guid>
+      <description>With transitioning to ASP.NET MVC, I see our JavaScript codebase increasing exponentially. And this is a big win, unless we fail to keep that codebase maintainable. We mainly rely on jQuery to do our DOM manipulations, so it&amp;rsquo;s only logical for us to abstract those manipulations into reusable jQuery plugins.
+So today, I wrote my first jQuery plugin and named it jRoll.
+jRoll
+jRoll is a plugin that finds all the (external) links in a jQuery object, and replaces the value of the href attribute with a value you specified.</description>
+    </item>
+    
+    <item>
+      <title>Using JSON serialization outside a web context</title>
+      <link>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</link>
+      <pubDate>Sun, 06 Feb 2011 16:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</guid>
+      <description>You usually are in a web context if you are working with JSON, where JSON serialization almost always is encapsulated by the framework. You might accidentally come across scenarios where you want to serialize and deserialize JSON in a non-web context though.
+Turns out this is fairly trivial since .NET 3.5. .NET 3.5 added the JavaScriptSerializer class. You can find this class in the System.Web.Script.Serialization namespace. To access this namespace you need to reference the System.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 selectors and jQuery</title>
+      <link>http://localhost:1313/2010/12/html5-selectors-and-jquery/</link>
+      <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-selectors-and-jquery/</guid>
+      <description>In my first post on the HTML5 javascript Selector API I wondered how the new methods querySelector() and querySelectorAll() would influence jQuery.
+At the time, I couldn&amp;rsquo;t find any information on the subject, but yesterday I found out that jQuery has been taking advantage of these new methods since version 1.4.3.
+From the release notes..
+ The performance of nearly all the major traversal methods has been drastically improved. .closest(), .</description>
+    </item>
+    
+    <item>
+      <title>Building a tagcloud with jQuery and ASMX Webservices</title>
+      <link>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</link>
+      <pubDate>Sat, 18 Sep 2010 18:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</guid>
+      <description>Generating tagclouds is nothing new. People have been generating tagclouds server-side since the seventies. Lately more and more tagclouds are being generated client-side.
+There is nothing wrong with generating tagclouds server-side. Telerik has a great tagcloud server control. Generating tagclouds server-side can bring some overhead though, so depending on the scenario and the requirements you might decide to do it client-side. There are a ton of fancy ready-to-use jQuery tagcloud plug-ins out there.</description>
+    </item>
+    
+    <item>
+      <title>The state of the client-side ASP.NET Ajax 4.0 framework</title>
+      <link>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</link>
+      <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</guid>
+      <description>The people who follow my blog might remember the ASP.NET Ajax 4.0 series. In these series I showed some of the core features of the ASP.NET Ajax 4.0 beta javascript library.
+In January Microsoft told us that they would ship the ASP.NET Ajax 4.0 library as a part of the Microsoft Ajax framework, together with the release of ASP.NET 4.0. A few days ago I was ready to dig in the library a little deeper, but I found out that most of the documentation and resources I used to consult, had moved or had disappeared.</description>
+    </item>
+    
+  </channel>
+</rss>

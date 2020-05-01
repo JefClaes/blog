@@ -20,7 +20,7 @@ By using the --warnon:1182 flag, the compiler will warn you about unused
 bindings.  
   
 
-[![](../images/thumbnails/2015-04-26-finding-unused-code-f-CompilerFlag.PNG)](../images/2015-04-26-finding-unused-code-f-CompilerFlag.PNG)
+[![](/post/images/thumbnails/2015-04-26-finding-unused-code-f-CompilerFlag.PNG)](/post/images/2015-04-26-finding-unused-code-f-CompilerFlag.PNG)
 
   
 For example, compiling Paket.Core with this flag enabled, outputs the

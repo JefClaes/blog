@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Response.RedirectPermanent in .NET 3.5 and older - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Response.RedirectPermanent in .NET 3.5 and older">
+<meta itemprop="description" content="One of the new features in ASP.NET 4.0 is permanently redirecting to a page using Response.RedirectPermanent.
+ It is common practice in Web applications to move pages and other content around over time, which can lead to an accumulation of stale links in search engines. In ASP.NET, developers have traditionally handled requests to old URLs by using by using the Response.Redirect method to forward a request to the new URL. However, the Redirect method issues an HTTP 302 Found (temporary redirect) response, which results in an extra HTTP round trip when users attempt to access the old URLs.">
+<meta itemprop="datePublished" content="2009-12-05T17:50:00&#43;01:00" />
+<meta itemprop="dateModified" content="2009-12-05T17:50:00&#43;01:00" />
+<meta itemprop="wordCount" content="153">
+
+
+
+<meta itemprop="keywords" content=".NET,ASP.NET,Browsers," /><meta property="og:title" content="Response.RedirectPermanent in .NET 3.5 and older" />
+<meta property="og:description" content="One of the new features in ASP.NET 4.0 is permanently redirecting to a page using Response.RedirectPermanent.
+ It is common practice in Web applications to move pages and other content around over time, which can lead to an accumulation of stale links in search engines. In ASP.NET, developers have traditionally handled requests to old URLs by using by using the Response.Redirect method to forward a request to the new URL. However, the Redirect method issues an HTTP 302 Found (temporary redirect) response, which results in an extra HTTP round trip when users attempt to access the old URLs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2009/12/response.redirectpermanent-in-.net-3.5-and-older/" />
+<meta property="article:published_time" content="2009-12-05T17:50:00+01:00" />
+<meta property="article:modified_time" content="2009-12-05T17:50:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Response.RedirectPermanent in .NET 3.5 and older"/>
+<meta name="twitter:description" content="One of the new features in ASP.NET 4.0 is permanently redirecting to a page using Response.RedirectPermanent.
+ It is common practice in Web applications to move pages and other content around over time, which can lead to an accumulation of stale links in search engines. In ASP.NET, developers have traditionally handled requests to old URLs by using by using the Response.Redirect method to forward a request to the new URL. However, the Redirect method issues an HTTP 302 Found (temporary redirect) response, which results in an extra HTTP round trip when users attempt to access the old URLs."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">05</span>
+							<span class="rest">Dec 2009</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Response.RedirectPermanent in .NET 3.5 and older</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>One of the new features in ASP.NET 4.0 is permanently redirecting to a
+page using
+<a href="http://msdn.microsoft.com/en-us/library/system.web.httpresponse.redirectpermanent(VS.100).aspx">Response.RedirectPermanent</a>.</p>
+<blockquote>
+<p>It is common practice in Web applications to move pages and other
+content around over time, which can lead to an accumulation of stale
+links in search engines. In ASP.NET, developers have traditionally
+handled requests to old URLs by using by using the Response.Redirect
+method to forward a request to the new URL. However, the Redirect
+method issues an HTTP 302 Found (temporary redirect) response, which
+results in an extra HTTP round trip when users attempt to access the
+old URLs.<br>
+<a href="http://www.asp.net/LEARN/whitepapers/aspnet4/default.aspx#_TOC1_4">Source</a></p>
+</blockquote>
+<p>You can achieve this functionality in ASP.NET 3.5 and older by writing a
+<!-- raw HTML omitted -->301 Moved Permanently Status<!-- raw HTML omitted --> and
+a <!-- raw HTML omitted -->Location Header<!-- raw HTML omitted --> to the
+Response stream. This can be found in the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP
+specifications</a>.</p>
+<p>Here is an example.</p>
+<pre><code>   1:  Response.Clear();
+
+   2:  Response.Status = &quot;301 Moved Permanently&quot;;
+
+   3:  Response.AddHeader(&quot;Location&quot;, &quot;PageOne.aspx&quot;);
+
+   4:  Response.End();
+</code></pre>
+<p>You can verify this by using
+<a href="http://www.fiddler2.com/fiddler2/">Fiddler</a>.</p>
+<p><a href="/post/images/2009-12-05-response-redirectpermanent-in-net-3-5-and-older-fiddler.JPG"><img src="/post/images/thumbnails/2009-12-05-response-redirectpermanent-in-net-3-5-and-older-fiddler.JPG" alt=""></a></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+							<li><a href="/tags/asp.net">ASP.NET</a></li>
+							
+							<li><a href="/tags/browsers">Browsers</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2009  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

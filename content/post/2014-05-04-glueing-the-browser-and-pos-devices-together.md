@@ -121,7 +121,7 @@ developers, while not having to jump through too much hoops to make it
 work.  
   
 
-[![](../images/thumbnails/2014-05-04-glueing-the-browser-and-pos-devices-together-BrowserIntegration.png)](../images/2014-05-04-glueing-the-browser-and-pos-devices-together-BrowserIntegration.png)
+[![](/post/images/thumbnails/2014-05-04-glueing-the-browser-and-pos-devices-together-BrowserIntegration.png)](/post/images/2014-05-04-glueing-the-browser-and-pos-devices-together-BrowserIntegration.png)
 
   
 I also thought of hosting communication with the devices in a Windows

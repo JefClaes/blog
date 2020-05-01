@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Jef Claes</title>
+    <link>http://localhost:1313/tags/windows/</link>
+    <description>Recent content in Windows on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 May 2014 18:23:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Glueing the browser and POS devices together </title>
+      <link>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</link>
+      <pubDate>Sun, 04 May 2014 18:23:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</guid>
+      <description>I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
+Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&amp;rsquo;s asynchronous programming model and its incredible rich ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Solving Mavericks with VMware Fusion 6 and Windows 8.1 hangs</title>
+      <link>http://localhost:1313/2014/04/solving-mavericks-with-vmware-fusion-6-and-windows-8.1-hangs/</link>
+      <pubDate>Mon, 21 Apr 2014 12:07:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/04/solving-mavericks-with-vmware-fusion-6-and-windows-8.1-hangs/</guid>
+      <description>Since I intended to avoid Windows at home, I got a Macbook Pro starting out at my new job. Overall it has been a great machine for doing development; it&amp;rsquo;s fast, light enough to carry around, its battery life is outstanding, it has a screen that&amp;rsquo;s gentle to the eyes, and full screen apps together with powerful mouse gestures allow me to quickly shuffle between things not missing touch or a second monitor.</description>
+    </item>
+    
+    <item>
+      <title>Reporting Services option grayed out on installing SSRS</title>
+      <link>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</link>
+      <pubDate>Sat, 12 Feb 2011 17:50:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</guid>
+      <description>Even though our title says Developer, it&amp;rsquo;s hard for most of us to escape doing a system administrator task once in a while.
+I had to add SQL Server Reporting Services to an existing SQL Server 2005 installation. This shouldn&amp;rsquo;t be a big deal. Mount the SQL Server installation image, run the setup and follow the installation wizard to add extra components. Arriving at the step where I should be able to select Reporting Services, the Reporting Services option was grayed out.</description>
+    </item>
+    
+    <item>
+      <title>Listening for UDP packets in a Windows service using an UdpClient</title>
+      <link>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</link>
+      <pubDate>Sun, 14 Mar 2010 16:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</guid>
+      <description>In this post, I&amp;rsquo;ll show you how can you listen for UDP packets in a Windows service.
+OnStartWhen the service starts, I set the started flag to true, initialize the ManualResetEvent, initialize an UdpClient and a WorkingThread. The ManualResetEvent will help us on a later stage to make our service stop elegantly.
+ 1: protected override void OnStart(string[] args) 2: { 3: Start(); 4: } 5: 6: public void Start() 7: { 8: m_started = true; 9: 10: m_stop = new ManualResetEvent(false); 11: 12: InitializeUdpListener(); 13: InitializeWorkingThread(); 14: }  InitializingFirst we need to initialize an IPEndpoint.</description>
+    </item>
+    
+  </channel>
+</rss>

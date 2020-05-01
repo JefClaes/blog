@@ -15,4 +15,4 @@ dragging and searching in menus before I found the way to do this. In
 the upper right corner of the window you find an extra button *Pin*. You
 can also use the shortcut CTRL + P.  
   
-[![](../images/thumbnails/2010-11-28-how-to-dock-pin-ie9-developer-tools-pinIE9DevTools.png)](../images/2010-11-28-how-to-dock-pin-ie9-developer-tools-pinIE9DevTools.png)
+[![](/post/images/thumbnails/2010-11-28-how-to-dock-pin-ie9-developer-tools-pinIE9DevTools.png)](/post/images/2010-11-28-how-to-dock-pin-ie9-developer-tools-pinIE9DevTools.png)

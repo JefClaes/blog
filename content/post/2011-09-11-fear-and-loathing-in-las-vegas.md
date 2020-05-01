@@ -27,24 +27,24 @@ Although we had a great time, Vegas probably only shows its full
 potential when you're a highroller.  
   
 
-[![](../images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0371.png)](../images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0371.png)
+[![](/post/images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0371.png)](/post/images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0371.png)
 
   
 
-[![](../images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0107.png)](../images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0107.png)
+[![](/post/images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0107.png)](/post/images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0107.png)
 
   
 
-[![](../images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0313.png)](../images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0313.png)
+[![](/post/images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0313.png)](/post/images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0313.png)
 
   
 
-[![](../images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0360.png)](../images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0360.png)
+[![](/post/images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0360.png)](/post/images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0360.png)
 
   
 
-[![](../images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0290.png)](../images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0290.png)
+[![](/post/images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0290.png)](/post/images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0290.png)
 
   
 
-[![](../images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0231.png)](../images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0231.png)
+[![](/post/images/thumbnails/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0231.png)](/post/images/2011-09-11-fear-and-loathing-in-las-vegas-LasVegas_0231.png)

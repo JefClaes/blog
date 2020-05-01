@@ -42,4 +42,4 @@ Here is an example.
 You can verify this by using
 [Fiddler](http://www.fiddler2.com/fiddler2/).  
   
-[![](../images/thumbnails/2009-12-05-response-redirectpermanent-in-net-3-5-and-older-fiddler.JPG)](../images/2009-12-05-response-redirectpermanent-in-net-3-5-and-older-fiddler.JPG)
+[![](/post/images/thumbnails/2009-12-05-response-redirectpermanent-in-net-3-5-and-older-fiddler.JPG)](/post/images/2009-12-05-response-redirectpermanent-in-net-3-5-and-older-fiddler.JPG)

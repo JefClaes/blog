@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>HTML5: New in the javascript Selector API - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="HTML5: New in the javascript Selector API">
+<meta itemprop="description" content="Because I finally got the MCTS 70-536 certification out of the way, I can start experimenting with some fun stuff again. One of the things on the top of my list is HTML5. I started reading the book Pro HTML5 Programming, so expect more posts on HTML5 in the near future.
+In this post I will show you two new methods in the javascript Selector API which are extremely useful to find elements.">
+<meta itemprop="datePublished" content="2010-11-29T19:30:00&#43;01:00" />
+<meta itemprop="dateModified" content="2010-11-29T19:30:00&#43;01:00" />
+<meta itemprop="wordCount" content="508">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,javascript,Browsers," /><meta property="og:title" content="HTML5: New in the javascript Selector API" />
+<meta property="og:description" content="Because I finally got the MCTS 70-536 certification out of the way, I can start experimenting with some fun stuff again. One of the things on the top of my list is HTML5. I started reading the book Pro HTML5 Programming, so expect more posts on HTML5 in the near future.
+In this post I will show you two new methods in the javascript Selector API which are extremely useful to find elements." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/" />
+<meta property="article:published_time" content="2010-11-29T19:30:00+01:00" />
+<meta property="article:modified_time" content="2010-11-29T19:30:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTML5: New in the javascript Selector API"/>
+<meta name="twitter:description" content="Because I finally got the MCTS 70-536 certification out of the way, I can start experimenting with some fun stuff again. One of the things on the top of my list is HTML5. I started reading the book Pro HTML5 Programming, so expect more posts on HTML5 in the near future.
+In this post I will show you two new methods in the javascript Selector API which are extremely useful to find elements."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">29</span>
+							<span class="rest">Nov 2010</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">HTML5: New in the javascript Selector API</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Because I finally got the MCTS 70-536 certification out of the way, I
+can start experimenting with some fun stuff again. One of the things on
+the top of my list is HTML5. I started reading the book <a href="http://www.amazon.com/gp/product/1430227907?ie=UTF8&amp;tag=diofanedebyje-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1430227907">Pro HTML5
+Programming</a>,
+so expect more posts on HTML5 in the near future.</p>
+<p>In this post I will show you two new methods in the javascript Selector
+API which are extremely useful to find elements.</p>
+<p><strong>Specificiations</strong></p>
+<p>Methods we can now use to find elements are
+<a href="https://developer.mozilla.org/en/document.getElementById">getElementById()</a>,
+<a href="https://developer.mozilla.org/en/DOM/document.getElementsByName">getElementsByName()</a>
+and
+<a href="https://developer.mozilla.org/en/DOM/document.getElementsByTagName">getElementsByTagName</a>().
+In HTML5 there are two new methods in the Selector API: querySelector()
+and querySelectorAll(). These new methods find elements by matching
+against a group of
+<a href="http://www.w3.org/TR/css3-selectors/#link">selectors</a>.</p>
+<p>Their description as in the <a href="http://www.w3.org/TR/selectors-api/">W3C
+specifications</a> is:</p>
+<blockquote>
+<p>The querySelector() method on the NodeSelector interface must, when
+invoked, return the first matching Element node within the node’s
+subtrees. If there is no such node, the method must return null.</p>
+</blockquote>
+<blockquote>
+<p>The querySelectorAll() method on the NodeSelector interface must, when
+invoked, return a NodeList containing all of the matching Element
+nodes within the node’s subtrees, in document order. If there are no
+such nodes, the method must return an empty NodeList.</p>
+</blockquote>
+<p><strong>Throwing out some feelers</strong></p>
+<p>To play with these new methods I made a simple page which displays an
+unordered list of methods in the Selector API. Existing methods have the
+class <em>exists</em> and new methods have the class <em>new</em>.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+    &lt;head&gt;
+
+        &lt;title&gt;HTML5: Selector API&lt;/title&gt;        
+
+        &lt;style type=&quot;text/css&quot;&gt;
+
+            html {
+
+                font-family: Verdana;
+
+                font-size: 1.2em;
+
+            }
+
+            
+
+            #header {
+
+                width: 100%;
+
+            }        
+
+                        
+
+            .exists {
+
+                font-style: italic;
+
+            }
+
+            
+
+            .new {
+
+                color: green;
+
+                font-weight: bold;
+
+            }
+
+        &lt;/style&gt;
+
+    &lt;/head&gt;
+
+    &lt;body&gt;
+
+        &lt;div id=&quot;header&quot;&gt;
+
+            &lt;h1&gt;HTML5: Selector API&lt;/h1&gt;
+
+        &lt;/div&gt;
+
+        &lt;div id=&quot;content&quot;&gt;
+
+            &lt;ul id=&quot;methodslist&quot;&gt;
+
+                &lt;li class=&quot;exists&quot;&gt;getElementById&lt;/li&gt;
+
+                &lt;li class=&quot;exists&quot;&gt;getElementsByName&lt;/li&gt;
+
+                &lt;li class=&quot;exists&quot;&gt;getElementsByTagName&lt;/li&gt;
+
+                &lt;li class=&quot;new&quot;&gt;[NEW] querySelector&lt;/li&gt;
+
+                &lt;li class=&quot;new&quot;&gt;[NEW] querySelectorAll&lt;/li&gt;                
+
+            &lt;/ul&gt;            
+
+        &lt;/div&gt;
+
+    &lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>To select the first new method we can use the querySelector() method
+with the <em>li.new</em> Selector. The first matching element is returned.</p>
+<pre><code>function selectFirstNewMethod(){
+
+    var firstNewMethod = document.querySelector('li.new');
+
+    firstNewMethod.style.color = 'Red';
+
+}
+</code></pre>
+<p>To select all new methods we can use the querySelectorAll() method with
+the <em>li.new</em> Selector. All matching elements are returned.</p>
+<pre><code>function selectAllNewMethods(){
+
+    var allNewMethods = document.querySelectorAll('li.new');
+
+    for (var i = 0; i &lt; allNewMethods.length; i++){
+
+        allNewMethods[i].style.color = 'Blue';
+
+    }
+
+}
+</code></pre>
+<p>To select all methods (existing and new) we can use the
+querySelectorAll() method with the <em>li.exists, li.new</em> Selector.</p>
+<pre><code>function selectExistingAndNewMethods(){
+
+    var existingAndNewMethods = document.querySelectorAll('li.exists, li.new');
+
+    for (var i = 0; i &lt; existingAndNewMethods.length; i++){
+
+        existingAndNewMethods[i].style.color = 'Yellow';
+
+    }
+
+}
+</code></pre>
+<p>These examples just demonstrate the tip of the iceberg. Check out the
+<a href="http://www.w3.org/TR/css3-selectors/#link">Selectors specifications</a> to
+see how they can be used to greatly improve the way of finding elements
+in the DOM.</p>
+<p><strong>Demo and source</strong></p>
+<p>You can find the demo and source
+<a href="http://pastehtml.com/view/1c4rixv.html">here</a>.</p>
+<p><strong>The HTML5 Selector API and jQuery?</strong></p>
+<p>I am far from a <a href="http://jquery.com/">jQuery</a> or javascript expert, so I
+wonder: how will these methods and selectors influence jQuery? Will they
+be encapsulated into jQuery, because I can imagine that these natively
+implemented methods will be a few times faster than <a href="http://api.jquery.com/category/selectors/">jQuery
+Selectors</a>?</p>
+<p><strong>Edit:</strong> querySelectorAll is being used by jQuery since version 1.4.3.
+(<a href="http://stackoverflow.com/questions/4038878/jquery-will-not-exist-in-future">Source</a>).</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/javascript">javascript</a></li>
+							
+							<li><a href="/tags/browsers">Browsers</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2010  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

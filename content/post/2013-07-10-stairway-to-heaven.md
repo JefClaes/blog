@@ -14,11 +14,11 @@ down and all the way up again.
 
   
 
-[![](../images/thumbnails/2013-07-10-stairway-to-heaven-blog1.jpg)](../images/2013-07-10-stairway-to-heaven-blog1.jpg)
+[![](/post/images/thumbnails/2013-07-10-stairway-to-heaven-blog1.jpg)](/post/images/2013-07-10-stairway-to-heaven-blog1.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-10-stairway-to-heaven-blog4.jpg)](../images/2013-07-10-stairway-to-heaven-blog4.jpg)
+[![](/post/images/thumbnails/2013-07-10-stairway-to-heaven-blog4.jpg)](/post/images/2013-07-10-stairway-to-heaven-blog4.jpg)
 
   
 
@@ -33,15 +33,15 @@ Monument](http://en.wikipedia.org/wiki/Grand_Staircase-Escalante_National_Monume
 
   
 
-[![](../images/thumbnails/2013-07-10-stairway-to-heaven-blog2.jpg)](../images/2013-07-10-stairway-to-heaven-blog2.jpg)
+[![](/post/images/thumbnails/2013-07-10-stairway-to-heaven-blog2.jpg)](/post/images/2013-07-10-stairway-to-heaven-blog2.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-10-stairway-to-heaven-blog3.jpg)](../images/2013-07-10-stairway-to-heaven-blog3.jpg)
+[![](/post/images/thumbnails/2013-07-10-stairway-to-heaven-blog3.jpg)](/post/images/2013-07-10-stairway-to-heaven-blog3.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-10-stairway-to-heaven-blog5.jpg)](../images/2013-07-10-stairway-to-heaven-blog5.jpg)
+[![](/post/images/thumbnails/2013-07-10-stairway-to-heaven-blog5.jpg)](/post/images/2013-07-10-stairway-to-heaven-blog5.jpg)
 
   
 

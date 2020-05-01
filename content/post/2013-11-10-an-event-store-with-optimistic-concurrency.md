@@ -93,7 +93,7 @@ version.
 In the event store, we now store an index with every event.  
   
 
-[![](../images/thumbnails/2013-11-10-an-event-store-with-optimistic-concurrency-EventsWithIndex.PNG)](../images/2013-11-10-an-event-store-with-optimistic-concurrency-EventsWithIndex.PNG)
+[![](/post/images/thumbnails/2013-11-10-an-event-store-with-optimistic-concurrency-EventsWithIndex.PNG)](/post/images/2013-11-10-an-event-store-with-optimistic-concurrency-EventsWithIndex.PNG)
 
   
 If we append to an event stream, we will get the current version by

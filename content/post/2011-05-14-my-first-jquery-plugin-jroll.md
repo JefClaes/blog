@@ -93,4 +93,4 @@ documentation](http://docs.jquery.com/Plugins/Authoring).
 Download the full jRoll source
 [here](http://dl.dropbox.com/u/19698383/Blog/jRoll.html).  
   
-[![](../images/thumbnails/2011-05-14-my-first-jquery-plugin-jroll-rick-roll.jpg)](../images/2011-05-14-my-first-jquery-plugin-jroll-rick-roll.jpg)
+[![](/post/images/thumbnails/2011-05-14-my-first-jquery-plugin-jroll-rick-roll.jpg)](/post/images/2011-05-14-my-first-jquery-plugin-jroll-rick-roll.jpg)

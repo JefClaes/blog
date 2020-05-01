@@ -12,7 +12,7 @@ between that takes the input from the user interface, applies some logic
 and persists the result in the database.  
   
 
-[![](../images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-1.png)](../images/2014-06-01-not-about-the-ui-and-the-database-1.png)
+[![](/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-1.png)](/post/images/2014-06-01-not-about-the-ui-and-the-database-1.png)
 
   
 In the past, trying to make sense of what goes on the middle, we started
@@ -24,7 +24,7 @@ now we would be forced to go through a bunch of indirections in the form
 of anemic layers and objects.  
   
 
-[![](../images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-2.png)](../images/2014-06-01-not-about-the-ui-and-the-database-2.png)
+[![](/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-2.png)](/post/images/2014-06-01-not-about-the-ui-and-the-database-2.png)
 
   
 Some people saw these designs for what they were, broke free and started
@@ -34,7 +34,7 @@ and by putting their trust in dark magic, frameworks popped up that
 would allow you to slap together an application in a matter of hours.  
   
 
-[![](../images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-3.png)](../images/2014-06-01-not-about-the-ui-and-the-database-3.png)
+[![](/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-3.png)](/post/images/2014-06-01-not-about-the-ui-and-the-database-3.png)
 
   
 The problem with these frameworks is that they leave you with very
@@ -42,7 +42,7 @@ little room for your own, and you often end up jumping through hoops
 when you need to deviate from the path carved out for you.  
   
 
-[![](../images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-4.png)](../images/2014-06-01-not-about-the-ui-and-the-database-4.png)
+[![](/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-4.png)](/post/images/2014-06-01-not-about-the-ui-and-the-database-4.png)
 
   
 That's not the only problem though - applications are a lot more than a
@@ -61,7 +61,7 @@ the model's behavior. The user interface tries to make it as easy as
 possible for users to drive and use the model.  
   
 
-[![](../images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-5.png)](../images/2014-06-01-not-about-the-ui-and-the-database-5.png)
+[![](/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-5.png)](/post/images/2014-06-01-not-about-the-ui-and-the-database-5.png)
 
   
 Although the user interface and the database are important, it's the

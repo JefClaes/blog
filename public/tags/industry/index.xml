@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>industry on Jef Claes</title>
+    <link>http://localhost:1313/tags/industry/</link>
+    <description>Recent content in industry on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 04 Jun 2011 14:30:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/industry/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Have you ever typed code on a job interview? Results</title>
+      <link>http://localhost:1313/2011/06/have-you-ever-typed-code-on-a-job-interview-results/</link>
+      <pubDate>Sat, 04 Jun 2011 14:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/06/have-you-ever-typed-code-on-a-job-interview-results/</guid>
+      <description>As more established bloggers have argued before, there is something essentially wrong with job interviews in our industry. Software companies hire developers without even making them touch a keyboard. As long as you talk the walk you are able to land yourself a decent position. There are complete lists of .NET interview questions out there, which should, with enough preparation, make it possible for a somewhat technologiable person to ace the average .</description>
+    </item>
+    
+  </channel>
+</rss>

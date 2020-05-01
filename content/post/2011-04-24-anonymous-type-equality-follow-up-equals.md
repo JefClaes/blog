@@ -16,7 +16,7 @@ references being tested for equality and not their data.
 This is very true, unless the Equals() method is overridden. And this is
 exactly what the compiler does for us when we define anonymous types.  
   
-[![](../images/thumbnails/2011-04-24-anonymous-type-equality-follow-up-equals-anonymoustypeequals.PNG)](../images/2011-04-24-anonymous-type-equality-follow-up-equals-anonymoustypeequals.PNG)  
+[![](/post/images/thumbnails/2011-04-24-anonymous-type-equality-follow-up-equals-anonymoustypeequals.PNG)](/post/images/2011-04-24-anonymous-type-equality-follow-up-equals-anonymoustypeequals.PNG)  
 In the Equals() method the equality of each property is evaluated by
 using a [generic
 EqualityComparer](http://msdn.microsoft.com/en-us/library/ms132123.aspx).  

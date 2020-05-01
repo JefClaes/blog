@@ -13,4 +13,4 @@ most important for us developers might be the Certifications section.
 Although your peers aren't easily impressed by a certification, future
 partners and employers **might** be.  
   
-[![](../images/thumbnails/2010-11-28-add-certifications-to-your-linkedin-profile-addACertif.PNG)](../images/2010-11-28-add-certifications-to-your-linkedin-profile-addACertif.PNG)
+[![](/post/images/thumbnails/2010-11-28-add-certifications-to-your-linkedin-profile-addACertif.PNG)](/post/images/2010-11-28-add-certifications-to-your-linkedin-profile-addACertif.PNG)

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RSS on Jef Claes</title>
+    <link>http://localhost:1313/tags/rss/</link>
+    <description>Recent content in RSS on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Sep 2012 21:56:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/rss/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IMPORTANT: Please resubscribe to my feed</title>
+      <link>http://localhost:1313/2012/09/important-please-resubscribe-to-my-feed/</link>
+      <pubDate>Sun, 23 Sep 2012 21:56:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/important-please-resubscribe-to-my-feed/</guid>
+      <description>Maybe the writing has been on the wall for Feedburner for a long time. No features were added for over four years, no bugs were fixed, the look-and-feel wasn&amp;rsquo;t updated to be consistent with other Google products, support channels were being shut down,&amp;hellip; But it wasn&amp;rsquo;t until last Friday that the degradation of the service really got tangible: all subscriber counts indicated zero. Dozens of people complained, using all possible communication channels, but nobody listened.</description>
+    </item>
+    
+    <item>
+      <title>Why I will always love RSS</title>
+      <link>http://localhost:1313/2012/05/why-i-will-always-love-rss/</link>
+      <pubDate>Sun, 06 May 2012 16:50:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/why-i-will-always-love-rss/</guid>
+      <description>There has been a lot of noise in the tech community earlier this year about how RSS is supposedly having one foot in the grave. If that would be even remotely true, I hope it dies with its boots on. The herald would be browsers and social networking sites killing or hiding support for RSS. While that may be true, their motives shouldn&amp;rsquo;t rig our opinions.
+RSS has never worked out for the regular consumer, not directly anyways.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -89,4 +89,4 @@ their corresponding error messages.
 The end result looks like this.  
   
 
-[![](../images/thumbnails/2012-11-11-jquery-validate-error-messages-in-twitter-bootstrap-tooltips-ChangePasswordValidation.png)](../images/2012-11-11-jquery-validate-error-messages-in-twitter-bootstrap-tooltips-ChangePasswordValidation.png)
+[![](/post/images/thumbnails/2012-11-11-jquery-validate-error-messages-in-twitter-bootstrap-tooltips-ChangePasswordValidation.png)](/post/images/2012-11-11-jquery-validate-error-messages-in-twitter-bootstrap-tooltips-ChangePasswordValidation.png)

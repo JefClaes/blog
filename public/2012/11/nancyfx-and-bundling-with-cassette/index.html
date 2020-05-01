@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>NancyFx and bundling with Cassette - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="NancyFx and bundling with Cassette">
+<meta itemprop="description" content="Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
+Since I struggled with the implementation a little bit, I documented the process below.
+1. Cassette.Nancy package
+**
+**Add the Cassette.Nancy package to the project.
+PM&gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.">
+<meta itemprop="datePublished" content="2012-11-01T19:02:00&#43;01:00" />
+<meta itemprop="dateModified" content="2012-11-01T19:02:00&#43;01:00" />
+<meta itemprop="wordCount" content="406">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,CSS,.NET,Browsers,HTTP,NancyFx,Tips," /><meta property="og:title" content="NancyFx and bundling with Cassette" />
+<meta property="og:description" content="Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
+Since I struggled with the implementation a little bit, I documented the process below.
+1. Cassette.Nancy package
+**
+**Add the Cassette.Nancy package to the project.
+PM&gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/" />
+<meta property="article:published_time" content="2012-11-01T19:02:00+01:00" />
+<meta property="article:modified_time" content="2012-11-01T19:02:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NancyFx and bundling with Cassette"/>
+<meta name="twitter:description" content="Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
+Since I struggled with the implementation a little bit, I documented the process below.
+1. Cassette.Nancy package
+**
+**Add the Cassette.Nancy package to the project.
+PM&gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">01</span>
+							<span class="rest">Nov 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">NancyFx and bundling with Cassette</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Working on a new side project built using
+<a href="http://nancyfx.org/">NancyFx</a>, I wanted to bundle and minify my css and
+script resources. Looking into the options,
+<a href="http://getcassette.net/">Cassette</a> (*) seemed the most obvious
+option.</p>
+<p>Since I struggled with the implementation a little bit, I documented the
+process below.</p>
+<p><strong>1. Cassette.Nancy package</strong><br>
+**<br>
+**Add the <a href="http://nuget.org/packages/Cassette.Nancy">Cassette.Nancy
+package</a> to the project.</p>
+<pre><code>PM&gt; Install-Package Cassette.Nancy
+Attempting to resolve dependency 'Cassette'.
+Attempting to resolve dependency 'AjaxMin (= 4.60)'.
+Attempting to resolve dependency 'Nancy'.
+Attempting to resolve dependency 'Nancy.ViewEngines.Razor'.
+Attempting to resolve dependency 'NLog'.
+Successfully installed 'AjaxMin 4.60.4609.17023'.
+Successfully installed 'Cassette 2.0.0'.
+Successfully installed 'NLog 2.0.0.2000'.
+Successfully installed 'Cassette.Nancy 2.0.0'.
+Successfully added 'AjaxMin 4.60.4609.17023' to Project.
+Successfully added 'Cassette 2.0.0' to Project.
+Successfully added 'NLog 2.0.0.2000' to Project.
+Successfully added 'Cassette.Nancy 2.0.0' to Project.
+</code></pre>
+<p><strong>2. Bundle configuration</strong><br>
+**<br>
+**The Nuget package adds the CassetteBundleConfiguration class to the
+root of your project.</p>
+<p>I&rsquo;m lucky to have my assets structured rather simply, which makes
+<a href="http://getcassette.net/documentation/v2/bundle-configuration">setting up the
+bundles</a> take
+little to no effort.</p>
+<p><a href="/post/images/2012-11-01-nancyfx-and-bundling-with-cassette-asset_structure.PNG"><img src="/post/images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-asset_structure.PNG" alt=""></a></p>
+<pre><code>public class CassetteBundleConfiguration : IConfiguration&lt;BundleCollection&gt;
+{
+    public void Configure(BundleCollection bundles)
+    {
+        bundles.AddPerSubDirectory&lt;StylesheetBundle&gt;(&quot;Content&quot;);
+        bundles.AddPerSubDirectory&lt;ScriptBundle&gt;(&quot;Content&quot;);
+    }
+}
+</code></pre>
+<p><a href="http://getcassette.net/documentation/v2/bundle-configuration/add-per-sub-directory">Each
+sub-directory</a>
+now becomes a bundle.</p>
+<p>To arrange the files in the bundles, I added a bundle.txt file that
+defines the order to each sub-directory. For the css sub-directory it
+looks like this.</p>
+<pre><code>bootstrap.css
+bootstrap-responsive.css
+docs.css
+</code></pre>
+<p><strong>3. Using bundles</strong><br>
+**<br>
+**To use these bundles in my view, I first reference them, for then to
+render them in their optimal location - css in the head section, and
+scripts just before the closing body tag.</p>
+<pre><code>@using Cassette.Nancy
+
+@{
+    Bundles.Reference(&quot;Content/css&quot;);
+    Bundles.Reference(&quot;Content/scripts&quot;);
+}
+
+@Bundles.RenderStylesheets()
+@Bundles.RenderScripts()
+</code></pre>
+<p><strong>4. First try</strong></p>
+<p>When you now browse to your application, and view the source, you&rsquo;ll
+notice that Cassette is already in play, yet the assets are not bundled
+nor minified.</p>
+<p><a href="/post/images/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_not_bundled.PNG"><img src="/post/images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_not_bundled.PNG" alt=""></a></p>
+<p><strong>5. Enable optimization</strong></p>
+<p>Apparently when using NancyFx, you need to explicitly enable
+optimization.</p>
+<blockquote>
+<p>By default, the output from Cassette is not optimized. When output is
+optimized, Cassette modules are combined (bundled) based on the
+configuration and sent to the client as a single lump per bundle
+instead of lots of individual files.</p>
+</blockquote>
+<p>When you&rsquo;re using ASP.NET MVC, this is dependant on the compilation
+debug switch.</p>
+<p>The best place to enable this, is probably in your bootstrapper.</p>
+<pre><code>public class Bootstrapper : DefaultNancyBootstrapper
+{
+    public Bootstrapper()
+    {
+        Cassette.Nancy.CassetteNancyStartup.OptimizeOutput = true;
+    }
+}
+</code></pre>
+<p><strong>6. Second try</strong><br>
+**<br>
+**This time around, the assets do get bundled and minified.</p>
+<p><a href="/post/images/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_bundled.PNG"><img src="/post/images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-cassette_bundled.PNG" alt=""></a></p>
+<p><a href="/post/images/2012-11-01-nancyfx-and-bundling-with-cassette-minified.PNG"><img src="/post/images/thumbnails/2012-11-01-nancyfx-and-bundling-with-cassette-minified.PNG" alt=""></a></p>
+<p>* It wasn&rsquo;t until today that I noticed the asset in C<strong>asset</strong>te.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/css">CSS</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+							<li><a href="/tags/browsers">Browsers</a></li>
+							
+							<li><a href="/tags/http">HTTP</a></li>
+							
+							<li><a href="/tags/nancyfx">NancyFx</a></li>
+							
+							<li><a href="/tags/tips">Tips</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

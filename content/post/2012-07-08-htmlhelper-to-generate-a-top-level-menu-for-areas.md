@@ -125,7 +125,7 @@ The top-level menu items can now be rendered like this.
 And the result looks like this.  
   
 
-[![](../images/thumbnails/2012-07-08-htmlhelper-to-generate-a-top-level-menu-for-areas-TwitterBootstrapMenu.PNG)](../images/2012-07-08-htmlhelper-to-generate-a-top-level-menu-for-areas-TwitterBootstrapMenu.PNG)  
+[![](/post/images/thumbnails/2012-07-08-htmlhelper-to-generate-a-top-level-menu-for-areas-TwitterBootstrapMenu.PNG)](/post/images/2012-07-08-htmlhelper-to-generate-a-top-level-menu-for-areas-TwitterBootstrapMenu.PNG)  
   
 
 While you can go at this problem in a lot of different ways, I think

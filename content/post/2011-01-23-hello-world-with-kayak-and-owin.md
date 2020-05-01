@@ -97,7 +97,7 @@ equals "/HelloWorld".
 If you run this example you should be able to browse to
 <http://localhost:1111/HelloWorld> and get a response.  
   
-[![](../images/thumbnails/2011-01-23-hello-world-with-kayak-and-owin-owinhelloworld.PNG)](../images/2011-01-23-hello-world-with-kayak-and-owin-owinhelloworld.PNG)  
+[![](/post/images/thumbnails/2011-01-23-hello-world-with-kayak-and-owin-owinhelloworld.PNG)](/post/images/2011-01-23-hello-world-with-kayak-and-owin-owinhelloworld.PNG)  
 **Conclusion**  
   
 I thinks it's great we can start building our own lightweight webservers

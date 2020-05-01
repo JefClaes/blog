@@ -18,7 +18,7 @@ In this post you can find how to rebuild the Chat Websockets Server.
   
 Once we are finished, our class diagram should look like this.  
   
-[![](../images/thumbnails/2011-01-09-html5-rebuilding-the-websockets-server-prototype-classdiagram.PNG)](../images/2011-01-09-html5-rebuilding-the-websockets-server-prototype-classdiagram.PNG)  
+[![](/post/images/thumbnails/2011-01-09-html5-rebuilding-the-websockets-server-prototype-classdiagram.PNG)](/post/images/2011-01-09-html5-rebuilding-the-websockets-server-prototype-classdiagram.PNG)  
 **The server**  
   
 The server will be hosted in a .NET 4.0 console application.  

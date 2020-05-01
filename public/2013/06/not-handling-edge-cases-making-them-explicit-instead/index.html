@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Not handling edge cases, making them explicit instead - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Not handling edge cases, making them explicit instead">
+<meta itemprop="description" content="When I wrote about accidental entities earlier, we followed a consultant building software for a car rental company. In the meanwhile, he has finished implementing the registration of new cars. Next on the list is allowing customers to make a booking.
+We managed to get the CEO to set a whole hour apart to walk us over how the booking system should work.
+CEO: &ldquo;I&rsquo;m not sure this meeting is going to take a whole hour though.">
+<meta itemprop="datePublished" content="2013-06-23T16:49:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-06-23T16:49:00&#43;02:00" />
+<meta itemprop="wordCount" content="1026">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,.NET,DDD,Ramblings," /><meta property="og:title" content="Not handling edge cases, making them explicit instead" />
+<meta property="og:description" content="When I wrote about accidental entities earlier, we followed a consultant building software for a car rental company. In the meanwhile, he has finished implementing the registration of new cars. Next on the list is allowing customers to make a booking.
+We managed to get the CEO to set a whole hour apart to walk us over how the booking system should work.
+CEO: &ldquo;I&rsquo;m not sure this meeting is going to take a whole hour though." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/" />
+<meta property="article:published_time" content="2013-06-23T16:49:00+02:00" />
+<meta property="article:modified_time" content="2013-06-23T16:49:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Not handling edge cases, making them explicit instead"/>
+<meta name="twitter:description" content="When I wrote about accidental entities earlier, we followed a consultant building software for a car rental company. In the meanwhile, he has finished implementing the registration of new cars. Next on the list is allowing customers to make a booking.
+We managed to get the CEO to set a whole hour apart to walk us over how the booking system should work.
+CEO: &ldquo;I&rsquo;m not sure this meeting is going to take a whole hour though."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">23</span>
+							<span class="rest">Jun 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Not handling edge cases, making them explicit instead</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>When I wrote about <a href="http://www.jefclaes.be/2013/06/accidental-entities-what-about-ui.html">accidental
+entities</a>
+earlier, we followed a consultant building software for a car rental
+company. In the meanwhile, he has finished implementing the registration
+of new cars. Next on the list is allowing customers to make a booking.</p>
+<p>We managed to get the CEO to set a whole hour apart to walk us over how
+the booking system should work.</p>
+<p><strong>CEO</strong>: &ldquo;I&rsquo;m not sure this meeting is going to take a whole hour
+though. Making a booking is rather trivial. Do you have any idea on how
+a booking would work?&rdquo;<br>
+<strong>Us</strong>: &ldquo;Well, as far as I understand - and don&rsquo;t be too hard on me - a
+customer makes a booking, we allocate the car for the requested period,
+send the customer a confirmation email and we&rsquo;re done.&rdquo;<br>
+<strong>CEO</strong>: &ldquo;Hold your horses, it&rsquo;s not <em>that</em> trivial. When we receive a
+booking, we first need to verify the customer&rsquo;s credit card.&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;How do I verify a credit card?&rdquo;<br>
+<strong>CEO</strong>: &ldquo;You don&rsquo;t. We use a third party electronic verification system
+that does just that; they check if the credit card is valid and has
+sufficient credit.&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;What happens if the credit card is declined?&rdquo;<br>
+<strong>CEO</strong>: &ldquo;That&rsquo;s easy; we just cancel the booking, and inform the
+customer.&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;And what happens when the credit card gets verified?&rdquo;<br>
+<strong>CEO</strong>: &ldquo;Then we approve the booking.&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;Let me stop you right there. Should we allocate the car
+immediately as soon as the customer makes the booking?&rdquo;<br>
+<strong>CEO</strong>: &ldquo;Hell no! Verification of the credit card can take a while; we
+might lose business if the credit card turns out to get declined.&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;Hmmm, what happens if someone else has made a booking for the
+same car in the meanwhile?&rdquo;<br>
+<strong>CEO</strong>: &ldquo;That&rsquo;s a good question. In the past, we&rsquo;ve hardly encountered
+this problem, but it does happen though; we should probably take care of
+this edge case.&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;How do you want to take care of these double bookings? I can
+imagine you don&rsquo;t just want to cancel the second booking, and lose
+business over this, right?&rdquo;</p>
+<p><strong>CEO</strong>: &ldquo;No, exactly; I like your thinking! There are a few options
+here; if they only overlap for 30 minutes or so, we don&rsquo;t do anything.
+When the customer comes to get his car, we apologize for the small delay
+and offer him a frappuccino to soothe him. If the overlap is bigger, and
+we have bigger or more expensive cars just sitting in the parking lot
+for that period, we often give the customer a free upgrade. When we
+don&rsquo;t have any expensive cars left, we let our best sales person call
+the customer, and try to work something out. Sometimes we give them a
+small discount, and they&rsquo;ll happily reschedule their plans a few hours
+instead of having to look for another rental car. We try to avoid
+canceling a booking as much as possible; we want to build a reputation
+where we always deliver.&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;Wow, interesting. It&rsquo;s going to cost me some time to get that
+right though. You said that this almost never happens. Since deciding on
+a good solution for the double booking seems to be non-trivial, how
+about we don&rsquo;t handle this edge case right now, but make it explicit
+instead? We can mark the booking as double, make the system raise its
+hand, and ask for human intervention. Backoffice users already have the
+tools, and have the experience to decide on the best solution for the
+double booking. Leaving this out for now would also make it possible to
+go to market a few weeks earlier.&rdquo; </p>
+<p><strong>CEO</strong>: &ldquo;I really like this idea; let&rsquo;s keep our first version as lean
+as possible. It really doesn&rsquo;t make much sense trying to automate this
+right off the bat. It&rsquo;s not like you&rsquo;re cheap, you know. It would be
+useful for the system to keep count of every double booking though. Can
+we do that?&rdquo;</p>
+<p><strong>Us</strong>: &ldquo;Yep, that shouldn&rsquo;t be too hard.&rdquo;</p>
+<p>After this talk with the CEO, we set out to model the solution in code. </p>
+<p>In our first iteration, a booking has multiple representations, a
+representation for each state. One of the advantages of modeling it as
+such, is that it allows us to make all possible state changes per
+representation explicit; you can&rsquo;t accept a booking if the credit card
+hasn&rsquo;t been approved etc&hellip; Alternatives could be the classic state
+pattern, or something workflowish, but that isn&rsquo;t really the focus of
+this post.</p>
+<pre><code>var booking = new Booking(
+    bookingId, carId,
+    new Customer(new CreditCard(&quot;343705171682875&quot;), new CustomerName(&quot;Jef&quot;, &quot;Claes&quot;)), 
+    new Period(DateTime.Now.AddDays(1), DateTime.Now.AddDays(4)));
+
+var bookingWithVerifiedCreditCard = booking.CreditcardVerified();
+var doubleBooking = bookingWithVerifiedCreditCard.Double();
+</code></pre>
+<p>Each state change triggers an event. If we output each event, and run
+the snippet above we end up with this.</p>
+<pre><code>(EVENT) BookingCreditCardVerificiationPending
+(EVENT) BookingCreditCardVerified
+(EVENT) DoubleBooked
+</code></pre>
+<p>The BookingCreditCardVerified event triggers us to detect doubles.</p>
+<pre><code>public class BookingCreditCardVerifiedHandler : IHandle&lt;BookingCreditCardVerified&gt; 
+{    
+    private readonly IBus _bus;
+
+    public BookingCreditCardVerifiedHandler(IBus bus)
+    {
+        _bus = bus;
+    }
+
+    public void Handle(BookingCreditCardVerified @event)
+    {
+        _bus.Send(new DetectDoubleBooking(@event.BookingId));
+    }
+}
+</code></pre>
+<p>If a double booking is detected, we want to make the system raise its
+hand, and notify a human. This can be done through an email, a
+notification in the backoffice portal, or whatever really.</p>
+<pre><code>public class DoubleBookedHandler : IHandle&lt;DoubleBooked&gt;
+{
+    public void Handle(DoubleBooked @event)
+    {
+        NotifyHumans();
+    }
+
+    private void NotifyHumans() { }
+}
+</code></pre>
+<p>Although, the technical implementation isn&rsquo;t very special, I think it
+does show how events can help support the language and distribute
+responsibility to where it belongs.</p>
+<p>There is this misconception that because we now have computers, they
+should solve <em>all</em> our problems, even all the edge cases. Edge cases -
+by definition - only happen at extreme conditions, and are regularly
+hard to take care of in a satisfactory manner, without a considerable
+investment. By making edge cases explicit, we allow a human to
+intervene, and decide on the best solution for the problem. This way we
+can go to market more quickly, with less code, and we might ironically
+even end up with happier customers. By collecting statistics on how
+often these edge cases occur, we can make a better informed decision on
+whether it&rsquo;s worth the investment.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+							<li><a href="/tags/ramblings">Ramblings</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

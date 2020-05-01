@@ -5,7 +5,7 @@ published = 2011-03-01T12:56:00.017000+01:00
 author = "Jef Claes"
 tags = [ "Microsoft", "Browsers", "Event", "HTML5",]
 +++
-[![](../images/thumbnails/2011-03-01-i-will-be-talking-at-html5-webcamps-HTML5WebCamps.PNG)](../images/2011-03-01-i-will-be-talking-at-html5-webcamps-HTML5WebCamps.PNG)  
+[![](/post/images/thumbnails/2011-03-01-i-will-be-talking-at-html5-webcamps-HTML5WebCamps.PNG)](/post/images/2011-03-01-i-will-be-talking-at-html5-webcamps-HTML5WebCamps.PNG)  
 [HTML5 WebCamps](http://msdn.microsoft.com/nl-be/gg637927) is a **free**
 event organized by Microsoft Belgium and will take place on April 6th at
 [Living Tomorrow](http://www.livingtomorrow.be/).  

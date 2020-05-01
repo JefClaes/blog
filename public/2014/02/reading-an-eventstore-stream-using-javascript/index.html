@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Reading an EventStore stream using JavaScript - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Reading an EventStore stream using JavaScript">
+<meta itemprop="description" content="Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
+An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable.">
+<meta itemprop="datePublished" content="2014-02-09T18:07:00&#43;01:00" />
+<meta itemprop="dateModified" content="2014-02-09T18:07:00&#43;01:00" />
+<meta itemprop="wordCount" content="475">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,javascript,DDD," /><meta property="og:title" content="Reading an EventStore stream using JavaScript" />
+<meta property="og:description" content="Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
+An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/" />
+<meta property="article:published_time" content="2014-02-09T18:07:00+01:00" />
+<meta property="article:modified_time" content="2014-02-09T18:07:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reading an EventStore stream using JavaScript"/>
+<meta name="twitter:description" content="Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
+An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">09</span>
+							<span class="rest">Feb 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Reading an EventStore stream using JavaScript</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Over Christmas break, I set out three days to play with the
+<a href="http://geteventstore.com/">EventStore</a>. One of the things I wanted to
+do was visualize the timeline of a stream in the browser. Since the
+EventStore exposes its event streams over atom in JSON, I could directly
+consume them from JavaScript.</p>
+<p>An event stream can contain quite a few events. Since caching parts of
+that stream benefits all components in the system, the atom feed is
+split in multiple pages - where all full pages are cacheable. Thus if
+you want to read the entire event stream, you should work your way
+through all pages. What confused me at first, but what actually is quite
+logical, is that the last entry on the last page contains the first
+event. If you want to read the entire stream, you need to start at the
+last page, and work your way forward following the link to the previous
+page until there are no pages left to read.</p>
+<p><a href="/post/images/2014-02-09-reading-an-eventstore-stream-using-javascript-eventstoreatom.png"><img src="/post/images/thumbnails/2014-02-09-reading-an-eventstore-stream-using-javascript-eventstoreatom.png" alt=""></a></p>
+<p>I came up with something like this.</p>
+<pre><code>StreamFeedReader : function(feedUri) {   
+
+    if (!feedUri) {
+        throw new Error('feedUri missing.');
+    }        
+    
+    var readLastFromHead = function (streamName) {                                        
+        var dfd = $.Deferred();
+
+        $.ajax({
+            url : feedUri + streamName + '?embed=body'
+        }).done(function (data) {                
+            var lastLinks = data.links.filter(function(link) { 
+                return link.relation === 'last'; 
+            });                       
+
+            if (lastLinks.length &gt; 0) {               
+                dfd.resolve(lastLinks[0].uri);           
+            } else {
+                dfd.resolve(feedUri + streamName);
+            }
+        }).fail(function() {                           
+            dfd.reject();
+        });
+
+        return dfd.promise();
+    };              
+
+    var traverseToFirst = function (uri, entries, dfd) {                                                       
+        $.ajax({
+            url: uri + '?embed=body'
+        }).done( function (data) {       
+            var reversedEntries = data.entries.reverse();
+
+            for (var i = 0; i &lt; reversedEntries.length; i++) {
+                entries.push(reversedEntries[i]);
+            }            
+
+            var previousLinks = data.links.filter(function(link) { 
+                return link.relation === 'previous'; 
+            });            
+
+            if (previousLinks.length === 1) {
+                traverseToFirst(previousLinks[0].uri, entries, dfd);
+            } else {                
+                dfd.resolve(entries);
+            }           
+        }).fail(function() {
+            dfd.reject();
+        });                    
+    };  
+
+    this.read = function (streamName) {                   
+        if (!streamName) {
+            throw new Error('streamName missing.');
+        }  
+
+        var dfd = $.Deferred();                           
+        
+        readLastFromHead(streamName).done(function(lastUri) {
+            var entries = [];                        
+            traverseToFirst(lastUri, entries, dfd);                        
+        }).fail(function() { 
+            dfd.reject(); 
+        });    
+
+        return dfd.promise();              
+    };
+
+}
+</code></pre>
+<p>First read the link to the last page. From there, read the entries on
+that page, look at the links on that page and start making your way
+forward, traversing the pages to the first one. All events on the page
+should also be reversed before they get pushed to the result.</p>
+<p>Using this snippet, you can read a stream and have all events returned
+in the sequence they were appended.</p>
+<pre><code>new es.StreamFeedReader('http://127.0.0.1:2113/streams/')
+    .read('account-35')
+        .fail(function() {
+            test.ok(false, 'reading the stream failed.');
+            test.done();
+        })
+        .done(function(res) {
+            var streamContainsAllEvents = function() {
+                test.equal(651, res.length, 'expecting 651 events in stream.');
+            };
+            var eventsInStreamAreOrdered = function() {
+                var ordered = true;
+                for (var i = 1; i &lt; res.length; i++) {
+                    if (res[i - 1].eventNumber &gt; res[i].eventNumber) {                            
+                        ordered = false;
+                    }
+                }
+                test.ok(ordered, 'event numbers out of order.');
+            };
+
+            streamContainsAllEvents();
+            eventsInStreamAreOrdered();                                
+
+            test.done();
+        });
+</code></pre>
+<p>This code is also available on
+<a href="https://github.com/JefClaes/eventstore-streamfeedreader">GitHub</a>.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/javascript">javascript</a></li>
+							
+							<li><a href="/tags/ddd">DDD</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

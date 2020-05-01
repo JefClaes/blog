@@ -5,7 +5,7 @@ published = 2009-09-09T18:41:00.009000+02:00
 author = "Jef Claes"
 tags = [ ".NET", "Visual Studio", "ASP.NET", "Reporting", "Tips",]
 +++
-[![](../images/thumbnails/2009-09-09-debugging-subreport-could-not-be-shown-128819720189651997.jpg)](../images/2009-09-09-debugging-subreport-could-not-be-shown-128819720189651997.jpg)I've
+[![](/post/images/thumbnails/2009-09-09-debugging-subreport-could-not-be-shown-128819720189651997.jpg)](/post/images/2009-09-09-debugging-subreport-could-not-be-shown-128819720189651997.jpg)I've
 been upgrading a local report which contains multiple subreports, and
 yes I got that "SubReport could not be shown." error more than once.  
   

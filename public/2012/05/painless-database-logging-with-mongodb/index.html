@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Painless database logging with mongoDB - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Painless database logging with mongoDB">
+<meta itemprop="description" content="While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
+From the mongoDB documentation:
+ Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging.">
+<meta itemprop="datePublished" content="2012-05-20T17:18:00&#43;02:00" />
+<meta itemprop="dateModified" content="2012-05-20T17:18:00&#43;02:00" />
+<meta itemprop="wordCount" content="274">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,database,.NET," /><meta property="og:title" content="Painless database logging with mongoDB" />
+<meta property="og:description" content="While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
+From the mongoDB documentation:
+ Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/05/painless-database-logging-with-mongodb/" />
+<meta property="article:published_time" content="2012-05-20T17:18:00+02:00" />
+<meta property="article:modified_time" content="2012-05-20T17:18:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Painless database logging with mongoDB"/>
+<meta name="twitter:description" content="While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
+From the mongoDB documentation:
+ Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">20</span>
+							<span class="rest">May 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Painless database logging with mongoDB</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>While browsing the source code of the <a href="https://github.com/CaptainCodeman/elmah-mongodb">ELMAH mongoDB
+provider</a>, I learned
+about a special type of collections: capped collections.</p>
+<p>From the <a href="http://www.mongodb.org/display/DOCS/Capped+Collections">mongoDB
+documentation</a>:</p>
+<blockquote>
+<p>Capped collections are fixed sized collections that have a very high
+performance auto-FIFO age-out feature (age out is based on insertion
+order). In addition, capped collections automatically, with high
+performance, maintain insertion order for the documents in the
+collection; this is very powerful for certain use cases such as
+logging.</p>
+</blockquote>
+<p>This is such a killer feature. Logging to the database can be extremely
+useful, but also rather expensive. Using this feature, you can turn on
+database logging without too many worries.</p>
+<p>Insertion into a capped collection is ridiculously fast. To get an idea
+of how fast it really is, I did some measuring on my own humble machine.
+I managed to insert 10.000 small documents in <em>less than 3.7 seconds</em>.
+The headaches of tweaking buffer sizes and rolling asynchronous
+appenders seem to be miles away.</p>
+<p>Something which religiously gets ignored until shit hits the fan, is log
+table maintenance. With a capped collection there is no need to set up a
+database job that periodically cleans the logging table. You just set a
+fixed size, and you&rsquo;re done. No more middle-of-the-night support calls
+when the logging table is eating up all the disk space.</p>
+<p>Creating a capped collection with the C# driver can look like this.</p>
+<pre><code>var server = MongoServer.Create(&quot;mongodb://localhost/&quot;);
+var db = server.GetDatabase(&quot;PlayGround&quot;);
+
+var options = CollectionOptions
+    .SetCapped(true)
+    .SetMaxSize(5000)
+    .SetMaxDocuments(100);
+
+if (!db.CollectionExists(&quot;Log&quot;))
+    db.CreateCollection(&quot;Log&quot;, options);
+</code></pre>
+<p>Now that&rsquo;s easy sailing.</p>
+<p>Expect to find me posting more on mongoDB in the coming months, I&rsquo;m
+starting to really like this little database engine.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/database">database</a></li>
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

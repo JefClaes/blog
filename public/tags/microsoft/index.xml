@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Microsoft on Jef Claes</title>
+    <link>http://localhost:1313/tags/microsoft/</link>
+    <description>Recent content in Microsoft on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Sep 2012 12:14:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/microsoft/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>To intellistumble</title>
+      <link>http://localhost:1313/2012/09/to-intellistumble/</link>
+      <pubDate>Thu, 20 Sep 2012 12:14:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/to-intellistumble/</guid>
+      <description>To accidentally or unexpectedly discover a method or property whilst using IntelliSense to browse through symbol names.
+ We should add this term to the Microsoft developer jargon.</description>
+    </item>
+    
+    <item>
+      <title>Video, slides and source from my WebSockets talk</title>
+      <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
+      <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</guid>
+      <description>Yesterday, I gave a talk on WebSockets at HTML5 WebCamps Belgium.
+I got a lot of positive feedback on Twitter, which makes me a very happy panda!
+
+You can already find the video of my session on Channel9.
+The slides can be found on SlideShare.
+If you want to play with the demo yourself, you can download the source:
+ Make sure your firewall allows incoming TCP traffic on port 4502 Deploy the client access policy file to IIS Also host the Demo.</description>
+    </item>
+    
+    <item>
+      <title>Keeping WebSockets alive</title>
+      <link>http://localhost:1313/2011/03/keeping-websockets-alive/</link>
+      <pubDate>Sat, 12 Mar 2011 17:40:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/03/keeping-websockets-alive/</guid>
+      <description>The problem with using stateful connections on an imperfect place as the internet is that connections might drop. The server or an intermediary can drop the connection due to an idle timeout. Even a temporary problem at the server or a local network hiccup might kill your connection.
+If you aren&amp;rsquo;t prepared to handle these scenarios, you will not be able to fully rely on WebSockets.
+A simple solution
+The simplest solution is checking every few seconds whether the WebSocket is still opened.</description>
+    </item>
+    
+    <item>
+      <title>I will be talking at HTML5 WebCamps!</title>
+      <link>http://localhost:1313/2011/03/i-will-be-talking-at-html5-webcamps/</link>
+      <pubDate>Tue, 01 Mar 2011 12:56:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/03/i-will-be-talking-at-html5-webcamps/</guid>
+      <description>HTML5 WebCamps is a free event organized by Microsoft Belgium and will take place on April 6th at Living Tomorrow.
+In my session I will be talking about WebSockets.
+ WebSockets on Fire
+While the WebSockets API specification is not stable yet, various browser vendors have already implemented a prototype in their latest browser versions. Microsoft released their WebSockets prototype in December 2010. While there is no native implementation of WebSockets in IE9 just yet, for now they are providing a solution which works cross-browser, relying on a Silverlight client.</description>
+    </item>
+    
+  </channel>
+</rss>

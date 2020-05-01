@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Stacks and queues in JavaScript - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Stacks and queues in JavaScript">
+<meta itemprop="description" content="The second assignment in my &lsquo;implementing data structures and algorithms in JavaScript&rsquo; quest consists of two popular data structures: the stack and the queue.
+The stack
+ A stack is a last in, first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only three fundamental operations: push, pop and stack top.
+ Implementing this turned out to be pretty easy.">
+<meta itemprop="datePublished" content="2011-07-12T21:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2011-07-12T21:00:00&#43;02:00" />
+<meta itemprop="wordCount" content="494">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,javascript," /><meta property="og:title" content="Stacks and queues in JavaScript" />
+<meta property="og:description" content="The second assignment in my &lsquo;implementing data structures and algorithms in JavaScript&rsquo; quest consists of two popular data structures: the stack and the queue.
+The stack
+ A stack is a last in, first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only three fundamental operations: push, pop and stack top.
+ Implementing this turned out to be pretty easy." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2011/07/stacks-and-queues-in-javascript/" />
+<meta property="article:published_time" content="2011-07-12T21:00:00+02:00" />
+<meta property="article:modified_time" content="2011-07-12T21:00:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Stacks and queues in JavaScript"/>
+<meta name="twitter:description" content="The second assignment in my &lsquo;implementing data structures and algorithms in JavaScript&rsquo; quest consists of two popular data structures: the stack and the queue.
+The stack
+ A stack is a last in, first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only three fundamental operations: push, pop and stack top.
+ Implementing this turned out to be pretty easy."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">12</span>
+							<span class="rest">Jul 2011</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Stacks and queues in JavaScript</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>The second assignment in my &lsquo;implementing data structures and algorithms
+in JavaScript&rsquo; quest consists of two popular data structures: the
+<a href="http://en.wikipedia.org/wiki/Stack_(data_structure)">stack</a> and the
+<a href="http://en.wikipedia.org/wiki/Queue_(data_structure)">queue</a>.</p>
+<p><strong>The stack</strong></p>
+<blockquote>
+<p>A stack is a last in, first out (LIFO) abstract data type and data
+structure. A stack can have any abstract data type as an element, but
+is characterized by only three fundamental operations: push, pop and
+stack top.</p>
+</blockquote>
+<p>Implementing this turned out to be pretty easy. A <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array">native JavaScript
+array</a>
+already exposes methods to
+<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/push">push</a>
+and
+<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/pop">pop</a>
+elements. In the dataStructures namespace, I defined a stack object. The
+stack object contains a private array which is initialized as soon as
+the first element is pushed into the stack. The public push and pop
+functions expose the corresponding functions of the private array. The
+stackTop function returns the last element added to the stack, but
+doesn&rsquo;t remove it from the internal array.</p>
+<pre><code>var dataStructures = {
+
+    stack : function() {                  
+
+        var elements;
+
+        
+
+        this.push = function(element) {
+
+            if (typeof(elements) === 'undefined') {
+
+                elements = [];   
+
+            }                            
+
+            elements.push(element);
+
+        }
+
+        this.pop = function() {
+
+            return elements.pop();
+
+        }
+
+        this.stackTop = function(element) {
+
+            return elements[elements.length - 1];
+
+        }
+
+    }
+
+}
+</code></pre>
+<p>Although a native array contains most stack operations, the stack object
+we made is still pretty useful. We end up with a clean encapsulated
+stack which only exposes the core stack operations.</p>
+<pre><code>var someStack = new dataStructures.stack();
+
+ 
+
+someStack.push(1);
+
+someStack.push(2);
+
+someStack.push(3);
+
+ 
+
+var stackTopResult = someStack.stackTop();                                                 
+
+ 
+
+stackTopResults.html(stackTopResult);
+
+ 
+
+var popResult = &quot;&quot;;
+
+ 
+
+popResult += someStack.pop();
+
+popResult += someStack.pop();
+
+popResult += someStack.pop();
+</code></pre>
+<p><strong>The queue</strong></p>
+<blockquote>
+<p>A queue is a particular kind of collection in which the entities in
+the collection are kept in order and the principal (or only)
+operations on the collection are the addition of entities to the rear
+terminal position and removal of entities from the front terminal
+position. This makes the queue a First-In-First-Out (FIFO) data
+structure. In a FIFO data structure, the first element added to the
+queue will be the first one to be removed.</p>
+</blockquote>
+<p>As with the stack, the native array object already contains a few
+functions which help us implement a queue. The terminology doesn&rsquo;t
+completely match though. Enqueue maps with pop and dequeue maps with
+<a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array/shift">shift</a>.</p>
+<p>I added the queue object to the dataStructures namespace. The queue also
+holds a private array of elements. The enqueue function pushes a new
+element on the queue, and the dequeue function removes the first element
+from the queue. The peek function returns the first element in the
+array, but does not remove it.</p>
+<pre><code>queue : function() {
+
+    var elements;
+
+    
+
+    this.enqueue = function(element) {
+
+        if (typeof(elements) === 'undefined') {
+
+            elements = [];   
+
+        }
+
+        elements.push(element);                       
+
+    }
+
+    this.dequeue = function() {
+
+        return elements.shift();                                                
+
+    }
+
+    this.peek = function(){
+
+        return elements[0];                  
+
+    }
+
+}
+</code></pre>
+<p>The queue can be used like this.</p>
+<pre><code>someQueue.enqueue(1);
+
+someQueue.enqueue(2);
+
+someQueue.enqueue(3);               
+
+                
+
+var queuePeekResult = someQueue.peek();
+
+ 
+
+queuePeekResults.html(queuePeekResult);
+
+ 
+
+var dequeueResult = &quot;&quot;;                   
+
+                    
+
+dequeueResult += someQueue.dequeue();
+
+dequeueResult += someQueue.dequeue();
+
+dequeueResult += someQueue.dequeue(); 
+</code></pre>
+<p>Find <strong>the final result
+<a href="http://dl.dropbox.com/u/19698383/Blog/JavaScriptAlgorithmsDataStructs/Implementations/StackQueues.html">here</a></strong>.
+Also check out the previous post on <a href="http://jclaes.blogspot.com/2011/07/simple-sorting-in-javascript.html">simple sorting in
+JavaScript</a>.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/javascript">javascript</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2011  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

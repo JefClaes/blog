@@ -45,7 +45,7 @@ method](http://msdn.microsoft.com/en-us/library/system.linq.enumerable.except.as
 I probably would have ended up with something a lot less elegant.  
   
 
-[![](../images/thumbnails/2012-09-23-finding-the-gaps-in-a-sequence-of-dates-LINQExcept.PNG)](../images/2012-09-23-finding-the-gaps-in-a-sequence-of-dates-LINQExcept.PNG)
+[![](/post/images/thumbnails/2012-09-23-finding-the-gaps-in-a-sequence-of-dates-LINQExcept.PNG)](/post/images/2012-09-23-finding-the-gaps-in-a-sequence-of-dates-LINQExcept.PNG)
 
   
 

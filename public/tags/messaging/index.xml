@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Messaging on Jef Claes</title>
+    <link>http://localhost:1313/tags/messaging/</link>
+    <description>Recent content in Messaging on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Sep 2016 20:52:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/messaging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Commands and events with JustSaying and AWS</title>
+      <link>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and-aws/</link>
+      <pubDate>Sun, 18 Sep 2016 20:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and-aws/</guid>
+      <description>I&amp;rsquo;ve been looking into handing a bit of our messaging infrastructure over to a managed alternative. Managing your own messaging infrastructure that should be highly available is not always an investment you want to make in this day and age. Going through the documentation and relying on experiences from some people I trust, I ended up looking at AWS and SNS/SQS.
+Making the Github repository rounds, looking for inspiration, I stumbled on JustSaying: a library by the people from JustEat implementing a message bus on top of AWS.</description>
+    </item>
+    
+    <item>
+      <title>Eventual consistency in the Wild West</title>
+      <link>http://localhost:1313/2014/05/eventual-consistency-in-the-wild-west/</link>
+      <pubDate>Sun, 25 May 2014 18:01:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/eventual-consistency-in-the-wild-west/</guid>
+      <description>San Francisco, 1852. With the California Gold Rush at its peak, successful gold-seekers wanted to protect all their precious gold nuggets by storing them in a strong safe. At the time, it wasn&amp;rsquo;t that easy to have access to a safe though. At the very beginning, it were just a few local merchants that owned one. Not much later, bankers swamped the area hoping to get their piece of the pie - bringing the strongest safes money can buy.</description>
+    </item>
+    
+    <item>
+      <title>Putting my IronMQ experiment under stress</title>
+      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</link>
+      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</guid>
+      <description>Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&amp;rsquo;t put it under stress yet; &amp;ldquo;First make it work, then make it fast&amp;rdquo;, and all of that.
+I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second.</description>
+    </item>
+    
+    <item>
+      <title>Some experimental infrastructure for IronMQ pull </title>
+      <link>http://localhost:1313/2013/03/some-experimental-infrastructure-for-ironmq-pull/</link>
+      <pubDate>Sun, 10 Mar 2013 17:29:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/some-experimental-infrastructure-for-ironmq-pull/</guid>
+      <description>I wrote about using IronMQ as a cloud-based message queue last week. In that post I explained that you can go at using IronMQ in two ways; either you pull from the queue yourself, or you let IronMQ push messages from the queue to your HTTP endpoints. At first sight, the latter allows you to outsource more infrastructure to their side, but upon closer inspection it also introduces other concerns: security, local debugging and scalability.</description>
+    </item>
+    
+    <item>
+      <title>First IronMQ impressions</title>
+      <link>http://localhost:1313/2013/03/first-ironmq-impressions/</link>
+      <pubDate>Sun, 03 Mar 2013 16:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/first-ironmq-impressions/</guid>
+      <description>First time I touched messaging was in the first few years of my professional life working on software that supported fire departments in their day-to-day activities. The dispatching software would send messages to a proprietary broker, which in its turn would forward them to interested subscribers; other dispatching clients, or services. To ensure availability, the broker component could failover to a different machine, but that was about it. It didn&amp;rsquo;t allow you to queue or retry messages; if you weren&amp;rsquo;t up when the messages were forwarded, you would never receive them.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -17,7 +17,7 @@ fireworks in 30 seconds](http://www.youtube.com/watch?v=ndVhgq1yHdA).
 
   
 
-[![](../images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog1.jpg)](../images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog1.jpg)
+[![](/post/images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog1.jpg)](/post/images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog1.jpg)
 
   
 
@@ -30,15 +30,15 @@ some Mexican food and Corona, to finally faceplant in our pillows. 
 
   
 
-[![](../images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog2.jpg)](../images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog2.jpg)
+[![](/post/images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog2.jpg)](/post/images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog2.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog3.jpg)](../images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog3.jpg)
+[![](/post/images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog3.jpg)](/post/images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog3.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog4.jpg)](../images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog4.jpg)
+[![](/post/images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog4.jpg)](/post/images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog4.jpg)
 
   
 
@@ -48,11 +48,11 @@ Too bad they couldn’t keep the ghost town more authentic. 
 
   
 
-[![](../images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog5.jpg)](../images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog5.jpg)
+[![](/post/images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog5.jpg)](/post/images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog5.jpg)
 
   
 
-[![](../images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog6.jpg)](../images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog6.jpg)
+[![](/post/images/thumbnails/2013-07-07-fireworks-tequila-and-silvertown-blues-blog6.jpg)](/post/images/2013-07-07-fireworks-tequila-and-silvertown-blues-blog6.jpg)
 
   
 

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Fast projections - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Fast projections">
+<meta itemprop="description" content="Most EventStore client libraries allow you to subscribe to a stream by passing in a callback which is invoked when an event occurs (either a live or historic event).
+Let&rsquo;s say we subscribe to a stream of a popular video service, and we want to project a read model that shows how many videos a viewer has watched. We don&rsquo;t care about the bookmarked videos for now.
+We&rsquo;re sitting on top of storage that can execute a single statement and a batch of statements.">
+<meta itemprop="datePublished" content="2017-07-30T14:34:00&#43;02:00" />
+<meta itemprop="dateModified" content="2017-07-30T14:34:00&#43;02:00" />
+<meta itemprop="wordCount" content="585">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets," /><meta property="og:title" content="Fast projections" />
+<meta property="og:description" content="Most EventStore client libraries allow you to subscribe to a stream by passing in a callback which is invoked when an event occurs (either a live or historic event).
+Let&rsquo;s say we subscribe to a stream of a popular video service, and we want to project a read model that shows how many videos a viewer has watched. We don&rsquo;t care about the bookmarked videos for now.
+We&rsquo;re sitting on top of storage that can execute a single statement and a batch of statements." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2017/07/fast-projections/" />
+<meta property="article:published_time" content="2017-07-30T14:34:00+02:00" />
+<meta property="article:modified_time" content="2017-07-30T14:34:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fast projections"/>
+<meta name="twitter:description" content="Most EventStore client libraries allow you to subscribe to a stream by passing in a callback which is invoked when an event occurs (either a live or historic event).
+Let&rsquo;s say we subscribe to a stream of a popular video service, and we want to project a read model that shows how many videos a viewer has watched. We don&rsquo;t care about the bookmarked videos for now.
+We&rsquo;re sitting on top of storage that can execute a single statement and a batch of statements."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">30</span>
+							<span class="rest">Jul 2017</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Fast projections</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Most EventStore client libraries allow you to subscribe to a stream by
+passing in a callback which is invoked when an event occurs (either a
+live or historic event).</p>
+<p>Let&rsquo;s say we subscribe to a stream of a popular video service, and we
+want to project a read model that shows how many videos a viewer has
+watched. We don&rsquo;t care about the bookmarked videos for now.</p>
+<p>We&rsquo;re sitting on top of storage that can execute a single statement and
+a batch of statements.</p>
+<p>The statements supported are limited:</p>
+<ul>
+<li>Set a checkpoint</li>
+<li>Increment the view count for a viewer</li>
+</ul>
+<p>The storage engine exposes a method which calculates the cost of
+executed statements:</p>
+<ul>
+<li>Executing a single statement costs 1 execution unit</li>
+<li>Executing a batch also costs 1 execution unit plus 0.1 execution
+unit per statement in the batch</li>
+</ul>
+<p><strong>The stream</strong></p>
+<p>**<br>
+**</p>
+<p>For this exercise the stream contains 3500 historic views, 50 historic
+bookmarks and 100 live views.</p>
+<p><strong>First attempt</strong><br>
+**<br>
+**The first attempt at projecting the stream to state, executes a
+statement for each event we&rsquo;re interested in and checkpoints after each
+event (even the ones we&rsquo;re not interested in).</p>
+<p>The cost of this projection is high: 7250 execution units - even though
+there are only 3600 events we&rsquo;re interested in. We execute a statement
+for each event we handled and checkpoint immediately after, even for the
+events we didn&rsquo;t handle.</p>
+<p><strong>Less checkpointing</strong><br>
+**<br>
+**It&rsquo;s not hard to get rid of some of the checkpointing though.</p>
+<p>The cost has improved, but only marginally. We saved 50 execution units
+by avoiding checkpointing after events we do not handle. Time for a
+bigger improvement..</p>
+<p><strong>Batching</strong><br>
+**<br>
+**Instead of handling each event individually, we will buffer them as
+soon as they come in. When we&rsquo;re catching up and seeing historic events,
+we only flush the buffer every 100 events. When we&rsquo;re caught up, we
+flush on each event. We want to always make a best attempt at showing
+fresh data.</p>
+<p>When the buffer gets flushed, events are mapped into a sequence of
+statements, which are sent in batch to the storage engine. The
+checkpoint is appended to the tail of the batch.</p>
+<p>This approach makes a significant difference. Execution cost has reduced
+by 93%! Batching of historic events makes replays much faster, but with
+some extra effort we can take this optimization even further.</p>
+<p><strong>Batching with transformation</strong><br>
+**<br>
+**It always pays off to understand the guarantees and intricacies of the
+storage you&rsquo;re using. Looking closely at the storage interface, we find
+that we can increment the view count by any number. If we use a local
+data structure to aggregate the view count up front, we can reduce the
+number of statements even further.</p>
+<p>In practice, we filter the for events we&rsquo;re interested in, group by the
+viewer id, count the values and map that into a single statement per
+viewer.</p>
+<p>This further reduces costs by more than 2/3th. The optimization makes
+the code a bit more elaborate, but not necessarily that more complex -
+it&rsquo;s still a local optimization.</p>
+<p><strong>Conclusion</strong><br>
+**<br>
+**In three steps, we brought cost down from 7250 execution units to only
+162 units. That makes me a 44x engineer, right?</p>
+<p>In general, storage is one of the slowest components of your system.
+Making your system faster often involves making it do less work.
+Avoiding waste by batching and some more work up front, can make a big
+impact when you want to make your projection faster.</p>
+<p>You can find the complete F# script
+<a href="https://gist.github.com/JefClaes/215d202fcdf9aa58968b92a129241292">here</a>.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2017  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

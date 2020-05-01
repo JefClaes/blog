@@ -22,7 +22,7 @@ Italian gelato. 
 
   
 
-[![](../images/thumbnails/2012-07-26-the-floating-city-Garda_0238.jpg)](../images/2012-07-26-the-floating-city-Garda_0238.jpg)
+[![](/post/images/thumbnails/2012-07-26-the-floating-city-Garda_0238.jpg)](/post/images/2012-07-26-the-floating-city-Garda_0238.jpg)
 
   
 Today we made a trip to [Venice](http://en.wikipedia.org/wiki/Venice).
@@ -43,11 +43,11 @@ these classics were definitely worthwhile, you can't miss out on
 strolling around the less tourist neighborhoods to experience the
 authentic Venice.  
   
-[![](../images/thumbnails/2012-07-26-the-floating-city-Garda_0341.jpg)](../images/2012-07-26-the-floating-city-Garda_0341.jpg)  
+[![](/post/images/thumbnails/2012-07-26-the-floating-city-Garda_0341.jpg)](/post/images/2012-07-26-the-floating-city-Garda_0341.jpg)  
   
-[![](../images/thumbnails/2012-07-26-the-floating-city-Garda_0347.jpg)](../images/2012-07-26-the-floating-city-Garda_0347.jpg)  
+[![](/post/images/thumbnails/2012-07-26-the-floating-city-Garda_0347.jpg)](/post/images/2012-07-26-the-floating-city-Garda_0347.jpg)  
   
-[![](../images/thumbnails/2012-07-26-the-floating-city-Garda_0356.jpg)](../images/2012-07-26-the-floating-city-Garda_0356.jpg)  
+[![](/post/images/thumbnails/2012-07-26-the-floating-city-Garda_0356.jpg)](/post/images/2012-07-26-the-floating-city-Garda_0356.jpg)  
   
 
-[![](../images/thumbnails/2012-07-26-the-floating-city-Garda_0422.jpg)](../images/2012-07-26-the-floating-city-Garda_0422.jpg)
+[![](/post/images/thumbnails/2012-07-26-the-floating-city-Garda_0422.jpg)](/post/images/2012-07-26-the-floating-city-Garda_0422.jpg)

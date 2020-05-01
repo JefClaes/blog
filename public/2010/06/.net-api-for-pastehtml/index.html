@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>.NET API for PasteHTML - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content=".NET API for PasteHTML">
+<meta itemprop="description" content="PasteHTML is a website which lets you upload and share HTML pages. It&rsquo;s free, anonymous and without registration. The uploaded pages should stay online forever.
+The only drawback is that you can&rsquo;t edit or delete your uploaded pages in an easy way yet. It is ad free, but I guess there will be some advertisements in the future when hosting costs increase.
+You can make a POST request to upload a page through their public API.">
+<meta itemprop="datePublished" content="2010-06-20T16:10:00&#43;02:00" />
+<meta itemprop="dateModified" content="2010-06-20T16:10:00&#43;02:00" />
+<meta itemprop="wordCount" content="218">
+
+
+
+<meta itemprop="keywords" content=".NET," /><meta property="og:title" content=".NET API for PasteHTML" />
+<meta property="og:description" content="PasteHTML is a website which lets you upload and share HTML pages. It&rsquo;s free, anonymous and without registration. The uploaded pages should stay online forever.
+The only drawback is that you can&rsquo;t edit or delete your uploaded pages in an easy way yet. It is ad free, but I guess there will be some advertisements in the future when hosting costs increase.
+You can make a POST request to upload a page through their public API." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2010/06/.net-api-for-pastehtml/" />
+<meta property="article:published_time" content="2010-06-20T16:10:00+02:00" />
+<meta property="article:modified_time" content="2010-06-20T16:10:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=".NET API for PasteHTML"/>
+<meta name="twitter:description" content="PasteHTML is a website which lets you upload and share HTML pages. It&rsquo;s free, anonymous and without registration. The uploaded pages should stay online forever.
+The only drawback is that you can&rsquo;t edit or delete your uploaded pages in an easy way yet. It is ad free, but I guess there will be some advertisements in the future when hosting costs increase.
+You can make a POST request to upload a page through their public API."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">20</span>
+							<span class="rest">Jun 2010</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">.NET API for PasteHTML</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p><a href="http://pastehtml.com/">PasteHTML</a> is a website which lets you upload
+and share HTML pages. It&rsquo;s free, anonymous and without registration. The
+uploaded pages should stay online <!-- raw HTML omitted -->forever<!-- raw HTML omitted -->.</p>
+<p>The only drawback is that you can&rsquo;t edit or delete your uploaded pages
+in an easy way <!-- raw HTML omitted -->yet<!-- raw HTML omitted -->. It is ad
+free, but I guess there will be some advertisements in the future when
+hosting costs increase.</p>
+<p>You can make a POST request to upload a page through their <a href="http://pastehtml.com/help/api">public
+API</a>. I made an API for .NET which
+encapsulates building the url, making the request and parsing the
+response. This API makes uploading pages to PasteHtml through your own
+website or program child&rsquo;s play.</p>
+<p><!-- raw HTML omitted -->Example<!-- raw HTML omitted --></p>
+<pre><code>   1:  PasteHtmlClient client = new PasteHtmlClient();
+
+   2:   
+
+   3:  PasteHtmlRequest req = new PasteHtmlRequest()
+
+   4:  {
+
+   5:       InputType = PasteHtmlInputType.Html,
+
+   6:       Text = @&quot;&lt;div class='box'&gt; 
+
+   7:                &lt;h3&gt;The standard Lorem Ipsum passage, used since the 1500s&lt;/h3&gt; 
+
+   8:                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur..&lt;/p&gt;
+
+   9:                &lt;/div&gt;&quot;
+
+  10:  };
+
+  11:   
+
+  12:  PasteHtmlResponse resp = client.PasteHtml(req);            
+
+  13:              
+
+  14:  System.Console.WriteLine(resp.Url);
+
+  15:  System.Console.ReadKey();           
+</code></pre>
+<p>In this example the PasteHtmlResponse.Url property returned
+<a href="http://pastehtml.com/view/19tfe0n.html">http://pastehtml.com/view/19tfe0n.html</a>.</p>
+<p><!-- raw HTML omitted -->Assemblies, source and your
+opinion!<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->You can download the API&rsquo;s Alpha version here. Play with it, take a
+look at the source and let me know what you think!<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->Update (22/10/2010):<!-- raw HTML omitted --> Fixed the
+download.<br>
+<!-- raw HTML omitted -->Update (24/07/2011):<!-- raw HTML omitted --> The project
+is now on Github!<br>
+<strong>Update (04/20/2018):</strong> This project is dead.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2010  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

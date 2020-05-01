@@ -16,7 +16,7 @@ If you have installed the WebSockets prototype, you should be able to
 browse to <http://localhost/chat/wsdemo.html> and stroll through the
 internals with me.  
   
-[![](../images/thumbnails/2011-01-12-html5-the-websockets-prototype-with-silverlight-html-bridges-and-javascript-chatsample.PNG)](../images/2011-01-12-html5-the-websockets-prototype-with-silverlight-html-bridges-and-javascript-chatsample.PNG)  
+[![](/post/images/thumbnails/2011-01-12-html5-the-websockets-prototype-with-silverlight-html-bridges-and-javascript-chatsample.PNG)](/post/images/2011-01-12-html5-the-websockets-prototype-with-silverlight-html-bridges-and-javascript-chatsample.PNG)  
 **Dependencies**  
   
 The chat sample has four script dependencies:

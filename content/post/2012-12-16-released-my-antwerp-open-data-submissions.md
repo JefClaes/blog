@@ -24,7 +24,7 @@ dataset](http://api.antwerpen.be/v1/infrastructuur/cultuur.json) to
 display a masonry of cultural attraction images.  
   
 
-[![](../images/thumbnails/2012-12-16-released-my-antwerp-open-data-submissions-antwerp+culre.PNG)](../images/2012-12-16-released-my-antwerp-open-data-submissions-antwerp+culre.PNG)
+[![](/post/images/thumbnails/2012-12-16-released-my-antwerp-open-data-submissions-antwerp+culre.PNG)](/post/images/2012-12-16-released-my-antwerp-open-data-submissions-antwerp+culre.PNG)
 
   
 The images available vary in size, and some turned out to be quite
@@ -143,7 +143,7 @@ dataset](http://api.antwerpen.be/v1/infrastructuur/openbaartoilet.json)
 to show the nearest toilets based on your location.  
   
 
-[![](../images/thumbnails/2012-12-16-released-my-antwerp-open-data-submissions-wheretopee.PNG)](../images/2012-12-16-released-my-antwerp-open-data-submissions-wheretopee.PNG)
+[![](/post/images/thumbnails/2012-12-16-released-my-antwerp-open-data-submissions-wheretopee.PNG)](/post/images/2012-12-16-released-my-antwerp-open-data-submissions-wheretopee.PNG)
 
   
 I wanted to introduce a constraint client-side of having to work with a

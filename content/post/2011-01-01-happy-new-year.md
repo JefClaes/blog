@@ -10,7 +10,7 @@ Happy New Year!
 I would like to thank you for being so awesome in 2010 and I hope we
 will be able to make 2011 an even better year!  
   
-[![](../images/thumbnails/2011-01-01-happy-new-year-WinterWonderland_073.jpg)](../images/2011-01-01-happy-new-year-WinterWonderland_073.jpg)  
+[![](/post/images/thumbnails/2011-01-01-happy-new-year-WinterWonderland_073.jpg)](/post/images/2011-01-01-happy-new-year-WinterWonderland_073.jpg)  
 Photo credit: [My
 girlfriend](http://amillionimpressions.blogspot.com/)  
   

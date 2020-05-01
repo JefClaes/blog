@@ -242,7 +242,7 @@ Now when I, the user, type http://somesite/someController/kitty, I will
 be redirected to http://somesite/someController/kitten without me even
 noticing.  
   
-[![](../images/thumbnails/2012-01-15-autocorrecting-unknown-actions-using-the-levenshtein-distance-LevenshteinDistanceRedirect.PNG)](../images/2012-01-15-autocorrecting-unknown-actions-using-the-levenshtein-distance-LevenshteinDistanceRedirect.PNG)  
+[![](/post/images/thumbnails/2012-01-15-autocorrecting-unknown-actions-using-the-levenshtein-distance-LevenshteinDistanceRedirect.PNG)](/post/images/2012-01-15-autocorrecting-unknown-actions-using-the-levenshtein-distance-LevenshteinDistanceRedirect.PNG)  
   
 **Feedback**  
   

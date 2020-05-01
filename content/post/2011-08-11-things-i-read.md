@@ -13,7 +13,7 @@ become too much of a chore to sift out the really interesting posts.
   
 That's why I have put my faith in the community to do the dirty work.  
   
-[![](../images/thumbnails/2011-08-11-things-i-read-gullgraver_1850_california.jpg)](../images/2011-08-11-things-i-read-gullgraver_1850_california.jpg)  
+[![](/post/images/thumbnails/2011-08-11-things-i-read-gullgraver_1850_california.jpg)](/post/images/2011-08-11-things-i-read-gullgraver_1850_california.jpg)  
 For .NET related posts, I mainly keep track of these two linkblogs.
 
 -   [The Morning Brew](http://blog.cwa.me.uk/)

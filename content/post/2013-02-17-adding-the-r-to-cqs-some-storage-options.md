@@ -37,7 +37,7 @@ A nice drawing also helps in understanding CQRS (from [the CQRS journey
 material](http://msdn.microsoft.com/en-us/library/jj591573)).  
   
 
-[![](../images/thumbnails/2013-02-17-adding-the-r-to-cqs-some-storage-options-CQRS_drawing.png)](../images/2013-02-17-adding-the-r-to-cqs-some-storage-options-CQRS_drawing.png)
+[![](/post/images/thumbnails/2013-02-17-adding-the-r-to-cqs-some-storage-options-CQRS_drawing.png)](/post/images/2013-02-17-adding-the-r-to-cqs-some-storage-options-CQRS_drawing.png)
 
   
 Although scalability seems to be one of the big selling points of CQRS,

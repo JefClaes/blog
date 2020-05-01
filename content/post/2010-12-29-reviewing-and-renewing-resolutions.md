@@ -43,7 +43,7 @@ traffic compared to last year, which makes me feel a little warm
 inside.  
   
   
-[![](../images/thumbnails/2010-12-29-reviewing-and-renewing-resolutions-blogtraffic.PNG)](../images/2010-12-29-reviewing-and-renewing-resolutions-blogtraffic.PNG)  
+[![](/post/images/thumbnails/2010-12-29-reviewing-and-renewing-resolutions-blogtraffic.PNG)](/post/images/2010-12-29-reviewing-and-renewing-resolutions-blogtraffic.PNG)  
 This year I mainly blogged about Webforms (refactoring), ASP.NET AJAX,
 the Bing API, TechEd, IE9 and HTML5. In 2011 I plan to continue to focus
 on Microsoft and the web. I'm still an MVC and WebMatrix novice, which

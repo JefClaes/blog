@@ -17,17 +17,17 @@ waterfall. If I ever wondered how J.R.R. Tolkien came up with
 inspiration for his famous novels, now I have a good idea.  
   
 
-[![](../images/thumbnails/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B288kl.jpg)](../images/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B288kl.jpg)
+[![](/post/images/thumbnails/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B288kl.jpg)](/post/images/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B288kl.jpg)
 
   
 
-[![](../images/thumbnails/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B127kl.jpg)](../images/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B127kl.jpg)
+[![](/post/images/thumbnails/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B127kl.jpg)](/post/images/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B127kl.jpg)
 
   
 
-[![](../images/thumbnails/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B285kl.jpg)](../images/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B285kl.jpg)
+[![](/post/images/thumbnails/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B285kl.jpg)](/post/images/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B285kl.jpg)
 
-[![](../images/thumbnails/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B286kl.jpg)](../images/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B286kl.jpg)
+[![](/post/images/thumbnails/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B286kl.jpg)](/post/images/2014-09-07-tolkiens-inspiration-Vintgar%2B-%2B286kl.jpg)
 
 On Tuesday, exploring the [Postojna cave
 system](http://en.wikipedia.org/wiki/Postojna_Cave) by train and on foot
@@ -35,7 +35,7 @@ offered similar enchanting images.
 
   
 
-[![](../images/thumbnails/2014-09-07-tolkiens-inspiration-Postojna%2Bgrotten%2B-%2B52kl.jpg)](../images/2014-09-07-tolkiens-inspiration-Postojna%2Bgrotten%2B-%2B52kl.jpg)
+[![](/post/images/thumbnails/2014-09-07-tolkiens-inspiration-Postojna%2Bgrotten%2B-%2B52kl.jpg)](/post/images/2014-09-07-tolkiens-inspiration-Postojna%2Bgrotten%2B-%2B52kl.jpg)
 
   
   
@@ -49,11 +49,11 @@ that we took.
 
   
 
-[![](../images/thumbnails/2014-09-07-tolkiens-inspiration-Plitvice%2Bmeren%2B-%2B74kl.jpg)](../images/2014-09-07-tolkiens-inspiration-Plitvice%2Bmeren%2B-%2B74kl.jpg)
+[![](/post/images/thumbnails/2014-09-07-tolkiens-inspiration-Plitvice%2Bmeren%2B-%2B74kl.jpg)](/post/images/2014-09-07-tolkiens-inspiration-Plitvice%2Bmeren%2B-%2B74kl.jpg)
 
   
 
-[![](../images/thumbnails/2014-09-07-tolkiens-inspiration-Plitvice%2Bmeren%2B-%2B90kl.jpg)](../images/2014-09-07-tolkiens-inspiration-Plitvice%2Bmeren%2B-%2B90kl.jpg)
+[![](/post/images/thumbnails/2014-09-07-tolkiens-inspiration-Plitvice%2Bmeren%2B-%2B90kl.jpg)](/post/images/2014-09-07-tolkiens-inspiration-Plitvice%2Bmeren%2B-%2B90kl.jpg)
 
   
   

@@ -24,7 +24,7 @@ predicted this. It never had the ambition to deliver real value. I was
 more than happy to deliver five minutes of entertainment.  
   
 
-[![](../images/thumbnails/2011-09-29-a-real-developer-knows-when-to-pull-the-plug-ARealDeveloperAnalytics.PNG)](../images/2011-09-29-a-real-developer-knows-when-to-pull-the-plug-ARealDeveloperAnalytics.PNG)
+[![](/post/images/thumbnails/2011-09-29-a-real-developer-knows-when-to-pull-the-plug-ARealDeveloperAnalytics.PNG)](/post/images/2011-09-29-a-real-developer-knows-when-to-pull-the-plug-ARealDeveloperAnalytics.PNG)
 
   
 

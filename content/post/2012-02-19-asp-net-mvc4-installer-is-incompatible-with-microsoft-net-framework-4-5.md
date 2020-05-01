@@ -27,7 +27,7 @@ though. I had some pain, wasting over an hour, after only partially
 removing the installation.  
   
 
-[![](../images/thumbnails/2012-02-19-asp-net-mvc4-installer-is-incompatible-with-microsoft-net-framework-4-5-uninstall.PNG)](../images/2012-02-19-asp-net-mvc4-installer-is-incompatible-with-microsoft-net-framework-4-5-uninstall.PNG)
+[![](/post/images/thumbnails/2012-02-19-asp-net-mvc4-installer-is-incompatible-with-microsoft-net-framework-4-5-uninstall.PNG)](/post/images/2012-02-19-asp-net-mvc4-installer-is-incompatible-with-microsoft-net-framework-4-5-uninstall.PNG)
 
   
 **Update:** [Brad Wilson answers the question why they aren't

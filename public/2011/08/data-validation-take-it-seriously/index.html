@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Data validation, take it seriously - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Data validation, take it seriously">
+<meta itemprop="description" content="We just heard that we might be stuck in Washington DC for a few hours due to a defect of our plane&rsquo;s backup generator. We decided to notify our hotel we might be running late.
+Surfing to the contact page on their site, we found out that we couldn&rsquo;t enter our European mobile phonenumber in the required (!) telephone number field.
+Unable to find the direct email address of the hotel, I opened the developer tools and had a look at the validation script.">
+<meta itemprop="datePublished" content="2011-08-28T16:30:00&#43;02:00" />
+<meta itemprop="dateModified" content="2011-08-28T16:30:00&#43;02:00" />
+<meta itemprop="wordCount" content="155">
+
+
+
+<meta itemprop="keywords" content="javascript,Hack," /><meta property="og:title" content="Data validation, take it seriously" />
+<meta property="og:description" content="We just heard that we might be stuck in Washington DC for a few hours due to a defect of our plane&rsquo;s backup generator. We decided to notify our hotel we might be running late.
+Surfing to the contact page on their site, we found out that we couldn&rsquo;t enter our European mobile phonenumber in the required (!) telephone number field.
+Unable to find the direct email address of the hotel, I opened the developer tools and had a look at the validation script." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2011/08/data-validation-take-it-seriously/" />
+<meta property="article:published_time" content="2011-08-28T16:30:00+02:00" />
+<meta property="article:modified_time" content="2011-08-28T16:30:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Data validation, take it seriously"/>
+<meta name="twitter:description" content="We just heard that we might be stuck in Washington DC for a few hours due to a defect of our plane&rsquo;s backup generator. We decided to notify our hotel we might be running late.
+Surfing to the contact page on their site, we found out that we couldn&rsquo;t enter our European mobile phonenumber in the required (!) telephone number field.
+Unable to find the direct email address of the hotel, I opened the developer tools and had a look at the validation script."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">28</span>
+							<span class="rest">Aug 2011</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Data validation, take it seriously</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>We just heard that we might be stuck in Washington DC for a few hours
+due to a defect of our plane&rsquo;s backup generator. We decided to notify
+our hotel we might be running late.</p>
+<p>Surfing to the contact page on their site, we found out that we couldn&rsquo;t
+enter our European mobile phonenumber in the required (!) telephone
+number field.</p>
+<p>Unable to find the direct email address of the hotel, I opened the
+developer tools and had a look at the validation script.</p>
+<p><a href="/post/images/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B7.png"><img src="/post/images/thumbnails/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B7.png" alt=""></a><br>
+Instead of even trying to understand the regular expression, I just
+redefined the validation function using the console and retried sending
+the message.</p>
+<p><a href="/post/images/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B8.png"><img src="/post/images/thumbnails/2011-08-28-data-validation-take-it-seriously-Afbeelding%2B8.png" alt=""></a><br>
+Not so suprisingly, judging by the cheesiness of the hotel&rsquo;s website,
+our message was sent successfully.</p>
+<p>According to the
+<a href="https://www.owasp.org/index.php/Top_10_2010-Main">OWASP</a>, the number
+one security risk for web applications in 2010 is failing to validate
+untrusted data.</p>
+<p>Seriously, take data validation seriously. <!-- raw HTML omitted -->Don&rsquo;t make a fool out of yourself. <!-- raw HTML omitted --></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/javascript">javascript</a></li>
+							
+							<li><a href="/tags/hack">Hack</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2011  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

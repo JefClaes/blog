@@ -37,7 +37,7 @@ point. If you take a closer look at the ticket, you can see the amount
 of points being repeated at the tail of the barcode.  
   
 
-[![](../images/thumbnails/2017-02-12-printing-money-hacking-loyalty-points-ticket.png)](../images/2017-02-12-printing-money-hacking-loyalty-points-ticket.png)
+[![](/post/images/thumbnails/2017-02-12-printing-money-hacking-loyalty-points-ticket.png)](/post/images/2017-02-12-printing-money-hacking-loyalty-points-ticket.png)
 
   
 
@@ -49,7 +49,7 @@ loyalty points.
 
   
 
-[![](../images/thumbnails/2017-02-12-printing-money-hacking-loyalty-points-upc.gif)](../images/2017-02-12-printing-money-hacking-loyalty-points-upc.gif)
+[![](/post/images/thumbnails/2017-02-12-printing-money-hacking-loyalty-points-upc.gif)](/post/images/2017-02-12-printing-money-hacking-loyalty-points-upc.gif)
 
   
 
@@ -61,7 +61,7 @@ needed.
 
   
 
-[![](../images/thumbnails/2017-02-12-printing-money-hacking-loyalty-points-forge.PNG)](../images/2017-02-12-printing-money-hacking-loyalty-points-forge.PNG)
+[![](/post/images/thumbnails/2017-02-12-printing-money-hacking-loyalty-points-forge.PNG)](/post/images/2017-02-12-printing-money-hacking-loyalty-points-forge.PNG)
 
   
 

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Making my first NancyFx test pass - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Making my first NancyFx test pass">
+<meta itemprop="description" content="Like I already said last week, I have been dabbling a bit with NancyFx lately.
+This week I took a serious look at testing Nancy modules and Razor views. Due to Nancy&rsquo;s defaults and conventions, it takes a little while to set up Nancy in a test context. Then again, Nancy&rsquo;s granularity makes it simple enough to set up a solid test infrastructure by replacing some of its building blocks.">
+<meta itemprop="datePublished" content="2012-06-11T16:47:00&#43;02:00" />
+<meta itemprop="dateModified" content="2012-06-11T16:47:00&#43;02:00" />
+<meta itemprop="wordCount" content="639">
+
+
+
+<meta itemprop="keywords" content=".NET,NancyFx," /><meta property="og:title" content="Making my first NancyFx test pass" />
+<meta property="og:description" content="Like I already said last week, I have been dabbling a bit with NancyFx lately.
+This week I took a serious look at testing Nancy modules and Razor views. Due to Nancy&rsquo;s defaults and conventions, it takes a little while to set up Nancy in a test context. Then again, Nancy&rsquo;s granularity makes it simple enough to set up a solid test infrastructure by replacing some of its building blocks." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/" />
+<meta property="article:published_time" content="2012-06-11T16:47:00+02:00" />
+<meta property="article:modified_time" content="2012-06-11T16:47:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Making my first NancyFx test pass"/>
+<meta name="twitter:description" content="Like I already said last week, I have been dabbling a bit with NancyFx lately.
+This week I took a serious look at testing Nancy modules and Razor views. Due to Nancy&rsquo;s defaults and conventions, it takes a little while to set up Nancy in a test context. Then again, Nancy&rsquo;s granularity makes it simple enough to set up a solid test infrastructure by replacing some of its building blocks."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">11</span>
+							<span class="rest">Jun 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Making my first NancyFx test pass</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Like <a href="http://www.jefclaes.be/2012/06/nancyfx-appharbor-builds-timing-out.html">I already said last
+week</a>,
+I have been dabbling a bit with <a href="http://nancyfx.org/">NancyFx</a> lately.</p>
+<p>This week I took a serious look at testing Nancy modules and Razor
+views. Due to Nancy&rsquo;s defaults and conventions, it takes a little while
+to set up Nancy in a test context. Then again, Nancy&rsquo;s granularity makes
+it simple enough to set up a solid test infrastructure by replacing some
+of its building blocks.</p>
+<p>Like always, I had to go through several iterations to get it right.</p>
+<p><strong>A first attempt</strong></p>
+<p>The first test I wrote looked something like this. This test simply
+asserts whether a GET request to the root of my application returns a
+200 OK status code.</p>
+<pre><code>[TestMethod]
+public void root_should_return_response_ok()
+{        
+    var browser = new Browser(new DefaultNancyBootstrapper());
+
+    var response = browser.Get(&quot;/&quot;);
+
+    Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+}
+
+Assert.AreEqual failed. Expected:&lt;OK&gt;. Actual:&lt;NotFound&gt;.
+</code></pre>
+<p><strong>Telling Nancy which modules to use</strong></p>
+<p>I figured out I had to tell Nancy which modules to load. You can do this
+by using the configurable bootstrapper, which gives you an API to
+configure parts of Nancy yourself.</p>
+<pre><code>var bootstrapper = new ConfigurableBootstrapper(with =&gt;
+{
+    with.Module&lt;RootModule&gt;();               
+});
+var browser = new Browser(bootstrapper);
+</code></pre>
+<p>Running this test, I no longer got a NotFound result, but an exception.
+Making progress.</p>
+<pre><code>Test method RootModuleTests.root_should_return_response_ok threw exception: 
+System.Exception: ConfigurableBootstrapper Exception ---&gt; 
+                  Nancy.RequestExecutionException: Oh noes! ---&gt; 
+                  Nancy.ViewEngines.ViewNotFoundException: Unable to locate view 'HomeView'
+Currently available view engine extensions: sshtml,html,htm
+Locations inspected: HomeView,views/HomeView,views/HomeView,/HomeView,views/Root/HomeView,Root/HomeView
+</code></pre>
+<p><strong>Where is the view engine?</strong></p>
+<p>On inspecting the exception, I noticed that the cshtml view engine
+extension was missing from the list.</p>
+<p>To add the view engine, you can just add a reference to the
+Nancy.ViewEngines.Razor assembly. Nancy will pick up the new engine
+automatically.</p>
+<pre><code>Test method RootModuleTests.root_should_return_response_ok threw exception: 
+System.Exception: ConfigurableBootstrapper Exception ---&gt; 
+                    Nancy.RequestExecutionException: Oh noes! ---&gt; 
+                    Nancy.ViewEngines.ViewNotFoundException: Unable to locate view 'HomeView'
+Currently available view engine extensions: sshtml,html,htm,cshtml,vbhtml
+Locations inspected: HomeView,views/HomeView,views/HomeView,/HomeView,views/Root/HomeView,Root/HomeView
+</code></pre>
+<p><strong>Locating the views</strong></p>
+<p>This time around we get a slightly different exception; the razor view
+engine extension is available, but Nancy is still having trouble finding
+the views - which is normal. Nancy is running in a different context
+now, so the default rootpathprovider will return the wrong path.
+Implementing another one is children&rsquo;s play.</p>
+<pre><code>public class TestRootPathProvider : IRootPathProvider
+{    
+    public string GetRootPath()
+    {
+        return &quot;C:\MyProject\&quot;;
+    }
+}
+</code></pre>
+<p>I discovered that you don&rsquo;t even need to use the configurable
+bootstrapper to override the IRoothPathProvider; Nancy seems to pick up
+the new implementation by herself.</p>
+<p>The hardcoded path will work on your machine, but not on the build
+server. In my second iteration, I made the implementation smarter by
+traversing my way through parent directories looking for my views folder</p>
+<ul>
+<li>
+<p>starting from my tests out folder all the way up to my web application
+folder.</p>
+<p>public class TestRootPathProvider : IRootPathProvider
+{
+private static string _cachedRootPath;</p>
+<pre><code>  public string GetRootPath()
+  {
+      if (!string.IsNullOrEmpty(_cachedRootPath))
+          return _cachedRootPath;
+
+      var currentDirectory = new DirectoryInfo(Environment.CurrentDirectory);
+        
+      bool rootPathFound = false;            
+      while (!rootPathFound)
+      {
+          var directoriesContainingViewFolder = currentDirectory.GetDirectories(
+                    &quot;Views&quot;, SearchOption.AllDirectories);
+          if (directoriesContainingViewFolder.Any())
+          {
+              _cachedRootPath = directoriesContainingViewFolder.First().FullName;
+              rootPathFound = true;
+          }
+
+          currentDirectory = currentDirectory.Parent;
+      }
+
+      return _cachedRootPath;
+  }
+</code></pre>
+<p>}</p>
+<p>Result: Passed</p>
+</li>
+</ul>
+<p>I was happy to find out that this technique works for the MSTest runner,
+<a href="http://www.ncrunch.net/">NCrunch</a> and
+<a href="https://appharbor.com/">Appharbor</a>.</p>
+<p>There is one more way you can go at this though, which works and maybe
+even is the &lsquo;recommended&rsquo; technique, but also is <a href="http://stackoverflow.com/questions/3738819/do-mstest-deployment-items-only-work-when-present-in-the-project-test-settings-f">a lot more
+cumbersome</a>:
+use the
+<a href="http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.testtools.unittesting.deploymentitemattribute(v=vs.80).aspx">DeploymentItem</a>
+attribute to copy the views folder to your tests out folder.</p>
+<p><strong>To recapitulate</strong><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p>I hope this post documented some useful techniques to get started
+testing Nancy&rsquo;s modules and views:</p>
+<ol>
+<li>Use the configurable bootstrapper to add your modules</li>
+<li>Reference the correct view engine</li>
+<li>Implement a rootpathprovider telling Nancy where it can find her
+views</li>
+</ol>
+<p>Only a few days ago,
+<a href="https://twitter.com/#!/thecodejunkie">@thecodejunkie</a> made a <a href="https://github.com/NancyFx/Nancy/issues/633">ticket on
+GitHub</a> addressing some of
+these issues. I&rsquo;m pretty confident we can smooth out these rough edges
+to make Nancy tests also walk the super-duper-happy-path.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+							<li><a href="/tags/nancyfx">NancyFx</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

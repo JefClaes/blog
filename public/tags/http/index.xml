@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTTP on Jef Claes</title>
+    <link>http://localhost:1313/tags/http/</link>
+    <description>Recent content in HTTP on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Mar 2013 16:10:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Putting my IronMQ experiment under stress</title>
+      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</link>
+      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</guid>
+      <description>Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&amp;rsquo;t put it under stress yet; &amp;ldquo;First make it work, then make it fast&amp;rdquo;, and all of that.
+I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second.</description>
+    </item>
+    
+    <item>
+      <title>Some experimental infrastructure for IronMQ pull </title>
+      <link>http://localhost:1313/2013/03/some-experimental-infrastructure-for-ironmq-pull/</link>
+      <pubDate>Sun, 10 Mar 2013 17:29:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/some-experimental-infrastructure-for-ironmq-pull/</guid>
+      <description>I wrote about using IronMQ as a cloud-based message queue last week. In that post I explained that you can go at using IronMQ in two ways; either you pull from the queue yourself, or you let IronMQ push messages from the queue to your HTTP endpoints. At first sight, the latter allows you to outsource more infrastructure to their side, but upon closer inspection it also introduces other concerns: security, local debugging and scalability.</description>
+    </item>
+    
+    <item>
+      <title>First IronMQ impressions</title>
+      <link>http://localhost:1313/2013/03/first-ironmq-impressions/</link>
+      <pubDate>Sun, 03 Mar 2013 16:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/first-ironmq-impressions/</guid>
+      <description>First time I touched messaging was in the first few years of my professional life working on software that supported fire departments in their day-to-day activities. The dispatching software would send messages to a proprietary broker, which in its turn would forward them to interested subscribers; other dispatching clients, or services. To ensure availability, the broker component could failover to a different machine, but that was about it. It didn&amp;rsquo;t allow you to queue or retry messages; if you weren&amp;rsquo;t up when the messages were forwarded, you would never receive them.</description>
+    </item>
+    
+    <item>
+      <title>Released: Nancy.AspNetSprites.Razor</title>
+      <link>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</link>
+      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</guid>
+      <description>I was setting up a web application that shows an image for each listed product on the home page. When there were a few products, this worked pretty smooth, but as the number of products (and thereby images) increased, performance degraded. The problem is that each image initiates a separate request. The solution for this problem is to reduce the number of requests by combining the images using CSS sprites. Here is an in-detail explanation of how this works.</description>
+    </item>
+    
+    <item>
+      <title>NancyFx and bundling with Cassette</title>
+      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
+      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
+      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
+Since I struggled with the implementation a little bit, I documented the process below.
+1. Cassette.Nancy package
+**
+**Add the Cassette.Nancy package to the project.
+PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
+    </item>
+    
+    <item>
+      <title>Should I unit- or integration test my ASP.NET Web API services?</title>
+      <link>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my-asp.net-web-api-services/</link>
+      <pubDate>Sun, 15 Jul 2012 22:37:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my-asp.net-web-api-services/</guid>
+      <description>Over the last two weeks, preparing for a talk, I have been doing some research on ASP.NET Web API. After working my way through the API, and the implementation of certain features, I looked at testing.
+Similar to ASP.NET MVC, Web API allows you to create relatively small building blocks, which can replace parts of, or be added to an existing default global setup. This makes it possible for us to test each component in isolation: controllers, dependency resolvers, filters, serialization, type formatters, messagehandlers and routing.</description>
+    </item>
+    
+  </channel>
+</rss>

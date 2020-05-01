@@ -48,7 +48,7 @@ cache being a whopping **2.2GB** now for one single web application.
 
   
 
-[![](../images/thumbnails/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-appcache-internals.PNG)](../images/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-appcache-internals.PNG)
+[![](/post/images/thumbnails/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-appcache-internals.PNG)](/post/images/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-appcache-internals.PNG)
 
   
 
@@ -70,7 +70,7 @@ more elegant way here?
 
   
 
-[![](../images/thumbnails/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-exceedquote.PNG)](../images/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-exceedquote.PNG)
+[![](/post/images/thumbnails/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-exceedquote.PNG)](/post/images/2012-03-25-how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it-exceedquote.PNG)
 
   
 **What are your thoughts? What would you want your browser to do in

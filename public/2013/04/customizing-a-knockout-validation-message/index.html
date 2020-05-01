@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Customizing a knockout validation message - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Customizing a knockout validation message">
+<meta itemprop="description" content="Knockout validation is a plugin that allows you to extend observables with validation. If you&rsquo;re familiar with jQuery validation, you will notice that most provided validation rules are very similar.
+One of the validation rules available out-of-the-box is pattern validation. By default the error message for violating this rule doesn&rsquo;t mention the expected pattern. And in general, showing the expected pattern probably isn&rsquo;t a good idea since your users will have no idea what you&rsquo;re talking about.">
+<meta itemprop="datePublished" content="2013-04-28T18:56:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-04-28T18:56:00&#43;02:00" />
+<meta itemprop="wordCount" content="493">
+
+
+
+<meta itemprop="keywords" content="CodeSnippets,ASP.NET MVC,HTML,javascript," /><meta property="og:title" content="Customizing a knockout validation message" />
+<meta property="og:description" content="Knockout validation is a plugin that allows you to extend observables with validation. If you&rsquo;re familiar with jQuery validation, you will notice that most provided validation rules are very similar.
+One of the validation rules available out-of-the-box is pattern validation. By default the error message for violating this rule doesn&rsquo;t mention the expected pattern. And in general, showing the expected pattern probably isn&rsquo;t a good idea since your users will have no idea what you&rsquo;re talking about." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/04/customizing-a-knockout-validation-message/" />
+<meta property="article:published_time" content="2013-04-28T18:56:00+02:00" />
+<meta property="article:modified_time" content="2013-04-28T18:56:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Customizing a knockout validation message"/>
+<meta name="twitter:description" content="Knockout validation is a plugin that allows you to extend observables with validation. If you&rsquo;re familiar with jQuery validation, you will notice that most provided validation rules are very similar.
+One of the validation rules available out-of-the-box is pattern validation. By default the error message for violating this rule doesn&rsquo;t mention the expected pattern. And in general, showing the expected pattern probably isn&rsquo;t a good idea since your users will have no idea what you&rsquo;re talking about."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">28</span>
+							<span class="rest">Apr 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Customizing a knockout validation message</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p><a href="https://github.com/ericmbarnard/Knockout-Validation">Knockout
+validation</a> is a
+plugin that allows you to extend observables with validation. If you&rsquo;re
+familiar with jQuery validation, you will notice that most provided
+validation rules are very similar.</p>
+<p>One of the validation rules available out-of-the-box is pattern
+validation. By default the error message for violating this rule doesn&rsquo;t
+mention the expected pattern. And in general, showing the expected
+pattern probably isn&rsquo;t a good idea since your users will have no idea
+what you&rsquo;re talking about. If you&rsquo;re building a back-end for devops
+purposes, it might be more acceptable though.</p>
+<p>Instead of &ldquo;Invalid.&quot;, I want my error message to be &ldquo;I can&rsquo;t believe
+the pattern doesn&rsquo;t match {pattern}.&quot;.</p>
+<pre><code>test('1. When the object is invalid, the error message contains our formatted message.', 
+    function () {
+        var testObj = ko.observable('').extend({ pattern: 'myPattern' });    
+            
+        testObj('something');
+        
+        equal(
+            testObj.error, 
+            'I can\'t believe the pattern doesn\'t match \'myPattern\'.', 
+            'The formatted error message is correct.');    
+    }
+);
+
+Expected: &quot;I can't believe the pattern doesn't match 'myPattern'.&quot;
+Result:    &quot;Invalid.&quot;
+Diff: &quot;I can't believe the pattern doesn't match 'myPattern'.&quot; &quot;Invalid.&quot; 
+</code></pre>
+<p>Digging a bit into the source, I found the function that formats the
+error messages; it simply replaces {0} in the message with the params
+value.</p>
+<pre><code>formatMessage: function (message, params) {
+    if (typeof (message) === 'function')
+        return message(params);
+    return message.replace(/\{0\}/gi, params);
+};
+</code></pre>
+<p>So to change the error message to have it include the pattern, we can
+pass a pattern object which contains our message with the params
+placeholder and the params value. </p>
+<pre><code>test('2. When the object is invalid, the error message contains our formatted message.', 
+    function () {   
+        var testObj = ko
+            .observable('')
+            .extend({ pattern: {
+                message: 'I can\'t believe the pattern doesn\'t match \'{0}\'.',
+                params: 'myPattern'
+        }});                            
+                
+        testObj('something');
+        
+        equal(
+            testObj.error, 
+            'I can\'t believe the pattern doesn\'t match \'myPattern\'.', 
+            'The formatted error message is correct.');    
+    }
+);
+
+The formatted error message is correct.
+Expected: &quot;I can't believe the pattern doesn't match 'myPattern'.&quot;
+</code></pre>
+<p>This will make our test pass. It&rsquo;s not a great idea to repeat this in
+each location though. Since the plugin exposes its rules, you can just
+go in, modify the default message for the pattern rule, and see it
+applied everywhere.</p>
+<pre><code>test('3. When the objects are invalid, the error message contains our formatted message.', 
+    function () {
+        var testObj1 = ko.observable('').extend({ pattern: 'myPattern' });
+        var testObj2 = ko.observable('').extend({ pattern: 'myPattern' });
+                                            
+        ko.validation.rules['pattern'].message = 
+            'I can\'t believe the pattern doesn\'t match \'{0}\'.',    
+        
+        testObj1('something');
+        testObj2('something');
+        
+        equal(
+            testObj1.error, 
+            'I can\'t believe the pattern doesn\'t match \'myPattern\'.', 
+            'The formatted error message is correct for testObj1.');      
+        equal(
+            testObj2.error, 
+            'I can\'t believe the pattern doesn\'t match \'myPattern\'.', 
+            'The formatted error message is correct for testObj2.');      
+    }
+);
+
+The formatted error message is correct.
+Expected: &quot;I can't believe the pattern doesn't match 'myPattern'.&quot;
+The formatted error message is correct.
+Expected: &quot;I can't believe the pattern doesn't match 'myPattern'.&quot;
+</code></pre>
+<p>I hope that even if you weren&rsquo;t interested in this exact scenario, this
+post gave you an idea on how to go at customizing knockout validation
+messages.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							
+							<li><a href="/tags/asp.net-mvc">ASP.NET MVC</a></li>
+							
+							<li><a href="/tags/html">HTML</a></li>
+							
+							<li><a href="/tags/javascript">javascript</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

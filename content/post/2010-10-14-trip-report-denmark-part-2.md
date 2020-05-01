@@ -23,10 +23,10 @@ around in the big park surrounding the castle, or visit the five museums
 on the Egeskov domain. The vintage automobile and motorcycle museums are
 awesome!  
   
-[![](../images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_068.JPG)](../images/2010-10-14-trip-report-denmark-part-2-Faaborg_068.JPG)  
-[![](../images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_103.JPG)](../images/2010-10-14-trip-report-denmark-part-2-Faaborg_103.JPG)  
-[![](../images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_111.JPG)](../images/2010-10-14-trip-report-denmark-part-2-Faaborg_111.JPG)  
-[![](../images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_112.JPG)](../images/2010-10-14-trip-report-denmark-part-2-Faaborg_112.JPG)  
+[![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_068.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Faaborg_068.JPG)  
+[![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_103.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Faaborg_103.JPG)  
+[![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_111.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Faaborg_111.JPG)  
+[![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_112.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Faaborg_112.JPG)  
   
 <span style="font-weight:bold;">Jutland</span>  
   
@@ -39,10 +39,10 @@ Denmark](http://en.wikipedia.org/wiki/Ribe), went hiking and strolled
 the cleanest beaches in Europe. A perfect place to relax and find new
 energy.  
   
-[![](../images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_020.jpg)](../images/2010-10-14-trip-report-denmark-part-2-Blaavand_020.jpg)  
-[![](../images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_036.jpg)](../images/2010-10-14-trip-report-denmark-part-2-Blaavand_036.jpg)  
-[![](../images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_066.JPG)](../images/2010-10-14-trip-report-denmark-part-2-Blaavand_066.JPG)  
-[![](../images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_143.JPG)](../images/2010-10-14-trip-report-denmark-part-2-Blaavand_143.JPG)  
+[![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_020.jpg)](/post/images/2010-10-14-trip-report-denmark-part-2-Blaavand_020.jpg)  
+[![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_036.jpg)](/post/images/2010-10-14-trip-report-denmark-part-2-Blaavand_036.jpg)  
+[![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_066.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Blaavand_066.JPG)  
+[![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_143.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Blaavand_143.JPG)  
   
 <span style="font-weight:bold;">Conclusion</span>  
   

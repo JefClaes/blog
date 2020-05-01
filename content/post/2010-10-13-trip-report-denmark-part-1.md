@@ -19,7 +19,7 @@ The first three days of this holiday we visited
 were the most interesting, but also the most intensive days of the
 holiday. There are so many places to visit in Copenhagen!  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_157.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_157.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_157.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_157.JPG)  
 If you are in Copenhagen to do some sightseeing I advice you to get
 yourself a [Copenhagen
 card](http://www.visitcopenhagen.com/tourist/what_to_see_and_do/copenhagen_card/where_to_buy_copenhagen_card).
@@ -36,7 +36,7 @@ Ripley's believe it or not museums spread over the world. Although this
 museum isn't a must-see, the bizarre items featured are definitely
 entertaining.  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_057_2.jpg)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_057_2.jpg)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_057_2.jpg)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_057_2.jpg)  
   
 <span style="font-weight:bold;">Dansk Design Center</span>  
   
@@ -44,7 +44,7 @@ Although this is one of the museums my girlfriend had to drag me to, it
 turned out to be not that bad. The UX people out there will find this
 very interesting.  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_069_2.jpg)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_069_2.jpg)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_069_2.jpg)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_069_2.jpg)  
   
 <span style="font-weight:bold;">Christianborg</span>  
   
@@ -59,7 +59,7 @@ rebuilt two times due to serious fires.
 A small part of the palace is open to the public. The inside of the
 palace is even more impressive than the outside!  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_098.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_098.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_098.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_098.JPG)  
   
 <span style="font-weight:bold;">Tivoli</span>  
   
@@ -68,17 +68,17 @@ amusement park in the world. It was built over 150 years ago. Although
 you can't compare it to Disney World, this is a must-see. If you go
 there, I advice you to go by night.  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_118.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_118.JPG)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_127.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_127.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_118.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_118.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_127.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_127.JPG)  
   
 <span style="font-weight:bold;">Zoological Museum</span>  
   
 In this museum there is a permanent exhibition called From Pole To Pole.
 There is also a semi-permanent Darwin exhibition.  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_159.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_159.JPG)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_164.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_164.JPG)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_173.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_173.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_159.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_159.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_164.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_164.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_173.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_173.JPG)  
   
 <span style="font-weight:bold;">Copenhagen Zoo</span>  
   
@@ -89,11 +89,11 @@ Copenhagen Zoo is the only zoo outside of Australia that has Tasmanian
 Devils in captivity. It turned out it didn't totally live up to [our
 expectation.](http://en.wikipedia.org/wiki/Tasmanian_Devil_(Looney_Tunes))  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_175.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_175.JPG)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_183.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_183.JPG)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_184.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_184.JPG)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_213.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_213.JPG)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_233.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_233.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_175.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_175.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_183.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_183.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_184.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_184.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_213.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_213.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_233.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_233.JPG)  
 <span style="font-style:italic;">The Tasmanian Devil guarding its
 territory borders. Not that scary right?</span>  
   
@@ -113,9 +113,9 @@ to smoke, socialize and <span style="font-style:italic;">chill</span>.
   
 Too bad taking pictures at Pusher Street isn't allowed.  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_250_2.jpg)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_250_2.jpg)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_253_2.jpg)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_253_2.jpg)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_267_2.jpg)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_267_2.jpg)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_250_2.jpg)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_250_2.jpg)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_253_2.jpg)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_253_2.jpg)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_267_2.jpg)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_267_2.jpg)  
   
 <span style="font-weight:bold;">Rosenborg castle</span>  
   
@@ -123,8 +123,8 @@ Too bad taking pictures at Pusher Street isn't allowed.
 a country summerhouse for the monarchy. Today it is a museum exhibiting
 the Royal Collection and Crown Jewels.  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_345.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_345.JPG)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_333.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_333.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_345.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_345.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_333.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_333.JPG)  
   
 <span style="font-weight:bold;">Nyhavn</span>  
   
@@ -132,7 +132,7 @@ the Royal Collection and Crown Jewels.
 very popular among tourists. It is best known for its colorful buildings
 and cozy restaurants.  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_378.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_378.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_378.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_378.JPG)  
   
 <span style="font-weight:bold;">Architecture</span>  
   
@@ -141,8 +141,8 @@ worth visiting. The ones that impressed me the most are the [Black
 Diamond](http://en.wikipedia.org/wiki/Royal_Danish_Library) and the [new
 Opera House](http://en.wikipedia.org/wiki/Copenhagen_Opera_House).  
   
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_403.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_403.JPG)  
-[![](../images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_384.JPG)](../images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_384.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_403.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_403.JPG)  
+[![](/post/images/thumbnails/2010-10-13-trip-report-denmark-part-1-Kopenhagen_384.JPG)](/post/images/2010-10-13-trip-report-denmark-part-1-Kopenhagen_384.JPG)  
   
 <span style="font-weight:bold;">And you?</span>  
   

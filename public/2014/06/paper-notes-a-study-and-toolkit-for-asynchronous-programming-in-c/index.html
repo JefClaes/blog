@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Paper notes: A Study and Toolkit for Asynchronous Programming in C# - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Paper notes: A Study and Toolkit for Asynchronous Programming in C#">
+<meta itemprop="description" content="The .NET framework mainly provides two models for asynchronous programming: (1) the Asynchronous Programming Model (APM), that uses callbacks, and (2) the Task Asynchronous Pattern (TAP), that uses Tasks, which are similar to the concept of futures.
+The Task represents the operation in progress, and its future result. The Task can be (1) queried for the status of the operation, (2) synchronized upon to wait for the result of the operation, or (3) set up with a continuation that resumes in the background when the task completes.">
+<meta itemprop="datePublished" content="2014-06-08T18:33:00&#43;02:00" />
+<meta itemprop="dateModified" content="2014-06-08T18:33:00&#43;02:00" />
+<meta itemprop="wordCount" content="374">
+
+
+
+<meta itemprop="keywords" content=".NET," /><meta property="og:title" content="Paper notes: A Study and Toolkit for Asynchronous Programming in C#" />
+<meta property="og:description" content="The .NET framework mainly provides two models for asynchronous programming: (1) the Asynchronous Programming Model (APM), that uses callbacks, and (2) the Task Asynchronous Pattern (TAP), that uses Tasks, which are similar to the concept of futures.
+The Task represents the operation in progress, and its future result. The Task can be (1) queried for the status of the operation, (2) synchronized upon to wait for the result of the operation, or (3) set up with a continuation that resumes in the background when the task completes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/06/paper-notes-a-study-and-toolkit-for-asynchronous-programming-in-c/" />
+<meta property="article:published_time" content="2014-06-08T18:33:00+02:00" />
+<meta property="article:modified_time" content="2014-06-08T18:33:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Paper notes: A Study and Toolkit for Asynchronous Programming in C#"/>
+<meta name="twitter:description" content="The .NET framework mainly provides two models for asynchronous programming: (1) the Asynchronous Programming Model (APM), that uses callbacks, and (2) the Task Asynchronous Pattern (TAP), that uses Tasks, which are similar to the concept of futures.
+The Task represents the operation in progress, and its future result. The Task can be (1) queried for the status of the operation, (2) synchronized upon to wait for the result of the operation, or (3) set up with a continuation that resumes in the background when the task completes."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">08</span>
+							<span class="rest">Jun 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Paper notes: A Study and Toolkit for Asynchronous Programming in C#</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>The .NET framework mainly provides two models for asynchronous
+programming: (1) the Asynchronous Programming Model (APM), that uses
+callbacks, and (2) the Task Asynchronous Pattern (TAP), that uses Tasks,
+which are similar to the concept of futures.</p>
+<p>The Task represents the operation in progress, and its future result.
+The Task can be (1) queried for the status of the operation, (2)
+synchronized upon to wait for the result of the operation, or (3) set up
+with a continuation that resumes in the background when the task
+completes.</p>
+<p>When a method has the async keyword modifier in its signature, the await
+keyword can be used to define pausing points. The code following the
+await expression can be considered a continuation of the method, exactly
+like the callback that needs to be supplied explicitly when using APM or
+plain TAP.</p>
+<p><strong>Do Developers Misuse async/await?</strong></p>
+<ol>
+<li>One in five async methods violate the principle that an async method
+should be awaitable unless it is the top level event handler.</li>
+<li>Adding the async modifier comes at a price: the compiler generates
+some code in every async method and generated code complicates the
+control flow which results in decreased performance. There is no
+need to use async/await in 14% of async methods.</li>
+<li>1 out of 5 apps miss opportunities in at least one async method to
+increase asynchronicity.</li>
+<li>99% of the time, developers did not use ConfigureAwait(false) where
+this was needed.</li>
+</ol>
+<p>The async/await feature is a powerful abstraction. asynchronous methods
+are more complicated than regular methods in three ways. (1) Control
+flow of asynchronous methods. Control is returned to the caller when
+awaiting, and the continuation is resumed later on. (2) Exception
+handling. Exceptions thrown in asynchronous methods are automatically
+captured and returned through the Task. The exception is then re-thrown
+when the Task is awaited. (3) Non-trivial concurrent behavior.</p>
+<p>Each of these is a leak in the abstraction, which requires an
+understanding of the underlying technology - which developers do not yet
+seem to grasp.</p>
+<p>Another problem might simply be the naming of the feature: asynchronous
+methods. However, the first part of the method executes synchronously,
+and possible the continuations do as well. Therefore, the name
+asynchronous method might be misleading: the term pauseable could be
+more appropriate.</p>
+<p><a href="http://swerl.tudelft.nl/twiki/pub/Main/TechnicalReports/TUD-SERG-2013-016.pdf">Source</a></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/.net">.NET</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -13,7 +13,7 @@ you how casinos tweak that model to bend the odds and create near
 misses.  
   
 
-[![](../images/thumbnails/2014-12-09-spinning-the-wheel-SpinTheWheel.png)](../images/2014-12-09-spinning-the-wheel-SpinTheWheel.png)
+[![](/post/images/thumbnails/2014-12-09-spinning-the-wheel-SpinTheWheel.png)](/post/images/2014-12-09-spinning-the-wheel-SpinTheWheel.png)
 
   
 Let's say we have a physical wheel with four pockets, which are labeled

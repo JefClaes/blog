@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WebMatrix on Jef Claes</title>
+    <link>http://localhost:1313/tags/webmatrix/</link>
+    <description>Recent content in WebMatrix on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 29 Sep 2011 20:38:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/webmatrix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A real developer knows when to pull the plug</title>
+      <link>http://localhost:1313/2011/09/a-real-developer-knows-when-to-pull-the-plug/</link>
+      <pubDate>Thu, 29 Sep 2011 20:38:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/09/a-real-developer-knows-when-to-pull-the-plug/</guid>
+      <description>My mini-website arealdeveloper.com will no longer be available online after tomorrow.
+I slapped it together over a weekend, trying out WebMatrix, which turned out to be the perfect companion for building small things.
+A pleasant surprise was the mention of &amp;lsquo;A Real Developer&amp;rsquo; by the guys at Channel9. This made the traffic go through the roof for a few days.
+A few months later the site was a ghosttown. But I don&amp;rsquo;t mind, I even predicted this.</description>
+    </item>
+    
+    <item>
+      <title>My thoughts on WebMatrix</title>
+      <link>http://localhost:1313/2011/05/my-thoughts-on-webmatrix/</link>
+      <pubDate>Mon, 09 May 2011 21:15:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/05/my-thoughts-on-webmatrix/</guid>
+      <description>After building arealdeveloper.com, I felt like I had to do a follow-up post sharing my experiences with WebMatrix. While doing some research, I came across this post by Rob Connery. And frankly, I think it&amp;rsquo;s almost impossible for me to add something to his findings.
+In a nutshell
+For those who are like &amp;ldquo;tl;dr&amp;rdquo;, here are my thoughts on WebMatrix..
+WebMatrix is the perfect framework to start with ASP.NET development (wish I had).</description>
+    </item>
+    
+    <item>
+      <title>arealdeveloper.com mentioned on Channel9</title>
+      <link>http://localhost:1313/2011/05/arealdeveloper.com-mentioned-on-channel9/</link>
+      <pubDate>Mon, 02 May 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/05/arealdeveloper.com-mentioned-on-channel9/</guid>
+      <description>While nosing around in the arealdeveloper.com analytics, I saw a bunch of traffic coming from Channel9. Clicking through, I found out A Real Developer was mentioned in this video (02:01). That&amp;rsquo;s a Channel9 front-page video!
+That&amp;rsquo;s so awesome, I think it&amp;rsquo;s great people find it a fun project.
+I have been listening to your feedback, and this Sunday I implemented some of your requests:
+ Easier linking Sharing A feed Voting Comments  I try to keep everything as simple as possible, that&amp;rsquo;s why I implemented most of these features using two popular free plug-ins: AddThis and Disqus.</description>
+    </item>
+    
+    <item>
+      <title>arealdeveloper.com</title>
+      <link>http://localhost:1313/2011/04/arealdeveloper.com/</link>
+      <pubDate>Tue, 26 Apr 2011 20:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/arealdeveloper.com/</guid>
+      <description>A Real Developer is a side-project I built over the weekend poking around with WebMatrix.
+
+It got a little out of hand. After publishing, I showed it to a few popular tweeps, and they were kind enough to mention it. 24 hours after the launch it has gotten over 3.5k unique visitors, 39k page views (see what I did there?) and over 240 submissions. Being mentioned by Scott Hanselman and Rey Bango helps.</description>
+    </item>
+    
+  </channel>
+</rss>

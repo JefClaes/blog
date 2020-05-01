@@ -30,5 +30,5 @@ bookspines and associate the title with the time and place I read the
 book. Part of my love for paper books might also be caused by the global
 perception that books equal wisdom.  
   
-[![](../images/thumbnails/2011-02-01-why-i-still-buy-real-books-dexterblood.jpg)](../images/2011-02-01-why-i-still-buy-real-books-dexterblood.jpg)  
+[![](/post/images/thumbnails/2011-02-01-why-i-still-buy-real-books-dexterblood.jpg)](/post/images/2011-02-01-why-i-still-buy-real-books-dexterblood.jpg)  
 **Any accomplices out there?**

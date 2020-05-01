@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on Jef Claes</title>
+    <link>http://localhost:1313/tags/css/</link>
+    <description>Recent content in CSS on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Nov 2012 19:02:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NancyFx and bundling with Cassette</title>
+      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
+      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
+      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
+Since I struggled with the implementation a little bit, I documented the process below.
+1. Cassette.Nancy package
+**
+**Add the Cassette.Nancy package to the project.
+PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
+    </item>
+    
+    <item>
+      <title>HtmlHelper to generate a top-level menu for areas</title>
+      <link>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</link>
+      <pubDate>Sun, 08 Jul 2012 19:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</guid>
+      <description>Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&amp;rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them.</description>
+    </item>
+    
+    <item>
+      <title>IE8-Fix: Disabled select not showing selected options</title>
+      <link>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</link>
+      <pubDate>Wed, 24 Feb 2010 19:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</guid>
+      <description>In this post a small workaround for disabled select not showing selected options in IE8. It&amp;rsquo;s probably not the cleanest fix, but it get&amp;rsquo;s the job done.
+ProblemA disabled select does not highlight the selected options.
+ 1: &amp;lt;select size=&amp;quot;3&amp;quot; multiple=&amp;quot;multiple&amp;quot; id=&amp;quot;mySelect&amp;quot; disabled=&amp;quot;disabled&amp;quot;&amp;gt; 2: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option1&amp;quot;&amp;gt;Option 1&amp;lt;/option&amp;gt; 3: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option2&amp;quot;&amp;gt;Option 2&amp;lt;/option&amp;gt; 4: &amp;lt;option value=&amp;quot;Option3&amp;quot;&amp;gt;Option 3&amp;lt;/option&amp;gt; 5: &amp;lt;/select&amp;gt;  
+SolutionThe following CSS provides a workaround. It looks pretty similar to the appearance we are used to.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -134,7 +134,7 @@ something like this.
 
   
 
-[![](../images/thumbnails/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-readmodel.PNG)](../images/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-readmodel.PNG)Based
+[![](/post/images/thumbnails/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-readmodel.PNG)](/post/images/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-readmodel.PNG)Based
 on heuristics in the head and a snapshot of information available in the
 world, we would make a decision and click a button to execute a specific
 command.
@@ -157,7 +157,7 @@ I rendered these suggestions on top of the existing view and observed
 the decisions that were made.  
   
 
-[![](../images/thumbnails/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-suggestions.PNG)](../images/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-suggestions.PNG)
+[![](/post/images/thumbnails/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-suggestions.PNG)](/post/images/2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions-suggestions.PNG)
 
   
 \_

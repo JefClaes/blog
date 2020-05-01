@@ -12,7 +12,7 @@ My old PC had turned into a Frankenstein PC over the years, that's why I
 decided to write a little summary of the modifications I did to it over
 the years.  
   
-[![](../images/thumbnails/2008-11-17-history-of-my-frankenstein-pc-frankentein.jpg)](../images/2008-11-17-history-of-my-frankenstein-pc-frankentein.jpg)  
+[![](/post/images/thumbnails/2008-11-17-history-of-my-frankenstein-pc-frankentein.jpg)](/post/images/2008-11-17-history-of-my-frankenstein-pc-frankentein.jpg)  
   
 
 1.  My new PC only had a 40GB hard drive, which wasn't that big of a

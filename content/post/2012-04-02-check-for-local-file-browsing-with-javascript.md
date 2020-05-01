@@ -12,7 +12,7 @@ documentation](http://jquerymobile.com/demos/1.1.0-rc.1/) locally this
 morning, I stumbled upon following gem.  
   
 
-[![](../images/thumbnails/2012-04-02-check-for-local-file-browsing-with-javascript-jQueryMobileLocal.PNG)](../images/2012-04-02-check-for-local-file-browsing-with-javascript-jQueryMobileLocal.PNG)
+[![](/post/images/thumbnails/2012-04-02-check-for-local-file-browsing-with-javascript-jQueryMobileLocal.PNG)](/post/images/2012-04-02-check-for-local-file-browsing-with-javascript-jQueryMobileLocal.PNG)
 
   
 I was curious to see how they determine whether a page is browsed

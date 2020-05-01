@@ -45,14 +45,14 @@ findings in web performance research. To my surprise, I discovered that
 this tool is now also available as a Chrome plug-in, meaning I can also
 use it for local sites.  
   
-[![](../images/thumbnails/2012-10-10-out-with-yslow-in-with-pagespeed-insights-NMBSPageSpeedResults.PNG)](../images/2012-10-10-out-with-yslow-in-with-pagespeed-insights-NMBSPageSpeedResults.PNG)  
+[![](/post/images/thumbnails/2012-10-10-out-with-yslow-in-with-pagespeed-insights-NMBSPageSpeedResults.PNG)](/post/images/2012-10-10-out-with-yslow-in-with-pagespeed-insights-NMBSPageSpeedResults.PNG)  
   
 I'm not sure when this became available though. When I look at the
 trend, it seems that PageSpeed Insights is rapidly becoming the new
 favorite.  
   
 
-[![](../images/thumbnails/2012-10-10-out-with-yslow-in-with-pagespeed-insights-yslowtrend.PNG)](../images/2012-10-10-out-with-yslow-in-with-pagespeed-insights-yslowtrend.PNG)
+[![](/post/images/thumbnails/2012-10-10-out-with-yslow-in-with-pagespeed-insights-yslowtrend.PNG)](/post/images/2012-10-10-out-with-yslow-in-with-pagespeed-insights-yslowtrend.PNG)
 
   
   
@@ -60,11 +60,11 @@ Even the Chrome webstore reports 177k users for the PageSpeed Insights
 plug-in, while the YSLOW plug-in *only* has 159k.  
   
 
-[![](../images/thumbnails/2012-10-10-out-with-yslow-in-with-pagespeed-insights-PageSpeedApp.PNG)](../images/2012-10-10-out-with-yslow-in-with-pagespeed-insights-PageSpeedApp.PNG)
+[![](/post/images/thumbnails/2012-10-10-out-with-yslow-in-with-pagespeed-insights-PageSpeedApp.PNG)](/post/images/2012-10-10-out-with-yslow-in-with-pagespeed-insights-PageSpeedApp.PNG)
 
   
 
-[![](../images/thumbnails/2012-10-10-out-with-yslow-in-with-pagespeed-insights-YslowApp.PNG)](../images/2012-10-10-out-with-yslow-in-with-pagespeed-insights-YslowApp.PNG)
+[![](/post/images/thumbnails/2012-10-10-out-with-yslow-in-with-pagespeed-insights-YslowApp.PNG)](/post/images/2012-10-10-out-with-yslow-in-with-pagespeed-insights-YslowApp.PNG)
 
   
 Maybe I'm preaching to the choir, but I hope to have introduced at least

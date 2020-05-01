@@ -25,7 +25,7 @@ map to Miss2, one maps to Win and three map to Miss3. We intentionally
 ignore Miss1.  
   
 
-[![](../images/thumbnails/2014-12-14-spinning-the-wheel-clustering-and-near-misses-SpinningTheWheelClusteringAndNearMisses.png)](../images/2014-12-14-spinning-the-wheel-clustering-and-near-misses-SpinningTheWheelClusteringAndNearMisses.png)
+[![](/post/images/thumbnails/2014-12-14-spinning-the-wheel-clustering-and-near-misses-SpinningTheWheelClusteringAndNearMisses.png)](/post/images/2014-12-14-spinning-the-wheel-clustering-and-near-misses-SpinningTheWheelClusteringAndNearMisses.png)
 
   
 

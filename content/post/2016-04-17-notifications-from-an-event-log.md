@@ -63,7 +63,7 @@ leveraging the bonus identifier.
 The user might now see something like this.  
   
 
-[![](../images/thumbnails/2016-04-17-notifications-from-an-event-log-Notification1.PNG)](../images/2016-04-17-notifications-from-an-event-log-Notification1.PNG)
+[![](/post/images/thumbnails/2016-04-17-notifications-from-an-event-log-Notification1.PNG)](/post/images/2016-04-17-notifications-from-an-event-log-Notification1.PNG)
 
   
 Being aware of the events which a bonus produces over its lifetime, and
@@ -72,7 +72,7 @@ bonus is activated or expired (leveraging the bonus identifier as the
 link again).  
   
 
-[![](../images/thumbnails/2016-04-17-notifications-from-an-event-log-Notification2.PNG)](../images/2016-04-17-notifications-from-an-event-log-Notification2.PNG)
+[![](/post/images/thumbnails/2016-04-17-notifications-from-an-event-log-Notification2.PNG)](/post/images/2016-04-17-notifications-from-an-event-log-Notification2.PNG)
 
   
 Now it's up to the UX team (if you're lucky enough to have one) to

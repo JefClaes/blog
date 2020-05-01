@@ -20,7 +20,7 @@ unfamiliar with MMA and UFC, I encourage you to [watch one of the
 Forrest Griffin tribute
 videos](http://www.youtube.com/watch?v=wsUW3x3GSWE) on Youtube.  
   
-[![](../images/thumbnails/2011-01-15-book-review-got-fight-mma_e_griffin-jackson_580.jpg)](../images/2011-01-15-book-review-got-fight-mma_e_griffin-jackson_580.jpg)  
+[![](/post/images/thumbnails/2011-01-15-book-review-got-fight-mma_e_griffin-jackson_580.jpg)](/post/images/2011-01-15-book-review-got-fight-mma_e_griffin-jackson_580.jpg)  
 This book touches several subjects. Forrest talks about the path he
 followed to become a professional fighter and what made him who he is
 today. Forrest also shares a bunch of advice on fighting and

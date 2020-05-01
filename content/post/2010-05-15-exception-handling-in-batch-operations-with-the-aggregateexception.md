@@ -157,7 +157,7 @@ and act based on the type of exception.
   
 The result looks like this.  
   
-[![](../images/thumbnails/2010-05-15-exception-handling-in-batch-operations-with-the-aggregateexception-ResultAggregateException.png)](../images/2010-05-15-exception-handling-in-batch-operations-with-the-aggregateexception-ResultAggregateException.png)  
+[![](/post/images/thumbnails/2010-05-15-exception-handling-in-batch-operations-with-the-aggregateexception-ResultAggregateException.png)](/post/images/2010-05-15-exception-handling-in-batch-operations-with-the-aggregateexception-ResultAggregateException.png)  
   
 <span style="font-weight:bold;">More scenario's?</span>  
   

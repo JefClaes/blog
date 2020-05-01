@@ -30,7 +30,7 @@ Make sure IIS is enabled on your machine. You can verify this by using
 the [Windows feature configuration
 tool](http://windows.microsoft.com/en-US/windows-vista/Turn-Windows-features-on-or-off).  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-VerifyIISInstallation.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-VerifyIISInstallation.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-VerifyIISInstallation.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-VerifyIISInstallation.PNG)  
 **Configure the Windows Firewall**  
   
 You need to allow incoming TCP traffic on port 4502 in the [Windows
@@ -38,27 +38,27 @@ Firewall](http://www.microsoft.com/windows/windows-7/features/windows-firewall.a
   
 Open the Windows Firewall and add a new inbound rule.  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-OpenWindowsFirewall.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-OpenWindowsFirewall.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-OpenWindowsFirewall.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-OpenWindowsFirewall.PNG)  
 To add a new inbound rule you need to follow the five steps of the
 wizard.  
   
 First you need to define the type of rule you want to create: Port.  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardPort.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardPort.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardPort.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardPort.PNG)  
 The protocol you need to use is TCP and the specific port you want to
 open is 4502.  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardProtocol.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardProtocol.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardProtocol.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardProtocol.PNG)  
 When connections are attempted through the port we specified, they
 should be allowed.  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardConnectionAllow.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardConnectionAllow.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardConnectionAllow.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardConnectionAllow.PNG)  
 This rule should always be applied (for me).  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardProfile.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardProfile.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardProfile.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardProfile.PNG)  
 Finalize the wizard by specifying a name for the rule.  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardName.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardName.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardName.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-RuleWizardName.PNG)  
 **Deploy the client access policy**  
   
 Copy the %ProgramFiles%\\Microsoft SDKs\\WCF
@@ -78,7 +78,7 @@ signed](http://msdn.microsoft.com/en-us/library/t07a3dye(v=vs.80).aspx),
 and not fully signed, it will throw an unhandled
 System.Security.SecurityException: Strong name validation failed.  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-SecurityException.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-SecurityException.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-SecurityException.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-SecurityException.PNG)  
 To turn off strong name signing for this assembly you can use
 [sn.exe](http://msdn.microsoft.com/en-us/library/k5b5tt23(v=vs.71).aspx).
 Execute the following command:  
@@ -96,10 +96,10 @@ Execute the following command:
     as an administrator.
 
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-VSCommandPromptSN.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-VSCommandPromptSN.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-VSCommandPromptSN.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-VSCommandPromptSN.PNG)  
 Once these problems are fixed, you can finally start the ChatService.  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-StartChatService.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-StartChatService.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-StartChatService.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-StartChatService.PNG)  
 **Deploy the Chat web application**  
   
 [Create a chat virtual directory in
@@ -107,14 +107,14 @@ IIS](http://support.microsoft.com/kb/172138) mapped to the
 %ProgramFiles%\\Microsoft SDKs\\WCF WebSockets\\10.12.16\\web\\chat
 directory.  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-DeployChatIIS.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-DeployChatIIS.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-DeployChatIIS.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-DeployChatIIS.PNG)  
 **Test the web application**  
   
 If you followed all these steps, you should be able to navigate to
 <http://localhost/chat/wsdemo.html> and see the results of your efforts.
 [Victory](http://www.youtube.com/watch?v=GIeWjLC_SB0)!  
   
-[![](../images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-Result.PNG)](../images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-Result.PNG)  
+[![](/post/images/thumbnails/2011-01-08-html5-installing-the-microsoft-websockets-prototype-Result.PNG)](/post/images/2011-01-08-html5-installing-the-microsoft-websockets-prototype-Result.PNG)  
 **Problems?**  
   
 If you are still facing some problems, feel free to let me know in the

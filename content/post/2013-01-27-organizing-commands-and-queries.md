@@ -20,7 +20,7 @@ dump everything in one location without getting hurt too much.
 **  
 **  
 
-[![](../images/thumbnails/2013-01-27-organizing-commands-and-queries-DumpedEverything.PNG)](../images/2013-01-27-organizing-commands-and-queries-DumpedEverything.PNG)
+[![](/post/images/thumbnails/2013-01-27-organizing-commands-and-queries-DumpedEverything.PNG)](/post/images/2013-01-27-organizing-commands-and-queries-DumpedEverything.PNG)
 
 **  
   
@@ -34,7 +34,7 @@ structuring my code based on functionality instead of technical
 concepts](http://www.markhneedham.com/blog/2012/02/20/coding-packaging-by-vertical-slice/).  
   
 
-[![](../images/thumbnails/2013-01-27-organizing-commands-and-queries-PerFolder.PNG)](../images/2013-01-27-organizing-commands-and-queries-PerFolder.PNG)
+[![](/post/images/thumbnails/2013-01-27-organizing-commands-and-queries-PerFolder.PNG)](/post/images/2013-01-27-organizing-commands-and-queries-PerFolder.PNG)
 
   
 

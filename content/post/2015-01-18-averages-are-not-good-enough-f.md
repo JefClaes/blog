@@ -61,7 +61,7 @@ distributed.
 > 99.73% of the values lie within one, two and three standard deviations
 > of the mean, respectively. 
 
-[![](../images/thumbnails/2015-01-18-averages-are-not-good-enough-f-Standard-Deviation-Graph.jpg)](../images/2015-01-18-averages-are-not-good-enough-f-Standard-Deviation-Graph.jpg)
+[![](/post/images/thumbnails/2015-01-18-averages-are-not-good-enough-f-Standard-Deviation-Graph.jpg)](/post/images/2015-01-18-averages-are-not-good-enough-f-Standard-Deviation-Graph.jpg)
 
   
 For our set of response times, this means that 68.27% of the response

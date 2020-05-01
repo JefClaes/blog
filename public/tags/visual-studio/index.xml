@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visual Studio on Jef Claes</title>
+    <link>http://localhost:1313/tags/visual-studio/</link>
+    <description>Recent content in Visual Studio on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Jun 2011 19:00:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/visual-studio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>No more regions on implementing interface</title>
+      <link>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</link>
+      <pubDate>Tue, 28 Jun 2011 19:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</guid>
+      <description>Something that has been irritating me tremendously lately, is that when I implement an interface using Visual Studio all the members of that interface get surrounded by a region.
+
+After poking around in the C# Text Editor options a little while, I found the switch that enables that behaviour.
+
+A little less friction every day..</description>
+    </item>
+    
+    <item>
+      <title>Debugging &#34;SubReport could not be shown.&#34;</title>
+      <link>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</link>
+      <pubDate>Wed, 09 Sep 2009 18:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</guid>
+      <description>I&amp;rsquo;ve been upgrading a local report which contains multiple subreports, and yes I got that &amp;ldquo;SubReport could not be shown.&amp;rdquo; error more than once.
+Debugging this error is a pain in the a.. All you get is &amp;ldquo;SubReport could not be shown.&amp;quot;, making me want to punch my screen and scream &amp;ldquo;BUT WHY?&amp;ldquo;Just before breaking my screen and going on full tilt, I decided to take a step back and run through my checklist.</description>
+    </item>
+    
+  </channel>
+</rss>

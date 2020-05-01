@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Best Practices on Jef Claes</title>
+    <link>http://localhost:1313/tags/best-practices/</link>
+    <description>Recent content in Best Practices on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 May 2010 18:34:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/best-practices/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exception handling in batch operations with the AggregateException</title>
+      <link>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</link>
+      <pubDate>Sat, 15 May 2010 18:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</guid>
+      <description>Doing batch operations and elegantly handling exceptions is a problem which every developer has faced before. In .NET 3.5 or older there is no out-of-the-box solution to handle exceptions in these types of scenarios, without being inconsistent to the normal flow of exception handling. .NET 4 introduces the AggregateException; an exception representing multiple exceptions. The AggregateException was introduced in the first place to be used with the parallel framework, but it can be used in other scenarios as well, such as batch operations.</description>
+    </item>
+    
+    <item>
+      <title>Doing the groceries in parallel</title>
+      <link>http://localhost:1313/2010/05/doing-the-groceries-in-parallel/</link>
+      <pubDate>Mon, 10 May 2010 20:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/doing-the-groceries-in-parallel/</guid>
+      <description>I&amp;rsquo;ve started reading the excellent paper &amp;ldquo;Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4&amp;quot;.
+There is a section in this whitepaper which explains perfectly why parallel programming was and still is such an interesting problem.
+ Consider an analogy: shopping with some friends at a grocery store. You come into the store with a grocery list, and you rip the list into one piece per friend, such that every friend is responsible for retrieving the elements on his or her list.</description>
+    </item>
+    
+    <item>
+      <title>Webforms lessons learned the hard way (Part 2)</title>
+      <link>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-2/</link>
+      <pubDate>Mon, 15 Feb 2010 17:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-2/</guid>
+      <description>If you missed part 1, you can find it here.
+Use the built-in goodiesASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&amp;rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions.</description>
+    </item>
+    
+    <item>
+      <title>Webforms lessons learned the hard way (Part 1)</title>
+      <link>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</link>
+      <pubDate>Sun, 14 Feb 2010 16:22:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</guid>
+      <description>I&amp;rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&amp;rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>An introduction to ASP.NET Ajax 4: The Minifier - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="An introduction to ASP.NET Ajax 4: The Minifier">
+<meta itemprop="description" content="The Minifier is an utility which &ldquo;minifies&rdquo; your scripts: it reduces the size of your scripts by removing comments, removing spaces, renaming local variables and removing unreachable code.
+You can download the Minifier on Codeplex.
+Before and afterThe unminified script looks like this.
+ 1: //This function does something 2: function doSomething(valueOne, valueTwo){ 3: var result = valueOne &#43; valueTwo; 4: return result; 5: }  After hypercrunching the script looks likes this.">
+<meta itemprop="datePublished" content="2010-01-29T08:32:00&#43;01:00" />
+<meta itemprop="dateModified" content="2010-01-29T08:32:00&#43;01:00" />
+<meta itemprop="wordCount" content="76">
+
+
+
+<meta itemprop="keywords" content="ASP.NET,AJAX," /><meta property="og:title" content="An introduction to ASP.NET Ajax 4: The Minifier" />
+<meta property="og:description" content="The Minifier is an utility which &ldquo;minifies&rdquo; your scripts: it reduces the size of your scripts by removing comments, removing spaces, renaming local variables and removing unreachable code.
+You can download the Minifier on Codeplex.
+Before and afterThe unminified script looks like this.
+ 1: //This function does something 2: function doSomething(valueOne, valueTwo){ 3: var result = valueOne &#43; valueTwo; 4: return result; 5: }  After hypercrunching the script looks likes this." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-minifier/" />
+<meta property="article:published_time" content="2010-01-29T08:32:00+01:00" />
+<meta property="article:modified_time" content="2010-01-29T08:32:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="An introduction to ASP.NET Ajax 4: The Minifier"/>
+<meta name="twitter:description" content="The Minifier is an utility which &ldquo;minifies&rdquo; your scripts: it reduces the size of your scripts by removing comments, removing spaces, renaming local variables and removing unreachable code.
+You can download the Minifier on Codeplex.
+Before and afterThe unminified script looks like this.
+ 1: //This function does something 2: function doSomething(valueOne, valueTwo){ 3: var result = valueOne &#43; valueTwo; 4: return result; 5: }  After hypercrunching the script looks likes this."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">29</span>
+							<span class="rest">Jan 2010</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">An introduction to ASP.NET Ajax 4: The Minifier</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>The Minifier is an utility which &ldquo;minifies&rdquo; your scripts: it reduces the
+size of your scripts by removing comments, removing spaces, renaming
+local variables and removing unreachable code.</p>
+<p>You can
+<a href="http://aspnet.codeplex.com/Release/ProjectReleases.aspx?ReleaseId=34488">download</a>
+the Minifier on Codeplex.</p>
+<p><!-- raw HTML omitted -->Before and after<!-- raw HTML omitted --></p>
+<p>The unminified script looks like this.</p>
+<pre><code>   1:  //This function does something
+
+   2:  function doSomething(valueOne, valueTwo){
+
+   3:      var result = valueOne + valueTwo;
+
+   4:      return result;
+
+   5:  }
+</code></pre>
+<p>After hypercrunching the script looks likes this.</p>
+<pre><code>   1:  function doSomething(a,b){var c=a+b;return c}
+</code></pre>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/asp.net">ASP.NET</a></li>
+							
+							<li><a href="/tags/ajax">AJAX</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2010  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

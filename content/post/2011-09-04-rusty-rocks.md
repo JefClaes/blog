@@ -18,19 +18,19 @@ gave us some much needed refreshment after a long day of hiking.
 
   
 
-[![](../images/thumbnails/2011-09-04-rusty-rocks-Zion_0096.png)](../images/2011-09-04-rusty-rocks-Zion_0096.png)
+[![](/post/images/thumbnails/2011-09-04-rusty-rocks-Zion_0096.png)](/post/images/2011-09-04-rusty-rocks-Zion_0096.png)
 
   
 
-[![](../images/thumbnails/2011-09-04-rusty-rocks-Zion_0176.png)](../images/2011-09-04-rusty-rocks-Zion_0176.png)
+[![](/post/images/thumbnails/2011-09-04-rusty-rocks-Zion_0176.png)](/post/images/2011-09-04-rusty-rocks-Zion_0176.png)
 
   
 
-[![](../images/thumbnails/2011-09-04-rusty-rocks-Zion_0106.png)](../images/2011-09-04-rusty-rocks-Zion_0106.png)
+[![](/post/images/thumbnails/2011-09-04-rusty-rocks-Zion_0106.png)](/post/images/2011-09-04-rusty-rocks-Zion_0106.png)
 
   
 
-[![](../images/thumbnails/2011-09-04-rusty-rocks-Zion_0214.png)](../images/2011-09-04-rusty-rocks-Zion_0214.png)
+[![](/post/images/thumbnails/2011-09-04-rusty-rocks-Zion_0214.png)](/post/images/2011-09-04-rusty-rocks-Zion_0214.png)
 
   
 

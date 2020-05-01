@@ -22,7 +22,7 @@ last page, and work your way forward following the link to the previous
 page until there are no pages left to read.  
   
 
-[![](../images/thumbnails/2014-02-09-reading-an-eventstore-stream-using-javascript-eventstoreatom.png)](../images/2014-02-09-reading-an-eventstore-stream-using-javascript-eventstoreatom.png)
+[![](/post/images/thumbnails/2014-02-09-reading-an-eventstore-stream-using-javascript-eventstoreatom.png)](/post/images/2014-02-09-reading-an-eventstore-stream-using-javascript-eventstoreatom.png)
 
   
 I came up with something like this.  
