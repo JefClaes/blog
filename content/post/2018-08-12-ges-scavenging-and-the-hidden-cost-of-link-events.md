@@ -1,9 +1,10 @@
 +++
 title = "GES scavenging and the hidden cost of link events"
-slug = "ges-scavenging-and-the-hidden-cost"
+slug = "ges-scavenging-and-the-hidden-cost-of-link-events"
 published = 2018-08-12T14:58:00.001000+02:00
 author = "Jef Claes"
-tags = [ "database",]
+tags = [ "infrastructure",]
+url = "2018/08/ges-scavenging-and-hidden-cost-of-link.html"
 +++
 Somewhere around a year ago, we started using
 [GES](https://eventstore.org/) in production as the primary data store

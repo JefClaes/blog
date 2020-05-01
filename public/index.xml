@@ -13,39 +13,32 @@
     
     <item>
       <title>GES scavenging and the hidden cost of link events</title>
-      <link>http://localhost:1313/2018/08/ges-scavenging-and-the-hidden-cost-of-link-events/</link>
+      <link>http://localhost:1313/2018/08/ges-scavenging-and-hidden-cost-of-link.html</link>
       <pubDate>Sun, 12 Aug 2018 14:58:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2018/08/ges-scavenging-and-the-hidden-cost-of-link-events/</guid>
+      <guid>http://localhost:1313/2018/08/ges-scavenging-and-hidden-cost-of-link.html</guid>
       <description>Somewhere around a year ago, we started using GES in production as the primary data store of our new loyalty system. The system stores two types of data.
  External services push batches of dumb downed events to the loyalty system. For example: a user logged on, played a game or participated in a competition. These events are transient by nature. Once the loyalty system has processed them, they only need to be kept around for a few days.</description>
     </item>
     
     <item>
       <title>Amazon Redshift - Fundamentals</title>
-      <link>http://localhost:1313/2018/05/amazon-redshift-fundamentals/</link>
+      <link>http://localhost:1313/2018/05/amazon-redshift-fundamentals.html</link>
       <pubDate>Tue, 01 May 2018 14:17:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2018/05/amazon-redshift-fundamentals/</guid>
+      <guid>http://localhost:1313/2018/05/amazon-redshift-fundamentals.html</guid>
       <description>Late 2017, we set out to replace and upgrade our existing reporting and analytics infrastructure with something that would be a better fit for our workloads. Keeping costs and required maintenance at a minimum would be a nice plus, making for an easy sell. After a bit of research, it was obvious Amazon Redshift had the potential to tick all the right boxes. While steadily porting the most problematic workloads away from our existing infrastructure, I started writing an investigative article on the fundamental concepts of Amazon Redshift.</description>
     </item>
     
     <item>
       <title>Consumed in 2017</title>
-      <link>http://localhost:1313/2018/01/consumed-in-2017/</link>
+      <link>http://localhost:1313/2018/01/consumed-in-2017.html</link>
       <pubDate>Wed, 03 Jan 2018 21:28:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2018/01/consumed-in-2017/</guid>
+      <guid>http://localhost:1313/2018/01/consumed-in-2017.html</guid>
       <description>Another year, another 17 books, 6 shows and 3 movies consumed. Here&amp;rsquo;s this year&amp;rsquo;s highlights.
 
-**
-**
-Books **
-**
-1. The Zen and Art of Motor Cycle Maintenance
-**
-**
-The author is a tormented soul on a quest to define quality. You&amp;rsquo;re his passenger, driving shot gun on a CB77 Super Hawk, in for an exhausting intellectual journey through the high mountains of reasoning. You will often fear getting lost and feel slightly anxious that the driver might drive of a cliff any moment, but he won&amp;rsquo;t.</description>
+Books The Zen and Art of Motor Cycle Maintenance The author is a tormented soul on a quest to define quality. You&amp;rsquo;re his passenger, driving shot gun on a CB77 Super Hawk, in for an exhausting intellectual journey through the high mountains of reasoning. You will often fear getting lost and feel slightly anxious that the driver might drive of a cliff any moment, but he won&amp;rsquo;t.</description>
     </item>
     
     <item>

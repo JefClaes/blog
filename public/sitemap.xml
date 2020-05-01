@@ -8,7 +8,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2018/08/ges-scavenging-and-the-hidden-cost-of-link-events/</loc>
+    <loc>http://localhost:1313/2018/08/ges-scavenging-and-hidden-cost-of-link.html</loc>
+    <lastmod>2018-08-12T14:58:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/infrastructure/</loc>
     <lastmod>2018-08-12T14:58:00+02:00</lastmod>
   </url>
   
@@ -23,12 +28,17 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/storage/</loc>
+    <lastmod>2018-08-12T14:58:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/</loc>
     <lastmod>2018-08-12T14:58:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2018/05/amazon-redshift-fundamentals/</loc>
+    <loc>http://localhost:1313/2018/05/amazon-redshift-fundamentals.html</loc>
     <lastmod>2018-05-01T14:17:00+02:00</lastmod>
   </url>
   
@@ -38,7 +48,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2018/01/consumed-in-2017/</loc>
+    <loc>http://localhost:1313/tags/consumed/</loc>
+    <lastmod>2018-01-03T21:28:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2018/01/consumed-in-2017.html</loc>
+    <lastmod>2018-01-03T21:28:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/review/</loc>
     <lastmod>2018-01-03T21:28:00+01:00</lastmod>
   </url>
   

@@ -3,7 +3,8 @@ title = "Amazon Redshift - Fundamentals"
 slug = "2018-05-01-amazon-redshift-fundamentals"
 published = 2018-05-01T14:17:00+02:00
 author = "Jef Claes"
-tags = [ "database",]
+tags = [ "infrastructure",]
+url = "2018/05/amazon-redshift-fundamentals.html"
 +++
 Late 2017, we set out to replace and upgrade our existing reporting and
 analytics infrastructure with something that would be a better fit for
