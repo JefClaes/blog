@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>My InfoQ interview on DDD, events and legacy - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="My InfoQ interview on DDD, events and legacy">
+<meta itemprop="description" content="Seems that it&rsquo;s impossible to beat the Gaussian curve of blogging frequency. On the other hand, I spent quite some of my mental blogging budget on an interview with InfoQ.
+I&rsquo;m a bit bummed out that it&rsquo;s such a large wall of text. When submitting the answers, I highlighted some snippets which should make for easier scanning. Too bad the formatting was lost when publishing it. I included some highlights below.">
+<meta itemprop="datePublished" content="2016-08-21T15:07:00&#43;02:00" />
+<meta itemprop="dateModified" content="2016-08-21T15:07:00&#43;02:00" />
+<meta itemprop="wordCount" content="318">
+
+
+
+<meta itemprop="keywords" content="ddd," /><meta property="og:title" content="My InfoQ interview on DDD, events and legacy" />
+<meta property="og:description" content="Seems that it&rsquo;s impossible to beat the Gaussian curve of blogging frequency. On the other hand, I spent quite some of my mental blogging budget on an interview with InfoQ.
+I&rsquo;m a bit bummed out that it&rsquo;s such a large wall of text. When submitting the answers, I highlighted some snippets which should make for easier scanning. Too bad the formatting was lost when publishing it. I included some highlights below." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2016/08/my-infoq-article-on-ddd-events-and.html" />
+<meta property="article:published_time" content="2016-08-21T15:07:00+02:00" />
+<meta property="article:modified_time" content="2016-08-21T15:07:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My InfoQ interview on DDD, events and legacy"/>
+<meta name="twitter:description" content="Seems that it&rsquo;s impossible to beat the Gaussian curve of blogging frequency. On the other hand, I spent quite some of my mental blogging budget on an interview with InfoQ.
+I&rsquo;m a bit bummed out that it&rsquo;s such a large wall of text. When submitting the answers, I highlighted some snippets which should make for easier scanning. Too bad the formatting was lost when publishing it. I included some highlights below."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">21</span>
+							<span class="rest">Aug 2016</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">My InfoQ interview on DDD, events and legacy</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Seems that it&rsquo;s impossible to beat the Gaussian curve of blogging
+frequency. On the other hand, I spent quite some of my mental blogging
+budget on an interview with InfoQ.</p>
+<p>I&rsquo;m a bit bummed out that it&rsquo;s such a large wall of text. When submitting the answers, I highlighted some snippets which should make for easier scanning. Too bad the formatting was lost when publishing it. I included some highlights below.</p>
+<p>The interview itself can be found <a href="https://www.infoq.com/news/2016/08/software-devs-ddd-drive-business">here</a>.</p>
+<blockquote>
+<p><strong>Extracting components:</strong> Starting out, this can be as trivial as
+trying to model boundaries as namespaces or modules. </p>
+</blockquote>
+<blockquote>
+<p><strong>Invariants:</strong> Having core properties enforced deep within the model,
+allows for a better night&rsquo;s sleep.</p>
+</blockquote>
+<blockquote>
+<p><strong>Sizing aggregates:</strong> Make your aggregates as small as they can be,
+but not any smaller. There&rsquo;s a big difference between an invariant
+that needs to be strongly held and data that helps the aggregate to
+make a decision, but which doesn&rsquo;t require strong consistency. </p>
+</blockquote>
+<blockquote>
+<p><strong>ORM pitfalls:</strong> Being able to navigate through a graph, which
+basically walks through your whole database, is a great way to lose
+any sense of transactional boundaries. </p>
+</blockquote>
+<blockquote>
+<p><strong>The value of bounded contexts:</strong> Now when I switch between bounded
+contexts, it feels like walking through a door, entering a separate
+room where you can tackle a problem with an unbiased mindset, allowing
+you to use the right tool for the job. </p>
+</blockquote>
+<blockquote>
+<p><strong>Introducing domain events:</strong> When you don&rsquo;t want to or can&rsquo;t afford
+to invest in the full paradigm shift there&rsquo;s a middle ground. You can
+try a hybrid approach in which you, next to persisting state, also
+persist the events that led up to a specific state. This does entail
+the risk of introducing a bug which causes split-brain in which your
+events do not add up to your state.  </p>
+</blockquote>
+<blockquote>
+<p><strong>Designing contracts:</strong> If you get the semantics wrong, you will end
+up with a system that&rsquo;s held together by brittle contracts that break
+constantly.</p>
+</blockquote>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/ddd">ddd</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2016  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

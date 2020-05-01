@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>code on Jef Claes</title>
+    <link>http://localhost:1313/tags/code/</link>
+    <description>Recent content in code on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Jul 2017 14:34:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fast projections</title>
+      <link>http://localhost:1313/2017/07/fast-projections.html</link>
+      <pubDate>Sun, 30 Jul 2017 14:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2017/07/fast-projections.html</guid>
+      <description>Most EventStore client libraries allow you to subscribe to a stream by passing in a callback which is invoked when an event occurs (either a live or historic event).
+type Envelope = { Id : Int64 Event : Event Historic : bool } type EventOccurred = Envelope -&amp;gt; unit Let&amp;rsquo;s say we subscribe to a stream of a popular video service, and we want to project a read model that shows how many videos a viewer has watched.</description>
+    </item>
+    
+    <item>
+      <title>Commands and events with JustSaying and AWS</title>
+      <link>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and.html</link>
+      <pubDate>Sun, 18 Sep 2016 20:52:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/09/commands-and-events-with-justsaying-and.html</guid>
+      <description>I&amp;rsquo;ve been looking into handing a bit of our messaging infrastructure over to a managed alternative. Managing your own messaging infrastructure that should be highly available is not always an investment you want to make in this day and age. Going through the documentation and relying on experiences from some people I trust, I ended up looking at AWS and SNS/SQS.
+Making the Github repository rounds, looking for inspiration, I stumbled on JustSaying: a library by the people from JustEat implementing a message bus on top of AWS.</description>
+    </item>
+    
+    <item>
+      <title>Using a batch layer for fast(er) aggregations </title>
+      <link>http://localhost:1313/2016/04/using-batch-layer-for-faster.html</link>
+      <pubDate>Sun, 24 Apr 2016 22:43:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/04/using-batch-layer-for-faster.html</guid>
+      <description>In the oldest system I&amp;rsquo;m maintaining right now, we have an account aggregate that, next to mutating various balances, produces immutable financial transactions. These transactions are persisted together with the aggregate itself to a relational database. The transactions can be queried by the owner of the account in an immediate consistent fashion.
+The table with these transactions looks similar to this:
+CREATE TABLE [dbo].[Transaction] ( [Id] [int] IDENTITY(1,1) NOT NULL, [Timestamp] [datetime] NULL, [AccountId] [int] NOT NULL, [TransactionType] [varchar](25) NOT NULL, [CashAmount] [decimal](19, 2) NOT NULL, [BonusAmount] [decimal](19, 2) NOT NULL, [.</description>
+    </item>
+    
+    <item>
+      <title>Notifications from an event log</title>
+      <link>http://localhost:1313/2016/04/notifications-from-event-log.html</link>
+      <pubDate>Sun, 17 Apr 2016 17:37:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/04/notifications-from-event-log.html</guid>
+      <description>User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
+In the domain I&amp;rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website.</description>
+    </item>
+    
+    <item>
+      <title>Functional one-liner for running totals in C#</title>
+      <link>http://localhost:1313/2016/03/functional-one-liner-for-running-totals.html</link>
+      <pubDate>Mon, 28 Mar 2016 16:22:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2016/03/functional-one-liner-for-running-totals.html</guid>
+      <description>Visualizing some data earlier this week I had to compute the running total of a sequence of numbers.
+For example, if the input sequence was [ 100; 50; 25 ] the result of the computation would be a new sequence of [ 100; 150; 175 ].
+Muscle memory made me take a procedural approach, which works, but made me wonder if I could get away with less lines of code and without mutable state.</description>
+    </item>
+    
+  </channel>
+</rss>

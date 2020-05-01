@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Using a batch layer for fast(er) aggregations  - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Using a batch layer for fast(er) aggregations ">
+<meta itemprop="description" content="In the oldest system I&rsquo;m maintaining right now, we have an account aggregate that, next to mutating various balances, produces immutable financial transactions. These transactions are persisted together with the aggregate itself to a relational database. The transactions can be queried by the owner of the account in an immediate consistent fashion.
+The table with these transactions looks similar to this:
+CREATE TABLE [dbo].[Transaction] ( [Id] [int] IDENTITY(1,1) NOT NULL, [Timestamp] [datetime] NULL, [AccountId] [int] NOT NULL, [TransactionType] [varchar](25) NOT NULL, [CashAmount] [decimal](19, 2) NOT NULL, [BonusAmount] [decimal](19, 2) NOT NULL, [.">
+<meta itemprop="datePublished" content="2016-04-24T22:43:00&#43;02:00" />
+<meta itemprop="dateModified" content="2016-04-24T22:43:00&#43;02:00" />
+<meta itemprop="wordCount" content="668">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Using a batch layer for fast(er) aggregations " />
+<meta property="og:description" content="In the oldest system I&rsquo;m maintaining right now, we have an account aggregate that, next to mutating various balances, produces immutable financial transactions. These transactions are persisted together with the aggregate itself to a relational database. The transactions can be queried by the owner of the account in an immediate consistent fashion.
+The table with these transactions looks similar to this:
+CREATE TABLE [dbo].[Transaction] ( [Id] [int] IDENTITY(1,1) NOT NULL, [Timestamp] [datetime] NULL, [AccountId] [int] NOT NULL, [TransactionType] [varchar](25) NOT NULL, [CashAmount] [decimal](19, 2) NOT NULL, [BonusAmount] [decimal](19, 2) NOT NULL, [." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2016/04/using-batch-layer-for-faster.html" />
+<meta property="article:published_time" content="2016-04-24T22:43:00+02:00" />
+<meta property="article:modified_time" content="2016-04-24T22:43:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using a batch layer for fast(er) aggregations "/>
+<meta name="twitter:description" content="In the oldest system I&rsquo;m maintaining right now, we have an account aggregate that, next to mutating various balances, produces immutable financial transactions. These transactions are persisted together with the aggregate itself to a relational database. The transactions can be queried by the owner of the account in an immediate consistent fashion.
+The table with these transactions looks similar to this:
+CREATE TABLE [dbo].[Transaction] ( [Id] [int] IDENTITY(1,1) NOT NULL, [Timestamp] [datetime] NULL, [AccountId] [int] NOT NULL, [TransactionType] [varchar](25) NOT NULL, [CashAmount] [decimal](19, 2) NOT NULL, [BonusAmount] [decimal](19, 2) NOT NULL, [."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">24</span>
+							<span class="rest">Apr 2016</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Using a batch layer for fast(er) aggregations </h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>In the oldest system I&rsquo;m maintaining right now, we have an account
+aggregate that, next to mutating various balances, produces immutable
+financial transactions. These transactions are persisted together with
+the aggregate itself to a relational database. The transactions can be
+queried by the owner of the account in an immediate consistent
+fashion.</p>
+<p>The table with these transactions looks similar to this:</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#859900">CREATE</span> <span style="color:#859900">TABLE</span> [<span style="color:#268bd2">dbo</span>].[<span style="color:#859900">Transaction</span>] (
+	[<span style="color:#268bd2">Id</span>] [<span style="color:#cb4b16">int</span>] <span style="color:#859900">IDENTITY</span>(<span style="color:#2aa198;font-weight:bold">1</span>,<span style="color:#2aa198;font-weight:bold">1</span>) <span style="color:#859900">NOT</span> <span style="color:#859900">NULL</span>,
+	[<span style="color:#859900">Timestamp</span>] [<span style="color:#268bd2">datetime</span>] <span style="color:#859900">NULL</span>,
+	[<span style="color:#268bd2">AccountId</span>] [<span style="color:#cb4b16">int</span>] <span style="color:#859900">NOT</span> <span style="color:#859900">NULL</span>,
+	[<span style="color:#268bd2">TransactionType</span>] [<span style="color:#cb4b16">varchar</span>](<span style="color:#2aa198;font-weight:bold">25</span>) <span style="color:#859900">NOT</span> <span style="color:#859900">NULL</span>,
+	[<span style="color:#268bd2">CashAmount</span>] [<span style="color:#cb4b16">decimal</span>](<span style="color:#2aa198;font-weight:bold">19</span>, <span style="color:#2aa198;font-weight:bold">2</span>) <span style="color:#859900">NOT</span> <span style="color:#859900">NULL</span>,
+	[<span style="color:#268bd2">BonusAmount</span>] [<span style="color:#cb4b16">decimal</span>](<span style="color:#2aa198;font-weight:bold">19</span>, <span style="color:#2aa198;font-weight:bold">2</span>) <span style="color:#859900">NOT</span> <span style="color:#859900">NULL</span>,
+	[...] [...] () <span style="color:#859900">NULL</span> <span style="color:#93a1a1;font-style:italic">/* Too much metadata I&#39;m not very happy about */</span>
+<span style="color:#859900">CONSTRAINT</span> [<span style="color:#268bd2">Tx_PK</span>] <span style="color:#859900">PRIMARY</span> <span style="color:#859900">KEY</span> <span style="color:#268bd2">CLUSTERED</span> ( [<span style="color:#268bd2">Id</span>] <span style="color:#859900">ASC</span>) 
+<span style="color:#859900">WITH</span> (<span style="color:#268bd2">PAD_INDEX</span> = <span style="color:#859900">OFF</span>, <span style="color:#268bd2">STATISTICS_NORECOMPUTE</span> = <span style="color:#859900">OFF</span>, <span style="color:#268bd2">IGNORE_DUP_KEY</span> = <span style="color:#859900">OFF</span>, <span style="color:#268bd2">ALLOW_ROW_LOCKS</span> = <span style="color:#859900">ON</span>, <span style="color:#268bd2">ALLOW_PAGE_LOCKS</span> = <span style="color:#859900">ON</span>, <span style="color:#268bd2">FILLFACTOR</span> = <span style="color:#2aa198;font-weight:bold">100</span>) <span style="color:#859900">ON</span> [<span style="color:#859900">PRIMARY</span>]
+) <span style="color:#859900">ON</span> [<span style="color:#859900">PRIMARY</span>]
+</code></pre></div><p>There&rsquo;s an index on the timestamp, the account identifier and the
+transaction type, which allows for <em>fast enough</em> reads for the most
+common access patterns which only return a small subset.</p>
+<p>In a use case we recently worked on, we wanted real-time statistics of
+an account&rsquo;s transactions over its life time.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#859900">SELECT</span>
+  <span style="color:#268bd2">TransactionType</span>,
+  <span style="color:#859900">SUM</span>(<span style="color:#268bd2">CashAmount</span>) <span style="color:#859900">AS</span> <span style="color:#268bd2">CashAmount</span>,
+  <span style="color:#859900">SUM</span>(<span style="color:#268bd2">BonusAmount</span>) <span style="color:#859900">AS</span> <span style="color:#268bd2">BonusAmount</span>,
+  <span style="color:#859900">COUNT</span>(*) <span style="color:#859900">AS</span> <span style="color:#859900">Count</span>,
+  <span style="color:#93a1a1;font-style:italic">/* ... */</span>
+<span style="color:#859900">FROM</span> <span style="color:#859900">Transaction</span>
+<span style="color:#859900">WHERE</span> <span style="color:#268bd2">AccountId</span> = @<span style="color:#268bd2">AccountId</span>
+<span style="color:#859900">GROUP</span> <span style="color:#859900">BY</span> <span style="color:#268bd2">TransactionType</span>, <span style="color:#93a1a1;font-style:italic">/* ... */</span>
+</code></pre></div><p>Running this query would seek the account id index, to look up all rows
+that match given predicate. In case one account has tens of thousands of
+transactions, this results in a high amount of reads. In case your
+database fits into memory, SQL Server can probably satisfy your query
+looking in its buffer cache. Although this still has overhead, it&rsquo;s
+supposed to be a lot faster than when SQL Server is forced to do
+physical reads - reading pages straight from disk. In this case, where
+transactions are often years old, and the database does not fit into
+memory, odds are high that SQL Server will be reading from disk - which
+is dog-slow.</p>
+<p>One option would be to create a new covering index (including columns
+like CashAmount etc) for this specific workload. The problem is that
+indexes don&rsquo;t come for free. You pay for them on every write, and
+depending on your performance goals, that might be a cost you want to
+avoid. It might even be impossible, or too expensive to create such an
+index on environments that have no maintenance window and no license
+that allows for online index builds. Assuming that when you don&rsquo;t own
+said license, you don&rsquo;t have read replicas available either.</p>
+<p>Considering the workload, the never-changing nature of financial
+transactions and constraints in place, we applied <a href="https://en.wikipedia.org/wiki/Lambda_architecture">Lambda
+Architecture</a> theory
+on a small scale, starting by building daily aggregations of
+transactions per account.</p>
+<p>This translates into scheduling a job which catches up all days, by
+performing a query per day and appending the results to a specific
+table.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#93a1a1;font-style:italic">/** Aggregate transactions by day **/</span>
+<span style="color:#859900">INSERT</span> <span style="color:#859900">INTO</span> [<span style="color:#268bd2">dbo</span>].[<span style="color:#268bd2">DailyTransactionAggregation</span>]
+   <span style="color:#859900">SELECT</span>
+     <span style="color:#859900">CONVERT</span>(<span style="color:#cb4b16">DATE</span>, <span style="color:#859900">Timestamp</span>) <span style="color:#859900">AS</span> <span style="color:#268bd2">Datestamp</span>,
+     <span style="color:#268bd2">AccountId</span>
+     <span style="color:#268bd2">TransactionType</span>
+     <span style="color:#859900">COUNT</span>(*) <span style="color:#859900">AS</span> <span style="color:#859900">Count</span>,
+     <span style="color:#859900">SUM</span>(<span style="color:#268bd2">CashAmount</span>) <span style="color:#859900">AS</span> <span style="color:#268bd2">CashAmount</span>,
+     <span style="color:#859900">SUM</span>(<span style="color:#268bd2">BonusAmount</span>) <span style="color:#859900">AS</span> <span style="color:#268bd2">BonusAmount</span>,
+     <span style="color:#93a1a1;font-style:italic">/* ... */</span>
+   <span style="color:#859900">FROM</span> [<span style="color:#268bd2">dbo</span>].[<span style="color:#859900">Transaction</span>]
+   <span style="color:#859900">WHERE</span> <span style="color:#859900">Timestamp</span> &gt;= :<span style="color:#859900">start</span> <span style="color:#859900">AND</span> <span style="color:#859900">Timestamp</span> &lt; :<span style="color:#859900">end</span>
+   <span style="color:#859900">GROUP</span> <span style="color:#859900">BY</span> <span style="color:#859900">CONVERT</span>(<span style="color:#cb4b16">DATE</span>, <span style="color:#859900">Timestamp</span>), <span style="color:#268bd2">TransactionType</span>, <span style="color:#268bd2">AccountId</span>,   <span style="color:#93a1a1;font-style:italic">/* ... */</span>
+</code></pre></div><p>On our dataset, this compresses the transaction table by a factor of
+more than 300. Not just that, by separating reads from writes, we give
+ourselves so much more breathing room and options, which makes me sleep
+so much better at night.</p>
+<p>As you probably noticed, for real-time statistics on this data, we&rsquo;re
+still missing today&rsquo;s transactions in this table. Since today&rsquo;s
+transactions are a much smaller subset and likely to live in SQL
+Server&rsquo;s cache, we can query both the batch table and the transaction
+table, to eventually merge the results of both queries. For our use
+case, resource usage and query response times have dropped
+significantly, especially for the <em>largest</em> accounts.</p>
+<p>I don&rsquo;t see it happening in the near future, but in case the usage of
+these queries grows, we can still borrow more Lambda Architecture
+practices and push further.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2016  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

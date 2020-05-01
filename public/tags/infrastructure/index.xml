@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>infrastructure on Jef Claes</title>
+    <link>http://localhost:1313/tags/infrastructure/</link>
+    <description>Recent content in infrastructure on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Aug 2018 14:58:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GES scavenging and the hidden cost of link events</title>
+      <link>http://localhost:1313/2018/08/ges-scavenging-and-hidden-cost-of-link.html</link>
+      <pubDate>Sun, 12 Aug 2018 14:58:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2018/08/ges-scavenging-and-hidden-cost-of-link.html</guid>
+      <description>Somewhere around a year ago, we started using GES in production as the primary data store of our new loyalty system. The system stores two types of data.
+ External services push batches of dumb downed events to the loyalty system. For example: a user logged on, played a game or participated in a competition. These events are transient by nature. Once the loyalty system has processed them, they only need to be kept around for a few days.</description>
+    </item>
+    
+    <item>
+      <title>Amazon Redshift - Fundamentals</title>
+      <link>http://localhost:1313/2018/05/amazon-redshift-fundamentals.html</link>
+      <pubDate>Tue, 01 May 2018 14:17:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2018/05/amazon-redshift-fundamentals.html</guid>
+      <description>Late 2017, we set out to replace and upgrade our existing reporting and analytics infrastructure with something that would be a better fit for our workloads. Keeping costs and required maintenance at a minimum would be a nice plus, making for an easy sell. After a bit of research, it was obvious Amazon Redshift had the potential to tick all the right boxes. While steadily porting the most problematic workloads away from our existing infrastructure, I started writing an investigative article on the fundamental concepts of Amazon Redshift.</description>
+    </item>
+    
+  </channel>
+</rss>

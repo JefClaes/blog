@@ -162,10 +162,10 @@ In the domain I&amp;rsquo;m working in at the moment, we will often give users i
     
     <item>
       <title>Functional one-liner for running totals in C#</title>
-      <link>http://localhost:1313/2016/03/functional-one-liner-for-running-totals-in-c/</link>
+      <link>http://localhost:1313/2016/03/functional-one-liner-for-running-totals.html</link>
       <pubDate>Mon, 28 Mar 2016 16:22:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2016/03/functional-one-liner-for-running-totals-in-c/</guid>
+      <guid>http://localhost:1313/2016/03/functional-one-liner-for-running-totals.html</guid>
       <description>Visualizing some data earlier this week I had to compute the running total of a sequence of numbers.
 For example, if the input sequence was [ 100; 50; 25 ] the result of the computation would be a new sequence of [ 100; 150; 175 ].
 Muscle memory made me take a procedural approach, which works, but made me wonder if I could get away with less lines of code and without mutable state.</description>
@@ -173,10 +173,10 @@ Muscle memory made me take a procedural approach, which works, but made me wonde
     
     <item>
       <title>Consumed in 2015</title>
-      <link>http://localhost:1313/2016/01/consumed-in-2015/</link>
+      <link>http://localhost:1313/2016/01/consumed-in-2015.html</link>
       <pubDate>Fri, 01 Jan 2016 14:49:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2016/01/consumed-in-2015/</guid>
+      <guid>http://localhost:1313/2016/01/consumed-in-2015.html</guid>
       <description>I started in 2014 to keep lists of everything I consume. I&amp;rsquo;ve continued this effort throughout 2015 and can now share the items I particularly enjoyed.
 In 2015, I read 16 books and 3 papers, watched 3 movies and 4 shows, listened to 1 audio book and no podcasts. A lot less TV compared to 2014, but most of that time went to playing video games with some of my friends.</description>
     </item>

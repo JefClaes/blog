@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>opinion on Jef Claes</title>
+    <link>http://localhost:1313/tags/opinion/</link>
+    <description>Recent content in opinion on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 Jan 2017 15:08:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/opinion/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Everyone has to serve somebody, but software has to serve more than one</title>
+      <link>http://localhost:1313/2017/01/gotta-serve-somebody-or-somebodies.html</link>
+      <pubDate>Fri, 13 Jan 2017 15:08:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2017/01/gotta-serve-somebody-or-somebodies.html</guid>
+      <description>When people get paid to write software, we very often find some form of friction between the people that build the software and those that pay to have it built.
+The company I joined three years ago was no exception. When I joined, they had just launched three months ago, weren&amp;rsquo;t seeing any return on investment and prospects weren&amp;rsquo;t too bright either.
+I won&amp;rsquo;t lie, that first year was quite stressful.</description>
+    </item>
+    
+  </channel>
+</rss>
