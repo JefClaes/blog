@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Visualizing event streams - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Visualizing event streams">
+<meta itemprop="description" content="In my recent talk on Evil by Design, I showed how I&rsquo;ve been visualizing event streams as a means to get a better grip on how aggregates behave in production. The talk&rsquo;s scope kept me from showing the code that goes together with the examples shown. Consider this post as an addendum to that talk.
+First off, we need a few types: a string that identifies a stream, an event containing a timestamp and its name.">
+<meta itemprop="datePublished" content="2015-12-20T17:59:00&#43;01:00" />
+<meta itemprop="dateModified" content="2015-12-20T17:59:00&#43;01:00" />
+<meta itemprop="wordCount" content="670">
+
+
+
+<meta itemprop="keywords" content="code,ddd," /><meta property="og:title" content="Visualizing event streams" />
+<meta property="og:description" content="In my recent talk on Evil by Design, I showed how I&rsquo;ve been visualizing event streams as a means to get a better grip on how aggregates behave in production. The talk&rsquo;s scope kept me from showing the code that goes together with the examples shown. Consider this post as an addendum to that talk.
+First off, we need a few types: a string that identifies a stream, an event containing a timestamp and its name." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2015/12/visualizing-event-streams.html" />
+<meta property="article:published_time" content="2015-12-20T17:59:00+01:00" />
+<meta property="article:modified_time" content="2015-12-20T17:59:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Visualizing event streams"/>
+<meta name="twitter:description" content="In my recent talk on Evil by Design, I showed how I&rsquo;ve been visualizing event streams as a means to get a better grip on how aggregates behave in production. The talk&rsquo;s scope kept me from showing the code that goes together with the examples shown. Consider this post as an addendum to that talk.
+First off, we need a few types: a string that identifies a stream, an event containing a timestamp and its name."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">20</span>
+							<span class="rest">Dec 2015</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Visualizing event streams</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>In my recent talk on <a href="http://www.jefclaes.be/2015/11/slides-from-my-talk-evil-by-design-at.html">Evil by
+Design</a>,
+I showed how I&rsquo;ve been visualizing event streams as a means to get a
+better grip on how aggregates behave in production. The talk&rsquo;s scope
+kept me from showing the code that goes together with the examples
+shown. Consider this post as an addendum to that talk.</p>
+<p>First off, we need a few types: a string that identifies a stream, an
+event containing a timestamp and its name. A stream which is a
+composition of an identifier and a sequence of events. We also need a
+function that&rsquo;s able to read a stream based on its identifier.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">StreamId</span> = <span style="color:#859900;font-weight:bold">string</span>
+<span style="color:#859900">type</span> <span style="color:#cb4b16">Event</span> = { <span style="color:#268bd2">Timestamp</span> : <span style="color:#268bd2">DateTime</span>; <span style="color:#268bd2">Name</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Payload</span> : <span style="color:#859900;font-weight:bold">string</span>; }
+<span style="color:#859900">type</span> <span style="color:#cb4b16">Stream</span> = { <span style="color:#268bd2">StreamId</span> : <span style="color:#268bd2">StreamId</span>; <span style="color:#268bd2">Events</span> : <span style="color:#268bd2">seq</span>&lt;<span style="color:#268bd2">Event</span>&gt; }
+<span style="color:#859900">type</span> <span style="color:#cb4b16">ReadStream</span> = <span style="color:#268bd2">StreamId</span> -&gt; <span style="color:#268bd2">Stream</span>
+
+<span style="color:#859900">let</span> <span style="color:#268bd2">readStream</span> ( <span style="color:#268bd2">streamId</span> : <span style="color:#268bd2">StreamId</span> ) =
+  {
+    <span style="color:#268bd2">StreamId</span> = <span style="color:#268bd2">streamId</span>
+    <span style="color:#268bd2">Events</span> = <span style="color:#268bd2">seq</span> {
+      <span style="color:#93a1a1;font-style:italic">// implementation goes here
+</span><span style="color:#93a1a1;font-style:italic"></span>    }
+  }
+</code></pre></div><p>Once we&rsquo;ve implemented that, we want to go ahead and visualize a single
+stream. Having some experience with Google Charts, I used the
+<a href="https://tahahachana.github.io/XPlot/">XPlot.GoogleCharts</a> package.</p>
+<p>I want to visualize my event stream as a timeline. For that, it makes
+only sense to use the Timeline graph. This means that I&rsquo;ll have to make
+sure I transform my data into a format the Timeline chart can work with,
+which is a sequence of tuples.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#93a1a1;font-style:italic">// Timeline data
+</span><span style="color:#93a1a1;font-style:italic"></span><span style="color:#268bd2">data</span> : <span style="color:#268bd2">seq</span>&lt;<span style="color:#859900;font-weight:bold">string</span> * <span style="color:#859900;font-weight:bold">string</span> * #<span style="color:#268bd2">value</span> * #<span style="color:#268bd2">value</span>&gt;
+<span style="color:#268bd2">data</span> : <span style="color:#268bd2">seq</span>&lt;<span style="color:#859900;font-weight:bold">string</span> * #<span style="color:#268bd2">value</span> * #<span style="color:#268bd2">value</span>&gt;
+</code></pre></div><div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">let asTimelineEventStream stream =
+    stream.Events
+    |&gt; Seq.map (fun e -&gt;
+    (
+        stream.StreamId,
+        e.Name,
+        e.Timestamp,
+        e.Timestamp.AddMilliseconds(float 1)
+    ))
+</code></pre></div><p>So we write a function which accepts a stream, and returns a sequence of
+tuples containing the stream identifier, the event name and the
+timestamp of the event.</p>
+<p>With just a few lines of code, we can already compose our way to a
+timeline.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&#34;withdrawrequest/...&#34;
+|&gt; readStream
+|&gt; asTimelineEventStream
+|&gt; Chart.Timeline
+|&gt; Chart.Show
+</code></pre></div><p><a href="/post/images/2015-12-20-visualizing-event-streams-eventstream_viz_1.PNG"><img src="/post/images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_viz_1.PNG" alt=""></a></p>
+<p>The result tells a small story: a withdrawal to a casino was requested
+at 9:44PM, approved at 12:15PM the next day, and eventually completed 7
+hours later.</p>
+<p>From an operational perspective, this visualization can be used as
+visual assistance for your support team when users have a question or a
+complaint. From a more technical perspective, it can be used to get a
+feel of the domain language and business processes without having to
+look at code or tests. I could even see this being used in the
+front-end, where you enable users to monitor a process; think package
+tracking, document verification and so on.</p>
+<p>Once you start exploring aggregates, you will notice that some
+aggregates look healthier than others; lean and short-lived. While other
+aggregates are fat and long-lived which can introduce a set of
+problems:</p>
+<ul>
+<li>rebuilding state from a large event stream might kill performance</li>
+<li>there&rsquo;s often more contention on larger aggregates making optimistic (or pessimistic) concurrency very annoying</li>
+</ul>
+<p><a href="/post/images/2015-12-20-visualizing-event-streams-eventstream_vis_1_1.PNG"><img src="/post/images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_vis_1_1.PNG" alt=""></a></p>
+<p>Spotting one of these instances is an invitation to review your model,
+to revise true invariants and to break things apart.</p>
+<p>We&rsquo;ve now looked at an aggregate&rsquo;s event stream in isolation, but often
+something happening in one place leads to a reaction somewhere else. A
+simple example: when a new user registers, a promotion is awarded. We
+can visualize this by rendering multiple streams on one timeline.</p>
+<p>Technically, we need to transform a sequence of streams to a single
+sequence of tuples which we can feed the chart. It&rsquo;s as simple as
+mapping each stream for then to flatten the result into a single
+sequence.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">asTimelineEventStreams</span> <span style="color:#268bd2">streams</span> =
+    <span style="color:#268bd2">streams</span>
+    |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">map</span> <span style="color:#268bd2">asTimelineEventStream</span>
+    |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">concat</span>
+
+<span style="color:#268bd2">correlatedStreams</span>
+|&gt; <span style="color:#268bd2">asTimelineEventStreams</span>
+|&gt; <span style="color:#268bd2">Chart</span>.<span style="color:#268bd2">Timeline</span>
+|&gt; <span style="color:#268bd2">Chart</span>.<span style="color:#268bd2">Show</span>
+</code></pre></div><p>This one extra step makes the result even more useful.</p>
+<p><a href="/post/images/2015-12-20-visualizing-event-streams-eventstream_viz_2.PNG"><img src="/post/images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_viz_2.PNG" alt=""></a></p>
+<p>There&rsquo;s more potential though; consider showing the payload when
+hovering over an event, adding commands in the mix, zooming out, zooming
+in, filtering&hellip;</p>
+<p>If this is something you could see being useful to you or your
+organization, let me know! Maybe I can port some bits and polish the
+concept in the open.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+							<li><a href="/tags/ddd">ddd</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2015  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

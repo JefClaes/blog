@@ -173,57 +173,62 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/12/visualizing-event-streams/</loc>
+    <loc>http://localhost:1313/2015/12/visualizing-event-streams.html</loc>
     <lastmod>2015-12-20T17:59:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at-build-stuff/</loc>
+    <loc>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</loc>
     <lastmod>2015-11-18T15:47:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/11/defining-big-wins/</loc>
+    <loc>http://localhost:1313/tags/talks/</loc>
+    <lastmod>2015-11-18T15:47:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2015/11/defining-big-wins.html</loc>
     <lastmod>2015-11-16T21:31:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</loc>
+    <loc>http://localhost:1313/2015/10/bulk-sql-projections-with-f-and-type.html</loc>
     <lastmod>2015-10-18T15:30:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/09/aspect-ratio-calculation/</loc>
+    <loc>http://localhost:1313/2015/09/aspect-ratio-calculation.html</loc>
     <lastmod>2015-09-11T23:40:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/06/basic-casino-math/</loc>
+    <loc>http://localhost:1313/2015/06/basic-casino-math.html</loc>
     <lastmod>2015-06-22T22:52:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</loc>
+    <loc>http://localhost:1313/consumed-queries-and-projections-f.html</loc>
     <lastmod>2015-05-24T18:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/05/consumed-handling-commands-f/</loc>
+    <loc>http://localhost:1313/2015/05/consumed-handling-commands-f.html</loc>
     <lastmod>2015-05-17T17:51:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/04/finding-unused-code-f/</loc>
+    <loc>http://localhost:1313/2015/04/finding-unused-code-f.html</loc>
     <lastmod>2015-04-26T18:06:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/04/consumed-parsing-command-line-arguments-f/</loc>
+    <loc>http://localhost:1313/2015/04/parsing-command-line-arguments-with-f.html</loc>
     <lastmod>2015-04-19T16:54:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/03/checked-errors-in-f/</loc>
+    <loc>http://localhost:1313/2015/03/checked-errors-in-f.html</loc>
     <lastmod>2015-03-29T17:19:00+02:00</lastmod>
   </url>
   
@@ -233,22 +238,22 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/02/domain-language-the-playthrough-bonus/</loc>
+    <loc>http://localhost:1313/2015/02/domain-language-playthrough-bonus.html</loc>
     <lastmod>2015-02-23T19:05:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/02/side-by-side/</loc>
+    <loc>http://localhost:1313/2015/02/side-by-side.html</loc>
     <lastmod>2015-02-15T17:34:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/01/averages-are-not-good-enough-f/</loc>
+    <loc>http://localhost:1313/2015/01/averages-are-not-good-enough-f.html</loc>
     <lastmod>2015-01-18T18:40:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2015/01/consumed-in-2014/</loc>
+    <loc>http://localhost:1313/2015/01/consumed-in-2014.html</loc>
     <lastmod>2015-01-11T17:45:00+01:00</lastmod>
   </url>
   

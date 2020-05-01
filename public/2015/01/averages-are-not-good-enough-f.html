@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Averages are not good enough (F#) - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Averages are not good enough (F#)">
+<meta itemprop="description" content="Let&rsquo;s (no pun intended) look at a set of response times of a web service.
+let responseTimes = [ 18.0; 21.0; 41.0; 42.0; 48.0; 50.0; 55.0; 90.0; ] People like having a single number to summarize a piece of data. The average is the most popular candidate. The average is calculated by dividing the sum of the input elements by the number of input elements.
+let average input = let length = input |&gt; Seq.">
+<meta itemprop="datePublished" content="2015-01-18T18:40:00&#43;01:00" />
+<meta itemprop="dateModified" content="2015-01-18T18:40:00&#43;01:00" />
+<meta itemprop="wordCount" content="842">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Averages are not good enough (F#)" />
+<meta property="og:description" content="Let&rsquo;s (no pun intended) look at a set of response times of a web service.
+let responseTimes = [ 18.0; 21.0; 41.0; 42.0; 48.0; 50.0; 55.0; 90.0; ] People like having a single number to summarize a piece of data. The average is the most popular candidate. The average is calculated by dividing the sum of the input elements by the number of input elements.
+let average input = let length = input |&gt; Seq." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2015/01/averages-are-not-good-enough-f.html" />
+<meta property="article:published_time" content="2015-01-18T18:40:00+01:00" />
+<meta property="article:modified_time" content="2015-01-18T18:40:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Averages are not good enough (F#)"/>
+<meta name="twitter:description" content="Let&rsquo;s (no pun intended) look at a set of response times of a web service.
+let responseTimes = [ 18.0; 21.0; 41.0; 42.0; 48.0; 50.0; 55.0; 90.0; ] People like having a single number to summarize a piece of data. The average is the most popular candidate. The average is calculated by dividing the sum of the input elements by the number of input elements.
+let average input = let length = input |&gt; Seq."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">18</span>
+							<span class="rest">Jan 2015</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Averages are not good enough (F#)</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Let&rsquo;s (no pun intended) look at a set of response times of a web
+service.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">responseTimes</span> = [ <span style="color:#268bd2">18</span>.<span style="color:#268bd2">0</span>; <span style="color:#268bd2">21</span>.<span style="color:#268bd2">0</span>; <span style="color:#268bd2">41</span>.<span style="color:#268bd2">0</span>; <span style="color:#268bd2">42</span>.<span style="color:#268bd2">0</span>; <span style="color:#268bd2">48</span>.<span style="color:#268bd2">0</span>; <span style="color:#268bd2">50</span>.<span style="color:#268bd2">0</span>; <span style="color:#268bd2">55</span>.<span style="color:#268bd2">0</span>; <span style="color:#268bd2">90</span>.<span style="color:#268bd2">0</span>; ] 
+</code></pre></div><p>People like having a single number to summarize a piece of data. The
+average is the most popular candidate. The average is calculated by
+dividing the sum of the input elements by the number of input elements.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">average</span> <span style="color:#268bd2">input</span> =
+	<span style="color:#859900">let</span> <span style="color:#268bd2">length</span> = <span style="color:#268bd2">input</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">length</span>
+	<span style="color:#859900">match</span> <span style="color:#268bd2">length</span> <span style="color:#859900">with</span>
+		| <span style="color:#268bd2">0</span> -&gt; <span style="color:#268bd2">raise</span> &lt;| <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentException</span>(<span style="color:#2aa198">&#34;Input sequence is empty&#34;</span>)
+		| _ -&gt; (<span style="color:#268bd2">input</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">sum</span>) / <span style="color:#859900;font-weight:bold">float</span> <span style="color:#268bd2">length</span> 	
+
+<span style="color:#93a1a1;font-style:italic">// Average = 45.625
+</span><span style="color:#93a1a1;font-style:italic">// (18 + 21 + 41 + 42 + 48 + 50 + 55 + 90) / 8
+</span></code></pre></div><p>The average is a measure of centre which is fragile to outliers; one or
+two odd irregular values might skew the outcome. The median on the other
+hand is always representative of the centre, not just when the data
+distribution is symmetric. The median is determined by sorting the input
+elements and picking the one in the middle.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> (|<span style="color:#268bd2">Even</span>|<span style="color:#268bd2">Odd</span>|) <span style="color:#268bd2">x</span> =
+	<span style="color:#859900">if</span> <span style="color:#268bd2">x</span> % <span style="color:#268bd2">2</span> = <span style="color:#268bd2">0</span> <span style="color:#859900">then</span> <span style="color:#268bd2">Even</span>
+	<span style="color:#859900">else</span> <span style="color:#268bd2">Odd</span>
+
+<span style="color:#859900">let</span> <span style="color:#268bd2">median</span> <span style="color:#268bd2">input</span> = 
+	<span style="color:#859900">let</span> <span style="color:#268bd2">sortedInput</span> = <span style="color:#268bd2">input</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">sort</span>
+	<span style="color:#859900">let</span> <span style="color:#268bd2">length</span> = <span style="color:#268bd2">input</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">length</span>
+	<span style="color:#859900">match</span> <span style="color:#268bd2">length</span> <span style="color:#859900">with</span>
+		| <span style="color:#268bd2">0</span> -&gt; <span style="color:#268bd2">raise</span> &lt;| <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentException</span>(<span style="color:#2aa198">&#34;Input sequence is empty&#34;</span>)
+		| <span style="color:#268bd2">1</span> -&gt; <span style="color:#268bd2">input</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">nth</span> <span style="color:#268bd2">0</span>
+		| _ -&gt; <span style="color:#859900">match</span> <span style="color:#268bd2">length</span> <span style="color:#859900">with</span>
+			| <span style="color:#268bd2">Even</span> -&gt; ( <span style="color:#859900">let</span> <span style="color:#268bd2">first</span> = <span style="color:#268bd2">sortedInput</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">nth</span> (<span style="color:#268bd2">length</span> / <span style="color:#268bd2">2</span> - <span style="color:#268bd2">1</span>)
+						<span style="color:#859900">let</span> <span style="color:#268bd2">second</span> = <span style="color:#268bd2">sortedInput</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">nth</span> (<span style="color:#268bd2">length</span> / <span style="color:#268bd2">2</span>)
+						(<span style="color:#268bd2">first</span> + <span style="color:#268bd2">second</span>) / <span style="color:#859900;font-weight:bold">float</span> <span style="color:#268bd2">2</span>)                             
+			| <span style="color:#268bd2">Odd</span> -&gt; <span style="color:#268bd2">sortedInput</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">nth</span> ((<span style="color:#268bd2">length</span> - <span style="color:#268bd2">1</span>) / <span style="color:#268bd2">2</span>)
+				
+<span style="color:#93a1a1;font-style:italic">// Median = 45.0
+</span><span style="color:#93a1a1;font-style:italic">// 18 21 41 42 48 50 55 90
+</span><span style="color:#93a1a1;font-style:italic">//          __ __
+</span></code></pre></div><p>Both measures are terrible at showing how the data is distributed
+though. The average and median response time might look fair, but maybe
+there are a few outliers which are giving a few customers a bad time.</p>
+<p>Instead of reducing our input down to a single number, it might be
+better to extract a table that displays the frequency of various
+outcomes in the input.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">frequencyDistribution</span> <span style="color:#268bd2">input</span> =
+	<span style="color:#268bd2">input</span> |&gt; 
+	<span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">groupBy</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">x</span> -&gt; 
+		<span style="color:#859900">match</span> <span style="color:#268bd2">x</span> <span style="color:#859900">with</span> 
+		| <span style="color:#268bd2">x</span> <span style="color:#859900">when</span> <span style="color:#268bd2">x</span> &lt; <span style="color:#268bd2">30</span>.<span style="color:#268bd2">0</span> -&gt; [ <span style="color:#268bd2">0</span>, <span style="color:#268bd2">30</span> ]
+		| <span style="color:#268bd2">x</span> <span style="color:#859900">when</span> <span style="color:#268bd2">x</span> &lt; <span style="color:#268bd2">70</span>.<span style="color:#268bd2">0</span> -&gt; [ <span style="color:#268bd2">30</span>, <span style="color:#268bd2">70</span> ]
+		| <span style="color:#268bd2">x</span> <span style="color:#859900">when</span> <span style="color:#268bd2">x</span> &lt; <span style="color:#268bd2">90</span>.<span style="color:#268bd2">0</span> -&gt; [ <span style="color:#268bd2">70</span>, <span style="color:#268bd2">90</span> ] 
+		| _ -&gt; [ <span style="color:#268bd2">90</span>, <span style="color:#268bd2">System</span>.<span style="color:#268bd2">Int32</span>.<span style="color:#268bd2">MaxValue</span> ] ) |&gt;
+	<span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">map</span> (<span style="color:#859900">fun</span> (<span style="color:#268bd2">x</span>, <span style="color:#268bd2">y</span>) -&gt; <span style="color:#268bd2">x</span>, <span style="color:#268bd2">y</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">length</span>) 
+
+<span style="color:#93a1a1;font-style:italic">// Frequency Distribution = seq [
+</span><span style="color:#93a1a1;font-style:italic">// ([(0, 30)], 2); 
+</span><span style="color:#93a1a1;font-style:italic">// ([(30, 70)], 5); 
+</span><span style="color:#93a1a1;font-style:italic">// ([(90, 2147483647)], 1)]
+</span></code></pre></div><p>Now this is more useful; we can clearly see that the data is not
+distributed equally and there are a few outliers in our response times
+we need to investigate further.</p>
+<p>This table takes up quite a bit of ink though. What if we want to get
+rid of the table, but maintain a feel for the distribution of the
+data?</p>
+<p>The standard deviation measures the amount of variation from the
+average. A low standard deviation means that the data points are very
+close to the mean. A high standard deviation indicates that the data
+points are spread out over a large range of values.<br>
+It is calculated by taking the square root of the average of the squared
+differences of the values from their average value.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">standardDeviation</span> <span style="color:#268bd2">input</span>  =
+	<span style="color:#859900">let</span> <span style="color:#268bd2">avg</span> = <span style="color:#268bd2">input</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">average</span>
+	<span style="color:#859900">let</span> <span style="color:#268bd2">x</span> = <span style="color:#268bd2">input</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">map</span>(<span style="color:#859900">fun</span> <span style="color:#268bd2">x</span> -&gt; <span style="color:#268bd2">System</span>.<span style="color:#268bd2">Math</span>.<span style="color:#268bd2">Pow</span>(<span style="color:#859900;font-weight:bold">float</span> <span style="color:#268bd2">x</span> - <span style="color:#268bd2">avg</span>, <span style="color:#859900;font-weight:bold">float</span> <span style="color:#268bd2">2</span>)) |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">sum</span>
+	<span style="color:#859900">let</span> <span style="color:#268bd2">y</span> = <span style="color:#268bd2">input</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">length</span> |&gt; <span style="color:#859900;font-weight:bold">float</span>
+	<span style="color:#859900">let</span> <span style="color:#268bd2">variance</span> = <span style="color:#268bd2">x</span> / <span style="color:#268bd2">y</span>
+	<span style="color:#268bd2">System</span>.<span style="color:#268bd2">Math</span>.<span style="color:#268bd2">Sqrt</span> <span style="color:#268bd2">variance</span>
+	
+<span style="color:#93a1a1;font-style:italic">// Average = 45.625; Standard Deviation = 20.87425148
+</span></code></pre></div><p>The standard deviation is even more useful when you put the average at
+the centre of a graph, lay out the input elements according their
+deviation of the average and see a bell graph drawn. This means that we
+can use the <em>empirical</em> 68-95-99.7 rule to get a feel of how the data is
+distributed.</p>
+<blockquote>
+<p>In statistics, the so-called 68–95–99.7 rule is a shorthand used to
+remember the percentage of values that lie within in a band around the
+mean in a normal distribution with a width of one, two and three
+standard deviations, respectively; more accurately, 68.27%, 95.45% and
+99.73% of the values lie within one, two and three standard deviations
+of the mean, respectively. </p>
+</blockquote>
+<p><a href="/post/images/2015-01-18-averages-are-not-good-enough-f-Standard-Deviation-Graph.jpg"><img src="/post/images/thumbnails/2015-01-18-averages-are-not-good-enough-f-Standard-Deviation-Graph.jpg" alt=""></a></p>
+<p>For our set of response times, this means that 68.27% of the response
+times lies within the 24.8 and 66.4 range, 95.45% lies within the 4 and
+87.2 range, while 99.73% lies within the -16.8 and 108 range.</p>
+<p>When we calculate the standard deviation, we can put one extra number
+next to the average and derive from just two numbers how the data is
+distributed.</p>
+<p>In conclusion, the mean and the median hide outliers. Looking at the
+frequency distribution gives you a more complete picture. If we insist
+on having less data to look at, the standard deviation and the
+68–95–99.7 rule can compress the same complete picture into just two
+numbers.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2015  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

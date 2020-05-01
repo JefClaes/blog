@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Consumed: Handling commands (F#) - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Consumed: Handling commands (F#)">
+<meta itemprop="description" content="As I wrote earlier, I&rsquo;ve been working on porting a node.js web application to an F# console application. It&rsquo;s an application I wrote to learn node.js but still use today to keep track of all the things I consume.
+The application is able to consume an item, to remove a consumed item and to query all consumed items.
+In the previous post, I parsed command line arguments into typed commands and queries.">
+<meta itemprop="datePublished" content="2015-05-17T17:51:00&#43;02:00" />
+<meta itemprop="dateModified" content="2015-05-17T17:51:00&#43;02:00" />
+<meta itemprop="wordCount" content="1299">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Consumed: Handling commands (F#)" />
+<meta property="og:description" content="As I wrote earlier, I&rsquo;ve been working on porting a node.js web application to an F# console application. It&rsquo;s an application I wrote to learn node.js but still use today to keep track of all the things I consume.
+The application is able to consume an item, to remove a consumed item and to query all consumed items.
+In the previous post, I parsed command line arguments into typed commands and queries." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2015/05/consumed-handling-commands-f.html" />
+<meta property="article:published_time" content="2015-05-17T17:51:00+02:00" />
+<meta property="article:modified_time" content="2015-05-17T17:51:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Consumed: Handling commands (F#)"/>
+<meta name="twitter:description" content="As I wrote earlier, I&rsquo;ve been working on porting a node.js web application to an F# console application. It&rsquo;s an application I wrote to learn node.js but still use today to keep track of all the things I consume.
+The application is able to consume an item, to remove a consumed item and to query all consumed items.
+In the previous post, I parsed command line arguments into typed commands and queries."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">17</span>
+							<span class="rest">May 2015</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Consumed: Handling commands (F#)</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>As <a href="http://www.jefclaes.be/2015/04/parsing-command-line-arguments-with-f.html">I wrote
+earlier</a>,
+I&rsquo;ve been working on porting a node.js web application to an F# console
+application. It&rsquo;s an application I wrote to learn node.js but still use
+today to keep track of <a href="http://www.jefclaes.be/2015/01/consumed-in-2014.html">all the things I
+consume</a>.</p>
+<p>The application is able to consume an item, to remove a consumed item
+and to query all consumed items.</p>
+<p>In the previous post, I parsed command line arguments into typed
+commands and queries. Today, I&rsquo;ll look at handling the two commands.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">Command</span> =
+	| <span style="color:#268bd2">Consume</span> <span style="color:#859900">of</span> <span style="color:#268bd2">data</span> : <span style="color:#268bd2">ConsumeData</span>
+	| <span style="color:#268bd2">Remove</span> <span style="color:#859900">of</span> <span style="color:#268bd2">data</span> : <span style="color:#268bd2">RemoveData</span>
+<span style="color:#859900">and</span> <span style="color:#268bd2">ConsumeData</span> =  { <span style="color:#268bd2">Id</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Category</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Description</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Url</span> : <span style="color:#859900;font-weight:bold">string</span> }
+<span style="color:#859900">and</span> <span style="color:#268bd2">RemoveData</span> = { <span style="color:#268bd2">Id</span> : <span style="color:#859900;font-weight:bold">string</span>; }
+</code></pre></div><p>I&rsquo;ve refactored the command discriminated union to contain records with
+data that go along with the command - I found that this makes for more
+discoverable and refactor-friendly deconstruction later on.</p>
+<h3 id="validation">Validation</h3>
+<p>Before we do anything with the command, we need to make sure it passes
+basic validation. The validate function takes a command, and returns a
+success or failure result. Validation can fail because an argument is
+empty, its structure is invalid or it&rsquo;s out of range. Inside the
+function we match the command discriminated union with each case,
+validate the data and return a result.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">Result</span>&lt;<span style="color:#859900">&#39;</span><span style="color:#268bd2">TSuccess</span>,<span style="color:#859900">&#39;</span><span style="color:#268bd2">TFailure</span>&gt; =
+	| <span style="color:#268bd2">Success</span> <span style="color:#859900">of</span> <span style="color:#859900">&#39;</span><span style="color:#268bd2">TSuccess</span>
+	| <span style="color:#268bd2">Failure</span> <span style="color:#859900">of</span> <span style="color:#859900">&#39;</span><span style="color:#268bd2">TFailure</span>
+
+ <span style="color:#859900">type</span> <span style="color:#cb4b16">ValidationFailure</span> =
+        | <span style="color:#268bd2">ArgumentEmpty</span> <span style="color:#859900">of</span> <span style="color:#859900;font-weight:bold">string</span>
+        | <span style="color:#268bd2">ArgumentStructure</span> <span style="color:#859900">of</span> <span style="color:#859900;font-weight:bold">string</span>  
+        | <span style="color:#268bd2">ArgumentOutOfRange</span> <span style="color:#859900">of</span> <span style="color:#859900;font-weight:bold">string</span>
+
+<span style="color:#859900">type</span> <span style="color:#cb4b16">HandlingFailure</span> =
+	| <span style="color:#268bd2">Validation</span> <span style="color:#859900">of</span> <span style="color:#268bd2">ValidationFailure</span>
+	
+<span style="color:#859900">let</span> <span style="color:#268bd2">succeeds</span> <span style="color:#268bd2">s</span> = <span style="color:#268bd2">Success</span> <span style="color:#268bd2">s</span>
+<span style="color:#859900">let</span> <span style="color:#268bd2">validationFails</span> <span style="color:#268bd2">f</span> = <span style="color:#268bd2">Failure</span>(<span style="color:#268bd2">Validation</span>(<span style="color:#268bd2">f</span>))
+	
+<span style="color:#859900">let</span> <span style="color:#268bd2">validate</span> <span style="color:#268bd2">cmd</span> =
+	<span style="color:#859900">match</span> <span style="color:#268bd2">cmd</span> <span style="color:#859900">with</span>
+	| <span style="color:#268bd2">Consume</span> <span style="color:#268bd2">data</span> -&gt; 
+	    (
+	        <span style="color:#859900">if</span> <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Id</span> = <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#859900">then</span> <span style="color:#268bd2">validationFails</span>(<span style="color:#268bd2">ArgumentEmpty</span>(<span style="color:#2aa198">&#34;id&#34;</span>))
+	        <span style="color:#859900">else</span> <span style="color:#859900">if</span> <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Category</span> = <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#859900">then</span> <span style="color:#268bd2">validationFails</span>(<span style="color:#268bd2">ArgumentEmpty</span>(<span style="color:#2aa198">&#34;category&#34;</span>))
+	        <span style="color:#859900">else</span> <span style="color:#859900">if</span> <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Description</span> = <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#859900">then</span> <span style="color:#268bd2">validationFails</span>(<span style="color:#268bd2">ArgumentEmpty</span>(<span style="color:#2aa198">&#34;description&#34;</span>))
+	        <span style="color:#859900">else</span> <span style="color:#859900">if</span> <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Url</span> = <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#859900">then</span> <span style="color:#268bd2">validationFails</span>(<span style="color:#268bd2">ArgumentEmpty</span>(<span style="color:#2aa198">&#34;url&#34;</span>))
+	        <span style="color:#859900">else</span> <span style="color:#859900">if</span> <span style="color:#859900">not</span> ( [| <span style="color:#2aa198">&#34;book&#34;</span>; <span style="color:#2aa198">&#34;movie&#34;</span> |] |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">exists</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">x</span> -&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Equals</span>(<span style="color:#268bd2">data</span>.<span style="color:#268bd2">Category</span>, <span style="color:#268bd2">StringComparison</span>.<span style="color:#268bd2">OrdinalIgnoreCase</span>) ) ) <span style="color:#859900">then</span> <span style="color:#268bd2">validationFails</span>(<span style="color:#268bd2">ArgumentOutOfRange</span>(<span style="color:#2aa198">&#34;category&#34;</span>))         
+	        <span style="color:#859900">else</span> <span style="color:#859900">if</span> <span style="color:#859900">not</span> ( <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Url</span>.<span style="color:#268bd2">Contains</span>(<span style="color:#2aa198">&#34;http://&#34;</span>) || <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Url</span>.<span style="color:#268bd2">Contains</span>(<span style="color:#2aa198">&#34;https://&#34;</span>) ) <span style="color:#859900">then</span> <span style="color:#268bd2">validationFails</span>(<span style="color:#268bd2">ArgumentStructure</span>(<span style="color:#2aa198">&#34;url&#34;</span>))
+	        <span style="color:#859900">else</span> <span style="color:#268bd2">succeeds</span> <span style="color:#268bd2">cmd</span>
+	    )
+	| <span style="color:#268bd2">Remove</span> <span style="color:#268bd2">data</span> -&gt; 
+	    (
+	        <span style="color:#859900">if</span> <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Id</span> = <span style="color:#2aa198">&#34;&#34;</span> <span style="color:#859900">then</span> <span style="color:#268bd2">validationFails</span>(<span style="color:#268bd2">ArgumentEmpty</span>(<span style="color:#2aa198">&#34;id&#34;</span>))
+	        <span style="color:#859900">else</span> <span style="color:#268bd2">succeeds</span> <span style="color:#268bd2">cmd</span>
+	    )
+</code></pre></div><h3 id="producing-events">Producing events</h3>
+<p>Having validated the command, we can start thinking about doing
+something useful. I want the command handlers to be pure, to be able to
+focus on computation, without having to worry about side effects.</p>
+<p>Since the node.js web application stores its data in the form of events,
+this one will too. I can now migrate the existing event store to a
+simple text file living in my Dropbox, for then to drop the existing
+Postgres database.</p>
+<p>This means that command handlers will need to produce events.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">Event</span> =
+	| <span style="color:#268bd2">Consumed</span> <span style="color:#859900">of</span> <span style="color:#268bd2">data</span> : <span style="color:#268bd2">ConsumedData</span>
+	| <span style="color:#268bd2">Removed</span> <span style="color:#859900">of</span> <span style="color:#268bd2">data</span> : <span style="color:#268bd2">RemovedData</span>
+<span style="color:#859900">and</span> <span style="color:#268bd2">ConsumedData</span> = { <span style="color:#268bd2">Timestamp</span> : <span style="color:#268bd2">DateTime</span>; <span style="color:#268bd2">Id</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Category</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Description</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Url</span> : <span style="color:#859900;font-weight:bold">string</span> }
+<span style="color:#859900">and</span> <span style="color:#268bd2">RemovedData</span> = { <span style="color:#268bd2">Timestamp</span> : <span style="color:#268bd2">DateTime</span>; <span style="color:#268bd2">Id</span> : <span style="color:#859900;font-weight:bold">string</span> }
+
+<span style="color:#859900">type</span> <span style="color:#cb4b16">CmdResult</span> = | <span style="color:#268bd2">Event</span> <span style="color:#859900">of</span> <span style="color:#268bd2">stream</span> : <span style="color:#859900;font-weight:bold">string</span> * <span style="color:#859900">event</span> : <span style="color:#268bd2">Event</span>
+</code></pre></div><h3 id="dependencies">Dependencies</h3>
+<p>Looking at the tests the command handlers need to satisfy, we know
+that a command handler depends on the system time and the eventstore.</p>
+<p>The dependency on time is just a function that takes no arguments and
+returns a datetime.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900;font-weight:bold">unit</span> -&gt; <span style="color:#268bd2">DateTime</span>
+</code></pre></div><p>An implementation could look like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">thetime</span><span style="color:#268bd2">()</span> = <span style="color:#268bd2">DateTime</span>.<span style="color:#268bd2">UtcNow</span>
+</code></pre></div><p>Reading an event stream is a function that takes a stream name and
+returns an event stream.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">EventStream</span> =
+	| <span style="color:#268bd2">NotExists</span> <span style="color:#859900">of</span> <span style="color:#268bd2">name</span> : <span style="color:#859900;font-weight:bold">string</span>
+	| <span style="color:#268bd2">Exists</span> <span style="color:#859900">of</span> <span style="color:#268bd2">name</span> : <span style="color:#859900;font-weight:bold">string</span> * <span style="color:#268bd2">events</span> : <span style="color:#268bd2">seq</span>&lt;<span style="color:#268bd2">Event</span>&gt;
+
+<span style="color:#859900;font-weight:bold">string</span> -&gt; <span style="color:#268bd2">EventStream</span>
+</code></pre></div><p>Implementing a naïve event store takes more than one line on code.</p>
+<h3 id="an-eventstore">An eventstore</h3>
+<p>This implementation stores events in a text file. When an event is
+stored, it gets serialized to JSON for then to be appended to a text
+file. When reading a stream it will read all events from disk,
+deserialize them to then filter by stream name before returning it as an
+event stream - it&rsquo;s not exactly web scale.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">StoredEvent</span> =  { <span style="color:#268bd2">Stream</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Body</span> : <span style="color:#268bd2">Event</span>  }
+
+<span style="color:#859900">let</span> <span style="color:#268bd2">store</span> <span style="color:#268bd2">path</span> <span style="color:#268bd2">stream</span> <span style="color:#268bd2">e</span> =
+        <span style="color:#859900">let</span> <span style="color:#268bd2">serialize</span> <span style="color:#268bd2">e</span> = <span style="color:#268bd2">JsonConvert</span>.<span style="color:#268bd2">SerializeObject</span> <span style="color:#268bd2">e</span>
+
+        <span style="color:#859900">let</span> <span style="color:#268bd2">writeToDisk</span> ( <span style="color:#268bd2">line</span> : <span style="color:#859900;font-weight:bold">string</span> ) = 
+            <span style="color:#859900">use</span> <span style="color:#268bd2">wr</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">StreamWriter</span>(<span style="color:#268bd2">path</span>, <span style="color:#859900">true</span>)
+            <span style="color:#268bd2">wr</span>.<span style="color:#268bd2">WriteLine</span>(<span style="color:#268bd2">line</span>)
+        
+        <span style="color:#859900">let</span> <span style="color:#268bd2">eventOnDisk</span> = { <span style="color:#268bd2">Stream</span> = <span style="color:#268bd2">stream</span>; <span style="color:#268bd2">Body</span> = <span style="color:#268bd2">e</span> } 
+
+        <span style="color:#268bd2">serialize</span> <span style="color:#268bd2">eventOnDisk</span> |&gt; <span style="color:#268bd2">writeToDisk</span> 
+        <span style="color:#268bd2">Success</span> <span style="color:#268bd2">eventOnDisk</span>
+
+<span style="color:#859900">let</span> <span style="color:#268bd2">read</span> <span style="color:#268bd2">path</span> <span style="color:#268bd2">stream</span> =
+	<span style="color:#859900">let</span> <span style="color:#268bd2">deserialize</span> <span style="color:#268bd2">x</span> = <span style="color:#268bd2">JsonConvert</span>.<span style="color:#268bd2">DeserializeObject</span>&lt;<span style="color:#268bd2">StoredEvent</span>&gt;(<span style="color:#268bd2">x</span>)
+
+	<span style="color:#859900">let</span> <span style="color:#268bd2">readFromDisk</span> = <span style="color:#268bd2">File</span>.<span style="color:#268bd2">ReadAllLines</span> <span style="color:#268bd2">path</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">map</span> <span style="color:#268bd2">deserialize</span>
+
+	<span style="color:#859900">let</span> <span style="color:#268bd2">eventsFromDisk</span> =
+		<span style="color:#859900">match</span> <span style="color:#268bd2">stream</span> <span style="color:#859900">with</span>
+		| <span style="color:#2aa198">&#34;$all&#34;</span> -&gt; <span style="color:#268bd2">readFromDisk</span>
+		| _ -&gt; <span style="color:#268bd2">readFromDisk</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">filter</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">e</span> -&gt; <span style="color:#268bd2">e</span>.<span style="color:#268bd2">Stream</span> = <span style="color:#268bd2">stream</span>)
+
+	<span style="color:#859900">match</span> <span style="color:#268bd2">eventsFromDisk</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">isEmpty</span> <span style="color:#859900">with</span>
+	| <span style="color:#859900">true</span> -&gt; <span style="color:#268bd2">EventStream</span>.<span style="color:#268bd2">NotExists</span> <span style="color:#268bd2">stream</span>
+	| <span style="color:#859900">false</span> -&gt; <span style="color:#268bd2">EventStream</span>.<span style="color:#268bd2">Exists</span> (<span style="color:#268bd2">stream</span>, <span style="color:#268bd2">eventsFromDisk</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">map</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">e</span> -&gt; <span style="color:#268bd2">e</span>.<span style="color:#268bd2">Body</span>))
+</code></pre></div><p>The signature for reading a stream doesn&rsquo;t satisfy the signature we
+defined earlier though. We can satisfy it by creating a <a href="http://fsharpforfunandprofit.com/posts/partial-application/">partially
+applied function</a>.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#93a1a1;font-style:italic">// path:string -&gt; stream:string -&gt; EventStream to string -&gt; EventStream
+</span><span style="color:#93a1a1;font-style:italic"></span>
+<span style="color:#859900">let</span> <span style="color:#268bd2">read</span> <span style="color:#268bd2">stream</span> = <span style="color:#268bd2">read</span> <span style="color:#2aa198">&#34;eventstore.txt&#34;</span> <span style="color:#268bd2">stream</span>
+</code></pre></div><h3 id="handlers">Handlers</h3>
+<p>Handlers focus on pure computation, they just need to return an event
+or a failure.</p>
+<p>We can only consume an item once, and we can only remove items that
+exist. It shouldn&rsquo;t be possible to consume items that have been removed.
+There isn&rsquo;t much needed on the inside to cover these use cases.</p>
+<p>We inject the event store and time dependencies by passing in the
+relevant functions - since I&rsquo;m already using this function further on in
+program.fs, the compiler can infer the signatures, no need to explicitly
+state the signatures I defined earlier.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">CommandFailure</span> =
+	| <span style="color:#268bd2">ItemAlreadyConsumed</span>
+	| <span style="color:#268bd2">ItemDoesNotExist</span>
+
+<span style="color:#859900">type</span> <span style="color:#cb4b16">HandlingFailure</span> =
+	| <span style="color:#268bd2">Validation</span> <span style="color:#859900">of</span> <span style="color:#268bd2">ValidationFailure</span>
+	| <span style="color:#268bd2">Command</span> <span style="color:#859900">of</span> <span style="color:#268bd2">CommandFailure</span>
+	
+<span style="color:#859900">let</span> <span style="color:#268bd2">commandFails</span> <span style="color:#268bd2">f</span> = <span style="color:#268bd2">Failure</span>(<span style="color:#268bd2">Command</span>(<span style="color:#268bd2">f</span>))
+
+<span style="color:#859900">let</span> <span style="color:#268bd2">handle</span> <span style="color:#268bd2">read</span> <span style="color:#268bd2">thetime</span> <span style="color:#268bd2">cmd</span> =
+	<span style="color:#859900">match</span> <span style="color:#268bd2">cmd</span> <span style="color:#859900">with</span>
+	| <span style="color:#268bd2">Command</span>.<span style="color:#268bd2">Consume</span> <span style="color:#268bd2">data</span> -&gt;
+	    <span style="color:#859900">let</span> <span style="color:#268bd2">stream</span> = <span style="color:#268bd2">sprintf</span> <span style="color:#2aa198">&#34;consumeditem/%s&#34;</span> <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Id</span>
+	
+	    <span style="color:#859900">match</span> <span style="color:#268bd2">read</span> <span style="color:#268bd2">stream</span> <span style="color:#859900">with</span>
+	    | <span style="color:#268bd2">EventStream</span>.<span style="color:#268bd2">Exists</span> _ -&gt;
+	        <span style="color:#268bd2">commandFails</span> <span style="color:#268bd2">ItemAlreadyConsumed</span>
+	    | <span style="color:#268bd2">EventStream</span>.<span style="color:#268bd2">NotExists</span> <span style="color:#268bd2">stream</span> -&gt; 
+	        <span style="color:#268bd2">succeeds</span> ( <span style="color:#268bd2">Event</span> ( <span style="color:#268bd2">stream</span>, <span style="color:#268bd2">Consumed</span> { <span style="color:#268bd2">Timestamp</span> = <span style="color:#268bd2">thetime</span><span style="color:#268bd2">()</span>; <span style="color:#268bd2">Id</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Id</span>; <span style="color:#268bd2">Category</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Category</span>; <span style="color:#268bd2">Description</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Description</span>; <span style="color:#268bd2">Url</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Url</span> } ) )
+	| <span style="color:#268bd2">Command</span>.<span style="color:#268bd2">Remove</span> <span style="color:#268bd2">data</span> -&gt;
+	    <span style="color:#859900">let</span> <span style="color:#268bd2">stream</span> = <span style="color:#268bd2">sprintf</span> <span style="color:#2aa198">&#34;consumeditem/%s&#34;</span> <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Id</span>
+	
+	    <span style="color:#859900">match</span> <span style="color:#268bd2">read</span> <span style="color:#268bd2">stream</span> <span style="color:#859900">with</span>
+	    | <span style="color:#268bd2">EventStream</span>.<span style="color:#268bd2">NotExists</span> ( _ ) -&gt;
+	        <span style="color:#268bd2">commandFails</span> <span style="color:#268bd2">ItemDoesNotExist</span>
+	    | <span style="color:#268bd2">EventStream</span>.<span style="color:#268bd2">Exists</span> ( <span style="color:#268bd2">stream</span> , _ ) -&gt;
+	        <span style="color:#268bd2">succeeds</span> ( <span style="color:#268bd2">Event</span> ( <span style="color:#268bd2">stream</span>, <span style="color:#268bd2">Removed</span> { <span style="color:#268bd2">Timestamp</span> = <span style="color:#268bd2">thetime</span><span style="color:#268bd2">()</span>; <span style="color:#268bd2">Id</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Id</span> } ) )
+</code></pre></div><h3 id="side-effects">Side effects</h3>
+<p>So far we have been able to avoid intentional side effects - we did
+introduce functions that might have accidental side effects (reading
+from disk and reading the system time ). It would be nice to be able to
+restart the application without losing all state, so we need to take the
+result the command produced and persist it. A small function takes care
+of matching each result to invoke the relevant side effect. So far, we
+only want to store events. With this, we successfully isolated side
+effects to one small function.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">sideEffects</span> <span style="color:#268bd2">store</span> <span style="color:#268bd2">input</span> =
+	<span style="color:#859900">match</span> <span style="color:#268bd2">input</span> <span style="color:#859900">with</span>
+	| <span style="color:#268bd2">Event</span> ( <span style="color:#268bd2">stream</span>, <span style="color:#859900">event</span> ) -&gt; <span style="color:#268bd2">store</span> <span style="color:#268bd2">stream</span> <span style="color:#859900">event</span>
+</code></pre></div><h3 id="putting-it-all-together">Putting it all together</h3>
+<p>By now, we can validate commands, handle them and take care of their
+side effects. We can now compose those pieces together using <a href="http://fsharpforfunandprofit.com/posts/recipe-part2/">Railway
+Oriented
+Programming</a> and
+invoke the pipeline. The output gets matched, so we can print something
+relevant for the user to see.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">read</span> <span style="color:#268bd2">stream</span> = <span style="color:#268bd2">read</span> <span style="color:#268bd2">path</span> <span style="color:#268bd2">stream</span>
+<span style="color:#859900">let</span> <span style="color:#268bd2">handleCommand</span> <span style="color:#268bd2">cmd</span> = 
+	<span style="color:#268bd2">cmd</span> 
+	|&gt; <span style="color:#268bd2">validate</span>
+	&gt;&gt;= <span style="color:#268bd2">handle</span> <span style="color:#268bd2">read</span> <span style="color:#268bd2">thetime</span> 
+	&gt;&gt;= <span style="color:#268bd2">switch</span> ( <span style="color:#268bd2">sideEffects</span> (<span style="color:#268bd2">store</span> <span style="color:#268bd2">path</span>) )
+
+<span style="color:#859900">match</span> <span style="color:#268bd2">handleCommand</span> <span style="color:#268bd2">cmd</span> <span style="color:#859900">with</span>
+| <span style="color:#268bd2">Success</span> <span style="color:#268bd2">e</span> 
+	-&gt; <span style="color:#268bd2">printfn</span> <span style="color:#2aa198">&#34;Yay! Something happened = %A&#34;</span> <span style="color:#268bd2">e</span>
+| <span style="color:#268bd2">Failure</span>(<span style="color:#268bd2">Command</span>(<span style="color:#268bd2">ItemAlreadyConsumed</span>)) 
+	-&gt; <span style="color:#268bd2">printfn</span> <span style="color:#2aa198">&#34;Item was already consumed&#34;</span>
+| <span style="color:#268bd2">Failure</span>(<span style="color:#268bd2">Command</span>(<span style="color:#268bd2">ItemDoesNotExist</span>)) 
+	-&gt; <span style="color:#268bd2">printfn</span> <span style="color:#2aa198">&#34;Item does not exist&#34;</span>
+| <span style="color:#268bd2">Failure</span>(<span style="color:#268bd2">Validation</span>(<span style="color:#268bd2">ArgumentEmpty</span> <span style="color:#268bd2">x</span>)) 
+	-&gt; <span style="color:#268bd2">printfn</span> <span style="color:#2aa198">&#34;Argument empty = %A&#34;</span> <span style="color:#268bd2">x</span>
+| <span style="color:#268bd2">Failure</span>(<span style="color:#268bd2">Validation</span>(<span style="color:#268bd2">ArgumentStructure</span> <span style="color:#268bd2">x</span>)) 
+	-&gt; <span style="color:#268bd2">printfn</span> <span style="color:#2aa198">&#34;Argument structure invalid = %A&#34;</span> <span style="color:#268bd2">x</span>
+| <span style="color:#268bd2">Failure</span>(<span style="color:#268bd2">Validation</span>(<span style="color:#268bd2">ArgumentOutOfRange</span> <span style="color:#268bd2">x</span>)) 
+	-&gt; <span style="color:#268bd2">printfn</span> <span style="color:#2aa198">&#34;Argument out of range = %A&#34;</span> <span style="color:#268bd2">x</span>
+</code></pre></div><p>Next time, we&rsquo;ll look at implementing queries.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2015  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

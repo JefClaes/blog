@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>talks on Jef Claes</title>
+    <link>http://localhost:1313/tags/talks/</link>
+    <description>Recent content in talks on Jef Claes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Nov 2015 15:47:00 +0100</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/talks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Slides from my talk &#34;Evil by Design&#34; at Build Stuff</title>
+      <link>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</link>
+      <pubDate>Wed, 18 Nov 2015 15:47:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</guid>
+      <description>Third time attending Build Stuff, first time doing a talk. I&amp;rsquo;m happy that it&amp;rsquo;s out of the way and can now just enjoy the conference, but I&amp;rsquo;m even more excited that it was well-received! The talk should have been recorded, but you can already find the abstract and slides below.
+ Last year I ventured into the domain of (online) gambling. Given that the industry has been around since forever, I expected most problems to be of the technical kind.</description>
+    </item>
+    
+  </channel>
+</rss>

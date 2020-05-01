@@ -3,7 +3,8 @@ title = "Side by side"
 slug = "2015-02-15-side-by-side"
 published = 2015-02-15T17:34:00+01:00
 author = "Jef Claes"
-tags = []
+tags = ["opinion"]
+url = "2015/02/side-by-side.html"
 +++
 This week marked my first year at my current employer. While that event
 went by rather silently, one year in, a few of my observations are

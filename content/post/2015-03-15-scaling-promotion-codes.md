@@ -3,7 +3,7 @@ title = "Scaling promotion codes"
 slug = "2015-03-15-scaling-promotion-codes"
 published = 2015-03-15T18:01:00.001000+01:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", ".NET", "DDD",]
+tags = [ "ddd","code"]
 +++
 In our system a backoffice user can issue a promotion code for users to
 redeem. Redeeming a promotion code, a user receives a discount on his
@@ -11,16 +11,36 @@ next purchase or a free gift. A promotion code is only active for a
 limited amount of time, can only be redeemed a limited amount of times
 and can only be redeemed once per user.  
 
-  
+```csharp
+public bool TryRedeem(UserId userId)
+{
+	if (HasAlreadyBeenRedeemedByUser(userId)) return false;
+	if (NoLongerActive()) return false;
+	if (Depleted()) return false;
+
+	Apply(new PromotionCodeRedeemed(userId.Value));
+
+	return true;
+}
+```
 
 In code these requirements translated into a promotion code aggregate
 which would guard three invariants.
 
-  
+```csharp
+var promotionCode = _promotionCodeRepository.GetById(promotionCodeId);
+
+if (promotionCode.TryRedeem(userId)) 
+{
+	_promotionCodeRepository.Update(promotionCode);
+		
+	return RedeemPromotionCodeResponse.Success();
+}
+
+return RedeemPromotionCodeResponse.Unavailable();
+``` 
 
 The command handler looked something like this.
-
-  
 
 Depending on the promotion code, we would often have a bunch of users
 doing this simultaneously, leading to a [hot
@@ -39,8 +59,15 @@ promotion code aggregate, a promotion code redemption now is a separate
 aggregate. The promotion code aggregate now picks up a new role; the
 role of a factory, it decides on the creation of new life.
 
-  
+```csharp
+public Maybe<PromotionCodeRedemption> Redeem(UserId userId)
+{
+	if (NoLongerActive()) return Maybe<PromotionCodeRedemption>.Empty();
 
+	return new Maybe<PromotionCodeRedemption>(new PromotionCodeRedemption(Id, userId));
+}
+```
+  
 The promotion code redemption's identifier is a composition of the
 promotion code identifier and the user identifier. Thus even when the
 aggregate is stored as a stream, we can check in a consistent fashion
@@ -51,6 +78,22 @@ be there yet, making absolutely sure we don't redeem twice. The event
 store would throw an exception when it would find a stream to already
 exist (think unique key constraint).
 
+```csharp
+var promotionCodeRedemptionId = new PromotionCodeRedemptionId(promotionCodeId, userId);
+if (_promotionCodeRedemptionRepository.Exists(promotionCodeRedemptionId))
+	return RedeemPromotionCodeResponse.Unavailable();
+
+var promotionCodeRedemption = promotionCode.Redeem(userId);
+
+if (promotionCodeRedemption.HasValue())
+{
+	_promotionCodeRedemptionRepository.Add(promotionCodeRedemption.Value);
+	
+	return RedeemPromotionCodeStatus.Success();
+}
+
+return RedeemPromotionCodeResponse.Unavailable();
+```
   
 
 In this example, we were able to remove an annoying and expensive

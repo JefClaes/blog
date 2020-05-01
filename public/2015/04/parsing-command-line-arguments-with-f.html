@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Consumed: Parsing command line arguments (F#) - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Consumed: Parsing command line arguments (F#)">
+<meta itemprop="description" content="Last year, I set out to write my first node.js application; a small web application for keeping lists of everything I consume. I had something working pretty quickly, deployed it to Heroku and still find myself using it today. Since there&rsquo;s very little use for having it running on a server, and because I wanted something to toy with getting better at F#, I decided to port it to an F# console application.">
+<meta itemprop="datePublished" content="2015-04-19T16:54:00&#43;02:00" />
+<meta itemprop="dateModified" content="2015-04-19T16:54:00&#43;02:00" />
+<meta itemprop="wordCount" content="682">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Consumed: Parsing command line arguments (F#)" />
+<meta property="og:description" content="Last year, I set out to write my first node.js application; a small web application for keeping lists of everything I consume. I had something working pretty quickly, deployed it to Heroku and still find myself using it today. Since there&rsquo;s very little use for having it running on a server, and because I wanted something to toy with getting better at F#, I decided to port it to an F# console application." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2015/04/parsing-command-line-arguments-with-f.html" />
+<meta property="article:published_time" content="2015-04-19T16:54:00+02:00" />
+<meta property="article:modified_time" content="2015-04-19T16:54:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Consumed: Parsing command line arguments (F#)"/>
+<meta name="twitter:description" content="Last year, I set out to write my first node.js application; a small web application for keeping lists of everything I consume. I had something working pretty quickly, deployed it to Heroku and still find myself using it today. Since there&rsquo;s very little use for having it running on a server, and because I wanted something to toy with getting better at F#, I decided to port it to an F# console application."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">19</span>
+							<span class="rest">Apr 2015</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Consumed: Parsing command line arguments (F#)</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Last year, I set out to write my first node.js application; a small web
+application for keeping lists of <a href="http://www.jefclaes.be/2015/01/consumed-in-2014.html">everything I
+consume</a>. I had
+something working pretty quickly, deployed it to Heroku and still find
+myself using it today. Since there&rsquo;s very little use for having it
+running on a server, and because I wanted something to toy with getting
+better at F#, I decided to port it to an F# console application.</p>
+<p>With the UI gone, I need to resort to passing in arguments from the
+command line to have my program transform those into valid commands and
+queries that can be executed.</p>
+<p>The set of commands and queries is limited; consume an item, remove an
+item and query a list of everything consumed.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">module</span> <span style="color:#268bd2">Contracts</span> =
+
+    <span style="color:#859900">type</span> <span style="color:#cb4b16">Command</span> =
+        | <span style="color:#268bd2">Consume</span> <span style="color:#859900">of</span> <span style="color:#268bd2">id</span> : <span style="color:#859900;font-weight:bold">string</span> * <span style="color:#268bd2">description</span> : <span style="color:#859900;font-weight:bold">string</span> * <span style="color:#268bd2">url</span> : <span style="color:#859900;font-weight:bold">string</span>
+        | <span style="color:#268bd2">Remove</span> <span style="color:#859900">of</span> <span style="color:#268bd2">id</span> : <span style="color:#859900;font-weight:bold">string</span>
+
+    <span style="color:#859900">type</span> <span style="color:#cb4b16">Query</span> =
+        | <span style="color:#268bd2">List</span>
+</code></pre></div><p>Ideally I go from a sequence of strings to a typed command or query.
+However, when the list of arguments can&rsquo;t be parsed, I expect a result
+telling me what failed just the same.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">Result</span>&lt;<span style="color:#859900">&#39;</span><span style="color:#268bd2">TSuccess</span>,<span style="color:#859900">&#39;</span><span style="color:#268bd2">TFailure</span>&gt; = 
+	| <span style="color:#268bd2">Success</span> <span style="color:#859900">of</span> <span style="color:#859900">&#39;</span><span style="color:#268bd2">TSuccess</span>
+	| <span style="color:#268bd2">Failure</span> <span style="color:#859900">of</span> <span style="color:#859900">&#39;</span><span style="color:#268bd2">TFailure</span>
+	
+<span style="color:#859900">type</span> <span style="color:#cb4b16">ParserFailure</span> =
+	| <span style="color:#268bd2">ArgumentsMissing</span> 
+	| <span style="color:#268bd2">KeyMissing</span> <span style="color:#859900">of</span> <span style="color:#859900;font-weight:bold">string</span>
+	| <span style="color:#268bd2">KeyLooksLikeValue</span> <span style="color:#859900">of</span> <span style="color:#859900;font-weight:bold">string</span>
+	| <span style="color:#268bd2">NotFound</span>
+	
+[&lt;<span style="color:#268bd2">Test</span>&gt;]
+<span style="color:#859900">let</span> <span style="color:#268bd2">``Parsing consume command``</span><span style="color:#268bd2">()</span> =  
+    <span style="color:#859900">let</span> <span style="color:#268bd2">expected</span> = <span style="color:#268bd2">Consume</span>(<span style="color:#2aa198">&#34;2&#34;</span>, <span style="color:#2aa198">&#34;The Dark Tower&#34;</span>, <span style="color:#2aa198">&#34;http://thedarktower.com&#34;</span>)
+    <span style="color:#859900">let</span> <span style="color:#268bd2">actual</span> = <span style="color:#268bd2">parse</span> [| <span style="color:#2aa198">&#34;--n&#34;</span>; <span style="color:#2aa198">&#34;consume&#34;</span>; <span style="color:#2aa198">&#34;--id&#34;</span>; <span style="color:#2aa198">&#34;2&#34;</span>; <span style="color:#2aa198">&#34;--d&#34;</span>; <span style="color:#2aa198">&#34;The Dark Tower&#34;</span>; <span style="color:#2aa198">&#34;--u&#34;</span>; <span style="color:#2aa198">&#34;http://thedarktower.com&#34;</span>; |]
+    <span style="color:#859900">match</span> <span style="color:#268bd2">actual</span> <span style="color:#859900">with</span>
+    | <span style="color:#268bd2">Success</span>(<span style="color:#268bd2">Command</span>(<span style="color:#268bd2">x</span>)) -&gt; <span style="color:#268bd2">x</span> |&gt; <span style="color:#268bd2">should</span> <span style="color:#268bd2">equal</span> <span style="color:#268bd2">expected</span>
+    | _ -&gt; <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">Fail</span><span style="color:#268bd2">()</span> 
+</code></pre></div><p>Since we need the name to identify the command or query, I expect the
+input to have at least two arguments.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">ensureEnoughElements</span> <span style="color:#268bd2">input</span> =
+    <span style="color:#859900">match</span> ( <span style="color:#268bd2">input</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">length</span> &gt; <span style="color:#268bd2">1</span> ) <span style="color:#859900">with</span>
+    | <span style="color:#859900">true</span> -&gt; <span style="color:#268bd2">Success</span> <span style="color:#268bd2">input</span> 
+    | <span style="color:#859900">false</span> -&gt; <span style="color:#268bd2">Failure</span> <span style="color:#268bd2">ArgumentsMissing</span>
+</code></pre></div><p>Arguments come in pairs; a key and a value. My first thought was to
+build a map here, but that made key validation, key transformations and
+pattern matching harder.  I can actually get away with transforming the
+input to a sequence of tuples.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">pair</span> <span style="color:#268bd2">input</span> =    
+	<span style="color:#268bd2">input</span> 
+	|&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">pairwise</span>   
+	|&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">mapi</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">i</span> <span style="color:#268bd2">x</span> -&gt; <span style="color:#859900">if</span> <span style="color:#268bd2">i</span> % <span style="color:#268bd2">2</span> = <span style="color:#268bd2">0</span> <span style="color:#859900">then</span> <span style="color:#268bd2">Some</span>(<span style="color:#268bd2">x</span>) <span style="color:#859900">else</span> <span style="color:#268bd2">None</span>)
+	|&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">choose</span> <span style="color:#268bd2">id</span>      
+</code></pre></div><p>Hoping to avoid some mistakes in the input, basic validation makes sure
+the keys actually look like keys, instead of a value. Keys start with a
+single or double dash.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">ensureKeysDontLookLikeValue</span> ( <span style="color:#268bd2">arguments</span> : <span style="color:#268bd2">seq</span>&lt;<span style="color:#859900;font-weight:bold">string</span> * <span style="color:#859900;font-weight:bold">string</span>&gt; ) =
+	<span style="color:#859900">let</span> <span style="color:#268bd2">looksLikeValue</span> = 
+		<span style="color:#268bd2">arguments</span> 
+		|&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">tryFind</span> ( <span style="color:#859900">fun</span> ( <span style="color:#268bd2">k</span>, <span style="color:#268bd2">v</span> ) -&gt; <span style="color:#859900">not</span> (<span style="color:#268bd2">k</span>.<span style="color:#268bd2">StartsWith</span>(<span style="color:#2aa198">&#34;-&#34;</span>) || <span style="color:#268bd2">k</span>.<span style="color:#268bd2">StartsWith</span>(<span style="color:#2aa198">&#34;--&#34;</span>)) )
+	<span style="color:#859900">match</span> <span style="color:#268bd2">looksLikeValue</span> <span style="color:#859900">with</span>
+	| <span style="color:#268bd2">Some</span> ( <span style="color:#268bd2">key</span>, <span style="color:#268bd2">value</span> ) -&gt; <span style="color:#268bd2">Failure</span>(<span style="color:#268bd2">KeyLooksLikeValue</span> <span style="color:#268bd2">key</span>)
+	| <span style="color:#268bd2">None</span> -&gt; <span style="color:#268bd2">Success</span> <span style="color:#268bd2">arguments</span> 
+</code></pre></div><p>Once that validation is out of the way, I strip away those dashes. That
+should make the two last steps easier.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">stripKeys</span> ( <span style="color:#268bd2">arguments</span> : <span style="color:#268bd2">seq</span>&lt;<span style="color:#859900;font-weight:bold">string</span> * <span style="color:#859900;font-weight:bold">string</span>&gt; ) =        
+    <span style="color:#268bd2">arguments</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">map</span> (<span style="color:#859900">fun</span> ( <span style="color:#268bd2">k</span>, <span style="color:#268bd2">v</span> ) -&gt; ( <span style="color:#268bd2">k</span>.<span style="color:#268bd2">Replace</span>(<span style="color:#2aa198">&#34;-&#34;</span>, <span style="color:#2aa198">&#34;&#34;</span>).<span style="color:#268bd2">ToLower</span><span style="color:#268bd2">()</span>, <span style="color:#268bd2">v</span> ))
+</code></pre></div><p>The name is required, so I wrote a small function that makes sure a
+specific key exists.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">ensureKeyExists</span> <span style="color:#268bd2">key</span> <span style="color:#268bd2">arguments</span> =      
+	<span style="color:#859900">match</span> <span style="color:#268bd2">arguments</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">exists</span> (<span style="color:#859900">fun</span> ( <span style="color:#268bd2">k</span>, <span style="color:#268bd2">v</span> ) -&gt; <span style="color:#268bd2">k</span> = <span style="color:#268bd2">key</span> ) <span style="color:#859900">with</span>
+	| <span style="color:#859900">true</span> -&gt; <span style="color:#268bd2">Success</span> <span style="color:#268bd2">arguments</span>
+	| <span style="color:#859900">false</span> -&gt; <span style="color:#268bd2">Failure</span>(<span style="color:#268bd2">KeyMissing</span> <span style="color:#268bd2">key</span>)
+</code></pre></div><p>Now that I have a list of arguments,  I can map them into a typed
+command or query using pattern matching.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">toCommandOrQuery</span> <span style="color:#268bd2">arguments</span> =
+	<span style="color:#859900">match</span> <span style="color:#268bd2">arguments</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">toList</span> <span style="color:#859900">with</span>
+	| [ ( <span style="color:#2aa198">&#34;n&#34;</span>, <span style="color:#2aa198">&#34;consume&#34;</span> ); (<span style="color:#2aa198">&#34;id&#34;</span>, <span style="color:#268bd2">id</span> ); ( <span style="color:#2aa198">&#34;d&#34;</span>, <span style="color:#268bd2">description</span> ); ( <span style="color:#2aa198">&#34;u&#34;</span>, <span style="color:#268bd2">url</span> ) ] -&gt;
+	<span style="color:#268bd2">Success</span>(<span style="color:#268bd2">Command</span>(<span style="color:#268bd2">Consume</span>(<span style="color:#268bd2">id</span>, <span style="color:#268bd2">description</span>, <span style="color:#268bd2">url</span>)))
+	| [ ( <span style="color:#2aa198">&#34;n&#34;</span>, <span style="color:#2aa198">&#34;remove&#34;</span> ); ( <span style="color:#2aa198">&#34;id&#34;</span> , <span style="color:#268bd2">id</span> ) ] -&gt;
+	<span style="color:#268bd2">Success</span>(<span style="color:#268bd2">Command</span>(<span style="color:#268bd2">Remove</span>(<span style="color:#268bd2">id</span>)))
+	| [ ( <span style="color:#2aa198">&#34;n&#34;</span>, <span style="color:#2aa198">&#34;list&#34;</span> )] -&gt;
+	<span style="color:#268bd2">Success</span>(<span style="color:#268bd2">Query</span>(<span style="color:#268bd2">List</span>))
+	| _ -&gt; <span style="color:#268bd2">Failure</span> <span style="color:#268bd2">NotFound</span> 
+</code></pre></div><p>Having written all these small functions, I can simply compose them
+using <a href="https://twitter.com/scottwlaschin">Scott Wlaschin</a>&lsquo;s <a href="http://fsharpforfunandprofit.com/posts/recipe-part2/">Railway
+oriented
+programmming</a>.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">result</span> = 
+	<span style="color:#268bd2">input</span> 
+	|&gt; <span style="color:#268bd2">ensureEnoughElements</span>
+	&gt;&gt;= <span style="color:#268bd2">switch</span> <span style="color:#268bd2">pair</span>
+	&gt;&gt;= <span style="color:#268bd2">ensureKeysDontLookLikeValue</span>
+	&gt;&gt;= <span style="color:#268bd2">switch</span> <span style="color:#268bd2">stripKeys</span>
+	&gt;&gt;= <span style="color:#268bd2">ensureKeyExists</span> <span style="color:#2aa198">&#34;n&#34;</span>
+	&gt;&gt;= <span style="color:#268bd2">toCommandOrQuery</span>
+</code></pre></div><p>This is far from a generic command line parser, but it&rsquo;s simple and
+covers my needs.</p>
+<p>Next up, executing those commands and queries, and printing feedback.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2015  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

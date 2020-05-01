@@ -43,74 +43,42 @@ In the domain I&amp;rsquo;m working in at the moment, we will often give users i
     
     <item>
       <title>Visualizing event streams</title>
-      <link>http://localhost:1313/2015/12/visualizing-event-streams/</link>
+      <link>http://localhost:1313/2015/12/visualizing-event-streams.html</link>
       <pubDate>Sun, 20 Dec 2015 17:59:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/12/visualizing-event-streams/</guid>
+      <guid>http://localhost:1313/2015/12/visualizing-event-streams.html</guid>
       <description>In my recent talk on Evil by Design, I showed how I&amp;rsquo;ve been visualizing event streams as a means to get a better grip on how aggregates behave in production. The talk&amp;rsquo;s scope kept me from showing the code that goes together with the examples shown. Consider this post as an addendum to that talk.
 First off, we need a few types: a string that identifies a stream, an event containing a timestamp and its name.</description>
     </item>
     
     <item>
       <title>Slides from my talk &#34;Evil by Design&#34; at Build Stuff</title>
-      <link>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at-build-stuff/</link>
+      <link>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</link>
       <pubDate>Wed, 18 Nov 2015 15:47:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at-build-stuff/</guid>
+      <guid>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</guid>
       <description>Third time attending Build Stuff, first time doing a talk. I&amp;rsquo;m happy that it&amp;rsquo;s out of the way and can now just enjoy the conference, but I&amp;rsquo;m even more excited that it was well-received! The talk should have been recorded, but you can already find the abstract and slides below.
  Last year I ventured into the domain of (online) gambling. Given that the industry has been around since forever, I expected most problems to be of the technical kind.</description>
     </item>
     
     <item>
       <title>Defining big wins</title>
-      <link>http://localhost:1313/2015/11/defining-big-wins/</link>
+      <link>http://localhost:1313/2015/11/defining-big-wins.html</link>
       <pubDate>Mon, 16 Nov 2015 21:31:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/11/defining-big-wins/</guid>
+      <guid>http://localhost:1313/2015/11/defining-big-wins.html</guid>
       <description>Casinos invest a lot of energy selling the dream. One way to do this is by showing off people winning big in your casino. Everyone has seen those corny pictures of people holding human-sized cheques right? It&amp;rsquo;s a solid tactic, since empirical evidence shows that after a store has sold a large-prize winning lottery ticket, the ticket sales increase from 12 to 38% over the following weeks.
 If we look at slot machine play, what exactly defines a big win?</description>
     </item>
     
     <item>
-      <title>Bulk SQL projections with F# and type providers</title>
-      <link>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</link>
-      <pubDate>Sun, 18 Oct 2015 15:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</guid>
-      <description>Early Summer, I had to set up an integration with an external partner. They required of us to daily provide them with a relational dataset stored in SQL Server. Most, if not all of the data was temporal, append-only by nature; think logins, financial transactions..
-Since the data required largely lived in an eventstore on our end, I needed fast bulk projections. Having experimented with a few approaches, I eventually settled on projections in F# taking advantage of type providers.</description>
-    </item>
-    
-    <item>
       <title>Basic casino math</title>
-      <link>http://localhost:1313/2015/06/basic-casino-math/</link>
+      <link>http://localhost:1313/2015/06/basic-casino-math.html</link>
       <pubDate>Mon, 22 Jun 2015 22:52:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/06/basic-casino-math/</guid>
+      <guid>http://localhost:1313/2015/06/basic-casino-math.html</guid>
       <description>In a previous series of posts, I went over the models used by casinos to spin a wheel (spinning, manipulating the odds, clustering and near misses). I did not yet expand on the basic mathematical models that ensure a casino makes money.
 Let&amp;rsquo;s pretend we are spinning the wheel again. The wheel has 5 pockets, and just one of those is the winning one. Given we will be using an unmodified wheel, you win 1 out of 5 spins.</description>
-    </item>
-    
-    <item>
-      <title>Consumed: Queries and projections (F#)</title>
-      <link>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</link>
-      <pubDate>Sun, 24 May 2015 18:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</guid>
-      <description>This is the third post in my series on porting a node.js application to an F# application.
-So far, I&amp;rsquo;ve looked at parsing command line arguments, handling commands and storing events. Today, I want to project those events into something useful that can be formatted and printed to the console.
-In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically</description>
-    </item>
-    
-    <item>
-      <title>Consumed: Handling commands (F#)</title>
-      <link>http://localhost:1313/2015/05/consumed-handling-commands-f/</link>
-      <pubDate>Sun, 17 May 2015 17:51:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2015/05/consumed-handling-commands-f/</guid>
-      <description>As I wrote earlier, I&amp;rsquo;ve been working on porting a node.js web application to an F# console application. It&amp;rsquo;s an application I wrote to learn node.js but still use today to keep track of all the things I consume.
-The application is able to consume an item, to remove a consumed item and to query all consumed items.
-In the previous post, I parsed command line arguments into typed commands and queries.</description>
     </item>
     
     <item>
@@ -120,15 +88,15 @@ In the previous post, I parsed command line arguments into typed commands and qu
       
       <guid>http://localhost:1313/2015/03/scaling-promotion-codes/</guid>
       <description>In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
-In code these requirements translated into a promotion code aggregate which would guard three invariants.</description>
+public bool TryRedeem(UserId userId) { if (HasAlreadyBeenRedeemedByUser(userId)) return false; if (NoLongerActive()) return false; if (Depleted()) return false; Apply(new PromotionCodeRedeemed(userId.</description>
     </item>
     
     <item>
       <title>Domain Language: The Playthrough Bonus</title>
-      <link>http://localhost:1313/2015/02/domain-language-the-playthrough-bonus/</link>
+      <link>http://localhost:1313/2015/02/domain-language-playthrough-bonus.html</link>
       <pubDate>Mon, 23 Feb 2015 19:05:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/02/domain-language-the-playthrough-bonus/</guid>
+      <guid>http://localhost:1313/2015/02/domain-language-playthrough-bonus.html</guid>
       <description>Since online gambling has been regulated in Belgium, basically each eligible license holder has complemented their land based operations with an online counterpart. Being such a small country, everyone wants to secure their market share as soon as possible. The big players have been pouring tons of money in to marketing and advertising, it&amp;rsquo;s everywhere: radio, television, (online) newspapers, bus stops, billboards, sport events, airplane vouchers - you name it. While regulations for land based casinos are very strict and almost overprotective, regulations for online play are much more permissive.</description>
     </item>
     

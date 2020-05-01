@@ -3,7 +3,8 @@ title = "Domain Language: The Playthrough Bonus"
 slug = "2015-02-23-domain-language-the-playthrough-bonus"
 published = 2015-02-23T19:05:00+01:00
 author = "Jef Claes"
-tags = [ "DDD", "F#",]
+tags = [ "ddd",]
+url = "2015/02/domain-language-playthrough-bonus.html"
 +++
 Since online gambling has been regulated in Belgium, basically each
 eligible license holder has complemented their land based operations
@@ -62,15 +63,54 @@ accepts bets and to check if the bonus has been cleared. The second
 record, the GameSettings, define the payout percentage and the stake of
 a bet.  
   
+```fsharp
+type Bonus = { Amount : decimal; Balance : decimal; Bets : decimal; Playthrough: decimal; }
+    with    
+        static member Create amount playthrough =
+            { Amount = amount; Balance = amount; Bets = 0M; Playthrough = playthrough }       
+        member x.Win amount =            
+            { x with Balance = x.Balance + amount }
+        member x.AcceptsBet amount =
+            x.Balance - amount >= 0M
+        member x.Cleared =
+            ( x.Playthrough * x.Amount ) - x.Bets <= 0M
+        member x.Bet amount =
+            match x.AcceptsBet amount with
+            | true -> { x with Bets = x.Bets + amount; Balance = x.Balance - amount }
+            | false -> invalidOp "Bonus can't accept bet" 
+type GameSettings = { Payout : decimal; Stake : decimal; }
+```
 
 After defining these structures, I defined a function that recursively
 keeps playing (bet and win) until either the bonus is cleared, or the
 bonus no longer accepts bets (out of money).  
-  
+
+```fsharp
+let rec playUntilCleared ( bonus : Bonus ) settings =          
+    match bonus.Cleared with        
+    | true -> bonus
+    | false -> 
+    (         
+        let bet = settings.Stake
+        let win = settings.Stake / 100M * settings.Payout
+
+        match bonus.AcceptsBet bet with
+        | false -> bonus
+        | true -> playUntilCleared ( bonus.Bet(bet).Win(win) ) settings            
+    )
+```
 
 When we run this function we know the answer to our question. On
 average, we will clear the bonus with four euro left on our balance.  
-  
+
+```fsharp
+printfn "%A" ( playUntilCleared ( Bonus.Create 10M 30M ) { Payout = 98M; Stake = 0.2M } )
+
+// {Amount = 10M;
+// Balance = 4.000M;
+// Bets = 300.0M;
+// Playthrough = 30M;}
+```
 
 When we turn down the payout to be one percent lower, we only have 1
 euro left on our balance. When we turn it down even more, there won't be

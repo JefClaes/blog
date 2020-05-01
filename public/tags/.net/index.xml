@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Scaling promotion codes</title>
-      <link>http://localhost:1313/2015/03/scaling-promotion-codes/</link>
-      <pubDate>Sun, 15 Mar 2015 18:01:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2015/03/scaling-promotion-codes/</guid>
-      <description>In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
-In code these requirements translated into a promotion code aggregate which would guard three invariants.</description>
-    </item>
-    
-    <item>
       <title>Read an Event Store stream as a sequence of slices using F#</title>
       <link>http://localhost:1313/2014/10/read-an-event-store-stream-as-a-sequence-of-slices-using-f/</link>
       <pubDate>Sun, 05 Oct 2014 15:21:00 +0200</pubDate>

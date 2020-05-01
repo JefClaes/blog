@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Consumed: Queries and projections (F#) - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Consumed: Queries and projections (F#)">
+<meta itemprop="description" content="This is the third post in my series on porting a node.js application to an F# application.
+So far, I&rsquo;ve looked at parsing command line arguments, handling commands and storing events. Today, I want to project those events into something useful that can be formatted and printed to the console.
+In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically.">
+<meta itemprop="datePublished" content="2015-05-24T18:00:00&#43;02:00" />
+<meta itemprop="dateModified" content="2015-05-24T18:00:00&#43;02:00" />
+<meta itemprop="wordCount" content="546">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Consumed: Queries and projections (F#)" />
+<meta property="og:description" content="This is the third post in my series on porting a node.js application to an F# application.
+So far, I&rsquo;ve looked at parsing command line arguments, handling commands and storing events. Today, I want to project those events into something useful that can be formatted and printed to the console.
+In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/consumed-queries-and-projections-f.html" />
+<meta property="article:published_time" content="2015-05-24T18:00:00+02:00" />
+<meta property="article:modified_time" content="2015-05-24T18:00:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Consumed: Queries and projections (F#)"/>
+<meta name="twitter:description" content="This is the third post in my series on porting a node.js application to an F# application.
+So far, I&rsquo;ve looked at parsing command line arguments, handling commands and storing events. Today, I want to project those events into something useful that can be formatted and printed to the console.
+In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">24</span>
+							<span class="rest">May 2015</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Consumed: Queries and projections (F#)</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>This is the third post in my series on porting a node.js application to
+an F# application.</p>
+<p>So far, I&rsquo;ve looked at <a href="http://www.jefclaes.be/2015/04/parsing-command-line-arguments-with-f.html">parsing command line
+arguments</a>,
+<a href="http://www.jefclaes.be/2015/05/consumed-handling-commands-f.html">handling commands and storing
+events</a>.
+Today, I want to project those events into something useful that can be
+formatted and printed to the console.</p>
+<p>In the original application, I only had a single query. The result of
+this query lists all items consumed grouped by category, sorted
+chronologically.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">type</span> <span style="color:#cb4b16">Query</span> = | <span style="color:#268bd2">List</span>
+
+<span style="color:#859900">type</span> <span style="color:#cb4b16">ListResult</span> = { <span style="color:#268bd2">Categories</span> : <span style="color:#268bd2">seq</span>&lt;<span style="color:#268bd2">Category</span>&gt; }
+       <span style="color:#859900">and</span> <span style="color:#268bd2">Category</span> = { <span style="color:#268bd2">Name</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Items</span> : <span style="color:#268bd2">seq</span>&lt;<span style="color:#268bd2">Item</span>&gt;; }
+       <span style="color:#859900">and</span> <span style="color:#268bd2">Item</span> = { <span style="color:#268bd2">Id</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Timestamp</span> : <span style="color:#268bd2">DateTime</span>; <span style="color:#268bd2">Category</span> : <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Description</span>: <span style="color:#859900;font-weight:bold">string</span>; <span style="color:#268bd2">Url</span>: <span style="color:#859900;font-weight:bold">string</span> }
+</code></pre></div><p>Handling the query is done in a similar fashion to handling commands.
+The handle function matches each query and has a dependency on the event
+store.</p>
+<p>Where C# requires a bit of plumbing to get declarative projections
+going, F#&lsquo;s pattern matching and set of built-in functions give you
+this for free.</p>
+<p>We can fold over the event stream, starting with an empty list, to
+append each item that was consumed, excluding the ones that were removed
+later. Those projected items can then be grouped by category, to be
+mapped into a category type that contains a sorted list of items.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">let</span> <span style="color:#268bd2">handle</span> <span style="color:#268bd2">read</span> <span style="color:#268bd2">query</span> =
+        <span style="color:#859900">match</span> <span style="color:#268bd2">query</span> <span style="color:#859900">with</span>
+        | <span style="color:#268bd2">Query</span>.<span style="color:#268bd2">List</span> -&gt;
+            (
+                <span style="color:#859900">let</span> <span style="color:#268bd2">folder</span> <span style="color:#268bd2">state</span> <span style="color:#268bd2">e</span> =
+                    <span style="color:#859900">match</span> <span style="color:#268bd2">e</span> <span style="color:#859900">with</span>
+                    | <span style="color:#268bd2">Event</span>.<span style="color:#268bd2">Consumed</span> <span style="color:#268bd2">data</span> -&gt;
+                        {
+                            <span style="color:#268bd2">Id</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Id</span>;
+                            <span style="color:#268bd2">Timestamp</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Timestamp</span>;
+                            <span style="color:#268bd2">Category</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Category</span>;
+                            <span style="color:#268bd2">Description</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Description</span>;
+                            <span style="color:#268bd2">Url</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Url</span>
+                        } :: <span style="color:#268bd2">state</span>
+                    | <span style="color:#268bd2">Event</span>.<span style="color:#268bd2">Removed</span> <span style="color:#268bd2">data</span> -&gt;
+                        <span style="color:#268bd2">List</span>.<span style="color:#268bd2">filter</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">x</span> -&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Id</span> &lt;&gt; <span style="color:#268bd2">data</span>.<span style="color:#268bd2">Id</span>) <span style="color:#268bd2">state</span>
+
+                <span style="color:#859900">match</span> <span style="color:#268bd2">read</span> <span style="color:#2aa198">&#34;$all&#34;</span>  <span style="color:#859900">with</span>
+                | <span style="color:#268bd2">EventStream</span>.<span style="color:#268bd2">NotExists</span> _ -&gt; { <span style="color:#268bd2">Categories</span> = <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">empty</span> }
+                | <span style="color:#268bd2">EventStream</span>.<span style="color:#268bd2">Exists</span> ( _ , <span style="color:#268bd2">events</span> ) -&gt;
+                    (
+                        <span style="color:#859900">let</span> <span style="color:#268bd2">items</span> = <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">fold</span> <span style="color:#268bd2">folder</span> <span style="color:#268bd2">[]</span> <span style="color:#268bd2">events</span>
+                        <span style="color:#859900">let</span> <span style="color:#268bd2">categories</span> =
+                            <span style="color:#268bd2">items</span>
+                            |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">groupBy</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">x</span> -&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Category</span>)
+                            |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">map</span> (<span style="color:#859900">fun</span> ( <span style="color:#268bd2">x</span> , <span style="color:#268bd2">y</span> ) -&gt; { <span style="color:#268bd2">Name</span> = <span style="color:#268bd2">x</span>; <span style="color:#268bd2">Items</span> = <span style="color:#268bd2">y</span> |&gt; <span style="color:#268bd2">Seq</span>.<span style="color:#268bd2">sortBy</span> (<span style="color:#859900">fun</span> <span style="color:#268bd2">x</span> -&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Timestamp</span>) })
+                        { <span style="color:#268bd2">Categories</span> = <span style="color:#268bd2">categories</span> }
+                    )
+            )
+</code></pre></div><p>The result can be printed to the console using a more imperative
+style.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fsharp" data-lang="fsharp"><span style="color:#859900">match</span> <span style="color:#268bd2">parse</span> <span style="color:#268bd2">argv</span> <span style="color:#859900">with</span>
+| <span style="color:#268bd2">Success</span>(<span style="color:#268bd2">Query</span>(<span style="color:#268bd2">query</span>)) -&gt;
+   (
+       <span style="color:#859900">let</span> <span style="color:#268bd2">result</span> = <span style="color:#268bd2">QueryHandling</span>.<span style="color:#268bd2">handle</span> (<span style="color:#268bd2">read</span> <span style="color:#268bd2">path</span>) <span style="color:#268bd2">query</span>
+
+       <span style="color:#859900">for</span> <span style="color:#268bd2">c</span> <span style="color:#859900">in</span> <span style="color:#268bd2">result</span>.<span style="color:#268bd2">Categories</span> <span style="color:#859900">do</span>
+           <span style="color:#268bd2">printfn</span> <span style="color:#2aa198">&#34;%s&#34;</span> <span style="color:#268bd2">c</span>.<span style="color:#268bd2">Name</span>
+           <span style="color:#268bd2">printfn</span> <span style="color:#2aa198">&#34;%s&#34;</span> (<span style="color:#268bd2">String</span>.<span style="color:#268bd2">replicate</span> <span style="color:#268bd2">c</span>.<span style="color:#268bd2">Name</span>.<span style="color:#268bd2">Length</span> <span style="color:#2aa198">&#34;-&#34;</span>)
+           <span style="color:#859900">for</span> <span style="color:#268bd2">i</span> <span style="color:#859900">in</span> <span style="color:#268bd2">c</span>.<span style="color:#268bd2">Items</span> <span style="color:#859900">do</span>
+               <span style="color:#859900">let</span> <span style="color:#268bd2">ts</span> = <span style="color:#268bd2">i</span>.<span style="color:#268bd2">Timestamp</span>.<span style="color:#268bd2">ToString</span>(<span style="color:#2aa198">&#34;dd/MM/yyyy&#34;</span>)
+               <span style="color:#268bd2">printfn</span> <span style="color:#2aa198">&#34;%s - %s | %s (%s)&#34;</span> <span style="color:#268bd2">ts</span> <span style="color:#268bd2">i</span>.<span style="color:#268bd2">Id</span> <span style="color:#268bd2">i</span>.<span style="color:#268bd2">Description</span> <span style="color:#268bd2">i</span>.<span style="color:#268bd2">Url</span>
+   )
+| _ -&gt; ...
+</code></pre></div><p>And that&rsquo;s it, we&rsquo;ve come full circle. We can now consume items, remove
+items and query for a list of consumed items.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">λ Consumed.exe -help
+
+Following commands are available:
+-n consume -c category -d description -u url
+-n remove -id id
+-n list
+
+λ Consumed.exe -n consume -c book -d &#34;The Drawing of the Three&#34; -u &#34;...&#34;
+
+Yay! Something happened = Success ...
+
+λ consumed.exe -n list
+
+book
+----
+24/05/2015 - 24052015125831 | The Drawing of the Three (...)
+</code></pre></div><p>Compared to the node.js implementation, the F# version required
+substantially less code (two to three times less). More importantly,
+although I wrote tests for both, I felt way more confident completing
+the F# version. A strong type system, discriminated unions, pattern
+matching, purity, composability and a smart compiler makes way for
+sensible and predictable code.</p>
+<p>Source code is <a href="https://github.com/JefClaes/consumed-f">up on Github</a>.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2015  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

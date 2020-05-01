@@ -183,80 +183,80 @@ In 2015, I read 16 books and 3 papers, watched 3 movies and 4 shows, listened to
     
     <item>
       <title>Visualizing event streams</title>
-      <link>http://localhost:1313/2015/12/visualizing-event-streams/</link>
+      <link>http://localhost:1313/2015/12/visualizing-event-streams.html</link>
       <pubDate>Sun, 20 Dec 2015 17:59:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/12/visualizing-event-streams/</guid>
+      <guid>http://localhost:1313/2015/12/visualizing-event-streams.html</guid>
       <description>In my recent talk on Evil by Design, I showed how I&amp;rsquo;ve been visualizing event streams as a means to get a better grip on how aggregates behave in production. The talk&amp;rsquo;s scope kept me from showing the code that goes together with the examples shown. Consider this post as an addendum to that talk.
 First off, we need a few types: a string that identifies a stream, an event containing a timestamp and its name.</description>
     </item>
     
     <item>
       <title>Slides from my talk &#34;Evil by Design&#34; at Build Stuff</title>
-      <link>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at-build-stuff/</link>
+      <link>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</link>
       <pubDate>Wed, 18 Nov 2015 15:47:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at-build-stuff/</guid>
+      <guid>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</guid>
       <description>Third time attending Build Stuff, first time doing a talk. I&amp;rsquo;m happy that it&amp;rsquo;s out of the way and can now just enjoy the conference, but I&amp;rsquo;m even more excited that it was well-received! The talk should have been recorded, but you can already find the abstract and slides below.
  Last year I ventured into the domain of (online) gambling. Given that the industry has been around since forever, I expected most problems to be of the technical kind.</description>
     </item>
     
     <item>
       <title>Defining big wins</title>
-      <link>http://localhost:1313/2015/11/defining-big-wins/</link>
+      <link>http://localhost:1313/2015/11/defining-big-wins.html</link>
       <pubDate>Mon, 16 Nov 2015 21:31:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/11/defining-big-wins/</guid>
+      <guid>http://localhost:1313/2015/11/defining-big-wins.html</guid>
       <description>Casinos invest a lot of energy selling the dream. One way to do this is by showing off people winning big in your casino. Everyone has seen those corny pictures of people holding human-sized cheques right? It&amp;rsquo;s a solid tactic, since empirical evidence shows that after a store has sold a large-prize winning lottery ticket, the ticket sales increase from 12 to 38% over the following weeks.
 If we look at slot machine play, what exactly defines a big win?</description>
     </item>
     
     <item>
       <title>Bulk SQL projections with F# and type providers</title>
-      <link>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</link>
+      <link>http://localhost:1313/2015/10/bulk-sql-projections-with-f-and-type.html</link>
       <pubDate>Sun, 18 Oct 2015 15:30:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/10/bulk-sql-projections-with-f#-and-type-providers/</guid>
+      <guid>http://localhost:1313/2015/10/bulk-sql-projections-with-f-and-type.html</guid>
       <description>Early Summer, I had to set up an integration with an external partner. They required of us to daily provide them with a relational dataset stored in SQL Server. Most, if not all of the data was temporal, append-only by nature; think logins, financial transactions..
 Since the data required largely lived in an eventstore on our end, I needed fast bulk projections. Having experimented with a few approaches, I eventually settled on projections in F# taking advantage of type providers.</description>
     </item>
     
     <item>
       <title>Aspect ratio calculation</title>
-      <link>http://localhost:1313/2015/09/aspect-ratio-calculation/</link>
+      <link>http://localhost:1313/2015/09/aspect-ratio-calculation.html</link>
       <pubDate>Fri, 11 Sep 2015 23:40:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/09/aspect-ratio-calculation/</guid>
+      <guid>http://localhost:1313/2015/09/aspect-ratio-calculation.html</guid>
       <description>Earlier today I was writing a migration script in F# where I had to calculate the aspect ratio based on the given screen dimensions. This is one of those problems where I don&amp;rsquo;t even mind breaking my head over, but directly head over to Stackoverflow to find an accepted answer which I can just copy paste. Since I didn&amp;rsquo;t find an F# snippet I could use, I ported some JavaScript, and embedded the result below for future snippet hunters.</description>
     </item>
     
     <item>
       <title>Basic casino math</title>
-      <link>http://localhost:1313/2015/06/basic-casino-math/</link>
+      <link>http://localhost:1313/2015/06/basic-casino-math.html</link>
       <pubDate>Mon, 22 Jun 2015 22:52:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/06/basic-casino-math/</guid>
+      <guid>http://localhost:1313/2015/06/basic-casino-math.html</guid>
       <description>In a previous series of posts, I went over the models used by casinos to spin a wheel (spinning, manipulating the odds, clustering and near misses). I did not yet expand on the basic mathematical models that ensure a casino makes money.
 Let&amp;rsquo;s pretend we are spinning the wheel again. The wheel has 5 pockets, and just one of those is the winning one. Given we will be using an unmodified wheel, you win 1 out of 5 spins.</description>
     </item>
     
     <item>
       <title>Consumed: Queries and projections (F#)</title>
-      <link>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</link>
+      <link>http://localhost:1313/consumed-queries-and-projections-f.html</link>
       <pubDate>Sun, 24 May 2015 18:00:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/05/consumed-queries-and-projections-f/</guid>
+      <guid>http://localhost:1313/consumed-queries-and-projections-f.html</guid>
       <description>This is the third post in my series on porting a node.js application to an F# application.
 So far, I&amp;rsquo;ve looked at parsing command line arguments, handling commands and storing events. Today, I want to project those events into something useful that can be formatted and printed to the console.
-In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically</description>
+In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically.</description>
     </item>
     
     <item>
       <title>Consumed: Handling commands (F#)</title>
-      <link>http://localhost:1313/2015/05/consumed-handling-commands-f/</link>
+      <link>http://localhost:1313/2015/05/consumed-handling-commands-f.html</link>
       <pubDate>Sun, 17 May 2015 17:51:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/05/consumed-handling-commands-f/</guid>
+      <guid>http://localhost:1313/2015/05/consumed-handling-commands-f.html</guid>
       <description>As I wrote earlier, I&amp;rsquo;ve been working on porting a node.js web application to an F# console application. It&amp;rsquo;s an application I wrote to learn node.js but still use today to keep track of all the things I consume.
 The application is able to consume an item, to remove a consumed item and to query all consumed items.
 In the previous post, I parsed command line arguments into typed commands and queries.</description>
@@ -264,28 +264,28 @@ In the previous post, I parsed command line arguments into typed commands and qu
     
     <item>
       <title>Finding unused code (F#)</title>
-      <link>http://localhost:1313/2015/04/finding-unused-code-f/</link>
+      <link>http://localhost:1313/2015/04/finding-unused-code-f.html</link>
       <pubDate>Sun, 26 Apr 2015 18:06:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/04/finding-unused-code-f/</guid>
+      <guid>http://localhost:1313/2015/04/finding-unused-code-f.html</guid>
       <description>Coming from C#, I&amp;rsquo;m used to the compiler warning me about unused variables. Relying on the compiler to help me with checked exceptions in F#, I noticed that unused values (and functions) would go unnoticed. Having accidentally read earlier that Haskell has a compiler flag to check for unused bindings, I looked for the F# equivalent but failed to find it, until Scott Wlaschin pointed me in the right direction.</description>
     </item>
     
     <item>
       <title>Consumed: Parsing command line arguments (F#)</title>
-      <link>http://localhost:1313/2015/04/consumed-parsing-command-line-arguments-f/</link>
+      <link>http://localhost:1313/2015/04/parsing-command-line-arguments-with-f.html</link>
       <pubDate>Sun, 19 Apr 2015 16:54:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/04/consumed-parsing-command-line-arguments-f/</guid>
+      <guid>http://localhost:1313/2015/04/parsing-command-line-arguments-with-f.html</guid>
       <description>Last year, I set out to write my first node.js application; a small web application for keeping lists of everything I consume. I had something working pretty quickly, deployed it to Heroku and still find myself using it today. Since there&amp;rsquo;s very little use for having it running on a server, and because I wanted something to toy with getting better at F#, I decided to port it to an F# console application.</description>
     </item>
     
     <item>
       <title>Checked errors in F#</title>
-      <link>http://localhost:1313/2015/03/checked-errors-in-f/</link>
+      <link>http://localhost:1313/2015/03/checked-errors-in-f.html</link>
       <pubDate>Sun, 29 Mar 2015 17:19:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/03/checked-errors-in-f/</guid>
+      <guid>http://localhost:1313/2015/03/checked-errors-in-f.html</guid>
       <description>In the land of C#, exceptions are king. By definition exceptions help us deal with &amp;ldquo;unexpected or exceptional situations that arise while a program is running&amp;rdquo;. In that regard, we&amp;rsquo;re often optimistic, overoptimistic. Most code bases treat errors as exceptional while they&amp;rsquo;re often commonplace. We are so confident about the likelyhood of things going wrong, we don&amp;rsquo;t even feel the need to communicate to consumers what might go wrong. If a consumer of a method wants to know what exceptions might be thrown, he needs to resort to reading the documentation (or source) and hope it&amp;rsquo;s up-to-date.</description>
     </item>
     
@@ -296,45 +296,45 @@ In the previous post, I parsed command line arguments into typed commands and qu
       
       <guid>http://localhost:1313/2015/03/scaling-promotion-codes/</guid>
       <description>In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
-In code these requirements translated into a promotion code aggregate which would guard three invariants.</description>
+public bool TryRedeem(UserId userId) { if (HasAlreadyBeenRedeemedByUser(userId)) return false; if (NoLongerActive()) return false; if (Depleted()) return false; Apply(new PromotionCodeRedeemed(userId.</description>
     </item>
     
     <item>
       <title>Domain Language: The Playthrough Bonus</title>
-      <link>http://localhost:1313/2015/02/domain-language-the-playthrough-bonus/</link>
+      <link>http://localhost:1313/2015/02/domain-language-playthrough-bonus.html</link>
       <pubDate>Mon, 23 Feb 2015 19:05:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/02/domain-language-the-playthrough-bonus/</guid>
+      <guid>http://localhost:1313/2015/02/domain-language-playthrough-bonus.html</guid>
       <description>Since online gambling has been regulated in Belgium, basically each eligible license holder has complemented their land based operations with an online counterpart. Being such a small country, everyone wants to secure their market share as soon as possible. The big players have been pouring tons of money in to marketing and advertising, it&amp;rsquo;s everywhere: radio, television, (online) newspapers, bus stops, billboards, sport events, airplane vouchers - you name it. While regulations for land based casinos are very strict and almost overprotective, regulations for online play are much more permissive.</description>
     </item>
     
     <item>
       <title>Side by side</title>
-      <link>http://localhost:1313/2015/02/side-by-side/</link>
+      <link>http://localhost:1313/2015/02/side-by-side.html</link>
       <pubDate>Sun, 15 Feb 2015 17:34:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/02/side-by-side/</guid>
+      <guid>http://localhost:1313/2015/02/side-by-side.html</guid>
       <description>This week marked my first year at my current employer. While that event went by rather silently, one year in, a few of my observations are finally shaping up to be cast into writing.
 Where I used to work in the typical battery cage, I&amp;rsquo;m now part of a team of just four people, having the luxury of a big dedicated room to ourselves - a whole floor actually. The room is set up almost symmetrically; two desks on one side of the room and two more on the other side, with quite some space in between.</description>
     </item>
     
     <item>
       <title>Averages are not good enough (F#)</title>
-      <link>http://localhost:1313/2015/01/averages-are-not-good-enough-f/</link>
+      <link>http://localhost:1313/2015/01/averages-are-not-good-enough-f.html</link>
       <pubDate>Sun, 18 Jan 2015 18:40:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/01/averages-are-not-good-enough-f/</guid>
+      <guid>http://localhost:1313/2015/01/averages-are-not-good-enough-f.html</guid>
       <description>Let&amp;rsquo;s (no pun intended) look at a set of response times of a web service.
-People like having a single number to summarize a piece of data. The average is the most popular candidate. The average is calculated by dividing the sum of the input elements by the number of input elements.
-The average is a measure of centre which is fragile to outliers; one or two odd irregular values might skew the outcome.</description>
+let responseTimes = [ 18.0; 21.0; 41.0; 42.0; 48.0; 50.0; 55.0; 90.0; ] People like having a single number to summarize a piece of data. The average is the most popular candidate. The average is calculated by dividing the sum of the input elements by the number of input elements.
+let average input = let length = input |&amp;gt; Seq.</description>
     </item>
     
     <item>
       <title>Consumed in 2014</title>
-      <link>http://localhost:1313/2015/01/consumed-in-2014/</link>
+      <link>http://localhost:1313/2015/01/consumed-in-2014.html</link>
       <pubDate>Sun, 11 Jan 2015 17:45:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/01/consumed-in-2014/</guid>
+      <guid>http://localhost:1313/2015/01/consumed-in-2014.html</guid>
       <description>Starting 2014, I wanted to look more closely at everything I consume. So I started keeping a list of everything I read, watch and listen to.
 I started off with a markdown file on Github that quikcly evolved into a good excuse to dabble with an alternative stack. I ended up writing an event sourced node.js application on top of postgres, hosted on Heroku. I could write a post on that particular experience, but it&amp;rsquo;s safe to say this blog post captures it better than I ever could.</description>
     </item>

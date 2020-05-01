@@ -3,7 +3,8 @@ title = "Visualizing event streams"
 slug = "2015-12-20-visualizing-event-streams"
 published = 2015-12-20T17:59:00+01:00
 author = "Jef Claes"
-tags = [ "DDD", "F#",]
+tags = [ "code", "ddd"]
+url = "2015/12/visualizing-event-streams.html"
 +++
 In my recent talk on [Evil by
 Design](http://www.jefclaes.be/2015/11/slides-from-my-talk-evil-by-design-at.html),
@@ -17,6 +18,20 @@ event containing a timestamp and its name. A stream which is a
 composition of an identifier and a sequence of events. We also need a
 function that's able to read a stream based on its identifier.  
   
+```fsharp
+type StreamId = string
+type Event = { Timestamp : DateTime; Name : string; Payload : string; }
+type Stream = { StreamId : StreamId; Events : seq<Event> }
+type ReadStream = StreamId -> Stream
+
+let readStream ( streamId : StreamId ) =
+  {
+    StreamId = streamId
+    Events = seq {
+      // implementation goes here
+    }
+  }
+```
 
 Once we've implemented that, we want to go ahead and visualize a single
 stream. Having some experience with Google Charts, I used the
@@ -27,19 +42,39 @@ only sense to use the Timeline graph. This means that I'll have to make
 sure I transform my data into a format the Timeline chart can work with,
 which is a sequence of tuples.
 
-  
+```fsharp
+// Timeline data
+data : seq<string * string * #value * #value>
+data : seq<string * #value * #value>
+```
+
+```
+let asTimelineEventStream stream =
+    stream.Events
+    |> Seq.map (fun e ->
+    (
+        stream.StreamId,
+        e.Name,
+        e.Timestamp,
+        e.Timestamp.AddMilliseconds(float 1)
+    ))
+```
 
 So we write a function which accepts a stream, and returns a sequence of
 tuples containing the stream identifier, the event name and the
 timestamp of the event.  
-  
 
 With just a few lines of code, we can already compose our way to a
 timeline.
 
-  
+```
+"withdrawrequest/..."
+|> readStream
+|> asTimelineEventStream
+|> Chart.Timeline
+|> Chart.Show
+```
 
-  
 [![](/post/images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_viz_1.PNG)](/post/images/2015-12-20-visualizing-event-streams-eventstream_viz_1.PNG)  
   
 The result tells a small story: a withdrawal to a casino was requested
@@ -58,13 +93,9 @@ Once you start exploring aggregates, you will notice that some
 aggregates look healthier than others; lean and short-lived. While other
 aggregates are fat and long-lived which can introduce a set of
 problems:  
-  
+- rebuilding state from a large event stream might kill performance
+- there's often more contention on larger aggregates making optimistic (or pessimistic) concurrency very annoying
 
--   rebuilding state from a large event stream might kill performance
--   there's often more contention on larger aggregates making optimistic
-    (or pessimistic) concurrency very annoying
-
-  
 [![](/post/images/thumbnails/2015-12-20-visualizing-event-streams-eventstream_vis_1_1.PNG)](/post/images/2015-12-20-visualizing-event-streams-eventstream_vis_1_1.PNG)  
   
 Spotting one of these instances is an invitation to review your model,
@@ -79,7 +110,18 @@ Technically, we need to transform a sequence of streams to a single
 sequence of tuples which we can feed the chart. It's as simple as
 mapping each stream for then to flatten the result into a single
 sequence.  
-  
+
+```fsharp
+let asTimelineEventStreams streams =
+    streams
+    |> Seq.map asTimelineEventStream
+    |> Seq.concat
+
+correlatedStreams
+|> asTimelineEventStreams
+|> Chart.Timeline
+|> Chart.Show
+```
 
 This one extra step makes the result even more useful.  
   

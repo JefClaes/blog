@@ -41,5 +41,15 @@ Books I finished the Dark Tower series after 3 years. Following Roland Deschain 
 In 2015, I read 16 books and 3 papers, watched 3 movies and 4 shows, listened to 1 audio book and no podcasts. A lot less TV compared to 2014, but most of that time went to playing video games with some of my friends.</description>
     </item>
     
+    <item>
+      <title>Consumed in 2014</title>
+      <link>http://localhost:1313/2015/01/consumed-in-2014.html</link>
+      <pubDate>Sun, 11 Jan 2015 17:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2015/01/consumed-in-2014.html</guid>
+      <description>Starting 2014, I wanted to look more closely at everything I consume. So I started keeping a list of everything I read, watch and listen to.
+I started off with a markdown file on Github that quikcly evolved into a good excuse to dabble with an alternative stack. I ended up writing an event sourced node.js application on top of postgres, hosted on Heroku. I could write a post on that particular experience, but it&amp;rsquo;s safe to say this blog post captures it better than I ever could.</description>
+    </item>
+    
   </channel>
 </rss>

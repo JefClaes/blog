@@ -5,16 +5,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Scaling promotion codes - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="Scaling promotion codes">
 <meta itemprop="description" content="In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
-In code these requirements translated into a promotion code aggregate which would guard three invariants.">
+public bool TryRedeem(UserId userId) { if (HasAlreadyBeenRedeemedByUser(userId)) return false; if (NoLongerActive()) return false; if (Depleted()) return false; Apply(new PromotionCodeRedeemed(userId.">
 <meta itemprop="datePublished" content="2015-03-15T18:01:00&#43;01:00" />
 <meta itemprop="dateModified" content="2015-03-15T18:01:00&#43;01:00" />
-<meta itemprop="wordCount" content="485">
+<meta itemprop="wordCount" content="558">
 
 
 
-<meta itemprop="keywords" content="CodeSnippets,.NET,DDD," /><meta property="og:title" content="Scaling promotion codes" />
+<meta itemprop="keywords" content="ddd,code," /><meta property="og:title" content="Scaling promotion codes" />
 <meta property="og:description" content="In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
-In code these requirements translated into a promotion code aggregate which would guard three invariants." />
+public bool TryRedeem(UserId userId) { if (HasAlreadyBeenRedeemedByUser(userId)) return false; if (NoLongerActive()) return false; if (Depleted()) return false; Apply(new PromotionCodeRedeemed(userId." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/2015/03/scaling-promotion-codes/" />
 <meta property="article:published_time" content="2015-03-15T18:01:00+01:00" />
@@ -22,7 +22,7 @@ In code these requirements translated into a promotion code aggregate which woul
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Scaling promotion codes"/>
 <meta name="twitter:description" content="In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
-In code these requirements translated into a promotion code aggregate which would guard three invariants."/>
+public bool TryRedeem(UserId userId) { if (HasAlreadyBeenRedeemedByUser(userId)) return false; if (NoLongerActive()) return false; if (Depleted()) return false; Apply(new PromotionCodeRedeemed(userId."/>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
@@ -93,9 +93,29 @@ redeem. Redeeming a promotion code, a user receives a discount on his
 next purchase or a free gift. A promotion code is only active for a
 limited amount of time, can only be redeemed a limited amount of times
 and can only be redeemed once per user.</p>
-<p>In code these requirements translated into a promotion code aggregate
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">TryRedeem</span>(<span style="color:#268bd2">UserId</span> <span style="color:#268bd2">userId</span>)
+{
+	<span style="color:#859900">if</span> (<span style="color:#268bd2">HasAlreadyBeenRedeemedByUser</span>(<span style="color:#268bd2">userId</span>)) <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+	<span style="color:#859900">if</span> (<span style="color:#268bd2">NoLongerActive</span>()) <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+	<span style="color:#859900">if</span> (<span style="color:#268bd2">Depleted</span>()) <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+	<span style="color:#268bd2">Apply</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">PromotionCodeRedeemed</span>(<span style="color:#268bd2">userId</span>.<span style="color:#268bd2">Value</span>));
+
+	<span style="color:#859900">return</span> <span style="color:#859900">true</span>;
+}
+</code></pre></div><p>In code these requirements translated into a promotion code aggregate
 which would guard three invariants.</p>
-<p>The command handler looked something like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">promotionCode</span> = <span style="color:#268bd2">_promotionCodeRepository</span>.<span style="color:#268bd2">GetById</span>(<span style="color:#268bd2">promotionCodeId</span>);
+
+<span style="color:#859900">if</span> (<span style="color:#268bd2">promotionCode</span>.<span style="color:#268bd2">TryRedeem</span>(<span style="color:#268bd2">userId</span>)) 
+{
+	<span style="color:#268bd2">_promotionCodeRepository</span>.<span style="color:#268bd2">Update</span>(<span style="color:#268bd2">promotionCode</span>);
+		
+	<span style="color:#859900">return</span> <span style="color:#268bd2">RedeemPromotionCodeResponse</span>.<span style="color:#268bd2">Success</span>();
+}
+
+<span style="color:#859900">return</span> <span style="color:#268bd2">RedeemPromotionCodeResponse</span>.<span style="color:#268bd2">Unavailable</span>();
+</code></pre></div><p>The command handler looked something like this.</p>
 <p>Depending on the promotion code, we would often have a bunch of users
 doing this simultaneously, leading to a <a href="http://www.jefclaes.be/2014/11/splitting-hot-aggregates.html">hot
 aggregate</a>,
@@ -110,7 +130,13 @@ a promotion code multiple times. Instead of this being part of the big
 promotion code aggregate, a promotion code redemption now is a separate
 aggregate. The promotion code aggregate now picks up a new role; the
 role of a factory, it decides on the creation of new life.</p>
-<p>The promotion code redemption&rsquo;s identifier is a composition of the
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#268bd2">Maybe</span>&lt;<span style="color:#268bd2">PromotionCodeRedemption</span>&gt; <span style="color:#268bd2">Redeem</span>(<span style="color:#268bd2">UserId</span> <span style="color:#268bd2">userId</span>)
+{
+	<span style="color:#859900">if</span> (<span style="color:#268bd2">NoLongerActive</span>()) <span style="color:#859900">return</span> <span style="color:#268bd2">Maybe</span>&lt;<span style="color:#268bd2">PromotionCodeRedemption</span>&gt;.<span style="color:#268bd2">Empty</span>();
+
+	<span style="color:#859900">return</span> <span style="color:#859900">new</span> <span style="color:#268bd2">Maybe</span>&lt;<span style="color:#268bd2">PromotionCodeRedemption</span>&gt;(<span style="color:#859900">new</span> <span style="color:#268bd2">PromotionCodeRedemption</span>(<span style="color:#268bd2">Id</span>, <span style="color:#268bd2">userId</span>));
+}
+</code></pre></div><p>The promotion code redemption&rsquo;s identifier is a composition of the
 promotion code identifier and the user identifier. Thus even when the
 aggregate is stored as a stream, we can check in a consistent fashion
 whether the aggregate (or stream) already exists, avoiding users
@@ -119,7 +145,21 @@ the repository can pass to the event store that it expects no stream to
 be there yet, making absolutely sure we don&rsquo;t redeem twice. The event
 store would throw an exception when it would find a stream to already
 exist (think unique key constraint).</p>
-<p>In this example, we were able to remove an annoying and expensive
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">promotionCodeRedemptionId</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">PromotionCodeRedemptionId</span>(<span style="color:#268bd2">promotionCodeId</span>, <span style="color:#268bd2">userId</span>);
+<span style="color:#859900">if</span> (<span style="color:#268bd2">_promotionCodeRedemptionRepository</span>.<span style="color:#268bd2">Exists</span>(<span style="color:#268bd2">promotionCodeRedemptionId</span>))
+	<span style="color:#859900">return</span> <span style="color:#268bd2">RedeemPromotionCodeResponse</span>.<span style="color:#268bd2">Unavailable</span>();
+
+<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">promotionCodeRedemption</span> = <span style="color:#268bd2">promotionCode</span>.<span style="color:#268bd2">Redeem</span>(<span style="color:#268bd2">userId</span>);
+
+<span style="color:#859900">if</span> (<span style="color:#268bd2">promotionCodeRedemption</span>.<span style="color:#268bd2">HasValue</span>())
+{
+	<span style="color:#268bd2">_promotionCodeRedemptionRepository</span>.<span style="color:#268bd2">Add</span>(<span style="color:#268bd2">promotionCodeRedemption</span>.<span style="color:#268bd2">Value</span>);
+	
+	<span style="color:#859900">return</span> <span style="color:#268bd2">RedeemPromotionCodeStatus</span>.<span style="color:#268bd2">Success</span>();
+}
+
+<span style="color:#859900">return</span> <span style="color:#268bd2">RedeemPromotionCodeResponse</span>.<span style="color:#268bd2">Unavailable</span>();
+</code></pre></div><p>In this example, we were able to remove an annoying and expensive
 invariant by looking at the data. Even if we had to keep supporting
 promotion code depletion, we might have removed this invariant and
 replaced it with data fed into the aggregate/factory from the read
@@ -142,11 +182,9 @@ without hiccups.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							<li><a href="/tags/ddd">ddd</a></li>
 							
-							<li><a href="/tags/.net">.NET</a></li>
-							
-							<li><a href="/tags/ddd">DDD</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					
