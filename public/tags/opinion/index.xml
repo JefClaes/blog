@@ -188,10 +188,10 @@ However, if I were a car paint manufacturer, I would care a great deal about the
     
     <item>
       <title>My Christmas holiday project postmortem</title>
-      <link>http://localhost:1313/my-christmas-holiday-project-postmortem.html</link>
+      <link>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem.html</link>
       <pubDate>Sun, 24 Feb 2013 16:42:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/my-christmas-holiday-project-postmortem.html</guid>
+      <guid>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem.html</guid>
       <description>Somewhere over a year and a half ago I discovered the music of Dire Straits, which has sparked a fanatical love and fascination for the guitar in me, and basically for every piece of music Mark Knopfler has ever touched (*). A year ago, I finally had the courage to pick up the guitar myself. Not sure if I&amp;rsquo;d stick with it, I made an uninformed purchase of a rather inexpensive Squier Jazzmaster, just because it somewhat resembled the real object of desire, a Fender Stratocaster.</description>
     </item>
     
@@ -213,6 +213,25 @@ With CQS, commands can mutate data, while queries can only read that data. CQRS 
       <guid>http://localhost:1313/2013/02/premature-judgment.html</guid>
       <description>When I started my first job, I hardly ever judged my peers. After all, how could I? Everything was unknown for me; I couldn&amp;rsquo;t differentiate good from bad. Over the years that has changed a bit, but with that, I&amp;rsquo;ve also slowly become more judgemental towards peers, often prematurely, and not always deservedly.
 The first few months of last year, I found myself doing maintenance on a legacy code base between projects.</description>
+    </item>
+    
+    <item>
+      <title>2012 Annual Review</title>
+      <link>http://localhost:1313/2012/12/2012-annual-review.html</link>
+      <pubDate>Mon, 31 Dec 2012 15:58:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/2012-annual-review.html</guid>
+      <description>It&amp;rsquo;s that time of the year again where I take some time to look back on the year passed and peek at the year ahead. This is mostly a post I like to write up for myself, forcing reflection.
+The biggest personal changes this year were moving out of my parents&amp;rsquo; place, and my girlfriend&amp;rsquo;s decision to study medicine after graduating as a Master of Arts earlier this year. I had no idea how things would turn out once we lived together, but so far we have been doing great.</description>
+    </item>
+    
+    <item>
+      <title>It&#39;s not cake we are baking</title>
+      <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking.html</link>
+      <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/12/its-not-cake-we-are-baking.html</guid>
+      <description>I recently watched a talk on Vimeo where Christin Gorman talks about how cookie dough relates to Hibernate; why use the generic, bloated and one-fits-all solution when you can mix together your own yummy cookie dough? We should aspire to be the Gordon Ramsey of software, not the college student who can only cook Ramen noodles. If you haven&amp;rsquo;t watched or listened to her talk, you should; it&amp;rsquo;s only a few minutes long, and she brings it really well.</description>
     </item>
     
   </channel>

@@ -11,23 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/nhibnerate/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>It&#39;s not cake we are baking</title>
-      <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</link>
-      <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</guid>
-      <description>I recently watched a talk on Vimeo where Christin Gorman talks about how cookie dough relates to Hibernate; why use the generic, bloated and one-fits-all solution when you can mix together your own yummy cookie dough? We should aspire to be the Gordon Ramsey of software, not the college student who can only cook Ramen noodles. If you haven&amp;rsquo;t watched or listened to her talk, you should; it&amp;rsquo;s only a few minutes long, and she brings it really well.</description>
-    </item>
-    
-    <item>
-      <title>Some notes on performance tuning with NHibernate</title>
-      <link>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</link>
-      <pubDate>Sun, 02 Dec 2012 17:36:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</guid>
-      <description>A few weeks back, I spent an intensive day performance tuning parts of a, to me, relatively unfamiliar part of our codebase. Like it often is, the biggest optimizations were to be found in how we work with the database. Now, I don&amp;rsquo;t consider myself to be an NHibernate expert; I read this book and have used it on two projects, but in the end I just do my best to avoid doing stupid things with it.</description>
-    </item>
-    
   </channel>
 </rss>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Some notes on performance tuning with NHibernate - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Some notes on performance tuning with NHibernate">
+<meta itemprop="description" content="A few weeks back, I spent an intensive day performance tuning parts of a, to me, relatively unfamiliar part of our codebase. Like it often is, the biggest optimizations were to be found in how we work with the database. Now, I don&rsquo;t consider myself to be an NHibernate expert; I read this book and have used it on two projects, but in the end I just do my best to avoid doing stupid things with it.">
+<meta itemprop="datePublished" content="2012-12-02T17:36:00&#43;01:00" />
+<meta itemprop="dateModified" content="2012-12-02T17:36:00&#43;01:00" />
+<meta itemprop="wordCount" content="491">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Some notes on performance tuning with NHibernate" />
+<meta property="og:description" content="A few weeks back, I spent an intensive day performance tuning parts of a, to me, relatively unfamiliar part of our codebase. Like it often is, the biggest optimizations were to be found in how we work with the database. Now, I don&rsquo;t consider myself to be an NHibernate expert; I read this book and have used it on two projects, but in the end I just do my best to avoid doing stupid things with it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/12/some-notes-on-performance-tuning-with.html" />
+<meta property="article:published_time" content="2012-12-02T17:36:00+01:00" />
+<meta property="article:modified_time" content="2012-12-02T17:36:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Some notes on performance tuning with NHibernate"/>
+<meta name="twitter:description" content="A few weeks back, I spent an intensive day performance tuning parts of a, to me, relatively unfamiliar part of our codebase. Like it often is, the biggest optimizations were to be found in how we work with the database. Now, I don&rsquo;t consider myself to be an NHibernate expert; I read this book and have used it on two projects, but in the end I just do my best to avoid doing stupid things with it."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">02</span>
+							<span class="rest">Dec 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Some notes on performance tuning with NHibernate</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>A few weeks back, I spent an intensive day performance tuning parts of
+a, to me, relatively unfamiliar part of our codebase. Like it often is,
+the biggest optimizations were to be found in how we work with the
+database. Now, I don&rsquo;t consider myself to be an NHibernate expert; I
+read <a href="http://www.jefclaes.be/2012/02/book-review-working-with-nhibernate-30.html">this book</a>
+and have used it on two projects, but in the end I just do my best to
+avoid doing stupid things with it. The topics discussed below are mostly
+common knowledge for long time NHibernate users, but I thought it might
+be convenient for others to just summarize them, and add references to
+other, more in-detail, posts.</p>
+<h3 id="under-the-covers">Under the covers</h3>
+<p>When you&rsquo;re looking into optimizing, you probably want to have a look
+at what&rsquo;s really going on. You could do this by <a href="http://nhforge.org/wikis/howtonh/configure-log4net-for-use-with-nhibernate.aspx">turning on NHibernate&rsquo;s
+log4net debug logging</a>.
+This might be good enough for some scenarios, but it&rsquo;s not really
+convenient for when there is lots and lots of stuff happening. Instead,
+you might want to look into <a href="http://www.hibernatingrhinos.com/products/NHProf">NHibernate Profiler</a>. It&rsquo;s
+trivial to get started with, yet the feedback it provides is very
+powerful: next to session statistics and executed queries, you also get
+alerts which suggest techniques to improve your code. I need to use this
+tool more often just to get a better grip of the NHibernate internals.</p>
+<h3 id="the-fastest-query-is-the-one-that-isnt">The fastest query is the one that isn&rsquo;t</h3>
+<p>Going to the database is probably one of the slowest things your
+application is going to do. If you can avoid it, do so.</p>
+<p>If you&rsquo;re using a stateful session, NHibernate will track your
+entities, and store them in its <a href="http://nhibernate.hibernatingrhinos.com/28/first-and-second-level-caching-in-nhibernate">first level cache</a>. When you get these items by id later on, you avoid going to the database. So instead of querying the database for the same entity multiple times in the same session, do it once, and get the entity by its id on subsequent calls.</p>
+<p>When you&rsquo;re having a hard time keeping those ids around, consider
+introducing a light-weight datastructure, such as a dictionary, which
+can help you build a small look-up cache. This could also be a sign that
+you might want to reconsider your identity strategy though.</p>
+<h3 id="working-with-batches">Working with batches</h3>
+<p>An ORM really isn&rsquo;t the best tool to do bulk inserts or updates; look
+at <a href="http://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlbulkcopy.aspx">SqlBulkCopy</a> instead.</p>
+<p>If your batches are still relatively small, and you opt to stay with
+NHibernate anyways, there are two things you can do which will improve
+performance tremendously: use a stateless session and configure
+batching.</p>
+<p>Switching to a stateless session is simple enough. Do take into account
+that <a href="http://stackoverflow.com/questions/2638950/stateless-nhibernate-for-querying">some features won&rsquo;t work anymore</a>: lazy loading, caching, cascading and implicit updates. Setting up batching is also just a matter of
+<a href="http://nhforge.org/blogs/nhibernate/archive/2008/10/27/batching-nhibernate-s-dml-statements.aspx">configuration</a>. The most important thing to remember is to use an appropriate identity generator; batching will only work when the application is responsible for generating the ids. I&rsquo;m using a [HiLo
+generator](<a href="http://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm,">http://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm,</a>
+but GUIDs or <a href="http://www.nhforge.org/doc/nh/en/index.html#mapping-declaration-id-assigned">assigned ids</a> will work too.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

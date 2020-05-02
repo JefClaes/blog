@@ -3,7 +3,8 @@ title = "It's not cake we are baking"
 slug = "2012-12-09-its-not-cake-we-are-baking"
 published = 2012-12-09T16:08:00+01:00
 author = "Jef Claes"
-tags = [ "database", ".NET", "Nhibnerate", "Ramblings",]
+tags = [ "opinion",]
+url = "2012/12/its-not-cake-we-are-baking.html"
 +++
 I recently watched a talk on Vimeo where [Christin
 Gorman](https://twitter.com/ChristinGorman) talks about how cookie dough

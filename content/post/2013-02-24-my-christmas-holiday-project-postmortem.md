@@ -4,7 +4,7 @@ slug = "2013-02-24-my-christmas-holiday-project-postmortem"
 published = 2013-02-24T16:42:00.001000+01:00
 author = "Jef Claes"
 tags = [ "opinion",]
-url = "my-christmas-holiday-project-postmortem.html"
+url = "2013/02/my-christmas-holiday-project-postmortem.html"
 +++
 Somewhere over a year and a half ago I discovered the music of Dire
 Straits, which has sparked a fanatical love and fascination for the

@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>To intellistumble</title>
-      <link>http://localhost:1313/2012/09/to-intellistumble/</link>
-      <pubDate>Thu, 20 Sep 2012 12:14:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/to-intellistumble/</guid>
-      <description>To accidentally or unexpectedly discover a method or property whilst using IntelliSense to browse through symbol names.
- We should add this term to the Microsoft developer jargon.</description>
-    </item>
-    
-    <item>
       <title>Video, slides and source from my WebSockets talk</title>
       <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
       <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>

@@ -178,7 +178,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/consumed-queries-and-projections-f.html</loc>
+    <loc>http://localhost:1313/2015/05/consumed-queries-and-projections-f.html</loc>
     <lastmod>2015-05-24T18:00:00+02:00</lastmod>
   </url>
   
@@ -678,7 +678,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/my-christmas-holiday-project-postmortem.html</loc>
+    <loc>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem.html</loc>
     <lastmod>2013-02-24T16:42:00+01:00</lastmod>
   </url>
   
@@ -743,7 +743,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/12/2012-annual-review/</loc>
+    <loc>http://localhost:1313/2012/12/2012-annual-review.html</loc>
     <lastmod>2012-12-31T15:58:00+01:00</lastmod>
   </url>
   
@@ -753,7 +753,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/12/2012s-most-read-posts/</loc>
+    <loc>http://localhost:1313/tags/me/</loc>
+    <lastmod>2012-12-31T15:58:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2012/12/2012s-most-read-posts.html</loc>
     <lastmod>2012-12-23T15:53:00+01:00</lastmod>
   </url>
   
@@ -783,12 +788,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</loc>
+    <loc>http://localhost:1313/2012/12/its-not-cake-we-are-baking.html</loc>
     <lastmod>2012-12-09T16:08:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</loc>
+    <loc>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with.html</loc>
     <lastmod>2012-12-02T17:36:00+01:00</lastmod>
   </url>
   
@@ -879,11 +884,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/microsoft/</loc>
-    <lastmod>2012-09-20T12:14:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/09/to-intellistumble/</loc>
     <lastmod>2012-09-20T12:14:00+02:00</lastmod>
   </url>
   

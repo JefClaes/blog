@@ -3,7 +3,8 @@ title = "2012's most read posts"
 slug = "2012-12-23-2012s-most-read-posts"
 published = 2012-12-23T15:53:00+01:00
 author = "Jef Claes"
-tags = [ "Blogging", "General",]
+tags = [ ]
+url = "2012/12/2012s-most-read-posts.html"
 +++
 I look forward to writing this post each year; it's by far the easiest
 one to write, and it provides me with an occasion to look back on

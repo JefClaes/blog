@@ -282,6 +282,15 @@
     </item>
     
     <item>
+      <title>me</title>
+      <link>http://localhost:1313/tags/me/</link>
+      <pubDate>Mon, 31 Dec 2012 15:58:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Blogging</title>
       <link>http://localhost:1313/tags/blogging/</link>
       <pubDate>Sun, 23 Dec 2012 15:53:00 +0100</pubDate>

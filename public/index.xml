@@ -242,10 +242,10 @@ Let&amp;rsquo;s pretend we are spinning the wheel again. The wheel has 5 pockets
     
     <item>
       <title>Consumed: Queries and projections (F#)</title>
-      <link>http://localhost:1313/consumed-queries-and-projections-f.html</link>
+      <link>http://localhost:1313/2015/05/consumed-queries-and-projections-f.html</link>
       <pubDate>Sun, 24 May 2015 18:00:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/consumed-queries-and-projections-f.html</guid>
+      <guid>http://localhost:1313/2015/05/consumed-queries-and-projections-f.html</guid>
       <description>This is the third post in my series on porting a node.js application to an F# application.
 So far, I&amp;rsquo;ve looked at parsing command line arguments, handling commands and storing events. Today, I want to project those events into something useful that can be formatted and printed to the console.
 In the original application, I only had a single query. The result of this query lists all items consumed grouped by category, sorted chronologically.</description>
@@ -1095,10 +1095,10 @@ I arranged a simple scenario for testing: one message type - thus one queue, whe
     
     <item>
       <title>My Christmas holiday project postmortem</title>
-      <link>http://localhost:1313/my-christmas-holiday-project-postmortem.html</link>
+      <link>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem.html</link>
       <pubDate>Sun, 24 Feb 2013 16:42:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/my-christmas-holiday-project-postmortem.html</guid>
+      <guid>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem.html</guid>
       <description>Somewhere over a year and a half ago I discovered the music of Dire Straits, which has sparked a fanatical love and fascination for the guitar in me, and basically for every piece of music Mark Knopfler has ever touched (*). A year ago, I finally had the courage to pick up the guitar myself. Not sure if I&amp;rsquo;d stick with it, I made an uninformed purchase of a rather inexpensive Squier Jazzmaster, just because it somewhat resembled the real object of desire, a Fender Stratocaster.</description>
     </item>
     
@@ -1175,39 +1175,39 @@ public abstract class Command { public abstract void Execute(); } public abstrac
     
     <item>
       <title>2012 Annual Review</title>
-      <link>http://localhost:1313/2012/12/2012-annual-review/</link>
+      <link>http://localhost:1313/2012/12/2012-annual-review.html</link>
       <pubDate>Mon, 31 Dec 2012 15:58:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/12/2012-annual-review/</guid>
+      <guid>http://localhost:1313/2012/12/2012-annual-review.html</guid>
       <description>It&amp;rsquo;s that time of the year again where I take some time to look back on the year passed and peek at the year ahead. This is mostly a post I like to write up for myself, forcing reflection.
 The biggest personal changes this year were moving out of my parents&amp;rsquo; place, and my girlfriend&amp;rsquo;s decision to study medicine after graduating as a Master of Arts earlier this year. I had no idea how things would turn out once we lived together, but so far we have been doing great.</description>
     </item>
     
     <item>
       <title>2012&#39;s most read posts</title>
-      <link>http://localhost:1313/2012/12/2012s-most-read-posts/</link>
+      <link>http://localhost:1313/2012/12/2012s-most-read-posts.html</link>
       <pubDate>Sun, 23 Dec 2012 15:53:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/12/2012s-most-read-posts/</guid>
+      <guid>http://localhost:1313/2012/12/2012s-most-read-posts.html</guid>
       <description>I look forward to writing this post each year; it&amp;rsquo;s by far the easiest one to write, and it provides me with an occasion to look back on previous years (2009, 2010, 2011). It&amp;rsquo;s entertaining - and shameful too - to see what kept me busy back then, which opinions I held, and which technologies and techniques are still relevant in the meanwhile. Anyways, here it goes.
 The most read post this year, with 37.</description>
     </item>
     
     <item>
       <title>It&#39;s not cake we are baking</title>
-      <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</link>
+      <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking.html</link>
       <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</guid>
+      <guid>http://localhost:1313/2012/12/its-not-cake-we-are-baking.html</guid>
       <description>I recently watched a talk on Vimeo where Christin Gorman talks about how cookie dough relates to Hibernate; why use the generic, bloated and one-fits-all solution when you can mix together your own yummy cookie dough? We should aspire to be the Gordon Ramsey of software, not the college student who can only cook Ramen noodles. If you haven&amp;rsquo;t watched or listened to her talk, you should; it&amp;rsquo;s only a few minutes long, and she brings it really well.</description>
     </item>
     
     <item>
       <title>Some notes on performance tuning with NHibernate</title>
-      <link>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</link>
+      <link>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with.html</link>
       <pubDate>Sun, 02 Dec 2012 17:36:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</guid>
+      <guid>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with.html</guid>
       <description>A few weeks back, I spent an intensive day performance tuning parts of a, to me, relatively unfamiliar part of our codebase. Like it often is, the biggest optimizations were to be found in how we work with the database. Now, I don&amp;rsquo;t consider myself to be an NHibernate expert; I read this book and have used it on two projects, but in the end I just do my best to avoid doing stupid things with it.</description>
     </item>
     
@@ -1299,16 +1299,6 @@ That being said, in this post I want to talk about an architecture that tries to
       <description>Somewhere earlier this week I had to find the gaps in a sequence of dates. Admittedly, my first action was to search Stackoverflow for a clean solution. But since no one asked the question there yet, I had to implement it myself.
 The solution comes in the form of an extension method on IEnumerable&amp;lt;DateTime&amp;gt;, which takes a lower bound and an upper bound, and returns an enumerable of dates.
 public static IEnumerable&amp;lt;DateTime&amp;gt; GetGaps( this IEnumerable&amp;lt;DateTime&amp;gt; sequence, DateTime lowerbound, DateTime upperbound) { var completeSequence = new List&amp;lt;DateTime&amp;gt;(); var tmpDay = lowerbound.</description>
-    </item>
-    
-    <item>
-      <title>To intellistumble</title>
-      <link>http://localhost:1313/2012/09/to-intellistumble/</link>
-      <pubDate>Thu, 20 Sep 2012 12:14:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/to-intellistumble/</guid>
-      <description>To accidentally or unexpectedly discover a method or property whilst using IntelliSense to browse through symbol names.
- We should add this term to the Microsoft developer jargon.</description>
     </item>
     
     <item>

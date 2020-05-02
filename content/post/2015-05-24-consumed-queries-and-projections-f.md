@@ -4,7 +4,7 @@ slug = "2015-05-24-consumed-queries-and-projections-f"
 published = 2015-05-24T18:00:00+02:00
 author = "Jef Claes"
 tags = [ "code"]
-url = "consumed-queries-and-projections-f.html"
+url = "2015/05/consumed-queries-and-projections-f.html"
 +++
 This is the third post in my series on porting a node.js application to
 an F\# application.  
