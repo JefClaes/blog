@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Glueing the browser and POS devices together </title>
-      <link>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</link>
-      <pubDate>Sun, 04 May 2014 18:23:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</guid>
-      <description>I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
-Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&amp;rsquo;s asynchronous programming model and its incredible rich ecosystem.</description>
-    </item>
-    
-    <item>
       <title>Released: My Antwerp Open Data submissions</title>
       <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
       <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>

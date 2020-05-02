@@ -3,7 +3,8 @@ title = "Tests as part of your code"
 slug = "2014-03-09-tests-as-part-of-your-code"
 published = 2014-03-09T18:13:00+01:00
 author = "Jef Claes"
-tags = []
+tags = ["opinion"]
+url = "2014/03/tests-as-part-of-your-code.html"
 +++
 In the last project I worked on - processing financial batches - we put
 a lot of effort in avoiding being silently wrong. The practice that
@@ -25,7 +26,9 @@ hard, instead of silently producing something that was wrong.
 To make sure we correctly wrote all transactions for one account to
 disk, we added a postcondition that looked something like this.  
 
-    Ensure.That(txSumWrittenToDisk.Equals(account.Balance.Difference()));
+```csharp
+Ensure.That(txSumWrittenToDisk.Equals(account.Balance.Difference()));
+```
 
 A few weeks later, running very large batches in test, we had this
 assertion fail randomly. An account can have hundred thousands of

@@ -51,5 +51,34 @@ Where I used to work in the typical battery cage, I&amp;rsquo;m now part of a te
 A good year later, just the two of them were assigned to a new smallish, but interesting in-house project.</description>
     </item>
     
+    <item>
+      <title>Tests as part of your code</title>
+      <link>http://localhost:1313/2014/03/tests-as-part-of-your-code.html</link>
+      <pubDate>Sun, 09 Mar 2014 18:13:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/tests-as-part-of-your-code.html</guid>
+      <description>In the last project I worked on - processing financial batches - we put a lot of effort in avoiding being silently wrong. The practice that contributed most was being religious about avoiding structures to ever be in an invalid state. Preconditions, invariants, value objects and immutability were key.
+One of the things we had to do with these structures was writing them to disk in a specific banking format; all the accounts with their transactions for a specific day.</description>
+    </item>
+    
+    <item>
+      <title>new YearPassed(2013);</title>
+      <link>http://localhost:1313/2014/01/new-yearpassed2013.html</link>
+      <pubDate>Sun, 19 Jan 2014 17:54:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/01/new-yearpassed2013.html</guid>
+      <description>I normally write this up at the end of the year, but circumstances made me push back this post for a few weeks. I use this annual post to look back at the year passed, and to look ahead to the year to come. I gave up on making resolutions in 2011. This year, I&amp;rsquo;m going to be naively ambitious again going into 2014.
+Compared to previous years, I feel more confident that I have a pretty good idea of what I want next.</description>
+    </item>
+    
+    <item>
+      <title>Command and event semantics</title>
+      <link>http://localhost:1313/2014/01/command-and-event-semantics.html</link>
+      <pubDate>Sun, 05 Jan 2014 18:12:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/01/command-and-event-semantics.html</guid>
+      <description>Yesterday, I read this blog post by Michael Feathers. In the post he goes over a pain point he has often found himself struggling with while breaking down a large method; conditional statements. if (alarmEnabled) { var alarm = new Alarm(); ... alarm.Sound(); } Should we extract the if and the associated block into a new method, or just the content of the block? Is the condition too important to hide in a method?</description>
+    </item>
+    
   </channel>
 </rss>

@@ -3,7 +3,8 @@ title = "Thinking in Systems"
 slug = "2014-02-02-thinking-in-systems"
 published = 2014-02-02T18:19:00+01:00
 author = "Jef Claes"
-tags = [ "Bookreview",]
+tags = [ "consumed",]
+url = "2014/02/thinking-in-systems.html"
 +++
 We are surrounded by systems day in, day out. As software developers, we
 even get to spend a big portion of our day actively building and

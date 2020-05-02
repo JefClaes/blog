@@ -12,7 +12,7 @@ An event stream can contain quite a few events. Since caching parts of that stre
 
 
 
-<meta itemprop="keywords" content="CodeSnippets,javascript,DDD," /><meta property="og:title" content="Reading an EventStore stream using JavaScript" />
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Reading an EventStore stream using JavaScript" />
 <meta property="og:description" content="Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
 An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable." />
 <meta property="og:type" content="article" />
@@ -104,110 +104,108 @@ last page, and work your way forward following the link to the previous
 page until there are no pages left to read.</p>
 <p><a href="/post/images/2014-02-09-reading-an-eventstore-stream-using-javascript-eventstoreatom.png"><img src="/post/images/thumbnails/2014-02-09-reading-an-eventstore-stream-using-javascript-eventstoreatom.png" alt=""></a></p>
 <p>I came up with something like this.</p>
-<pre><code>StreamFeedReader : function(feedUri) {   
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#268bd2">StreamFeedReader</span> : <span style="color:#859900">function</span>(<span style="color:#268bd2">feedUri</span>) {   
 
-    if (!feedUri) {
-        throw new Error('feedUri missing.');
+    <span style="color:#859900">if</span> (!<span style="color:#268bd2">feedUri</span>) {
+        <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#cb4b16">Error</span>(<span style="color:#2aa198">&#39;feedUri missing.&#39;</span>);
     }        
     
-    var readLastFromHead = function (streamName) {                                        
-        var dfd = $.Deferred();
+    <span style="color:#859900">var</span> <span style="color:#268bd2">readLastFromHead</span> = <span style="color:#859900">function</span> (<span style="color:#268bd2">streamName</span>) {                                        
+        <span style="color:#859900">var</span> <span style="color:#268bd2">dfd</span> = <span style="color:#268bd2">$</span>.<span style="color:#268bd2">Deferred</span>();
 
-        $.ajax({
-            url : feedUri + streamName + '?embed=body'
-        }).done(function (data) {                
-            var lastLinks = data.links.filter(function(link) { 
-                return link.relation === 'last'; 
+        <span style="color:#268bd2">$</span>.<span style="color:#268bd2">ajax</span>({
+            <span style="color:#268bd2">url</span> : <span style="color:#268bd2">feedUri</span> + <span style="color:#268bd2">streamName</span> + <span style="color:#2aa198">&#39;?embed=body&#39;</span>
+        }).<span style="color:#268bd2">done</span>(<span style="color:#859900">function</span> (<span style="color:#268bd2">data</span>) {                
+            <span style="color:#859900">var</span> <span style="color:#268bd2">lastLinks</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">links</span>.<span style="color:#268bd2">filter</span>(<span style="color:#859900">function</span>(<span style="color:#268bd2">link</span>) { 
+                <span style="color:#859900">return</span> <span style="color:#268bd2">link</span>.<span style="color:#268bd2">relation</span> === <span style="color:#2aa198">&#39;last&#39;</span>; 
             });                       
 
-            if (lastLinks.length &gt; 0) {               
-                dfd.resolve(lastLinks[0].uri);           
-            } else {
-                dfd.resolve(feedUri + streamName);
+            <span style="color:#859900">if</span> (<span style="color:#268bd2">lastLinks</span>.<span style="color:#268bd2">length</span> &gt; <span style="color:#2aa198;font-weight:bold">0</span>) {               
+                <span style="color:#268bd2">dfd</span>.<span style="color:#268bd2">resolve</span>(<span style="color:#268bd2">lastLinks</span>[<span style="color:#2aa198;font-weight:bold">0</span>].<span style="color:#268bd2">uri</span>);           
+            } <span style="color:#859900">else</span> {
+                <span style="color:#268bd2">dfd</span>.<span style="color:#268bd2">resolve</span>(<span style="color:#268bd2">feedUri</span> + <span style="color:#268bd2">streamName</span>);
             }
-        }).fail(function() {                           
-            dfd.reject();
+        }).<span style="color:#268bd2">fail</span>(<span style="color:#859900">function</span>() {                           
+            <span style="color:#268bd2">dfd</span>.<span style="color:#268bd2">reject</span>();
         });
 
-        return dfd.promise();
+        <span style="color:#859900">return</span> <span style="color:#268bd2">dfd</span>.<span style="color:#268bd2">promise</span>();
     };              
 
-    var traverseToFirst = function (uri, entries, dfd) {                                                       
-        $.ajax({
-            url: uri + '?embed=body'
-        }).done( function (data) {       
-            var reversedEntries = data.entries.reverse();
+    <span style="color:#859900">var</span> <span style="color:#268bd2">traverseToFirst</span> = <span style="color:#859900">function</span> (<span style="color:#268bd2">uri</span>, <span style="color:#268bd2">entries</span>, <span style="color:#268bd2">dfd</span>) {                                                       
+        <span style="color:#268bd2">$</span>.<span style="color:#268bd2">ajax</span>({
+            <span style="color:#268bd2">url</span>: <span style="color:#268bd2">uri</span> + <span style="color:#2aa198">&#39;?embed=body&#39;</span>
+        }).<span style="color:#268bd2">done</span>( <span style="color:#859900">function</span> (<span style="color:#268bd2">data</span>) {       
+            <span style="color:#859900">var</span> <span style="color:#268bd2">reversedEntries</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">entries</span>.<span style="color:#268bd2">reverse</span>();
 
-            for (var i = 0; i &lt; reversedEntries.length; i++) {
-                entries.push(reversedEntries[i]);
+            <span style="color:#859900">for</span> (<span style="color:#859900">var</span> <span style="color:#268bd2">i</span> = <span style="color:#2aa198;font-weight:bold">0</span>; <span style="color:#268bd2">i</span> &lt; <span style="color:#268bd2">reversedEntries</span>.<span style="color:#268bd2">length</span>; <span style="color:#268bd2">i</span>++) {
+                <span style="color:#268bd2">entries</span>.<span style="color:#268bd2">push</span>(<span style="color:#268bd2">reversedEntries</span>[<span style="color:#268bd2">i</span>]);
             }            
 
-            var previousLinks = data.links.filter(function(link) { 
-                return link.relation === 'previous'; 
+            <span style="color:#859900">var</span> <span style="color:#268bd2">previousLinks</span> = <span style="color:#268bd2">data</span>.<span style="color:#268bd2">links</span>.<span style="color:#268bd2">filter</span>(<span style="color:#859900">function</span>(<span style="color:#268bd2">link</span>) { 
+                <span style="color:#859900">return</span> <span style="color:#268bd2">link</span>.<span style="color:#268bd2">relation</span> === <span style="color:#2aa198">&#39;previous&#39;</span>; 
             });            
 
-            if (previousLinks.length === 1) {
-                traverseToFirst(previousLinks[0].uri, entries, dfd);
-            } else {                
-                dfd.resolve(entries);
+            <span style="color:#859900">if</span> (<span style="color:#268bd2">previousLinks</span>.<span style="color:#268bd2">length</span> === <span style="color:#2aa198;font-weight:bold">1</span>) {
+                <span style="color:#268bd2">traverseToFirst</span>(<span style="color:#268bd2">previousLinks</span>[<span style="color:#2aa198;font-weight:bold">0</span>].<span style="color:#268bd2">uri</span>, <span style="color:#268bd2">entries</span>, <span style="color:#268bd2">dfd</span>);
+            } <span style="color:#859900">else</span> {                
+                <span style="color:#268bd2">dfd</span>.<span style="color:#268bd2">resolve</span>(<span style="color:#268bd2">entries</span>);
             }           
-        }).fail(function() {
-            dfd.reject();
+        }).<span style="color:#268bd2">fail</span>(<span style="color:#859900">function</span>() {
+            <span style="color:#268bd2">dfd</span>.<span style="color:#268bd2">reject</span>();
         });                    
     };  
 
-    this.read = function (streamName) {                   
-        if (!streamName) {
-            throw new Error('streamName missing.');
+    <span style="color:#859900">this</span>.<span style="color:#268bd2">read</span> = <span style="color:#859900">function</span> (<span style="color:#268bd2">streamName</span>) {                   
+        <span style="color:#859900">if</span> (!<span style="color:#268bd2">streamName</span>) {
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#cb4b16">Error</span>(<span style="color:#2aa198">&#39;streamName missing.&#39;</span>);
         }  
 
-        var dfd = $.Deferred();                           
+        <span style="color:#859900">var</span> <span style="color:#268bd2">dfd</span> = <span style="color:#268bd2">$</span>.<span style="color:#268bd2">Deferred</span>();                           
         
-        readLastFromHead(streamName).done(function(lastUri) {
-            var entries = [];                        
-            traverseToFirst(lastUri, entries, dfd);                        
-        }).fail(function() { 
-            dfd.reject(); 
+        <span style="color:#268bd2">readLastFromHead</span>(<span style="color:#268bd2">streamName</span>).<span style="color:#268bd2">done</span>(<span style="color:#859900">function</span>(<span style="color:#268bd2">lastUri</span>) {
+            <span style="color:#859900">var</span> <span style="color:#268bd2">entries</span> = [];                        
+            <span style="color:#268bd2">traverseToFirst</span>(<span style="color:#268bd2">lastUri</span>, <span style="color:#268bd2">entries</span>, <span style="color:#268bd2">dfd</span>);                        
+        }).<span style="color:#268bd2">fail</span>(<span style="color:#859900">function</span>() { 
+            <span style="color:#268bd2">dfd</span>.<span style="color:#268bd2">reject</span>(); 
         });    
 
-        return dfd.promise();              
+        <span style="color:#859900">return</span> <span style="color:#268bd2">dfd</span>.<span style="color:#268bd2">promise</span>();              
     };
 
 }
-</code></pre>
-<p>First read the link to the last page. From there, read the entries on
+</code></pre></div><p>First read the link to the last page. From there, read the entries on
 that page, look at the links on that page and start making your way
 forward, traversing the pages to the first one. All events on the page
 should also be reversed before they get pushed to the result.</p>
 <p>Using this snippet, you can read a stream and have all events returned
 in the sequence they were appended.</p>
-<pre><code>new es.StreamFeedReader('http://127.0.0.1:2113/streams/')
-    .read('account-35')
-        .fail(function() {
-            test.ok(false, 'reading the stream failed.');
-            test.done();
-        })
-        .done(function(res) {
-            var streamContainsAllEvents = function() {
-                test.equal(651, res.length, 'expecting 651 events in stream.');
-            };
-            var eventsInStreamAreOrdered = function() {
-                var ordered = true;
-                for (var i = 1; i &lt; res.length; i++) {
-                    if (res[i - 1].eventNumber &gt; res[i].eventNumber) {                            
-                        ordered = false;
-                    }
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#859900">new</span> <span style="color:#268bd2">es</span>.<span style="color:#268bd2">StreamFeedReader</span>(<span style="color:#2aa198">&#39;http://127.0.0.1:2113/streams/&#39;</span>)
+.<span style="color:#268bd2">read</span>(<span style="color:#2aa198">&#39;account-35&#39;</span>)
+    .<span style="color:#268bd2">fail</span>(<span style="color:#859900">function</span>() {
+        <span style="color:#268bd2">test</span>.<span style="color:#268bd2">ok</span>(<span style="color:#859900;font-weight:bold">false</span>, <span style="color:#2aa198">&#39;reading the stream failed.&#39;</span>);
+        <span style="color:#268bd2">test</span>.<span style="color:#268bd2">done</span>();
+    })
+    .<span style="color:#268bd2">done</span>(<span style="color:#859900">function</span>(<span style="color:#268bd2">res</span>) {
+        <span style="color:#859900">var</span> <span style="color:#268bd2">streamContainsAllEvents</span> = <span style="color:#859900">function</span>() {
+            <span style="color:#268bd2">test</span>.<span style="color:#268bd2">equal</span>(<span style="color:#2aa198;font-weight:bold">651</span>, <span style="color:#268bd2">res</span>.<span style="color:#268bd2">length</span>, <span style="color:#2aa198">&#39;expecting 651 events in stream.&#39;</span>);
+        };
+        <span style="color:#859900">var</span> <span style="color:#268bd2">eventsInStreamAreOrdered</span> = <span style="color:#859900">function</span>() {
+            <span style="color:#859900">var</span> <span style="color:#268bd2">ordered</span> = <span style="color:#859900;font-weight:bold">true</span>;
+            <span style="color:#859900">for</span> (<span style="color:#859900">var</span> <span style="color:#268bd2">i</span> = <span style="color:#2aa198;font-weight:bold">1</span>; <span style="color:#268bd2">i</span> &lt; <span style="color:#268bd2">res</span>.<span style="color:#268bd2">length</span>; <span style="color:#268bd2">i</span>++) {
+                <span style="color:#859900">if</span> (<span style="color:#268bd2">res</span>[<span style="color:#268bd2">i</span> - <span style="color:#2aa198;font-weight:bold">1</span>].<span style="color:#268bd2">eventNumber</span> &gt; <span style="color:#268bd2">res</span>[<span style="color:#268bd2">i</span>].<span style="color:#268bd2">eventNumber</span>) {                            
+                    <span style="color:#268bd2">ordered</span> = <span style="color:#859900;font-weight:bold">false</span>;
                 }
-                test.ok(ordered, 'event numbers out of order.');
-            };
+            }
+            <span style="color:#268bd2">test</span>.<span style="color:#268bd2">ok</span>(<span style="color:#268bd2">ordered</span>, <span style="color:#2aa198">&#39;event numbers out of order.&#39;</span>);
+        };
 
-            streamContainsAllEvents();
-            eventsInStreamAreOrdered();                                
+        <span style="color:#268bd2">streamContainsAllEvents</span>();
+        <span style="color:#268bd2">eventsInStreamAreOrdered</span>();                                
 
-            test.done();
-        });
-</code></pre>
-<p>This code is also available on
+        <span style="color:#268bd2">test</span>.<span style="color:#268bd2">done</span>();
+    });
+</code></pre></div><p>This code is also available on
 <a href="https://github.com/JefClaes/eventstore-streamfeedreader">GitHub</a>.</p>
 
 			</div>
@@ -217,11 +215,7 @@ in the sequence they were appended.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
-							
-							<li><a href="/tags/javascript">javascript</a></li>
-							
-							<li><a href="/tags/ddd">DDD</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					

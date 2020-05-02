@@ -3,7 +3,8 @@ title = "Not about the UI and the database"
 slug = "2014-06-01-not-about-the-ui-and-the-database"
 published = 2014-06-01T17:55:00+02:00
 author = "Jef Claes"
-tags = [ "DDD",]
+tags = [ "ddd",]
+url = "2014/06/not-about-ui-and-database.html"
 +++
 When you ask an outsider which components an average application
 consists of, he will most likely be able to identify the user interface

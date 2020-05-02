@@ -3,7 +3,8 @@ title = "Solving Mavericks with VMware Fusion 6 and Windows 8.1 hangs"
 slug = "2014-04-21-solving-mavericks-with-vmware-fusion-6-and-windows-8-1-hangs"
 published = 2014-04-21T12:07:00+02:00
 author = "Jef Claes"
-tags = [ "Windows", "General",]
+tags = [ ]
+url = "2014/04/solving-mavericks-with-vmware-fusion-6.html"
 +++
 Since I intended to avoid Windows at home, I got a Macbook Pro starting
 out at my new job. Overall it has been a great machine for doing

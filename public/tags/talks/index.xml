@@ -21,5 +21,35 @@
  Last year I ventured into the domain of (online) gambling. Given that the industry has been around since forever, I expected most problems to be of the technical kind.</description>
     </item>
     
+    <item>
+      <title>NCrafts Eventstorming slides</title>
+      <link>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</link>
+      <pubDate>Fri, 16 May 2014 15:22:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</guid>
+      <description>Me and Tom just finished doing our Event storming workshop at NCrafts Paris. Although we made a few mistakes along the way, feedback on the workshop was great. I hope to put something out about what we learned facilitating later this week. People talked, discovered and eventually learned a new domain in under two hours. The domain? Two minutes before the workshop we found a domain expert prepared to talk about his coupon start-up.</description>
+    </item>
+    
+    <item>
+      <title>What if we stored events instead of state? - slides</title>
+      <link>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of.html</link>
+      <pubDate>Mon, 12 May 2014 17:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of.html</guid>
+      <description>I just returned from Croatia, where I got to speak twice at the second edition of The Geek Gathering.
+Being such a young conference, I had no idea what to expect. Turns out they have a good thing going on; a small, local and very personal approach to conferences. Speakers both local and international, covering topics that serve the community, not their employer.
+Together with Tom, I preached Alberto&amp;lsquo;s Event Storming during a four hour long workshop.</description>
+    </item>
+    
+    <item>
+      <title>DDDBE slides on the Ubiquitous Language</title>
+      <link>http://localhost:1313/2014/02/dddbe-slides-on-ubiquitous-language.html</link>
+      <pubDate>Sun, 16 Feb 2014 18:04:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/02/dddbe-slides-on-ubiquitous-language.html</guid>
+      <description>Monday, I and four others did a DDDBE session on the strategic side of Domain Driven Design.
+My talk covered the Ubiquitous Language, and can be found on Slideshare. I might end up writing down the content of the talk as well - some images are meaningless without words. Evaluating feedback, I think the biggest mistake we made was keeping some things too abstract - curse of knowledge at work. If we get the chance to repeat the session, we need to make sure to weave a practical story through our talks to make them stick.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -3,7 +3,7 @@ title = "From human decisions, to suggestions to automated decisions"
 slug = "2017-07-23-from-human-decisions-to-suggestions-to-automated-decisions"
 published = 2017-07-23T08:48:00+02:00
 author = "Jef Claes"
-tags = [ "ddd",]
+tags = [ "ddd", "story"]
 url = "2017/07/from-human-decisions-to-suggestions-to.html"
 +++
 I've been wanting to share this experience for a while, but it took me a

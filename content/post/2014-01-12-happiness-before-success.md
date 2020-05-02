@@ -3,7 +3,8 @@ title = "Happiness before success"
 slug = "2014-01-12-happiness-before-success"
 published = 2014-01-12T18:57:00+01:00
 author = "Jef Claes"
-tags = [ "Bookreview",]
+tags = [ "consumed",]
+url = "2014/01/happiness-before-success.html"
 +++
 Somewhere in the beginning of last century, two shoes salesmen were sent
 to Africa hoping to expand their employer's market. Both salesmen

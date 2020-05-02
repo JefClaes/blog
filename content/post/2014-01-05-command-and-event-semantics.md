@@ -3,7 +3,8 @@ title = "Command and event semantics"
 slug = "2014-01-05-command-and-event-semantics"
 published = 2014-01-05T18:12:00+01:00
 author = "Jef Claes"
-tags = [ "DDD",]
+tags = [ "code", "opinion"]
+url = "2014/01/command-and-event-semantics.html"
 +++
 Yesterday, I read [this blog post by Michael
 Feathers](https://michaelfeathers.silvrback.com/when-it-s-okay-for-a-method-to-do-nothing).
@@ -11,11 +12,13 @@ In the post he goes over a pain point he has often found himself
 struggling with while breaking down a large method; conditional
 statements. 
 
-    if (alarmEnabled) {
-      var alarm = new Alarm();  
-      ...
-      alarm.Sound();
-    }
+```csharp
+if (alarmEnabled) {
+    var alarm = new Alarm();  
+    ...
+    alarm.Sound();
+}
+```
 
 Should we extract the if and the associated block into a new method, or
 just the content of the block? Is the condition too important to hide in
@@ -28,12 +31,16 @@ alert - is that he ends up with two strategies.
   
 He either gives the method an event-ish name...  
 
-    IntruderDetected();
+```csharp
+IntruderDetected();
+```
 
 ...or raises the level of abstraction by giving the method a very
 general name, avoiding lies too.
 
-    PerformNotifications();
+```csharp
+PerformNotifications();
+```
 
 While both options solve the original problem, their semantics are very
 different. When I raise an event, I don't care who is listening; one,
@@ -59,12 +66,14 @@ In this example, I'd probably pull notifications out, add an event and a
 bit of infrastructure that dispatches events, making the separate
 concepts and messages between them explicit.
 
-    Events.Raise(new IntruderDetected());
+```csharp
+Events.Raise(new IntruderDetected());
 
-    public class NotificationService : IHandle<IntruderDetected>
-    {
-        public void Handle(IntruderDetected event)    { ... }        
-    }
+public class NotificationService : IHandle<IntruderDetected>
+{
+    public void Handle(IntruderDetected event)    { ... }        
+}
+```
 
 With those extra bits, we could also, instead of listen for the event
 and only sounding the alarm when it's enabled, only subscribe to the

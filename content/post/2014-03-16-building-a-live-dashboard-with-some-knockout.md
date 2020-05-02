@@ -3,7 +3,8 @@ title = "Building a live dashboard with some knockout"
 slug = "2014-03-16-building-a-live-dashboard-with-some-knockout"
 published = 2014-03-16T21:23:00.001000+01:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", "ASP.NET", "HTML", "javascript", "HTML5",]
+tags = [ "code",]
+url = "2014/03/building-live-dashboard-with-some.html"
 +++
 Last week, we added a dashboard to our back office application that
 shows some actionable data about what's going on in our system. Although
@@ -16,35 +17,39 @@ server, we built a view-optimized read model for each widget. On the
 client, we wrote a generic view model that would fetch the raw read
 models periodically.
 
-    var ajaxWidgetModel = function (options) {
-        var self = this;
+```js
+var ajaxWidgetModel = function (options) {
+    var self = this;
 
-        self.data = ko.observable();
-        self.tick = function () {
-            $.get(options.url, function (data) {
-                self.data(ko.mapping.fromJS(data));
-            });
-        };
-
-        self.tick();
-        setInterval(self.tick, options.interval);
+    self.data = ko.observable();
+    self.tick = function () {
+        $.get(options.url, function (data) {
+            self.data(ko.mapping.fromJS(data));
+        });
     };
+
+    self.tick();
+    setInterval(self.tick, options.interval);
+};
+```
 
 We then used [knockout.js](http://knockoutjs.com/index.html) to bind the
 view models to the widgets.
 
-    ko.applyBindings(
-        new ajaxWidgetModel({ url: "/api/dashboard/tickets", interval: 30000 }), 
-        document.getElementById('widget_tickets'));
+```js
+ko.applyBindings(
+    new ajaxWidgetModel({ url: "/api/dashboard/tickets", interval: 30000 }), 
+    document.getElementById('widget_tickets'));
 
-    <div class="widget-title">
-        <h5>Tickets</h5>
-    </div>
-    <div class="widget-content" id="widget_tickets" data-bind="with: data">
-        <table class="table">
-            ...
-        </table>
-    </div>
+<div class="widget-title">
+    <h5>Tickets</h5>
+</div>
+<div class="widget-content" id="widget_tickets" data-bind="with: data">
+    <table class="table">
+        ...
+    </table>
+</div>
+```
 
 The [with
 data-binding](http://knockoutjs.com/documentation/with-binding.html)

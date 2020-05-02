@@ -313,17 +313,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/06/paper-notes-a-study-and-toolkit-for-asynchronous-programming-in-c/</loc>
+    <loc>http://localhost:1313/2014/06/paper-notes-study-and-toolkit-for.html</loc>
     <lastmod>2014-06-08T18:33:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/06/not-about-the-ui-and-the-database/</loc>
+    <loc>http://localhost:1313/2014/06/not-about-ui-and-database.html</loc>
     <lastmod>2014-06-01T17:55:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/05/eventual-consistency-in-the-wild-west/</loc>
+    <loc>http://localhost:1313/2014/05/eventual-consistency-in-wild-west.html</loc>
     <lastmod>2014-05-25T18:01:00+02:00</lastmod>
   </url>
   
@@ -333,7 +333,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/05/ncrafts-eventstorming-slides/</loc>
+    <loc>http://localhost:1313/tags/story/</loc>
+    <lastmod>2014-05-25T18:01:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</loc>
     <lastmod>2014-05-16T15:22:00+02:00</lastmod>
   </url>
   
@@ -348,7 +353,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</loc>
+    <loc>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of.html</loc>
     <lastmod>2014-05-12T17:41:00+02:00</lastmod>
   </url>
   
@@ -358,7 +363,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</loc>
+    <loc>http://localhost:1313/2014/05/glueing-browser-and-pos-devices-together.html</loc>
     <lastmod>2014-05-04T18:23:00+02:00</lastmod>
   </url>
   
@@ -373,7 +378,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/04/solving-mavericks-with-vmware-fusion-6-and-windows-8.1-hangs/</loc>
+    <loc>http://localhost:1313/2014/04/solving-mavericks-with-vmware-fusion-6.html</loc>
     <lastmod>2014-04-21T12:07:00+02:00</lastmod>
   </url>
   
@@ -393,7 +398,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</loc>
+    <loc>http://localhost:1313/2014/04/rebinding-knockout-viewmodel.html</loc>
     <lastmod>2014-04-06T18:43:00+02:00</lastmod>
   </url>
   
@@ -408,12 +413,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</loc>
+    <loc>http://localhost:1313/2014/03/sending-commands-from-knockoutjs-view.html</loc>
     <lastmod>2014-03-23T18:31:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</loc>
+    <loc>http://localhost:1313/2014/03/building-live-dashboard-with-some.html</loc>
     <lastmod>2014-03-16T21:23:00+01:00</lastmod>
   </url>
   
@@ -428,17 +433,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/03/tests-as-part-of-your-code/</loc>
+    <loc>http://localhost:1313/2014/03/tests-as-part-of-your-code.html</loc>
     <lastmod>2014-03-09T18:13:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</loc>
+    <loc>http://localhost:1313/2014/03/alternatives-to-udis-domain-events.html</loc>
     <lastmod>2014-03-02T18:21:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/02/strategic-ddd-in-a-nutshell/</loc>
+    <loc>http://localhost:1313/2014/02/strategic-ddd-in-nutshell.html</loc>
     <lastmod>2014-02-23T18:21:00+01:00</lastmod>
   </url>
   
@@ -448,7 +453,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/02/dddbe-slides-on-the-ubiquitous-language/</loc>
+    <loc>http://localhost:1313/2014/02/dddbe-slides-on-ubiquitous-language.html</loc>
     <lastmod>2014-02-16T18:04:00+01:00</lastmod>
   </url>
   
@@ -463,7 +468,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/02/thinking-in-systems/</loc>
+    <loc>http://localhost:1313/2014/02/thinking-in-systems.html</loc>
     <lastmod>2014-02-02T18:19:00+01:00</lastmod>
   </url>
   
@@ -473,22 +478,22 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</loc>
+    <loc>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong_26.html</loc>
     <lastmod>2014-01-26T18:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/01/new-yearpassed2013/</loc>
+    <loc>http://localhost:1313/2014/01/new-yearpassed2013.html</loc>
     <lastmod>2014-01-19T17:54:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/01/happiness-before-success/</loc>
+    <loc>http://localhost:1313/2014/01/happiness-before-success.html</loc>
     <lastmod>2014-01-12T18:57:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2014/01/command-and-event-semantics/</loc>
+    <loc>http://localhost:1313/2014/01/command-and-event-semantics.html</loc>
     <lastmod>2014-01-05T18:12:00+01:00</lastmod>
   </url>
   

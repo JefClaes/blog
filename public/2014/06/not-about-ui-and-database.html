@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Not about the UI and the database - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Not about the UI and the database">
+<meta itemprop="description" content="When you ask an outsider which components an average application consists of, he will most likely be able to identify the user interface and the database. He will also recognize that there is something in between that takes the input from the user interface, applies some logic and persists the result in the database.
+
+In the past, trying to make sense of what goes on the middle, we started">
+<meta itemprop="datePublished" content="2014-06-01T17:55:00&#43;02:00" />
+<meta itemprop="dateModified" content="2014-06-01T17:55:00&#43;02:00" />
+<meta itemprop="wordCount" content="423">
+
+
+
+<meta itemprop="keywords" content="ddd," /><meta property="og:title" content="Not about the UI and the database" />
+<meta property="og:description" content="When you ask an outsider which components an average application consists of, he will most likely be able to identify the user interface and the database. He will also recognize that there is something in between that takes the input from the user interface, applies some logic and persists the result in the database.
+
+In the past, trying to make sense of what goes on the middle, we started" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/06/not-about-ui-and-database.html" />
+<meta property="article:published_time" content="2014-06-01T17:55:00+02:00" />
+<meta property="article:modified_time" content="2014-06-01T17:55:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Not about the UI and the database"/>
+<meta name="twitter:description" content="When you ask an outsider which components an average application consists of, he will most likely be able to identify the user interface and the database. He will also recognize that there is something in between that takes the input from the user interface, applies some logic and persists the result in the database.
+
+In the past, trying to make sense of what goes on the middle, we started"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">01</span>
+							<span class="rest">Jun 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Not about the UI and the database</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>When you ask an outsider which components an average application
+consists of, he will most likely be able to identify the user interface
+and the database. He will also recognize that there is something in
+between that takes the input from the user interface, applies some logic
+and persists the result in the database.</p>
+<p><a href="/post/images/2014-06-01-not-about-the-ui-and-the-database-1.png"><img src="/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-1.png" alt=""></a></p>
+<p>In the past, trying to make sense of what goes on the middle, we started</p>
+<ul>
+<li>with the best intentions - layering things. Each layer had its own
+responsibility and would build upon previous layers. Although there was
+a layer for business logic, we never really succeeded in capturing the
+essence. In the end we would still be orchestrating database calls, but
+now we would be forced to go through a bunch of indirections in the form
+of anemic layers and objects.</li>
+</ul>
+<p><a href="/post/images/2014-06-01-not-about-the-ui-and-the-database-2.png"><img src="/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-2.png" alt=""></a></p>
+<p>Some people saw these designs for what they were, broke free and started
+optimizing for the shortest path - from user interface to database with
+the least amount of effort. By aiming to serve the common denominator
+and by putting their trust in dark magic, frameworks popped up that
+would allow you to slap together an application in a matter of hours.</p>
+<p><a href="/post/images/2014-06-01-not-about-the-ui-and-the-database-3.png"><img src="/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-3.png" alt=""></a></p>
+<p>The problem with these frameworks is that they leave you with very
+little room for your own, and you often end up jumping through hoops
+when you need to deviate from the path carved out for you.</p>
+<p><a href="/post/images/2014-06-01-not-about-the-ui-and-the-database-4.png"><img src="/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-4.png" alt=""></a></p>
+<p>That&rsquo;s not the only problem though - applications are a lot more than a
+user interface and a database. What lives between those two is more than
+a technical necessity - it&rsquo;s a place where you get to build a model of
+the problem you are solving. The model gives you an opportunity to learn
+from and to communicate with domain experts, peers and users. And that&rsquo;s
+exactly where most businesses make the difference, not by having a fancy
+user interface or a carefully designed database schema, but by really
+understanding and by being absorbed by the problem they are solving.
+It&rsquo;s the user interface and the database that are the necessary evil we
+bring upon ourselves by solving problems using computers.</p>
+<p>The state that lives in your database is a side effect - the result of
+the model&rsquo;s behavior. The user interface tries to make it as easy as
+possible for users to drive and use the model.</p>
+<p><a href="/post/images/2014-06-01-not-about-the-ui-and-the-database-5.png"><img src="/post/images/thumbnails/2014-06-01-not-about-the-ui-and-the-database-5.png" alt=""></a></p>
+<p>Although the user interface and the database are important, it&rsquo;s the
+model that is the heart and soul of your application.</p>
+<p><em>(*) Disclaimer: all these drawings are simplistic by design.</em></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/ddd">ddd</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

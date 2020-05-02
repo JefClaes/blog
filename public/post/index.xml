@@ -495,20 +495,20 @@ A good year later, just the two of them were assigned to a new smallish, but int
     
     <item>
       <title>Paper notes: A Study and Toolkit for Asynchronous Programming in C#</title>
-      <link>http://localhost:1313/2014/06/paper-notes-a-study-and-toolkit-for-asynchronous-programming-in-c/</link>
+      <link>http://localhost:1313/2014/06/paper-notes-study-and-toolkit-for.html</link>
       <pubDate>Sun, 08 Jun 2014 18:33:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/06/paper-notes-a-study-and-toolkit-for-asynchronous-programming-in-c/</guid>
+      <guid>http://localhost:1313/2014/06/paper-notes-study-and-toolkit-for.html</guid>
       <description>The .NET framework mainly provides two models for asynchronous programming: (1) the Asynchronous Programming Model (APM), that uses callbacks, and (2) the Task Asynchronous Pattern (TAP), that uses Tasks, which are similar to the concept of futures.
 The Task represents the operation in progress, and its future result. The Task can be (1) queried for the status of the operation, (2) synchronized upon to wait for the result of the operation, or (3) set up with a continuation that resumes in the background when the task completes.</description>
     </item>
     
     <item>
       <title>Not about the UI and the database</title>
-      <link>http://localhost:1313/2014/06/not-about-the-ui-and-the-database/</link>
+      <link>http://localhost:1313/2014/06/not-about-ui-and-database.html</link>
       <pubDate>Sun, 01 Jun 2014 17:55:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/06/not-about-the-ui-and-the-database/</guid>
+      <guid>http://localhost:1313/2014/06/not-about-ui-and-database.html</guid>
       <description>When you ask an outsider which components an average application consists of, he will most likely be able to identify the user interface and the database. He will also recognize that there is something in between that takes the input from the user interface, applies some logic and persists the result in the database.
 
 In the past, trying to make sense of what goes on the middle, we started</description>
@@ -516,97 +516,97 @@ In the past, trying to make sense of what goes on the middle, we started</descri
     
     <item>
       <title>Eventual consistency in the Wild West</title>
-      <link>http://localhost:1313/2014/05/eventual-consistency-in-the-wild-west/</link>
+      <link>http://localhost:1313/2014/05/eventual-consistency-in-wild-west.html</link>
       <pubDate>Sun, 25 May 2014 18:01:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/05/eventual-consistency-in-the-wild-west/</guid>
+      <guid>http://localhost:1313/2014/05/eventual-consistency-in-wild-west.html</guid>
       <description>San Francisco, 1852. With the California Gold Rush at its peak, successful gold-seekers wanted to protect all their precious gold nuggets by storing them in a strong safe. At the time, it wasn&amp;rsquo;t that easy to have access to a safe though. At the very beginning, it were just a few local merchants that owned one. Not much later, bankers swamped the area hoping to get their piece of the pie - bringing the strongest safes money can buy.</description>
     </item>
     
     <item>
       <title>NCrafts Eventstorming slides</title>
-      <link>http://localhost:1313/2014/05/ncrafts-eventstorming-slides/</link>
+      <link>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</link>
       <pubDate>Fri, 16 May 2014 15:22:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/05/ncrafts-eventstorming-slides/</guid>
+      <guid>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</guid>
       <description>Me and Tom just finished doing our Event storming workshop at NCrafts Paris. Although we made a few mistakes along the way, feedback on the workshop was great. I hope to put something out about what we learned facilitating later this week. People talked, discovered and eventually learned a new domain in under two hours. The domain? Two minutes before the workshop we found a domain expert prepared to talk about his coupon start-up.</description>
     </item>
     
     <item>
       <title>What if we stored events instead of state? - slides</title>
-      <link>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</link>
+      <link>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of.html</link>
       <pubDate>Mon, 12 May 2014 17:41:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</guid>
+      <guid>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of.html</guid>
       <description>I just returned from Croatia, where I got to speak twice at the second edition of The Geek Gathering.
-Being such a young conference, I had no idea what to expect really. Turns out they have a good thing going on; a small, local and very personal approach to conferences. Speakers both local and international, covering topics that serve the community, not their employer.
+Being such a young conference, I had no idea what to expect. Turns out they have a good thing going on; a small, local and very personal approach to conferences. Speakers both local and international, covering topics that serve the community, not their employer.
 Together with Tom, I preached Alberto&amp;lsquo;s Event Storming during a four hour long workshop.</description>
     </item>
     
     <item>
       <title>Glueing the browser and POS devices together </title>
-      <link>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</link>
+      <link>http://localhost:1313/2014/05/glueing-browser-and-pos-devices-together.html</link>
       <pubDate>Sun, 04 May 2014 18:23:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</guid>
+      <guid>http://localhost:1313/2014/05/glueing-browser-and-pos-devices-together.html</guid>
       <description>I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
 Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&amp;rsquo;s asynchronous programming model and its incredible rich ecosystem.</description>
     </item>
     
     <item>
       <title>Solving Mavericks with VMware Fusion 6 and Windows 8.1 hangs</title>
-      <link>http://localhost:1313/2014/04/solving-mavericks-with-vmware-fusion-6-and-windows-8.1-hangs/</link>
+      <link>http://localhost:1313/2014/04/solving-mavericks-with-vmware-fusion-6.html</link>
       <pubDate>Mon, 21 Apr 2014 12:07:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/04/solving-mavericks-with-vmware-fusion-6-and-windows-8.1-hangs/</guid>
+      <guid>http://localhost:1313/2014/04/solving-mavericks-with-vmware-fusion-6.html</guid>
       <description>Since I intended to avoid Windows at home, I got a Macbook Pro starting out at my new job. Overall it has been a great machine for doing development; it&amp;rsquo;s fast, light enough to carry around, its battery life is outstanding, it has a screen that&amp;rsquo;s gentle to the eyes, and full screen apps together with powerful mouse gestures allow me to quickly shuffle between things not missing touch or a second monitor.</description>
     </item>
     
     <item>
       <title>Rebinding a knockout view model</title>
-      <link>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</link>
+      <link>http://localhost:1313/2014/04/rebinding-knockout-viewmodel.html</link>
       <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</guid>
+      <guid>http://localhost:1313/2014/04/rebinding-knockout-viewmodel.html</guid>
       <description>As you might have noticed reading my last two posts, I have been doing a bit of front-end work using knockout.js. Here is something that had me scratching my head for a little while..
 In one of our pages we&amp;rsquo;re subscribing to a specific event. As soon as that event arrives, we need to reinitialize the model that is bound to our container element. Going through snippets earlier, I remembered seeing the cleanNode function being used a few times - which I thought would remove all knockout data and event handlers from an element.</description>
     </item>
     
     <item>
       <title>Sending commands from a knockout.js view model</title>
-      <link>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</link>
+      <link>http://localhost:1313/2014/03/sending-commands-from-knockoutjs-view.html</link>
       <pubDate>Sun, 23 Mar 2014 18:31:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</guid>
+      <guid>http://localhost:1313/2014/03/sending-commands-from-knockoutjs-view.html</guid>
       <description>While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&amp;rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&amp;rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&amp;rsquo;ll end up with a lot less.</description>
     </item>
     
     <item>
       <title>Building a live dashboard with some knockout</title>
-      <link>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</link>
+      <link>http://localhost:1313/2014/03/building-live-dashboard-with-some.html</link>
       <pubDate>Sun, 16 Mar 2014 21:23:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</guid>
+      <guid>http://localhost:1313/2014/03/building-live-dashboard-with-some.html</guid>
       <description>Last week, we added a dashboard to our back office application that shows some actionable data about what&amp;rsquo;s going on in our system. Although we have infrastructure in place to push changes to the browser, it seemed more reasonable to have the browser fetch fresh data every few minutes.
 We split the dashboard up in a few functional cohesive widgets. On the server, we built a view-optimized read model for each widget.</description>
     </item>
     
     <item>
       <title>Tests as part of your code</title>
-      <link>http://localhost:1313/2014/03/tests-as-part-of-your-code/</link>
+      <link>http://localhost:1313/2014/03/tests-as-part-of-your-code.html</link>
       <pubDate>Sun, 09 Mar 2014 18:13:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/03/tests-as-part-of-your-code/</guid>
+      <guid>http://localhost:1313/2014/03/tests-as-part-of-your-code.html</guid>
       <description>In the last project I worked on - processing financial batches - we put a lot of effort in avoiding being silently wrong. The practice that contributed most was being religious about avoiding structures to ever be in an invalid state. Preconditions, invariants, value objects and immutability were key.
 One of the things we had to do with these structures was writing them to disk in a specific banking format; all the accounts with their transactions for a specific day.</description>
     </item>
     
     <item>
       <title>Alternatives to Udi&#39;s domain events</title>
-      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</link>
+      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events.html</link>
       <pubDate>Sun, 02 Mar 2014 18:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</guid>
+      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events.html</guid>
       <description>Almost four years ago Udi Dahan introduced an elegant technique that allows you to have your domain model dispatch events without injecting a dispatcher into the model - keeping your model focused on the business at hand.
 This works by having a static DomainEvents class which dispatches raised events.
 This customer aggregate raises an event when a customer moves to a new address.
@@ -615,22 +615,22 @@ public class Customer { private readonly string _id; private Address _address; p
     
     <item>
       <title>Strategic DDD in a nutshell </title>
-      <link>http://localhost:1313/2014/02/strategic-ddd-in-a-nutshell/</link>
+      <link>http://localhost:1313/2014/02/strategic-ddd-in-nutshell.html</link>
       <pubDate>Sun, 23 Feb 2014 18:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/02/strategic-ddd-in-a-nutshell/</guid>
+      <guid>http://localhost:1313/2014/02/strategic-ddd-in-nutshell.html</guid>
       <description>There are two big parts to Domain Driven Design; strategy and tactics. Strategy helps setting out a high-level grand design, while tactics enable us to execute on the strategy.
 Practicing strategic design, we generally first try to list all of the different parts that make our business a whole; these are sub-domains. When you look at a supermarket chain, you would find sub-domains like real estate management, advertising, suppliers, stock, sales, human resources, finance, security and so on.</description>
     </item>
     
     <item>
       <title>DDDBE slides on the Ubiquitous Language</title>
-      <link>http://localhost:1313/2014/02/dddbe-slides-on-the-ubiquitous-language/</link>
+      <link>http://localhost:1313/2014/02/dddbe-slides-on-ubiquitous-language.html</link>
       <pubDate>Sun, 16 Feb 2014 18:04:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/02/dddbe-slides-on-the-ubiquitous-language/</guid>
+      <guid>http://localhost:1313/2014/02/dddbe-slides-on-ubiquitous-language.html</guid>
       <description>Monday, I and four others did a DDDBE session on the strategic side of Domain Driven Design.
-My talk covered the Ubiquitous Language, and can be found on Slideshare or embedded below. I might end up writing down the content of the talk as well - some images are meaningless without words. Evaluating feedback, I think the biggest mistake we made was keeping some things too abstract - curse of knowledge at work.</description>
+My talk covered the Ubiquitous Language, and can be found on Slideshare. I might end up writing down the content of the talk as well - some images are meaningless without words. Evaluating feedback, I think the biggest mistake we made was keeping some things too abstract - curse of knowledge at work. If we get the chance to repeat the session, we need to make sure to weave a practical story through our talks to make them stick.</description>
     </item>
     
     <item>
@@ -645,20 +645,20 @@ An event stream can contain quite a few events. Since caching parts of that stre
     
     <item>
       <title>Thinking in Systems</title>
-      <link>http://localhost:1313/2014/02/thinking-in-systems/</link>
+      <link>http://localhost:1313/2014/02/thinking-in-systems.html</link>
       <pubDate>Sun, 02 Feb 2014 18:19:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/02/thinking-in-systems/</guid>
+      <guid>http://localhost:1313/2014/02/thinking-in-systems.html</guid>
       <description>We are surrounded by systems day in, day out. As software developers, we even get to spend a big portion of our day actively building and changing systems - be it software, teams, communities or businesses. Seeing the whole, but more importantly understanding how systems exist of inter-related parts that affect each other in all kinds of interesting ways, is crucial to growing sustainable systems.
 Thinking in Systems is a primer on the subject of system thinking written by Donella H.</description>
     </item>
     
     <item>
       <title>Repositories, where did we go wrong?</title>
-      <link>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</link>
+      <link>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong_26.html</link>
       <pubDate>Sun, 26 Jan 2014 18:00:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</guid>
+      <guid>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong_26.html</guid>
       <description>In essence, repositories are a simple abstraction over aggregate storage. A repository will insert, update, delete or fetch an aggregate from the underlying persistence mechanism. This abstraction avoids that databases, SQL statements, Object Mappers and the like leak into your domain. Next to that, swapping out repositories for an in-memory version makes testing easier.
 Recently, the use of repositories is being questioned again.
 Why would we wrap Object Mappers in yet another abstraction?</description>
@@ -666,30 +666,30 @@ Why would we wrap Object Mappers in yet another abstraction?</description>
     
     <item>
       <title>new YearPassed(2013);</title>
-      <link>http://localhost:1313/2014/01/new-yearpassed2013/</link>
+      <link>http://localhost:1313/2014/01/new-yearpassed2013.html</link>
       <pubDate>Sun, 19 Jan 2014 17:54:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/01/new-yearpassed2013/</guid>
+      <guid>http://localhost:1313/2014/01/new-yearpassed2013.html</guid>
       <description>I normally write this up at the end of the year, but circumstances made me push back this post for a few weeks. I use this annual post to look back at the year passed, and to look ahead to the year to come. I gave up on making resolutions in 2011. This year, I&amp;rsquo;m going to be naively ambitious again going into 2014.
 Compared to previous years, I feel more confident that I have a pretty good idea of what I want next.</description>
     </item>
     
     <item>
       <title>Happiness before success</title>
-      <link>http://localhost:1313/2014/01/happiness-before-success/</link>
+      <link>http://localhost:1313/2014/01/happiness-before-success.html</link>
       <pubDate>Sun, 12 Jan 2014 18:57:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/01/happiness-before-success/</guid>
+      <guid>http://localhost:1313/2014/01/happiness-before-success.html</guid>
       <description>Somewhere in the beginning of last century, two shoes salesmen were sent to Africa hoping to expand their employer&amp;rsquo;s market. Both salesmen reported home within days of their arrival. The first salesman wrote: &amp;ldquo;This trip turned out to be a waste of time; the locals are not wearing any shoes.&amp;rdquo; The second salesman wrote something similar, yet very different: &amp;ldquo;This is looking very promising; people aren&amp;rsquo;t wearing any shoes yet!&amp;rdquo;</description>
     </item>
     
     <item>
       <title>Command and event semantics</title>
-      <link>http://localhost:1313/2014/01/command-and-event-semantics/</link>
+      <link>http://localhost:1313/2014/01/command-and-event-semantics.html</link>
       <pubDate>Sun, 05 Jan 2014 18:12:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/01/command-and-event-semantics/</guid>
-      <description>Yesterday, I read this blog post by Michael Feathers. In the post he goes over a pain point he has often found himself struggling with while breaking down a large method; conditional statements. if (alarmEnabled) { var alarm = new Alarm(); ... alarm.Sound(); }  Should we extract the if and the associated block into a new method, or just the content of the block? Is the condition too important to hide in a method?</description>
+      <guid>http://localhost:1313/2014/01/command-and-event-semantics.html</guid>
+      <description>Yesterday, I read this blog post by Michael Feathers. In the post he goes over a pain point he has often found himself struggling with while breaking down a large method; conditional statements. if (alarmEnabled) { var alarm = new Alarm(); ... alarm.Sound(); } Should we extract the if and the associated block into a new method, or just the content of the block? Is the condition too important to hide in a method?</description>
     </item>
     
     <item>

@@ -120,6 +120,15 @@
     </item>
     
     <item>
+      <title>story</title>
+      <link>http://localhost:1313/tags/story/</link>
+      <pubDate>Sun, 25 May 2014 18:01:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/story/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Architecture</title>
       <link>http://localhost:1313/tags/architecture/</link>
       <pubDate>Mon, 12 May 2014 17:41:00 +0200</pubDate>

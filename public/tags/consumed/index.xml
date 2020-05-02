@@ -51,5 +51,34 @@ In 2015, I read 16 books and 3 papers, watched 3 movies and 4 shows, listened to
 I started off with a markdown file on Github that quikcly evolved into a good excuse to dabble with an alternative stack. I ended up writing an event sourced node.js application on top of postgres, hosted on Heroku. I could write a post on that particular experience, but it&amp;rsquo;s safe to say this blog post captures it better than I ever could.</description>
     </item>
     
+    <item>
+      <title>Paper notes: A Study and Toolkit for Asynchronous Programming in C#</title>
+      <link>http://localhost:1313/2014/06/paper-notes-study-and-toolkit-for.html</link>
+      <pubDate>Sun, 08 Jun 2014 18:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/06/paper-notes-study-and-toolkit-for.html</guid>
+      <description>The .NET framework mainly provides two models for asynchronous programming: (1) the Asynchronous Programming Model (APM), that uses callbacks, and (2) the Task Asynchronous Pattern (TAP), that uses Tasks, which are similar to the concept of futures.
+The Task represents the operation in progress, and its future result. The Task can be (1) queried for the status of the operation, (2) synchronized upon to wait for the result of the operation, or (3) set up with a continuation that resumes in the background when the task completes.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in Systems</title>
+      <link>http://localhost:1313/2014/02/thinking-in-systems.html</link>
+      <pubDate>Sun, 02 Feb 2014 18:19:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/02/thinking-in-systems.html</guid>
+      <description>We are surrounded by systems day in, day out. As software developers, we even get to spend a big portion of our day actively building and changing systems - be it software, teams, communities or businesses. Seeing the whole, but more importantly understanding how systems exist of inter-related parts that affect each other in all kinds of interesting ways, is crucial to growing sustainable systems.
+Thinking in Systems is a primer on the subject of system thinking written by Donella H.</description>
+    </item>
+    
+    <item>
+      <title>Happiness before success</title>
+      <link>http://localhost:1313/2014/01/happiness-before-success.html</link>
+      <pubDate>Sun, 12 Jan 2014 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/01/happiness-before-success.html</guid>
+      <description>Somewhere in the beginning of last century, two shoes salesmen were sent to Africa hoping to expand their employer&amp;rsquo;s market. Both salesmen reported home within days of their arrival. The first salesman wrote: &amp;ldquo;This trip turned out to be a waste of time; the locals are not wearing any shoes.&amp;rdquo; The second salesman wrote something similar, yet very different: &amp;ldquo;This is looking very promising; people aren&amp;rsquo;t wearing any shoes yet!&amp;rdquo;</description>
+    </item>
+    
   </channel>
 </rss>

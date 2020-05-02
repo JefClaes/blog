@@ -3,7 +3,8 @@ title = "Repositories, where did we go wrong?"
 slug = "2014-01-26-repositories-where-did-we-go-wrong"
 published = 2014-01-26T18:00:00+01:00
 author = "Jef Claes"
-tags = [ "database", "DDD",]
+tags = [ "ddd",]
+url = "2014/01/repositories-where-did-we-go-wrong_26.html"
 +++
 In essence, repositories are a simple abstraction over aggregate
 storage. A repository will insert, update, delete or fetch an aggregate

@@ -11,14 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/aspnet-mvc/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Sending commands from a knockout.js view model</title>
-      <link>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</link>
-      <pubDate>Sun, 23 Mar 2014 18:31:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</guid>
-      <description>While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&amp;rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&amp;rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&amp;rsquo;ll end up with a lot less.</description>
-    </item>
-    
   </channel>
 </rss>

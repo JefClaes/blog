@@ -3,7 +3,8 @@ title = "Paper notes: A Study and Toolkit for Asynchronous Programming in C#"
 slug = "2014-06-08-paper-notes-a-study-and-toolkit-for-asynchronous-programming-in-c"
 published = 2014-06-08T18:33:00.001000+02:00
 author = "Jef Claes"
-tags = [ ".NET",]
+tags = [ "consumed",]
+url = "2014/06/paper-notes-study-and-toolkit-for.html"
 +++
 The .NET framework mainly provides two models for asynchronous
 programming: (1) the Asynchronous Programming Model (APM), that uses

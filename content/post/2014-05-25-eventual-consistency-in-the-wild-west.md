@@ -3,7 +3,8 @@ title = "Eventual consistency in the Wild West"
 slug = "2014-05-25-eventual-consistency-in-the-wild-west"
 published = 2014-05-25T18:01:00+02:00
 author = "Jef Claes"
-tags = [ "Messaging",]
+tags = [ "story",]
+url = "2014/05/eventual-consistency-in-wild-west.html"
 +++
 San Francisco, 1852. With the California Gold Rush at its peak,
 successful gold-seekers wanted to protect all their precious gold

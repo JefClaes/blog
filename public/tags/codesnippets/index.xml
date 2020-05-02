@@ -12,57 +12,6 @@
     
     
     <item>
-      <title>Rebinding a knockout view model</title>
-      <link>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</link>
-      <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</guid>
-      <description>As you might have noticed reading my last two posts, I have been doing a bit of front-end work using knockout.js. Here is something that had me scratching my head for a little while..
-In one of our pages we&amp;rsquo;re subscribing to a specific event. As soon as that event arrives, we need to reinitialize the model that is bound to our container element. Going through snippets earlier, I remembered seeing the cleanNode function being used a few times - which I thought would remove all knockout data and event handlers from an element.</description>
-    </item>
-    
-    <item>
-      <title>Sending commands from a knockout.js view model</title>
-      <link>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</link>
-      <pubDate>Sun, 23 Mar 2014 18:31:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/03/sending-commands-from-a-knockout.js-view-model/</guid>
-      <description>While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&amp;rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&amp;rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&amp;rsquo;ll end up with a lot less.</description>
-    </item>
-    
-    <item>
-      <title>Building a live dashboard with some knockout</title>
-      <link>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</link>
-      <pubDate>Sun, 16 Mar 2014 21:23:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/03/building-a-live-dashboard-with-some-knockout/</guid>
-      <description>Last week, we added a dashboard to our back office application that shows some actionable data about what&amp;rsquo;s going on in our system. Although we have infrastructure in place to push changes to the browser, it seemed more reasonable to have the browser fetch fresh data every few minutes.
-We split the dashboard up in a few functional cohesive widgets. On the server, we built a view-optimized read model for each widget.</description>
-    </item>
-    
-    <item>
-      <title>Alternatives to Udi&#39;s domain events</title>
-      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</link>
-      <pubDate>Sun, 02 Mar 2014 18:21:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</guid>
-      <description>Almost four years ago Udi Dahan introduced an elegant technique that allows you to have your domain model dispatch events without injecting a dispatcher into the model - keeping your model focused on the business at hand.
-This works by having a static DomainEvents class which dispatches raised events.
-This customer aggregate raises an event when a customer moves to a new address.
-public class Customer { private readonly string _id; private Address _address; private Name _name; public Customer(string id, Name name, Address address) { Guard.</description>
-    </item>
-    
-    <item>
-      <title>Reading an EventStore stream using JavaScript</title>
-      <link>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</link>
-      <pubDate>Sun, 09 Feb 2014 18:07:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</guid>
-      <description>Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
-An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable.</description>
-    </item>
-    
-    <item>
       <title>An event store with optimistic concurrency</title>
       <link>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</link>
       <pubDate>Sun, 10 Nov 2013 18:25:00 +0100</pubDate>

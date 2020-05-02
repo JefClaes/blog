@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Sending commands from a knockout.js view model - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Sending commands from a knockout.js view model">
+<meta itemprop="description" content="While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&rsquo;ll end up with a lot less.">
+<meta itemprop="datePublished" content="2014-03-23T18:31:00&#43;01:00" />
+<meta itemprop="dateModified" content="2014-03-23T18:31:00&#43;01:00" />
+<meta itemprop="wordCount" content="550">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Sending commands from a knockout.js view model" />
+<meta property="og:description" content="While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&rsquo;ll end up with a lot less." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2014/03/sending-commands-from-knockoutjs-view.html" />
+<meta property="article:published_time" content="2014-03-23T18:31:00+01:00" />
+<meta property="article:modified_time" content="2014-03-23T18:31:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Sending commands from a knockout.js view model"/>
+<meta name="twitter:description" content="While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&rsquo;ll end up with a lot less."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">23</span>
+							<span class="rest">Mar 2014</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Sending commands from a knockout.js view model</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>While I got to use <a href="http://angularjs.org/">angular.js</a> for a good while
+last year, I found myself returning to
+<a href="http://knockoutjs.com/">knockout.js</a> for the current application I&rsquo;m
+working on. Where angular.js is a heavy, intrusive, opinionated, but
+also very complete framework, knockout.js is a small and lightweight
+library giving you not much more than a dynamic model binder. So instead
+of blindly following the angular-way, I&rsquo;ll have to introduce my own set
+of abstractions and plumbing again; I assume that I&rsquo;ll end up with a lot
+less.</p>
+<p>Let&rsquo;s say that I have a view model for making a deposit.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#859900">var</span> <span style="color:#268bd2">DepositViewModel</span> = <span style="color:#859900">function</span>() {
+    <span style="color:#859900">var</span> <span style="color:#268bd2">self</span> = <span style="color:#859900">this</span>;
+
+    <span style="color:#268bd2">self</span>.<span style="color:#268bd2">account</span> = <span style="color:#268bd2">ko</span>.<span style="color:#268bd2">observable</span>(<span style="color:#2aa198">&#39;&#39;</span>);
+    <span style="color:#268bd2">self</span>.<span style="color:#268bd2">amount</span> = <span style="color:#268bd2">ko</span>.<span style="color:#268bd2">observable</span>(<span style="color:#2aa198;font-weight:bold">0</span>);
+
+    <span style="color:#268bd2">self</span>.<span style="color:#268bd2">depositEnabled</span> = <span style="color:#268bd2">ko</span>.<span style="color:#268bd2">computed</span>(<span style="color:#859900">function</span>() {
+        <span style="color:#859900">return</span> <span style="color:#268bd2">self</span>.<span style="color:#268bd2">account</span>() !== <span style="color:#2aa198">&#39;&#39;</span> &amp;&amp; <span style="color:#268bd2">self</span>.<span style="color:#268bd2">amount</span>() &gt; <span style="color:#2aa198;font-weight:bold">0</span>;
+    });
+    
+    <span style="color:#268bd2">self</span>.<span style="color:#268bd2">deposit</span> = <span style="color:#859900">function</span>() {
+        <span style="color:#859900">if</span> (!<span style="color:#268bd2">self</span>.<span style="color:#268bd2">depositEnabled</span>()) {
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#cb4b16">Error</span>(<span style="color:#2aa198">&#39;Deposit should be enabled.&#39;</span>);
+        }
+
+        <span style="color:#268bd2">$</span>.<span style="color:#268bd2">ajax</span>({ 
+            <span style="color:#268bd2">url</span>: <span style="color:#2aa198">&#39;/Commands/Deposit&#39;</span>, 
+            <span style="color:#268bd2">data</span>: { <span style="color:#268bd2">account</span>: <span style="color:#268bd2">self</span>.<span style="color:#268bd2">account</span>(), <span style="color:#268bd2">amount</span>: <span style="color:#268bd2">self</span>.<span style="color:#268bd2">amount</span>() }, 
+            <span style="color:#268bd2">success</span>: <span style="color:#859900">function</span>() { <span style="color:#268bd2">self</span>.<span style="color:#268bd2">amount</span>(<span style="color:#2aa198;font-weight:bold">0</span>); }
+            <span style="color:#268bd2">type</span>: <span style="color:#2aa198">&#39;POST&#39;</span>, 
+            <span style="color:#268bd2">dataType</span>: <span style="color:#2aa198">&#39;json&#39;</span> 
+        });
+    };
+};
+
+<span style="color:#268bd2">ko</span>.<span style="color:#268bd2">applyBindings</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">DepositViewModel</span>());
+</code></pre></div><p>Writing a test for this, it was obvious that I couldn&rsquo;t have my deposit
+function make requests directly. An abstraction that has served me well
+in the past, is a command executor. </p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#268bd2">CommandExecutor</span> = <span style="color:#859900">function</span>() {
+    <span style="color:#859900">this</span>.<span style="color:#268bd2">execute</span> = <span style="color:#859900">function</span>(<span style="color:#268bd2">command</span>, <span style="color:#268bd2">success</span>) { };
+};
+</code></pre></div><p>We can have an implementation that handles each command individually, or
+we can have it send requests to our server by convention. The
+implementation below assumes that the name of our command has a
+corresponding endpoint on the server. </p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#268bd2">CommandExecutor</span> = <span style="color:#859900">function</span>() {
+
+    <span style="color:#859900">this</span>.<span style="color:#268bd2">execute</span> = <span style="color:#859900">function</span>(<span style="color:#268bd2">command</span>, <span style="color:#268bd2">success</span>) {
+
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">console</span>) {
+            <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#2aa198">&#39;Executing command..&#39;</span>);
+            <span style="color:#268bd2">console</span>.<span style="color:#268bd2">log</span>(<span style="color:#268bd2">command</span>);
+        }
+
+        <span style="color:#268bd2">$</span>.<span style="color:#268bd2">ajax</span>({ 
+            <span style="color:#268bd2">url</span>: <span style="color:#2aa198">&#39;/Commands/&#39;</span> + <span style="color:#268bd2">command</span>.<span style="color:#268bd2">name</span>, <span style="color:#268bd2">data</span>: <span style="color:#268bd2">command</span>.<span style="color:#268bd2">data</span>, 
+            <span style="color:#268bd2">success</span>: <span style="color:#268bd2">success</span>
+            <span style="color:#268bd2">type</span>: <span style="color:#2aa198">&#39;POST&#39;</span>, <span style="color:#268bd2">dataType</span>: <span style="color:#2aa198">&#39;json&#39;</span> 
+        });
+
+    };
+};
+</code></pre></div><p>While angular.js has dependency management built in, we can get away by
+injecting dependencies manually and a bit of bootstrapping - it&rsquo;s not
+that I often have large dependency graphs in the browser, or that I care
+much about the life cycles of my components.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#859900">var</span> <span style="color:#268bd2">DepositViewModel</span> = <span style="color:#859900">function</span>(<span style="color:#268bd2">dependencies</span>) {
+    <span style="color:#859900">var</span> <span style="color:#268bd2">self</span> = <span style="color:#859900">this</span>;
+
+    <span style="color:#268bd2">self</span>.<span style="color:#268bd2">account</span> = <span style="color:#268bd2">ko</span>.<span style="color:#268bd2">observable</span>(<span style="color:#2aa198">&#39;&#39;</span>);
+    <span style="color:#268bd2">self</span>.<span style="color:#268bd2">amount</span> = <span style="color:#268bd2">ko</span>.<span style="color:#268bd2">observable</span>(<span style="color:#2aa198;font-weight:bold">0</span>);
+
+    <span style="color:#268bd2">self</span>.<span style="color:#268bd2">depositEnabled</span> = <span style="color:#268bd2">ko</span>.<span style="color:#268bd2">computed</span>(<span style="color:#859900">function</span>() {
+        <span style="color:#859900">return</span> <span style="color:#268bd2">self</span>.<span style="color:#268bd2">account</span>() !== <span style="color:#2aa198">&#39;&#39;</span> &amp;&amp; <span style="color:#268bd2">self</span>.<span style="color:#268bd2">amount</span>() &gt; <span style="color:#2aa198;font-weight:bold">0</span>;
+    });
+    
+    <span style="color:#268bd2">self</span>.<span style="color:#268bd2">deposit</span> = <span style="color:#859900">function</span>() {
+        <span style="color:#859900">if</span> (!<span style="color:#268bd2">self</span>.<span style="color:#268bd2">depositEnabled</span>()) {
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#cb4b16">Error</span>(<span style="color:#2aa198">&#39;Deposit should be enabled.&#39;</span>);
+        }
+
+        <span style="color:#859900">var</span> <span style="color:#268bd2">command</span> = { 
+            <span style="color:#268bd2">name</span>: <span style="color:#2aa198">&#39;Deposit&#39;</span>, 
+            <span style="color:#268bd2">data</span>: { <span style="color:#268bd2">account</span>: <span style="color:#268bd2">self</span>.<span style="color:#268bd2">account</span>(), <span style="color:#268bd2">amount</span>: <span style="color:#268bd2">self</span>.<span style="color:#268bd2">amount</span>() } };
+        <span style="color:#859900">var</span> <span style="color:#268bd2">callback</span> = <span style="color:#859900">function</span>() { <span style="color:#268bd2">self</span>.<span style="color:#268bd2">amount</span>(<span style="color:#2aa198;font-weight:bold">0</span>); };
+        <span style="color:#268bd2">dependencies</span>.<span style="color:#268bd2">commandExecutor</span>.<span style="color:#268bd2">execute</span>(<span style="color:#268bd2">command</span>, <span style="color:#268bd2">callback</span>);
+    };
+};
+
+<span style="color:#268bd2">ko</span>.<span style="color:#268bd2">applyBindings</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">DepositViewModel</span>({ <span style="color:#268bd2">commandExecutor</span>: <span style="color:#859900">new</span> <span style="color:#268bd2">CommandExecutor</span>() }));
+</code></pre></div><p>See, very little magic required.</p>
+<p>Writing a test, we now only need to replace the command executor with an
+implementation that will record commands instead of actually sending
+them to the server.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#859900">var</span> <span style="color:#268bd2">CommandExecutorMock</span> = <span style="color:#859900">function</span> () {
+
+    <span style="color:#859900">var</span> <span style="color:#268bd2">commands</span> = [];
+
+    <span style="color:#859900">this</span>.<span style="color:#268bd2">execute</span> = <span style="color:#859900">function</span> (<span style="color:#268bd2">command</span>, <span style="color:#268bd2">success</span>) {
+        <span style="color:#268bd2">commands</span>.<span style="color:#268bd2">push</span>(<span style="color:#268bd2">command</span>);
+        <span style="color:#268bd2">success</span>();
+    };
+    <span style="color:#859900">this</span>.<span style="color:#268bd2">verifyCommandWasExecuted</span> = <span style="color:#859900">function</span>(<span style="color:#268bd2">command</span>) {
+        <span style="color:#859900">for</span> (<span style="color:#859900">var</span> <span style="color:#268bd2">i</span> = <span style="color:#2aa198;font-weight:bold">0</span>; <span style="color:#268bd2">i</span> &lt; <span style="color:#268bd2">commands</span>.<span style="color:#268bd2">length</span>; <span style="color:#268bd2">i</span>++) {
+            <span style="color:#859900">if</span> (<span style="color:#268bd2">JSON</span>.<span style="color:#268bd2">stringify</span>(<span style="color:#268bd2">commands</span>[<span style="color:#268bd2">i</span>]) === <span style="color:#268bd2">JSON</span>.<span style="color:#268bd2">stringify</span>(<span style="color:#268bd2">command</span>)) {
+                <span style="color:#859900">return</span> <span style="color:#859900;font-weight:bold">true</span>;                        
+            }
+        }
+        <span style="color:#859900">return</span> <span style="color:#859900;font-weight:bold">false</span>;
+    };
+
+};
+
+<span style="color:#268bd2">describe</span>(<span style="color:#2aa198">&#34;When a deposit is invoked&#34;</span>, <span style="color:#859900">function</span> () {
+
+    <span style="color:#859900">var</span> <span style="color:#268bd2">commandExecutor</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">CommandExecutorMock</span>();
+    
+    <span style="color:#859900">var</span> <span style="color:#268bd2">model</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">DepositViewModel</span>({ <span style="color:#268bd2">commandExecutor</span>: <span style="color:#268bd2">commandExecutor</span> });
+    <span style="color:#268bd2">model</span>.<span style="color:#268bd2">account</span>(<span style="color:#2aa198">&#39;MyAccount&#39;</span>);
+    <span style="color:#268bd2">model</span>.<span style="color:#268bd2">amount</span>(<span style="color:#2aa198;font-weight:bold">100</span>);
+    <span style="color:#268bd2">model</span>.<span style="color:#268bd2">deposit</span>();
+
+    <span style="color:#268bd2">it</span>(<span style="color:#2aa198">&#34;a deposit command is sent.&#34;</span>, <span style="color:#859900">function</span>() {
+        <span style="color:#859900">var</span> <span style="color:#268bd2">command</span> = {
+            <span style="color:#268bd2">name</span>: <span style="color:#2aa198">&#39;Deposit&#39;</span>, 
+            <span style="color:#268bd2">data</span>: { <span style="color:#268bd2">account</span>: <span style="color:#2aa198">&#39;MyAccount&#39;</span>, <span style="color:#268bd2">amount</span>: <span style="color:#2aa198;font-weight:bold">100</span> }
+        };
+
+        <span style="color:#268bd2">expect</span>(<span style="color:#268bd2">commandExecutor</span>.<span style="color:#268bd2">verifyCommandWasExecuted</span>(<span style="color:#268bd2">command</span>)).<span style="color:#268bd2">toBe</span>(<span style="color:#859900;font-weight:bold">true</span>);
+    });  
+
+});
+</code></pre></div><p>I did something similar for queries, and ended up with not that much
+code, that didn&rsquo;t even take that long to write. I&rsquo;m curious to see how
+this application will evolve.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2014  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

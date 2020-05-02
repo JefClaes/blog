@@ -164,10 +164,10 @@ When you look at an online casino, this isn&amp;rsquo;t very different. In the s
     
     <item>
       <title>Not about the UI and the database</title>
-      <link>http://localhost:1313/2014/06/not-about-the-ui-and-the-database/</link>
+      <link>http://localhost:1313/2014/06/not-about-ui-and-database.html</link>
       <pubDate>Sun, 01 Jun 2014 17:55:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/06/not-about-the-ui-and-the-database/</guid>
+      <guid>http://localhost:1313/2014/06/not-about-ui-and-database.html</guid>
       <description>When you ask an outsider which components an average application consists of, he will most likely be able to identify the user interface and the database. He will also recognize that there is something in between that takes the input from the user interface, applies some logic and persists the result in the database.
 
 In the past, trying to make sense of what goes on the middle, we started</description>
@@ -175,30 +175,19 @@ In the past, trying to make sense of what goes on the middle, we started</descri
     
     <item>
       <title>NCrafts Eventstorming slides</title>
-      <link>http://localhost:1313/2014/05/ncrafts-eventstorming-slides/</link>
+      <link>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</link>
       <pubDate>Fri, 16 May 2014 15:22:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/05/ncrafts-eventstorming-slides/</guid>
+      <guid>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</guid>
       <description>Me and Tom just finished doing our Event storming workshop at NCrafts Paris. Although we made a few mistakes along the way, feedback on the workshop was great. I hope to put something out about what we learned facilitating later this week. People talked, discovered and eventually learned a new domain in under two hours. The domain? Two minutes before the workshop we found a domain expert prepared to talk about his coupon start-up.</description>
     </item>
     
     <item>
-      <title>What if we stored events instead of state? - slides</title>
-      <link>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</link>
-      <pubDate>Mon, 12 May 2014 17:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</guid>
-      <description>I just returned from Croatia, where I got to speak twice at the second edition of The Geek Gathering.
-Being such a young conference, I had no idea what to expect really. Turns out they have a good thing going on; a small, local and very personal approach to conferences. Speakers both local and international, covering topics that serve the community, not their employer.
-Together with Tom, I preached Alberto&amp;lsquo;s Event Storming during a four hour long workshop.</description>
-    </item>
-    
-    <item>
       <title>Alternatives to Udi&#39;s domain events</title>
-      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</link>
+      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events.html</link>
       <pubDate>Sun, 02 Mar 2014 18:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</guid>
+      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events.html</guid>
       <description>Almost four years ago Udi Dahan introduced an elegant technique that allows you to have your domain model dispatch events without injecting a dispatcher into the model - keeping your model focused on the business at hand.
 This works by having a static DomainEvents class which dispatches raised events.
 This customer aggregate raises an event when a customer moves to a new address.
@@ -207,52 +196,33 @@ public class Customer { private readonly string _id; private Address _address; p
     
     <item>
       <title>Strategic DDD in a nutshell </title>
-      <link>http://localhost:1313/2014/02/strategic-ddd-in-a-nutshell/</link>
+      <link>http://localhost:1313/2014/02/strategic-ddd-in-nutshell.html</link>
       <pubDate>Sun, 23 Feb 2014 18:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/02/strategic-ddd-in-a-nutshell/</guid>
+      <guid>http://localhost:1313/2014/02/strategic-ddd-in-nutshell.html</guid>
       <description>There are two big parts to Domain Driven Design; strategy and tactics. Strategy helps setting out a high-level grand design, while tactics enable us to execute on the strategy.
 Practicing strategic design, we generally first try to list all of the different parts that make our business a whole; these are sub-domains. When you look at a supermarket chain, you would find sub-domains like real estate management, advertising, suppliers, stock, sales, human resources, finance, security and so on.</description>
     </item>
     
     <item>
       <title>DDDBE slides on the Ubiquitous Language</title>
-      <link>http://localhost:1313/2014/02/dddbe-slides-on-the-ubiquitous-language/</link>
+      <link>http://localhost:1313/2014/02/dddbe-slides-on-ubiquitous-language.html</link>
       <pubDate>Sun, 16 Feb 2014 18:04:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/02/dddbe-slides-on-the-ubiquitous-language/</guid>
+      <guid>http://localhost:1313/2014/02/dddbe-slides-on-ubiquitous-language.html</guid>
       <description>Monday, I and four others did a DDDBE session on the strategic side of Domain Driven Design.
-My talk covered the Ubiquitous Language, and can be found on Slideshare or embedded below. I might end up writing down the content of the talk as well - some images are meaningless without words. Evaluating feedback, I think the biggest mistake we made was keeping some things too abstract - curse of knowledge at work.</description>
-    </item>
-    
-    <item>
-      <title>Reading an EventStore stream using JavaScript</title>
-      <link>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</link>
-      <pubDate>Sun, 09 Feb 2014 18:07:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</guid>
-      <description>Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
-An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable.</description>
+My talk covered the Ubiquitous Language, and can be found on Slideshare. I might end up writing down the content of the talk as well - some images are meaningless without words. Evaluating feedback, I think the biggest mistake we made was keeping some things too abstract - curse of knowledge at work. If we get the chance to repeat the session, we need to make sure to weave a practical story through our talks to make them stick.</description>
     </item>
     
     <item>
       <title>Repositories, where did we go wrong?</title>
-      <link>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</link>
+      <link>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong_26.html</link>
       <pubDate>Sun, 26 Jan 2014 18:00:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</guid>
+      <guid>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong_26.html</guid>
       <description>In essence, repositories are a simple abstraction over aggregate storage. A repository will insert, update, delete or fetch an aggregate from the underlying persistence mechanism. This abstraction avoids that databases, SQL statements, Object Mappers and the like leak into your domain. Next to that, swapping out repositories for an in-memory version makes testing easier.
 Recently, the use of repositories is being questioned again.
 Why would we wrap Object Mappers in yet another abstraction?</description>
-    </item>
-    
-    <item>
-      <title>Command and event semantics</title>
-      <link>http://localhost:1313/2014/01/command-and-event-semantics/</link>
-      <pubDate>Sun, 05 Jan 2014 18:12:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/01/command-and-event-semantics/</guid>
-      <description>Yesterday, I read this blog post by Michael Feathers. In the post he goes over a pain point he has often found himself struggling with while breaking down a large method; conditional statements. if (alarmEnabled) { var alarm = new Alarm(); ... alarm.Sound(); }  Should we extract the if and the associated block into a new method, or just the content of the block? Is the condition too important to hide in a method?</description>
     </item>
     
     <item>

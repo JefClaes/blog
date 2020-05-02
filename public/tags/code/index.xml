@@ -255,5 +255,75 @@ Now let&amp;rsquo;s say, the interviewee knows how to write code and is familiar
 Using the Event Store, I tried to read all events of a specific event type. This stream turned out to be a tad too large to be sent over the wire in one piece, leading to a PackageFramingException: Package size is out of bounds.</description>
     </item>
     
+    <item>
+      <title>Glueing the browser and POS devices together </title>
+      <link>http://localhost:1313/2014/05/glueing-browser-and-pos-devices-together.html</link>
+      <pubDate>Sun, 04 May 2014 18:23:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/05/glueing-browser-and-pos-devices-together.html</guid>
+      <description>I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
+Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&amp;rsquo;s asynchronous programming model and its incredible rich ecosystem.</description>
+    </item>
+    
+    <item>
+      <title>Rebinding a knockout view model</title>
+      <link>http://localhost:1313/2014/04/rebinding-knockout-viewmodel.html</link>
+      <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2014/04/rebinding-knockout-viewmodel.html</guid>
+      <description>As you might have noticed reading my last two posts, I have been doing a bit of front-end work using knockout.js. Here is something that had me scratching my head for a little while..
+In one of our pages we&amp;rsquo;re subscribing to a specific event. As soon as that event arrives, we need to reinitialize the model that is bound to our container element. Going through snippets earlier, I remembered seeing the cleanNode function being used a few times - which I thought would remove all knockout data and event handlers from an element.</description>
+    </item>
+    
+    <item>
+      <title>Sending commands from a knockout.js view model</title>
+      <link>http://localhost:1313/2014/03/sending-commands-from-knockoutjs-view.html</link>
+      <pubDate>Sun, 23 Mar 2014 18:31:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/sending-commands-from-knockoutjs-view.html</guid>
+      <description>While I got to use angular.js for a good while last year, I found myself returning to knockout.js for the current application I&amp;rsquo;m working on. Where angular.js is a heavy, intrusive, opinionated, but also very complete framework, knockout.js is a small and lightweight library giving you not much more than a dynamic model binder. So instead of blindly following the angular-way, I&amp;rsquo;ll have to introduce my own set of abstractions and plumbing again; I assume that I&amp;rsquo;ll end up with a lot less.</description>
+    </item>
+    
+    <item>
+      <title>Building a live dashboard with some knockout</title>
+      <link>http://localhost:1313/2014/03/building-live-dashboard-with-some.html</link>
+      <pubDate>Sun, 16 Mar 2014 21:23:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/building-live-dashboard-with-some.html</guid>
+      <description>Last week, we added a dashboard to our back office application that shows some actionable data about what&amp;rsquo;s going on in our system. Although we have infrastructure in place to push changes to the browser, it seemed more reasonable to have the browser fetch fresh data every few minutes.
+We split the dashboard up in a few functional cohesive widgets. On the server, we built a view-optimized read model for each widget.</description>
+    </item>
+    
+    <item>
+      <title>Alternatives to Udi&#39;s domain events</title>
+      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events.html</link>
+      <pubDate>Sun, 02 Mar 2014 18:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events.html</guid>
+      <description>Almost four years ago Udi Dahan introduced an elegant technique that allows you to have your domain model dispatch events without injecting a dispatcher into the model - keeping your model focused on the business at hand.
+This works by having a static DomainEvents class which dispatches raised events.
+This customer aggregate raises an event when a customer moves to a new address.
+public class Customer { private readonly string _id; private Address _address; private Name _name; public Customer(string id, Name name, Address address) { Guard.</description>
+    </item>
+    
+    <item>
+      <title>Reading an EventStore stream using JavaScript</title>
+      <link>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</link>
+      <pubDate>Sun, 09 Feb 2014 18:07:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/02/reading-an-eventstore-stream-using-javascript/</guid>
+      <description>Over Christmas break, I set out three days to play with the EventStore. One of the things I wanted to do was visualize the timeline of a stream in the browser. Since the EventStore exposes its event streams over atom in JSON, I could directly consume them from JavaScript.
+An event stream can contain quite a few events. Since caching parts of that stream benefits all components in the system, the atom feed is split in multiple pages - where all full pages are cacheable.</description>
+    </item>
+    
+    <item>
+      <title>Command and event semantics</title>
+      <link>http://localhost:1313/2014/01/command-and-event-semantics.html</link>
+      <pubDate>Sun, 05 Jan 2014 18:12:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2014/01/command-and-event-semantics.html</guid>
+      <description>Yesterday, I read this blog post by Michael Feathers. In the post he goes over a pain point he has often found himself struggling with while breaking down a large method; conditional statements. if (alarmEnabled) { var alarm = new Alarm(); ... alarm.Sound(); } Should we extract the if and the associated block into a new method, or just the content of the block? Is the condition too important to hide in a method?</description>
+    </item>
+    
   </channel>
 </rss>

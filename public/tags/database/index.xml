@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>Repositories, where did we go wrong?</title>
-      <link>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</link>
-      <pubDate>Sun, 26 Jan 2014 18:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong/</guid>
-      <description>In essence, repositories are a simple abstraction over aggregate storage. A repository will insert, update, delete or fetch an aggregate from the underlying persistence mechanism. This abstraction avoids that databases, SQL statements, Object Mappers and the like leak into your domain. Next to that, swapping out repositories for an in-memory version makes testing easier.
-Recently, the use of repositories is being questioned again.
-Why would we wrap Object Mappers in yet another abstraction?</description>
-    </item>
-    
-    <item>
       <title>Databases are growing on me</title>
       <link>http://localhost:1313/2013/12/databases-are-growing-on-me/</link>
       <pubDate>Sun, 22 Dec 2013 21:53:00 +0100</pubDate>

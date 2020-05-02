@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>DDDBE slides on the Ubiquitous Language</title>
-      <link>http://localhost:1313/2014/02/dddbe-slides-on-the-ubiquitous-language/</link>
-      <pubDate>Sun, 16 Feb 2014 18:04:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/02/dddbe-slides-on-the-ubiquitous-language/</guid>
-      <description>Monday, I and four others did a DDDBE session on the strategic side of Domain Driven Design.
-My talk covered the Ubiquitous Language, and can be found on Slideshare or embedded below. I might end up writing down the content of the talk as well - some images are meaningless without words. Evaluating feedback, I think the biggest mistake we made was keeping some things too abstract - curse of knowledge at work.</description>
-    </item>
-    
-    <item>
       <title>The first DDDBE Modellathon</title>
       <link>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</link>
       <pubDate>Fri, 06 Sep 2013 13:24:00 +0200</pubDate>

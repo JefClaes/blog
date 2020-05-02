@@ -3,7 +3,8 @@ title = "Strategic DDD in a nutshell "
 slug = "2014-02-23-strategic-ddd-in-a-nutshell"
 published = 2014-02-23T18:21:00+01:00
 author = "Jef Claes"
-tags = [ "DDD",]
+tags = [ "ddd",]
+url = "2014/02/strategic-ddd-in-nutshell.html"
 +++
 There are two big parts to Domain Driven Design; strategy and tactics.
 Strategy helps setting out a high-level grand design, while tactics

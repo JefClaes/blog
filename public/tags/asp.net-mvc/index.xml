@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Rebinding a knockout view model</title>
-      <link>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</link>
-      <pubDate>Sun, 06 Apr 2014 18:43:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/04/rebinding-a-knockout-view-model/</guid>
-      <description>As you might have noticed reading my last two posts, I have been doing a bit of front-end work using knockout.js. Here is something that had me scratching my head for a little while..
-In one of our pages we&amp;rsquo;re subscribing to a specific event. As soon as that event arrives, we need to reinitialize the model that is bound to our container element. Going through snippets earlier, I remembered seeing the cleanNode function being used a few times - which I thought would remove all knockout data and event handlers from an element.</description>
-    </item>
-    
-    <item>
       <title>Angular.js and IE8 caching</title>
       <link>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</link>
       <pubDate>Sun, 09 Jun 2013 16:52:00 +0200</pubDate>

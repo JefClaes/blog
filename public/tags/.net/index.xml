@@ -12,49 +12,6 @@
     
     
     <item>
-      <title>Paper notes: A Study and Toolkit for Asynchronous Programming in C#</title>
-      <link>http://localhost:1313/2014/06/paper-notes-a-study-and-toolkit-for-asynchronous-programming-in-c/</link>
-      <pubDate>Sun, 08 Jun 2014 18:33:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/06/paper-notes-a-study-and-toolkit-for-asynchronous-programming-in-c/</guid>
-      <description>The .NET framework mainly provides two models for asynchronous programming: (1) the Asynchronous Programming Model (APM), that uses callbacks, and (2) the Task Asynchronous Pattern (TAP), that uses Tasks, which are similar to the concept of futures.
-The Task represents the operation in progress, and its future result. The Task can be (1) queried for the status of the operation, (2) synchronized upon to wait for the result of the operation, or (3) set up with a continuation that resumes in the background when the task completes.</description>
-    </item>
-    
-    <item>
-      <title>What if we stored events instead of state? - slides</title>
-      <link>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</link>
-      <pubDate>Mon, 12 May 2014 17:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/05/what-if-we-stored-events-instead-of-state-slides/</guid>
-      <description>I just returned from Croatia, where I got to speak twice at the second edition of The Geek Gathering.
-Being such a young conference, I had no idea what to expect really. Turns out they have a good thing going on; a small, local and very personal approach to conferences. Speakers both local and international, covering topics that serve the community, not their employer.
-Together with Tom, I preached Alberto&amp;lsquo;s Event Storming during a four hour long workshop.</description>
-    </item>
-    
-    <item>
-      <title>Glueing the browser and POS devices together </title>
-      <link>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</link>
-      <pubDate>Sun, 04 May 2014 18:23:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2014/05/glueing-the-browser-and-pos-devices-together/</guid>
-      <description>I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
-Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&amp;rsquo;s asynchronous programming model and its incredible rich ecosystem.</description>
-    </item>
-    
-    <item>
-      <title>Alternatives to Udi&#39;s domain events</title>
-      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</link>
-      <pubDate>Sun, 02 Mar 2014 18:21:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events/</guid>
-      <description>Almost four years ago Udi Dahan introduced an elegant technique that allows you to have your domain model dispatch events without injecting a dispatcher into the model - keeping your model focused on the business at hand.
-This works by having a static DomainEvents class which dispatches raised events.
-This customer aggregate raises an event when a customer moves to a new address.
-public class Customer { private readonly string _id; private Address _address; private Name _name; public Customer(string id, Name name, Address address) { Guard.</description>
-    </item>
-    
-    <item>
       <title>An event store with optimistic concurrency</title>
       <link>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</link>
       <pubDate>Sun, 10 Nov 2013 18:25:00 +0100</pubDate>

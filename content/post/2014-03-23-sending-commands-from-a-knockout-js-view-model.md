@@ -3,7 +3,8 @@ title = "Sending commands from a knockout.js view model"
 slug = "2014-03-23-sending-commands-from-a-knockout-js-view-model"
 published = 2014-03-23T18:31:00+01:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", "AJAX", "javascript", "ASPNET MVC",]
+tags = [ "code",]
+url = "2014/03/sending-commands-from-knockoutjs-view.html"
 +++
 While I got to use [angular.js](http://angularjs.org/) for a good while
 last year, I found myself returning to
@@ -17,93 +18,101 @@ less.
   
 Let's say that I have a view model for making a deposit.
 
-    var DepositViewModel = function() {
-        var self = this;
+```js
+var DepositViewModel = function() {
+    var self = this;
 
-        self.account = ko.observable('');
-        self.amount = ko.observable(0);
+    self.account = ko.observable('');
+    self.amount = ko.observable(0);
 
-        self.depositEnabled = ko.computed(function() {
-            return self.account() !== '' && self.amount() > 0;
+    self.depositEnabled = ko.computed(function() {
+        return self.account() !== '' && self.amount() > 0;
+    });
+    
+    self.deposit = function() {
+        if (!self.depositEnabled()) {
+            throw new Error('Deposit should be enabled.');
+        }
+
+        $.ajax({ 
+            url: '/Commands/Deposit', 
+            data: { account: self.account(), amount: self.amount() }, 
+            success: function() { self.amount(0); }
+            type: 'POST', 
+            dataType: 'json' 
         });
-        
-        self.deposit = function() {
-            if (!self.depositEnabled()) {
-                throw new Error('Deposit should be enabled.');
-            }
-
-            $.ajax({ 
-                url: '/Commands/Deposit', 
-                data: { account: self.account(), amount: self.amount() }, 
-                success: function() { self.amount(0); }
-                type: 'POST', 
-                dataType: 'json' 
-            });
-        };
     };
+};
 
-    ko.applyBindings(new DepositViewModel());
+ko.applyBindings(new DepositViewModel());
+```
 
 Writing a test for this, it was obvious that I couldn't have my deposit
 function make requests directly. An abstraction that has served me well
 in the past, is a command executor. 
 
-    CommandExecutor = function() {
-        this.execute = function(command, success) { };
-    };
+```js
+CommandExecutor = function() {
+    this.execute = function(command, success) { };
+};
+```
 
 We can have an implementation that handles each command individually, or
 we can have it send requests to our server by convention. The
 implementation below assumes that the name of our command has a
 corresponding endpoint on the server. 
 
-    CommandExecutor = function() {
+```js
+CommandExecutor = function() {
 
-        this.execute = function(command, success) {
+    this.execute = function(command, success) {
 
-            if (console) {
-                console.log('Executing command..');
-                console.log(command);
-            }
+        if (console) {
+            console.log('Executing command..');
+            console.log(command);
+        }
 
-            $.ajax({ 
-                url: '/Commands/' + command.name, data: command.data, 
-                success: success
-                type: 'POST', dataType: 'json' 
-            });
+        $.ajax({ 
+            url: '/Commands/' + command.name, data: command.data, 
+            success: success
+            type: 'POST', dataType: 'json' 
+        });
 
-        };
     };
+};
+```
 
 While angular.js has dependency management built in, we can get away by
 injecting dependencies manually and a bit of bootstrapping - it's not
 that I often have large dependency graphs in the browser, or that I care
 much about the life cycles of my components.
 
-    var DepositViewModel = function(dependencies) {
-        var self = this;
+```js
+var DepositViewModel = function(dependencies) {
+    var self = this;
 
-        self.account = ko.observable('');
-        self.amount = ko.observable(0);
+    self.account = ko.observable('');
+    self.amount = ko.observable(0);
 
-        self.depositEnabled = ko.computed(function() {
-            return self.account() !== '' && self.amount() > 0;
-        });
-        
-        self.deposit = function() {
-            if (!self.depositEnabled()) {
-                throw new Error('Deposit should be enabled.');
-            }
+    self.depositEnabled = ko.computed(function() {
+        return self.account() !== '' && self.amount() > 0;
+    });
+    
+    self.deposit = function() {
+        if (!self.depositEnabled()) {
+            throw new Error('Deposit should be enabled.');
+        }
 
-            var command = { 
-                name: 'Deposit', 
-                data: { account: self.account(), amount: self.amount() } };
-            var callback = function() { self.amount(0); };
-            dependencies.commandExecutor.execute(command, callback);
-        };
+        var command = { 
+            name: 'Deposit', 
+            data: { account: self.account(), amount: self.amount() } };
+        var callback = function() { self.amount(0); };
+        dependencies.commandExecutor.execute(command, callback);
     };
+};
 
-    ko.applyBindings(new DepositViewModel({ commandExecutor: new CommandExecutor() }));
+ko.applyBindings(new DepositViewModel({ commandExecutor: new CommandExecutor() }));
+```
 
 See, very little magic required.  
   
@@ -111,44 +120,46 @@ Writing a test, we now only need to replace the command executor with an
 implementation that will record commands instead of actually sending
 them to the server.
 
-    var CommandExecutorMock = function () {
+```js
+var CommandExecutorMock = function () {
 
-        var commands = [];
+    var commands = [];
 
-        this.execute = function (command, success) {
-            commands.push(command);
-            success();
-        };
-        this.verifyCommandWasExecuted = function(command) {
-            for (var i = 0; i < commands.length; i++) {
-                if (JSON.stringify(commands[i]) === JSON.stringify(command)) {
-                    return true;                        
-                }
+    this.execute = function (command, success) {
+        commands.push(command);
+        success();
+    };
+    this.verifyCommandWasExecuted = function(command) {
+        for (var i = 0; i < commands.length; i++) {
+            if (JSON.stringify(commands[i]) === JSON.stringify(command)) {
+                return true;                        
             }
-            return false;
-        };
-
+        }
+        return false;
     };
 
-    describe("When a deposit is invoked", function () {
+};
 
-        var commandExecutor = new CommandExecutorMock();
-        
-        var model = new DepositViewModel({ commandExecutor: commandExecutor });
-        model.account('MyAccount');
-        model.amount(100);
-        model.deposit();
+describe("When a deposit is invoked", function () {
 
-        it("a deposit command is sent.", function() {
-            var command = {
-                name: 'Deposit', 
-                data: { account: 'MyAccount', amount: 100 }
-            };
+    var commandExecutor = new CommandExecutorMock();
+    
+    var model = new DepositViewModel({ commandExecutor: commandExecutor });
+    model.account('MyAccount');
+    model.amount(100);
+    model.deposit();
 
-            expect(commandExecutor.verifyCommandWasExecuted(command)).toBe(true);
-        });  
+    it("a deposit command is sent.", function() {
+        var command = {
+            name: 'Deposit', 
+            data: { account: 'MyAccount', amount: 100 }
+        };
 
-    });
+        expect(commandExecutor.verifyCommandWasExecuted(command)).toBe(true);
+    });  
+
+});
+```
 
 I did something similar for queries, and ended up with not that much
 code, that didn't even take that long to write. I'm curious to see how
