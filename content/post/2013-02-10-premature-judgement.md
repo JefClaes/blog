@@ -3,7 +3,8 @@ title = "Premature judgement"
 slug = "2013-02-10-premature-judgement"
 published = 2013-02-10T16:46:00.001000+01:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2013/02/premature-judgment.html"
 +++
 When I started my first job, I hardly ever judged my peers. After all,
 how could I? Everything was unknown for me; I couldn't differentiate
@@ -38,19 +39,12 @@ neglecting basic hygiene though!
   
 I tried to come up with other things that influence my opinion on
 someone before having actually worked with them; I found two.  
-  
 
-1.  The biggest influencer is word of mouth. I try to surround myself
-    with people that share a similar thinking, and if that trusted
-    circle has a strong opinion on someone else, I take note.
-2.  The last influencer is someone's online presence. When I learn of
-    someone new joining ranks, I can't resist to look up what he's doing
-    online. Twitter, Facebook or a blog can give away quite a bit.
-
-  
-  
+1. The biggest influencer is word of mouth. I try to surround myself with people that share a similar thinking, and if that trusted circle has a strong opinion on someone else, I take note.
+2. The last influencer is someone's online presence. When I learn of someone new joining ranks, I can't resist to look up what he's doing online. Twitter, Facebook or a blog can give away quite a bit.
+   
 All in all, I think some preconception is human, and might be the result
 of subconsciously protecting your work. You only want to involve those
 with whom you will enjoy working towards your shared goal.  
-*  
-Have you experienced similar behavior? When do you judge prematurely?*
+
+*Have you experienced similar behavior? When do you judge prematurely?*

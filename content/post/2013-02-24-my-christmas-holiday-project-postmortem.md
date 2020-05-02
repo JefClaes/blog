@@ -3,7 +3,8 @@ title = "My Christmas holiday project postmortem"
 slug = "2013-02-24-my-christmas-holiday-project-postmortem"
 published = 2013-02-24T16:42:00.001000+01:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "my-christmas-holiday-project-postmortem.html"
 +++
 Somewhere over a year and a half ago I discovered the music of Dire
 Straits, which has sparked a fanatical love and fascination for the
@@ -22,7 +23,7 @@ just bought the Strat, I thought I could maybe find a cheap used Les
 Paul online.  
   
 I set out to find one on [the most popular Belgian online secondhand
-marketplace<span id="goog_2007999932"></span>](http://www.2dehands.be/)
+marketplace](http://www.2dehands.be/)
 (600k visitors daily), so I started browsing their listings daily. This
 turned out to be rather cumbersome and inefficient: constantly repeating
 the same process, items were already sold before I could make a bid,
@@ -81,33 +82,20 @@ As a side note; secondhand seems to be quite an expensive keyword!
   
 In hindsight, I can think of plenty of reasons why this somewhat useful
 project has no success:  
+- The problem it is trying to solve obviously isn't enough of a pain!
+- People don't Google for it, and even if they did, this site had hardly any chance in making it to the first page.
+- In general the secondhand offering is enormous, and people often quickly settle for less.
+- Specialized markets aren't situated on these sites. 
+- People don't like giving away their email address, definitely not to strangers they don't trust. 
+- Everyone struggles to keep their inboxes clean, receiving mail puts off people.
 
--   The problem it is trying to solve obviously isn't enough of a pain!
--   People don't Google for it, and even if they did, this site had
-    hardly any chance in making it to the first page.
--   In general the secondhand offering is enormous, and people often
-    quickly settle for less.
--   Specialized markets aren't situated on these sites. 
--   People don't like giving away their email address, definitely not to
-    strangers they don't trust. 
--   Everyone struggles to keep their inboxes clean, receiving mail puts
-    off people.
-
-  
 Damn, it's always evident in hindsight.
 
-  
-
 Here are a few things I learned/got confirmed:
+- Being your own customer is priceless; you know exactly where the value is at.
+- Chances are you will never see a user; don't spend too much time optimizing for scalability and reliability.
+- Some Google ads plus a website with a simple form can be enough to let you cheaply validate the worthiness of pursuing an idea.
 
--   Being your own customer is priceless; you know exactly where the
-    value is at.
--   Chances are you will never see a user; don't spend too much time
-    optimizing for scalability and reliability.
--   Some Google ads plus a website with a simple form can be enough to
-    let you cheaply validate the worthiness of pursuing an idea.
-
-  
 (\*) Take some time to explore his work: [brothers in
 arms](http://www.youtube.com/watch?v=5vUDmFjWgVo), [postcards from
 Paraguay](http://www.youtube.com/watch?v=aXXemzIo1ao), [song for Sonny

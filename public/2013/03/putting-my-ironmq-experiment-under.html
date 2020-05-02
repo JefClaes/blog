@@ -16,7 +16,7 @@ I arranged a simple scenario for testing: one message type - thus one queue, whe
 <meta property="og:description" content="Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&rsquo;t put it under stress yet; &ldquo;First make it work, then make it fast&rdquo;, and all of that.
 I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/" />
+<meta property="og:url" content="http://localhost:1313/2013/03/putting-my-ironmq-experiment-under.html" />
 <meta property="article:published_time" content="2013-03-17T16:10:00+01:00" />
 <meta property="article:modified_time" content="2013-03-17T16:10:00+01:00" />
 <meta name="twitter:card" content="summary"/>
@@ -98,22 +98,21 @@ make it work, then make it fast&rdquo;, and all of that.</p>
 queue, where there are eight queue consumers that simultaneously pull
 messages from that queue, and dispatch them to a handler which sleeps
 for one second.</p>
-<pre><code>public class MessageSleepForOneSecond { }
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">MessageSleepForOneSecond</span> { }
 
-public class MessageSleepForOneSecondHandler : IMessageHandler&lt;MessageSleepForOneSecond&gt;
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">MessageSleepForOneSecondHandler</span> : <span style="color:#268bd2">IMessageHandler</span>&lt;<span style="color:#268bd2">MessageSleepForOneSecond</span>&gt;
 {
-    public void Handle(MessageSleepForOneSecond message)
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">MessageSleepForOneSecond</span> <span style="color:#268bd2">message</span>)
     {
-        Thread.Sleep(1000);
+        <span style="color:#268bd2">Thread</span>.<span style="color:#268bd2">Sleep</span>(<span style="color:#2aa198;font-weight:bold">1000</span>);
     }
-} 
-</code></pre>
-<p>To establish a baseline, I foolishly set the polling interval to only
+}
+</code></pre></div><p>To establish a baseline, I foolishly set the polling interval to only
 100ms, and pulled 2000 messages from the queue one at a time. With this
 configuration I processed all 2000 messages in 2 minutes and 20 seconds,
 with an average throughput of 14.3 messages per second. In theory you
-would expect the throughput to be higher though.<br>
-The constraint in this story is the <a href="http://msdn.microsoft.com/en-us/library/system.threading.threadpool.aspx">CLR&rsquo;s thread
+would expect the throughput to be higher though.</p>
+<p>The constraint in this story is the <a href="http://msdn.microsoft.com/en-us/library/system.threading.threadpool.aspx">CLR&rsquo;s thread
 pool</a>.
 Every time a queue consumer&rsquo;s internal timer ticks, the callback which
 pulls from the queue and invokes the messagehandler, takes up a new
@@ -136,42 +135,40 @@ reduces the number of necessary HTTP requests, and the number of threads
 needed to do work on. To support this, I extended the queue consumer
 configuration with a new property, and changed the queue consumer to
 take the batch size into account.</p>
-<pre><code>public interface IQueueConsumerConfiguration&lt;T&gt;
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IQueueConsumerConfiguration</span>&lt;<span style="color:#268bd2">T</span>&gt;
 {
-    int PollingInterval { get; }
-
-    int BatchSize { get; }
+    <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">PollingInterval</span> { <span style="color:#859900">get</span>; }
+    <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">BatchSize</span> { <span style="color:#859900">get</span>; }
 }
 
-try
+<span style="color:#859900">try</span>
 {
-    var messages = (IEnumerable&lt;Message&gt;)null;
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">messages</span> = (<span style="color:#268bd2">IEnumerable</span>&lt;<span style="color:#268bd2">Message</span>&gt;)<span style="color:#859900">null</span>;
 
-    if (!_queue.TryGet(out messages, _queueConsumerConfiguration.BatchSize))
-        return;
+    <span style="color:#859900">if</span> (!<span style="color:#268bd2">_queue</span>.<span style="color:#268bd2">TryGet</span>(<span style="color:#859900">out</span> <span style="color:#268bd2">messages</span>, <span style="color:#268bd2">_queueConsumerConfiguration</span>.<span style="color:#268bd2">BatchSize</span>))
+        <span style="color:#859900">return</span>;
 
-    foreach (var message in messages)
+    <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">message</span> <span style="color:#859900">in</span> <span style="color:#268bd2">messages</span>)
     {
-        try
+        <span style="color:#859900">try</span>
         {
-            var messageBody = (T)JsonConvert.DeserializeObject(message.Body, typeof(T));
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">messageBody</span> = (<span style="color:#268bd2">T</span>)<span style="color:#268bd2">JsonConvert</span>.<span style="color:#268bd2">DeserializeObject</span>(<span style="color:#268bd2">message</span>.<span style="color:#268bd2">Body</span>, <span style="color:#859900">typeof</span>(<span style="color:#268bd2">T</span>));
 
-            _messageDispatcher.Dispatch&lt;T&gt;(messageBody);
+            <span style="color:#268bd2">_messageDispatcher</span>.<span style="color:#268bd2">Dispatch</span>&lt;<span style="color:#268bd2">T</span>&gt;(<span style="color:#268bd2">messageBody</span>);
 
-            _queue.Delete(message.Id);
+            <span style="color:#268bd2">_queue</span>.<span style="color:#268bd2">Delete</span>(<span style="color:#268bd2">message</span>.<span style="color:#268bd2">Id</span>);
         }
-        catch (Exception ex)
+        <span style="color:#859900">catch</span> (<span style="color:#268bd2">Exception</span> <span style="color:#268bd2">ex</span>)
         {
-            _errorHandler.Handle(ex, message);
+            <span style="color:#268bd2">_errorHandler</span>.<span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">ex</span>, <span style="color:#268bd2">message</span>);
         }
     }
 }
-catch (Exception ex)
+<span style="color:#859900">catch</span> (<span style="color:#268bd2">Exception</span> <span style="color:#268bd2">ex</span>)
 {
-    _errorHandler.Handle(ex, null);
+    <span style="color:#268bd2">_errorHandler</span>.<span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">ex</span>, <span style="color:#859900">null</span>);
 }                
-</code></pre>
-<p>On repeating the test with 2000 messages, the same polling interval of
+</code></pre></div><p>On repeating the test with 2000 messages, the same polling interval of
 100ms, but with a batch size of 30, the messages were now all processed
 in one minute and fifteen seconds, resulting in a throughput of 26
 messages per second. That&rsquo;s almost an improvement of 100%.</p>

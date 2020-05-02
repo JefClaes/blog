@@ -12,26 +12,6 @@
     
     
     <item>
-      <title>Adding the R to CQS: some storage options</title>
-      <link>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</link>
-      <pubDate>Sun, 17 Feb 2013 17:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</guid>
-      <description>I&amp;rsquo;ve been writing quite a bit about CQS (or command and query separation) lately. In my last post on using events, I already hinted towards bringing in the R; command and query responsibility separation.
-With CQS, commands can mutate data, while queries can only read that data. CQRS takes this one step further, and assigns commands and queries each a dedicated model; we now talk of a write side, and a read side.</description>
-    </item>
-    
-    <item>
-      <title>RavenDB: Drop all collections</title>
-      <link>http://localhost:1313/2013/01/ravendb-drop-all-collections/</link>
-      <pubDate>Thu, 24 Jan 2013 20:08:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/ravendb-drop-all-collections/</guid>
-      <description>I never stub or mock the database when I&amp;rsquo;m using RavenDB. Generally, I use an embeddable documentstore running in memory, and initialize a new instance on every test. However, I like to run some stress tests against a real instance, and here I found myself wanting to wipe clean the state of previous tests, without having to create a new database (which is rather slow).
-First I create the default DocumentsByEntityName index to make sure it&amp;rsquo;s there - it normally gets created when you open the studio for the first time.</description>
-    </item>
-    
-    <item>
       <title>On crime and document stores</title>
       <link>http://localhost:1313/2012/07/on-crime-and-document-stores/</link>
       <pubDate>Sun, 01 Jul 2012 16:04:00 +0200</pubDate>

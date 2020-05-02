@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Raising events in commandhandlers - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Raising events in commandhandlers">
+<meta itemprop="description" content="I&rsquo;ve explored quite a few options on how to handle commands and queries in the last few posts. I finally settled on this approach. The example used in that post looked like this.
+public class CreateSubscriptionCommandHandler : ICommandHandler&lt;CreateSubscriptionCommand&gt; { private IDocumentSession _session; public CreateSubscriptionCommandHandler(IDocumentSession session) { _session = session; } public void Handle(CreateSubscriptionCommand command) { var subscription = new Documents.Subscription( command.Value, command.Category, command.EmailAddress); _session.Store(subscription); } } Now imagine I would want to do some extra stuff after creating the subscription; update the sales statistics, append the email address to a mailing list, send out a confirmation email, etc.">
+<meta itemprop="datePublished" content="2013-02-03T17:49:00&#43;01:00" />
+<meta itemprop="dateModified" content="2013-02-03T17:49:00&#43;01:00" />
+<meta itemprop="wordCount" content="561">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Raising events in commandhandlers" />
+<meta property="og:description" content="I&rsquo;ve explored quite a few options on how to handle commands and queries in the last few posts. I finally settled on this approach. The example used in that post looked like this.
+public class CreateSubscriptionCommandHandler : ICommandHandler&lt;CreateSubscriptionCommand&gt; { private IDocumentSession _session; public CreateSubscriptionCommandHandler(IDocumentSession session) { _session = session; } public void Handle(CreateSubscriptionCommand command) { var subscription = new Documents.Subscription( command.Value, command.Category, command.EmailAddress); _session.Store(subscription); } } Now imagine I would want to do some extra stuff after creating the subscription; update the sales statistics, append the email address to a mailing list, send out a confirmation email, etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/02/raising-events-in-commandhandlers.html" />
+<meta property="article:published_time" content="2013-02-03T17:49:00+01:00" />
+<meta property="article:modified_time" content="2013-02-03T17:49:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Raising events in commandhandlers"/>
+<meta name="twitter:description" content="I&rsquo;ve explored quite a few options on how to handle commands and queries in the last few posts. I finally settled on this approach. The example used in that post looked like this.
+public class CreateSubscriptionCommandHandler : ICommandHandler&lt;CreateSubscriptionCommand&gt; { private IDocumentSession _session; public CreateSubscriptionCommandHandler(IDocumentSession session) { _session = session; } public void Handle(CreateSubscriptionCommand command) { var subscription = new Documents.Subscription( command.Value, command.Category, command.EmailAddress); _session.Store(subscription); } } Now imagine I would want to do some extra stuff after creating the subscription; update the sales statistics, append the email address to a mailing list, send out a confirmation email, etc."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">03</span>
+							<span class="rest">Feb 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Raising events in commandhandlers</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>I&rsquo;ve explored quite a few options on how to handle commands and queries
+in the last few posts. I finally settled on <a href="http://www.jefclaes.be/2013/01/separating-command-data-from-logic-and.html">this
+approach</a>.
+The example used in that post looked like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">CreateSubscriptionCommandHandler</span> : <span style="color:#268bd2">ICommandHandler</span>&lt;<span style="color:#268bd2">CreateSubscriptionCommand</span>&gt;
+{    
+    <span style="color:#859900">private</span> <span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">_session</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">CreateSubscriptionCommandHandler</span>(<span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">session</span>)
+    {
+        <span style="color:#268bd2">_session</span> = <span style="color:#268bd2">session</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">CreateSubscriptionCommand</span> <span style="color:#268bd2">command</span>)
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">subscription</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">Documents</span>.<span style="color:#268bd2">Subscription</span>(
+            <span style="color:#268bd2">command</span>.<span style="color:#268bd2">Value</span>, <span style="color:#268bd2">command</span>.<span style="color:#268bd2">Category</span>, <span style="color:#268bd2">command</span>.<span style="color:#268bd2">EmailAddress</span>);
+
+        <span style="color:#268bd2">_session</span>.<span style="color:#268bd2">Store</span>(<span style="color:#268bd2">subscription</span>);    
+    }
+}
+</code></pre></div><p>Now imagine I would want to do some extra stuff <em>after</em> creating the
+subscription; update the sales statistics, append the email address to a
+mailing list, send out a confirmation email, etc..</p>
+<p>You could go at this by simply extending the commandhandler, but the
+problem here is that you quickly end up with a bulky and
+dependency-heavy commandhandler, which will quickly fail to communicate
+its intent.</p>
+<p>One solution could be to introduce events to decouple things in smaller
+pieces, and to help communicate intent more clearly.</p>
+<p>The infrastructure to handle events is rather straightforward, and can
+be based on <a href="http://www.udidahan.com/2009/06/14/domain-events-salvation/">Udi Dahan&rsquo;s Domain Events
+Salvation</a>.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Events</span> : <span style="color:#268bd2">IEvents</span>
+{
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">_kernel</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Events</span>(<span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">kernel</span>)
+    {
+        <span style="color:#268bd2">_kernel</span> = <span style="color:#268bd2">kernel</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Raise</span>&lt;<span style="color:#268bd2">T</span>&gt;(<span style="color:#268bd2">T</span> <span style="color:#268bd2">@event</span>) <span style="color:#859900">where</span> <span style="color:#268bd2">T</span> : <span style="color:#268bd2">IEvent</span>
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">handlers</span> = <span style="color:#268bd2">_kernel</span>.<span style="color:#268bd2">GetAll</span>&lt;<span style="color:#268bd2">IEventHandler</span>&lt;<span style="color:#268bd2">T</span>&gt;&gt;();
+
+        <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">handler</span> <span style="color:#859900">in</span> <span style="color:#268bd2">handlers</span>)        
+            <span style="color:#268bd2">handler</span>.<span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">@event</span>);        
+    }     
+}
+</code></pre></div><p>When an event is raised, the eventing infrastructure will look in the
+container for implementations that can handle the event, and invoke them
+in a random order.</p>
+<p>Raising an event from the commandhandler can be done by injecting this
+extra piece of infrastructure.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">CreateSubscriptionCommandHandler</span> : <span style="color:#268bd2">ICommandHandler</span>&lt;<span style="color:#268bd2">CreateSubscriptionCommand</span>&gt;
+{    
+    <span style="color:#859900">private</span> <span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">_session</span>;
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IEvents</span> <span style="color:#268bd2">_events</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">CreateSubscriptionCommandHandler</span>(<span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">session</span>, <span style="color:#268bd2">IEvent</span> <span style="color:#268bd2">events</span>)
+    {
+        <span style="color:#268bd2">_session</span> = <span style="color:#268bd2">session</span>;
+        <span style="color:#268bd2">_events</span> = <span style="color:#268bd2">events</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">CreateSubscriptionCommand</span> <span style="color:#268bd2">command</span>)
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">subscription</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">Documents</span>.<span style="color:#268bd2">Subscription</span>(
+            <span style="color:#268bd2">command</span>.<span style="color:#268bd2">Value</span>, <span style="color:#268bd2">command</span>.<span style="color:#268bd2">Category</span>, <span style="color:#268bd2">command</span>.<span style="color:#268bd2">EmailAddress</span>);
+
+        <span style="color:#268bd2">_session</span>.<span style="color:#268bd2">Store</span>(<span style="color:#268bd2">subscription</span>);    
+        
+        <span style="color:#268bd2">_events</span>.<span style="color:#268bd2">Raise</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">SubscriptionCreatedEvent</span>(<span style="color:#268bd2">query</span>.<span style="color:#268bd2">Id</span>));
+    }
+}
+</code></pre></div><p>The <code>SubscriptionCreatedEvent</code> class is a simple value object, which
+exposes the subscription identifier.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">SubscriptionCreatedEvent</span> : <span style="color:#268bd2">IEvent</span>
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">SubscriptionCreatedEvent</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">subscriptionId</span>)
+    {
+        <span style="color:#268bd2">SubscriptionId</span> = <span style="color:#268bd2">subscriptionId</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">SubscriptionId</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Equals</span>(<span style="color:#268bd2">Object</span> <span style="color:#268bd2">other</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">other</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">otherEvent</span> = <span style="color:#268bd2">other</span> <span style="color:#859900">as</span> <span style="color:#268bd2">SubscriptionCreatedEvent</span>;
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">otherEvent</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">otherEvent</span>.<span style="color:#268bd2">SubscriptionId</span> == <span style="color:#268bd2">SubscriptionId</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">GetHashCode</span>()
+    {
+        <span style="color:#859900">return</span> <span style="color:#268bd2">SubscriptionId</span>.<span style="color:#268bd2">GetHashCode</span>();
+    }
+} 
+</code></pre></div><p>To subscribe to this event, implement the <code>IEventHandler</code> interface, and
+register the implemenation in the container.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IEventHandler</span>&lt;<span style="color:#268bd2">T</span>&gt; <span style="color:#859900">where</span> <span style="color:#268bd2">T</span> : <span style="color:#268bd2">IEvent</span>
+{
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">T</span> <span style="color:#268bd2">@event</span>);
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">SendConfirmationMailOnSubscriptionCreated</span> : <span style="color:#268bd2">IEventHandler</span>&lt;<span style="color:#268bd2">SubscriptionCreatedEvent</span>&gt;
+{    
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span>  <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">SubscriptionCreatedEvent</span> <span style="color:#268bd2">@event</span>)
+    {
+        ...
+    }
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">UpdateSalesStatisticsOnSubscriptionCreated</span> : <span style="color:#268bd2">IEventHandler</span>&lt;<span style="color:#268bd2">SubscriptionCreatedEvent</span>&gt;
+{    
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span>  <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">SubscriptionCreatedEvent</span> <span style="color:#268bd2">@event</span>)
+    {
+        ...
+    }
+}
+</code></pre></div><p>Eventhandlers are invoked synchronously, and participate in the
+commandhandler&rsquo;s unit of work, so if something goes haywire in one of
+the eventhandlers, nothing gets committed, not even what happened in the
+original commandhandler. Depending on your requirements, you might want
+to handle this differently though.</p>
+<p>With this approach, tests also become more compact. Commandhandler tests
+now only need to assert that the event gets raised, and all the other
+logic gets offloaded to separate tests per eventhandler.</p>
+<h3 id="summary">Summary</h3>
+<p>By introducing events, you can decouple commandhandlers into more
+focused, and intent-revealing bits. Your tests are the perfect proof of
+how much cleaner things get. One of the cues to listen for is <em>when</em> you
+do x or <em>on</em> doing y, also do z.</p>
+<p><em>Are you using events? If so, domain events, or its big brother Event
+Sourcing?</em></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -91,5 +91,33 @@ One project I&amp;rsquo;m working on right now makes use of domain events. As an
 I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.</description>
     </item>
     
+    <item>
+      <title>Putting my IronMQ experiment under stress</title>
+      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under.html</link>
+      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under.html</guid>
+      <description>Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&amp;rsquo;t put it under stress yet; &amp;ldquo;First make it work, then make it fast&amp;rdquo;, and all of that.
+I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second.</description>
+    </item>
+    
+    <item>
+      <title>Some experimental infrastructure for IronMQ pull </title>
+      <link>http://localhost:1313/2013/03/some-experimental-infrastructure-for.html</link>
+      <pubDate>Sun, 10 Mar 2013 17:29:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/some-experimental-infrastructure-for.html</guid>
+      <description>I wrote about using IronMQ as a cloud-based message queue last week. In that post I explained that you can go at using IronMQ in two ways; either you pull from the queue yourself, or you let IronMQ push messages from the queue to your HTTP endpoints. At first sight, the latter allows you to outsource more infrastructure to their side, but upon closer inspection it also introduces other concerns: security, local debugging and scalability.</description>
+    </item>
+    
+    <item>
+      <title>First IronMQ impressions</title>
+      <link>http://localhost:1313/2013/03/first-ironmq-impressions.html</link>
+      <pubDate>Sun, 03 Mar 2013 16:45:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/03/first-ironmq-impressions.html</guid>
+      <description>First time I touched messaging was in the first few years of my professional life working on software that supported fire departments in their day-to-day activities. The dispatching software would send messages to a proprietary broker, which in its turn would forward them to interested subscribers; other dispatching clients, or services. To ensure availability, the broker component could failover to a different machine, but that was about it. It didn&amp;rsquo;t allow you to queue or retry messages; if you weren&amp;rsquo;t up when the messages were forwarded, you would never receive them.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -3,7 +3,8 @@ title = "Putting my IronMQ experiment under stress"
 slug = "2013-03-17-putting-my-ironmq-experiment-under-stress"
 published = 2013-03-17T16:10:00+01:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", "Messaging", ".NET", "Refactoring", "HTTP",]
+tags = [ "code", "infrastructure"]
+url = "2013/03/putting-my-ironmq-experiment-under.html"
 +++
 Two weeks ago, [I shared my first impressions of
 IronMQ](http://www.jefclaes.be/2013/03/first-ironmq-impressions.html).
@@ -11,27 +12,30 @@ Last week, [I looked at some infrastructure to facilitate pulling from
 IronMQ](http://www.jefclaes.be/2013/03/some-experimental-infrastructure-for.html).
 This implementation worked, but I hadn't put it under stress yet; "First
 make it work, then make it fast", and all of that.  
-  
+
 I arranged a simple scenario for testing: one message type - thus one
 queue, where there are eight queue consumers that simultaneously pull
 messages from that queue, and dispatch them to a handler which sleeps
 for one second.  
 
-    public class MessageSleepForOneSecond { }
+```csharp
+public class MessageSleepForOneSecond { }
 
-    public class MessageSleepForOneSecondHandler : IMessageHandler<MessageSleepForOneSecond>
+public class MessageSleepForOneSecondHandler : IMessageHandler<MessageSleepForOneSecond>
+{
+    public void Handle(MessageSleepForOneSecond message)
     {
-        public void Handle(MessageSleepForOneSecond message)
-        {
-            Thread.Sleep(1000);
-        }
-    } 
+        Thread.Sleep(1000);
+    }
+}
+```
 
 To establish a baseline, I foolishly set the polling interval to only
 100ms, and pulled 2000 messages from the queue one at a time. With this
 configuration I processed all 2000 messages in 2 minutes and 20 seconds,
 with an average throughput of 14.3 messages per second. In theory you
-would expect the throughput to be higher though.  
+would expect the throughput to be higher though.
+
 The constraint in this story is the [CLR's thread
 pool](http://msdn.microsoft.com/en-us/library/system.threading.threadpool.aspx).
 Every time a queue consumer's internal timer ticks, the callback which
@@ -57,40 +61,41 @@ needed to do work on. To support this, I extended the queue consumer
 configuration with a new property, and changed the queue consumer to
 take the batch size into account.  
 
-    public interface IQueueConsumerConfiguration<T>
+```csharp
+public interface IQueueConsumerConfiguration<T>
+{
+    int PollingInterval { get; }
+    int BatchSize { get; }
+}
+
+try
+{
+    var messages = (IEnumerable<Message>)null;
+
+    if (!_queue.TryGet(out messages, _queueConsumerConfiguration.BatchSize))
+        return;
+
+    foreach (var message in messages)
     {
-        int PollingInterval { get; }
-
-        int BatchSize { get; }
-    }
-
-    try
-    {
-        var messages = (IEnumerable<Message>)null;
-
-        if (!_queue.TryGet(out messages, _queueConsumerConfiguration.BatchSize))
-            return;
-
-        foreach (var message in messages)
+        try
         {
-            try
-            {
-                var messageBody = (T)JsonConvert.DeserializeObject(message.Body, typeof(T));
+            var messageBody = (T)JsonConvert.DeserializeObject(message.Body, typeof(T));
 
-                _messageDispatcher.Dispatch<T>(messageBody);
+            _messageDispatcher.Dispatch<T>(messageBody);
 
-                _queue.Delete(message.Id);
-            }
-            catch (Exception ex)
-            {
-                _errorHandler.Handle(ex, message);
-            }
+            _queue.Delete(message.Id);
+        }
+        catch (Exception ex)
+        {
+            _errorHandler.Handle(ex, message);
         }
     }
-    catch (Exception ex)
-    {
-        _errorHandler.Handle(ex, null);
-    }                
+}
+catch (Exception ex)
+{
+    _errorHandler.Handle(ex, null);
+}                
+```
 
 On repeating the test with 2000 messages, the same polling interval of
 100ms, but with a batch size of 30, the messages were now all processed

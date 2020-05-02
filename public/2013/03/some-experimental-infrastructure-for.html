@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Some experimental infrastructure for IronMQ pull  - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Some experimental infrastructure for IronMQ pull ">
+<meta itemprop="description" content="I wrote about using IronMQ as a cloud-based message queue last week. In that post I explained that you can go at using IronMQ in two ways; either you pull from the queue yourself, or you let IronMQ push messages from the queue to your HTTP endpoints. At first sight, the latter allows you to outsource more infrastructure to their side, but upon closer inspection it also introduces other concerns: security, local debugging and scalability.">
+<meta itemprop="datePublished" content="2013-03-10T17:29:00&#43;01:00" />
+<meta itemprop="dateModified" content="2013-03-10T17:29:00&#43;01:00" />
+<meta itemprop="wordCount" content="1093">
+
+
+
+<meta itemprop="keywords" content="code,infrastructure," /><meta property="og:title" content="Some experimental infrastructure for IronMQ pull " />
+<meta property="og:description" content="I wrote about using IronMQ as a cloud-based message queue last week. In that post I explained that you can go at using IronMQ in two ways; either you pull from the queue yourself, or you let IronMQ push messages from the queue to your HTTP endpoints. At first sight, the latter allows you to outsource more infrastructure to their side, but upon closer inspection it also introduces other concerns: security, local debugging and scalability." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/03/some-experimental-infrastructure-for.html" />
+<meta property="article:published_time" content="2013-03-10T17:29:00+01:00" />
+<meta property="article:modified_time" content="2013-03-10T17:29:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Some experimental infrastructure for IronMQ pull "/>
+<meta name="twitter:description" content="I wrote about using IronMQ as a cloud-based message queue last week. In that post I explained that you can go at using IronMQ in two ways; either you pull from the queue yourself, or you let IronMQ push messages from the queue to your HTTP endpoints. At first sight, the latter allows you to outsource more infrastructure to their side, but upon closer inspection it also introduces other concerns: security, local debugging and scalability."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">10</span>
+							<span class="rest">Mar 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Some experimental infrastructure for IronMQ pull </h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>I wrote about using <a href="http://www.jefclaes.be/2013/03/first-ironmq-impressions.html">IronMQ as a cloud-based message
+queue</a>
+last week. In that post I explained that you can go at using IronMQ in
+two ways; either you pull from the queue yourself, or you let IronMQ
+push messages from the queue to your HTTP endpoints. At first sight, the
+latter allows you to outsource more infrastructure to their side, but
+upon closer inspection it  also introduces other concerns: security,
+local debugging and scalability.</p>
+<p>Out-of-the-box there is no infrastructure in the client libraries to
+facilitate periodic pull - polling, that&rsquo;s why I took a stab at doing it
+myself. It&rsquo;s still rough, not production tested, and hasn&rsquo;t considered a
+bunch of niche scenarios, but it should give you an idea of the
+direction it&rsquo;s going.</p>
+<p>A high-level overview of the components looks like this.</p>
+<p><a href="/post/images/2013-03-10-some-experimental-infrastructure-for-ironmq-pull-IronMQPoll.PNG"><img src="/post/images/thumbnails/2013-03-10-some-experimental-infrastructure-for-ironmq-pull-IronMQPoll.PNG" alt=""></a></p>
+<p>A queue host hosts multiple queue consumers. Each queue consumer will
+poll a queue for one type of message on a configurable interval, and
+dispatch dequeued messages to relevant message handlers. After handling
+the message, the message will be deleted from the queue. If something
+happened to go wrong, the error handler for this type of message will be
+invoked, and the message will automatically return to the queue.</p>
+<p>I&rsquo;m going to look at each component, starting with the smallest, and
+slowly assemble them into bigger components.</p>
+<p>Each queue consumer can be configured independently. For now, only the
+polling interval can be changed. By default it&rsquo;s one second, or 1000
+milliseconds.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IQueueConsumerConfiguration</span>&lt;<span style="color:#268bd2">T</span>&gt;
+{
+    <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">PollingInterval</span> { <span style="color:#859900">get</span>; }
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">QueueConsumerConfiguration</span>&lt;<span style="color:#268bd2">T</span>&gt; : <span style="color:#268bd2">IQueueConsumerConfiguration</span>&lt;<span style="color:#268bd2">T</span>&gt;
+{     
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">PollingInterval</span>
+    {
+        <span style="color:#859900">get</span> { <span style="color:#859900">return</span> <span style="color:#2aa198;font-weight:bold">1000</span>; }
+    }       
+}
+</code></pre></div><p>A queue can push messages, get raw messages, and delete them. The
+implementation makes use of the <a href="https://github.com/odeits/IronTools">OSS IronIO client
+libraries</a>.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IQueue</span>&lt;<span style="color:#268bd2">T</span>&gt;
+{
+    <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">TryGet</span>(<span style="color:#859900">out</span> <span style="color:#268bd2">Message</span> <span style="color:#268bd2">message</span>);
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Delete</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">messageId</span>);
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Push</span>(<span style="color:#268bd2">T</span> <span style="color:#268bd2">message</span>);
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Queue</span>&lt;<span style="color:#268bd2">T</span>&gt; : <span style="color:#268bd2">IQueue</span>&lt;<span style="color:#268bd2">T</span>&gt;
+{
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IronIO</span>.<span style="color:#268bd2">IronMQ</span> <span style="color:#268bd2">_queue</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Queue</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">projectId</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">token</span>)
+    {
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">ForEmptyString</span>(<span style="color:#268bd2">projectId</span>, <span style="color:#2aa198">&#34;projectId&#34;</span>);
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">ForEmptyString</span>(<span style="color:#268bd2">token</span>, <span style="color:#2aa198">&#34;token&#34;</span>);
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">queueName</span> = <span style="color:#859900">typeof</span>(<span style="color:#268bd2">T</span>).<span style="color:#268bd2">Name</span>; 
+
+        <span style="color:#268bd2">_queue</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">IronMQ</span>(<span style="color:#268bd2">queueName</span>, <span style="color:#268bd2">projectId</span>, <span style="color:#268bd2">token</span>);
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">TryGet</span>(<span style="color:#859900">out</span> <span style="color:#268bd2">Message</span> <span style="color:#268bd2">message</span>) 
+    {
+        <span style="color:#268bd2">message</span> = <span style="color:#268bd2">_queue</span>.<span style="color:#268bd2">Get</span>();            
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">message</span> != <span style="color:#859900">null</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Delete</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">messageId</span>)
+    {
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">ForNull</span>(<span style="color:#268bd2">messageId</span>, <span style="color:#2aa198">&#34;messageId&#34;</span>);
+
+        <span style="color:#268bd2">_queue</span>.<span style="color:#268bd2">Delete</span>(<span style="color:#268bd2">messageId</span>);
+    }
+    
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Push</span>(<span style="color:#268bd2">T</span> <span style="color:#268bd2">message</span>)
+    {
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">ForNull</span>(<span style="color:#268bd2">message</span>, <span style="color:#2aa198">&#34;message&#34;</span>);
+
+        <span style="color:#268bd2">_queue</span>.<span style="color:#268bd2">Push</span>(<span style="color:#268bd2">JsonConvert</span>.<span style="color:#268bd2">SerializeObject</span>(<span style="color:#268bd2">message</span>));
+    }
+}
+</code></pre></div><p>A message dispatcher dispatches messages to the relevant handlers.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IMessageDispatcher</span>
+{
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Dispatch</span>&lt;<span style="color:#268bd2">T</span>&gt;(<span style="color:#268bd2">T</span> <span style="color:#268bd2">message</span>);
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">MessageDispatcher</span> : <span style="color:#268bd2">IMessageDispatcher</span>
+{
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">_kernel</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">MessageDispatcher</span>(<span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">kernel</span>)
+    {
+        <span style="color:#268bd2">_kernel</span> = <span style="color:#268bd2">kernel</span>;            
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Dispatch</span>&lt;<span style="color:#268bd2">T</span>&gt;(<span style="color:#268bd2">T</span> <span style="color:#268bd2">message</span>)
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">handlers</span> = <span style="color:#268bd2">_kernel</span>.<span style="color:#268bd2">GetAll</span>&lt;<span style="color:#268bd2">IMessageHandler</span>&lt;<span style="color:#268bd2">T</span>&gt;&gt;();
+        
+        <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">handler</span> <span style="color:#859900">in</span> <span style="color:#268bd2">handlers</span>)
+            <span style="color:#268bd2">handler</span>.<span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">message</span>);                        
+    }
+}
+</code></pre></div><p>If something goes wrong pulling the message from the queue or handling
+it, the error handler will be invoked passing in the exception and the
+raw message. Since it&rsquo;s possible that something is wrong with the
+message in itself, I pass in the raw message with the serialized message
+and all its meta data like id, delay and expiration date.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IErrorHandler</span>&lt;<span style="color:#268bd2">T</span>&gt;
+{
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">Exception</span> <span style="color:#268bd2">exception</span>, <span style="color:#268bd2">Message</span> <span style="color:#268bd2">message</span>);
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">ErrorHandler</span>&lt;<span style="color:#268bd2">T</span>&gt; : <span style="color:#268bd2">IErrorHandler</span>&lt;<span style="color:#268bd2">T</span>&gt;
+{       
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">Exception</span> <span style="color:#268bd2">exception</span>, <span style="color:#268bd2">Message</span> <span style="color:#268bd2">message</span>)
+    {
+        <span style="color:#859900">throw</span> <span style="color:#268bd2">exception</span>;
+    }     
+}
+</code></pre></div><p>Putting all these components to work together, we end up with a queue
+consumer. When a queue consumer is started, it instantiates a timer
+which will try to get a raw message from the queue on each tick. If
+there&rsquo;s a raw message, it will extract the body, deserialize it into the
+message, dispatch it, and finally delete the raw message from the queue.
+If something goes wrong here, the error handler will be invoked, and the
+message will automatically return back to the queue.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IQueueConsumer</span>&lt;<span style="color:#268bd2">T</span>&gt; : <span style="color:#268bd2">IQueueConsumer</span> <span style="color:#859900">where</span> <span style="color:#268bd2">T</span> : <span style="color:#859900">class</span>
+{
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IQueueConsumer</span> : <span style="color:#268bd2">IDisposable</span>
+{
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Start</span>();
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">QueueConsumer</span>&lt;<span style="color:#268bd2">T</span>&gt; : <span style="color:#268bd2">IQueueConsumer</span>&lt;<span style="color:#268bd2">T</span>&gt; <span style="color:#859900">where</span> <span style="color:#268bd2">T</span> : <span style="color:#859900">class</span>
+{
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IQueue</span>&lt;<span style="color:#268bd2">T</span>&gt; <span style="color:#268bd2">_queue</span>;
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IErrorHandler</span>&lt;<span style="color:#268bd2">T</span>&gt; <span style="color:#268bd2">_errorHandler</span>;
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IQueueConsumerConfiguration</span>&lt;<span style="color:#268bd2">T</span>&gt; <span style="color:#268bd2">_queueConsumerConfiguration</span>;
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IMessageDispatcher</span> <span style="color:#268bd2">_messageDispatcher</span>;
+    <span style="color:#859900">private</span> <span style="color:#268bd2">Timer</span> <span style="color:#268bd2">_timer</span>;        
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">QueueConsumer</span>(
+        <span style="color:#268bd2">IQueue</span>&lt;<span style="color:#268bd2">T</span>&gt; <span style="color:#268bd2">queue</span>, 
+        <span style="color:#268bd2">IErrorHandler</span>&lt;<span style="color:#268bd2">T</span>&gt; <span style="color:#268bd2">errorHandler</span>,
+        <span style="color:#268bd2">IQueueConsumerConfiguration</span>&lt;<span style="color:#268bd2">T</span>&gt; <span style="color:#268bd2">queueConsumerConfiguration</span>,
+        <span style="color:#268bd2">IMessageDispatcher</span> <span style="color:#268bd2">messageDispatcher</span>)
+    {
+        <span style="color:#268bd2">_queue</span> = <span style="color:#268bd2">queue</span>;
+        <span style="color:#268bd2">_errorHandler</span> = <span style="color:#268bd2">errorHandler</span>;
+        <span style="color:#268bd2">_queueConsumerConfiguration</span> = <span style="color:#268bd2">queueConsumerConfiguration</span>;
+        <span style="color:#268bd2">_messageDispatcher</span> = <span style="color:#268bd2">messageDispatcher</span>;
+    }    
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Start</span>()
+    {
+        <span style="color:#268bd2">_timer</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">Timer</span>((<span style="color:#268bd2">x</span>) =&gt;
+        {
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">message</span> = (<span style="color:#268bd2">Message</span>)<span style="color:#859900">null</span>;
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">messageBody</span> = (<span style="color:#268bd2">T</span>)<span style="color:#859900">null</span>;
+
+            <span style="color:#859900">try</span>
+            {
+                <span style="color:#859900">if</span> (!<span style="color:#268bd2">_queue</span>.<span style="color:#268bd2">TryGet</span>(<span style="color:#859900">out</span> <span style="color:#268bd2">message</span>))
+                    <span style="color:#859900">return</span>;
+
+                <span style="color:#268bd2">messageBody</span> = (<span style="color:#268bd2">T</span>)<span style="color:#268bd2">JsonConvert</span>.<span style="color:#268bd2">DeserializeObject</span>(
+                    <span style="color:#268bd2">message</span>.<span style="color:#268bd2">Body</span>, <span style="color:#859900">typeof</span>(<span style="color:#268bd2">T</span>));
+
+                <span style="color:#268bd2">_messageDispatcher</span>.<span style="color:#268bd2">Dispatch</span>&lt;<span style="color:#268bd2">T</span>&gt;(<span style="color:#268bd2">messageBody</span>);
+
+                <span style="color:#268bd2">_queue</span>.<span style="color:#268bd2">Delete</span>(<span style="color:#268bd2">message</span>.<span style="color:#268bd2">Id</span>);
+            }
+            <span style="color:#859900">catch</span> (<span style="color:#268bd2">Exception</span> <span style="color:#268bd2">ex</span>)
+            {
+                <span style="color:#268bd2">_errorHandler</span>.<span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">ex</span>, <span style="color:#268bd2">message</span>);
+            }                
+        }, <span style="color:#859900">null</span>, <span style="color:#2aa198;font-weight:bold">0</span>, <span style="color:#268bd2">_queueConsumerConfiguration</span>.<span style="color:#268bd2">PollingInterval</span>);            
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Dispose</span>()
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">_timer</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span>;
+
+        <span style="color:#268bd2">_timer</span>.<span style="color:#268bd2">Dispose</span>();
+    }
+}
+</code></pre></div><p>Since we have multiple queues to pull from, we can use a queue host to
+control multiple queue consumers at once. The queue host configuration
+decides which queue consumer to instantiate and start.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">QueueHostConfiguration</span>
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">QueueHostConfiguration</span>(<span style="color:#268bd2">IEnumerable</span>&lt;<span style="color:#268bd2">Type</span>&gt; <span style="color:#268bd2">messageTypes</span>)
+    {
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">ForNull</span>(<span style="color:#268bd2">messageTypes</span>, <span style="color:#2aa198">&#34;messageTypes&#34;</span>);
+
+        <span style="color:#268bd2">MessageTypes</span> = <span style="color:#268bd2">messageTypes</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">IEnumerable</span>&lt;<span style="color:#268bd2">Type</span>&gt; <span style="color:#268bd2">MessageTypes</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">QueueHost</span> : <span style="color:#268bd2">IDisposable</span>
+{
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">_kernel</span>;
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">QueueHostConfiguration</span> <span style="color:#268bd2">_configuration</span>;
+
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">List</span>&lt;<span style="color:#268bd2">IQueueConsumer</span>&gt; <span style="color:#268bd2">_consumers</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">QueueHost</span>(<span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">kernel</span>, <span style="color:#268bd2">QueueHostConfiguration</span> <span style="color:#268bd2">configuration</span>)
+    {
+        <span style="color:#268bd2">_kernel</span> = <span style="color:#268bd2">kernel</span>;
+        <span style="color:#268bd2">_configuration</span> = <span style="color:#268bd2">configuration</span>;
+
+        <span style="color:#268bd2">_consumers</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">List</span>&lt;<span style="color:#268bd2">IQueueConsumer</span>&gt;();
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Start</span>()
+    {
+        <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">messageType</span> <span style="color:#859900">in</span> <span style="color:#268bd2">_configuration</span>.<span style="color:#268bd2">MessageTypes</span>)
+        {
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">queueConsumerType</span> = <span style="color:#859900">typeof</span>(<span style="color:#268bd2">IQueueConsumer</span>&lt;&gt;).<span style="color:#268bd2">MakeGenericType</span>(<span style="color:#268bd2">messageType</span>);
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">queueConsumer</span> = (<span style="color:#268bd2">IQueueConsumer</span>)<span style="color:#268bd2">_kernel</span>.<span style="color:#268bd2">Get</span>(<span style="color:#268bd2">queueConsumerType</span>);
+
+            <span style="color:#268bd2">_consumers</span>.<span style="color:#268bd2">Add</span>(<span style="color:#268bd2">queueConsumer</span>);
+
+            <span style="color:#268bd2">queueConsumer</span>.<span style="color:#268bd2">Start</span>();
+        }
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Dispose</span>()
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">_consumers</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span>;
+
+        <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">consumer</span> <span style="color:#859900">in</span> <span style="color:#268bd2">_consumers</span>)
+            <span style="color:#268bd2">consumer</span>.<span style="color:#268bd2">Dispose</span>();
+    }
+}
+</code></pre></div><p>In your application, you&rsquo;ll end up doing something like this to start
+the queue host. </p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">using</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">host</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">QueueHost</span>(<span style="color:#268bd2">kernel</span>, <span style="color:#859900">new</span> <span style="color:#268bd2">QueueHostConfiguration</span>(
+    <span style="color:#859900">new</span>[] { <span style="color:#859900">typeof</span>(<span style="color:#268bd2">MyMessage</span>) })))
+{
+    <span style="color:#268bd2">host</span>.<span style="color:#268bd2">Start</span>();
+
+    <span style="color:#268bd2">Console</span>.<span style="color:#268bd2">ReadLine</span>();
+}
+</code></pre></div><p>All the components are glued together using Ninject and some
+conventions. </p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Bootstrapper</span>
+{
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Run</span>(<span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">kernel</span>)
+    {
+        <span style="color:#268bd2">kernel</span>.<span style="color:#268bd2">Bind</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>
+            .<span style="color:#268bd2">FromThisAssembly</span>()
+            .<span style="color:#268bd2">SelectAllClasses</span>()
+            .<span style="color:#268bd2">InheritedFrom</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">IMessageHandler</span>&lt;&gt;))
+            .<span style="color:#268bd2">BindAllInterfaces</span>());
+
+        <span style="color:#268bd2">kernel</span>.<span style="color:#268bd2">Bind</span>&lt;<span style="color:#268bd2">Infrastructure</span>.<span style="color:#268bd2">IMessageDispatcher</span>&gt;()
+            .<span style="color:#268bd2">To</span>&lt;<span style="color:#268bd2">Infrastructure</span>.<span style="color:#268bd2">MessageDispatcher</span>&gt;()
+            .<span style="color:#268bd2">InTransientScope</span>();
+        <span style="color:#268bd2">kernel</span>.<span style="color:#268bd2">Bind</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>
+            .<span style="color:#268bd2">FromAssemblyContaining</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">IQueue</span>&lt;&gt;))
+            .<span style="color:#268bd2">SelectAllClasses</span>()
+            .<span style="color:#268bd2">InheritedFrom</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">IQueue</span>&lt;&gt;))
+            .<span style="color:#268bd2">BindAllInterfaces</span>()
+            .<span style="color:#268bd2">Configure</span>(<span style="color:#268bd2">y</span> =&gt;
+            {
+                <span style="color:#268bd2">y</span>.<span style="color:#268bd2">WithConstructorArgument</span>(<span style="color:#2aa198">&#34;projectId&#34;</span>, <span style="color:#268bd2">z</span> =&gt; { <span style="color:#859900">return</span> <span style="color:#2aa198">&#34;your_project_id&#34;</span>; });
+                <span style="color:#268bd2">y</span>.<span style="color:#268bd2">WithConstructorArgument</span>(<span style="color:#2aa198">&#34;token&#34;</span>, <span style="color:#268bd2">z</span> =&gt; { <span style="color:#859900">return</span> <span style="color:#2aa198">&#34;your_token&#34;</span>; });
+            }));
+        <span style="color:#268bd2">kernel</span>
+            .<span style="color:#268bd2">Bind</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">Infrastructure</span>.<span style="color:#268bd2">IQueueConsumer</span>&lt;&gt;))
+            .<span style="color:#268bd2">To</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">Infrastructure</span>.<span style="color:#268bd2">QueueConsumer</span>&lt;&gt;));
+        <span style="color:#268bd2">kernel</span>
+            .<span style="color:#268bd2">Bind</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">Infrastructure</span>.<span style="color:#268bd2">IQueueConsumerConfiguration</span>&lt;&gt;))
+            .<span style="color:#268bd2">To</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">Infrastructure</span>.<span style="color:#268bd2">QueueConsumerConfiguration</span>&lt;&gt;));
+        <span style="color:#268bd2">kernel</span>
+            .<span style="color:#268bd2">Bind</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">Infrastructure</span>.<span style="color:#268bd2">IErrorHandler</span>&lt;&gt;))
+            .<span style="color:#268bd2">To</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">MyErrorHandler</span>&lt;&gt;));    
+    }
+}
+</code></pre></div><p>This is what I got for now. Next step is to do some more serious
+integration testing, and see what gives. There are two things I already
+kind of expect to run into; the maximum number of concurrent
+connections, and thread starvation (each timer tick starts a new
+thread). Anything else I&rsquo;m going to run into?</p>
+<p>The biggest disadvantage of opting for pull that is already obvious now,
+is the possible number of wasted HTTP requests. You could increase the
+polling interval, and thereby lower the number of requests, but this
+would harm the throughput of message bursts. Something I&rsquo;m considering
+right now, is introducing a smart polling algorithm. Another option that
+will lower the number of requests, is to pull batches instead of single
+messages from the queue. Implementing this one will be rather
+straightforward, yet improve things considerably.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+							<li><a href="/tags/infrastructure">infrastructure</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

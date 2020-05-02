@@ -186,5 +186,34 @@ However, if I were a car paint manufacturer, I would care a great deal about the
       <description>The first year I wrote software for a living I spent my days mostly writing forms over data applications; most of my efforts were wasted just trying to make things work using ASP.NET and the Webforms engine. It was only after a year and graduating from the School of Hard Knocks that I learned there is a lot more to building clean and maintainable software than knowing the ins&amp;rsquo; and outs&amp;rsquo; of a proprietary UI technology.</description>
     </item>
     
+    <item>
+      <title>My Christmas holiday project postmortem</title>
+      <link>http://localhost:1313/my-christmas-holiday-project-postmortem.html</link>
+      <pubDate>Sun, 24 Feb 2013 16:42:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/my-christmas-holiday-project-postmortem.html</guid>
+      <description>Somewhere over a year and a half ago I discovered the music of Dire Straits, which has sparked a fanatical love and fascination for the guitar in me, and basically for every piece of music Mark Knopfler has ever touched (*). A year ago, I finally had the courage to pick up the guitar myself. Not sure if I&amp;rsquo;d stick with it, I made an uninformed purchase of a rather inexpensive Squier Jazzmaster, just because it somewhat resembled the real object of desire, a Fender Stratocaster.</description>
+    </item>
+    
+    <item>
+      <title>Adding the R to CQS: some storage options</title>
+      <link>http://localhost:1313/2013/02/adding-r-to-cqs-some-storage-options.html</link>
+      <pubDate>Sun, 17 Feb 2013 17:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/02/adding-r-to-cqs-some-storage-options.html</guid>
+      <description>I&amp;rsquo;ve been writing quite a bit about CQS (or command and query separation) lately. In my last post on using events, I already hinted towards bringing in the R; command and query responsibility separation.
+With CQS, commands can mutate data, while queries can only read that data. CQRS takes this one step further, and assigns commands and queries each a dedicated model; we now talk of a write side, and a read side.</description>
+    </item>
+    
+    <item>
+      <title>Premature judgement</title>
+      <link>http://localhost:1313/2013/02/premature-judgment.html</link>
+      <pubDate>Sun, 10 Feb 2013 16:46:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/02/premature-judgment.html</guid>
+      <description>When I started my first job, I hardly ever judged my peers. After all, how could I? Everything was unknown for me; I couldn&amp;rsquo;t differentiate good from bad. Over the years that has changed a bit, but with that, I&amp;rsquo;ve also slowly become more judgemental towards peers, often prematurely, and not always deservedly.
+The first few months of last year, I found myself doing maintenance on a legacy code base between projects.</description>
+    </item>
+    
   </channel>
 </rss>

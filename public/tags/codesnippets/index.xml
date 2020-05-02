@@ -12,45 +12,6 @@
     
     
     <item>
-      <title>Reading large files in chunks with proper encapsulation</title>
-      <link>http://localhost:1313/2013/03/reading-large-files-in-chunks-with-proper-encapsulation/</link>
-      <pubDate>Sun, 24 Mar 2013 18:16:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/03/reading-large-files-in-chunks-with-proper-encapsulation/</guid>
-      <description>I&amp;rsquo;ve been doing some work lately which involves sequentially reading large files (&amp;gt; 2 to 5GB). This entails that it&amp;rsquo;s not an option to read the whole structure in memory; it&amp;rsquo;s more reliable to process the file in chunks. I occasionally come across legacy that solves exactly this problem, but in a procedural way, resulting in tangled spaghetti. To be honest, the first piece of software I ever wrote in a professional setting also went at it in the wrong way.</description>
-    </item>
-    
-    <item>
-      <title>Putting my IronMQ experiment under stress</title>
-      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</link>
-      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</guid>
-      <description>Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&amp;rsquo;t put it under stress yet; &amp;ldquo;First make it work, then make it fast&amp;rdquo;, and all of that.
-I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second.</description>
-    </item>
-    
-    <item>
-      <title>Raising events in commandhandlers</title>
-      <link>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</link>
-      <pubDate>Sun, 03 Feb 2013 17:49:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</guid>
-      <description>I&amp;rsquo;ve explored quite a few options on how to handle commands and queries in the last few posts. I finally settled on this approach. The example used in that post looked like this.
-public class CreateSubscriptionCommandHandler : ICommandHandler&amp;lt;CreateSubscriptionCommand&amp;gt; { private IDocumentSession _session; public CreateSubscriptionCommandHandler(IDocumentSession session) { _session = session; } public void Handle(CreateSubscriptionCommand command) { var subscription = new Documents.Subscription( command.Value, command.Category, command.EmailAddress); _session.Store(subscription); } }  Now imagine I would want to do some extra stuff after creating the subscription; update the sales statistics, append the email address to a mailing list, send out a confirmation email, etc.</description>
-    </item>
-    
-    <item>
-      <title>RavenDB: Drop all collections</title>
-      <link>http://localhost:1313/2013/01/ravendb-drop-all-collections/</link>
-      <pubDate>Thu, 24 Jan 2013 20:08:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/ravendb-drop-all-collections/</guid>
-      <description>I never stub or mock the database when I&amp;rsquo;m using RavenDB. Generally, I use an embeddable documentstore running in memory, and initialize a new instance on every test. However, I like to run some stress tests against a real instance, and here I found myself wanting to wipe clean the state of previous tests, without having to create a new database (which is rather slow).
-First I create the default DocumentsByEntityName index to make sure it&amp;rsquo;s there - it normally gets created when you open the studio for the first time.</description>
-    </item>
-    
-    <item>
       <title>Separating command data from logic and sending it on a bus</title>
       <link>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</link>
       <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>

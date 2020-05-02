@@ -3,7 +3,8 @@ title = "First IronMQ impressions"
 slug = "2013-03-03-first-ironmq-impressions"
 published = 2013-03-03T16:45:00+01:00
 author = "Jef Claes"
-tags = [ "Messaging", "REST", "Architecture", "HTTP",]
+tags = [ "code", "infrastructure"]
+url = "2013/03/first-ironmq-impressions.html"
 +++
 First time I touched messaging was in the first few years of my
 professional life working on software that supported fire departments in
@@ -74,24 +75,20 @@ there are [client libraries available for most popular
 languages](http://dev.iron.io/mq/libraries/). They don't provide that
 much extra functionality though. Here's the gist.  
 
-    var queue = new IronMQ(queueName, projectId, token);
-    queue.Push("{ hello: world }");
-    var message = queue.Get();
-    queue.Delete(message.Id);
+```csharp
+var queue = new IronMQ(queueName, projectId, token);
+queue.Push("{ hello: world }");
+var message = queue.Get();
+queue.Delete(message.Id);
+```
 
 In this scenario you're responsible for pulling data from the queue.
 This is just one way to go at things though; another option is to let
 IronMQ push messages to your HTTP endpoints. While this allows you to
 outsource some infrastructure to their side, it raises other concerns:  
-
--   Security: you might need to enable HTTPS, and provide an
-    authentication mechanism.
--   Debugging: if you want to do some end-to-end integration testing on
-    your local machine, you'll need to give your machine a public IP and
-    set up something like [dyndns](http://dyn.com/dns/). 
--   Scalability: depending on the expected message volume, and the web
-    stack you're rolling with, it might be more expensive to have to set
-    up all these web servers, instead of a few background workers.
+- Security: you might need to enable HTTPS, and provide an authentication mechanism.
+- Debugging: if you want to do some end-to-end integration testing on your local machine, you'll need to give your machine a public IP and set up something like [dyndns](http://dyn.com/dns/). 
+- Scalability: depending on the expected message volume, and the web stack you're rolling with, it might be more expensive to have to set up all these web servers, instead of a few background workers.
 
 Errors are handled quite elegantly; once you processed the message
 successfully, make your endpoint return HTTP status code 200 or 202, and

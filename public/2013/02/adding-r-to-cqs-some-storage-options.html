@@ -8,7 +8,7 @@
 With CQS, commands can mutate data, while queries can only read that data. CQRS takes this one step further, and assigns commands and queries each a dedicated model; we now talk of a write side, and a read side.">
 <meta itemprop="datePublished" content="2013-02-17T17:57:00&#43;01:00" />
 <meta itemprop="dateModified" content="2013-02-17T17:57:00&#43;01:00" />
-<meta itemprop="wordCount" content="757">
+<meta itemprop="wordCount" content="754">
 
 
 
@@ -16,7 +16,7 @@ With CQS, commands can mutate data, while queries can only read that data. CQRS 
 <meta property="og:description" content="I&rsquo;ve been writing quite a bit about CQS (or command and query separation) lately. In my last post on using events, I already hinted towards bringing in the R; command and query responsibility separation.
 With CQS, commands can mutate data, while queries can only read that data. CQRS takes this one step further, and assigns commands and queries each a dedicated model; we now talk of a write side, and a read side." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/" />
+<meta property="og:url" content="http://localhost:1313/2013/02/adding-r-to-cqs-some-storage-options.html" />
 <meta property="article:published_time" content="2013-02-17T17:57:00+01:00" />
 <meta property="article:modified_time" content="2013-02-17T17:57:00+01:00" />
 <meta name="twitter:card" content="summary"/>
@@ -139,9 +139,8 @@ always has been kind of vague to me, is how you go at storing your
 domain model, and your read models <em>in practice</em>. Here are a few
 possible techniques - these are some proven techniques, and partially my
 own presumptions (you hardly find any OSS brown field examples).</p>
-<p><strong>The compromise</strong><br>
-**<br>
-**CQRS doesn&rsquo;t have to be an application-wide architecture necessarily;
+<h3 id="the-compromise">The compromise</h3>
+<p>CQRS doesn&rsquo;t have to be an application-wide architecture necessarily;
 nothing stops you from introducing it gently, and just applying it to
 parts of your application where the added value is over-obvious. This
 could mean that you use a conventional architecture; a relational
@@ -150,17 +149,15 @@ side from the read side. Yet for certain scenarios, you could introduce
 a specialized read or write side. For example; update the statistics
 read model on every relevant write, update a denormalized optimized read
 model for searches, etc..</p>
-<p><strong>NORM</strong><br>
-**<br>
-**While the relational paradigm definitely has its place, mapping your
+<h3 id="norm">NORM</h3>
+<p>While the relational paradigm definitely has its place, mapping your
 domain to the database can get complex, and require much maintenance. If
 you don&rsquo;t expect of your write side to be queryable, you can take
 advantage of less cumbersome techniques such as a key value store to
 store your domain model. This does force you to completely separate
 reads from writes though.</p>
-<p><strong>Event Sourcing</strong><br>
-**<br>
-**When you look at most OSS CQRS implementations, <a href="http://martinfowler.com/eaaDev/EventSourcing.html">Event
+<h3 id="event-sourcing">Event Sourcing</h3>
+<p>When you look at most OSS CQRS implementations, <a href="http://martinfowler.com/eaaDev/EventSourcing.html">Event
 Sourcing</a> and CQRS go
 hand in hand. With Event Sourcing, you capture all application state
 changes as a sequence of events. I&rsquo;m really fond of the theory behind

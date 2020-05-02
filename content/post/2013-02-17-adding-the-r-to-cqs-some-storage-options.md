@@ -3,7 +3,8 @@ title = "Adding the R to CQS: some storage options"
 slug = "2013-02-17-adding-the-r-to-cqs-some-storage-options"
 published = 2013-02-17T17:57:00+01:00
 author = "Jef Claes"
-tags = [ "SQL", "Architecture", "DDD", "NoSql",]
+tags = [ "opinion",]
+url = "2013/02/adding-r-to-cqs-some-storage-options.html"
 +++
 I've been writing [quite a
 bit](http://www.jefclaes.be/2013/01/separating-command-data-from-logic-and.html)
@@ -36,10 +37,8 @@ best.
 A nice drawing also helps in understanding CQRS (from [the CQRS journey
 material](http://msdn.microsoft.com/en-us/library/jj591573)).  
   
-
 [![](/post/images/thumbnails/2013-02-17-adding-the-r-to-cqs-some-storage-options-CQRS_drawing.png)](/post/images/2013-02-17-adding-the-r-to-cqs-some-storage-options-CQRS_drawing.png)
 
-  
 Although scalability seems to be one of the big selling points of CQRS,
 there are still some valid arguments applicable to my world; the
 strongest one being able to avoid the discrepancy which exists while you
@@ -64,9 +63,9 @@ domain model, and your read models *in practice*. Here are a few
 possible techniques - these are some proven techniques, and partially my
 own presumptions (you hardly find any OSS brown field examples).  
   
-**The compromise**  
-**  
-**CQRS doesn't have to be an application-wide architecture necessarily;
+### The compromise  
+  
+CQRS doesn't have to be an application-wide architecture necessarily;
 nothing stops you from introducing it gently, and just applying it to
 parts of your application where the added value is over-obvious. This
 could mean that you use a conventional architecture; a relational
@@ -76,18 +75,18 @@ a specialized read or write side. For example; update the statistics
 read model on every relevant write, update a denormalized optimized read
 model for searches, etc..  
   
-**NORM**  
-**  
-**While the relational paradigm definitely has its place, mapping your
+### NORM  
+  
+While the relational paradigm definitely has its place, mapping your
 domain to the database can get complex, and require much maintenance. If
 you don't expect of your write side to be queryable, you can take
 advantage of less cumbersome techniques such as a key value store to
 store your domain model. This does force you to completely separate
 reads from writes though.  
   
-**Event Sourcing**  
-**  
-**When you look at most OSS CQRS implementations, [Event
+### Event Sourcing  
+  
+When you look at most OSS CQRS implementations, [Event
 Sourcing](http://martinfowler.com/eaaDev/EventSourcing.html) and CQRS go
 hand in hand. With Event Sourcing, you capture all application state
 changes as a sequence of events. I'm really fond of the theory behind

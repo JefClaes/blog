@@ -3,7 +3,8 @@ title = "RavenDB: Drop all collections"
 slug = "2013-01-24-ravendb-drop-all-collections"
 published = 2013-01-24T20:08:00+01:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", "NoSql",]
+tags = [ "code",]
+url = "2013/01/ravendb-drop-all-collections.html"
 +++
 I never stub or mock the database when I'm
 using [RavenDB](http://ravendb.net/). Generally, I use an embeddable
@@ -18,13 +19,15 @@ time. Then I use one of the [advanced database
 commands:](http://ravendb.net/docs/client-api/advanced/databasecommands) DeleteByIndex,
 and query all the tags.  
 
-    using (var session = _documentStore.OpenSession())
-    {
+```csharp
+using (var session = _documentStore.OpenSession())
+{
         new RavenDocumentsByEntityName().Execute(_documentStore);
         session.Advanced.DatabaseCommands.DeleteByIndex(
                 "Raven/DocumentsByEntityName",
                 new IndexQuery { Query = "Tag: *" });                
-    }
+}
+```
 
 This technique doesn't seem to be widely used judging by the first page
 of Google search results. If there is a reason for that though, let me

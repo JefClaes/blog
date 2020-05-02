@@ -14,7 +14,7 @@
 <meta itemprop="keywords" content="code,infrastructure," /><meta property="og:title" content="First IronMQ impressions" />
 <meta property="og:description" content="First time I touched messaging was in the first few years of my professional life working on software that supported fire departments in their day-to-day activities. The dispatching software would send messages to a proprietary broker, which in its turn would forward them to interested subscribers; other dispatching clients, or services. To ensure availability, the broker component could failover to a different machine, but that was about it. It didn&rsquo;t allow you to queue or retry messages; if you weren&rsquo;t up when the messages were forwarded, you would never receive them." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2013/03/first-ironmq-impressions/" />
+<meta property="og:url" content="http://localhost:1313/2013/03/first-ironmq-impressions.html" />
 <meta property="article:published_time" content="2013-03-03T16:45:00+01:00" />
 <meta property="article:modified_time" content="2013-03-03T16:45:00+01:00" />
 <meta name="twitter:card" content="summary"/>
@@ -148,24 +148,18 @@ something goes wrong, we&rsquo;ll just keep retrying for a while.</p>
 there are <a href="http://dev.iron.io/mq/libraries/">client libraries available for most popular
 languages</a>. They don&rsquo;t provide that
 much extra functionality though. Here&rsquo;s the gist.</p>
-<pre><code>var queue = new IronMQ(queueName, projectId, token);
-queue.Push(&quot;{ hello: world }&quot;);
-var message = queue.Get();
-queue.Delete(message.Id);
-</code></pre>
-<p>In this scenario you&rsquo;re responsible for pulling data from the queue.
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">queue</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">IronMQ</span>(<span style="color:#268bd2">queueName</span>, <span style="color:#268bd2">projectId</span>, <span style="color:#268bd2">token</span>);
+<span style="color:#268bd2">queue</span>.<span style="color:#268bd2">Push</span>(<span style="color:#2aa198">&#34;{ hello: world }&#34;</span>);
+<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">message</span> = <span style="color:#268bd2">queue</span>.<span style="color:#268bd2">Get</span>();
+<span style="color:#268bd2">queue</span>.<span style="color:#268bd2">Delete</span>(<span style="color:#268bd2">message</span>.<span style="color:#268bd2">Id</span>);
+</code></pre></div><p>In this scenario you&rsquo;re responsible for pulling data from the queue.
 This is just one way to go at things though; another option is to let
 IronMQ push messages to your HTTP endpoints. While this allows you to
 outsource some infrastructure to their side, it raises other concerns:</p>
 <ul>
-<li>Security: you might need to enable HTTPS, and provide an
-authentication mechanism.</li>
-<li>Debugging: if you want to do some end-to-end integration testing on
-your local machine, you&rsquo;ll need to give your machine a public IP and
-set up something like <a href="http://dyn.com/dns/">dyndns</a>. </li>
-<li>Scalability: depending on the expected message volume, and the web
-stack you&rsquo;re rolling with, it might be more expensive to have to set
-up all these web servers, instead of a few background workers.</li>
+<li>Security: you might need to enable HTTPS, and provide an authentication mechanism.</li>
+<li>Debugging: if you want to do some end-to-end integration testing on your local machine, you&rsquo;ll need to give your machine a public IP and set up something like <a href="http://dyn.com/dns/">dyndns</a>. </li>
+<li>Scalability: depending on the expected message volume, and the web stack you&rsquo;re rolling with, it might be more expensive to have to set up all these web servers, instead of a few background workers.</li>
 </ul>
 <p>Errors are handled quite elegantly; once you processed the message
 successfully, make your endpoint return HTTP status code 200 or 202, and

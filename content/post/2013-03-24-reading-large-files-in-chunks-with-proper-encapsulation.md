@@ -3,7 +3,8 @@ title = "Reading large files in chunks with proper encapsulation"
 slug = "2013-03-24-reading-large-files-in-chunks-with-proper-encapsulation"
 published = 2013-03-24T18:16:00+01:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", ".NET",]
+tags = [ "code",]
+url = "2013/03/reading-large-files-in-chunks-with.html"
 +++
 I've been doing some work lately which involves sequentially reading
 large files (&gt; 2 to 5GB). This entails that it's not an option to
@@ -33,57 +34,61 @@ to return it when the desired chunk size is attained. In the next
 iteration, the call will continue by clearing the lines - thereby
 releasing memory, and rebuilding the next chunk.
 
-    public class Reader
+```csharp
+public class Reader
+{
+    private int _chunkSize;
+
+    public Reader(int chunkSize) 
     {
-        private int _chunkSize;
+        _chunkSize = chunkSize;
+    }
 
-        public Reader(int chunkSize) 
+    public IEnumerable<Chunk> Read(string path)
+    {
+        if (string.IsNullOrEmpty(path))
+            throw new NullReferenceException("path");
+
+        var lines = new List<string>();
+
+        using (var reader = new StreamReader(path))
         {
-            _chunkSize = chunkSize;
-        }
-
-        public IEnumerable<Chunk> Read(string path)
-        {
-            if (string.IsNullOrEmpty(path))
-                throw new NullReferenceException("path");
-
-            var lines = new List<string>();
-
-            using (var reader = new StreamReader(path))
+            string line;
+            while ((line = reader.ReadLine()) != null)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                lines.Add(line);
+
+                if (lines.Count == _chunkSize)
                 {
-                    lines.Add(line);
+                    yield return new Chunk(lines);
 
-                    if (lines.Count == _chunkSize)
-                    {
-                        yield return new Chunk(lines);
-
-                        lines.Clear();
-                    }
-                }                
-            }
-
-            yield return new Chunk(lines);
+                    lines.Clear();
+                }
+            }                
         }
-    }
 
-    public class Chunk
+        yield return new Chunk(lines);
+    }
+}
+
+public class Chunk
+{
+    public Chunk(List<string> lines) 
     {
-        public Chunk(List<string> lines) 
-        {
-            Lines = lines;
-        }
-
-        public List<string> Lines { get; private set; }
+        Lines = lines;
     }
+
+    public List<string> Lines { get; private set; }
+}
+```
 
 And that's one way to achieve clean encapsulation without starving your
 machine's memory.
 
-    var reader = new Reader(chunkSize: 1000);
-    var chunks = reader.Read(@"C:\big_file.txt");
+```csharp
+var reader = new Reader(chunkSize: 1000);
+var chunks = reader.Read(@"C:\big_file.txt");
 
-    foreach (var chunk in chunks)            
-        Console.WriteLine(chunk.Lines.Count);
+foreach (var chunk in chunks)            
+    Console.WriteLine(chunk.Lines.Count);
+```

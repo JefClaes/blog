@@ -1058,99 +1058,97 @@ A better model  Even if you come up with a better model, the fact that it has be
     
     <item>
       <title>Reading large files in chunks with proper encapsulation</title>
-      <link>http://localhost:1313/2013/03/reading-large-files-in-chunks-with-proper-encapsulation/</link>
+      <link>http://localhost:1313/2013/03/reading-large-files-in-chunks-with.html</link>
       <pubDate>Sun, 24 Mar 2013 18:16:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/03/reading-large-files-in-chunks-with-proper-encapsulation/</guid>
+      <guid>http://localhost:1313/2013/03/reading-large-files-in-chunks-with.html</guid>
       <description>I&amp;rsquo;ve been doing some work lately which involves sequentially reading large files (&amp;gt; 2 to 5GB). This entails that it&amp;rsquo;s not an option to read the whole structure in memory; it&amp;rsquo;s more reliable to process the file in chunks. I occasionally come across legacy that solves exactly this problem, but in a procedural way, resulting in tangled spaghetti. To be honest, the first piece of software I ever wrote in a professional setting also went at it in the wrong way.</description>
     </item>
     
     <item>
       <title>Putting my IronMQ experiment under stress</title>
-      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</link>
+      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under.html</link>
       <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</guid>
+      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under.html</guid>
       <description>Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&amp;rsquo;t put it under stress yet; &amp;ldquo;First make it work, then make it fast&amp;rdquo;, and all of that.
 I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second.</description>
     </item>
     
     <item>
       <title>Some experimental infrastructure for IronMQ pull </title>
-      <link>http://localhost:1313/2013/03/some-experimental-infrastructure-for-ironmq-pull/</link>
+      <link>http://localhost:1313/2013/03/some-experimental-infrastructure-for.html</link>
       <pubDate>Sun, 10 Mar 2013 17:29:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/03/some-experimental-infrastructure-for-ironmq-pull/</guid>
+      <guid>http://localhost:1313/2013/03/some-experimental-infrastructure-for.html</guid>
       <description>I wrote about using IronMQ as a cloud-based message queue last week. In that post I explained that you can go at using IronMQ in two ways; either you pull from the queue yourself, or you let IronMQ push messages from the queue to your HTTP endpoints. At first sight, the latter allows you to outsource more infrastructure to their side, but upon closer inspection it also introduces other concerns: security, local debugging and scalability.</description>
     </item>
     
     <item>
       <title>First IronMQ impressions</title>
-      <link>http://localhost:1313/2013/03/first-ironmq-impressions/</link>
+      <link>http://localhost:1313/2013/03/first-ironmq-impressions.html</link>
       <pubDate>Sun, 03 Mar 2013 16:45:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/03/first-ironmq-impressions/</guid>
+      <guid>http://localhost:1313/2013/03/first-ironmq-impressions.html</guid>
       <description>First time I touched messaging was in the first few years of my professional life working on software that supported fire departments in their day-to-day activities. The dispatching software would send messages to a proprietary broker, which in its turn would forward them to interested subscribers; other dispatching clients, or services. To ensure availability, the broker component could failover to a different machine, but that was about it. It didn&amp;rsquo;t allow you to queue or retry messages; if you weren&amp;rsquo;t up when the messages were forwarded, you would never receive them.</description>
     </item>
     
     <item>
       <title>My Christmas holiday project postmortem</title>
-      <link>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem/</link>
+      <link>http://localhost:1313/my-christmas-holiday-project-postmortem.html</link>
       <pubDate>Sun, 24 Feb 2013 16:42:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem/</guid>
+      <guid>http://localhost:1313/my-christmas-holiday-project-postmortem.html</guid>
       <description>Somewhere over a year and a half ago I discovered the music of Dire Straits, which has sparked a fanatical love and fascination for the guitar in me, and basically for every piece of music Mark Knopfler has ever touched (*). A year ago, I finally had the courage to pick up the guitar myself. Not sure if I&amp;rsquo;d stick with it, I made an uninformed purchase of a rather inexpensive Squier Jazzmaster, just because it somewhat resembled the real object of desire, a Fender Stratocaster.</description>
     </item>
     
     <item>
       <title>Adding the R to CQS: some storage options</title>
-      <link>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</link>
+      <link>http://localhost:1313/2013/02/adding-r-to-cqs-some-storage-options.html</link>
       <pubDate>Sun, 17 Feb 2013 17:57:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</guid>
+      <guid>http://localhost:1313/2013/02/adding-r-to-cqs-some-storage-options.html</guid>
       <description>I&amp;rsquo;ve been writing quite a bit about CQS (or command and query separation) lately. In my last post on using events, I already hinted towards bringing in the R; command and query responsibility separation.
 With CQS, commands can mutate data, while queries can only read that data. CQRS takes this one step further, and assigns commands and queries each a dedicated model; we now talk of a write side, and a read side.</description>
     </item>
     
     <item>
       <title>Premature judgement</title>
-      <link>http://localhost:1313/2013/02/premature-judgement/</link>
+      <link>http://localhost:1313/2013/02/premature-judgment.html</link>
       <pubDate>Sun, 10 Feb 2013 16:46:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/02/premature-judgement/</guid>
+      <guid>http://localhost:1313/2013/02/premature-judgment.html</guid>
       <description>When I started my first job, I hardly ever judged my peers. After all, how could I? Everything was unknown for me; I couldn&amp;rsquo;t differentiate good from bad. Over the years that has changed a bit, but with that, I&amp;rsquo;ve also slowly become more judgemental towards peers, often prematurely, and not always deservedly.
 The first few months of last year, I found myself doing maintenance on a legacy code base between projects.</description>
     </item>
     
     <item>
       <title>Raising events in commandhandlers</title>
-      <link>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</link>
+      <link>http://localhost:1313/2013/02/raising-events-in-commandhandlers.html</link>
       <pubDate>Sun, 03 Feb 2013 17:49:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/02/raising-events-in-commandhandlers/</guid>
+      <guid>http://localhost:1313/2013/02/raising-events-in-commandhandlers.html</guid>
       <description>I&amp;rsquo;ve explored quite a few options on how to handle commands and queries in the last few posts. I finally settled on this approach. The example used in that post looked like this.
-public class CreateSubscriptionCommandHandler : ICommandHandler&amp;lt;CreateSubscriptionCommand&amp;gt; { private IDocumentSession _session; public CreateSubscriptionCommandHandler(IDocumentSession session) { _session = session; } public void Handle(CreateSubscriptionCommand command) { var subscription = new Documents.Subscription( command.Value, command.Category, command.EmailAddress); _session.Store(subscription); } }  Now imagine I would want to do some extra stuff after creating the subscription; update the sales statistics, append the email address to a mailing list, send out a confirmation email, etc.</description>
+public class CreateSubscriptionCommandHandler : ICommandHandler&amp;lt;CreateSubscriptionCommand&amp;gt; { private IDocumentSession _session; public CreateSubscriptionCommandHandler(IDocumentSession session) { _session = session; } public void Handle(CreateSubscriptionCommand command) { var subscription = new Documents.Subscription( command.Value, command.Category, command.EmailAddress); _session.Store(subscription); } } Now imagine I would want to do some extra stuff after creating the subscription; update the sales statistics, append the email address to a mailing list, send out a confirmation email, etc.</description>
     </item>
     
     <item>
       <title>Organizing commands and queries</title>
-      <link>http://localhost:1313/2013/01/organizing-commands-and-queries/</link>
+      <link>http://localhost:1313/2013/01/organizing-commands-and-queries.html</link>
       <pubDate>Sun, 27 Jan 2013 18:23:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/01/organizing-commands-and-queries/</guid>
+      <guid>http://localhost:1313/2013/01/organizing-commands-and-queries.html</guid>
       <description>In the last few posts I settled on an architecture for handling commands and queries. A byproduct of the described approach, is that your codebase quickly racks up plentiful little classes; a class to hold data, and a handler to act on that data, for each use case.
 There are a few ways you can go at organizing things.
-Everything in one location
-**
-**When there is very little going on in your application, you can just dump everything in one location without getting hurt too much.</description>
+Everything in one location When there is very little going on in your application, you can just dump everything in one location without getting hurt too much.</description>
     </item>
     
     <item>
       <title>RavenDB: Drop all collections</title>
-      <link>http://localhost:1313/2013/01/ravendb-drop-all-collections/</link>
+      <link>http://localhost:1313/2013/01/ravendb-drop-all-collections.html</link>
       <pubDate>Thu, 24 Jan 2013 20:08:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2013/01/ravendb-drop-all-collections/</guid>
+      <guid>http://localhost:1313/2013/01/ravendb-drop-all-collections.html</guid>
       <description>I never stub or mock the database when I&amp;rsquo;m using RavenDB. Generally, I use an embeddable documentstore running in memory, and initialize a new instance on every test. However, I like to run some stress tests against a real instance, and here I found myself wanting to wipe clean the state of previous tests, without having to create a new database (which is rather slow).
 First I create the default DocumentsByEntityName index to make sure it&amp;rsquo;s there - it normally gets created when you open the studio for the first time.</description>
     </item>

@@ -12,29 +12,6 @@
     
     
     <item>
-      <title>Putting my IronMQ experiment under stress</title>
-      <link>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</link>
-      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/03/putting-my-ironmq-experiment-under-stress/</guid>
-      <description>Two weeks ago, I shared my first impressions of IronMQ. Last week, I looked at some infrastructure to facilitate pulling from IronMQ. This implementation worked, but I hadn&amp;rsquo;t put it under stress yet; &amp;ldquo;First make it work, then make it fast&amp;rdquo;, and all of that.
-I arranged a simple scenario for testing: one message type - thus one queue, where there are eight queue consumers that simultaneously pull messages from that queue, and dispatch them to a handler which sleeps for one second.</description>
-    </item>
-    
-    <item>
-      <title>Organizing commands and queries</title>
-      <link>http://localhost:1313/2013/01/organizing-commands-and-queries/</link>
-      <pubDate>Sun, 27 Jan 2013 18:23:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/organizing-commands-and-queries/</guid>
-      <description>In the last few posts I settled on an architecture for handling commands and queries. A byproduct of the described approach, is that your codebase quickly racks up plentiful little classes; a class to hold data, and a handler to act on that data, for each use case.
-There are a few ways you can go at organizing things.
-Everything in one location
-**
-**When there is very little going on in your application, you can just dump everything in one location without getting hurt too much.</description>
-    </item>
-    
-    <item>
       <title>Separating command data from logic and sending it on a bus</title>
       <link>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</link>
       <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
