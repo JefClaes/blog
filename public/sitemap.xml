@@ -68,6 +68,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/story/</loc>
+    <lastmod>2017-07-23T08:48:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/community/</loc>
     <lastmod>2017-02-13T21:21:00+01:00</lastmod>
   </url>
@@ -293,11 +298,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/ramblings/</loc>
-    <lastmod>2014-08-26T19:52:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2014/08/solomon-architect.html</loc>
     <lastmod>2014-08-26T19:52:00+02:00</lastmod>
   </url>
@@ -305,11 +305,6 @@
   <url>
     <loc>http://localhost:1313/2014/08/thinking-no-computers/</loc>
     <lastmod>2014-08-19T20:09:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/.net/</loc>
-    <lastmod>2014-06-08T18:33:00+02:00</lastmod>
   </url>
   
   <url>
@@ -328,28 +323,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/messaging/</loc>
-    <lastmod>2014-05-25T18:01:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/story/</loc>
-    <lastmod>2014-05-25T18:01:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</loc>
     <lastmod>2014-05-16T15:22:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/architecture/</loc>
-    <lastmod>2014-05-12T17:41:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
-    <lastmod>2014-05-12T17:41:00+02:00</lastmod>
   </url>
   
   <url>
@@ -358,23 +333,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/browser/</loc>
-    <lastmod>2014-05-04T18:23:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2014/05/glueing-browser-and-pos-devices-together.html</loc>
     <lastmod>2014-05-04T18:23:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2014-05-04T18:23:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/general/</loc>
-    <lastmod>2014-04-21T12:07:00+02:00</lastmod>
   </url>
   
   <url>
@@ -383,33 +343,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/asp.net/</loc>
-    <lastmod>2014-04-06T18:43:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/asp.net-mvc/</loc>
-    <lastmod>2014-04-06T18:43:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/codesnippets/</loc>
-    <lastmod>2014-04-06T18:43:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2014/04/rebinding-knockout-viewmodel.html</loc>
     <lastmod>2014-04-06T18:43:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/ajax/</loc>
-    <lastmod>2014-03-23T18:31:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/aspnet-mvc/</loc>
-    <lastmod>2014-03-23T18:31:00+01:00</lastmod>
   </url>
   
   <url>
@@ -419,16 +354,6 @@
   
   <url>
     <loc>http://localhost:1313/2014/03/building-live-dashboard-with-some.html</loc>
-    <lastmod>2014-03-16T21:23:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/html/</loc>
-    <lastmod>2014-03-16T21:23:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/html5/</loc>
     <lastmod>2014-03-16T21:23:00+01:00</lastmod>
   </url>
   
@@ -448,11 +373,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/dddbe/</loc>
-    <lastmod>2014-02-16T18:04:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2014/02/dddbe-slides-on-ubiquitous-language.html</loc>
     <lastmod>2014-02-16T18:04:00+01:00</lastmod>
   </url>
@@ -463,18 +383,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/bookreview/</loc>
-    <lastmod>2014-02-02T18:19:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2014/02/thinking-in-systems.html</loc>
     <lastmod>2014-02-02T18:19:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/database/</loc>
-    <lastmod>2014-01-26T18:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -499,11 +409,6 @@
   
   <url>
     <loc>http://localhost:1313/2013/12/2013s-most-read-posts.html</loc>
-    <lastmod>2013-12-29T17:05:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/blogging/</loc>
     <lastmod>2013-12-29T17:05:00+01:00</lastmod>
   </url>
   
@@ -548,11 +453,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/nosql/</loc>
-    <lastmod>2013-10-27T17:43:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2013/10/an-event-store.html</loc>
     <lastmod>2013-10-20T17:30:00+02:00</lastmod>
   </url>
@@ -575,16 +475,6 @@
   <url>
     <loc>http://localhost:1313/2013/09/actor-model-in-cobol.html</loc>
     <lastmod>2013-09-22T16:38:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/event/</loc>
-    <lastmod>2013-09-15T16:34:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/refactoring/</loc>
-    <lastmod>2013-09-15T16:34:00+02:00</lastmod>
   </url>
   
   <url>
@@ -633,11 +523,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/rravel/</loc>
-    <lastmod>2013-07-10T07:04:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2013/07/stairway-to-heaven.html</loc>
     <lastmod>2013-07-10T07:04:00+02:00</lastmod>
   </url>
@@ -673,12 +558,32 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</loc>
+    <loc>http://localhost:1313/2013/06/accidental-entities-what-about-ui.html</loc>
     <lastmod>2013-06-02T16:24:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</loc>
+    <loc>http://localhost:1313/tags/architecture/</loc>
+    <lastmod>2013-06-02T16:24:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/ramblings/</loc>
+    <lastmod>2013-06-02T16:24:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/.net/</loc>
+    <lastmod>2013-05-26T16:27:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that.html</loc>
+    <lastmod>2013-05-26T16:27:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/codesnippets/</loc>
     <lastmod>2013-05-26T16:27:00+02:00</lastmod>
   </url>
   
@@ -688,37 +593,52 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/html/</loc>
+    <lastmod>2013-05-20T17:02:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/javascript/</loc>
+    <lastmod>2013-05-20T17:02:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/opensource/</loc>
     <lastmod>2013-05-20T17:02:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</loc>
+    <loc>http://localhost:1313/2013/05/validating-composite-models-with.html</loc>
     <lastmod>2013-05-20T17:02:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/05/iddd-tour-notes-2/2/</loc>
+    <loc>http://localhost:1313/2013/05/iddd-tour-notes-22.html</loc>
     <lastmod>2013-05-12T15:44:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/05/iddd-tour-notes-1/2/</loc>
+    <loc>http://localhost:1313/2013/05/iddd-tour-notes-12.html</loc>
     <lastmod>2013-05-05T17:10:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</loc>
+    <loc>http://localhost:1313/tags/asp.net/</loc>
     <lastmod>2013-04-28T18:56:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</loc>
-    <lastmod>2013-04-21T19:48:00+02:00</lastmod>
+    <loc>http://localhost:1313/tags/asp.net-mvc/</loc>
+    <lastmod>2013-04-28T18:56:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/04/designing-entities-immutability-first/</loc>
+    <loc>http://localhost:1313/2013/04/designing-entities-immutability-first.html</loc>
+    <lastmod>2013-04-07T17:35:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/refactoring/</loc>
     <lastmod>2013-04-07T17:35:00+02:00</lastmod>
   </url>
   
@@ -729,6 +649,11 @@
   
   <url>
     <loc>http://localhost:1313/tags/http/</loc>
+    <lastmod>2013-03-17T16:10:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/messaging/</loc>
     <lastmod>2013-03-17T16:10:00+01:00</lastmod>
   </url>
   
@@ -759,6 +684,11 @@
   
   <url>
     <loc>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</loc>
+    <lastmod>2013-02-17T17:57:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/nosql/</loc>
     <lastmod>2013-02-17T17:57:00+01:00</lastmod>
   </url>
   
@@ -823,8 +753,23 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/general/</loc>
+    <lastmod>2012-12-31T15:58:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2012/12/2012s-most-read-posts/</loc>
     <lastmod>2012-12-23T15:53:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/blogging/</loc>
+    <lastmod>2012-12-23T15:53:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/browser/</loc>
+    <lastmod>2012-12-16T16:44:00+01:00</lastmod>
   </url>
   
   <url>
@@ -845,6 +790,11 @@
   <url>
     <loc>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</loc>
     <lastmod>2012-12-12T19:57:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/database/</loc>
+    <lastmod>2012-12-09T16:08:00+01:00</lastmod>
   </url>
   
   <url>
@@ -993,6 +943,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/event/</loc>
+    <lastmod>2012-09-13T08:55:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</loc>
     <lastmod>2012-09-13T08:55:00+02:00</lastmod>
   </url>
@@ -1083,6 +1038,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/bookreview/</loc>
+    <lastmod>2012-06-10T19:42:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2012/06/nancyfx-appharbor-builds-timing-out/</loc>
     <lastmod>2012-06-05T21:26:00+02:00</lastmod>
   </url>
@@ -1110,6 +1070,11 @@
   <url>
     <loc>http://localhost:1313/2012/05/why-i-will-always-love-rss/</loc>
     <lastmod>2012-05-06T16:50:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/html5/</loc>
+    <lastmod>2012-05-02T20:09:00+02:00</lastmod>
   </url>
   
   <url>
@@ -1523,6 +1488,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/windows/</loc>
+    <lastmod>2011-02-12T17:50:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</loc>
     <lastmod>2011-02-06T16:00:00+01:00</lastmod>
   </url>
@@ -1755,6 +1725,11 @@
   <url>
     <loc>http://localhost:1313/2010/05/blog-redesign/</loc>
     <lastmod>2010-05-08T16:25:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/ajax/</loc>
+    <lastmod>2010-04-19T21:00:00+02:00</lastmod>
   </url>
   
   <url>

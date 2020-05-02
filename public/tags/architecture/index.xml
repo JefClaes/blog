@@ -6,31 +6,10 @@
     <description>Recent content in Architecture on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 May 2014 17:41:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2013 16:24:00 +0200</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/architecture/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Accidental entities - what about the UI?</title>
-      <link>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</link>
-      <pubDate>Sun, 02 Jun 2013 16:24:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</guid>
-      <description>This post is a follow-up to my previous blog post &amp;ldquo;[Accidental entities
- you don&amp;rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&amp;quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&amp;rsquo;s color as a value, and does not care about a color&amp;rsquo;s identity.</description>
-    </item>
-    
-    <item>
-      <title>Accidental entities - you don&#39;t need that identity</title>
-      <link>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</link>
-      <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</guid>
-      <description>An entity is identified by an identifier, while value objects are identified by their value.
-If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&amp;hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
-However, if I were a car paint manufacturer, I would care a great deal about the identity of a color.</description>
-    </item>
     
     <item>
       <title>Some experimental infrastructure for IronMQ pull </title>

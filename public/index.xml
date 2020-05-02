@@ -997,20 +997,20 @@ Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidU
     
     <item>
       <title>Accidental entities - what about the UI?</title>
-      <link>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</link>
+      <link>http://localhost:1313/2013/06/accidental-entities-what-about-ui.html</link>
       <pubDate>Sun, 02 Jun 2013 16:24:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</guid>
-      <description>This post is a follow-up to my previous blog post &amp;ldquo;[Accidental entities
- you don&amp;rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&amp;quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&amp;rsquo;s color as a value, and does not care about a color&amp;rsquo;s identity.</description>
+      <guid>http://localhost:1313/2013/06/accidental-entities-what-about-ui.html</guid>
+      <description>This post is a follow-up to my previous blog post &amp;ldquo;Accidental entities - you don&amp;rsquo;t need that identity&amp;quot;.
+In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&amp;rsquo;s color as a value, and does not care about a color&amp;rsquo;s identity.</description>
     </item>
     
     <item>
       <title>Accidental entities - you don&#39;t need that identity</title>
-      <link>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</link>
+      <link>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that.html</link>
       <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</guid>
+      <guid>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that.html</guid>
       <description>An entity is identified by an identifier, while value objects are identified by their value.
 If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&amp;hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
 However, if I were a car paint manufacturer, I would care a great deal about the identity of a color.</description>
@@ -1018,10 +1018,10 @@ However, if I were a car paint manufacturer, I would care a great deal about the
     
     <item>
       <title>Validating composite models with knockout validation</title>
-      <link>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</link>
+      <link>http://localhost:1313/2013/05/validating-composite-models-with.html</link>
       <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</guid>
+      <guid>http://localhost:1313/2013/05/validating-composite-models-with.html</guid>
       <description>When you use knockout validation to extend observables with validation rules, it will add a few functions to these observables - the most important ones being; error and isValid. You can use these functions to verify if any of the validation rules were violated, and to extract an error message.
 To extract all of the error messages out of a composite model, you can use a grouping function.
 function BookingModel() { var self = this; self.</description>
@@ -1029,50 +1029,30 @@ function BookingModel() { var self = this; self.</description>
     
     <item>
       <title>IDDD Tour notes (2/2)</title>
-      <link>http://localhost:1313/2013/05/iddd-tour-notes-2/2/</link>
+      <link>http://localhost:1313/2013/05/iddd-tour-notes-22.html</link>
       <pubDate>Sun, 12 May 2013 15:44:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/05/iddd-tour-notes-2/2/</guid>
+      <guid>http://localhost:1313/2013/05/iddd-tour-notes-22.html</guid>
       <description>This is the second and last part of my notes I scribbled down attending the IDDD Tour. The first part was published last week.
-A better model
- Even if you come up with a better model, the fact that it has been the ubiquitous language of the domain for decades proves that it works for them.
+A better model  Even if you come up with a better model, the fact that it has been the ubiquitous language of the domain for decades proves that it works for them.
  This quote bothers me a bit. There definitely is truth to this, but modeling an existing process often presents such a great opportunity to revise and improve it.</description>
     </item>
     
     <item>
       <title>IDDD Tour notes (1/2)</title>
-      <link>http://localhost:1313/2013/05/iddd-tour-notes-1/2/</link>
+      <link>http://localhost:1313/2013/05/iddd-tour-notes-12.html</link>
       <pubDate>Sun, 05 May 2013 17:10:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/05/iddd-tour-notes-1/2/</guid>
+      <guid>http://localhost:1313/2013/05/iddd-tour-notes-12.html</guid>
       <description>Two weeks ago I got to spend four days attending the IDDD Tour by Vaughn Vernon. Although my book queue has only allowed me to shallowly browse the book, I had high hopes for this course. I anticipated a week of getting lectured on DDD with a few practical exercises, but was blown away by the openness and interaction promoted by Vaughn and his associate Alberto Brandolini. A passionate group, engaging workshops, long days and lots of sharing made these few days exceptionally satisfying and inspirational.</description>
     </item>
     
     <item>
-      <title>Customizing a knockout validation message</title>
-      <link>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</link>
-      <pubDate>Sun, 28 Apr 2013 18:56:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</guid>
-      <description>Knockout validation is a plugin that allows you to extend observables with validation. If you&amp;rsquo;re familiar with jQuery validation, you will notice that most provided validation rules are very similar.
-One of the validation rules available out-of-the-box is pattern validation. By default the error message for violating this rule doesn&amp;rsquo;t mention the expected pattern. And in general, showing the expected pattern probably isn&amp;rsquo;t a good idea since your users will have no idea what you&amp;rsquo;re talking about.</description>
-    </item>
-    
-    <item>
-      <title>Modeling the four-eye principle</title>
-      <link>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</link>
-      <pubDate>Sun, 21 Apr 2013 19:48:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</guid>
-      <description>Working in a financial domain over the last year, it was only a matter of time before I would be confronted with one of the variations of the two-man rule: the four-eye principle. Satisfying the principle is simple enough; an extra pair of eyes needs to approve of requested changes before they&amp;rsquo;re applied to the system. This measure should prevent mistakes such as a user nuking North Korea by accident, or transferring all corporate funds to a personal off-shore bank account.</description>
-    </item>
-    
-    <item>
       <title>Designing entities: immutability first</title>
-      <link>http://localhost:1313/2013/04/designing-entities-immutability-first/</link>
+      <link>http://localhost:1313/2013/04/designing-entities-immutability-first.html</link>
       <pubDate>Sun, 07 Apr 2013 17:35:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/04/designing-entities-immutability-first/</guid>
+      <guid>http://localhost:1313/2013/04/designing-entities-immutability-first.html</guid>
       <description>The first year I wrote software for a living I spent my days mostly writing forms over data applications; most of my efforts were wasted just trying to make things work using ASP.NET and the Webforms engine. It was only after a year and graduating from the School of Hard Knocks that I learned there is a lot more to building clean and maintainable software than knowing the ins&amp;rsquo; and outs&amp;rsquo; of a proprietary UI technology.</description>
     </item>
     

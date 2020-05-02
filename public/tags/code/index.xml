@@ -389,5 +389,25 @@ The first option is to have your server explicitly set the caching headers.
 Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidUntilExpires(false); Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches); Response.Cache.SetCacheability(HttpCacheability.NoCache); Response.Cache.SetNoStore(); Since you don&amp;rsquo;t necessarily own the server, or clients might already have cached some requests, you can trick the browser into thinking each request is a fresh one by making each url unique.</description>
     </item>
     
+    <item>
+      <title>Validating composite models with knockout validation</title>
+      <link>http://localhost:1313/2013/05/validating-composite-models-with.html</link>
+      <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/05/validating-composite-models-with.html</guid>
+      <description>When you use knockout validation to extend observables with validation rules, it will add a few functions to these observables - the most important ones being; error and isValid. You can use these functions to verify if any of the validation rules were violated, and to extract an error message.
+To extract all of the error messages out of a composite model, you can use a grouping function.
+function BookingModel() { var self = this; self.</description>
+    </item>
+    
+    <item>
+      <title>Designing entities: immutability first</title>
+      <link>http://localhost:1313/2013/04/designing-entities-immutability-first.html</link>
+      <pubDate>Sun, 07 Apr 2013 17:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/04/designing-entities-immutability-first.html</guid>
+      <description>The first year I wrote software for a living I spent my days mostly writing forms over data applications; most of my efforts were wasted just trying to make things work using ASP.NET and the Webforms engine. It was only after a year and graduating from the School of Hard Knocks that I learned there is a lot more to building clean and maintainable software than knowing the ins&amp;rsquo; and outs&amp;rsquo; of a proprietary UI technology.</description>
+    </item>
+    
   </channel>
 </rss>

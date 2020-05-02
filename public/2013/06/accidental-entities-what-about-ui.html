@@ -4,25 +4,25 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Accidental entities - what about the UI? - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="Accidental entities - what about the UI?">
-<meta itemprop="description" content="This post is a follow-up to my previous blog post &ldquo;[Accidental entities
- you don&rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&rsquo;s color as a value, and does not care about a color&rsquo;s identity.">
+<meta itemprop="description" content="This post is a follow-up to my previous blog post &ldquo;Accidental entities - you don&rsquo;t need that identity&quot;.
+In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&rsquo;s color as a value, and does not care about a color&rsquo;s identity.">
 <meta itemprop="datePublished" content="2013-06-02T16:24:00&#43;02:00" />
 <meta itemprop="dateModified" content="2013-06-02T16:24:00&#43;02:00" />
-<meta itemprop="wordCount" content="833">
+<meta itemprop="wordCount" content="834">
 
 
 
 <meta itemprop="keywords" content="ddd,opinion," /><meta property="og:title" content="Accidental entities - what about the UI?" />
-<meta property="og:description" content="This post is a follow-up to my previous blog post &ldquo;[Accidental entities
- you don&rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&rsquo;s color as a value, and does not care about a color&rsquo;s identity." />
+<meta property="og:description" content="This post is a follow-up to my previous blog post &ldquo;Accidental entities - you don&rsquo;t need that identity&quot;.
+In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&rsquo;s color as a value, and does not care about a color&rsquo;s identity." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/" />
+<meta property="og:url" content="http://localhost:1313/2013/06/accidental-entities-what-about-ui.html" />
 <meta property="article:published_time" content="2013-06-02T16:24:00+02:00" />
 <meta property="article:modified_time" content="2013-06-02T16:24:00+02:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Accidental entities - what about the UI?"/>
-<meta name="twitter:description" content="This post is a follow-up to my previous blog post &ldquo;[Accidental entities
- you don&rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&rsquo;s color as a value, and does not care about a color&rsquo;s identity."/>
+<meta name="twitter:description" content="This post is a follow-up to my previous blog post &ldquo;Accidental entities - you don&rsquo;t need that identity&quot;.
+In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&rsquo;s color as a value, and does not care about a color&rsquo;s identity."/>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
@@ -88,11 +88,7 @@
 			</div>
 					
 			<div class="markdown">
-				<p>This post is a follow-up to my previous blog post &ldquo;[Accidental entities</p>
-<ul>
-<li>you don&rsquo;t need that
-identity](<a href="http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)%22">http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&quot;</a>.</li>
-</ul>
+				<p>This post is a follow-up to my previous blog post &ldquo;<a href="http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html">Accidental entities - you don&rsquo;t need that identity</a>&quot;.</p>
 <p>In that post, we followed a consultant building an application for a car
 rental. One of the requirements was that the CEO could manage a
 collection of available colors. Although the tools at our disposal - a
@@ -134,19 +130,21 @@ with a totally different user experience.</p>
 coffee break.</p>
 <p>After a bit of obligatory small talk, we start asking questions about
 what we&rsquo;re really after.</p>
+<hr>
 <p><strong>Us</strong>: &ldquo;Can all of the car&rsquo;s characteristics change after the initial
-registration?&rdquo;<br>
-<strong>CEO</strong>: &ldquo;No, have you ever seen a car change brand, or model through
+registration?&rdquo;</p>
+<p><strong>CEO</strong>: &ldquo;No, have you ever seen a car change brand, or model through
 its lifecycle?&rdquo;</p>
 <p><strong>Us</strong>: &ldquo;I can imagine the engine size also belongs to the list of
-characteristics that can&rsquo;t be changed after registration?&rdquo;<br>
-<strong>CEO</strong>: &ldquo;Oh, it can! We sometimes have the engine of our sports models
+characteristics that can&rsquo;t be changed after registration?&rdquo;</p>
+<p><strong>CEO</strong>: &ldquo;Oh, it can! We sometimes have the engine of our sports models
 tuned to have an edge over the competition. Guys are crazy for
 horsepower.&rdquo;</p>
-<p><strong>Us</strong>: &ldquo;What about changing the color?&rdquo;<br>
-<strong>CEO</strong>: &ldquo;If a car has some nasty scratches on it, we sometimes get it
+<p><strong>Us</strong>: &ldquo;What about changing the color?&rdquo;</p>
+<p><strong>CEO</strong>: &ldquo;If a car has some nasty scratches on it, we sometimes get it
 repainted. If we do get it repainted, it&rsquo;s always in one of the colors
 available at that moment.&rdquo;</p>
+<hr>
 <p>We return to our desk with a far better understanding of what it really
 means to change each of the car&rsquo;s characteristics. We discovered a whole
 new language, with some important constraints. Neither brands nor models

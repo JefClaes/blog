@@ -6,19 +6,10 @@
     <description>Recent content in Refactoring on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Sep 2013 16:34:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 07 Apr 2013 17:35:00 +0200</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/refactoring/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Designing entities: immutability first</title>
-      <link>http://localhost:1313/2013/04/designing-entities-immutability-first/</link>
-      <pubDate>Sun, 07 Apr 2013 17:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/04/designing-entities-immutability-first/</guid>
-      <description>The first year I wrote software for a living I spent my days mostly writing forms over data applications; most of my efforts were wasted just trying to make things work using ASP.NET and the Webforms engine. It was only after a year and graduating from the School of Hard Knocks that I learned there is a lot more to building clean and maintainable software than knowing the ins&amp;rsquo; and outs&amp;rsquo; of a proprietary UI technology.</description>
-    </item>
     
     <item>
       <title>Putting my IronMQ experiment under stress</title>

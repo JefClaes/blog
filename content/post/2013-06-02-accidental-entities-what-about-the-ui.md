@@ -3,11 +3,10 @@ title = "Accidental entities - what about the UI?"
 slug = "2013-06-02-accidental-entities-what-about-the-ui"
 published = 2013-06-02T16:24:00+02:00
 author = "Jef Claes"
-tags = [ "Architecture", "DDD", "Ramblings",]
+tags = [ "ddd", "opinion"]
+url = "2013/06/accidental-entities-what-about-ui.html"
 +++
-This post is a follow-up to my previous blog post "[Accidental entities
-- you don't need that
-identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)".  
+This post is a follow-up to my previous blog post "[Accidental entities - you don't need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)".  
   
 In that post, we followed a consultant building an application for a car
 rental. One of the requirements was that the CEO could manage a
@@ -59,23 +58,30 @@ coffee break.
   
 After a bit of obligatory small talk, we start asking questions about
 what we're really after.  
-  
+
+_____________________________
+
 **Us**: "Can all of the car's characteristics change after the initial
 registration?"  
+
 **CEO**: "No, have you ever seen a car change brand, or model through
 its lifecycle?"  
   
 **Us**: "I can imagine the engine size also belongs to the list of
 characteristics that can't be changed after registration?"  
+
 **CEO**: "Oh, it can! We sometimes have the engine of our sports models
 tuned to have an edge over the competition. Guys are crazy for
 horsepower."  
   
 **Us**: "What about changing the color?"  
+
 **CEO**: "If a car has some nasty scratches on it, we sometimes get it
 repainted. If we do get it repainted, it's always in one of the colors
 available at that moment."  
   
+_________________
+
 We return to our desk with a far better understanding of what it really
 means to change each of the car's characteristics. We discovered a whole
 new language, with some important constraints. Neither brands nor models

@@ -6,51 +6,10 @@
     <description>Recent content in CodeSnippets on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Apr 2014 18:43:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 26 May 2013 16:27:00 +0200</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/codesnippets/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Accidental entities - you don&#39;t need that identity</title>
-      <link>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</link>
-      <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that-identity/</guid>
-      <description>An entity is identified by an identifier, while value objects are identified by their value.
-If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&amp;hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
-However, if I were a car paint manufacturer, I would care a great deal about the identity of a color.</description>
-    </item>
-    
-    <item>
-      <title>Validating composite models with knockout validation</title>
-      <link>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</link>
-      <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/05/validating-composite-models-with-knockout-validation/</guid>
-      <description>When you use knockout validation to extend observables with validation rules, it will add a few functions to these observables - the most important ones being; error and isValid. You can use these functions to verify if any of the validation rules were violated, and to extract an error message.
-To extract all of the error messages out of a composite model, you can use a grouping function.
-function BookingModel() { var self = this; self.</description>
-    </item>
-    
-    <item>
-      <title>Customizing a knockout validation message</title>
-      <link>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</link>
-      <pubDate>Sun, 28 Apr 2013 18:56:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/04/customizing-a-knockout-validation-message/</guid>
-      <description>Knockout validation is a plugin that allows you to extend observables with validation. If you&amp;rsquo;re familiar with jQuery validation, you will notice that most provided validation rules are very similar.
-One of the validation rules available out-of-the-box is pattern validation. By default the error message for violating this rule doesn&amp;rsquo;t mention the expected pattern. And in general, showing the expected pattern probably isn&amp;rsquo;t a good idea since your users will have no idea what you&amp;rsquo;re talking about.</description>
-    </item>
-    
-    <item>
-      <title>Modeling the four-eye principle</title>
-      <link>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</link>
-      <pubDate>Sun, 21 Apr 2013 19:48:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</guid>
-      <description>Working in a financial domain over the last year, it was only a matter of time before I would be confronted with one of the variations of the two-man rule: the four-eye principle. Satisfying the principle is simple enough; an extra pair of eyes needs to approve of requested changes before they&amp;rsquo;re applied to the system. This measure should prevent mistakes such as a user nuking North Korea by accident, or transferring all corporate funds to a personal off-shore bank account.</description>
-    </item>
     
     <item>
       <title>Reading large files in chunks with proper encapsulation</title>

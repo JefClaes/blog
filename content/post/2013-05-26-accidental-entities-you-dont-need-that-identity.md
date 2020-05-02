@@ -3,7 +3,8 @@ title = "Accidental entities - you don't need that identity"
 slug = "2013-05-26-accidental-entities-you-dont-need-that-identity"
 published = 2013-05-26T16:27:00.001000+02:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", ".NET", "Architecture", "DDD", "Nhibnerate",]
+tags = [ "ddd", "opinion"]
+url = "2013/05/accidental-entities-you-dont-need-that.html"
 +++
 An entity is identified by an identifier, while value objects are
 identified by their value.  
@@ -26,7 +27,7 @@ is rather limited though; black, dark gray, and blue. Yet the CEO
 insists on managing this collection by herself; this should avoid having
 to call in another expensive consultant a few years down the road.  
   
-**Color as an entity**  
+### Color as an entity 
   
 So we define a collection of colors that will be persisted by
 NHibernate. Since NHibernate, and our relational database don't play
@@ -35,106 +36,107 @@ nice without a primary key, we add an identifier to the colors.
 We end up with two classes; one entity that defines a color, and another
 entity that defines a car. A car references a color.
 
-    public class Car
+```csharp
+public class Car
+{
+    public Car(Color color) 
     {
-        public Car(Color color) 
-        {
-            if (color == null)
-                throw new ArgumentNullException("color");
+        if (color == null)
+            throw new ArgumentNullException("color");
 
-            Color = color;
-        }
-
-        protected Car() { }
-
-        public virtual int Id { get; protected set; }
-
-        public virtual Color Color { get; protected set; }
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null)
-                return false;
-
-            var car = obj as Car;
-
-            if (car == null)
-                return false;
-
-            return car.Id == Id;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
+        Color = color;
     }
 
-    public class Color
+    protected Car() { }
+
+    public virtual int Id { get; protected set; }
+
+    public virtual Color Color { get; protected set; }
+
+    public override bool Equals(object obj)
     {
-        public Color(string name, string hexadecimalNotation)
-        {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentNullException("name");
-            if (string.IsNullOrEmpty(hexadecimalNotation))
-                throw new ArgumentNullException("hexadecimalNotation");
+        if (obj == null)
+            return false;
 
-            Name = name;
-            HexadecimalNotation = hexadecimalNotation;
-        }
+        var car = obj as Car;
 
-        protected Color() { }
+        if (car == null)
+            return false;
 
-        public virtual int Id { get; protected set; }
-
-        public virtual string Name { get; protected set; }
-
-        public virtual string HexadecimalNotation { get; protected set; }
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null)
-                return false;
-
-            var color = obj as Color;
-
-            if (color == null)
-                return false;
-
-            return color.Id == Id;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
+        return car.Id == Id;
     }
 
-    public class CarClassMap : ClassMap<Car>
+    public override int GetHashCode()
     {
-        public CarClassMap()
-        {
-            Id(x => x.Id).GeneratedBy.HiLo("10");
+        return Id.GetHashCode();
+    }
+}
 
-            References(x => x.Color);          
-        }
+public class Color
+{
+    public Color(string name, string hexadecimalNotation)
+    {
+        if (string.IsNullOrEmpty(name))
+            throw new ArgumentNullException("name");
+        if (string.IsNullOrEmpty(hexadecimalNotation))
+            throw new ArgumentNullException("hexadecimalNotation");
+
+        Name = name;
+        HexadecimalNotation = hexadecimalNotation;
     }
 
-    public class ColorClassMap : ClassMap<Color>
+    protected Color() { }
+
+    public virtual int Id { get; protected set; }
+
+    public virtual string Name { get; protected set; }
+
+    public virtual string HexadecimalNotation { get; protected set; }
+
+    public override bool Equals(object obj)
     {
-        public ColorClassMap()
-        {
-            Id(x => x.Id).GeneratedBy.HiLo("10");
+        if (obj == null)
+            return false;
 
-            Map(x => x.Name).Length(30).Not.Nullable();
+        var color = obj as Color;
 
-            Map(x => x.HexadecimalNotation).Length(7).Not.Nullable();
-        }
+        if (color == null)
+            return false;
+
+        return color.Id == Id;
     }
+
+    public override int GetHashCode()
+    {
+        return Id.GetHashCode();
+    }
+}
+
+public class CarClassMap : ClassMap<Car>
+{
+    public CarClassMap()
+    {
+        Id(x => x.Id).GeneratedBy.HiLo("10");
+
+        References(x => x.Color);          
+    }
+}
+
+public class ColorClassMap : ClassMap<Color>
+{
+    public ColorClassMap()
+    {
+        Id(x => x.Id).GeneratedBy.HiLo("10");
+
+        Map(x => x.Name).Length(30).Not.Nullable();
+
+        Map(x => x.HexadecimalNotation).Length(7).Not.Nullable();
+    }
+}
+```
 
 The generated schema looks like this.  
   
-
 [![](/post/images/thumbnails/2013-05-26-accidental-entities-you-dont-need-that-identity-V1.PNG)](/post/images/2013-05-26-accidental-entities-you-dont-need-that-identity-V1.PNG)
 
 And while this looks innocent at first, accidentally creating an entity
@@ -145,61 +147,63 @@ those colors still exist, we're not going to repaint all the vehicles;
 those colors just aren't available anymore. This hints towards a concept
 that might be missing.  
   
-**Fighting symptoms**  
-**  
-**We see the CEO heading over to the cafeteria, so we jump up, and ask
+### Fighting symptoms  
+  
+We see the CEO heading over to the cafeteria, so we jump up, and ask
 her whether it makes sense for her to mark those colors as unavailable,
 instead of deleting them. After a short delay she shrugs and replies:
 "Well, I could do that if that makes things easier for you." We go ahead
 and model our solution to reflect this new information. 
 
-    public class Color
+```csharp
+public class Color
+{
+    public Color(string name, string hexadecimalNotation)
     {
-        public Color(string name, string hexadecimalNotation)
-        {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentNullException("name");
-            if (string.IsNullOrEmpty(hexadecimalNotation))
-                throw new ArgumentNullException("hexadecimalNotation");
+        if (string.IsNullOrEmpty(name))
+            throw new ArgumentNullException("name");
+        if (string.IsNullOrEmpty(hexadecimalNotation))
+            throw new ArgumentNullException("hexadecimalNotation");
 
-            Name = name;
-            HexadecimalNotation = hexadecimalNotation;
-            Available = true;
-        }
-
-        protected Color() { }
-
-        public virtual int Id { get; protected set; }
-
-        public virtual string Name { get; protected set; }
-
-        public virtual string HexadecimalNotation { get; protected set; }
-        
-        public virtual bool Available { get; protected set; }
-        
-        public virtual void MakeUnavailable() 
-        {
-            Available = false;
-        }
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null)
-                return false;
-
-            var color = obj as Color;
-
-            if (color == null)
-                return false;
-
-            return color.Id == Id;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
+        Name = name;
+        HexadecimalNotation = hexadecimalNotation;
+        Available = true;
     }
+
+    protected Color() { }
+
+    public virtual int Id { get; protected set; }
+
+    public virtual string Name { get; protected set; }
+
+    public virtual string HexadecimalNotation { get; protected set; }
+    
+    public virtual bool Available { get; protected set; }
+    
+    public virtual void MakeUnavailable() 
+    {
+        Available = false;
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (obj == null)
+            return false;
+
+        var color = obj as Color;
+
+        if (color == null)
+            return false;
+
+        return color.Id == Id;
+    }
+
+    public override int GetHashCode()
+    {
+        return Id.GetHashCode();
+    }
+}
+```
 
 A few days later we show off what we came up with to the CEO. She looks
 content with what we built over the last few days, until we show her the
@@ -214,32 +218,32 @@ to be harder than it should be. A few hours later, driving home after a
 tough day, it becomes obvious that the CEO really thinks of a color as a
 value instead of an entity, so we should really be modeling it as
 such.  
+
+### Color as a component  
   
-**Color as a component**  
-**  
-**Luckily, NHibernate makes this pretty simple. The next day, we arrive
+Luckily, NHibernate makes this pretty simple. The next day, we arrive
 early at the office, and change our mapping to use a
 [component](http://ayende.com/blog/3937/nhibernate-mapping-component),
 so that instead of the car referencing a color, we store the value, and
 lose the id.
 
-    public class CarClassMap : ClassMap<Car>
+```csharp
+public class CarClassMap : ClassMap<Car>
+{
+    public CarClassMap()
     {
-        public CarClassMap()
-        {
-            Id(x => x.Id).GeneratedBy.HiLo("10");
+        Id(x => x.Id).GeneratedBy.HiLo("10");
 
-            Component(
-               x => x.Color,
-               m =>
-               {
-                   m.Map(x => x.Name).Column("ColorName").Length(30).Not.Nullable();
-                   m.Map(x => x.HexadecimalNotation).Column("ColorHex").Length(7).Not.Nullable();
-               });
-        }
+        Component(
+            x => x.Color,
+            m =>
+            {
+                m.Map(x => x.Name).Column("ColorName").Length(30).Not.Nullable();
+                m.Map(x => x.HexadecimalNotation).Column("ColorHex").Length(7).Not.Nullable();
+            });
     }
-
-  
+}
+```
 
 The generated schema now looks like this; we're no longer referencing
 the Color table.  
@@ -257,163 +261,169 @@ override the Equals and GetHashCode methods so that the identifiers are
 compared when there's an identity, but when the identifier isn't
 hydrated, the values are compared.
 
-    public class Color
+```csharp
+public class Color
+{
+    public Color(string name, string hexadecimalNotation)
     {
-        public Color(string name, string hexadecimalNotation)
-        {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentNullException("name");
-            if (string.IsNullOrEmpty(hexadecimalNotation))
-                throw new ArgumentNullException("hexadecimalNotation");
+        if (string.IsNullOrEmpty(name))
+            throw new ArgumentNullException("name");
+        if (string.IsNullOrEmpty(hexadecimalNotation))
+            throw new ArgumentNullException("hexadecimalNotation");
 
-            Name = name;
-            HexadecimalNotation = hexadecimalNotation;
-        }
-
-        protected Color() 
-        {
-            Id = -1;
-        }
-
-        public virtual int Id { get; protected set; }
-
-        public virtual string Name { get; protected set; }
-
-        public virtual string HexadecimalNotation { get; protected set; }
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null)
-                return false;
-
-            var color = obj as Color;
-
-            if (color == null)
-                return false;
-
-            if (Id != -1)
-                return Id == color.Id;
-
-            return Name == color.Name && HexadecimalNotation == color.HexadecimalNotation;
-        }
-
-        public override int GetHashCode()
-        {
-            if (Id != -1)
-                return Id.GetHashCode();
-
-            return Name.GetHashCode() & HexadecimalNotation.GetHashCode();
-        }
+        Name = name;
+        HexadecimalNotation = hexadecimalNotation;
     }
+
+    protected Color() 
+    {
+        Id = -1;
+    }
+
+    public virtual int Id { get; protected set; }
+
+    public virtual string Name { get; protected set; }
+
+    public virtual string HexadecimalNotation { get; protected set; }
+
+    public override bool Equals(object obj)
+    {
+        if (obj == null)
+            return false;
+
+        var color = obj as Color;
+
+        if (color == null)
+            return false;
+
+        if (Id != -1)
+            return Id == color.Id;
+
+        return Name == color.Name && HexadecimalNotation == color.HexadecimalNotation;
+    }
+
+    public override int GetHashCode()
+    {
+        if (Id != -1)
+            return Id.GetHashCode();
+
+        return Name.GetHashCode() & HexadecimalNotation.GetHashCode();
+    }
+}
+```
 
 This feels off though; using one concept in two different contexts makes
 things rather confusing. Is color an entity, or value object? Or does it
 depend?  
   
-**Separate concepts**  
-**  
-**We extract two explicit concepts instead; a color as a value object,
+### Separate concepts  
+
+We extract two explicit concepts instead; a color as a value object,
 and an available color as an entity. 
 
-    public class AvailableColor 
+```csharp
+public class AvailableColor 
+{
+    public AvailableColor(string name, string hexadecimalNotation)            
     {
-        public AvailableColor(string name, string hexadecimalNotation)            
-        {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentNullException("name");
-            if (string.IsNullOrEmpty(hexadecimalNotation))
-                throw new ArgumentNullException("hexadecimalNotation");
+        if (string.IsNullOrEmpty(name))
+            throw new ArgumentNullException("name");
+        if (string.IsNullOrEmpty(hexadecimalNotation))
+            throw new ArgumentNullException("hexadecimalNotation");
 
-            Name = name;
-            HexadecimalNotation = hexadecimalNotation;
-        }
-
-        protected AvailableColor()
-        {
-        }
-
-        public virtual int Id { get; protected set; }
-
-        public virtual string Name { get; protected set; }
-
-        public virtual string HexadecimalNotation { get; protected set; }
-
-        public static explicit operator Color(AvailableColor value)
-        {
-            return new Color(value.Name, value.HexadecimalNotation);
-        }  
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null)
-                return false;
-
-            var color = obj as AvailableColor;
-
-            if (color == null)
-                return false;
-
-            return color.Id == Id;
-        }
-
-        public override int GetHashCode()
-        {
-            return Id.GetHashCode();
-        }
+        Name = name;
+        HexadecimalNotation = hexadecimalNotation;
     }
 
-    public class Color
+    protected AvailableColor()
     {
-        public Color(string name, string hexadecimalNotation)
-        {
-            if (string.IsNullOrEmpty(name))
-                throw new ArgumentNullException("name");
-            if (string.IsNullOrEmpty(hexadecimalNotation))
-                throw new ArgumentNullException("hexadecimalNotation");
-
-            Name = name;
-            HexadecimalNotation = hexadecimalNotation;
-        }
-
-        protected Color()
-        {
-        }
-
-        public virtual string Name { get; protected set; }
-
-        public virtual string HexadecimalNotation { get; protected set; }
-
-        public override bool Equals(object obj)
-        {
-            if (obj == null)
-                return false;
-
-            var color = obj as Color;
-
-            if (color == null)
-                return false;
-
-            return Name == color.Name && HexadecimalNotation == color.HexadecimalNotation;
-        }
-
-        public override int GetHashCode()
-        {
-            return Name.GetHashCode() & HexadecimalNotation.GetHashCode();
-        }
     }
+
+    public virtual int Id { get; protected set; }
+
+    public virtual string Name { get; protected set; }
+
+    public virtual string HexadecimalNotation { get; protected set; }
+
+    public static explicit operator Color(AvailableColor value)
+    {
+        return new Color(value.Name, value.HexadecimalNotation);
+    }  
+
+    public override bool Equals(object obj)
+    {
+        if (obj == null)
+            return false;
+
+        var color = obj as AvailableColor;
+
+        if (color == null)
+            return false;
+
+        return color.Id == Id;
+    }
+
+    public override int GetHashCode()
+    {
+        return Id.GetHashCode();
+    }
+}
+
+public class Color
+{
+    public Color(string name, string hexadecimalNotation)
+    {
+        if (string.IsNullOrEmpty(name))
+            throw new ArgumentNullException("name");
+        if (string.IsNullOrEmpty(hexadecimalNotation))
+            throw new ArgumentNullException("hexadecimalNotation");
+
+        Name = name;
+        HexadecimalNotation = hexadecimalNotation;
+    }
+
+    protected Color()
+    {
+    }
+
+    public virtual string Name { get; protected set; }
+
+    public virtual string HexadecimalNotation { get; protected set; }
+
+    public override bool Equals(object obj)
+    {
+        if (obj == null)
+            return false;
+
+        var color = obj as Color;
+
+        if (color == null)
+            return false;
+
+        return Name == color.Name && HexadecimalNotation == color.HexadecimalNotation;
+    }
+
+    public override int GetHashCode()
+    {
+        return Name.GetHashCode() & HexadecimalNotation.GetHashCode();
+    }
+}
+```
 
 This looks better. We now have two explicit concepts. An explicit
 conversion allows you to get a color out of an available color, losing
 the identifier.
 
-    var availableColorOrange = new AvailableColor("Orange", "#CC3232");
-    var car = new Car((Color)availableColorOrange);                    
-                        
-    Console.WriteLine(car.Color.Equals(new Color("Orange", "#CC3232"))); // true
+```csharp
+var availableColorOrange = new AvailableColor("Orange", "#CC3232");
+var car = new Car((Color)availableColorOrange);                    
+                    
+Console.WriteLine(car.Color.Equals(new Color("Orange", "#CC3232"))); // true
+```
 
-**Conclusion**  
-**  
-**We meet up with the CEO one last time, and show her what we reworked.
+### Conclusion  
+
+We meet up with the CEO one last time, and show her what we reworked.
 When we demo how she can manage the collection of available colors by
 just adding and deleting them - without caring whether one of the cars
 came in that color, a smile shows up on her face; "This is exactly what
@@ -423,7 +433,5 @@ Tools often trick us into creating entities. These accidental entities
 then go on to introduce expensive coupling, introducing questions and
 problems that could easily be avoided by copying values around
 instead.  
-  
-Does your codebase contain accidental entities?  
-*  
-Next week: but what about the UI?*
+    
+*Next week: but what about the UI?*

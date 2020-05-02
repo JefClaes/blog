@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Accidental entities - you don&#39;t need that identity - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Accidental entities - you don&#39;t need that identity">
+<meta itemprop="description" content="An entity is identified by an identifier, while value objects are identified by their value.
+If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
+However, if I were a car paint manufacturer, I would care a great deal about the identity of a color.">
+<meta itemprop="datePublished" content="2013-05-26T16:27:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-05-26T16:27:00&#43;02:00" />
+<meta itemprop="wordCount" content="1642">
+
+
+
+<meta itemprop="keywords" content="ddd,opinion," /><meta property="og:title" content="Accidental entities - you don&#39;t need that identity" />
+<meta property="og:description" content="An entity is identified by an identifier, while value objects are identified by their value.
+If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
+However, if I were a car paint manufacturer, I would care a great deal about the identity of a color." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/05/accidental-entities-you-dont-need-that.html" />
+<meta property="article:published_time" content="2013-05-26T16:27:00+02:00" />
+<meta property="article:modified_time" content="2013-05-26T16:27:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Accidental entities - you don&#39;t need that identity"/>
+<meta name="twitter:description" content="An entity is identified by an identifier, while value objects are identified by their value.
+If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
+However, if I were a car paint manufacturer, I would care a great deal about the identity of a color."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">26</span>
+							<span class="rest">May 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Accidental entities - you don&#39;t need that identity</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>An entity is identified by an identifier, while value objects are
+identified by their value.</p>
+<p>If I make a living renting cars to tourists, I might not care the least
+about the identity of the colors the cars came in. I just care about
+their value; Rosso Corsa, Azurro Metallic&hellip; If I repaint the car, the
+color changes, and the previous color is abandoned as a whole.<br>
+However, if I were a car paint manufacturer, I would care a great deal
+about the identity of a color. My first action might be to make up a
+marketable name for the color, something that I can identify it with - a
+la Burnt Sienna or Iceberg Blue. The color might have a certain
+structure from the get-go, but I might experiment with the structure
+along the way, while I&rsquo;m still referring to it as the same color.</p>
+<p>Imagine that I&rsquo;m implementing a tool to manage the car rental&rsquo;s fleet,
+and that the CEO told me that color is one of the specifications that
+seems to matter a lot to their customers. The list of available colors
+is rather limited though; black, dark gray, and blue. Yet the CEO
+insists on managing this collection by herself; this should avoid having
+to call in another expensive consultant a few years down the road.</p>
+<h3 id="color-as-an-entity">Color as an entity</h3>
+<p>So we define a collection of colors that will be persisted by
+NHibernate. Since NHibernate, and our relational database don&rsquo;t play
+nice without a primary key, we add an identifier to the colors.</p>
+<p>We end up with two classes; one entity that defines a color, and another
+entity that defines a car. A car references a color.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Car</span>
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Car</span>(<span style="color:#268bd2">Color</span> <span style="color:#268bd2">color</span>) 
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">color</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;color&#34;</span>);
+
+        <span style="color:#268bd2">Color</span> = <span style="color:#268bd2">color</span>;
+    }
+
+    <span style="color:#859900">protected</span> <span style="color:#268bd2">Car</span>() { }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">Id</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#268bd2">Color</span> <span style="color:#268bd2">Color</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Equals</span>(<span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">obj</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">obj</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">car</span> = <span style="color:#268bd2">obj</span> <span style="color:#859900">as</span> <span style="color:#268bd2">Car</span>;
+
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">car</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">car</span>.<span style="color:#268bd2">Id</span> == <span style="color:#268bd2">Id</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">GetHashCode</span>()
+    {
+        <span style="color:#859900">return</span> <span style="color:#268bd2">Id</span>.<span style="color:#268bd2">GetHashCode</span>();
+    }
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Color</span>
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Color</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">name</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">hexadecimalNotation</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">name</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;name&#34;</span>);
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">hexadecimalNotation</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;hexadecimalNotation&#34;</span>);
+
+        <span style="color:#268bd2">Name</span> = <span style="color:#268bd2">name</span>;
+        <span style="color:#268bd2">HexadecimalNotation</span> = <span style="color:#268bd2">hexadecimalNotation</span>;
+    }
+
+    <span style="color:#859900">protected</span> <span style="color:#268bd2">Color</span>() { }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">Id</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">Name</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">HexadecimalNotation</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Equals</span>(<span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">obj</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">obj</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">color</span> = <span style="color:#268bd2">obj</span> <span style="color:#859900">as</span> <span style="color:#268bd2">Color</span>;
+
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">color</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">color</span>.<span style="color:#268bd2">Id</span> == <span style="color:#268bd2">Id</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">GetHashCode</span>()
+    {
+        <span style="color:#859900">return</span> <span style="color:#268bd2">Id</span>.<span style="color:#268bd2">GetHashCode</span>();
+    }
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">CarClassMap</span> : <span style="color:#268bd2">ClassMap</span>&lt;<span style="color:#268bd2">Car</span>&gt;
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">CarClassMap</span>()
+    {
+        <span style="color:#268bd2">Id</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Id</span>).<span style="color:#268bd2">GeneratedBy</span>.<span style="color:#268bd2">HiLo</span>(<span style="color:#2aa198">&#34;10&#34;</span>);
+
+        <span style="color:#268bd2">References</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Color</span>);          
+    }
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">ColorClassMap</span> : <span style="color:#268bd2">ClassMap</span>&lt;<span style="color:#268bd2">Color</span>&gt;
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">ColorClassMap</span>()
+    {
+        <span style="color:#268bd2">Id</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Id</span>).<span style="color:#268bd2">GeneratedBy</span>.<span style="color:#268bd2">HiLo</span>(<span style="color:#2aa198">&#34;10&#34;</span>);
+
+        <span style="color:#268bd2">Map</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Name</span>).<span style="color:#268bd2">Length</span>(<span style="color:#2aa198;font-weight:bold">30</span>).<span style="color:#268bd2">Not</span>.<span style="color:#268bd2">Nullable</span>();
+
+        <span style="color:#268bd2">Map</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">HexadecimalNotation</span>).<span style="color:#268bd2">Length</span>(<span style="color:#2aa198;font-weight:bold">7</span>).<span style="color:#268bd2">Not</span>.<span style="color:#268bd2">Nullable</span>();
+    }
+}
+</code></pre></div><p>The generated schema looks like this.</p>
+<p><a href="/post/images/2013-05-26-accidental-entities-you-dont-need-that-identity-V1.PNG"><img src="/post/images/thumbnails/2013-05-26-accidental-entities-you-dont-need-that-identity-V1.PNG" alt=""></a></p>
+<p>And while this looks innocent at first, accidentally creating an entity
+raises a bunch of new concerns and questions. What happens if a color is
+no longer available, and the CEO wants to remove it from the collection?
+Does that mean we should delete all models that came in this color? No,
+those colors still exist, we&rsquo;re not going to repaint all the vehicles;
+those colors just aren&rsquo;t available anymore. This hints towards a concept
+that might be missing.</p>
+<h3 id="fighting-symptoms">Fighting symptoms</h3>
+<p>We see the CEO heading over to the cafeteria, so we jump up, and ask
+her whether it makes sense for her to mark those colors as unavailable,
+instead of deleting them. After a short delay she shrugs and replies:
+&ldquo;Well, I could do that if that makes things easier for you.&rdquo; We go ahead
+and model our solution to reflect this new information. </p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Color</span>
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Color</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">name</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">hexadecimalNotation</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">name</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;name&#34;</span>);
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">hexadecimalNotation</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;hexadecimalNotation&#34;</span>);
+
+        <span style="color:#268bd2">Name</span> = <span style="color:#268bd2">name</span>;
+        <span style="color:#268bd2">HexadecimalNotation</span> = <span style="color:#268bd2">hexadecimalNotation</span>;
+        <span style="color:#268bd2">Available</span> = <span style="color:#859900">true</span>;
+    }
+
+    <span style="color:#859900">protected</span> <span style="color:#268bd2">Color</span>() { }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">Id</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">Name</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">HexadecimalNotation</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+    
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Available</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+    
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900">void</span> <span style="color:#268bd2">MakeUnavailable</span>() 
+    {
+        <span style="color:#268bd2">Available</span> = <span style="color:#859900">false</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Equals</span>(<span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">obj</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">obj</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">color</span> = <span style="color:#268bd2">obj</span> <span style="color:#859900">as</span> <span style="color:#268bd2">Color</span>;
+
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">color</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">color</span>.<span style="color:#268bd2">Id</span> == <span style="color:#268bd2">Id</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">GetHashCode</span>()
+    {
+        <span style="color:#859900">return</span> <span style="color:#268bd2">Id</span>.<span style="color:#268bd2">GetHashCode</span>();
+    }
+}
+</code></pre></div><p>A few days later we show off what we came up with to the CEO. She looks
+content with what we built over the last few days, until we show her the
+user interface that manages the colors. &ldquo;I&rsquo;m rather busy so I often make
+mistakes when I take care of these administrative tasks, could you add a
+button to really delete a color from this list anyway?&rdquo; This brings us
+back to square one. First thing we think about is soft deleting the
+colors. We could also only make it possible to remove a color if it
+hasn&rsquo;t been referenced yet. A voice in the back of our heads keeps
+telling us that we must be missing something though, and that this seems
+to be harder than it should be. A few hours later, driving home after a
+tough day, it becomes obvious that the CEO really thinks of a color as a
+value instead of an entity, so we should really be modeling it as
+such.</p>
+<h3 id="color-as-a-component">Color as a component</h3>
+<p>Luckily, NHibernate makes this pretty simple. The next day, we arrive
+early at the office, and change our mapping to use a
+<a href="http://ayende.com/blog/3937/nhibernate-mapping-component">component</a>,
+so that instead of the car referencing a color, we store the value, and
+lose the id.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">CarClassMap</span> : <span style="color:#268bd2">ClassMap</span>&lt;<span style="color:#268bd2">Car</span>&gt;
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">CarClassMap</span>()
+    {
+        <span style="color:#268bd2">Id</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Id</span>).<span style="color:#268bd2">GeneratedBy</span>.<span style="color:#268bd2">HiLo</span>(<span style="color:#2aa198">&#34;10&#34;</span>);
+
+        <span style="color:#268bd2">Component</span>(
+            <span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Color</span>,
+            <span style="color:#268bd2">m</span> =&gt;
+            {
+                <span style="color:#268bd2">m</span>.<span style="color:#268bd2">Map</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Name</span>).<span style="color:#268bd2">Column</span>(<span style="color:#2aa198">&#34;ColorName&#34;</span>).<span style="color:#268bd2">Length</span>(<span style="color:#2aa198;font-weight:bold">30</span>).<span style="color:#268bd2">Not</span>.<span style="color:#268bd2">Nullable</span>();
+                <span style="color:#268bd2">m</span>.<span style="color:#268bd2">Map</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">HexadecimalNotation</span>).<span style="color:#268bd2">Column</span>(<span style="color:#2aa198">&#34;ColorHex&#34;</span>).<span style="color:#268bd2">Length</span>(<span style="color:#2aa198;font-weight:bold">7</span>).<span style="color:#268bd2">Not</span>.<span style="color:#268bd2">Nullable</span>();
+            });
+    }
+}
+</code></pre></div><p>The generated schema now looks like this; we&rsquo;re no longer referencing
+the Color table.</p>
+<p><a href="/post/images/2013-05-26-accidental-entities-you-dont-need-that-identity-V2.PNG"><img src="/post/images/thumbnails/2013-05-26-accidental-entities-you-dont-need-that-identity-V2.PNG" alt=""></a></p>
+<p>When we store a color now, it&rsquo;s an entity. But as soon as we put it on a
+car, it&rsquo;s a value object. When we pull the car back out of our
+persistence store, we have lost the identity. We should modify our code
+so that the color&rsquo;s behaviour reflects these changes. We modify the
+default constructor so that the object gets initialized with a default
+identifier. The default constructor will get used by NHibernate when it
+hydrates the object after getting it out the persistence store. We
+override the Equals and GetHashCode methods so that the identifiers are
+compared when there&rsquo;s an identity, but when the identifier isn&rsquo;t
+hydrated, the values are compared.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Color</span>
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Color</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">name</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">hexadecimalNotation</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">name</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;name&#34;</span>);
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">hexadecimalNotation</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;hexadecimalNotation&#34;</span>);
+
+        <span style="color:#268bd2">Name</span> = <span style="color:#268bd2">name</span>;
+        <span style="color:#268bd2">HexadecimalNotation</span> = <span style="color:#268bd2">hexadecimalNotation</span>;
+    }
+
+    <span style="color:#859900">protected</span> <span style="color:#268bd2">Color</span>() 
+    {
+        <span style="color:#268bd2">Id</span> = -<span style="color:#2aa198;font-weight:bold">1</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">Id</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">Name</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">HexadecimalNotation</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Equals</span>(<span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">obj</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">obj</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">color</span> = <span style="color:#268bd2">obj</span> <span style="color:#859900">as</span> <span style="color:#268bd2">Color</span>;
+
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">color</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">Id</span> != -<span style="color:#2aa198;font-weight:bold">1</span>)
+            <span style="color:#859900">return</span> <span style="color:#268bd2">Id</span> == <span style="color:#268bd2">color</span>.<span style="color:#268bd2">Id</span>;
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">Name</span> == <span style="color:#268bd2">color</span>.<span style="color:#268bd2">Name</span> &amp;&amp; <span style="color:#268bd2">HexadecimalNotation</span> == <span style="color:#268bd2">color</span>.<span style="color:#268bd2">HexadecimalNotation</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">GetHashCode</span>()
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">Id</span> != -<span style="color:#2aa198;font-weight:bold">1</span>)
+            <span style="color:#859900">return</span> <span style="color:#268bd2">Id</span>.<span style="color:#268bd2">GetHashCode</span>();
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">Name</span>.<span style="color:#268bd2">GetHashCode</span>() &amp; <span style="color:#268bd2">HexadecimalNotation</span>.<span style="color:#268bd2">GetHashCode</span>();
+    }
+}
+</code></pre></div><p>This feels off though; using one concept in two different contexts makes
+things rather confusing. Is color an entity, or value object? Or does it
+depend?</p>
+<h3 id="separate-concepts">Separate concepts</h3>
+<p>We extract two explicit concepts instead; a color as a value object,
+and an available color as an entity. </p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">AvailableColor</span> 
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">AvailableColor</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">name</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">hexadecimalNotation</span>)            
+    {
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">name</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;name&#34;</span>);
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">hexadecimalNotation</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;hexadecimalNotation&#34;</span>);
+
+        <span style="color:#268bd2">Name</span> = <span style="color:#268bd2">name</span>;
+        <span style="color:#268bd2">HexadecimalNotation</span> = <span style="color:#268bd2">hexadecimalNotation</span>;
+    }
+
+    <span style="color:#859900">protected</span> <span style="color:#268bd2">AvailableColor</span>()
+    {
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">Id</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">Name</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">HexadecimalNotation</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">static</span> <span style="color:#859900">explicit</span> <span style="color:#859900">operator</span> <span style="color:#268bd2">Color</span>(<span style="color:#268bd2">AvailableColor</span> <span style="color:#859900">value</span>)
+    {
+        <span style="color:#859900">return</span> <span style="color:#859900">new</span> <span style="color:#268bd2">Color</span>(<span style="color:#859900">value</span>.<span style="color:#268bd2">Name</span>, <span style="color:#859900">value</span>.<span style="color:#268bd2">HexadecimalNotation</span>);
+    }  
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Equals</span>(<span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">obj</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">obj</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">color</span> = <span style="color:#268bd2">obj</span> <span style="color:#859900">as</span> <span style="color:#268bd2">AvailableColor</span>;
+
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">color</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">color</span>.<span style="color:#268bd2">Id</span> == <span style="color:#268bd2">Id</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">GetHashCode</span>()
+    {
+        <span style="color:#859900">return</span> <span style="color:#268bd2">Id</span>.<span style="color:#268bd2">GetHashCode</span>();
+    }
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Color</span>
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Color</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">name</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">hexadecimalNotation</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">name</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;name&#34;</span>);
+        <span style="color:#859900">if</span> (<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">IsNullOrEmpty</span>(<span style="color:#268bd2">hexadecimalNotation</span>))
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ArgumentNullException</span>(<span style="color:#2aa198">&#34;hexadecimalNotation&#34;</span>);
+
+        <span style="color:#268bd2">Name</span> = <span style="color:#268bd2">name</span>;
+        <span style="color:#268bd2">HexadecimalNotation</span> = <span style="color:#268bd2">hexadecimalNotation</span>;
+    }
+
+    <span style="color:#859900">protected</span> <span style="color:#268bd2">Color</span>()
+    {
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">Name</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">virtual</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">HexadecimalNotation</span> { <span style="color:#859900">get</span>; <span style="color:#859900">protected</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Equals</span>(<span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">obj</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">obj</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">color</span> = <span style="color:#268bd2">obj</span> <span style="color:#859900">as</span> <span style="color:#268bd2">Color</span>;
+
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">color</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">Name</span> == <span style="color:#268bd2">color</span>.<span style="color:#268bd2">Name</span> &amp;&amp; <span style="color:#268bd2">HexadecimalNotation</span> == <span style="color:#268bd2">color</span>.<span style="color:#268bd2">HexadecimalNotation</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">GetHashCode</span>()
+    {
+        <span style="color:#859900">return</span> <span style="color:#268bd2">Name</span>.<span style="color:#268bd2">GetHashCode</span>() &amp; <span style="color:#268bd2">HexadecimalNotation</span>.<span style="color:#268bd2">GetHashCode</span>();
+    }
+}
+</code></pre></div><p>This looks better. We now have two explicit concepts. An explicit
+conversion allows you to get a color out of an available color, losing
+the identifier.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">availableColorOrange</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">AvailableColor</span>(<span style="color:#2aa198">&#34;Orange&#34;</span>, <span style="color:#2aa198">&#34;#CC3232&#34;</span>);
+<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">car</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">Car</span>((<span style="color:#268bd2">Color</span>)<span style="color:#268bd2">availableColorOrange</span>);                    
+                    
+<span style="color:#268bd2">Console</span>.<span style="color:#268bd2">WriteLine</span>(<span style="color:#268bd2">car</span>.<span style="color:#268bd2">Color</span>.<span style="color:#268bd2">Equals</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Color</span>(<span style="color:#2aa198">&#34;Orange&#34;</span>, <span style="color:#2aa198">&#34;#CC3232&#34;</span>))); <span style="color:#93a1a1;font-style:italic">// true
+</span></code></pre></div><h3 id="conclusion">Conclusion</h3>
+<p>We meet up with the CEO one last time, and show her what we reworked.
+When we demo how she can manage the collection of available colors by
+just adding and deleting them - without caring whether one of the cars
+came in that color, a smile shows up on her face; &ldquo;This is exactly what
+I needed, it really shouldn&rsquo;t be harder than this.&rdquo;</p>
+<p>Tools often trick us into creating entities. These accidental entities
+then go on to introduce expensive coupling, introducing questions and
+problems that could easily be avoided by copying values around
+instead.</p>
+<p><em>Next week: but what about the UI?</em></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/ddd">ddd</a></li>
+							
+							<li><a href="/tags/opinion">opinion</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

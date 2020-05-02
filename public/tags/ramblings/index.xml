@@ -6,59 +6,10 @@
     <description>Recent content in Ramblings on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Aug 2014 19:52:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jun 2013 16:24:00 +0200</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/ramblings/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Accidental entities - what about the UI?</title>
-      <link>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</link>
-      <pubDate>Sun, 02 Jun 2013 16:24:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</guid>
-      <description>This post is a follow-up to my previous blog post &amp;ldquo;[Accidental entities
- you don&amp;rsquo;t need that identity](http://www.jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html)&amp;quot;.  In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&amp;rsquo;s color as a value, and does not care about a color&amp;rsquo;s identity.</description>
-    </item>
-    
-    <item>
-      <title>IDDD Tour notes (2/2)</title>
-      <link>http://localhost:1313/2013/05/iddd-tour-notes-2/2/</link>
-      <pubDate>Sun, 12 May 2013 15:44:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/05/iddd-tour-notes-2/2/</guid>
-      <description>This is the second and last part of my notes I scribbled down attending the IDDD Tour. The first part was published last week.
-A better model
- Even if you come up with a better model, the fact that it has been the ubiquitous language of the domain for decades proves that it works for them.
- This quote bothers me a bit. There definitely is truth to this, but modeling an existing process often presents such a great opportunity to revise and improve it.</description>
-    </item>
-    
-    <item>
-      <title>IDDD Tour notes (1/2)</title>
-      <link>http://localhost:1313/2013/05/iddd-tour-notes-1/2/</link>
-      <pubDate>Sun, 05 May 2013 17:10:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/05/iddd-tour-notes-1/2/</guid>
-      <description>Two weeks ago I got to spend four days attending the IDDD Tour by Vaughn Vernon. Although my book queue has only allowed me to shallowly browse the book, I had high hopes for this course. I anticipated a week of getting lectured on DDD with a few practical exercises, but was blown away by the openness and interaction promoted by Vaughn and his associate Alberto Brandolini. A passionate group, engaging workshops, long days and lots of sharing made these few days exceptionally satisfying and inspirational.</description>
-    </item>
-    
-    <item>
-      <title>Modeling the four-eye principle</title>
-      <link>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</link>
-      <pubDate>Sun, 21 Apr 2013 19:48:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/04/modeling-the-four-eye-principle/</guid>
-      <description>Working in a financial domain over the last year, it was only a matter of time before I would be confronted with one of the variations of the two-man rule: the four-eye principle. Satisfying the principle is simple enough; an extra pair of eyes needs to approve of requested changes before they&amp;rsquo;re applied to the system. This measure should prevent mistakes such as a user nuking North Korea by accident, or transferring all corporate funds to a personal off-shore bank account.</description>
-    </item>
-    
-    <item>
-      <title>Designing entities: immutability first</title>
-      <link>http://localhost:1313/2013/04/designing-entities-immutability-first/</link>
-      <pubDate>Sun, 07 Apr 2013 17:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/04/designing-entities-immutability-first/</guid>
-      <description>The first year I wrote software for a living I spent my days mostly writing forms over data applications; most of my efforts were wasted just trying to make things work using ASP.NET and the Webforms engine. It was only after a year and graduating from the School of Hard Knocks that I learned there is a lot more to building clean and maintainable software than knowing the ins&amp;rsquo; and outs&amp;rsquo; of a proprietary UI technology.</description>
-    </item>
     
     <item>
       <title>My Christmas holiday project postmortem</title>

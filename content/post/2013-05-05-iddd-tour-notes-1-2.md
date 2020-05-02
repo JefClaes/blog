@@ -3,7 +3,8 @@ title = "IDDD Tour notes (1/2)"
 slug = "2013-05-05-iddd-tour-notes-1-2"
 published = 2013-05-05T17:10:00+02:00
 author = "Jef Claes"
-tags = [ "DDD", "Ramblings",]
+tags = [ "consumed", "ddd"]
+url = "2013/05/iddd-tour-notes-12.html"
 +++
 Two weeks ago I got to spend four days attending the [IDDD
 Tour](http://idddtour.com/) by [Vaughn
@@ -23,7 +24,7 @@ remembering or worth some more thought. Most of these are aimed at the
 strategic side of DDD and the softer side of software since that's where
 I acquired most new insights.  
   
-**Complexity**  
+### Complexity  
 
 > If we really understood the complexity of a system, we would very
 > often make different decisions from when designing new systems. 
@@ -43,7 +44,7 @@ relentlessly refactor everything behind these commands and queries
 without breaking application code: introduce domain services, events,
 separate the write- from the read model etc...  
   
-**Change**  
+### Change
 
 > How do you bring in DDD? Gather a small cluster of motivated silent
 > people and work on a project that has lots of potential value.
@@ -52,7 +53,7 @@ This is my recipe for change as well. Find a few like-minded people that
 are confident drawing outside the lines set out by the status quo, work
 in the shades, working your way towards the light.  
   
-**Brown**  
+### Brown 
 
 > There is always brown, even when it's under the green. 
 
@@ -60,7 +61,7 @@ Every application has parts which are less pretty, even green fields;
 use proper encapsulation to contain them, and avoid them corrupting
 other parts of the system.  
   
-** Another brick in the wall**  
+### Another brick in the wall  
 
 > Break down that paper wall between domain experts and developers.
 > Learn the favorite coffee of the domain expert.
@@ -71,7 +72,7 @@ nuances very well. Communicating on a more personal level is key to
 tearing down that wall. Breaking the ice can be as easy as treating your
 domain expert to coffee.  
   
-**One language**  
+### One language
 
 > Which language do you use when naming things in code? Yours. 
 
@@ -88,14 +89,14 @@ concepts such as account number, name... but use their mother tongue in
 scenarios where nuances would be lost in translation. This seems to be
 an attractive compromise.  
   
-**Defining a bounded context**  
+### Defining a bounded context  
 
 > A bounded context is where one ubiquitous language is consistent.
 
 This is by far the simplest definition of a bounded context. <span
 class="Apple-tab-span" style="white-space: pre;"> </span>  
   
-**Bounded context relations**  
+### Bounded context relations 
 
 > You say please, so I am upstream.
 
@@ -105,7 +106,7 @@ is expressed by saying one is upstream or downstream. I thought of the
 quote above to be a creative expression that can aid in explaining these
 two concepts.  
   
-**Rewrites**  
+### Rewrites
 
 > When you rewrite an application, you have to look at the existing
 > forces in an organization; chances are the previous team wasn't
@@ -117,10 +118,9 @@ close to impossible to ship good software; fear of change, lack of
 vision, bone-dry information streams... So don't assume your rewrite
 will fix everything.  
   
-**Surprise**  
+### Surprise  
 
-> Adding surprise value is often not that valuable.<span
-> class="Apple-tab-span" style="white-space: pre;"> </span>
+> Adding surprise value is often not that valuable.
 
 This seems to be related to the mantra of 'good enough'. Sometimes we -
 with the best intentions - invest more time and money in solving a
