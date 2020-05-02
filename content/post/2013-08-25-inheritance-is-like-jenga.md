@@ -3,7 +3,8 @@ title = "Inheritance is like Jenga"
 slug = "2013-08-25-inheritance-is-like-jenga"
 published = 2013-08-25T18:18:00+02:00
 author = "Jef Claes"
-tags = [ ".NET", "Architecture", "Ramblings",]
+tags = [ "opinion",]
+url = "2013/08/inheritance-is-like-jenga.html"
 +++
 These last few days, I have been working on a piece of our codebase that
 accidentally got very inheritance heavy.  

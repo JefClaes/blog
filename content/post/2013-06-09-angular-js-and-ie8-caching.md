@@ -3,7 +3,8 @@ title = "Angular.js and IE8 caching"
 slug = "2013-06-09-angular-js-and-ie8-caching"
 published = 2013-06-09T16:52:00+02:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", "ASP.NET MVC", "AJAX", "javascript",]
+tags = [ "code",]
+url = "2013/06/angularjs-and-ie8-caching.html"
 +++
 Older Internet Explorer versions are notorious for agressively caching
 AJAX requests. In this post, you'll find two techniques that combat this
@@ -12,11 +13,13 @@ behaviour.
 The first option is to have your server explicitly set the caching
 headers.  
 
-    Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1));
-    Response.Cache.SetValidUntilExpires(false);
-    Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
-    Response.Cache.SetCacheability(HttpCacheability.NoCache);
-    Response.Cache.SetNoStore();
+```csharp
+Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1));
+Response.Cache.SetValidUntilExpires(false);
+Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);
+Response.Cache.SetCacheability(HttpCacheability.NoCache);
+Response.Cache.SetNoStore();
+```
 
 Since you don't necessarily own the server, or clients might already
 have cached some requests, you can trick the browser into thinking each
@@ -38,23 +41,25 @@ timestamp to each url, making it unique and thus bypassing the cache. A
 factory is responsible for creating it, while a config block pushes it
 into a collection of interceptors.
 
-    var AppInfrastructure = angular.module('App.Infrastructure', []);
+```js
+var AppInfrastructure = angular.module('App.Infrastructure', []);
 
-    AppInfrastructure
-        .config(function ($httpProvider) {
-            $httpProvider.requestInterceptors.push('httpRequestInterceptorCacheBuster');
-        })    
-        .factory('httpRequestInterceptorCacheBuster', function () {
-            return function (promise) {
-                return promise.then(function (request) {
-                    if (request.method === 'GET') {
-                        var sep = request.url.indexOf('?') === -1 ? '?' : '&';
-                        request.url = request.url + sep + 'cacheSlayer=' + new Date().getTime();
-                    }
+AppInfrastructure
+    .config(function ($httpProvider) {
+        $httpProvider.requestInterceptors.push('httpRequestInterceptorCacheBuster');
+    })    
+    .factory('httpRequestInterceptorCacheBuster', function () {
+        return function (promise) {
+            return promise.then(function (request) {
+                if (request.method === 'GET') {
+                    var sep = request.url.indexOf('?') === -1 ? '?' : '&';
+                    request.url = request.url + sep + 'cacheSlayer=' + new Date().getTime();
+                }
 
-                    return request;
-                });
-            };
-        });    
+                return request;
+            });
+        };
+    });    
+```
 
 I hope this helps someone spending time on more important matters.

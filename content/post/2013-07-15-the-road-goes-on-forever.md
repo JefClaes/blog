@@ -3,7 +3,8 @@ title = "The road goes on forever"
 slug = "2013-07-15-the-road-goes-on-forever"
 published = 2013-07-15T04:51:00+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2013/07/the-road-goes-on-forever.html"
 +++
 We didn’t get to see a lot of Salt Lake City. Before heading to Idaho
 Falls, we hung around at the mall, feasted on Sushi, and bought new

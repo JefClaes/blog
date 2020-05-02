@@ -498,7 +498,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/12/2013s-most-read-posts/</loc>
+    <loc>http://localhost:1313/2013/12/2013s-most-read-posts.html</loc>
     <lastmod>2013-12-29T17:05:00+01:00</lastmod>
   </url>
   
@@ -508,42 +508,42 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/12/databases-are-growing-on-me/</loc>
+    <loc>http://localhost:1313/2013/12/databases-are-growing-on-me.html</loc>
     <lastmod>2013-12-22T21:53:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/12/buildstuff-2013/</loc>
+    <loc>http://localhost:1313/2013/12/buildstuff-2013.html</loc>
     <lastmod>2013-12-15T22:03:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/12/book-review-antifragile/</loc>
+    <loc>http://localhost:1313/2013/12/book-review-antifragile.html</loc>
     <lastmod>2013-12-08T17:30:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/11/observations-over-assumptions/</loc>
+    <loc>http://localhost:1313/2013/11/observations-over-assumptions.html</loc>
     <lastmod>2013-11-24T18:08:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/11/event-storming-workshop-slides/</loc>
+    <loc>http://localhost:1313/2013/11/event-storming-workshop-slides.html</loc>
     <lastmod>2013-11-17T19:56:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</loc>
+    <loc>http://localhost:1313/2013/11/an-event-store-with-optimistic.html</loc>
     <lastmod>2013-11-10T18:25:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/11/event-source-all-the-things/</loc>
+    <loc>http://localhost:1313/2013/11/event-source-all-things.html</loc>
     <lastmod>2013-11-03T18:45:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/10/event-projections/</loc>
+    <loc>http://localhost:1313/2013/10/event-projections.html</loc>
     <lastmod>2013-10-27T17:43:00+01:00</lastmod>
   </url>
   
@@ -553,27 +553,27 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/10/an-event-store/</loc>
+    <loc>http://localhost:1313/2013/10/an-event-store.html</loc>
     <lastmod>2013-10-20T17:30:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/10/an-event-sourced-aggregate/</loc>
+    <loc>http://localhost:1313/2013/10/an-event-sourced-aggregate.html</loc>
     <lastmod>2013-10-13T18:36:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/10/my-understanding-of-event-sourcing/</loc>
+    <loc>http://localhost:1313/2013/10/my-understanding-of-event-sourcing.html</loc>
     <lastmod>2013-10-06T18:32:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/09/cz-the-trilogy/</loc>
+    <loc>http://localhost:1313/2013/09/cz-trilogy.html</loc>
     <lastmod>2013-09-29T18:15:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/09/actor-model-in-cobol/</loc>
+    <loc>http://localhost:1313/2013/09/actor-model-in-cobol.html</loc>
     <lastmod>2013-09-22T16:38:00+02:00</lastmod>
   </url>
   
@@ -588,87 +588,87 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</loc>
+    <loc>http://localhost:1313/2013/09/slides-from-my-talk-on-ubiquitous.html</loc>
     <lastmod>2013-09-15T16:34:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</loc>
+    <loc>http://localhost:1313/2013/09/the-first-dddbe-modellathon.html</loc>
     <lastmod>2013-09-06T13:24:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/08/inheritance-is-like-jenga/</loc>
+    <loc>http://localhost:1313/2013/08/inheritance-is-like-jenga.html</loc>
     <lastmod>2013-08-25T18:18:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/08/but-i-already-wrote-it/</loc>
+    <loc>http://localhost:1313/2013/08/but-i-already-wrote-it.html</loc>
     <lastmod>2013-08-18T16:24:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</loc>
+    <loc>http://localhost:1313/2013/08/eventual-consistent-domain-events-with.html</loc>
     <lastmod>2013-08-15T14:03:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/08/when-your-commands-spell-cud/</loc>
+    <loc>http://localhost:1313/2013/08/when-your-commands-spell-cud.html</loc>
     <lastmod>2013-08-04T19:08:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/07/the-last-cowboy/</loc>
+    <loc>http://localhost:1313/2013/07/to-live-die-in-la.html</loc>
     <lastmod>2013-07-16T05:46:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/07/the-road-goes-on-forever/</loc>
+    <loc>http://localhost:1313/2013/07/the-road-goes-on-forever.html</loc>
     <lastmod>2013-07-15T04:51:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/07/the-long-highway/</loc>
+    <loc>http://localhost:1313/2013/07/the-long-highway.html</loc>
     <lastmod>2013-07-12T07:13:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/07/stairway-to-heaven/</loc>
+    <loc>http://localhost:1313/tags/rravel/</loc>
     <lastmod>2013-07-10T07:04:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/07/she-said-yes/</loc>
+    <loc>http://localhost:1313/2013/07/stairway-to-heaven.html</loc>
+    <lastmod>2013-07-10T07:04:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2013/07/she-said-yes.html</loc>
     <lastmod>2013-07-09T07:42:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/07/fireworks-tequila-and-silvertown-blues/</loc>
+    <loc>http://localhost:1313/2013/07/fireworks-tequila-and-silvertown-blues.html</loc>
     <lastmod>2013-07-07T06:30:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/07/to-live-die-in-l.a./</loc>
+    <loc>http://localhost:1313/2013/07/to-live-die-in-la.html</loc>
     <lastmod>2013-07-04T08:51:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</loc>
+    <loc>http://localhost:1313/2013/06/multiplayer-enterprise-architect.html</loc>
     <lastmod>2013-06-30T17:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</loc>
+    <loc>http://localhost:1313/2013/06/not-handling-edge-cases-making-them.html</loc>
     <lastmod>2013-06-23T16:49:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/06/feeds-worth-reading-saying-goodbye-to-google-reader/</loc>
-    <lastmod>2013-06-16T22:18:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</loc>
+    <loc>http://localhost:1313/2013/06/angularjs-and-ie8-caching.html</loc>
     <lastmod>2013-06-09T16:52:00+02:00</lastmod>
   </url>
   

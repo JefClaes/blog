@@ -7,11 +7,11 @@
 <meta itemprop="description" content="In an Actor system, each Actor acts as a self-contained and autonomous component. An Actor can only communicate with other Actors by exchanging messages - they are not allowed to share state. Messages are handled asynchronously, and are nondeterministic. The location of Actors should be transparent; they can either live on the same machine, or on a distributed system. These properties make the Actor Model a great fit for parallel and distributed computing.">
 <meta itemprop="datePublished" content="2013-09-22T16:38:00&#43;02:00" />
 <meta itemprop="dateModified" content="2013-09-22T16:38:00&#43;02:00" />
-<meta itemprop="wordCount" content="567">
+<meta itemprop="wordCount" content="562">
 
 
 
-<meta itemprop="keywords" content="Architecture,DDD,Ramblings," /><meta property="og:title" content="Actor Model in COBOL" />
+<meta itemprop="keywords" content="opinion," /><meta property="og:title" content="Actor Model in COBOL" />
 <meta property="og:description" content="In an Actor system, each Actor acts as a self-contained and autonomous component. An Actor can only communicate with other Actors by exchanging messages - they are not allowed to share state. Messages are handled asynchronously, and are nondeterministic. The location of Actors should be transparent; they can either live on the same machine, or on a distributed system. These properties make the Actor Model a great fit for parallel and distributed computing." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/2013/09/actor-model-in-cobol/" />
@@ -108,38 +108,29 @@ experts as well.</p>
 it recently came to me that how they have designed their systems over
 the years is compatible with a good amount of Actor laws.</p>
 <p><a href="/post/images/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG"><img src="/post/images/thumbnails/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG" alt=""></a></p>
-<p><strong>Composition</strong><br>
-**<br>
-**A good thing about COBOL seems to be that it&rsquo;s nearly impossible to
+<h3 id="composition">Composition</h3>
+<p>A good thing about COBOL seems to be that it&rsquo;s nearly impossible to
 write maintainable big programs, so you&rsquo;re forced to decompose your
 program into smallish autonomous components - into jobs.</p>
-<p><strong>Messages</strong><br>
-**<br>
-**Communication between these jobs happens by passing flat files around</p>
+<h3 id="messages">Messages</h3>
+<p>Communication between these jobs happens by passing flat files around</p>
 <ul>
-<li>the only format that&rsquo;s supported out-of-the-box.<br>
-Messages come in, and new messages go out. Jobs will never mutate the
-incoming payload, a new copy is created instead; pipes and filters.<br>
-Folders serve as a queue, allowing files to be processed asynchronously
-and nondeterministic.</li>
+<li>the only format that&rsquo;s supported out-of-the-box. Messages come in, and new messages go out. Jobs will never mutate the incoming payload, a new copy is created instead; pipes and filters. Folders serve as a queue, allowing files to be processed asynchronously and deterministic.</li>
 </ul>
 <p>Staying clear of mutating messages makes debugging extremely easy;
 you&rsquo;ll never hear someone on the team asking for reproduction steps,
 they just restore the production archives locally.</p>
-<p><strong>Addresses</strong><br>
-**<br>
-**Actors send messages to other Actors using their addresses. This can
+<h3 id="addresses">Addresses</h3>
+<p>Actors send messages to other Actors using their addresses. This can
 be a memory or disk address, a network address, email address, whatever
 really. In mainframe land, file system paths serve as addresses.</p>
-<p><strong>No shared state</strong><br>
-**<br>
-**In general they stay away from jobs sharing state; the default is to
+<h3 id="no-shared-state">No shared state</h3>
+<p>In general they stay away from jobs sharing state; the default is to
 lock files exclusively, so sharing them is highly impractical. Even most
 static data gets synchronized instead of shared - banking reference
 data, customer addresses, configuration etc&hellip;</p>
-<p><strong>Scheduling</strong><br>
-**<br>
-**A scheduler sits on top of all these jobs. Its responsibility is to
+<h3 id="scheduling">Scheduling</h3>
+<p>A scheduler sits on top of all these jobs. Its responsibility is to
 start a job when a new file arrives. If a job fails, the scheduler acts
 as a supervisor and will notify operations, which will investigate the
 issue - probably look at what&rsquo;s on the file system, and use the same
@@ -160,11 +151,7 @@ of my imagination. Feel free to share your thoughts. *</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/architecture">Architecture</a></li>
-							
-							<li><a href="/tags/ddd">DDD</a></li>
-							
-							<li><a href="/tags/ramblings">Ramblings</a></li>
+							<li><a href="/tags/opinion">opinion</a></li>
 							
 						</ul>
 					

@@ -3,7 +3,8 @@ title = "Fireworks, Tequila and Silvertown Blues"
 slug = "2013-07-07-fireworks-tequila-and-silvertown-blues"
 published = 2013-07-07T06:30:00+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2013/07/fireworks-tequila-and-silvertown-blues.html"
 +++
 After a strenuous drive from Los Angeles to San Diego, we took advantage
 of the mild climate to unwind at San Diego’s

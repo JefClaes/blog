@@ -51,5 +51,25 @@ Together with Tom, I preached Alberto&amp;lsquo;s Event Storming during a four h
 My talk covered the Ubiquitous Language, and can be found on Slideshare. I might end up writing down the content of the talk as well - some images are meaningless without words. Evaluating feedback, I think the biggest mistake we made was keeping some things too abstract - curse of knowledge at work. If we get the chance to repeat the session, we need to make sure to weave a practical story through our talks to make them stick.</description>
     </item>
     
+    <item>
+      <title>Event storming workshop slides</title>
+      <link>http://localhost:1313/2013/11/event-storming-workshop-slides.html</link>
+      <pubDate>Sun, 17 Nov 2013 19:56:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2013/11/event-storming-workshop-slides.html</guid>
+      <description>At Euricom, we quarterly all retreat to headquarters for a day of sharing and learning. This time, I and others organized and facilitated an event storming workshop.
+After a short introduction on event storming participants were initiated to the domain of Cambio CarSharing - which is packed with behaviour. After that, seven groups of five (+ one domain expert) spread out across the office, and spent two slots of twenty minutes modeling the domain - with two extra slots for feedback.</description>
+    </item>
+    
+    <item>
+      <title>Slides from my talk on the Ubiquitous Language</title>
+      <link>http://localhost:1313/2013/09/slides-from-my-talk-on-ubiquitous.html</link>
+      <pubDate>Sun, 15 Sep 2013 16:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2013/09/slides-from-my-talk-on-ubiquitous.html</guid>
+      <description>I just returned from our yearly Euricom retreat. This year, all forty of us got to spend four days in the South of Spain. Where we had longish sessions and a few workshops last year, we experimented with shorter talks this year - a la lightning talks, TEDx style.
+This format made it possible for everyone to speak, but also forced the speaker to keep the scope of the talk focused, and to organize the information in a way that attendees can get the gist of it in only twelve minutes.</description>
+    </item>
+    
   </channel>
 </rss>

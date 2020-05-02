@@ -3,7 +3,8 @@ title = "Book review: Antifragile"
 slug = "2013-12-08-book-review-antifragile"
 published = 2013-12-08T17:30:00+01:00
 author = "Jef Claes"
-tags = [ "Bookreview",]
+tags = [ "consumed",]
+url = "2013/12/book-review-antifragile.html"
 +++
 When things are fragile, they break easily. We often see fragility as a
 bad thing and design things to be robust. But this isn't what we're
@@ -13,7 +14,6 @@ over time. The model that we're really after is antifragility; when
 something is antifragile it will benefit from stressors and get better
 over time.
 
-  
 A cup is fragile; drop it and it breaks. A skyscraper on the other hand
 is robust; it is designed to resist the forces of nature; from
 hurricanes to earthquakes. A perfect example of antifragility is the

@@ -3,7 +3,8 @@ title = "She said yes!"
 slug = "2013-07-09-she-said-yes"
 published = 2013-07-09T07:42:00.001000+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2013/07/she-said-yes.html"
 +++
 Since our stay in Vegas was rather short, we selected some things [we
 failed to do last

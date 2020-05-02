@@ -3,7 +3,8 @@ title = "The long highway"
 slug = "2013-07-12-the-long-highway"
 published = 2013-07-12T07:13:00+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2013/07/the-long-highway.html"
 +++
 We’re past halfway our trip and we need to make headway if we want to
 stay on schedule and reach Yellowstone by Sunday. Long, but pleasant

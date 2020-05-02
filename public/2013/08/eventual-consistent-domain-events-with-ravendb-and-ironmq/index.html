@@ -9,11 +9,11 @@ One project I&rsquo;m working on right now makes use of domain events. As an exa
 I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.">
 <meta itemprop="datePublished" content="2013-08-15T14:03:00&#43;02:00" />
 <meta itemprop="dateModified" content="2013-08-15T14:03:00&#43;02:00" />
-<meta itemprop="wordCount" content="739">
+<meta itemprop="wordCount" content="735">
 
 
 
-<meta itemprop="keywords" content="CodeSnippets,.NET,DDD,NoSql," /><meta property="og:title" content="Eventual consistent domain events with RavenDB and IronMQ" />
+<meta itemprop="keywords" content="code,ddd,infrastructure," /><meta property="og:title" content="Eventual consistent domain events with RavenDB and IronMQ" />
 <meta property="og:description" content="Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
 One project I&rsquo;m working on right now makes use of domain events. As an example, I&rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
 I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable." />
@@ -98,7 +98,7 @@ one before
 <a href="http://www.jefclaes.be/2013/03/first-ironmq-impressions.html">here</a> and
 <a href="http://www.jefclaes.be/2013/03/putting-my-ironmq-experiment-under.html">here</a>.</p>
 <p>One project I&rsquo;m working on right now makes use of domain events. As an
-example, I&rsquo;ll use the usual suspect: the BookingConfirmed event. When a
+example, I&rsquo;ll use the usual suspect: the <code>BookingConfirmed</code> event. When a
 booking has been confirmed, I want to notify my customer by sending him
 an email.</p>
 <p>I want to avoid that persisting a booking fails because an eventhandler
@@ -107,77 +107,73 @@ eventhandler executes an operation that can&rsquo;t be rolled back - sending
 out an email - without first making sure the booking was persisted
 succesfully. If an eventhandler fails, I want to give it the opportunity
 to fix what&rsquo;s wrong and retry.</p>
-<pre><code>public void Confirm()
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Confirm</span>()
 {
-    Status = BookingStatus.Accepted;
+    <span style="color:#268bd2">Status</span> = <span style="color:#268bd2">BookingStatus</span>.<span style="color:#268bd2">Accepted</span>;
 
-    Events.Raise(new BookingConfirmed(Id));
+    <span style="color:#268bd2">Events</span>.<span style="color:#268bd2">Raise</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">BookingConfirmed</span>(<span style="color:#268bd2">Id</span>));
 }
-</code></pre>
-<p><strong>Get in line</strong><br>
-**<br>
-**The idea is, instead of dealing with the domain events in memory, to
+</code></pre></div><h3 id="get-in-line">Get in line</h3>
+<p>The idea is, instead of dealing with the domain events in memory, to
 push them out to a queue so that  eventhandlers can deal with them
 asynchronously. If we&rsquo;re trusting IronMQ with our queues, we get in
 trouble guaranteeing that the events aren&rsquo;t sent out unless the booking
 is persisted succesfully; you can&rsquo;t make IronMQ enlist in a
 transaction.</p>
-<p><strong>Avoiding false events</strong></p>
+<h3 id="avoiding-false-events">Avoiding false events</h3>
 <p>To avoid pushing out events, and alerting our customer, without having
 succesfully persisted the booking, I want to commit my events in the
 same transaction. Since IronMQ can&rsquo;t be enlisted in a transaction, we
 have to take a detour; instead of publishing the event directly, we&rsquo;re
 going to persist it as a RavenDB document. This guarantees the event is
 committed in the same transaction as the booking.</p>
-<pre><code>public class DomainEvent
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">DomainEvent</span>
 {
-    public DomainEvent(object body)
+    <span style="color:#859900">public</span> <span style="color:#268bd2">DomainEvent</span>(<span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">body</span>)
     {
-        Guard.ForNull(body, &quot;body&quot;);          
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">ForNull</span>(<span style="color:#268bd2">body</span>, <span style="color:#2aa198">&#34;body&#34;</span>);          
         
-        Type = body.GetType();
-        Body = body;
-        Published = false;
-        TimeStamp = DateTimeProvider.Now();
+        <span style="color:#268bd2">Type</span> = <span style="color:#268bd2">body</span>.<span style="color:#268bd2">GetType</span>();
+        <span style="color:#268bd2">Body</span> = <span style="color:#268bd2">body</span>;
+        <span style="color:#268bd2">Published</span> = <span style="color:#859900">false</span>;
+        <span style="color:#268bd2">TimeStamp</span> = <span style="color:#268bd2">DateTimeProvider</span>.<span style="color:#268bd2">Now</span>();
     }
     
-    protected DomainEvent() { }
+    <span style="color:#859900">protected</span> <span style="color:#268bd2">DomainEvent</span>() { }
 
-    public string Id { get; private set; }
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">Id</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
 
-    public DateTime TimeStamp { get; private set; }
+    <span style="color:#859900">public</span> <span style="color:#268bd2">DateTime</span> <span style="color:#268bd2">TimeStamp</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
 
-    public Type Type { get; private set; }
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Type</span> <span style="color:#268bd2">Type</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
 
-    public object Body { get; private set; }
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">Body</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
 
-    public bool Published { get; private set; }
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Published</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
 
-    public void MarkAsPublished()
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">MarkAsPublished</span>()
     {
-        Published = true;
+        <span style="color:#268bd2">Published</span> = <span style="color:#859900">true</span>;
     }
 }
 
-public class DomainEvents : IDomainEvents
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">DomainEvents</span> : <span style="color:#268bd2">IDomainEvents</span>
 {
-    private IDocumentSession _session;
+    <span style="color:#859900">private</span> <span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">_session</span>;
 
-    public DomainEvents(IDocumentSession session)
+    <span style="color:#859900">public</span> <span style="color:#268bd2">DomainEvents</span>(<span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">session</span>)
     {
-        _session = session;
+        <span style="color:#268bd2">_session</span> = <span style="color:#268bd2">session</span>;
     }
 
-    public void Raise&lt;T&gt;(T args) where T : IDomainEvent
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Raise</span>&lt;<span style="color:#268bd2">T</span>&gt;(<span style="color:#268bd2">T</span> <span style="color:#268bd2">args</span>) <span style="color:#859900">where</span> <span style="color:#268bd2">T</span> : <span style="color:#268bd2">IDomainEvent</span>
     {       
-        _session.Store(new DomainEvent(args));
+        <span style="color:#268bd2">_session</span>.<span style="color:#268bd2">Store</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">DomainEvent</span>(<span style="color:#268bd2">args</span>));
     }
 }
-</code></pre>
-<p><a href="/post/images/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG"><img src="/post/images/thumbnails/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG" alt=""></a></p>
-<p><strong>Getting the events out</strong><br>
-**<br>
-**Now we still need to get the events out of RavenDB. Looking into this,
+</code></pre></div><p><a href="/post/images/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG"><img src="/post/images/thumbnails/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG" alt=""></a></p>
+<h3 id="getting-the-events-out">Getting the events out</h3>
+<p>Now we still need to get the events out of RavenDB. Looking into this,
 I found this to be a very good use of the <a href="http://ayende.com/blog/157121/awesome-feature-of-the-day-ravendb-changes-api">Changes
 API</a>.
 Using the Changes API, you can subscribe to all changes made to a
@@ -187,69 +183,66 @@ API doesn&rsquo;t live in the database, nor does it run in the same
 transaction. In this scenario, I use it to listen for changes to the
 domain events collection. On every change, I&rsquo;ll load the document, push
 the content out to IronMQ, and mark it as published.</p>
-<pre><code>public class DomainEventPublisher
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">DomainEventPublisher</span>
 {
-    private readonly IQueueFactory _queueFactory;
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IQueueFactory</span> <span style="color:#268bd2">_queueFactory</span>;
     
-    public DomainEventPublisher(IQueueFactory queueFactory)
+    <span style="color:#859900">public</span> <span style="color:#268bd2">DomainEventPublisher</span>(<span style="color:#268bd2">IQueueFactory</span> <span style="color:#268bd2">queueFactory</span>)
     {           
-        _queueFactory = queueFactory;
+        <span style="color:#268bd2">_queueFactory</span> = <span style="color:#268bd2">queueFactory</span>;
     }
 
-    public void Start()
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Start</span>()
     {
-        DocumentStore
-          .Get()
-          .Changes()
-          .ForDocumentsStartingWith(typeof(DomainEvent).Name)
-          .Subscribe(PublishDomainEvent);
+        <span style="color:#268bd2">DocumentStore</span>
+            .<span style="color:#268bd2">Get</span>()
+            .<span style="color:#268bd2">Changes</span>()
+            .<span style="color:#268bd2">ForDocumentsStartingWith</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">DomainEvent</span>).<span style="color:#268bd2">Name</span>)
+            .<span style="color:#268bd2">Subscribe</span>(<span style="color:#268bd2">PublishDomainEvent</span>);
     }
 
-    private void PublishDomainEvent(DocumentChangeNotification change)
+    <span style="color:#859900">private</span> <span style="color:#859900">void</span> <span style="color:#268bd2">PublishDomainEvent</span>(<span style="color:#268bd2">DocumentChangeNotification</span> <span style="color:#268bd2">change</span>)
     {
-        Task.Factory.StartNew(() =&gt;
+        <span style="color:#268bd2">Task</span>.<span style="color:#268bd2">Factory</span>.<span style="color:#268bd2">StartNew</span>(() =&gt;
         {
-            if (change.Type != DocumentChangeTypes.Put)
-                return;
+            <span style="color:#859900">if</span> (<span style="color:#268bd2">change</span>.<span style="color:#268bd2">Type</span> != <span style="color:#268bd2">DocumentChangeTypes</span>.<span style="color:#268bd2">Put</span>)
+                <span style="color:#859900">return</span>;
 
-            using (var session = DocumentStore.Get().OpenSession())
+            <span style="color:#859900">using</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">session</span> = <span style="color:#268bd2">DocumentStore</span>.<span style="color:#268bd2">Get</span>().<span style="color:#268bd2">OpenSession</span>())
             {
-                var domainEvent = session.Load&lt;DomainEvent&gt;(change.Id);
+                <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">domainEvent</span> = <span style="color:#268bd2">session</span>.<span style="color:#268bd2">Load</span>&lt;<span style="color:#268bd2">DomainEvent</span>&gt;(<span style="color:#268bd2">change</span>.<span style="color:#268bd2">Id</span>);
 
-                if (domainEvent.Published)
-                    return;
+                <span style="color:#859900">if</span> (<span style="color:#268bd2">domainEvent</span>.<span style="color:#268bd2">Published</span>)
+                    <span style="color:#859900">return</span>;
 
-                var queue = _queueFactory.CreateQueue(domainEvent.Type.Name);
-                queue.Push(JsonConvert.SerializeObject(domainEvent.Body));
+                <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">queue</span> = <span style="color:#268bd2">_queueFactory</span>.<span style="color:#268bd2">CreateQueue</span>(<span style="color:#268bd2">domainEvent</span>.<span style="color:#268bd2">Type</span>.<span style="color:#268bd2">Name</span>);
+                <span style="color:#268bd2">queue</span>.<span style="color:#268bd2">Push</span>(<span style="color:#268bd2">JsonConvert</span>.<span style="color:#268bd2">SerializeObject</span>(<span style="color:#268bd2">domainEvent</span>.<span style="color:#268bd2">Body</span>));
 
-                domainEvent.MarkAsPublished();
+                <span style="color:#268bd2">domainEvent</span>.<span style="color:#268bd2">MarkAsPublished</span>();
 
-                session.SaveChanges();
+                <span style="color:#268bd2">session</span>.<span style="color:#268bd2">SaveChanges</span>();
             }
         });
     }
 }
-</code></pre>
-<p>I tested this by raising 10,000 events on my machine, and got up to an
+</code></pre></div><p>I tested this by raising 10,000 events on my machine, and got up to an
 average of pushing out 7 events a second. With an average of 250ms per
 request, the major culprit is posting messages to IronMQ. Since I&rsquo;m
 posting these messages over the Atlantic, IronMQ is not really to blame.
 Once you get closer, response times go down to the 10ms - 100ms range.</p>
-<p><strong>A back-up plan</strong><br>
-**<br>
-**If the subscriber goes down, events won&rsquo;t be pushed out, so you need
+<h3 id="a-back-up-plan">A back-up plan</h3>
+<p>If the subscriber goes down, events won&rsquo;t be pushed out, so you need
 to have a back-up plan. I planned for missing events by scheduling a
 Quartz job that periodically queries for old unpublished domain events
 and publishes them.</p>
-<p><strong>In conclusion</strong><br>
-**<br>
-**You don&rsquo;t need expensive infrastructure or a framework to enable
+<h3 id="in-conclusion">In conclusion</h3>
+<p>You don&rsquo;t need expensive infrastructure or a framework to enable
 handling domain events in an eventual consistent fashion. Using RavenDB
 as an event store, the Changes API as an event listener, and IronMQ for
 queuing, we landed a rather light-weight solution. It won&rsquo;t scale
 endlessly, but it doesn&rsquo;t have to either.</p>
-<p><em>I&rsquo;m interested in hearing which homegrown solutions you have come up
-with, or how I could improve mine.</em></p>
+<p>I&rsquo;m interested in hearing which homegrown solutions you have come up
+with, or how I could improve mine.</p>
 
 			</div>
 
@@ -258,13 +251,11 @@ with, or how I could improve mine.</em></p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
-							<li><a href="/tags/.net">.NET</a></li>
+							<li><a href="/tags/ddd">ddd</a></li>
 							
-							<li><a href="/tags/ddd">DDD</a></li>
-							
-							<li><a href="/tags/nosql">NoSql</a></li>
+							<li><a href="/tags/infrastructure">infrastructure</a></li>
 							
 						</ul>
 					

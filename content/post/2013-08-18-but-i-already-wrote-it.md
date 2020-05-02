@@ -3,7 +3,8 @@ title = "But I already wrote it"
 slug = "2013-08-18-but-i-already-wrote-it"
 published = 2013-08-18T16:24:00+02:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion"]
+url = "2013/08/but-i-already-wrote-it.html"
 +++
 A few weeks ago, we set out to implement a feature that enabled back
 office users to set a new rate ahead of time. With our analyst and the
@@ -21,14 +22,10 @@ lot more than we needed. I suggested removing what we didn't really
 need. My colleague argued that he now already had put in the effort to
 write it, and we should just leave it as is.  
 
-  
-
 I can relate to feeling good about freshly written code, but that
 shouldn't stop you from throwing it away. Code is just a means to an
 end; the side product of creating a solution or learning about a
 problem. If you really can't let go, treasure it in a gist.
-
-  
 
 In this particular scenario, one could argue that making the solution
 more advanced than it should be, isn't strong enough of an argument to
@@ -49,8 +46,6 @@ seem, needs to be taken into account when planning on new ones. Each
 feature, definitely an advanced one, makes the cost of training and
 support go up. The cost of implementing a feature is just a tiny portion
 of what it costs to support that feature through its entire lifetime.
-
-  
 
 Using this argument, I eventually succeeded in persuading my peer to
 dump the ballast. The real lesson for me however, is probably that how

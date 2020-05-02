@@ -3,19 +3,16 @@ title = "To Live & Die in L.A."
 slug = "2013-07-04-to-live-die-in-l-a"
 published = 2013-07-04T08:51:00.002000+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2013/07/to-live-die-in-la.html"
 +++
 After exploring the USA’s West Coast [two years
 ago](http://www.jefclaes.be/2011/09/once-upon-time-in-west.html), we
 felt like we had to pay a second visit to fill in some blanks.
 
-  
-
 We left Antwerp Sunday 7AM to touch down 25 hours later in LAX, after an
 eight hour cross-Atlantic flight to Newark and a six hour overlay
 waiting for a connecting flight.
-
-  
 
 We were welcomed by a rental car salesman who strongly advised us to
 upgrade to a bigger SUV which would give us tinted windows since *it’s
@@ -23,8 +20,6 @@ gonna be hot, you know*. After politely blowing him off, we drove off to
 our first hotel. Arriving at an airport motel, we got to check off the
 clichés with a lost empty beer bottle in the room, and us playing ‘the
 stained carpet is lava’.
-
-  
 
 We started off our first day with a real American breakfast; eggs and
 steak. Saturated, we continued our path to the California Science
@@ -36,15 +31,9 @@ your while. This time we got to see [Blue
 Planet](http://en.wikipedia.org/wiki/Blue_Planet_(film)). We followed
 this up with a small lunch at LA’s real farmer’s market.
 
-  
-
 [![](/post/images/thumbnails/2013-07-04-to-live-die-in-l-a-blog1.jpg)](/post/images/2013-07-04-to-live-die-in-l-a-blog1.jpg)
 
-  
-
 [![](/post/images/thumbnails/2013-07-04-to-live-die-in-l-a-blog5.jpg)](/post/images/2013-07-04-to-live-die-in-l-a-blog5.jpg)
-
-  
 
 Yesterday we took part in a Warner Bros VIP tour. With a group of only
 eleven, the guide did a great job making the tour a lot more intimate

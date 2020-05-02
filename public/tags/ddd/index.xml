@@ -226,60 +226,11 @@ Why would we wrap Object Mappers in yet another abstraction?</description>
     </item>
     
     <item>
-      <title>Event storming workshop slides</title>
-      <link>http://localhost:1313/2013/11/event-storming-workshop-slides/</link>
-      <pubDate>Sun, 17 Nov 2013 19:56:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/11/event-storming-workshop-slides/</guid>
-      <description>At Euricom, we quarterly all retreat to headquarters for a day of sharing and learning. This time, I and others organized and facilitated an event storming workshop.
-After a short introduction on event storming participants were initiated to the domain of Cambio CarSharing - which is packed with behaviour. After that, seven groups of five (+ one domain expert) spread out across the office, and spent two slots of twenty minutes modeling the domain - with two extra slots for feedback.</description>
-    </item>
-    
-    <item>
-      <title>An event store with optimistic concurrency</title>
-      <link>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</link>
-      <pubDate>Sun, 10 Nov 2013 18:25:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</guid>
-      <description>Like I mentioned last week - after only five posts on the subject - there still are a great deal of event sourcing nuances left to be discovered.
-My current event store implementation only supports a single user. Due to an aggressive file lock, concurrently accessing an aggregate will throw an exception. Can we allow multiple users to write to and read from an event stream? Also, what can we do about users making changes to the same aggregate; can we somehow detect conflicts and avoid changes to be committed?</description>
-    </item>
-    
-    <item>
-      <title>Event source all the things?</title>
-      <link>http://localhost:1313/2013/11/event-source-all-the-things/</link>
-      <pubDate>Sun, 03 Nov 2013 18:45:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/11/event-source-all-the-things/</guid>
-      <description>Having covered projections last week, I think I have come full circle in these posts that turned out to be a small preliminary series on event sourcing. Even though there are still a vast amount of nuances to discover, I think I&amp;rsquo;ve captured the gist of it. Even without running an event sourced system in production - I feel as if I somewhat have an idea of what event sourcing can bring to the table.</description>
-    </item>
-    
-    <item>
-      <title>Event projections</title>
-      <link>http://localhost:1313/2013/10/event-projections/</link>
-      <pubDate>Sun, 27 Oct 2013 17:43:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/10/event-projections/</guid>
-      <description>In my first two posts on event sourcing, I implemented an event sourced aggregate from scratch. After being able to have an aggregate record and play events, I looked at persisting them in an event store. Logically, the next question is: how do I query my aggregates, how do I get my state out?
-In traditional systems, write and read models are not separated, they are one and the same. Event sourced systems on the other hand have a write model - event streams, and a separate read model.</description>
-    </item>
-    
-    <item>
-      <title>An event store</title>
-      <link>http://localhost:1313/2013/10/an-event-store/</link>
-      <pubDate>Sun, 20 Oct 2013 17:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/10/an-event-store/</guid>
-      <description>Last week, I implemented an event sourced aggregate from scratch. There I learned, that there isn&amp;rsquo;t much to a naively implemented event sourced aggregate; it should be able to initialize itself from a stream of events, and it should be able to record all the events it raises.
-public interface IEventSourcedAggregate : IAggregate { void Initialize(EventStream eventStream); EventStream RecordedEvents(); }  The question I want to answer today is: how do I persist those event sourced aggregates?</description>
-    </item>
-    
-    <item>
       <title>An event sourced aggregate</title>
-      <link>http://localhost:1313/2013/10/an-event-sourced-aggregate/</link>
+      <link>http://localhost:1313/2013/10/an-event-sourced-aggregate.html</link>
       <pubDate>Sun, 13 Oct 2013 18:36:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/10/an-event-sourced-aggregate/</guid>
+      <guid>http://localhost:1313/2013/10/an-event-sourced-aggregate.html</guid>
       <description>Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
 In traditional systems, we only persist the current state of an object.
 
@@ -288,51 +239,20 @@ In event sourced systems, we don&amp;rsquo;t persist the current state of an obj
     
     <item>
       <title>My understanding of event sourcing</title>
-      <link>http://localhost:1313/2013/10/my-understanding-of-event-sourcing/</link>
+      <link>http://localhost:1313/2013/10/my-understanding-of-event-sourcing.html</link>
       <pubDate>Sun, 06 Oct 2013 18:32:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/10/my-understanding-of-event-sourcing/</guid>
+      <guid>http://localhost:1313/2013/10/my-understanding-of-event-sourcing.html</guid>
       <description>I&amp;rsquo;ve been studying event sourcing from a distance for little over a year now; reading online material and going through some of the excellent OS code. Unfortunately, there would be no value introducing it into my current project - it would even be a terrible idea, so I decided to satisfy my inquisitiveness by consolidating and sharing my understanding of the concept.
-Domain events
-**
-**An event is something that happened in the past.</description>
-    </item>
-    
-    <item>
-      <title>Actor Model in COBOL</title>
-      <link>http://localhost:1313/2013/09/actor-model-in-cobol/</link>
-      <pubDate>Sun, 22 Sep 2013 16:38:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/09/actor-model-in-cobol/</guid>
-      <description>In an Actor system, each Actor acts as a self-contained and autonomous component. An Actor can only communicate with other Actors by exchanging messages - they are not allowed to share state. Messages are handled asynchronously, and are nondeterministic. The location of Actors should be transparent; they can either live on the same machine, or on a distributed system. These properties make the Actor Model a great fit for parallel and distributed computing.</description>
-    </item>
-    
-    <item>
-      <title>Slides from my talk on the Ubiquitous Language</title>
-      <link>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</link>
-      <pubDate>Sun, 15 Sep 2013 16:34:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/09/slides-from-my-talk-on-the-ubiquitous-language/</guid>
-      <description>I just returned from our yearly Euricom retreat. This year, all forty of us got to spend four days in the South of Spain. Where we had longish sessions and a few workshops last year, we experimented with shorter talks this year - a la lightning talks, TEDx style.
-This format made it possible for everyone to speak, but also forced the speaker to keep the scope of the talk focused, and to organize the information in a way that attendees can get the gist of it in only twelve minutes.</description>
-    </item>
-    
-    <item>
-      <title>The first DDDBE Modellathon</title>
-      <link>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</link>
-      <pubDate>Fri, 06 Sep 2013 13:24:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</guid>
-      <description>On our way back from DDD Exchange, heavily influenced by yet another immersive DDD experience, we searched for ways to keep the momentum going. Sure, we met up regularly for CQRS beers, but we felt that we could do more, better. That&amp;rsquo;s when we coined the term modellathon, something like a hackathon, but instead of writing code, we would build models.
-Thanks to the effort of Mathias, Stijn and Yves, Tuesday marked the first get-together of the Belgian DDD user group in its official form.</description>
+Domain events An event is something that happened in the past.</description>
     </item>
     
     <item>
       <title>Eventual consistent domain events with RavenDB and IronMQ</title>
-      <link>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</link>
+      <link>http://localhost:1313/2013/08/eventual-consistent-domain-events-with.html</link>
       <pubDate>Thu, 15 Aug 2013 14:03:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</guid>
+      <guid>http://localhost:1313/2013/08/eventual-consistent-domain-events-with.html</guid>
       <description>Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
 One project I&amp;rsquo;m working on right now makes use of domain events. As an example, I&amp;rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
 I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.</description>
@@ -340,32 +260,21 @@ I want to avoid that persisting a booking fails because an eventhandler throws -
     
     <item>
       <title>When your commands spell CUD</title>
-      <link>http://localhost:1313/2013/08/when-your-commands-spell-cud/</link>
+      <link>http://localhost:1313/2013/08/when-your-commands-spell-cud.html</link>
       <pubDate>Sun, 04 Aug 2013 19:08:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/08/when-your-commands-spell-cud/</guid>
+      <guid>http://localhost:1313/2013/08/when-your-commands-spell-cud.html</guid>
       <description>A good while ago, I blogged on commands (and queries). After exploring various flavors, I eventually settled on this one; commands, handlers and an in-memory bus that serves as a command executor.
 Commands help you in supporting the ubiquitous language by explicitly capturing user intent at the boundaries of your system - think use cases. You can look at them as messages that are being sent to your domain. In this regard, they also serve as a layer over your domain - decoupling the inside from the outside, allowing you to gradually introduce concepts on the inside, without breaking the outside.</description>
     </item>
     
     <item>
       <title>Multiplayer Enterprise Architect</title>
-      <link>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</link>
+      <link>http://localhost:1313/2013/06/multiplayer-enterprise-architect.html</link>
       <pubDate>Sun, 30 Jun 2013 17:00:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</guid>
+      <guid>http://localhost:1313/2013/06/multiplayer-enterprise-architect.html</guid>
       <description>Hanging around in the pub after DDDX, I ended up talking to Alberto Brandolini. For those who have never met him; he&amp;rsquo;s very much into visualization. You will always see him carrying a drawing pad, with a dash of permanent marker on his cheek, and a few lost sticky notes on his back. I don&amp;rsquo;t know if it was the Italian accent and the strong gestures, or my mildly intoxicated condition, but the idea of visualization as an important tool grew on me even more that evening.</description>
-    </item>
-    
-    <item>
-      <title>Not handling edge cases, making them explicit instead</title>
-      <link>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</link>
-      <pubDate>Sun, 23 Jun 2013 16:49:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/06/not-handling-edge-cases-making-them-explicit-instead/</guid>
-      <description>When I wrote about accidental entities earlier, we followed a consultant building software for a car rental company. In the meanwhile, he has finished implementing the registration of new cars. Next on the list is allowing customers to make a booking.
-We managed to get the CEO to set a whole hour apart to walk us over how the booking system should work.
-CEO: &amp;ldquo;I&amp;rsquo;m not sure this meeting is going to take a whole hour though.</description>
     </item>
     
     <item>

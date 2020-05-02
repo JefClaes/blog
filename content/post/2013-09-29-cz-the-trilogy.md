@@ -3,7 +3,8 @@ title = "CZ The Trilogy"
 slug = "2013-09-29-cz-the-trilogy"
 published = 2013-09-29T18:15:00+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2013/09/cz-trilogy.html"
 +++
 Over the weekend, we visited the Czech Republic for the third time
 ([one](http://www.jefclaes.be/2010/04/trip-report-czech-republic.html)

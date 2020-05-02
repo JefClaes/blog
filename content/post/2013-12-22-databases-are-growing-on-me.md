@@ -3,13 +3,14 @@ title = "Databases are growing on me"
 slug = "2013-12-22-databases-are-growing-on-me"
 published = 2013-12-22T21:53:00+01:00
 author = "Jef Claes"
-tags = [ "database", "Bookreview", "Ramblings",]
+tags = [ "infrastructure", "consumed"]
+url = "2013/12/databases-are-growing-on-me.html"
 +++
 I learned all about logical design of relational databases back in
 school; tables, columns, data types, views, normalization, constraints,
 primary keys, foreign keys... At the same time, I learned how to use SQL
-to put data in, and how to get it out again; INSERT INTO, SELECT, FROM,
-WHERE, JOIN, GROUP...  
+to put data in, and how to get it out again; `INSERT INTO, SELECT, FROM,
+WHERE, JOIN, GROUP...`  
   
 In the first project I worked on just out of school, we weren't doing
 anything interesting with databases; we didn't have that many users, or

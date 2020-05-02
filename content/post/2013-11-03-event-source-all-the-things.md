@@ -3,7 +3,8 @@ title = "Event source all the things?"
 slug = "2013-11-03-event-source-all-the-things"
 published = 2013-11-03T18:45:00.001000+01:00
 author = "Jef Claes"
-tags = [ "DDD",]
+tags = [ "opinion",]
+url = "2013/11/event-source-all-things.html"
 +++
 Having covered
 [projections](http://www.jefclaes.be/2013/10/event-projections.html)
@@ -29,14 +30,9 @@ from both sides. Is it worth the trouble?
 In my first job I worked on software for fire departments. I just now
 realize in how many bits of our solution event sourcing could have
 helped us:  
-
--   the life cycle of a vehicle assigned to an emergency: vehicle
-    dispatched, vehicle left the station, vehicle en route, vehicle
-    arrived on the scene, vehicle back in the station...
--   a person's career: person was promoted, person was detached to
-    another station, person learned a new skill...
--   a shift's schedule: person attached to unit, person returned to
-    person pool, unit dispatched...
+- the life cycle of a vehicle assigned to an emergency: vehicle dispatched, vehicle left the station, vehicle en route, vehicle arrived on the scene, vehicle back in the station...
+- a person's career: person was promoted, person was detached to another station, person learned a new skill...
+- a shift's schedule: person attached to unit, person returned to person pool, unit dispatched...
 
 This data had to be made available in a set of diverse read models.
 Getting the data out was complex at times, often even impossible. A lot
@@ -53,9 +49,9 @@ they need, but a simple audit trail.
 If it is just a passive log your business wants, you can get away with
 cheaper alternatives; a command journal, an audit trail and so on.  
   
-**Benefits**  
-**  
-**Event sourcing goes hand-in-hand with Domain Driven Design. Events are
+### Benefits
+ 
+Event sourcing goes hand-in-hand with Domain Driven Design. Events are
 a great tool to go from a structural model to a behavioural model,
 helping you to capture the true essence of a domain model.  
   
@@ -97,7 +93,7 @@ compensating event or fix the projection and replay everything. This way
 nothing gets lost, and consistency between code and outcome is
 guaranteed.  
   
-**Downsides**  
+### Downsides  
   
 Defining events is hard. Defining good events takes a lot of practice
 and insight. If you're forcing a structural model into a behavioural
@@ -120,9 +116,9 @@ deserialization? Or maybe you want to implement event migrations?
 Since you're persisting multiple models; events and one or more read
 models, you're going to consume more storage, which will cost you.  
   
-**Adaptation in the wild**  
-**  
-**Although there are - from a a business and engineering perspective -
+### Adaptation in the wild  
+  
+Although there are - from a a business and engineering perspective -
 some good arguments to be made for event sourcing, those arguments only
 apply to a modest percentage of projects. Even when there's a strong
 case to be made for event sourcing, there are very few people with

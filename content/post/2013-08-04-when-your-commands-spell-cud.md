@@ -3,7 +3,8 @@ title = "When your commands spell CUD"
 slug = "2013-08-04-when-your-commands-spell-cud"
 published = 2013-08-04T19:08:00.001000+02:00
 author = "Jef Claes"
-tags = [ ".NET", "Architecture", "DDD", "Ramblings",]
+tags = [ "ddd",]
+url = "2013/08/when-your-commands-spell-cud.html"
 +++
 A good while ago, I blogged on commands (and queries). After exploring
 various flavors, I eventually settled on this one; [commands, handlers
@@ -27,20 +28,20 @@ letters of your commands spell CUD - Create Update Delete.
   
 For example; CreateCarCommand, UpdateCarCommand and DeleteCarCommand.  
   
-**The language needs attention**  
-**  
-**Possibly, your team hasn't fully grasped the power of cultivating the
+### The language needs attention
+
+Possibly, your team doesn't fully grasp the power of cultivating the
 ubiquitous language. If you start listening to your domain experts, you
-might end up with totally different command names; TakeInNewCarCommand,
-RepaintCarCommand, InstallOptionCommand and RemoveCarFromFleetCommand.  
+might end up with totally different command names; `TakeInNewCarCommand`,
+`RepaintCarCommand`, `InstallOptionCommand` and `RemoveCarFromFleetCommand`.  
   
 Maybe though, there is no language at all, and you're really just doing
 CRUD. If the context you are working on is implementing a generic or
 supporting subdomain this might not be terrible.  
   
-**If I'm doing CRUD, do I still need commands?**  
-**  
-**Commands help you decouple the inside from the outside. If there is no
+### If I'm doing CRUD, do I still need commands?
+
+Commands help you decouple the inside from the outside. If there is no
 domain on the inside though, they can still help you decouple the
 application layer from other concerns. You might prefer to use another
 facade to separate concerns though, such as a thin service layer. I
@@ -53,9 +54,9 @@ trade-offs. With these last approaches, next to losing decoupling in
 from out, you also lose that central pipeline that a command executor
 gives you.  
   
-**Doesn't my application layer give me this pipeline for free?**  
-**  
-**It sure can. Looking at modern networking stacks, these all have
+### Doesn't my application layer give me this pipeline for free?
+
+It sure can. Looking at modern networking stacks, these all have
 interception points built in. For example; NancyFx allows you to hook in
 the request pipeline using before and after hooks; Web API gives your
 message handlers and action filters; and WCF has a concept of
@@ -71,10 +72,9 @@ hope for the framework to have thought of your needs. Also when you need
 to support multiple application layers, you don't have to implement all
 features twice.  
   
-**What about using aspects instead of a pipeline to centralize all these
-concerns?**  
-**  
-**You can - instead of a pipeline - use aspects to take care of
+### What about using aspects instead of a pipeline to centralize all these concerns?
+
+You can - instead of a pipeline - use aspects to take care of
 croscutting concerns such as security, logging, session management.. and
 have them woven into your executable at compile- or runtime. I think of
 aspects as if they were macros, which save you on lines of code written,
@@ -89,8 +89,6 @@ case.
   
 When your commands spell CUD, it might indicate you could do without
 them. Do realize what the consequences are of taking them away though;  
-
--   you lose the opportunity to capture user intent at the boundaries of
-    your system, to strengthen the ubiquitous language
--   you may need an alternative facade to decouple in from out
--   you lose that command executor serving as your own pipeline
+- you lose the opportunity to capture user intent at the boundaries of your system, to strengthen the ubiquitous language
+- you may need an alternative facade to decouple in from out
+- you lose that command executor serving as your own pipeline

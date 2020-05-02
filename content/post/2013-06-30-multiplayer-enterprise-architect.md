@@ -3,7 +3,8 @@ title = "Multiplayer Enterprise Architect"
 slug = "2013-06-30-multiplayer-enterprise-architect"
 published = 2013-06-30T17:00:00+02:00
 author = "Jef Claes"
-tags = [ "Bookreview", "DDD", "Ramblings",]
+tags = [ "consumed", "ddd", "opinion"]
+url = "2013/06/multiplayer-enterprise-architect.html"
 +++
 Hanging around in the pub after DDDX, I ended up talking to [Alberto
 Brandolini](https://twitter.com/ziobrando). For those who have never met

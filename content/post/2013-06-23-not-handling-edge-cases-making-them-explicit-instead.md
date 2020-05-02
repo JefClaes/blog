@@ -3,7 +3,8 @@ title = "Not handling edge cases, making them explicit instead"
 slug = "2013-06-23-not-handling-edge-cases-making-them-explicit-instead"
 published = 2013-06-23T16:49:00+02:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", ".NET", "DDD", "Ramblings",]
+tags = [ "opinion",]
+url = "2013/06/not-handling-edge-cases-making-them.html"
 +++
 When I wrote about [accidental
 entities](http://www.jefclaes.be/2013/06/accidental-entities-what-about-ui.html)
@@ -13,40 +14,47 @@ of new cars. Next on the list is allowing customers to make a booking.
   
 We managed to get the CEO to set a whole hour apart to walk us over how
 the booking system should work.  
-  
+
+____
+
 **CEO**: "I'm not sure this meeting is going to take a whole hour
 though. Making a booking is rather trivial. Do you have any idea on how
 a booking would work?"  
+
 **Us**: "Well, as far as I understand - and don't be too hard on me - a
 customer makes a booking, we allocate the car for the requested period,
 send the customer a confirmation email and we're done."  
+
 **CEO**: "Hold your horses, it's not *that* trivial. When we receive a
 booking, we first need to verify the customer's credit card."  
   
 **Us**: "How do I verify a credit card?"  
+
 **CEO**: "You don't. We use a third party electronic verification system
 that does just that; they check if the credit card is valid and has
 sufficient credit."  
   
 **Us**: "What happens if the credit card is declined?"  
+
 **CEO**: "That's easy; we just cancel the booking, and inform the
 customer."  
   
 **Us**: "And what happens when the credit card gets verified?"  
+
 **CEO**: "Then we approve the booking."  
   
 **Us**: "Let me stop you right there. Should we allocate the car
 immediately as soon as the customer makes the booking?"  
+
 **CEO**: "Hell no! Verification of the credit card can take a while; we
 might lose business if the credit card turns out to get declined."  
   
 **Us**: "Hmmm, what happens if someone else has made a booking for the
 same car in the meanwhile?"  
+
 **CEO**: "That's a good question. In the past, we've hardly encountered
 this problem, but it does happen though; we should probably take care of
 this edge case."  
-
-  
 
 **Us**: "How do you want to take care of these double bookings? I can
 imagine you don't just want to cancel the second booking, and lose
@@ -83,11 +91,9 @@ we do that?"
 
 **Us**: "Yep, that shouldn't be too hard."
 
-  
+____________
 
 After this talk with the CEO, we set out to model the solution in code. 
-
-  
 
 In our first iteration, a booking has multiple representations, a
 representation for each state. One of the advantages of modeling it as
@@ -97,51 +103,59 @@ hasn't been approved etc... Alternatives could be the classic state
 pattern, or something workflowish, but that isn't really the focus of
 this post.
 
-    var booking = new Booking(
-        bookingId, carId,
-        new Customer(new CreditCard("343705171682875"), new CustomerName("Jef", "Claes")), 
-        new Period(DateTime.Now.AddDays(1), DateTime.Now.AddDays(4)));
+```csharp
+var booking = new Booking(
+    bookingId, carId,
+    new Customer(new CreditCard("343705171682875"), new CustomerName("Jef", "Claes")), 
+    new Period(DateTime.Now.AddDays(1), DateTime.Now.AddDays(4)));
 
-    var bookingWithVerifiedCreditCard = booking.CreditcardVerified();
-    var doubleBooking = bookingWithVerifiedCreditCard.Double();
+var bookingWithVerifiedCreditCard = booking.CreditcardVerified();
+var doubleBooking = bookingWithVerifiedCreditCard.Double();
+```
 
 Each state change triggers an event. If we output each event, and run
 the snippet above we end up with this.
 
-    (EVENT) BookingCreditCardVerificiationPending
-    (EVENT) BookingCreditCardVerified
-    (EVENT) DoubleBooked
+```
+(EVENT) BookingCreditCardVerificiationPending
+(EVENT) BookingCreditCardVerified
+(EVENT) DoubleBooked`
+```
 
 The BookingCreditCardVerified event triggers us to detect doubles.
 
-    public class BookingCreditCardVerifiedHandler : IHandle<BookingCreditCardVerified> 
-    {    
-        private readonly IBus _bus;
+```csharp
+public class BookingCreditCardVerifiedHandler : IHandle<BookingCreditCardVerified> 
+{    
+    private readonly IBus _bus;
 
-        public BookingCreditCardVerifiedHandler(IBus bus)
-        {
-            _bus = bus;
-        }
-
-        public void Handle(BookingCreditCardVerified @event)
-        {
-            _bus.Send(new DetectDoubleBooking(@event.BookingId));
-        }
+    public BookingCreditCardVerifiedHandler(IBus bus)
+    {
+        _bus = bus;
     }
+
+    public void Handle(BookingCreditCardVerified @event)
+    {
+        _bus.Send(new DetectDoubleBooking(@event.BookingId));
+    }
+}
+```
 
 If a double booking is detected, we want to make the system raise its
 hand, and notify a human. This can be done through an email, a
 notification in the backoffice portal, or whatever really.
 
-    public class DoubleBookedHandler : IHandle<DoubleBooked>
+```csharp
+public class DoubleBookedHandler : IHandle<DoubleBooked>
+{
+    public void Handle(DoubleBooked @event)
     {
-        public void Handle(DoubleBooked @event)
-        {
-            NotifyHumans();
-        }
-
-        private void NotifyHumans() { }
+        NotifyHumans();
     }
+
+    private void NotifyHumans() { }
+}
+```
 
 Although, the technical implementation isn't very special, I think it
 does show how events can help support the language and distribute

@@ -12,36 +12,6 @@
     
     
     <item>
-      <title>Databases are growing on me</title>
-      <link>http://localhost:1313/2013/12/databases-are-growing-on-me/</link>
-      <pubDate>Sun, 22 Dec 2013 21:53:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/12/databases-are-growing-on-me/</guid>
-      <description>I learned all about logical design of relational databases back in school; tables, columns, data types, views, normalization, constraints, primary keys, foreign keys&amp;hellip; At the same time, I learned how to use SQL to put data in, and how to get it out again; INSERT INTO, SELECT, FROM, WHERE, JOIN, GROUP&amp;hellip;
-In the first project I worked on just out of school, we weren&amp;rsquo;t doing anything interesting with databases; we didn&amp;rsquo;t have that many users, or that much data.</description>
-    </item>
-    
-    <item>
-      <title>An event store with optimistic concurrency</title>
-      <link>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</link>
-      <pubDate>Sun, 10 Nov 2013 18:25:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/11/an-event-store-with-optimistic-concurrency/</guid>
-      <description>Like I mentioned last week - after only five posts on the subject - there still are a great deal of event sourcing nuances left to be discovered.
-My current event store implementation only supports a single user. Due to an aggressive file lock, concurrently accessing an aggregate will throw an exception. Can we allow multiple users to write to and read from an event stream? Also, what can we do about users making changes to the same aggregate; can we somehow detect conflicts and avoid changes to be committed?</description>
-    </item>
-    
-    <item>
-      <title>Event projections</title>
-      <link>http://localhost:1313/2013/10/event-projections/</link>
-      <pubDate>Sun, 27 Oct 2013 17:43:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/10/event-projections/</guid>
-      <description>In my first two posts on event sourcing, I implemented an event sourced aggregate from scratch. After being able to have an aggregate record and play events, I looked at persisting them in an event store. Logically, the next question is: how do I query my aggregates, how do I get my state out?
-In traditional systems, write and read models are not separated, they are one and the same. Event sourced systems on the other hand have a write model - event streams, and a separate read model.</description>
-    </item>
-    
-    <item>
       <title>It&#39;s not cake we are baking</title>
       <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</link>
       <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>

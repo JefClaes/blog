@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Eventual consistent domain events with RavenDB and IronMQ - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Eventual consistent domain events with RavenDB and IronMQ">
+<meta itemprop="description" content="Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&rsquo;m working on right now makes use of domain events. As an example, I&rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.">
+<meta itemprop="datePublished" content="2013-08-15T14:03:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-08-15T14:03:00&#43;02:00" />
+<meta itemprop="wordCount" content="735">
+
+
+
+<meta itemprop="keywords" content="code,ddd,infrastructure," /><meta property="og:title" content="Eventual consistent domain events with RavenDB and IronMQ" />
+<meta property="og:description" content="Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&rsquo;m working on right now makes use of domain events. As an example, I&rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/08/eventual-consistent-domain-events-with.html" />
+<meta property="article:published_time" content="2013-08-15T14:03:00+02:00" />
+<meta property="article:modified_time" content="2013-08-15T14:03:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Eventual consistent domain events with RavenDB and IronMQ"/>
+<meta name="twitter:description" content="Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
+One project I&rsquo;m working on right now makes use of domain events. As an example, I&rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
+I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">15</span>
+							<span class="rest">Aug 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Eventual consistent domain events with RavenDB and IronMQ</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Working on side projects, I often find myself using
+<a href="http://ravendb.net/">RavenDB</a> for storage and
+<a href="http://www.iron.io/mq">IronMQ</a> for queueing. I wrote about that last
+one before
+<a href="http://www.jefclaes.be/2013/03/first-ironmq-impressions.html">here</a> and
+<a href="http://www.jefclaes.be/2013/03/putting-my-ironmq-experiment-under.html">here</a>.</p>
+<p>One project I&rsquo;m working on right now makes use of domain events. As an
+example, I&rsquo;ll use the usual suspect: the <code>BookingConfirmed</code> event. When a
+booking has been confirmed, I want to notify my customer by sending him
+an email.</p>
+<p>I want to avoid that persisting a booking fails because an eventhandler
+throws - the mail server is unavailable. I also don&rsquo;t want that an
+eventhandler executes an operation that can&rsquo;t be rolled back - sending
+out an email - without first making sure the booking was persisted
+succesfully. If an eventhandler fails, I want to give it the opportunity
+to fix what&rsquo;s wrong and retry.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Confirm</span>()
+{
+    <span style="color:#268bd2">Status</span> = <span style="color:#268bd2">BookingStatus</span>.<span style="color:#268bd2">Accepted</span>;
+
+    <span style="color:#268bd2">Events</span>.<span style="color:#268bd2">Raise</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">BookingConfirmed</span>(<span style="color:#268bd2">Id</span>));
+}
+</code></pre></div><h3 id="get-in-line">Get in line</h3>
+<p>The idea is, instead of dealing with the domain events in memory, to
+push them out to a queue so that  eventhandlers can deal with them
+asynchronously. If we&rsquo;re trusting IronMQ with our queues, we get in
+trouble guaranteeing that the events aren&rsquo;t sent out unless the booking
+is persisted succesfully; you can&rsquo;t make IronMQ enlist in a
+transaction.</p>
+<h3 id="avoiding-false-events">Avoiding false events</h3>
+<p>To avoid pushing out events, and alerting our customer, without having
+succesfully persisted the booking, I want to commit my events in the
+same transaction. Since IronMQ can&rsquo;t be enlisted in a transaction, we
+have to take a detour; instead of publishing the event directly, we&rsquo;re
+going to persist it as a RavenDB document. This guarantees the event is
+committed in the same transaction as the booking.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">DomainEvent</span>
+{
+    <span style="color:#859900">public</span> <span style="color:#268bd2">DomainEvent</span>(<span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">body</span>)
+    {
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">ForNull</span>(<span style="color:#268bd2">body</span>, <span style="color:#2aa198">&#34;body&#34;</span>);          
+        
+        <span style="color:#268bd2">Type</span> = <span style="color:#268bd2">body</span>.<span style="color:#268bd2">GetType</span>();
+        <span style="color:#268bd2">Body</span> = <span style="color:#268bd2">body</span>;
+        <span style="color:#268bd2">Published</span> = <span style="color:#859900">false</span>;
+        <span style="color:#268bd2">TimeStamp</span> = <span style="color:#268bd2">DateTimeProvider</span>.<span style="color:#268bd2">Now</span>();
+    }
+    
+    <span style="color:#859900">protected</span> <span style="color:#268bd2">DomainEvent</span>() { }
+
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">Id</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">DateTime</span> <span style="color:#268bd2">TimeStamp</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Type</span> <span style="color:#268bd2">Type</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">Body</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Published</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">MarkAsPublished</span>()
+    {
+        <span style="color:#268bd2">Published</span> = <span style="color:#859900">true</span>;
+    }
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">DomainEvents</span> : <span style="color:#268bd2">IDomainEvents</span>
+{
+    <span style="color:#859900">private</span> <span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">_session</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">DomainEvents</span>(<span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">session</span>)
+    {
+        <span style="color:#268bd2">_session</span> = <span style="color:#268bd2">session</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Raise</span>&lt;<span style="color:#268bd2">T</span>&gt;(<span style="color:#268bd2">T</span> <span style="color:#268bd2">args</span>) <span style="color:#859900">where</span> <span style="color:#268bd2">T</span> : <span style="color:#268bd2">IDomainEvent</span>
+    {       
+        <span style="color:#268bd2">_session</span>.<span style="color:#268bd2">Store</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">DomainEvent</span>(<span style="color:#268bd2">args</span>));
+    }
+}
+</code></pre></div><p><a href="/post/images/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG"><img src="/post/images/thumbnails/2013-08-15-eventual-consistent-domain-events-with-ravendb-and-ironmq-RavenDBDomainEvents.PNG" alt=""></a></p>
+<h3 id="getting-the-events-out">Getting the events out</h3>
+<p>Now we still need to get the events out of RavenDB. Looking into this,
+I found this to be a very good use of the <a href="http://ayende.com/blog/157121/awesome-feature-of-the-day-ravendb-changes-api">Changes
+API</a>.
+Using the Changes API, you can subscribe to all changes made to a
+certain document. If you&rsquo;re familiar with relation databases, the
+Changes API might remind you of triggers - except for that the Changes
+API doesn&rsquo;t live in the database, nor does it run in the same
+transaction. In this scenario, I use it to listen for changes to the
+domain events collection. On every change, I&rsquo;ll load the document, push
+the content out to IronMQ, and mark it as published.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">DomainEventPublisher</span>
+{
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IQueueFactory</span> <span style="color:#268bd2">_queueFactory</span>;
+    
+    <span style="color:#859900">public</span> <span style="color:#268bd2">DomainEventPublisher</span>(<span style="color:#268bd2">IQueueFactory</span> <span style="color:#268bd2">queueFactory</span>)
+    {           
+        <span style="color:#268bd2">_queueFactory</span> = <span style="color:#268bd2">queueFactory</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Start</span>()
+    {
+        <span style="color:#268bd2">DocumentStore</span>
+            .<span style="color:#268bd2">Get</span>()
+            .<span style="color:#268bd2">Changes</span>()
+            .<span style="color:#268bd2">ForDocumentsStartingWith</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">DomainEvent</span>).<span style="color:#268bd2">Name</span>)
+            .<span style="color:#268bd2">Subscribe</span>(<span style="color:#268bd2">PublishDomainEvent</span>);
+    }
+
+    <span style="color:#859900">private</span> <span style="color:#859900">void</span> <span style="color:#268bd2">PublishDomainEvent</span>(<span style="color:#268bd2">DocumentChangeNotification</span> <span style="color:#268bd2">change</span>)
+    {
+        <span style="color:#268bd2">Task</span>.<span style="color:#268bd2">Factory</span>.<span style="color:#268bd2">StartNew</span>(() =&gt;
+        {
+            <span style="color:#859900">if</span> (<span style="color:#268bd2">change</span>.<span style="color:#268bd2">Type</span> != <span style="color:#268bd2">DocumentChangeTypes</span>.<span style="color:#268bd2">Put</span>)
+                <span style="color:#859900">return</span>;
+
+            <span style="color:#859900">using</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">session</span> = <span style="color:#268bd2">DocumentStore</span>.<span style="color:#268bd2">Get</span>().<span style="color:#268bd2">OpenSession</span>())
+            {
+                <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">domainEvent</span> = <span style="color:#268bd2">session</span>.<span style="color:#268bd2">Load</span>&lt;<span style="color:#268bd2">DomainEvent</span>&gt;(<span style="color:#268bd2">change</span>.<span style="color:#268bd2">Id</span>);
+
+                <span style="color:#859900">if</span> (<span style="color:#268bd2">domainEvent</span>.<span style="color:#268bd2">Published</span>)
+                    <span style="color:#859900">return</span>;
+
+                <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">queue</span> = <span style="color:#268bd2">_queueFactory</span>.<span style="color:#268bd2">CreateQueue</span>(<span style="color:#268bd2">domainEvent</span>.<span style="color:#268bd2">Type</span>.<span style="color:#268bd2">Name</span>);
+                <span style="color:#268bd2">queue</span>.<span style="color:#268bd2">Push</span>(<span style="color:#268bd2">JsonConvert</span>.<span style="color:#268bd2">SerializeObject</span>(<span style="color:#268bd2">domainEvent</span>.<span style="color:#268bd2">Body</span>));
+
+                <span style="color:#268bd2">domainEvent</span>.<span style="color:#268bd2">MarkAsPublished</span>();
+
+                <span style="color:#268bd2">session</span>.<span style="color:#268bd2">SaveChanges</span>();
+            }
+        });
+    }
+}
+</code></pre></div><p>I tested this by raising 10,000 events on my machine, and got up to an
+average of pushing out 7 events a second. With an average of 250ms per
+request, the major culprit is posting messages to IronMQ. Since I&rsquo;m
+posting these messages over the Atlantic, IronMQ is not really to blame.
+Once you get closer, response times go down to the 10ms - 100ms range.</p>
+<h3 id="a-back-up-plan">A back-up plan</h3>
+<p>If the subscriber goes down, events won&rsquo;t be pushed out, so you need
+to have a back-up plan. I planned for missing events by scheduling a
+Quartz job that periodically queries for old unpublished domain events
+and publishes them.</p>
+<h3 id="in-conclusion">In conclusion</h3>
+<p>You don&rsquo;t need expensive infrastructure or a framework to enable
+handling domain events in an eventual consistent fashion. Using RavenDB
+as an event store, the Changes API as an event listener, and IronMQ for
+queuing, we landed a rather light-weight solution. It won&rsquo;t scale
+endlessly, but it doesn&rsquo;t have to either.</p>
+<p>I&rsquo;m interested in hearing which homegrown solutions you have come up
+with, or how I could improve mine.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+							<li><a href="/tags/ddd">ddd</a></li>
+							
+							<li><a href="/tags/infrastructure">infrastructure</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

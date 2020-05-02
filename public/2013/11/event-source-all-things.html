@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Event source all the things? - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Event source all the things?">
+<meta itemprop="description" content="Having covered projections last week, I think I have come full circle in these posts that turned out to be a small preliminary series on event sourcing. Even though there are still a vast amount of nuances to discover, I think I&rsquo;ve captured the gist of it. Even without running an event sourced system in production - I feel as if I somewhat have an idea of what event sourcing can bring to the table.">
+<meta itemprop="datePublished" content="2013-11-03T18:45:00&#43;01:00" />
+<meta itemprop="dateModified" content="2013-11-03T18:45:00&#43;01:00" />
+<meta itemprop="wordCount" content="1146">
+
+
+
+<meta itemprop="keywords" content="opinion," /><meta property="og:title" content="Event source all the things?" />
+<meta property="og:description" content="Having covered projections last week, I think I have come full circle in these posts that turned out to be a small preliminary series on event sourcing. Even though there are still a vast amount of nuances to discover, I think I&rsquo;ve captured the gist of it. Even without running an event sourced system in production - I feel as if I somewhat have an idea of what event sourcing can bring to the table." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/11/event-source-all-things.html" />
+<meta property="article:published_time" content="2013-11-03T18:45:00+01:00" />
+<meta property="article:modified_time" content="2013-11-03T18:45:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Event source all the things?"/>
+<meta name="twitter:description" content="Having covered projections last week, I think I have come full circle in these posts that turned out to be a small preliminary series on event sourcing. Even though there are still a vast amount of nuances to discover, I think I&rsquo;ve captured the gist of it. Even without running an event sourced system in production - I feel as if I somewhat have an idea of what event sourcing can bring to the table."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">03</span>
+							<span class="rest">Nov 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Event source all the things?</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Having covered
+<a href="http://www.jefclaes.be/2013/10/event-projections.html">projections</a>
+last week, I think I have come full circle in these posts that turned
+out to be a small preliminary series on event sourcing. Even though
+there are still a vast amount of nuances to discover, I think I&rsquo;ve
+captured the gist of it. Even without running an event sourced system in
+production - I feel as if I somewhat have an idea of what event sourcing
+can bring to the table.</p>
+<p>Event sourcing gives you a complete history of events that caused an
+aggregate to be in its current state. In some scenarios this will add an
+enormous amount of value, in other scenarios it will give you nothing -
+it might even steal time and effort.</p>
+<p>The first thing you do - before even considering implementing event
+sourcing - is talking to your business. Do they feel as if events are a
+natural way to represent what&rsquo;s going on in their domain? Event sourcing
+is a lot more than just a technical implementation detail, discovering
+and understanding all of what goes on in a domain is a big investment -
+from both sides. Is it worth the trouble?</p>
+<p>In my first job I worked on software for fire departments. I just now
+realize in how many bits of our solution event sourcing could have
+helped us:</p>
+<ul>
+<li>the life cycle of a vehicle assigned to an emergency: vehicle dispatched, vehicle left the station, vehicle en route, vehicle arrived on the scene, vehicle back in the station&hellip;</li>
+<li>a person&rsquo;s career: person was promoted, person was detached to another station, person learned a new skill&hellip;</li>
+<li>a shift&rsquo;s schedule: person attached to unit, person returned to person pool, unit dispatched&hellip;</li>
+</ul>
+<p>This data had to be made available in a set of diverse read models.
+Getting the data out was complex at times, often even impossible. A lot
+of these changes had to be propagated to external systems; there was no
+way to get that info out in real-time, and external systems had no
+notion of <em>what</em> happened.</p>
+<p>In one of the functionalities of a system I&rsquo;m currently working on,
+users also wanted to know what happened in the past, but for completely
+different reasons. Being in a financial context, they wanted to know who
+was responsible for changing system settings. Here it&rsquo;s not an event log
+they need, but a simple audit trail.</p>
+<p>If it is just a passive log your business wants, you can get away with
+cheaper alternatives; a command journal, an audit trail and so on.</p>
+<h3 id="benefits">Benefits</h3>
+<p>Event sourcing goes hand-in-hand with Domain Driven Design. Events are
+a great tool to go from a structural model to a behavioural model,
+helping you to capture the true essence of a domain model.</p>
+<p>Building and maintaining an event store should be doable. It&rsquo;s an
+append-only data model, storing serialized DTO&rsquo;s with some meta data.
+This makes - compared to ORM&rsquo;s and relational databases - tooling easier
+as well.</p>
+<p>In traditional systems, you have to keep a lot of things in your head at
+once; how do I write my data, but also how do I query my data, and more
+importantly how do I get my data out in all these different use cases
+without making things too hard. In event sourced systems, separating
+writes from reads makes for more granular bits, easing the cognitive
+load.</p>
+<p>Events can be projected into anything: a relational database, a document
+store, memory, files&hellip; This allows you to build a read model for each
+separate use case, while also giving you a lot of freedom in how you&rsquo;re
+going to persist them.</p>
+<p>You can replay projections, rebuilding a read model from scratch. Forget
+about difficult data migrations.</p>
+<p>Testing feels consistent and very complete. A test will assert if all
+the expected events were raised, but will also implicitly assert that
+unexpected events were <em>not</em> raised. Testing projections is also
+straight-forward.</p>
+<p>Events provide a natural way of integrating with other systems.
+Committed events can be published to external subscribers.</p>
+<p>Troubleshooting becomes easier since a developer can copy an event
+stream from production, and replay it locally - reproducing the exact
+issue without jumping through hoops getting the system in a specific
+state.</p>
+<p>Instead of patching corrupted production data directly, you can send a
+compensating event or fix the projection and replay everything. This way
+nothing gets lost, and consistency between code and outcome is
+guaranteed.</p>
+<h3 id="downsides">Downsides</h3>
+<p>Defining events is hard. Defining good events takes a lot of practice
+and insight. If you&rsquo;re forcing a structural model into a behavioural
+one, it might even be impossible. So don&rsquo;t even consider turning CRUD
+into an event sourced model.</p>
+<p>There are a few places you need to be on the look out for performance
+bottlenecks. Event streams of long lived aggregates might grow very big.
+Loading a giant event stream from a data store might take a while -
+snapshots can help here. Projecting giant event streams might get you
+into trouble too - how long will it take to rebuild your read model,
+will it even fit into memory? Making projections immediate consistent
+might become a problem if you do a lot of them. Parallelization or
+giving up on immediate consistency might bring solace.</p>
+<p>Events don&rsquo;t change, versioning might get awkward. Are you going to
+create a new event type for each change, or will you relax
+deserialization? Or maybe you want to implement event migrations?</p>
+<p>Since you&rsquo;re persisting multiple models; events and one or more read
+models, you&rsquo;re going to consume more storage, which will cost you.</p>
+<h3 id="adaptation-in-the-wild">Adaptation in the wild</h3>
+<p>Although there are - from a a business and engineering perspective -
+some good arguments to be made for event sourcing, those arguments only
+apply to a modest percentage of projects. Even when there&rsquo;s a strong
+case to be made for event sourcing, there are very few people with
+actual experience implementing an event sourced system and prescriptive
+frameworks that you can just drop into a project and feel good about,
+are lacking. Most won&rsquo;t even care about event sourcing to start with,
+but even if they do, it&rsquo;s a fight upstream; it introduces a risk most
+might not be comfortable with.</p>
+<p>Having said that, there are some really good projects out there that are
+steadily gaining popularity and maturity. Pioneers in the field are
+sharing and documenting their experiences, lowering the barriers for
+others. Things are moving for sure.</p>
+<p>As always, event sourcing is not a paradigm to blindly apply to each and
+every scenario, but definitely one worth considering.</p>
+<p><em>Since I&rsquo;m not running any of it in production, tell me what I&rsquo;m
+missing, there must be more things that turn out to be harder than they
+sound at first right? If you&rsquo;re not running it in production, but
+thinking about it, what are some of your concerns? What are your
+predictions for the future of event sourcing?</em></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/opinion">opinion</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

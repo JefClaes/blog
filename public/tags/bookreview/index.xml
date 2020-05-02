@@ -12,34 +12,6 @@
     
     
     <item>
-      <title>Databases are growing on me</title>
-      <link>http://localhost:1313/2013/12/databases-are-growing-on-me/</link>
-      <pubDate>Sun, 22 Dec 2013 21:53:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/12/databases-are-growing-on-me/</guid>
-      <description>I learned all about logical design of relational databases back in school; tables, columns, data types, views, normalization, constraints, primary keys, foreign keys&amp;hellip; At the same time, I learned how to use SQL to put data in, and how to get it out again; INSERT INTO, SELECT, FROM, WHERE, JOIN, GROUP&amp;hellip;
-In the first project I worked on just out of school, we weren&amp;rsquo;t doing anything interesting with databases; we didn&amp;rsquo;t have that many users, or that much data.</description>
-    </item>
-    
-    <item>
-      <title>Book review: Antifragile</title>
-      <link>http://localhost:1313/2013/12/book-review-antifragile/</link>
-      <pubDate>Sun, 08 Dec 2013 17:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/12/book-review-antifragile/</guid>
-      <description>When things are fragile, they break easily. We often see fragility as a bad thing and design things to be robust. But this isn&amp;rsquo;t what we&amp;rsquo;re really after either; things that are robust might be hard to break, but they&amp;rsquo;re also hard to change, making them fail to adapt to new stressors over time. The model that we&amp;rsquo;re really after is antifragility; when something is antifragile it will benefit from stressors and get better over time.</description>
-    </item>
-    
-    <item>
-      <title>Multiplayer Enterprise Architect</title>
-      <link>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</link>
-      <pubDate>Sun, 30 Jun 2013 17:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/06/multiplayer-enterprise-architect/</guid>
-      <description>Hanging around in the pub after DDDX, I ended up talking to Alberto Brandolini. For those who have never met him; he&amp;rsquo;s very much into visualization. You will always see him carrying a drawing pad, with a dash of permanent marker on his cheek, and a few lost sticky notes on his back. I don&amp;rsquo;t know if it was the Italian accent and the strong gestures, or my mildly intoxicated condition, but the idea of visualization as an important tool grew on me even more that evening.</description>
-    </item>
-    
-    <item>
       <title>Book review: The Art of Agile Development</title>
       <link>http://localhost:1313/2012/06/book-review-the-art-of-agile-development/</link>
       <pubDate>Sun, 10 Jun 2012 19:42:00 +0200</pubDate>

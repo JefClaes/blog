@@ -12,69 +12,6 @@
     
     
     <item>
-      <title>Event storming workshop slides</title>
-      <link>http://localhost:1313/2013/11/event-storming-workshop-slides/</link>
-      <pubDate>Sun, 17 Nov 2013 19:56:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/11/event-storming-workshop-slides/</guid>
-      <description>At Euricom, we quarterly all retreat to headquarters for a day of sharing and learning. This time, I and others organized and facilitated an event storming workshop.
-After a short introduction on event storming participants were initiated to the domain of Cambio CarSharing - which is packed with behaviour. After that, seven groups of five (+ one domain expert) spread out across the office, and spent two slots of twenty minutes modeling the domain - with two extra slots for feedback.</description>
-    </item>
-    
-    <item>
-      <title>An event sourced aggregate</title>
-      <link>http://localhost:1313/2013/10/an-event-sourced-aggregate/</link>
-      <pubDate>Sun, 13 Oct 2013 18:36:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/10/an-event-sourced-aggregate/</guid>
-      <description>Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
-In traditional systems, we only persist the current state of an object.
-
-In event sourced systems, we don&amp;rsquo;t persist the current state of an object, but the sequence of events that caused the object to be in the current state.</description>
-    </item>
-    
-    <item>
-      <title>My understanding of event sourcing</title>
-      <link>http://localhost:1313/2013/10/my-understanding-of-event-sourcing/</link>
-      <pubDate>Sun, 06 Oct 2013 18:32:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/10/my-understanding-of-event-sourcing/</guid>
-      <description>I&amp;rsquo;ve been studying event sourcing from a distance for little over a year now; reading online material and going through some of the excellent OS code. Unfortunately, there would be no value introducing it into my current project - it would even be a terrible idea, so I decided to satisfy my inquisitiveness by consolidating and sharing my understanding of the concept.
-Domain events
-**
-**An event is something that happened in the past.</description>
-    </item>
-    
-    <item>
-      <title>Actor Model in COBOL</title>
-      <link>http://localhost:1313/2013/09/actor-model-in-cobol/</link>
-      <pubDate>Sun, 22 Sep 2013 16:38:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/09/actor-model-in-cobol/</guid>
-      <description>In an Actor system, each Actor acts as a self-contained and autonomous component. An Actor can only communicate with other Actors by exchanging messages - they are not allowed to share state. Messages are handled asynchronously, and are nondeterministic. The location of Actors should be transparent; they can either live on the same machine, or on a distributed system. These properties make the Actor Model a great fit for parallel and distributed computing.</description>
-    </item>
-    
-    <item>
-      <title>Inheritance is like Jenga</title>
-      <link>http://localhost:1313/2013/08/inheritance-is-like-jenga/</link>
-      <pubDate>Sun, 25 Aug 2013 18:18:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/08/inheritance-is-like-jenga/</guid>
-      <description>These last few days, I have been working on a piece of our codebase that accidentally got very inheritance heavy.
-When it comes to inheritance versus composition, there are a few widely accepted rules of thumb out there. While prefer composition over inheritance doesn&amp;rsquo;t cover the nuances, it&amp;rsquo;s not terrible advice; composition will statistically often be the better solution. Steve McConnell&amp;rsquo;s composition defines a &amp;lsquo;has a&amp;rsquo;- relationship while inheritance defines an &amp;lsquo;is a&amp;rsquo;-relationship, gives you a more nuanced and simple tool to apply to a scenario.</description>
-    </item>
-    
-    <item>
-      <title>When your commands spell CUD</title>
-      <link>http://localhost:1313/2013/08/when-your-commands-spell-cud/</link>
-      <pubDate>Sun, 04 Aug 2013 19:08:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/08/when-your-commands-spell-cud/</guid>
-      <description>A good while ago, I blogged on commands (and queries). After exploring various flavors, I eventually settled on this one; commands, handlers and an in-memory bus that serves as a command executor.
-Commands help you in supporting the ubiquitous language by explicitly capturing user intent at the boundaries of your system - think use cases. You can look at them as messages that are being sent to your domain. In this regard, they also serve as a layer over your domain - decoupling the inside from the outside, allowing you to gradually introduce concepts on the inside, without breaking the outside.</description>
-    </item>
-    
-    <item>
       <title>Accidental entities - what about the UI?</title>
       <link>http://localhost:1313/2013/06/accidental-entities-what-about-the-ui/</link>
       <pubDate>Sun, 02 Jun 2013 16:24:00 +0200</pubDate>

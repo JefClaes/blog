@@ -12,7 +12,7 @@ In traditional systems, write and read models are not separated, they are one an
 
 
 
-<meta itemprop="keywords" content="CodeSnippets,database,.NET,DDD,NoSql," /><meta property="og:title" content="Event projections" />
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Event projections" />
 <meta property="og:description" content="In my first two posts on event sourcing, I implemented an event sourced aggregate from scratch. After being able to have an aggregate record and play events, I looked at persisting them in an event store. Logically, the next question is: how do I query my aggregates, how do I get my state out?
 In traditional systems, write and read models are not separated, they are one and the same. Event sourced systems on the other hand have a write model - event streams, and a separate read model." />
 <meta property="og:type" content="article" />
@@ -103,56 +103,51 @@ is built from events committed to the write model; events are projected
 into one or more read models.</p>
 <p><a href="/post/images/2013-10-27-event-projections-Projections.PNG"><img src="/post/images/thumbnails/2013-10-27-event-projections-Projections.PNG" alt=""></a></p>
 <p>An interface for a projection could look like this.</p>
-<pre><code>public interface IProjection {
-    void Handle(EventStream eventStream);                     
-}  
-</code></pre>
-<p>A projection takes in an event stream, and projects it to <em>some</em> read
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IProjection</span> {
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">eventStream</span>);                     
+}
+</code></pre></div><p>A projection takes in an event stream, and projects it to <em>some</em> read
 model.</p>
 <p>A read model can be anything; a cache, a document store, a key value
 store, a relational database, a file, or even some evil global state.</p>
-<pre><code>public class EvilStatisticsReadModel {
-    public static int WithdrawalAmountExceededCount { get; set; }
-
-    public static int AmountDepositedCount { get; set; }
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">EvilStatisticsReadModel</span> {
+    <span style="color:#859900">public</span> <span style="color:#859900">static</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">WithdrawalAmountExceededCount</span> { <span style="color:#859900">get</span>; <span style="color:#859900">set</span>; }
+    <span style="color:#859900">public</span> <span style="color:#859900">static</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">AmountDepositedCount</span> { <span style="color:#859900">get</span>; <span style="color:#859900">set</span>; }
 }
-</code></pre>
-<p>In this model, we want to maintain statistics of events that happened.
+</code></pre></div><p>In this model, we want to maintain statistics of events that happened.
 For that to happen, we need to define a projection of our event stream.</p>
-<pre><code>public class ProjectionsToEvilStaticsReadModel : IProjection {
-    public void Handle(EventStream eventStream) {
-        foreach (var @event in eventStream)
-            When((dynamic)@event);
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">ProjectionsToEvilStaticsReadModel</span> : <span style="color:#268bd2">IProjection</span> {
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">eventStream</span>) {
+        <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">@event</span> <span style="color:#859900">in</span> <span style="color:#268bd2">eventStream</span>)
+            <span style="color:#268bd2">When</span>((<span style="color:#859900;font-weight:bold">dynamic</span>)<span style="color:#268bd2">@event</span>);
     }
 
-    public void When(WithdrawalAmountExceeded @event) {
-        EvilStatisticsReadModel.WithdrawalAmountExceededCount++;
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">When</span>(<span style="color:#268bd2">WithdrawalAmountExceeded</span> <span style="color:#268bd2">@event</span>) {
+        <span style="color:#268bd2">EvilStatisticsReadModel</span>.<span style="color:#268bd2">WithdrawalAmountExceededCount</span>++;
     }
 
-    public void When(AmountDeposited @event) {
-        EvilStatisticsReadModel.AmountDepositedCount++;
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">When</span>(<span style="color:#268bd2">AmountDeposited</span> <span style="color:#268bd2">@event</span>) {
+        <span style="color:#268bd2">EvilStatisticsReadModel</span>.<span style="color:#268bd2">AmountDepositedCount</span>++;
     }    
 }
-</code></pre>
-<p>If we now let this projection handle an event stream, our read model
+</code></pre></div><p>If we now let this projection handle an event stream, our read model
 will be kept up-to-date.</p>
-<pre><code>[TestMethod]
-public void ReadModelIsKeptUpToDateWhileProjectingTheEventStream() {
-    var events = new List&lt;IEvent&gt;() {
-        new WithdrawalAmountExceeded(new Amount(3000)),
-        new AmountDeposited(new Amount(300)),
-        new AmountDeposited(new Amount(500)),
-        new AmountWithdrawn(new Amount(100))
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">[TestMethod]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">ReadModelIsKeptUpToDateWhileProjectingTheEventStream</span>() {
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">events</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">List</span>&lt;<span style="color:#268bd2">IEvent</span>&gt;() {
+        <span style="color:#859900">new</span> <span style="color:#268bd2">WithdrawalAmountExceeded</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Amount</span>(<span style="color:#2aa198;font-weight:bold">3000</span>)),
+        <span style="color:#859900">new</span> <span style="color:#268bd2">AmountDeposited</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Amount</span>(<span style="color:#2aa198;font-weight:bold">300</span>)),
+        <span style="color:#859900">new</span> <span style="color:#268bd2">AmountDeposited</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Amount</span>(<span style="color:#2aa198;font-weight:bold">500</span>)),
+        <span style="color:#859900">new</span> <span style="color:#268bd2">AmountWithdrawn</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Amount</span>(<span style="color:#2aa198;font-weight:bold">100</span>))
     };
-    var stream = new EventStream(events);
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">stream</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">EventStream</span>(<span style="color:#268bd2">events</span>);
 
-    new ProjectionsToEvilStaticsReadModel().Handle(stream);
+    <span style="color:#859900">new</span> <span style="color:#268bd2">ProjectionsToEvilStaticsReadModel</span>().<span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">stream</span>);
 
-    Assert.AreEqual(1, EvilStatisticsReadModel.WithdrawalAmountExceededCount);
-    Assert.AreEqual(2, EvilStatisticsReadModel.AmountDepositedCount);    
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">EvilStatisticsReadModel</span>.<span style="color:#268bd2">WithdrawalAmountExceededCount</span>);
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">2</span>, <span style="color:#268bd2">EvilStatisticsReadModel</span>.<span style="color:#268bd2">AmountDepositedCount</span>);    
 }
-</code></pre>
-<p>One could argue that all of this is too much - not worth the effort.
+</code></pre></div><p>One could argue that all of this is too much - not worth the effort.
 Where you first just persisted the structure of an aggregate, and could
 query that same structure, you now first have to persist events for then
 to write projections that maintain separate read models that can be
@@ -203,15 +198,7 @@ doing projections; parallelization, eventual consistency and so on.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
-							
-							<li><a href="/tags/database">database</a></li>
-							
-							<li><a href="/tags/.net">.NET</a></li>
-							
-							<li><a href="/tags/ddd">DDD</a></li>
-							
-							<li><a href="/tags/nosql">NoSql</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					

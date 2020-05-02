@@ -11,15 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/dddbe/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>The first DDDBE Modellathon</title>
-      <link>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</link>
-      <pubDate>Fri, 06 Sep 2013 13:24:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/09/the-first-dddbe-modellathon/</guid>
-      <description>On our way back from DDD Exchange, heavily influenced by yet another immersive DDD experience, we searched for ways to keep the momentum going. Sure, we met up regularly for CQRS beers, but we felt that we could do more, better. That&amp;rsquo;s when we coined the term modellathon, something like a hackathon, but instead of writing code, we would build models.
-Thanks to the effort of Mathias, Stijn and Yves, Tuesday marked the first get-together of the Belgian DDD user group in its official form.</description>
-    </item>
-    
   </channel>
 </rss>

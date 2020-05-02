@@ -7,11 +7,11 @@
 <meta itemprop="description" content="Having covered projections last week, I think I have come full circle in these posts that turned out to be a small preliminary series on event sourcing. Even though there are still a vast amount of nuances to discover, I think I&rsquo;ve captured the gist of it. Even without running an event sourced system in production - I feel as if I somewhat have an idea of what event sourcing can bring to the table.">
 <meta itemprop="datePublished" content="2013-11-03T18:45:00&#43;01:00" />
 <meta itemprop="dateModified" content="2013-11-03T18:45:00&#43;01:00" />
-<meta itemprop="wordCount" content="1148">
+<meta itemprop="wordCount" content="1146">
 
 
 
-<meta itemprop="keywords" content="DDD," /><meta property="og:title" content="Event source all the things?" />
+<meta itemprop="keywords" content="opinion," /><meta property="og:title" content="Event source all the things?" />
 <meta property="og:description" content="Having covered projections last week, I think I have come full circle in these posts that turned out to be a small preliminary series on event sourcing. Even though there are still a vast amount of nuances to discover, I think I&rsquo;ve captured the gist of it. Even without running an event sourced system in production - I feel as if I somewhat have an idea of what event sourcing can bring to the table." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/2013/11/event-source-all-the-things/" />
@@ -107,13 +107,9 @@ from both sides. Is it worth the trouble?</p>
 realize in how many bits of our solution event sourcing could have
 helped us:</p>
 <ul>
-<li>the life cycle of a vehicle assigned to an emergency: vehicle
-dispatched, vehicle left the station, vehicle en route, vehicle
-arrived on the scene, vehicle back in the station&hellip;</li>
-<li>a person&rsquo;s career: person was promoted, person was detached to
-another station, person learned a new skill&hellip;</li>
-<li>a shift&rsquo;s schedule: person attached to unit, person returned to
-person pool, unit dispatched&hellip;</li>
+<li>the life cycle of a vehicle assigned to an emergency: vehicle dispatched, vehicle left the station, vehicle en route, vehicle arrived on the scene, vehicle back in the station&hellip;</li>
+<li>a person&rsquo;s career: person was promoted, person was detached to another station, person learned a new skill&hellip;</li>
+<li>a shift&rsquo;s schedule: person attached to unit, person returned to person pool, unit dispatched&hellip;</li>
 </ul>
 <p>This data had to be made available in a set of diverse read models.
 Getting the data out was complex at times, often even impossible. A lot
@@ -127,9 +123,8 @@ was responsible for changing system settings. Here it&rsquo;s not an event log
 they need, but a simple audit trail.</p>
 <p>If it is just a passive log your business wants, you can get away with
 cheaper alternatives; a command journal, an audit trail and so on.</p>
-<p><strong>Benefits</strong><br>
-**<br>
-**Event sourcing goes hand-in-hand with Domain Driven Design. Events are
+<h3 id="benefits">Benefits</h3>
+<p>Event sourcing goes hand-in-hand with Domain Driven Design. Events are
 a great tool to go from a structural model to a behavioural model,
 helping you to capture the true essence of a domain model.</p>
 <p>Building and maintaining an event store should be doable. It&rsquo;s an
@@ -162,7 +157,7 @@ state.</p>
 compensating event or fix the projection and replay everything. This way
 nothing gets lost, and consistency between code and outcome is
 guaranteed.</p>
-<p><strong>Downsides</strong></p>
+<h3 id="downsides">Downsides</h3>
 <p>Defining events is hard. Defining good events takes a lot of practice
 and insight. If you&rsquo;re forcing a structural model into a behavioural
 one, it might even be impossible. So don&rsquo;t even consider turning CRUD
@@ -180,9 +175,8 @@ create a new event type for each change, or will you relax
 deserialization? Or maybe you want to implement event migrations?</p>
 <p>Since you&rsquo;re persisting multiple models; events and one or more read
 models, you&rsquo;re going to consume more storage, which will cost you.</p>
-<p><strong>Adaptation in the wild</strong><br>
-**<br>
-**Although there are - from a a business and engineering perspective -
+<h3 id="adaptation-in-the-wild">Adaptation in the wild</h3>
+<p>Although there are - from a a business and engineering perspective -
 some good arguments to be made for event sourcing, those arguments only
 apply to a modest percentage of projects. Even when there&rsquo;s a strong
 case to be made for event sourcing, there are very few people with
@@ -210,7 +204,7 @@ predictions for the future of event sourcing?</em></p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/ddd">DDD</a></li>
+							<li><a href="/tags/opinion">opinion</a></li>
 							
 						</ul>
 					

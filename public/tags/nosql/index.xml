@@ -12,27 +12,6 @@
     
     
     <item>
-      <title>Event projections</title>
-      <link>http://localhost:1313/2013/10/event-projections/</link>
-      <pubDate>Sun, 27 Oct 2013 17:43:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/10/event-projections/</guid>
-      <description>In my first two posts on event sourcing, I implemented an event sourced aggregate from scratch. After being able to have an aggregate record and play events, I looked at persisting them in an event store. Logically, the next question is: how do I query my aggregates, how do I get my state out?
-In traditional systems, write and read models are not separated, they are one and the same. Event sourced systems on the other hand have a write model - event streams, and a separate read model.</description>
-    </item>
-    
-    <item>
-      <title>Eventual consistent domain events with RavenDB and IronMQ</title>
-      <link>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</link>
-      <pubDate>Thu, 15 Aug 2013 14:03:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/08/eventual-consistent-domain-events-with-ravendb-and-ironmq/</guid>
-      <description>Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
-One project I&amp;rsquo;m working on right now makes use of domain events. As an example, I&amp;rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
-I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.</description>
-    </item>
-    
-    <item>
       <title>Adding the R to CQS: some storage options</title>
       <link>http://localhost:1313/2013/02/adding-the-r-to-cqs-some-storage-options/</link>
       <pubDate>Sun, 17 Feb 2013 17:57:00 +0100</pubDate>

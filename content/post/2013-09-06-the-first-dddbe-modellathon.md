@@ -3,7 +3,8 @@ title = "The first DDDBE Modellathon"
 slug = "2013-09-06-the-first-dddbe-modellathon"
 published = 2013-09-06T13:24:00.003000+02:00
 author = "Jef Claes"
-tags = [ "DDDBE", "DDD", "Ramblings",]
+tags = [ "community",]
+url = "2013/09/the-first-dddbe-modellathon.html"
 +++
 On our way back from DDD Exchange, heavily influenced by yet another
 immersive DDD experience, we searched for ways to keep the momentum
@@ -63,12 +64,8 @@ expected. It proves once again the value of visualization and
 collaboration. All models were probably wrong, but turned out to be
 useful. The end result probably doesn't matter that much, discovery and
 learning along the way does.*  
-*  
-*  
 
 [![](/post/images/thumbnails/2013-09-06-the-first-dddbe-modellathon-Modellathon.jpg)](/post/images/2013-09-06-the-first-dddbe-modellathon-Modellathon.jpg)
-
-  
 
 Note to self: make pictures of the end results; they would help
 explaining some of the experiments.

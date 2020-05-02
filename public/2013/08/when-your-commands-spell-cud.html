@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>When your commands spell CUD - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="When your commands spell CUD">
+<meta itemprop="description" content="A good while ago, I blogged on commands (and queries). After exploring various flavors, I eventually settled on this one; commands, handlers and an in-memory bus that serves as a command executor.
+Commands help you in supporting the ubiquitous language by explicitly capturing user intent at the boundaries of your system - think use cases. You can look at them as messages that are being sent to your domain. In this regard, they also serve as a layer over your domain - decoupling the inside from the outside, allowing you to gradually introduce concepts on the inside, without breaking the outside.">
+<meta itemprop="datePublished" content="2013-08-04T19:08:00&#43;02:00" />
+<meta itemprop="dateModified" content="2013-08-04T19:08:00&#43;02:00" />
+<meta itemprop="wordCount" content="720">
+
+
+
+<meta itemprop="keywords" content="ddd," /><meta property="og:title" content="When your commands spell CUD" />
+<meta property="og:description" content="A good while ago, I blogged on commands (and queries). After exploring various flavors, I eventually settled on this one; commands, handlers and an in-memory bus that serves as a command executor.
+Commands help you in supporting the ubiquitous language by explicitly capturing user intent at the boundaries of your system - think use cases. You can look at them as messages that are being sent to your domain. In this regard, they also serve as a layer over your domain - decoupling the inside from the outside, allowing you to gradually introduce concepts on the inside, without breaking the outside." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/08/when-your-commands-spell-cud.html" />
+<meta property="article:published_time" content="2013-08-04T19:08:00+02:00" />
+<meta property="article:modified_time" content="2013-08-04T19:08:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="When your commands spell CUD"/>
+<meta name="twitter:description" content="A good while ago, I blogged on commands (and queries). After exploring various flavors, I eventually settled on this one; commands, handlers and an in-memory bus that serves as a command executor.
+Commands help you in supporting the ubiquitous language by explicitly capturing user intent at the boundaries of your system - think use cases. You can look at them as messages that are being sent to your domain. In this regard, they also serve as a layer over your domain - decoupling the inside from the outside, allowing you to gradually introduce concepts on the inside, without breaking the outside."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">04</span>
+							<span class="rest">Aug 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">When your commands spell CUD</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>A good while ago, I blogged on commands (and queries). After exploring
+various flavors, I eventually settled on this one; <a href="http://www.jefclaes.be/2013/01/separating-command-data-from-logic-and.html">commands, handlers
+and an in-memory bus that serves as a command
+executor</a>.</p>
+<p>Commands help you in supporting the ubiquitous language by explicitly
+capturing user intent at the boundaries of your system - think use
+cases. You can look at them as messages that are being sent to your
+domain. In this regard, they also serve as a layer over your domain -
+decoupling the inside from the outside, allowing you to gradually
+introduce concepts on the inside, without breaking the outside. The
+command executor gives you a nice pipeline you can take advantage of to
+centralize security, performance metrics, logging, session management
+and so on.</p>
+<p>We always need to be critical of abstractions though, and regularly
+assess their value. A smell that might indicate that commands might not
+be working for you, or are adding little value, is that the first
+letters of your commands spell CUD - Create Update Delete.</p>
+<p>For example; CreateCarCommand, UpdateCarCommand and DeleteCarCommand.</p>
+<h3 id="the-language-needs-attention">The language needs attention</h3>
+<p>Possibly, your team doesn&rsquo;t fully grasp the power of cultivating the
+ubiquitous language. If you start listening to your domain experts, you
+might end up with totally different command names; <code>TakeInNewCarCommand</code>,
+<code>RepaintCarCommand</code>, <code>InstallOptionCommand</code> and <code>RemoveCarFromFleetCommand</code>.</p>
+<p>Maybe though, there is no language at all, and you&rsquo;re really just doing
+CRUD. If the context you are working on is implementing a generic or
+supporting subdomain this might not be terrible.</p>
+<h3 id="if-im-doing-crud-do-i-still-need-commands">If I&rsquo;m doing CRUD, do I still need commands?</h3>
+<p>Commands help you decouple the inside from the outside. If there is no
+domain on the inside though, they can still help you decouple the
+application layer from other concerns. You might prefer to use another
+facade to separate concerns though, such as a thin service layer. I
+don&rsquo;t think the service layer abstraction gives you anything commands
+don&rsquo;t though. Maybe you don&rsquo;t find any value in separating things at
+all, and just dump everything in the the application layer.</p>
+<p>All of these approaches are valid. You just have to consider the
+trade-offs. With these last approaches, next to losing decoupling in
+from out, you also lose that central pipeline that a command executor
+gives you.</p>
+<h3 id="doesnt-my-application-layer-give-me-this-pipeline-for-free">Doesn&rsquo;t my application layer give me this pipeline for free?</h3>
+<p>It sure can. Looking at modern networking stacks, these all have
+interception points built in. For example; NancyFx allows you to hook in
+the request pipeline using before and after hooks; Web API gives your
+message handlers and action filters; and WCF has a concept of
+interceptors.</p>
+<p>Not all application frameworks do though - think of frameworks targeting
+desktop software.</p>
+<p>The advantage of having your own pipeline, instead of solely having to
+rely on your application framework&rsquo;s interception points, is that you&rsquo;re
+boss and don&rsquo;t have to study the ins and outs of each framework, and
+hope for the framework to have thought of your needs. Also when you need
+to support multiple application layers, you don&rsquo;t have to implement all
+features twice.</p>
+<h3 id="what-about-using-aspects-instead-of-a-pipeline-to-centralize-all-these-concerns">What about using aspects instead of a pipeline to centralize all these concerns?</h3>
+<p>You can - instead of a pipeline - use aspects to take care of
+croscutting concerns such as security, logging, session management.. and
+have them woven into your executable at compile- or runtime. I think of
+aspects as if they were macros, which save you on lines of code written,
+but also often conceal the real problem; missing concepts. While they
+try to sell you on separation of concerns, notice that you&rsquo;re actually
+still producing procedural code, but instead of writing it by hand,
+you&rsquo;re now letting an AOP framework do it for you. Add harder testing,
+debugging and readability to the bunch, and you can understand why I&rsquo;m
+not a fan of AOP. There are scenarios where this all doesn&rsquo;t matter much
+though, and to strengthen the cliche; granular logging is a good use
+case.</p>
+<p>When your commands spell CUD, it might indicate you could do without
+them. Do realize what the consequences are of taking them away though;</p>
+<ul>
+<li>you lose the opportunity to capture user intent at the boundaries of your system, to strengthen the ubiquitous language</li>
+<li>you may need an alternative facade to decouple in from out</li>
+<li>you lose that command executor serving as your own pipeline</li>
+</ul>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/ddd">ddd</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

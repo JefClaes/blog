@@ -3,7 +3,8 @@ title = "Event projections"
 slug = "2013-10-27-event-projections"
 published = 2013-10-27T17:43:00+01:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", "database", ".NET", "DDD", "NoSql",]
+tags = [ "code", "infrastructure"]
+url = "2013/10/event-projections.html"
 +++
 In my first two posts on event sourcing, I implemented [an event sourced
 aggregate from
@@ -20,15 +21,15 @@ write model - event streams, and a separate read model. The read model
 is built from events committed to the write model; events are projected
 into one or more read models.  
   
-
 [![](/post/images/thumbnails/2013-10-27-event-projections-Projections.PNG)](/post/images/2013-10-27-event-projections-Projections.PNG)
 
-  
 An interface for a projection could look like this.  
 
-    public interface IProjection {
-        void Handle(EventStream eventStream);                     
-    }  
+```csharp
+public interface IProjection {
+    void Handle(EventStream eventStream);                     
+}
+```
 
 A projection takes in an event stream, and projects it to *some* read
 model.  
@@ -36,48 +37,53 @@ model.
 A read model can be anything; a cache, a document store, a key value
 store, a relational database, a file, or even some evil global state.
 
-    public class EvilStatisticsReadModel {
-        public static int WithdrawalAmountExceededCount { get; set; }
-
-        public static int AmountDepositedCount { get; set; }
-    }
+```csharp
+public class EvilStatisticsReadModel {
+    public static int WithdrawalAmountExceededCount { get; set; }
+    public static int AmountDepositedCount { get; set; }
+}
+```
 
 In this model, we want to maintain statistics of events that happened.
 For that to happen, we need to define a projection of our event stream.
 
-    public class ProjectionsToEvilStaticsReadModel : IProjection {
-        public void Handle(EventStream eventStream) {
-            foreach (var @event in eventStream)
-                When((dynamic)@event);
-        }
-
-        public void When(WithdrawalAmountExceeded @event) {
-            EvilStatisticsReadModel.WithdrawalAmountExceededCount++;
-        }
-
-        public void When(AmountDeposited @event) {
-            EvilStatisticsReadModel.AmountDepositedCount++;
-        }    
+```csharp
+public class ProjectionsToEvilStaticsReadModel : IProjection {
+    public void Handle(EventStream eventStream) {
+        foreach (var @event in eventStream)
+            When((dynamic)@event);
     }
+
+    public void When(WithdrawalAmountExceeded @event) {
+        EvilStatisticsReadModel.WithdrawalAmountExceededCount++;
+    }
+
+    public void When(AmountDeposited @event) {
+        EvilStatisticsReadModel.AmountDepositedCount++;
+    }    
+}
+```
 
 If we now let this projection handle an event stream, our read model
 will be kept up-to-date.
 
-    [TestMethod]
-    public void ReadModelIsKeptUpToDateWhileProjectingTheEventStream() {
-        var events = new List<IEvent>() {
-            new WithdrawalAmountExceeded(new Amount(3000)),
-            new AmountDeposited(new Amount(300)),
-            new AmountDeposited(new Amount(500)),
-            new AmountWithdrawn(new Amount(100))
-        };
-        var stream = new EventStream(events);
+```csharp
+[TestMethod]
+public void ReadModelIsKeptUpToDateWhileProjectingTheEventStream() {
+    var events = new List<IEvent>() {
+        new WithdrawalAmountExceeded(new Amount(3000)),
+        new AmountDeposited(new Amount(300)),
+        new AmountDeposited(new Amount(500)),
+        new AmountWithdrawn(new Amount(100))
+    };
+    var stream = new EventStream(events);
 
-        new ProjectionsToEvilStaticsReadModel().Handle(stream);
+    new ProjectionsToEvilStaticsReadModel().Handle(stream);
 
-        Assert.AreEqual(1, EvilStatisticsReadModel.WithdrawalAmountExceededCount);
-        Assert.AreEqual(2, EvilStatisticsReadModel.AmountDepositedCount);    
-    }
+    Assert.AreEqual(1, EvilStatisticsReadModel.WithdrawalAmountExceededCount);
+    Assert.AreEqual(2, EvilStatisticsReadModel.AmountDepositedCount);    
+}
+```
 
 One could argue that all of this is too much - not worth the effort.
 Where you first just persisted the structure of an aggregate, and could

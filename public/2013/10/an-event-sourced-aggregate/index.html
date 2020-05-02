@@ -10,11 +10,11 @@ In traditional systems, we only persist the current state of an object.
 In event sourced systems, we don&rsquo;t persist the current state of an object, but the sequence of events that caused the object to be in the current state.">
 <meta itemprop="datePublished" content="2013-10-13T18:36:00&#43;02:00" />
 <meta itemprop="dateModified" content="2013-10-13T18:36:00&#43;02:00" />
-<meta itemprop="wordCount" content="651">
+<meta itemprop="wordCount" content="646">
 
 
 
-<meta itemprop="keywords" content="CodeSnippets,.NET,Architecture,DDD," /><meta property="og:title" content="An event sourced aggregate" />
+<meta itemprop="keywords" content="code,ddd," /><meta property="og:title" content="An event sourced aggregate" />
 <meta property="og:description" content="Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
 In traditional systems, we only persist the current state of an object.
 
@@ -108,130 +108,122 @@ current state</strong>.</p>
 <p>If we want an aggregate to be event sourced, it should be able to
 rebuild itself from a stream of events, and it should be able to record
 all the events it raises.</p>
-<pre><code>public interface IEventSourcedAggregate : IAggregate
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IEventSourcedAggregate</span> : <span style="color:#268bd2">IAggregate</span>
 {
-    void Initialize(EventStream eventStream);
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Initialize</span>(<span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">eventStream</span>);
 
-    EventStream RecordedEvents();
+    <span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">RecordedEvents</span>();
 }
-</code></pre>
-<p>Let&rsquo;s implement the example aggregate we used last week: an account. An
+</code></pre></div><p>Let&rsquo;s implement the example aggregate we used last week: an account. An
 account owner can deposit and withdraw an amount from his account. There
 is a maximum amount policy for withdrawals though.</p>
-<pre><code>public class Account : IEventSourcedAggregate {
-    private readonly Guid _id;
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Account</span> : <span style="color:#268bd2">IEventSourcedAggregate</span> {
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">Guid</span> <span style="color:#268bd2">_id</span>;
 
-    public Account(Guid id) {
-        _id = id;
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Account</span>(<span style="color:#268bd2">Guid</span> <span style="color:#268bd2">id</span>) {
+        <span style="color:#268bd2">_id</span> = <span style="color:#268bd2">id</span>;
     }
 
-    public Guid Id { get { return _id; } }
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Guid</span> <span style="color:#268bd2">Id</span> { <span style="color:#859900">get</span> { <span style="color:#859900">return</span> <span style="color:#268bd2">_id</span>; } }
 
-    public void Initialize(EventStream eventStream) { 
-        throw new NotImplementedException();
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Initialize</span>(<span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">eventStream</span>) { 
+        <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">NotImplementedException</span>();
     }
 
-    public EventStream RecordedEvents() { 
-        throw new NotImplementedException(); 
+    <span style="color:#859900">public</span> <span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">RecordedEvents</span>() { 
+        <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">NotImplementedException</span>(); 
     }
     
-    public void Deposit(Amount amount) { }
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Deposit</span>(<span style="color:#268bd2">Amount</span> <span style="color:#268bd2">amount</span>) { }
     
-    public void Withdraw(Amount amount) { }
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Withdraw</span>(<span style="color:#268bd2">Amount</span> <span style="color:#268bd2">amount</span>) { }
 }
-</code></pre>
-<p>Next to the Initialize and RecordedEvents method, our aggregate facade
+</code></pre></div><p>Next to the Initialize and RecordedEvents method, our aggregate facade
 hasn&rsquo;t changed. We still have a Deposit and a Withdraw operation like we
 would have in a traditional aggregate. How those two methods get
 implemented differs though.</p>
 <p>When we deposit or withdraw an amount, we want to - instead of changing
 the state directly - apply events. When an event gets applied its
 handler will first be invoked, for the event then to be recorded.</p>
-<pre><code>public void Deposit(Amount amount) {
-    Apply(new AmountDeposited(amount));
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Deposit</span>(<span style="color:#268bd2">Amount</span> <span style="color:#268bd2">amount</span>) {
+    <span style="color:#268bd2">Apply</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">AmountDeposited</span>(<span style="color:#268bd2">amount</span>));
 }
 
-public void Withdraw(Amount amount) {
-    if (amount.IsOver(AmountPolicy.Maximum))     {
-        Apply(new WithdrawalAmountExceeded(amount));
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Withdraw</span>(<span style="color:#268bd2">Amount</span> <span style="color:#268bd2">amount</span>) {
+    <span style="color:#859900">if</span> (<span style="color:#268bd2">amount</span>.<span style="color:#268bd2">IsOver</span>(<span style="color:#268bd2">AmountPolicy</span>.<span style="color:#268bd2">Maximum</span>))     {
+        <span style="color:#268bd2">Apply</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">WithdrawalAmountExceeded</span>(<span style="color:#268bd2">amount</span>));
 
-        return;
+        <span style="color:#859900">return</span>;
     }
 
-    Apply(new AmountWithdrawn(amount));
+    <span style="color:#268bd2">Apply</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">AmountWithdrawn</span>(<span style="color:#268bd2">amount</span>));
 }
 
-private void Apply(IEvent @event) {
-    When((dynamic)@event);
-    _eventRecorder.Record(@event);
+<span style="color:#859900">private</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Apply</span>(<span style="color:#268bd2">IEvent</span> <span style="color:#268bd2">@event</span>) {
+    <span style="color:#268bd2">When</span>((<span style="color:#859900;font-weight:bold">dynamic</span>)<span style="color:#268bd2">@event</span>);
+    <span style="color:#268bd2">_eventRecorder</span>.<span style="color:#268bd2">Record</span>(<span style="color:#268bd2">@event</span>);
 }
-</code></pre>
-<p>An event recorder is a small object that keeps track of recorded events.</p>
-<pre><code>public class EventRecorder
+</code></pre></div><p>An event recorder is a small object that keeps track of recorded events.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">EventRecorder</span>
 {
-    private readonly List&lt;IEvent&gt; _events = new List&lt;IEvent&gt;();
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">List</span>&lt;<span style="color:#268bd2">IEvent</span>&gt; <span style="color:#268bd2">_events</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">List</span>&lt;<span style="color:#268bd2">IEvent</span>&gt;();
 
-    public void Record(IEvent @event) {
-        _events.Add(@event);
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Record</span>(<span style="color:#268bd2">IEvent</span> <span style="color:#268bd2">@event</span>) {
+        <span style="color:#268bd2">_events</span>.<span style="color:#268bd2">Add</span>(<span style="color:#268bd2">@event</span>);
     }
 
-    public EventStream RecordedEvents() {
-        return new EventStream(_events);
+    <span style="color:#859900">public</span> <span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">RecordedEvents</span>() {
+        <span style="color:#859900">return</span> <span style="color:#859900">new</span> <span style="color:#268bd2">EventStream</span>(<span style="color:#268bd2">_events</span>);
     }
 }
-</code></pre>
-<p>This object will be used to have our aggregate return a stream of
+</code></pre></div><p>This object will be used to have our aggregate return a stream of
 recorded events.</p>
-<pre><code>public EventStream RecordedEvents() {
-    return _eventRecorder.RecordedEvents();
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">RecordedEvents</span>() {
+    <span style="color:#859900">return</span> <span style="color:#268bd2">_eventRecorder</span>.<span style="color:#268bd2">RecordedEvents</span>();
 }
-</code></pre>
-<p>We can now also implement initializing the aggregate from a stream of
+</code></pre></div><p>We can now also implement initializing the aggregate from a stream of
 events.</p>
-<pre><code>public void Initialize(EventStream eventStream) {
-    foreach (var @event in eventStream)
-        When((dynamic)@event);
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Initialize</span>(<span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">eventStream</span>) {
+    <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">@event</span> <span style="color:#859900">in</span> <span style="color:#268bd2">eventStream</span>)
+        <span style="color:#268bd2">When</span>((<span style="color:#859900;font-weight:bold">dynamic</span>)<span style="color:#268bd2">@event</span>);
 }
-</code></pre>
-<p>Here too, event handlers are invoked by using the dynamic run-time to
+</code></pre></div><p>Here too, event handlers are invoked by using the dynamic run-time to
 find the best overload.</p>
 <p>It&rsquo;s the event handlers that will change the aggregate&rsquo;s state. In this
 example, they can be implemented like this.</p>
-<pre><code>private void When(AmountWithdrawn @event) {
-    _amount = _amount.Substract(@event.Amount);
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">private</span> <span style="color:#859900">void</span> <span style="color:#268bd2">When</span>(<span style="color:#268bd2">AmountWithdrawn</span> <span style="color:#268bd2">@event</span>) {
+    <span style="color:#268bd2">_amount</span> = <span style="color:#268bd2">_amount</span>.<span style="color:#268bd2">Substract</span>(<span style="color:#268bd2">@event</span>.<span style="color:#268bd2">Amount</span>);
 }
 
-private void When(AmountDeposited @event) {
-    _amount = _amount.Add(@event.Amount);
+<span style="color:#859900">private</span> <span style="color:#859900">void</span> <span style="color:#268bd2">When</span>(<span style="color:#268bd2">AmountDeposited</span> <span style="color:#268bd2">@event</span>) {
+    <span style="color:#268bd2">_amount</span> = <span style="color:#268bd2">_amount</span>.<span style="color:#268bd2">Add</span>(<span style="color:#268bd2">@event</span>.<span style="color:#268bd2">Amount</span>);
 }
 
-private void When(WithdrawalAmountExceeded @event) { }
-</code></pre>
-<p>A test verifies that when I invoke operations on the aggregate, all the
+<span style="color:#859900">private</span> <span style="color:#859900">void</span> <span style="color:#268bd2">When</span>(<span style="color:#268bd2">WithdrawalAmountExceeded</span> <span style="color:#268bd2">@event</span>) { }
+</code></pre></div><p>A test verifies that when I invoke operations on the aggregate, all the
 events are recorded, and the state has changed. When I use those
 recorded events to rebuild the same aggregate, we end up with the same
 state.</p>
-<pre><code>[TestMethod]
-public void ICanReplayTheEventsAndHaveTheStateRebuilt() {
-    var account = new Account(Guid.NewGuid());
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">    [TestMethod]</span>
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">ICanReplayTheEventsAndHaveTheStateRebuilt</span>() {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">account</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">Account</span>(<span style="color:#268bd2">Guid</span>.<span style="color:#268bd2">NewGuid</span>());
 
-    account.Deposit(new Amount(2500));
-    account.Withdraw(new Amount(100));
-    account.Withdraw(new Amount(200));
+        <span style="color:#268bd2">account</span>.<span style="color:#268bd2">Deposit</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Amount</span>(<span style="color:#2aa198;font-weight:bold">2500</span>));
+        <span style="color:#268bd2">account</span>.<span style="color:#268bd2">Withdraw</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Amount</span>(<span style="color:#2aa198;font-weight:bold">100</span>));
+        <span style="color:#268bd2">account</span>.<span style="color:#268bd2">Withdraw</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Amount</span>(<span style="color:#2aa198;font-weight:bold">200</span>));
 
-    Assert.AreEqual(3, account.RecordedEvents().Count());
-    Assert.AreEqual(new Amount(2200), account.Amount);
+        <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">3</span>, <span style="color:#268bd2">account</span>.<span style="color:#268bd2">RecordedEvents</span>().<span style="color:#268bd2">Count</span>());
+        <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Amount</span>(<span style="color:#2aa198;font-weight:bold">2200</span>), <span style="color:#268bd2">account</span>.<span style="color:#268bd2">Amount</span>);
 
-    var events = account.RecordedEvents();
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">events</span> = <span style="color:#268bd2">account</span>.<span style="color:#268bd2">RecordedEvents</span>();
 
-    var secondAccount = new Account(Guid.NewGuid());
-    secondAccount.Initialize(events);
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">secondAccount</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">Account</span>(<span style="color:#268bd2">Guid</span>.<span style="color:#268bd2">NewGuid</span>());
+        <span style="color:#268bd2">secondAccount</span>.<span style="color:#268bd2">Initialize</span>(<span style="color:#268bd2">events</span>);
 
-    Assert.AreEqual(new Amount(2200), secondAccount.Amount);
-    Assert.AreEqual(0, secondAccount.RecordedEvents().Count());
-}
-</code></pre>
-<p>And this is all there is to an event sourced aggregate.</p>
+        <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Amount</span>(<span style="color:#2aa198;font-weight:bold">2200</span>), <span style="color:#268bd2">secondAccount</span>.<span style="color:#268bd2">Amount</span>);
+        <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">0</span>, <span style="color:#268bd2">secondAccount</span>.<span style="color:#268bd2">RecordedEvents</span>().<span style="color:#268bd2">Count</span>());
+    }
+</code></pre></div><p>And this is all there is to an event sourced aggregate.</p>
 <p>For this exercise I tried to keep the number of concepts low. Many will
 have noticed that extracting a few concepts would benefit re-use and
 explicitness.</p>
@@ -241,10 +233,6 @@ handler, and in case a handler is missing the exception is not pretty.
 Experienced readers will also have noticed concepts such as versioning
 and snapshots are not implemented yet. I hope limiting the amount of
 concepts and indirections made this blog post easier to read.</p>
-<p><em>Any thoughts on this implementation?</em></p>
-<ul>
-<li></li>
-</ul>
 <p>Next week: where do I persist these events?*</p>
 
 			</div>
@@ -254,13 +242,9 @@ concepts and indirections made this blog post easier to read.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
-							<li><a href="/tags/.net">.NET</a></li>
-							
-							<li><a href="/tags/architecture">Architecture</a></li>
-							
-							<li><a href="/tags/ddd">DDD</a></li>
+							<li><a href="/tags/ddd">ddd</a></li>
 							
 						</ul>
 					

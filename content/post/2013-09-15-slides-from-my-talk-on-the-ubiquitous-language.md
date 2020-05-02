@@ -3,7 +3,8 @@ title = "Slides from my talk on the Ubiquitous Language"
 slug = "2013-09-15-slides-from-my-talk-on-the-ubiquitous-language"
 published = 2013-09-15T16:34:00+02:00
 author = "Jef Claes"
-tags = [ ".NET", "Refactoring", "DDD", "Event",]
+tags = [ "talks",]
+url = "2013/09/slides-from-my-talk-on-ubiquitous.html"
 +++
 I just returned from our yearly [Euricom](http://euri.com/) retreat.
 This year, all forty of us got to spend four days in the South of Spain.
@@ -31,5 +32,5 @@ mapping... but I couldn't capture all of that in a meaningful way in
 less than twelve minutes. That's why I started over, focusing on the
 ubiquitous language alone.  
   
-You can find my slides embedded below or [on
+You can find my slides [on
 Slideshare](http://www.slideshare.net/jclaes/refactoring-towards-the-ubiquitous-language).

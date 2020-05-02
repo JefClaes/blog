@@ -3,7 +3,8 @@ title = "Actor Model in COBOL"
 slug = "2013-09-22-actor-model-in-cobol"
 published = 2013-09-22T16:38:00+02:00
 author = "Jef Claes"
-tags = [ "Architecture", "DDD", "Ramblings",]
+tags = [ "opinion",]
+url = "2013/09/actor-model-in-cobol.html"
 +++
 In an Actor system, each Actor acts as a self-contained and autonomous
 component. An Actor can only communicate with other Actors by exchanging
@@ -30,45 +31,40 @@ Having worked with a team of mainframe programmers over the last year,
 it recently came to me that how they have designed their systems over
 the years is compatible with a good amount of Actor laws.  
   
-
 [![](/post/images/thumbnails/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG)](/post/images/2013-09-22-actor-model-in-cobol-ActorModelInCOBOL.JPG)
 
   
-**Composition**  
-**  
-**A good thing about COBOL seems to be that it's nearly impossible to
+### Composition
+  
+A good thing about COBOL seems to be that it's nearly impossible to
 write maintainable big programs, so you're forced to decompose your
 program into smallish autonomous components - into jobs.  
   
-**Messages**  
-**  
-**Communication between these jobs happens by passing flat files around
-- the only format that's supported out-of-the-box.  
-Messages come in, and new messages go out. Jobs will never mutate the
-incoming payload, a new copy is created instead; pipes and filters.  
-Folders serve as a queue, allowing files to be processed asynchronously
-and nondeterministic.  
+### Messages
+
+Communication between these jobs happens by passing flat files around
+- the only format that's supported out-of-the-box. Messages come in, and new messages go out. Jobs will never mutate the incoming payload, a new copy is created instead; pipes and filters. Folders serve as a queue, allowing files to be processed asynchronously and deterministic.  
   
 Staying clear of mutating messages makes debugging extremely easy;
 you'll never hear someone on the team asking for reproduction steps,
 they just restore the production archives locally.  
   
-**Addresses**  
-**  
-**Actors send messages to other Actors using their addresses. This can
+### Addresses  
+  
+Actors send messages to other Actors using their addresses. This can
 be a memory or disk address, a network address, email address, whatever
 really. In mainframe land, file system paths serve as addresses.  
   
-**No shared state**  
-**  
-**In general they stay away from jobs sharing state; the default is to
+### No shared state  
+  
+In general they stay away from jobs sharing state; the default is to
 lock files exclusively, so sharing them is highly impractical. Even most
 static data gets synchronized instead of shared - banking reference
 data, customer addresses, configuration etc...  
   
-**Scheduling**  
-**  
-**A scheduler sits on top of all these jobs. Its responsibility is to
+### Scheduling  
+  
+A scheduler sits on top of all these jobs. Its responsibility is to
 start a job when a new file arrives. If a job fails, the scheduler acts
 as a supervisor and will notify operations, which will investigate the
 issue - probably look at what's on the file system, and use the same

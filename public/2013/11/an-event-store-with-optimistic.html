@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>An event store with optimistic concurrency - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="An event store with optimistic concurrency">
+<meta itemprop="description" content="Like I mentioned last week - after only five posts on the subject - there still are a great deal of event sourcing nuances left to be discovered.
+My current event store implementation only supports a single user. Due to an aggressive file lock, concurrently accessing an aggregate will throw an exception. Can we allow multiple users to write to and read from an event stream? Also, what can we do about users making changes to the same aggregate; can we somehow detect conflicts and avoid changes to be committed?">
+<meta itemprop="datePublished" content="2013-11-10T18:25:00&#43;01:00" />
+<meta itemprop="dateModified" content="2013-11-10T18:25:00&#43;01:00" />
+<meta itemprop="wordCount" content="644">
+
+
+
+<meta itemprop="keywords" content="code,infrastructure," /><meta property="og:title" content="An event store with optimistic concurrency" />
+<meta property="og:description" content="Like I mentioned last week - after only five posts on the subject - there still are a great deal of event sourcing nuances left to be discovered.
+My current event store implementation only supports a single user. Due to an aggressive file lock, concurrently accessing an aggregate will throw an exception. Can we allow multiple users to write to and read from an event stream? Also, what can we do about users making changes to the same aggregate; can we somehow detect conflicts and avoid changes to be committed?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/11/an-event-store-with-optimistic.html" />
+<meta property="article:published_time" content="2013-11-10T18:25:00+01:00" />
+<meta property="article:modified_time" content="2013-11-10T18:25:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="An event store with optimistic concurrency"/>
+<meta name="twitter:description" content="Like I mentioned last week - after only five posts on the subject - there still are a great deal of event sourcing nuances left to be discovered.
+My current event store implementation only supports a single user. Due to an aggressive file lock, concurrently accessing an aggregate will throw an exception. Can we allow multiple users to write to and read from an event stream? Also, what can we do about users making changes to the same aggregate; can we somehow detect conflicts and avoid changes to be committed?"/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">10</span>
+							<span class="rest">Nov 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">An event store with optimistic concurrency</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Like I mentioned <a href="http://www.jefclaes.be/2013/11/event-source-all-things.html">last
+week</a> -
+after only five posts on the subject - there still are a great deal of
+event sourcing nuances left to be discovered.</p>
+<p><a href="http://www.jefclaes.be/2013/10/an-event-store.html">My current event store
+implementation</a> only
+supports a single user. Due to an aggressive file lock, concurrently
+accessing an aggregate will throw an exception. Can we allow multiple
+users to write to and read from an event stream? Also, what can we do
+about users making changes to the same aggregate; can we somehow detect
+conflicts and avoid changes to be committed?</p>
+<h2 id="multi-user">Multi-user</h2>
+<p>In the current version, concurrently appending to or reading from an
+aggregate&rsquo;s event stream will throw since the file will already be
+locked.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">Parallel</span>.<span style="color:#268bd2">For</span>(<span style="color:#2aa198;font-weight:bold">0</span>, <span style="color:#2aa198;font-weight:bold">1000</span>, (<span style="color:#268bd2">i</span>) =&gt;
+{    
+    <span style="color:#268bd2">_eventStore</span>.<span style="color:#268bd2">CreateOrAppend</span>(<span style="color:#268bd2">aggregateId</span>, <span style="color:#859900">new</span> <span style="color:#268bd2">EventStream</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">List</span>&lt;<span style="color:#268bd2">IEvent</span>&gt;() 
+    { 
+        <span style="color:#859900">new</span> <span style="color:#268bd2">ConcurrencyTestEvent</span>() 
+    }));
+    <span style="color:#268bd2">_eventStore</span>.<span style="color:#268bd2">GetStream</span>(<span style="color:#268bd2">aggregateId</span>);    
+});
+</code></pre></div><p>The exception looks like this: <code>&quot;System.IO.IOException: The process cannot access the file 'C:\\EventStore\\92f42a08-8583-4dcf-98a5-440b06f34719.txt' because it is being used by another process.&quot;</code></p>
+<p>To prevent concurrent file access, we can lock code accessing the
+aggregate&rsquo;s event stream. Instead of using a global lock, we maintain a
+dictionary of lock objects; one lock object per aggregate.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">lock</span> (<span style="color:#268bd2">Lock</span>.<span style="color:#268bd2">For</span>(<span style="color:#268bd2">aggregateId</span>))
+{
+    <span style="color:#859900">using</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">stream</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">FileStream</span>(
+        <span style="color:#268bd2">path</span>, <span style="color:#268bd2">FileMode</span>.<span style="color:#268bd2">Append</span>, <span style="color:#268bd2">FileAccess</span>.<span style="color:#268bd2">Write</span>, <span style="color:#268bd2">FileShare</span>.<span style="color:#268bd2">Read</span>))
+    {
+        <span style="color:#93a1a1;font-style:italic">// Access the aggregate&#39;s event stream
+</span><span style="color:#93a1a1;font-style:italic"></span>    }
+}
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Lock</span>
+{
+    <span style="color:#859900">private</span> <span style="color:#859900">static</span> <span style="color:#268bd2">ConcurrentDictionary</span>&lt;<span style="color:#268bd2">Guid</span>, <span style="color:#859900;font-weight:bold">object</span>&gt; <span style="color:#268bd2">_locks</span> = 
+        <span style="color:#859900">new</span> <span style="color:#268bd2">ConcurrentDictionary</span>&lt;<span style="color:#268bd2">Guid</span>, <span style="color:#859900;font-weight:bold">object</span>&gt;();
+
+    <span style="color:#859900">public</span> <span style="color:#859900">static</span> <span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">For</span>(<span style="color:#268bd2">Guid</span> <span style="color:#268bd2">aggregateId</span>)
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">aggregateLock</span> = <span style="color:#268bd2">_locks</span>.<span style="color:#268bd2">GetOrAdd</span>(<span style="color:#268bd2">aggregateId</span>, <span style="color:#859900">new</span> <span style="color:#859900;font-weight:bold">object</span>());
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">aggregateLock</span>;
+    }
+}     
+</code></pre></div><h3 id="optimistic-concurrency">Optimistic concurrency**</h3>
+<p>Before committing changes, we want to verify that no other changes
+have been committed in the meanwhile. These changes could have
+influenced the behaviour of our aggregate significantly. Appending the
+last changes without considering what might have happened in the
+meanwhile might corrupt our aggregate&rsquo;s state.</p>
+<p>One way to verify this is by using a number (or a timestamp - clocks,
+bah) to keep track of an aggregate&rsquo;s version. It&rsquo;s up to the client to
+tell us which version he expects when appending to a stream. To
+accommodate for this, we need to change the contract of our event store.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">interface</span> <span style="color:#268bd2">IEventStore</span>
+{
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Create</span>(<span style="color:#268bd2">Guid</span> <span style="color:#268bd2">aggregateId</span>, <span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">eventStream</span>);
+
+    <span style="color:#859900">void</span> <span style="color:#268bd2">Append</span>(<span style="color:#268bd2">Guid</span> <span style="color:#268bd2">aggregateId</span>, <span style="color:#268bd2">EventStream</span> <span style="color:#268bd2">eventStream</span>, <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">expectedVersion</span>);
+
+    <span style="color:#268bd2">ReadEventStream</span> <span style="color:#268bd2">GetStream</span>(<span style="color:#268bd2">Guid</span> <span style="color:#268bd2">aggregateId</span>);
+}
+</code></pre></div><p>Clients now need to pass in the expected version when appending to a
+stream. The result of reading a stream will include the current
+version.</p>
+<p>In the event store, we now store an index with every event.</p>
+<p><a href="/post/images/2013-11-10-an-event-store-with-optimistic-concurrency-EventsWithIndex.PNG"><img src="/post/images/thumbnails/2013-11-10-an-event-store-with-optimistic-concurrency-EventsWithIndex.PNG" alt=""></a></p>
+<p>If we append to an event stream, we will get the current version by
+reading the highest index - storing this in aggregate meta data would be
+faster for reading. If the current version doesn&rsquo;t match the expected
+version, we throw an exception.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">currentVersion</span> = <span style="color:#268bd2">GetCurrentVersion</span>(<span style="color:#268bd2">path</span>);
+
+<span style="color:#859900">if</span> (<span style="color:#268bd2">currentVersion</span> != <span style="color:#268bd2">expectedVersion</span>)
+    <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">OptimisticConcurrencyException</span>(<span style="color:#268bd2">expectedVersion</span>, <span style="color:#268bd2">currentVersion</span>);
+
+<span style="color:#859900">using</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">stream</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">FileStream</span>(
+    <span style="color:#268bd2">path</span>, <span style="color:#268bd2">FileMode</span>.<span style="color:#268bd2">Append</span>, <span style="color:#268bd2">FileAccess</span>.<span style="color:#268bd2">Write</span>, <span style="color:#268bd2">FileShare</span>.<span style="color:#268bd2">Read</span>))
+{
+    <span style="color:#859900">using</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">streamWriter</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">StreamWriter</span>(<span style="color:#268bd2">stream</span>))
+    {
+        <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">@event</span> <span style="color:#859900">in</span> <span style="color:#268bd2">eventStream</span>)
+        {
+            <span style="color:#268bd2">currentVersion</span>++;
+
+            <span style="color:#268bd2">streamWriter</span>.<span style="color:#268bd2">WriteLine</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">Record</span>(
+                <span style="color:#268bd2">aggregateId</span>, <span style="color:#268bd2">@event</span>, <span style="color:#268bd2">currentVersion</span>).<span style="color:#268bd2">Serialized</span>());
+        }
+    }
+}
+</code></pre></div><p>A test for that looks something like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">try</span>
+{
+    <span style="color:#268bd2">GivenEventStore</span>();
+    <span style="color:#268bd2">GivenAggregateId</span>();
+    <span style="color:#268bd2">GivenEventStreamCreated</span>();
+    <span style="color:#268bd2">WhenAppendingTwoEventStreamsWithTheSameExpectedVersion</span>();
+}
+<span style="color:#859900">catch</span> (<span style="color:#268bd2">OptimisticConcurrencyException</span> <span style="color:#268bd2">ocex</span>) 
+{
+    <span style="color:#268bd2">_expectedConcurrencyException</span> = <span style="color:#268bd2">ocex</span>;
+}
+<span style="color:#268bd2">
+</span><span style="color:#268bd2">[TestMethod]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">ThenTheConcurrencyExceptionHasANiceMessage</span>()
+{
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">expected</span> = <span style="color:#2aa198">&#34;Version found: 3, expected: 1&#34;</span>;
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">actual</span> = <span style="color:#268bd2">_expectedConcurrencyException</span>.<span style="color:#268bd2">Message</span>
+
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#268bd2">expected</span>, <span style="color:#268bd2">actual</span>);
+}
+</code></pre></div><p>Reading the event stream doesn&rsquo;t change much; we now also read the
+current version, and return it with the event stream. </p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">lines</span> = <span style="color:#268bd2">File</span>.<span style="color:#268bd2">ReadAllLines</span>(<span style="color:#268bd2">path</span>);
+
+<span style="color:#859900">if</span> (<span style="color:#268bd2">lines</span>.<span style="color:#268bd2">Any</span>())
+{
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">records</span> = <span style="color:#268bd2">lines</span>.<span style="color:#268bd2">Select</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">Record</span>.<span style="color:#268bd2">Deserialize</span>(<span style="color:#268bd2">x</span>, <span style="color:#268bd2">_assembly</span>));
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">currentVersion</span> = <span style="color:#268bd2">records</span>.<span style="color:#268bd2">Max</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Version</span>);
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">events</span> = <span style="color:#268bd2">records</span>.<span style="color:#268bd2">Select</span>(<span style="color:#268bd2">x</span> =&gt; <span style="color:#268bd2">x</span>.<span style="color:#268bd2">Event</span>).<span style="color:#268bd2">ToList</span>();
+
+    <span style="color:#859900">return</span> <span style="color:#859900">new</span> <span style="color:#268bd2">ReadEventStream</span>(<span style="color:#268bd2">events</span>, <span style="color:#268bd2">currentVersion</span>);
+}
+
+<span style="color:#859900">return</span> <span style="color:#859900">null</span>; 
+</code></pre></div><p>And that&rsquo;s one way to implement optimistic concurrency. The biggest
+bottleneck in this approach is how we read the current version; having
+to read all the events to find the current version isn&rsquo;t very
+efficient.</p>
+<p>Transactional behaviour is also missing. I&rsquo;ve been thinking about adding
+a <code>COMMIT</code> flag after appending a set of events, and using that to resolve
+corruption on reads, or is this fundamentally flawed?</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+							<li><a href="/tags/infrastructure">infrastructure</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

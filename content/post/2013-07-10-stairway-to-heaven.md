@@ -3,7 +3,8 @@ title = "Stairway to heaven"
 slug = "2013-07-10-stairway-to-heaven"
 published = 2013-07-10T07:04:00+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2013/07/stairway-to-heaven.html"
 +++
 These last two days have been rather tiring. Yesterday we drove up to
 [Bryce

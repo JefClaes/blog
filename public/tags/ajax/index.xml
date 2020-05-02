@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>Angular.js and IE8 caching</title>
-      <link>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</link>
-      <pubDate>Sun, 09 Jun 2013 16:52:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2013/06/angular.js-and-ie8-caching/</guid>
-      <description>Older Internet Explorer versions are notorious for agressively caching AJAX requests. In this post, you&amp;rsquo;ll find two techniques that combat this behaviour.
-The first option is to have your server explicitly set the caching headers.
-Response.Cache.SetExpires(DateTime.UtcNow.AddDays(-1)); Response.Cache.SetValidUntilExpires(false); Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches); Response.Cache.SetCacheability(HttpCacheability.NoCache); Response.Cache.SetNoStore();  Since you don&amp;rsquo;t necessarily own the server, or clients might already have cached some requests, you can trick the browser into thinking each request is a fresh one by making each url unique.</description>
-    </item>
-    
-    <item>
       <title>The state of the client-side ASP.NET Ajax 4.0 framework</title>
       <link>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</link>
       <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
