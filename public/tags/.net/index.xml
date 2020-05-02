@@ -12,26 +12,6 @@
     
     
     <item>
-      <title>Separating command data from logic and sending it on a bus</title>
-      <link>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</link>
-      <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</guid>
-      <description>In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers.</description>
-    </item>
-    
-    <item>
-      <title>Self-contained commands with dependencies </title>
-      <link>http://localhost:1313/2013/01/self-contained-commands-with-dependencies/</link>
-      <pubDate>Sun, 13 Jan 2013 18:17:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/self-contained-commands-with-dependencies/</guid>
-      <description>Also read: separating command data from logic and sending it on a bus
-In October I looked at an architecture that limits abstractions to solely commands and queries. In that post, I had some infrastructure that looked like this.
-public abstract class Command { public abstract void Execute(); } public abstract class Query&amp;lt;T&amp;gt; { public abstract T Execute(); } public interface ICommandHandler { void Execute(Command command); } public class CommandHandler : ICommandHandler { public void Execute(Command command) { command.</description>
-    </item>
-    
-    <item>
       <title>It&#39;s not cake we are baking</title>
       <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</link>
       <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>

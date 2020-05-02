@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Separating command data from logic and sending it on a bus - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Separating command data from logic and sending it on a bus">
+<meta itemprop="description" content="In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers.">
+<meta itemprop="datePublished" content="2013-01-20T22:03:00&#43;01:00" />
+<meta itemprop="dateModified" content="2013-01-20T22:03:00&#43;01:00" />
+<meta itemprop="wordCount" content="617">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Separating command data from logic and sending it on a bus" />
+<meta property="og:description" content="In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2013/01/separating-command-data-from-logic-and.html" />
+<meta property="article:published_time" content="2013-01-20T22:03:00+01:00" />
+<meta property="article:modified_time" content="2013-01-20T22:03:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Separating command data from logic and sending it on a bus"/>
+<meta name="twitter:description" content="In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">20</span>
+							<span class="rest">Jan 2013</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Separating command data from logic and sending it on a bus</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>In <a href="http://www.jefclaes.be/2012/10/commands-queries-and-testing.html">my first post on this
+topic</a>,
+I started out with an attempt to limit abstractions to solely commands
+and queries. Commands and queries were self-contained and could be
+invoked by passing them to a context-providing generic handler. The
+drawback of this approach was that it made constructor dependency
+injection impossible. In a <a href="http://www.jefclaes.be/2012/10/commands-with-dependencies.html">next
+post</a>, I
+separated data from logic, but never got around to writing a dispatcher
+that associates command data with their handlers. Last week, <a href="http://www.jefclaes.be/2013/01/self-contained-commands-with.html">I
+revisited the first
+approach</a>,
+and added an unconventional implementation of injecting dependencies by
+an Inject method convention.</p>
+<p>I still believe that last approach is very simple and works fine if
+extra dependencies are exceptional. I do admit that it will make
+architectural shoots harder to handle; everything is rather tightly
+coupled. So let&rsquo;s look at an alternative architecture which pulls all
+the bits apart, and should be better equipped to handle change.</p>
+<p>Let&rsquo;s first separate command data from logic.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">CreateSubscriptionCommand</span> 
+{     
+    <span style="color:#859900">public</span> <span style="color:#268bd2">CreateSubscriptionCommand</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#859900">value</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">category</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">emailAddress</span>)
+    {
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">StringIsNullOrEmpty</span>(<span style="color:#859900">value</span>, <span style="color:#2aa198">&#34;value&#34;</span>);
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">StringIsNullOrEmpty</span>(<span style="color:#268bd2">category</span>, <span style="color:#2aa198">&#34;category&#34;</span>);
+        <span style="color:#268bd2">Guard</span>.<span style="color:#268bd2">StringIsNullOrEmpty</span>(<span style="color:#268bd2">emailAddress</span>, <span style="color:#2aa198">&#34;emailAddress&#34;</span>);
+
+        <span style="color:#268bd2">Value</span> = <span style="color:#859900">value</span>;
+        <span style="color:#268bd2">Category</span> = <span style="color:#268bd2">category</span>;
+        <span style="color:#268bd2">EmailAddress</span> = <span style="color:#268bd2">emailAddress</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">Value</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">Category</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+    <span style="color:#859900">public</span> <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">EmailAddress</span> { <span style="color:#859900">get</span>; <span style="color:#859900">private</span> <span style="color:#859900">set</span>; }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">bool</span> <span style="color:#268bd2">Equals</span>(<span style="color:#268bd2">Object</span> <span style="color:#268bd2">other</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">other</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">otherCommand</span> = <span style="color:#268bd2">other</span> <span style="color:#859900">as</span> <span style="color:#268bd2">CreateSubscriptionCommand</span>;
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">otherCommand</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">return</span> <span style="color:#859900">false</span>;
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">otherCommand</span>.<span style="color:#268bd2">Value</span> == <span style="color:#268bd2">Value</span> &amp;&amp; 
+            <span style="color:#268bd2">otherCommand</span>.<span style="color:#268bd2">Category</span> == <span style="color:#268bd2">Category</span> &amp;&amp; 
+            <span style="color:#268bd2">otherCommand</span>.<span style="color:#268bd2">EmailAddress</span> == <span style="color:#268bd2">EmailAddress</span>;
+    }    
+
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">GetHashCode</span>()
+    {
+        <span style="color:#859900">return</span> <span style="color:#268bd2">Value</span>.<span style="color:#268bd2">GetHashCode</span>() ^ 
+            <span style="color:#268bd2">Category</span>.<span style="color:#268bd2">GetHashCode</span>() ^ 
+            <span style="color:#268bd2">EmailAddress</span>.<span style="color:#268bd2">GetHashCode</span>();
+    }
+}
+</code></pre></div><p>The data is just a POCO. Notice the equality overrides; this comes in
+handy when you&rsquo;re testing.</p>
+<p>The class that handles on the data needs to implement the
+<code>ICommandHandler</code> interface.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">CreateSubscriptionCommandHandler</span> 
+    : <span style="color:#268bd2">ICommandHandler</span>&lt;<span style="color:#268bd2">CreateSubscriptionCommand</span>&gt;
+{    
+    <span style="color:#859900">private</span> <span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">_session</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">CreateSubscriptionCommandHandler</span>(<span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">session</span>)
+    {
+        <span style="color:#268bd2">_session</span> = <span style="color:#268bd2">session</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">CreateSubscriptionCommand</span> <span style="color:#268bd2">command</span>)
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">subscription</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">Documents</span>.<span style="color:#268bd2">Subscription</span>(
+            <span style="color:#268bd2">command</span>.<span style="color:#268bd2">Value</span>, <span style="color:#268bd2">command</span>.<span style="color:#268bd2">Category</span>, <span style="color:#268bd2">command</span>.<span style="color:#268bd2">EmailAddress</span>);
+
+        <span style="color:#268bd2">_session</span>.<span style="color:#268bd2">Store</span>(<span style="color:#268bd2">subscription</span>);    
+    }
+}
+</code></pre></div><p>Compared to the previous approach, we&rsquo;re now injecting the session
+instead of having it handy as a property; that coupling is now
+completely gone.</p>
+<p>Last thing left to do is create an interface that consumers can use to
+send commands on: a bus.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">Bus</span> : <span style="color:#268bd2">IBus</span>
+{
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">_kernel</span>;
+    <span style="color:#859900">private</span> <span style="color:#859900">readonly</span> <span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">_session</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">Bus</span>(<span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">kernel</span>, <span style="color:#268bd2">IDocumentSession</span> <span style="color:#268bd2">session</span>)
+    {
+        <span style="color:#268bd2">_kernel</span> = <span style="color:#268bd2">kernel</span>;
+        <span style="color:#268bd2">_session</span> = <span style="color:#268bd2">session</span>;
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">ExecuteCommand</span>&lt;<span style="color:#268bd2">T</span>&gt;(<span style="color:#268bd2">T</span> <span style="color:#268bd2">command</span>) <span style="color:#859900">where</span> <span style="color:#268bd2">T</span> : <span style="color:#859900">class</span>
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">handler</span> = <span style="color:#268bd2">_kernel</span>.<span style="color:#268bd2">Get</span>&lt;<span style="color:#268bd2">ICommandHandler</span>&lt;<span style="color:#268bd2">T</span>&gt;&gt;();
+
+        <span style="color:#268bd2">handler</span>.<span style="color:#268bd2">Handle</span>(<span style="color:#268bd2">command</span>);
+
+        <span style="color:#268bd2">_session</span>.<span style="color:#268bd2">SaveChanges</span>();
+    }
+}
+</code></pre></div><p>The <code>ExecuteCommand</code> method dispatches data to the correct handler by
+resolving it from the container, and also commits the unit of work.</p>
+<p>The consumer can execute commands like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">bus</span>.<span style="color:#268bd2">ExecuteCommand</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">CreateQueryCommand</span>(<span style="color:#268bd2">queryValue</span>, <span style="color:#268bd2">category</span>, <span style="color:#268bd2">emailAddress</span>));
+</code></pre></div><p>With this approach having all the bits spread, we have a bit more work
+gluing all the pieces together. The session is now known in the
+container, and is request scoped. The commandhandlers are also all
+registered in the container.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">protected</span> <span style="color:#859900">override</span> <span style="color:#859900">void</span> <span style="color:#268bd2">ConfigureRequestContainer</span>(<span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">container</span>, <span style="color:#268bd2">NancyContext</span> <span style="color:#268bd2">context</span>)
+{        
+        <span style="color:#93a1a1;font-style:italic">// you don&#39;t want to register them all individually
+</span><span style="color:#93a1a1;font-style:italic"></span>        <span style="color:#268bd2">container</span>
+            .<span style="color:#268bd2">Bind</span>&lt;<span style="color:#268bd2">ICommandHandler</span>&lt;<span style="color:#268bd2">CreateSubscriptionCommand</span>&gt;&gt;()
+            .<span style="color:#268bd2">To</span>&lt;<span style="color:#268bd2">CreateSubscriptionCommandHandler</span>&gt;();        
+        <span style="color:#93a1a1;font-style:italic">// snip..
+</span><span style="color:#93a1a1;font-style:italic"></span>        <span style="color:#268bd2">container</span>.<span style="color:#268bd2">Bind</span>&lt;<span style="color:#268bd2">IDocumentSession</span>&gt;()
+            .<span style="color:#268bd2">ToMethod</span>((<span style="color:#268bd2">ctx</span>) =&gt; { 
+                <span style="color:#859900">return</span> <span style="color:#268bd2">ctx</span>.<span style="color:#268bd2">Kernel</span>.<span style="color:#268bd2">Get</span>&lt;<span style="color:#268bd2">IDocumentStore</span>&gt;().<span style="color:#268bd2">OpenSession</span>();    
+            })
+            .<span style="color:#268bd2">InSingletonScope</span>();                          
+}
+</code></pre></div><p>I think this approach might suit a lot of projects better if your
+commands are dependency heavy.<br>
+What I like most is that handling architectural shoots will be easier.
+For example: right now, all behaviour is in my entities and in my
+commands; the segregation of application services and domain services is
+non-existent. And this works fine so far; I yet have to find a use case
+where I would benefit from more separation. If that would change in the
+future though, I can introduce abstractions, and concepts, without
+breaking consumer code, and without having to do awkward stuff managing
+the newly introduced dependencies.</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2013  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

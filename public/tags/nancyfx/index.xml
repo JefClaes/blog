@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Separating command data from logic and sending it on a bus</title>
-      <link>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</link>
-      <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/separating-command-data-from-logic-and-sending-it-on-a-bus/</guid>
-      <description>In my first post on this topic, I started out with an attempt to limit abstractions to solely commands and queries. Commands and queries were self-contained and could be invoked by passing them to a context-providing generic handler. The drawback of this approach was that it made constructor dependency injection impossible. In a next post, I separated data from logic, but never got around to writing a dispatcher that associates command data with their handlers.</description>
-    </item>
-    
-    <item>
       <title>Released: Kill long meetings</title>
       <link>http://localhost:1313/2012/11/released-kill-long-meetings/</link>
       <pubDate>Sun, 25 Nov 2012 17:45:00 +0100</pubDate>
