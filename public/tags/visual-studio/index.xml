@@ -12,19 +12,6 @@
     
     
     <item>
-      <title>No more regions on implementing interface</title>
-      <link>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</link>
-      <pubDate>Tue, 28 Jun 2011 19:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</guid>
-      <description>Something that has been irritating me tremendously lately, is that when I implement an interface using Visual Studio all the members of that interface get surrounded by a region.
-
-After poking around in the C# Text Editor options a little while, I found the switch that enables that behaviour.
-
-A little less friction every day..</description>
-    </item>
-    
-    <item>
       <title>Debugging &#34;SubReport could not be shown.&#34;</title>
       <link>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</link>
       <pubDate>Wed, 09 Sep 2009 18:41:00 +0200</pubDate>

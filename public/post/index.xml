@@ -1174,15 +1174,6 @@ public abstract class Command { public abstract void Execute(); } public abstrac
     </item>
     
     <item>
-      <title>Keeping your AppHarbor application pool alive</title>
-      <link>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</link>
-      <pubDate>Sun, 06 Jan 2013 21:18:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</guid>
-      <description>By default, IIS will shut down your application pool when it has been idle for more than 20 minutes. This is annoying when your website is only visited sporadically; visitors might not have the patience to wait for your application pool to spin up again. When you&amp;rsquo;re running your own machine, you can higher or disable the idle-timeout, but when you&amp;rsquo;re running on a cloud service like AppHarbor you can&amp;rsquo;t.</description>
-    </item>
-    
-    <item>
       <title>2012 Annual Review</title>
       <link>http://localhost:1313/2012/12/2012-annual-review/</link>
       <pubDate>Mon, 31 Dec 2012 15:58:00 +0100</pubDate>
@@ -1200,25 +1191,6 @@ The biggest personal changes this year were moving out of my parents&amp;rsquo; 
       <guid>http://localhost:1313/2012/12/2012s-most-read-posts/</guid>
       <description>I look forward to writing this post each year; it&amp;rsquo;s by far the easiest one to write, and it provides me with an occasion to look back on previous years (2009, 2010, 2011). It&amp;rsquo;s entertaining - and shameful too - to see what kept me busy back then, which opinions I held, and which technologies and techniques are still relevant in the meanwhile. Anyways, here it goes.
 The most read post this year, with 37.</description>
-    </item>
-    
-    <item>
-      <title>Released: My Antwerp Open Data submissions</title>
-      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
-      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
-      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
-    </item>
-    
-    <item>
-      <title>Show More pagination with angular.js</title>
-      <link>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</link>
-      <pubDate>Wed, 12 Dec 2012 19:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</guid>
-      <description>I built my first application with angular.js over these last few weeks (not during business hours), and although I still have lots and lots to discover and learn, I think I somewhat grasp the basics.
-In the application I built, I had to implement paging because rendering all the items at once was too slow on mobile devices (on my Windows Phone 7 anyways). The paging variant I decided on was the &amp;lsquo;Show More&amp;rsquo; technique.</description>
     </item>
     
     <item>
@@ -1250,53 +1222,12 @@ I regularly find myself building small things as an antitoxin to the regular per
     </item>
     
     <item>
-      <title>Released: Nancy.AspNetSprites.Razor</title>
-      <link>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</link>
-      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</guid>
-      <description>I was setting up a web application that shows an image for each listed product on the home page. When there were a few products, this worked pretty smooth, but as the number of products (and thereby images) increased, performance degraded. The problem is that each image initiates a separate request. The solution for this problem is to reduce the number of requests by combining the images using CSS sprites. Here is an in-detail explanation of how this works.</description>
-    </item>
-    
-    <item>
-      <title>No trains today? No resources were found either.</title>
-      <link>http://localhost:1313/2012/11/no-trains-today-no-resources-were-found-either./</link>
-      <pubDate>Wed, 14 Nov 2012 12:26:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/no-trains-today-no-resources-were-found-either./</guid>
-      <description>Belgian&amp;rsquo;s National Railway has decided to strike again today to assail Europe&amp;rsquo;s oncoming austerity. I don&amp;rsquo;t think there is anything wrong with sticking it to the man, or fighting for your right to party, if you believe it is just, yet the preferred tactics don&amp;rsquo;t feel quite right. There must be more constructive ways to get your point across, instead of terribly inconveniencing all those people who give you a job in the first place, your customers.</description>
-    </item>
-    
-    <item>
-      <title>jQuery-validate error messages in Twitter bootstrap tooltips</title>
-      <link>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</link>
-      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</guid>
-      <description>At work, we&amp;rsquo;re using the combination of ASP.NET MVC3, jQuery, jQuery-validate, knockout and Twitter Bootstrap on one of our projects. Having postponed looking at the aesthetics of the client-side validation for too long, we eventually found ourselves unsatisfied with the default error labels. Wanting to save on space, we&amp;rsquo;re experimenting with the error messages being shown in a Twitter Bootstrap tooltip. After poking around for some while, I came up with something satisfactory.</description>
-    </item>
-    
-    <item>
       <title>Commuting? Have you done the math?</title>
       <link>http://localhost:1313/2012/11/commuting-have-you-done-the-math/</link>
       <pubDate>Sun, 04 Nov 2012 20:24:00 +0100</pubDate>
       
       <guid>http://localhost:1313/2012/11/commuting-have-you-done-the-math/</guid>
       <description>On my first job interview, over four years ago, I was asked whether I would relocate if I was hired. Back then, I still lived in the Campine region with my parents, while the Ferranti Computer Systems headquarters are in Antwerp. I thought about it for a few seconds and told the interviewer that I didn&amp;rsquo;t plan on moving out of my parents&amp;rsquo; place in the first few years. Besides, the distance isn&amp;rsquo;t that great; it&amp;rsquo;s only 60km (=37 miles) of highway, how bad could it be?</description>
-    </item>
-    
-    <item>
-      <title>NancyFx and bundling with Cassette</title>
-      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
-      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
-      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
-Since I struggled with the implementation a little bit, I documented the process below.
-1. Cassette.Nancy package
-**
-**Add the Cassette.Nancy package to the project.
-PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
     </item>
     
     <item>
@@ -1342,16 +1273,6 @@ That being said, in this post I want to talk about an architecture that tries to
     </item>
     
     <item>
-      <title>Out with YSLOW, in with PageSpeed Insights</title>
-      <link>http://localhost:1313/2012/10/out-with-yslow-in-with-pagespeed-insights/</link>
-      <pubDate>Wed, 10 Oct 2012 18:48:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/out-with-yslow-in-with-pagespeed-insights/</guid>
-      <description>My alarm clock goes of at 6:20; my fingers are able to locate the snooze button without me having to open my eyes. To my annoyance, the aggravating noise of the alarm returns ten minutes later. I need to get up this time. With nearly opened eyes, I glance at the time, and press the dismiss button to silence the alarm for good.
-I open my eyes; light is already coming through the curtains; this shouldn&amp;rsquo;t be.</description>
-    </item>
-    
-    <item>
       <title>Côte d&#39;Opale</title>
       <link>http://localhost:1313/2012/10/c%C3%B4te-dopale/</link>
       <pubDate>Mon, 08 Oct 2012 21:51:00 +0200</pubDate>
@@ -1367,15 +1288,6 @@ I open my eyes; light is already coming through the curtains; this shouldn&amp;r
       
       <guid>http://localhost:1313/2012/10/on-job-titles/</guid>
       <description>It didn&amp;rsquo;t take long before I noticed how little job titles mean. In my first job, you were assured to be granted a fancy title after only having acquired a minimum seniority, if you knew how to play the game. A more important sounding job title was HR&amp;rsquo;s default bribe that often kept people from leaving for greener pastures, for a short while. But even after being upgraded from a stable cleaner to a Senior Barn Hygiene Technician, you&amp;rsquo;re still cleaning shit though.</description>
-    </item>
-    
-    <item>
-      <title>IMPORTANT: Please resubscribe to my feed</title>
-      <link>http://localhost:1313/2012/09/important-please-resubscribe-to-my-feed/</link>
-      <pubDate>Sun, 23 Sep 2012 21:56:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/important-please-resubscribe-to-my-feed/</guid>
-      <description>Maybe the writing has been on the wall for Feedburner for a long time. No features were added for over four years, no bugs were fixed, the look-and-feel wasn&amp;rsquo;t updated to be consistent with other Google products, support channels were being shut down,&amp;hellip; But it wasn&amp;rsquo;t until last Friday that the degradation of the service really got tangible: all subscriber counts indicated zero. Dozens of people complained, using all possible communication channels, but nobody listened.</description>
     </item>
     
     <item>
@@ -1406,17 +1318,6 @@ public static IEnumerable&amp;lt;DateTime&amp;gt; GetGaps( this IEnumerable&amp;
       
       <guid>http://localhost:1313/2012/09/the-7-rs-of-hypermedia/</guid>
       <description>While most REST concepts are rather easy to grok, there is one concept which I found harder to understand at first: Hypermedia. Let it be that without this concept, you&amp;rsquo;re missing out on an extremely important strength of REST. Hypermedia enables you to build dumb - or smart, depending on your perspective - clients, which are mostly driven by the server. Practically, this is implemented as resources embedding links which allow the client to discover and navigate through your RESTful service.</description>
-    </item>
-    
-    <item>
-      <title>Value object obsession</title>
-      <link>http://localhost:1313/2012/09/value-object-obsession/</link>
-      <pubDate>Sun, 16 Sep 2012 17:20:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/value-object-obsession/</guid>
-      <description>Primitive obsession is one of the more popular (hyped?) code smells these days.
- Primitive obsession is the name of a code smell that occurs when we use primitive data types to represent domain ideas. For example, we use a string to describe a message or an integer to represent an amount of money.
- The antidote is creating a value object instead of using a primitive. A value object is an immutable object which (in its DDD definition) carries no identity, but is compared based on the value of its attributes.</description>
     </item>
     
     <item>
@@ -1469,17 +1370,6 @@ public static class Convert { public static string PaymentRequest(PaymentRequest
       <description>I have picked up a few new tools this summer (MongoDB, NancyFx and WebAPI), and it occurred to me that I&amp;rsquo;ve built certain habits these last few years in how I make use of all the learning resources out there.
 I tried to identify all of them, to then categorize them, to finally order them according to in which phase of my study process I use them.
 The written and spoken word</description>
-    </item>
-    
-    <item>
-      <title>A really quick look at ASP.NET Web API Help Pages</title>
-      <link>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</link>
-      <pubDate>Thu, 16 Aug 2012 21:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</guid>
-      <description>While skimming over future features of ASP.NET Web API, I came across the ASP.NET Web API Help Page feature. I couldn&amp;rsquo;t find an introduction online, and the Nuget package has only been downloaded 16 times, so I had to have a really quick look. I documented my baby steps below.
-So, I had a really simple ASP.NET MVC4 project, with one API controller exposing tweets.
-public class TweetsController : ApiController { /// &amp;lt;summary&amp;gt; /// Get a &amp;lt;c&amp;gt;Tweet&amp;lt;/c&amp;gt; by its identifier.</description>
     </item>
     
     <item>
@@ -1755,19 +1645,6 @@ I think there is nothing wrong with falling in love with your technology per se.
     </item>
     
     <item>
-      <title>ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5</title>
-      <link>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</link>
-      <pubDate>Sun, 19 Feb 2012 16:52:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</guid>
-      <description>I tried installing ASP.NET MVC4 beta today, but seconds into the installation the WebPI already halted the process.
- ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5
- Apparently, this was documented in the ASP.NET MVC4 installation notes.
- This release is not compatible with the .NET Framework 4.5 Developer Preview. You must uninstall the .NET 4.5 Developer Preview before installing the ASP.NET MVC 4 Beta.
- I guess you have to be forgiving if you want to play with the early bits.</description>
-    </item>
-    
-    <item>
       <title>Book review: Working with NHibernate 3.0</title>
       <link>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</link>
       <pubDate>Wed, 08 Feb 2012 20:21:00 +0100</pubDate>
@@ -1785,17 +1662,6 @@ Being new to NHibernate, and NHibernate being known as having a steep learning c
       <guid>http://localhost:1313/2012/02/testing-di-bootstrappers/</guid>
       <description>While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&amp;rsquo;t see any reason why they shouldn&amp;rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
 I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot.</description>
-    </item>
-    
-    <item>
-      <title>Adding ELMAH to an AppHarbor application</title>
-      <link>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</link>
-      <pubDate>Sat, 04 Feb 2012 15:17:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</guid>
-      <description>For those who haven&amp;rsquo;t heard of ELMAH yet, here is the project description.
- ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment.
- While ELMAH is completely not AppHarbor specific, there do seem to be a fair amount of questions on the AppHarbor support forums on how to get ELMAH running.</description>
     </item>
     
     <item>
@@ -2225,19 +2091,6 @@ I am going to start by implementing some of the simple sorting algorithms in Jav
     </item>
     
     <item>
-      <title>No more regions on implementing interface</title>
-      <link>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</link>
-      <pubDate>Tue, 28 Jun 2011 19:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</guid>
-      <description>Something that has been irritating me tremendously lately, is that when I implement an interface using Visual Studio all the members of that interface get surrounded by a region.
-
-After poking around in the C# Text Editor options a little while, I found the switch that enables that behaviour.
-
-A little less friction every day..</description>
-    </item>
-    
-    <item>
       <title>Should we get this tool?</title>
       <link>http://localhost:1313/2011/06/should-we-get-this-tool/</link>
       <pubDate>Wed, 15 Jun 2011 21:45:00 +0200</pubDate>
@@ -2407,31 +2260,6 @@ If you want to play with the demo yourself, you can download the source:
     </item>
     
     <item>
-      <title>How will IE9 maintain momentum?</title>
-      <link>http://localhost:1313/2011/03/how-will-ie9-maintain-momentum/</link>
-      <pubDate>Sat, 19 Mar 2011 12:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/03/how-will-ie9-maintain-momentum/</guid>
-      <description>Unless you live under a rock, you must have noticed that Microsoft released Internet Explorer 9 this week.
-I have been using IE9 since the first platform preview, and I think it&amp;rsquo;s a very solid browser, outclassing every previous Microsoft browser by far. Microsoft finally built a browser which is capable of competing with other modern browsers.
-
-The global consensus seems to be that Internet Explorer has regained serious momentum.</description>
-    </item>
-    
-    <item>
-      <title>Running XBAP in IE9</title>
-      <link>http://localhost:1313/2011/03/running-xbap-in-ie9/</link>
-      <pubDate>Tue, 15 Mar 2011 08:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/03/running-xbap-in-ie9/</guid>
-      <description>By default you can&amp;rsquo;t run XAML Browser Applications in IE9. You will get an &amp;ldquo;An error occurred in the application you were running&amp;rdquo; error.
-
-To run an XBAP in IE9 you need to add the hosting site to your trusted sites..
-
-.. or you could convert the application to Silverlight, or preferably HTML5 ;)</description>
-    </item>
-    
-    <item>
       <title>Keeping WebSockets alive</title>
       <link>http://localhost:1313/2011/03/keeping-websockets-alive/</link>
       <pubDate>Sat, 12 Mar 2011 17:40:00 +0100</pubDate>
@@ -2569,19 +2397,6 @@ The book contains 11 concise chapters: An overview of HTML5, the Canvas API, aud
     </item>
     
     <item>
-      <title>Happy New Year</title>
-      <link>http://localhost:1313/2011/01/happy-new-year/</link>
-      <pubDate>Sat, 01 Jan 2011 02:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/01/happy-new-year/</guid>
-      <description>Happy New Year!
-I would like to thank you for being so awesome in 2010 and I hope we will be able to make 2011 an even better year!
-
-Photo credit: My girlfriend
-PS: This post was scheduled. If everything went ok, I should be tipsy by now and celebrating the New Year with my closest friends.</description>
-    </item>
-    
-    <item>
       <title>Reviewing and renewing resolutions</title>
       <link>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions/</link>
       <pubDate>Wed, 29 Dec 2010 20:17:00 +0100</pubDate>
@@ -2634,16 +2449,6 @@ The most popular posts of 2010
       <guid>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</guid>
       <description>I read about the HTML5 Geolocation API in the Pro HTML5 Programming book a while ago, and decided to play with it on this lazy Sunday.
 Using the Geolocation API to make a one-shot position request is very straight-forward. Get a reference to the navigator.geolocation object and call the getCurrentPosition() method, passing in at least a PositionCallback. In this example I&amp;rsquo;m also passing in a PositionErrorCallback. In the PositionCallback you can examine the properties of the position object.</description>
-    </item>
-    
-    <item>
-      <title>Programmatically disable UpdatePanels</title>
-      <link>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</link>
-      <pubDate>Sat, 18 Dec 2010 14:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</guid>
-      <description>In this post I&amp;rsquo;ll show you how to programmatically disable all UpdatePanels in a page. I don&amp;rsquo;t know in which scenario you would want to use this, but I had to use it to hack around an issue with the ReportViewer control. I&amp;rsquo;ll save you the details, really.
-To disable all the UpdatePanels, you need to set the EnablePartialRendering property of the ScriptManager to false. You can get a reference to the current ScriptManager by using the GetCurrent() method passing in a reference to the current page.</description>
     </item>
     
     <item>
@@ -2705,16 +2510,6 @@ In this post I will show you two new methods in the javascript Selector API whic
       
       <guid>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</guid>
       <description>October 18th LinkedIn released five new sections that can be added to your profile. The most important for us developers might be the Certifications section. Although your peers aren&amp;rsquo;t easily impressed by a certification, future partners and employers might be.</description>
-    </item>
-    
-    <item>
-      <title>How to dock/pin IE9 developer tools</title>
-      <link>http://localhost:1313/2010/11/how-to-dock/pin-ie9-developer-tools/</link>
-      <pubDate>Sun, 28 Nov 2010 15:24:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/11/how-to-dock/pin-ie9-developer-tools/</guid>
-      <description>The first time you open the IE9 developer tools a new window opens.
-This isn&amp;rsquo;t always desirable, think laptop/small monitor. That&amp;rsquo;s why you can dock/pin the tools in your browser. It took me a few minutes of dragging and searching in menus before I found the way to do this. In the upper right corner of the window you find an extra button Pin. You can also use the shortcut CTRL + P.</description>
     </item>
     
     <item>
@@ -2903,17 +2698,6 @@ Description
     </item>
     
     <item>
-      <title>Fixed commenting</title>
-      <link>http://localhost:1313/2010/05/fixed-commenting/</link>
-      <pubDate>Wed, 19 May 2010 09:05:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/05/fixed-commenting/</guid>
-      <description>After giving my blog a new design a few people pointed out that posting a comment was broken. You had to tab your way to the submit button.
-Turns out that the comment section is hosted in an iFrame and that scrolling was disabled.
-That issue should be solved now. Please let me know if commenting isn&amp;rsquo;t working for you!</description>
-    </item>
-    
-    <item>
       <title>Exception handling in batch operations with the AggregateException</title>
       <link>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</link>
       <pubDate>Sat, 15 May 2010 18:34:00 +0200</pubDate>
@@ -3038,67 +2822,6 @@ Use the built-in goodiesASP.NET Webforms has a lot of good stuff built into it. 
       
       <guid>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</guid>
       <description>I&amp;rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&amp;rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them.</description>
-    </item>
-    
-    <item>
-      <title>Wrapping up the &#34;An introduction to ASP.NET Ajax 4&#34; series</title>
-      <link>http://localhost:1313/2010/01/wrapping-up-the-an-introduction-to-asp.net-ajax-4-series/</link>
-      <pubDate>Fri, 29 Jan 2010 22:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/wrapping-up-the-an-introduction-to-asp.net-ajax-4-series/</guid>
-      <description>I&amp;rsquo;m wrapping up the &amp;ldquo;An introduction to ASP.NET Ajax&amp;rdquo; series today.
-Although the posts were short and didn&amp;rsquo;t go in depth, I hope I&amp;rsquo;ve been able to encourage you to dig some deeper yourself.
-You can find all the posts here:
- The CDN The ScriptLoader Client Controls AJAX Templating The Minifier  You might also find this collection of ASP.NET Ajax 4.0 Beta Resources useful.
-I&amp;rsquo;d highly appreciate it if you give me your opinion on these series.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to ASP.NET Ajax 4: The Minifier</title>
-      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-minifier/</link>
-      <pubDate>Fri, 29 Jan 2010 08:32:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-minifier/</guid>
-      <description>The Minifier is an utility which &amp;ldquo;minifies&amp;rdquo; your scripts: it reduces the size of your scripts by removing comments, removing spaces, renaming local variables and removing unreachable code.
-You can download the Minifier on Codeplex.
-Before and afterThe unminified script looks like this.
- 1: //This function does something 2: function doSomething(valueOne, valueTwo){ 3: var result = valueOne + valueTwo; 4: return result; 5: }  After hypercrunching the script looks likes this.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to ASP.NET Ajax 4: Ajax Templating</title>
-      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-ajax-templating/</link>
-      <pubDate>Thu, 28 Jan 2010 08:09:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-ajax-templating/</guid>
-      <description>ASP.NET Ajax 4 contains a powerful templating engine. The Dataview makes it very easy to bind JSON data to HTML elements.
-You can bind the JSON data to the Dataview imperatively or declaratively (mapping html elements with javascript).
-Some code examples shows best.
-Example (Imperatively) 1: &amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&amp;gt; 2: &amp;lt;head runat=&amp;quot;server&amp;quot;&amp;gt; 3: &amp;lt;title&amp;gt;Demo - Ajax Templating&amp;lt;/title&amp;gt; 4: &amp;lt;script src=&amp;quot;Scripts/Start.debug.js&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 5: &amp;lt;!-- Script --&amp;gt; 6: &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; 7: Sys.Debug = true; 8: 9: var events = [ 10: { Street: &#39;Laarsveld&#39;, City: &#39;Geel&#39;, Priority: 2 }, 11: { Street: &#39;Noorderlaan&#39;, City: &#39;Antwerpen&#39;, Priority: 1 }, 12: { Street: &#39;Meir&#39;, City: &#39;Antwerpen&#39;, Priority: 5 }, 13: { Street: &#39;Groenplaats&#39;, City: &#39;Antwerpen&#39;, Priority: 1 }, 14: { Street: &#39;Bredabaan&#39;, City: &#39;Antwerpen&#39;, Priority: 1 } 15: ]; 16: 17: Sys.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to ASP.NET Ajax 4: Client Controls</title>
-      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-client-controls/</link>
-      <pubDate>Wed, 27 Jan 2010 07:37:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-client-controls/</guid>
-      <description>Client Controls are controls from the Ajax Control Toolkit made available client-side.
-This means you can now use these awesome controls without using ASP.NET WebForms.
-You can instantiate these controls imperatively, declaratively or imperatively with jQuery. All controls are exposed as jQuery plugins automatically.
-You can find these controls in the ExtendedControls script.
-ExampleThis example shows you how to hook a color picker to an input element using jQuery and the ExtendedControls.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to ASP.NET Ajax 4: The CDN</title>
-      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-cdn/</link>
-      <pubDate>Mon, 25 Jan 2010 08:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-cdn/</guid>
-      <description>Microsoft is providing a free content delivery network hosting ASP.NET Ajax and jQuery. Next to these scripts, they are also hosting some stylesheets which play together nicely with the Client Controls.
-DefineHere is a definition I found on Wikipedia.
- A content delivery network is a system of computers containing copies of data, placed at various points in a network so as to maximize bandwidth for access to the data from clients throughout the network.</description>
     </item>
     
     <item>

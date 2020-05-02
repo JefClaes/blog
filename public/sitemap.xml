@@ -743,11 +743,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</loc>
-    <lastmod>2013-01-06T21:18:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2012/12/2012-annual-review/</loc>
     <lastmod>2012-12-31T15:58:00+01:00</lastmod>
   </url>
@@ -773,11 +768,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</loc>
-    <lastmod>2012-12-16T16:44:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/tips/</loc>
     <lastmod>2012-12-16T16:44:00+01:00</lastmod>
   </url>
@@ -785,11 +775,6 @@
   <url>
     <loc>http://localhost:1313/tags/tools/</loc>
     <lastmod>2012-12-16T16:44:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</loc>
-    <lastmod>2012-12-12T19:57:00+01:00</lastmod>
   </url>
   
   <url>
@@ -823,23 +808,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</loc>
-    <lastmod>2012-11-18T15:06:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/lol/</loc>
     <lastmod>2012-11-14T12:26:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/11/no-trains-today-no-resources-were-found-either./</loc>
-    <lastmod>2012-11-14T12:26:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</loc>
-    <lastmod>2012-11-11T20:30:00+01:00</lastmod>
   </url>
   
   <url>
@@ -854,11 +824,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/css/</loc>
-    <lastmod>2012-11-01T19:02:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</loc>
     <lastmod>2012-11-01T19:02:00+01:00</lastmod>
   </url>
   
@@ -888,11 +853,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/10/out-with-yslow-in-with-pagespeed-insights/</loc>
-    <lastmod>2012-10-10T18:48:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2012/10/c%C3%B4te-dopale/</loc>
     <lastmod>2012-10-08T21:51:00+02:00</lastmod>
   </url>
@@ -900,11 +860,6 @@
   <url>
     <loc>http://localhost:1313/2012/10/on-job-titles/</loc>
     <lastmod>2012-10-07T19:22:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/09/important-please-resubscribe-to-my-feed/</loc>
-    <lastmod>2012-09-23T21:56:00+02:00</lastmod>
   </url>
   
   <url>
@@ -938,11 +893,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/09/value-object-obsession/</loc>
-    <lastmod>2012-09-16T17:20:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/event/</loc>
     <lastmod>2012-09-13T08:55:00+02:00</lastmod>
   </url>
@@ -970,11 +920,6 @@
   <url>
     <loc>http://localhost:1313/2012/08/my-learning-resources-distilled/</loc>
     <lastmod>2012-08-19T16:10:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</loc>
-    <lastmod>2012-08-16T21:41:00+02:00</lastmod>
   </url>
   
   <url>
@@ -1133,11 +1078,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</loc>
-    <lastmod>2012-02-19T16:52:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</loc>
     <lastmod>2012-02-08T20:21:00+01:00</lastmod>
   </url>
@@ -1145,11 +1085,6 @@
   <url>
     <loc>http://localhost:1313/2012/02/testing-di-bootstrappers/</loc>
     <lastmod>2012-02-06T08:59:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</loc>
-    <lastmod>2012-02-04T15:17:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1368,11 +1303,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</loc>
-    <lastmod>2011-06-28T19:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/visual-studio/</loc>
     <lastmod>2011-06-28T19:00:00+02:00</lastmod>
   </url>
@@ -1458,16 +1388,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/03/how-will-ie9-maintain-momentum/</loc>
-    <lastmod>2011-03-19T12:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/03/running-xbap-in-ie9/</loc>
-    <lastmod>2011-03-15T08:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2011/03/keeping-websockets-alive/</loc>
     <lastmod>2011-03-12T17:40:00+01:00</lastmod>
   </url>
@@ -1538,11 +1458,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/01/happy-new-year/</loc>
-    <lastmod>2011-01-01T02:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions/</loc>
     <lastmod>2010-12-29T20:17:00+01:00</lastmod>
   </url>
@@ -1565,11 +1480,6 @@
   <url>
     <loc>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</loc>
     <lastmod>2010-12-19T17:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</loc>
-    <lastmod>2010-12-18T14:30:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1600,11 +1510,6 @@
   <url>
     <loc>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</loc>
     <lastmod>2010-11-28T20:27:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/11/how-to-dock/pin-ie9-developer-tools/</loc>
-    <lastmod>2010-11-28T15:24:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1698,11 +1603,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/05/fixed-commenting/</loc>
-    <lastmod>2010-05-19T09:05:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/best-practices/</loc>
     <lastmod>2010-05-15T18:34:00+02:00</lastmod>
   </url>
@@ -1780,31 +1680,6 @@
   <url>
     <loc>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</loc>
     <lastmod>2010-02-14T16:22:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/01/wrapping-up-the-an-introduction-to-asp.net-ajax-4-series/</loc>
-    <lastmod>2010-01-29T22:44:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-minifier/</loc>
-    <lastmod>2010-01-29T08:32:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-ajax-templating/</loc>
-    <lastmod>2010-01-28T08:09:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-client-controls/</loc>
-    <lastmod>2010-01-27T07:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-cdn/</loc>
-    <lastmod>2010-01-25T08:00:00+01:00</lastmod>
   </url>
   
   <url>

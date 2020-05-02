@@ -22,15 +22,6 @@ I regularly find myself building small things as an antitoxin to the regular per
     </item>
     
     <item>
-      <title>jQuery-validate error messages in Twitter bootstrap tooltips</title>
-      <link>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</link>
-      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</guid>
-      <description>At work, we&amp;rsquo;re using the combination of ASP.NET MVC3, jQuery, jQuery-validate, knockout and Twitter Bootstrap on one of our projects. Having postponed looking at the aesthetics of the client-side validation for too long, we eventually found ourselves unsatisfied with the default error labels. Wanting to save on space, we&amp;rsquo;re experimenting with the error messages being shown in a Twitter Bootstrap tooltip. After poking around for some while, I came up with something satisfactory.</description>
-    </item>
-    
-    <item>
       <title>Daydreaming about jQuery Mobile and the WebAPI</title>
       <link>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</link>
       <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>

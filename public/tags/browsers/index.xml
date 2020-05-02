@@ -12,48 +12,6 @@
     
     
     <item>
-      <title>Released: Nancy.AspNetSprites.Razor</title>
-      <link>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</link>
-      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</guid>
-      <description>I was setting up a web application that shows an image for each listed product on the home page. When there were a few products, this worked pretty smooth, but as the number of products (and thereby images) increased, performance degraded. The problem is that each image initiates a separate request. The solution for this problem is to reduce the number of requests by combining the images using CSS sprites. Here is an in-detail explanation of how this works.</description>
-    </item>
-    
-    <item>
-      <title>jQuery-validate error messages in Twitter bootstrap tooltips</title>
-      <link>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</link>
-      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</guid>
-      <description>At work, we&amp;rsquo;re using the combination of ASP.NET MVC3, jQuery, jQuery-validate, knockout and Twitter Bootstrap on one of our projects. Having postponed looking at the aesthetics of the client-side validation for too long, we eventually found ourselves unsatisfied with the default error labels. Wanting to save on space, we&amp;rsquo;re experimenting with the error messages being shown in a Twitter Bootstrap tooltip. After poking around for some while, I came up with something satisfactory.</description>
-    </item>
-    
-    <item>
-      <title>NancyFx and bundling with Cassette</title>
-      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
-      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
-      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
-Since I struggled with the implementation a little bit, I documented the process below.
-1. Cassette.Nancy package
-**
-**Add the Cassette.Nancy package to the project.
-PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
-    </item>
-    
-    <item>
-      <title>Out with YSLOW, in with PageSpeed Insights</title>
-      <link>http://localhost:1313/2012/10/out-with-yslow-in-with-pagespeed-insights/</link>
-      <pubDate>Wed, 10 Oct 2012 18:48:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/out-with-yslow-in-with-pagespeed-insights/</guid>
-      <description>My alarm clock goes of at 6:20; my fingers are able to locate the snooze button without me having to open my eyes. To my annoyance, the aggravating noise of the alarm returns ten minutes later. I need to get up this time. With nearly opened eyes, I glance at the time, and press the dismiss button to silence the alarm for good.
-I open my eyes; light is already coming through the curtains; this shouldn&amp;rsquo;t be.</description>
-    </item>
-    
-    <item>
       <title>Why I will always love RSS</title>
       <link>http://localhost:1313/2012/05/why-i-will-always-love-rss/</link>
       <pubDate>Sun, 06 May 2012 16:50:00 +0200</pubDate>
@@ -126,31 +84,6 @@ Wikipedia describes it a bit more in detail.
 If I run following JavaScript, Chrome and Firefox both help me disabling it.
 for (var i = 0; i &amp;lt; 1000; i++) { alert(&amp;quot;Annoying alert &amp;quot; + i); }  
 Internet Explorer does not. Even if I kill the process of the tab, the tab will try to restore itself, forcing me to kill Internet Explorer as a whole.</description>
-    </item>
-    
-    <item>
-      <title>How will IE9 maintain momentum?</title>
-      <link>http://localhost:1313/2011/03/how-will-ie9-maintain-momentum/</link>
-      <pubDate>Sat, 19 Mar 2011 12:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/03/how-will-ie9-maintain-momentum/</guid>
-      <description>Unless you live under a rock, you must have noticed that Microsoft released Internet Explorer 9 this week.
-I have been using IE9 since the first platform preview, and I think it&amp;rsquo;s a very solid browser, outclassing every previous Microsoft browser by far. Microsoft finally built a browser which is capable of competing with other modern browsers.
-
-The global consensus seems to be that Internet Explorer has regained serious momentum.</description>
-    </item>
-    
-    <item>
-      <title>Running XBAP in IE9</title>
-      <link>http://localhost:1313/2011/03/running-xbap-in-ie9/</link>
-      <pubDate>Tue, 15 Mar 2011 08:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/03/running-xbap-in-ie9/</guid>
-      <description>By default you can&amp;rsquo;t run XAML Browser Applications in IE9. You will get an &amp;ldquo;An error occurred in the application you were running&amp;rdquo; error.
-
-To run an XBAP in IE9 you need to add the hosting site to your trusted sites..
-
-.. or you could convert the application to Silverlight, or preferably HTML5 ;)</description>
     </item>
     
     <item>
@@ -274,16 +207,6 @@ Have a look at the source. Do you spot the problem?
       <guid>http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/</guid>
       <description>Because I finally got the MCTS 70-536 certification out of the way, I can start experimenting with some fun stuff again. One of the things on the top of my list is HTML5. I started reading the book Pro HTML5 Programming, so expect more posts on HTML5 in the near future.
 In this post I will show you two new methods in the javascript Selector API which are extremely useful to find elements.</description>
-    </item>
-    
-    <item>
-      <title>How to dock/pin IE9 developer tools</title>
-      <link>http://localhost:1313/2010/11/how-to-dock/pin-ie9-developer-tools/</link>
-      <pubDate>Sun, 28 Nov 2010 15:24:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/11/how-to-dock/pin-ie9-developer-tools/</guid>
-      <description>The first time you open the IE9 developer tools a new window opens.
-This isn&amp;rsquo;t always desirable, think laptop/small monitor. That&amp;rsquo;s why you can dock/pin the tools in your browser. It took me a few minutes of dragging and searching in menus before I found the way to do this. In the upper right corner of the window you find an extra button Pin. You can also use the shortcut CTRL + P.</description>
     </item>
     
     <item>

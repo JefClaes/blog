@@ -11,23 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/hacking/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Keeping your AppHarbor application pool alive</title>
-      <link>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</link>
-      <pubDate>Sun, 06 Jan 2013 21:18:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</guid>
-      <description>By default, IIS will shut down your application pool when it has been idle for more than 20 minutes. This is annoying when your website is only visited sporadically; visitors might not have the patience to wait for your application pool to spin up again. When you&amp;rsquo;re running your own machine, you can higher or disable the idle-timeout, but when you&amp;rsquo;re running on a cloud service like AppHarbor you can&amp;rsquo;t.</description>
-    </item>
-    
-    <item>
-      <title>Released: My Antwerp Open Data submissions</title>
-      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
-      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
-      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
-    </item>
-    
   </channel>
 </rss>

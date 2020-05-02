@@ -12,35 +12,12 @@
     
     
     <item>
-      <title>Released: My Antwerp Open Data submissions</title>
-      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
-      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
-      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
-    </item>
-    
-    <item>
       <title>Some notes on performance tuning with NHibernate</title>
       <link>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</link>
       <pubDate>Sun, 02 Dec 2012 17:36:00 +0100</pubDate>
       
       <guid>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</guid>
       <description>A few weeks back, I spent an intensive day performance tuning parts of a, to me, relatively unfamiliar part of our codebase. Like it often is, the biggest optimizations were to be found in how we work with the database. Now, I don&amp;rsquo;t consider myself to be an NHibernate expert; I read this book and have used it on two projects, but in the end I just do my best to avoid doing stupid things with it.</description>
-    </item>
-    
-    <item>
-      <title>NancyFx and bundling with Cassette</title>
-      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
-      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
-      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
-Since I struggled with the implementation a little bit, I documented the process below.
-1. Cassette.Nancy package
-**
-**Add the Cassette.Nancy package to the project.
-PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
     </item>
     
     <item>
@@ -65,17 +42,6 @@ You could simply add the images to your repository and reference them using the 
     </item>
     
     <item>
-      <title>Adding ELMAH to an AppHarbor application</title>
-      <link>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</link>
-      <pubDate>Sat, 04 Feb 2012 15:17:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</guid>
-      <description>For those who haven&amp;rsquo;t heard of ELMAH yet, here is the project description.
- ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment.
- While ELMAH is completely not AppHarbor specific, there do seem to be a fair amount of questions on the AppHarbor support forums on how to get ELMAH running.</description>
-    </item>
-    
-    <item>
       <title>Commute hacking: Chromapaper</title>
       <link>http://localhost:1313/2011/10/commute-hacking-chromapaper/</link>
       <pubDate>Sat, 08 Oct 2011 17:36:00 +0200</pubDate>
@@ -83,19 +49,6 @@ You could simply add the images to your repository and reference them using the 
       <guid>http://localhost:1313/2011/10/commute-hacking-chromapaper/</guid>
       <description>Since I changed jobs, I do my daily commute by train. This adds two hours of leasure time to the day, which I used to lose in traffic.
 So far, I have been spending these two won hours programming and/or reading. I have been looking for a way to read online content offline on my laptop. Searching for software that could make this happen, I mostly came across programs which would mirror a whole site locally.</description>
-    </item>
-    
-    <item>
-      <title>No more regions on implementing interface</title>
-      <link>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</link>
-      <pubDate>Tue, 28 Jun 2011 19:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</guid>
-      <description>Something that has been irritating me tremendously lately, is that when I implement an interface using Visual Studio all the members of that interface get surrounded by a region.
-
-After poking around in the C# Text Editor options a little while, I found the switch that enables that behaviour.
-
-A little less friction every day..</description>
     </item>
     
     <item>
@@ -134,32 +87,12 @@ This feature is not available in the public beta (9.0.7.9360.16406), but should 
     </item>
     
     <item>
-      <title>Programmatically disable UpdatePanels</title>
-      <link>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</link>
-      <pubDate>Sat, 18 Dec 2010 14:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</guid>
-      <description>In this post I&amp;rsquo;ll show you how to programmatically disable all UpdatePanels in a page. I don&amp;rsquo;t know in which scenario you would want to use this, but I had to use it to hack around an issue with the ReportViewer control. I&amp;rsquo;ll save you the details, really.
-To disable all the UpdatePanels, you need to set the EnablePartialRendering property of the ScriptManager to false. You can get a reference to the current ScriptManager by using the GetCurrent() method passing in a reference to the current page.</description>
-    </item>
-    
-    <item>
       <title>Add certifications to your LinkedIn profile</title>
       <link>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</link>
       <pubDate>Sun, 28 Nov 2010 20:27:00 +0100</pubDate>
       
       <guid>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</guid>
       <description>October 18th LinkedIn released five new sections that can be added to your profile. The most important for us developers might be the Certifications section. Although your peers aren&amp;rsquo;t easily impressed by a certification, future partners and employers might be.</description>
-    </item>
-    
-    <item>
-      <title>How to dock/pin IE9 developer tools</title>
-      <link>http://localhost:1313/2010/11/how-to-dock/pin-ie9-developer-tools/</link>
-      <pubDate>Sun, 28 Nov 2010 15:24:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/11/how-to-dock/pin-ie9-developer-tools/</guid>
-      <description>The first time you open the IE9 developer tools a new window opens.
-This isn&amp;rsquo;t always desirable, think laptop/small monitor. That&amp;rsquo;s why you can dock/pin the tools in your browser. It took me a few minutes of dragging and searching in menus before I found the way to do this. In the upper right corner of the window you find an extra button Pin. You can also use the shortcut CTRL + P.</description>
     </item>
     
     <item>

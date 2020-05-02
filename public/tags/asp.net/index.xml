@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Keeping your AppHarbor application pool alive</title>
-      <link>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</link>
-      <pubDate>Sun, 06 Jan 2013 21:18:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</guid>
-      <description>By default, IIS will shut down your application pool when it has been idle for more than 20 minutes. This is annoying when your website is only visited sporadically; visitors might not have the patience to wait for your application pool to spin up again. When you&amp;rsquo;re running your own machine, you can higher or disable the idle-timeout, but when you&amp;rsquo;re running on a cloud service like AppHarbor you can&amp;rsquo;t.</description>
-    </item>
-    
-    <item>
       <title>Released: Kill long meetings</title>
       <link>http://localhost:1313/2012/11/released-kill-long-meetings/</link>
       <pubDate>Sun, 25 Nov 2012 17:45:00 +0100</pubDate>
@@ -28,15 +19,6 @@
       <guid>http://localhost:1313/2012/11/released-kill-long-meetings/</guid>
       <description>A lot has already been said and written about meetings, and some have carried the message above par; &amp;lsquo;Meetings: where work goes to die&#39;. Today, I&amp;rsquo;m not going to foul the internet with another rant, but I&amp;rsquo;d like to show you a small application built over the last few weeks after work.
 I regularly find myself building small things as an antitoxin to the regular periods of not writing and shipping code at work.</description>
-    </item>
-    
-    <item>
-      <title>Released: Nancy.AspNetSprites.Razor</title>
-      <link>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</link>
-      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</guid>
-      <description>I was setting up a web application that shows an image for each listed product on the home page. When there were a few products, this worked pretty smooth, but as the number of products (and thereby images) increased, performance degraded. The problem is that each image initiates a separate request. The solution for this problem is to reduce the number of requests by combining the images using CSS sprites. Here is an in-detail explanation of how this works.</description>
     </item>
     
     <item>
@@ -142,19 +124,6 @@ I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work fo
     </item>
     
     <item>
-      <title>ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5</title>
-      <link>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</link>
-      <pubDate>Sun, 19 Feb 2012 16:52:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</guid>
-      <description>I tried installing ASP.NET MVC4 beta today, but seconds into the installation the WebPI already halted the process.
- ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5
- Apparently, this was documented in the ASP.NET MVC4 installation notes.
- This release is not compatible with the .NET Framework 4.5 Developer Preview. You must uninstall the .NET 4.5 Developer Preview before installing the ASP.NET MVC 4 Beta.
- I guess you have to be forgiving if you want to play with the early bits.</description>
-    </item>
-    
-    <item>
       <title>Testing DI bootstrappers</title>
       <link>http://localhost:1313/2012/02/testing-di-bootstrappers/</link>
       <pubDate>Mon, 06 Feb 2012 08:59:00 +0100</pubDate>
@@ -162,17 +131,6 @@ I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work fo
       <guid>http://localhost:1313/2012/02/testing-di-bootstrappers/</guid>
       <description>While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&amp;rsquo;t see any reason why they shouldn&amp;rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
 I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot.</description>
-    </item>
-    
-    <item>
-      <title>Adding ELMAH to an AppHarbor application</title>
-      <link>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</link>
-      <pubDate>Sat, 04 Feb 2012 15:17:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</guid>
-      <description>For those who haven&amp;rsquo;t heard of ELMAH yet, here is the project description.
- ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment.
- While ELMAH is completely not AppHarbor specific, there do seem to be a fair amount of questions on the AppHarbor support forums on how to get ELMAH running.</description>
     </item>
     
     <item>
@@ -234,16 +192,6 @@ private static bool IsAnonymousType(Type type) { Debug.Assert(type != null, &amp
 In a nutshell
 For those who are like &amp;ldquo;tl;dr&amp;rdquo;, here are my thoughts on WebMatrix..
 WebMatrix is the perfect framework to start with ASP.NET development (wish I had).</description>
-    </item>
-    
-    <item>
-      <title>Programmatically disable UpdatePanels</title>
-      <link>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</link>
-      <pubDate>Sat, 18 Dec 2010 14:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</guid>
-      <description>In this post I&amp;rsquo;ll show you how to programmatically disable all UpdatePanels in a page. I don&amp;rsquo;t know in which scenario you would want to use this, but I had to use it to hack around an issue with the ReportViewer control. I&amp;rsquo;ll save you the details, really.
-To disable all the UpdatePanels, you need to set the EnablePartialRendering property of the ScriptManager to false. You can get a reference to the current ScriptManager by using the GetCurrent() method passing in a reference to the current page.</description>
     </item>
     
     <item>
@@ -325,67 +273,6 @@ Use the built-in goodiesASP.NET Webforms has a lot of good stuff built into it. 
       
       <guid>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</guid>
       <description>I&amp;rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&amp;rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them.</description>
-    </item>
-    
-    <item>
-      <title>Wrapping up the &#34;An introduction to ASP.NET Ajax 4&#34; series</title>
-      <link>http://localhost:1313/2010/01/wrapping-up-the-an-introduction-to-asp.net-ajax-4-series/</link>
-      <pubDate>Fri, 29 Jan 2010 22:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/wrapping-up-the-an-introduction-to-asp.net-ajax-4-series/</guid>
-      <description>I&amp;rsquo;m wrapping up the &amp;ldquo;An introduction to ASP.NET Ajax&amp;rdquo; series today.
-Although the posts were short and didn&amp;rsquo;t go in depth, I hope I&amp;rsquo;ve been able to encourage you to dig some deeper yourself.
-You can find all the posts here:
- The CDN The ScriptLoader Client Controls AJAX Templating The Minifier  You might also find this collection of ASP.NET Ajax 4.0 Beta Resources useful.
-I&amp;rsquo;d highly appreciate it if you give me your opinion on these series.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to ASP.NET Ajax 4: The Minifier</title>
-      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-minifier/</link>
-      <pubDate>Fri, 29 Jan 2010 08:32:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-minifier/</guid>
-      <description>The Minifier is an utility which &amp;ldquo;minifies&amp;rdquo; your scripts: it reduces the size of your scripts by removing comments, removing spaces, renaming local variables and removing unreachable code.
-You can download the Minifier on Codeplex.
-Before and afterThe unminified script looks like this.
- 1: //This function does something 2: function doSomething(valueOne, valueTwo){ 3: var result = valueOne + valueTwo; 4: return result; 5: }  After hypercrunching the script looks likes this.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to ASP.NET Ajax 4: Ajax Templating</title>
-      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-ajax-templating/</link>
-      <pubDate>Thu, 28 Jan 2010 08:09:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-ajax-templating/</guid>
-      <description>ASP.NET Ajax 4 contains a powerful templating engine. The Dataview makes it very easy to bind JSON data to HTML elements.
-You can bind the JSON data to the Dataview imperatively or declaratively (mapping html elements with javascript).
-Some code examples shows best.
-Example (Imperatively) 1: &amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&amp;gt; 2: &amp;lt;head runat=&amp;quot;server&amp;quot;&amp;gt; 3: &amp;lt;title&amp;gt;Demo - Ajax Templating&amp;lt;/title&amp;gt; 4: &amp;lt;script src=&amp;quot;Scripts/Start.debug.js&amp;quot; type=&amp;quot;text/javascript&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; 5: &amp;lt;!-- Script --&amp;gt; 6: &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; 7: Sys.Debug = true; 8: 9: var events = [ 10: { Street: &#39;Laarsveld&#39;, City: &#39;Geel&#39;, Priority: 2 }, 11: { Street: &#39;Noorderlaan&#39;, City: &#39;Antwerpen&#39;, Priority: 1 }, 12: { Street: &#39;Meir&#39;, City: &#39;Antwerpen&#39;, Priority: 5 }, 13: { Street: &#39;Groenplaats&#39;, City: &#39;Antwerpen&#39;, Priority: 1 }, 14: { Street: &#39;Bredabaan&#39;, City: &#39;Antwerpen&#39;, Priority: 1 } 15: ]; 16: 17: Sys.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to ASP.NET Ajax 4: Client Controls</title>
-      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-client-controls/</link>
-      <pubDate>Wed, 27 Jan 2010 07:37:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-client-controls/</guid>
-      <description>Client Controls are controls from the Ajax Control Toolkit made available client-side.
-This means you can now use these awesome controls without using ASP.NET WebForms.
-You can instantiate these controls imperatively, declaratively or imperatively with jQuery. All controls are exposed as jQuery plugins automatically.
-You can find these controls in the ExtendedControls script.
-ExampleThis example shows you how to hook a color picker to an input element using jQuery and the ExtendedControls.</description>
-    </item>
-    
-    <item>
-      <title>An introduction to ASP.NET Ajax 4: The CDN</title>
-      <link>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-cdn/</link>
-      <pubDate>Mon, 25 Jan 2010 08:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/an-introduction-to-asp.net-ajax-4-the-cdn/</guid>
-      <description>Microsoft is providing a free content delivery network hosting ASP.NET Ajax and jQuery. Next to these scripts, they are also hosting some stylesheets which play together nicely with the Client Controls.
-DefineHere is a definition I found on Wikipedia.
- A content delivery network is a system of computers containing copies of data, placed at various points in a network so as to maximize bandwidth for access to the data from clients throughout the network.</description>
     </item>
     
     <item>

@@ -32,24 +32,6 @@ public abstract class Command { public abstract void Execute(); } public abstrac
     </item>
     
     <item>
-      <title>Keeping your AppHarbor application pool alive</title>
-      <link>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</link>
-      <pubDate>Sun, 06 Jan 2013 21:18:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2013/01/keeping-your-appharbor-application-pool-alive/</guid>
-      <description>By default, IIS will shut down your application pool when it has been idle for more than 20 minutes. This is annoying when your website is only visited sporadically; visitors might not have the patience to wait for your application pool to spin up again. When you&amp;rsquo;re running your own machine, you can higher or disable the idle-timeout, but when you&amp;rsquo;re running on a cloud service like AppHarbor you can&amp;rsquo;t.</description>
-    </item>
-    
-    <item>
-      <title>Released: My Antwerp Open Data submissions</title>
-      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
-      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
-      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
-    </item>
-    
-    <item>
       <title>It&#39;s not cake we are baking</title>
       <link>http://localhost:1313/2012/12/its-not-cake-we-are-baking/</link>
       <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>
@@ -75,29 +57,6 @@ public abstract class Command { public abstract void Execute(); } public abstrac
       <guid>http://localhost:1313/2012/11/released-kill-long-meetings/</guid>
       <description>A lot has already been said and written about meetings, and some have carried the message above par; &amp;lsquo;Meetings: where work goes to die&#39;. Today, I&amp;rsquo;m not going to foul the internet with another rant, but I&amp;rsquo;d like to show you a small application built over the last few weeks after work.
 I regularly find myself building small things as an antitoxin to the regular periods of not writing and shipping code at work.</description>
-    </item>
-    
-    <item>
-      <title>Released: Nancy.AspNetSprites.Razor</title>
-      <link>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</link>
-      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</guid>
-      <description>I was setting up a web application that shows an image for each listed product on the home page. When there were a few products, this worked pretty smooth, but as the number of products (and thereby images) increased, performance degraded. The problem is that each image initiates a separate request. The solution for this problem is to reduce the number of requests by combining the images using CSS sprites. Here is an in-detail explanation of how this works.</description>
-    </item>
-    
-    <item>
-      <title>NancyFx and bundling with Cassette</title>
-      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
-      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
-      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
-Since I struggled with the implementation a little bit, I documented the process below.
-1. Cassette.Nancy package
-**
-**Add the Cassette.Nancy package to the project.
-PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
     </item>
     
     <item>
@@ -164,17 +123,6 @@ public static IEnumerable&amp;lt;DateTime&amp;gt; GetGaps( this IEnumerable&amp;
     </item>
     
     <item>
-      <title>Value object obsession</title>
-      <link>http://localhost:1313/2012/09/value-object-obsession/</link>
-      <pubDate>Sun, 16 Sep 2012 17:20:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/value-object-obsession/</guid>
-      <description>Primitive obsession is one of the more popular (hyped?) code smells these days.
- Primitive obsession is the name of a code smell that occurs when we use primitive data types to represent domain ideas. For example, we use a string to describe a message or an integer to represent an amount of money.
- The antidote is creating a value object instead of using a primitive. A value object is an immutable object which (in its DDD definition) carries no identity, but is compared based on the value of its attributes.</description>
-    </item>
-    
-    <item>
       <title>Slides and code from my Tunisia REST and ASP.NET Web API session</title>
       <link>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</link>
       <pubDate>Thu, 13 Sep 2012 08:55:00 +0200</pubDate>
@@ -193,17 +141,6 @@ REST Concepts Architectural values Left overs  ASP.</description>
       <guid>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</guid>
       <description>While wading through an exotic codebase, I stumbled upon a static class named Convert. This class contained somewhere around 2700 (non-generated) lines of code, where each method manually converted some object to a simple textual representation. These methods were then used to convert requests and reponses to and from a remote third party service before logging them to the database for auditing reasons.
 public static class Convert { public static string PaymentRequest(PaymentRequest req) { var sb = new StringBuilder(); sb.</description>
-    </item>
-    
-    <item>
-      <title>A really quick look at ASP.NET Web API Help Pages</title>
-      <link>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</link>
-      <pubDate>Thu, 16 Aug 2012 21:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</guid>
-      <description>While skimming over future features of ASP.NET Web API, I came across the ASP.NET Web API Help Page feature. I couldn&amp;rsquo;t find an introduction online, and the Nuget package has only been downloaded 16 times, so I had to have a really quick look. I documented my baby steps below.
-So, I had a really simple ASP.NET MVC4 project, with one API controller exposing tweets.
-public class TweetsController : ApiController { /// &amp;lt;summary&amp;gt; /// Get a &amp;lt;c&amp;gt;Tweet&amp;lt;/c&amp;gt; by its identifier.</description>
     </item>
     
     <item>
@@ -276,19 +213,6 @@ if (new [] { &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;
       <guid>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</guid>
       <description>I think The Art of Unit Testing targets a broad audience. Beginners will find every part of the book useful, where intermediates might be more interested in the final two parts.
 Roy Osherove starts this book by laying a solid foundation of the unit testing concept. Why is testing important? What defines a good unit test, and how does a unit test differ from an integration test? In the second part of the book, he demonstrates the use of two core unit testing techniques: stubs and mocks.</description>
-    </item>
-    
-    <item>
-      <title>No more regions on implementing interface</title>
-      <link>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</link>
-      <pubDate>Tue, 28 Jun 2011 19:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</guid>
-      <description>Something that has been irritating me tremendously lately, is that when I implement an interface using Visual Studio all the members of that interface get surrounded by a region.
-
-After poking around in the C# Text Editor options a little while, I found the switch that enables that behaviour.
-
-A little less friction every day..</description>
     </item>
     
     <item>

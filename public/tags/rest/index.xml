@@ -62,17 +62,6 @@ REST Concepts Architectural values Left overs  ASP.</description>
     </item>
     
     <item>
-      <title>A really quick look at ASP.NET Web API Help Pages</title>
-      <link>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</link>
-      <pubDate>Thu, 16 Aug 2012 21:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</guid>
-      <description>While skimming over future features of ASP.NET Web API, I came across the ASP.NET Web API Help Page feature. I couldn&amp;rsquo;t find an introduction online, and the Nuget package has only been downloaded 16 times, so I had to have a really quick look. I documented my baby steps below.
-So, I had a really simple ASP.NET MVC4 project, with one API controller exposing tweets.
-public class TweetsController : ApiController { /// &amp;lt;summary&amp;gt; /// Get a &amp;lt;c&amp;gt;Tweet&amp;lt;/c&amp;gt; by its identifier.</description>
-    </item>
-    
-    <item>
       <title>Should I unit- or integration test my ASP.NET Web API services?</title>
       <link>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my-asp.net-web-api-services/</link>
       <pubDate>Sun, 15 Jul 2012 22:37:00 +0200</pubDate>

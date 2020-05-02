@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Released: My Antwerp Open Data submissions</title>
-      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
-      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
-      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
-    </item>
-    
-    <item>
       <title>Some notes on performance tuning with NHibernate</title>
       <link>http://localhost:1313/2012/12/some-notes-on-performance-tuning-with-nhibernate/</link>
       <pubDate>Sun, 02 Dec 2012 17:36:00 +0100</pubDate>
@@ -40,25 +31,6 @@ I regularly find myself building small things as an antitoxin to the regular per
     </item>
     
     <item>
-      <title>Released: Nancy.AspNetSprites.Razor</title>
-      <link>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</link>
-      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/released-nancy.aspnetsprites.razor/</guid>
-      <description>I was setting up a web application that shows an image for each listed product on the home page. When there were a few products, this worked pretty smooth, but as the number of products (and thereby images) increased, performance degraded. The problem is that each image initiates a separate request. The solution for this problem is to reduce the number of requests by combining the images using CSS sprites. Here is an in-detail explanation of how this works.</description>
-    </item>
-    
-    <item>
-      <title>Out with YSLOW, in with PageSpeed Insights</title>
-      <link>http://localhost:1313/2012/10/out-with-yslow-in-with-pagespeed-insights/</link>
-      <pubDate>Wed, 10 Oct 2012 18:48:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/out-with-yslow-in-with-pagespeed-insights/</guid>
-      <description>My alarm clock goes of at 6:20; my fingers are able to locate the snooze button without me having to open my eyes. To my annoyance, the aggravating noise of the alarm returns ten minutes later. I need to get up this time. With nearly opened eyes, I glance at the time, and press the dismiss button to silence the alarm for good.
-I open my eyes; light is already coming through the curtains; this shouldn&amp;rsquo;t be.</description>
-    </item>
-    
-    <item>
       <title>Add images to a GitHub readme</title>
       <link>http://localhost:1313/2012/04/add-images-to-a-github-readme/</link>
       <pubDate>Sun, 01 Apr 2012 19:32:00 +0200</pubDate>
@@ -67,19 +39,6 @@ I open my eyes; light is already coming through the curtains; this shouldn&amp;r
       <description>Today I wanted to add some screenshots to a GitHub readme for the sake of documenting. While this wasn&amp;rsquo;t particularly hard, I do had to iterate a few times before I got it right.
 Hosting the images
 You could simply add the images to your repository and reference them using the raw url&amp;rsquo;s, but this isn&amp;rsquo;t very efficient. Using this method, every request needs to go through GitHub&amp;rsquo;s application layer. It&amp;rsquo;s far better to make use of GitHub Pages, a feature purely designed to publish web content.</description>
-    </item>
-    
-    <item>
-      <title>No more regions on implementing interface</title>
-      <link>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</link>
-      <pubDate>Tue, 28 Jun 2011 19:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/06/no-more-regions-on-implementing-interface/</guid>
-      <description>Something that has been irritating me tremendously lately, is that when I implement an interface using Visual Studio all the members of that interface get surrounded by a region.
-
-After poking around in the C# Text Editor options a little while, I found the switch that enables that behaviour.
-
-A little less friction every day..</description>
     </item>
     
     <item>

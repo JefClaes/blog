@@ -88,18 +88,6 @@ If you want to play with the demo yourself, you can download the source:
     </item>
     
     <item>
-      <title>How will IE9 maintain momentum?</title>
-      <link>http://localhost:1313/2011/03/how-will-ie9-maintain-momentum/</link>
-      <pubDate>Sat, 19 Mar 2011 12:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/03/how-will-ie9-maintain-momentum/</guid>
-      <description>Unless you live under a rock, you must have noticed that Microsoft released Internet Explorer 9 this week.
-I have been using IE9 since the first platform preview, and I think it&amp;rsquo;s a very solid browser, outclassing every previous Microsoft browser by far. Microsoft finally built a browser which is capable of competing with other modern browsers.
-
-The global consensus seems to be that Internet Explorer has regained serious momentum.</description>
-    </item>
-    
-    <item>
       <title>Keeping WebSockets alive</title>
       <link>http://localhost:1313/2011/03/keeping-websockets-alive/</link>
       <pubDate>Sat, 12 Mar 2011 17:40:00 +0100</pubDate>

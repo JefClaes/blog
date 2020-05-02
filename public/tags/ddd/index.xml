@@ -338,16 +338,5 @@ Yesterday I wrote about an architecture which limits abstractions by solely intr
 At the end of that post I wondered how I would be able to test commands in isolation; suppose the implementation doesn&amp;rsquo;t use a database this time, but a hairy, too low-level, third party webservice.</description>
     </item>
     
-    <item>
-      <title>Value object obsession</title>
-      <link>http://localhost:1313/2012/09/value-object-obsession/</link>
-      <pubDate>Sun, 16 Sep 2012 17:20:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/value-object-obsession/</guid>
-      <description>Primitive obsession is one of the more popular (hyped?) code smells these days.
- Primitive obsession is the name of a code smell that occurs when we use primitive data types to represent domain ideas. For example, we use a string to describe a message or an integer to represent an amount of money.
- The antidote is creating a value object instead of using a primitive. A value object is an immutable object which (in its DDD definition) carries no identity, but is compared based on the value of its attributes.</description>
-    </item>
-    
   </channel>
 </rss>

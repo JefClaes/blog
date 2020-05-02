@@ -54,17 +54,6 @@ The slides pointed out a few things that were missing on my blog.</description>
     </item>
     
     <item>
-      <title>Fixed commenting</title>
-      <link>http://localhost:1313/2010/05/fixed-commenting/</link>
-      <pubDate>Wed, 19 May 2010 09:05:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/05/fixed-commenting/</guid>
-      <description>After giving my blog a new design a few people pointed out that posting a comment was broken. You had to tab your way to the submit button.
-Turns out that the comment section is hosted in an iFrame and that scrolling was disabled.
-That issue should be solved now. Please let me know if commenting isn&amp;rsquo;t working for you!</description>
-    </item>
-    
-    <item>
       <title>Blog redesign</title>
       <link>http://localhost:1313/2010/05/blog-redesign/</link>
       <pubDate>Sat, 08 May 2010 16:25:00 +0200</pubDate>

@@ -31,15 +31,6 @@ The biggest personal changes this year were moving out of my parents&amp;rsquo; 
     </item>
     
     <item>
-      <title>No trains today? No resources were found either.</title>
-      <link>http://localhost:1313/2012/11/no-trains-today-no-resources-were-found-either./</link>
-      <pubDate>Wed, 14 Nov 2012 12:26:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/no-trains-today-no-resources-were-found-either./</guid>
-      <description>Belgian&amp;rsquo;s National Railway has decided to strike again today to assail Europe&amp;rsquo;s oncoming austerity. I don&amp;rsquo;t think there is anything wrong with sticking it to the man, or fighting for your right to party, if you believe it is just, yet the preferred tactics don&amp;rsquo;t feel quite right. There must be more constructive ways to get your point across, instead of terribly inconveniencing all those people who give you a job in the first place, your customers.</description>
-    </item>
-    
-    <item>
       <title>Commuting? Have you done the math?</title>
       <link>http://localhost:1313/2012/11/commuting-have-you-done-the-math/</link>
       <pubDate>Sun, 04 Nov 2012 20:24:00 +0100</pubDate>
@@ -86,17 +77,6 @@ That being said, in this post I want to talk about an architecture that tries to
       <guid>http://localhost:1313/2012/09/to-intellistumble/</guid>
       <description>To accidentally or unexpectedly discover a method or property whilst using IntelliSense to browse through symbol names.
  We should add this term to the Microsoft developer jargon.</description>
-    </item>
-    
-    <item>
-      <title>Value object obsession</title>
-      <link>http://localhost:1313/2012/09/value-object-obsession/</link>
-      <pubDate>Sun, 16 Sep 2012 17:20:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/value-object-obsession/</guid>
-      <description>Primitive obsession is one of the more popular (hyped?) code smells these days.
- Primitive obsession is the name of a code smell that occurs when we use primitive data types to represent domain ideas. For example, we use a string to describe a message or an integer to represent an amount of money.
- The antidote is creating a value object instead of using a primitive. A value object is an immutable object which (in its DDD definition) carries no identity, but is compared based on the value of its attributes.</description>
     </item>
     
     <item>

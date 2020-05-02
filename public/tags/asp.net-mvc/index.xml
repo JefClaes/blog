@@ -12,25 +12,6 @@
     
     
     <item>
-      <title>Show More pagination with angular.js</title>
-      <link>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</link>
-      <pubDate>Wed, 12 Dec 2012 19:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</guid>
-      <description>I built my first application with angular.js over these last few weeks (not during business hours), and although I still have lots and lots to discover and learn, I think I somewhat grasp the basics.
-In the application I built, I had to implement paging because rendering all the items at once was too slow on mobile devices (on my Windows Phone 7 anyways). The paging variant I decided on was the &amp;lsquo;Show More&amp;rsquo; technique.</description>
-    </item>
-    
-    <item>
-      <title>jQuery-validate error messages in Twitter bootstrap tooltips</title>
-      <link>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</link>
-      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</guid>
-      <description>At work, we&amp;rsquo;re using the combination of ASP.NET MVC3, jQuery, jQuery-validate, knockout and Twitter Bootstrap on one of our projects. Having postponed looking at the aesthetics of the client-side validation for too long, we eventually found ourselves unsatisfied with the default error labels. Wanting to save on space, we&amp;rsquo;re experimenting with the error messages being shown in a Twitter Bootstrap tooltip. After poking around for some while, I came up with something satisfactory.</description>
-    </item>
-    
-    <item>
       <title>Commands with dependencies</title>
       <link>http://localhost:1313/2012/10/commands-with-dependencies/</link>
       <pubDate>Mon, 15 Oct 2012 16:57:00 +0200</pubDate>
@@ -79,17 +60,6 @@ That being said, in this post I want to talk about an architecture that tries to
       <guid>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</guid>
       <description>While working on an already updated ASP.NET Web API project, I noticed an extra value in the IncludeErrorDetailPolicy enumeration. The IncludeErrorDetailPolicy configuration tells the Web API host when it&amp;rsquo;s allowed to include full error details in responses. Before updating, the RC version of the IncludeErrorDetailPolicy enumeration only had three possible values: LocalOnly, Always and Never. With the released version comes a new value: Default.
 // Summary: // Use the default behavior for the host environment.</description>
-    </item>
-    
-    <item>
-      <title>A really quick look at ASP.NET Web API Help Pages</title>
-      <link>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</link>
-      <pubDate>Thu, 16 Aug 2012 21:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</guid>
-      <description>While skimming over future features of ASP.NET Web API, I came across the ASP.NET Web API Help Page feature. I couldn&amp;rsquo;t find an introduction online, and the Nuget package has only been downloaded 16 times, so I had to have a really quick look. I documented my baby steps below.
-So, I had a really simple ASP.NET MVC4 project, with one API controller exposing tweets.
-public class TweetsController : ApiController { /// &amp;lt;summary&amp;gt; /// Get a &amp;lt;c&amp;gt;Tweet&amp;lt;/c&amp;gt; by its identifier.</description>
     </item>
     
     <item>
@@ -153,19 +123,6 @@ I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work fo
     </item>
     
     <item>
-      <title>ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5</title>
-      <link>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</link>
-      <pubDate>Sun, 19 Feb 2012 16:52:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</guid>
-      <description>I tried installing ASP.NET MVC4 beta today, but seconds into the installation the WebPI already halted the process.
- ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5
- Apparently, this was documented in the ASP.NET MVC4 installation notes.
- This release is not compatible with the .NET Framework 4.5 Developer Preview. You must uninstall the .NET 4.5 Developer Preview before installing the ASP.NET MVC 4 Beta.
- I guess you have to be forgiving if you want to play with the early bits.</description>
-    </item>
-    
-    <item>
       <title>Testing DI bootstrappers</title>
       <link>http://localhost:1313/2012/02/testing-di-bootstrappers/</link>
       <pubDate>Mon, 06 Feb 2012 08:59:00 +0100</pubDate>
@@ -173,17 +130,6 @@ I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work fo
       <guid>http://localhost:1313/2012/02/testing-di-bootstrappers/</guid>
       <description>While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&amp;rsquo;t see any reason why they shouldn&amp;rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
 I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot.</description>
-    </item>
-    
-    <item>
-      <title>Adding ELMAH to an AppHarbor application</title>
-      <link>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</link>
-      <pubDate>Sat, 04 Feb 2012 15:17:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/adding-elmah-to-an-appharbor-application/</guid>
-      <description>For those who haven&amp;rsquo;t heard of ELMAH yet, here is the project description.
- ELMAH (Error Logging Modules and Handlers) is an application-wide error logging facility that is completely pluggable. It can be dynamically added to a running ASP.NET web application, or even all ASP.NET web applications on a machine, without any need for re-compilation or re-deployment.
- While ELMAH is completely not AppHarbor specific, there do seem to be a fair amount of questions on the AppHarbor support forums on how to get ELMAH running.</description>
     </item>
     
     <item>

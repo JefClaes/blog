@@ -32,48 +32,6 @@ public abstract class Command { public abstract void Execute(); } public abstrac
     </item>
     
     <item>
-      <title>Released: My Antwerp Open Data submissions</title>
-      <link>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</link>
-      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/released-my-antwerp-open-data-submissions/</guid>
-      <description>A little while ago the city of Antwerp released their Open Data initiative, and it included a meetup where you could show something you built, build something on the spot, or pitch your ideas. When I first heard of the initiative I had nothing going on the side, and was looking for something tangible I could build to try out a few technologies. I couldn&amp;rsquo;t come up with an original idea, and ended up building two web applications using the Open Data datasets: Culture Mosaic, and Where to pee in Antwerp?</description>
-    </item>
-    
-    <item>
-      <title>Show More pagination with angular.js</title>
-      <link>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</link>
-      <pubDate>Wed, 12 Dec 2012 19:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/12/show-more-pagination-with-angular.js/</guid>
-      <description>I built my first application with angular.js over these last few weeks (not during business hours), and although I still have lots and lots to discover and learn, I think I somewhat grasp the basics.
-In the application I built, I had to implement paging because rendering all the items at once was too slow on mobile devices (on my Windows Phone 7 anyways). The paging variant I decided on was the &amp;lsquo;Show More&amp;rsquo; technique.</description>
-    </item>
-    
-    <item>
-      <title>jQuery-validate error messages in Twitter bootstrap tooltips</title>
-      <link>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</link>
-      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</guid>
-      <description>At work, we&amp;rsquo;re using the combination of ASP.NET MVC3, jQuery, jQuery-validate, knockout and Twitter Bootstrap on one of our projects. Having postponed looking at the aesthetics of the client-side validation for too long, we eventually found ourselves unsatisfied with the default error labels. Wanting to save on space, we&amp;rsquo;re experimenting with the error messages being shown in a Twitter Bootstrap tooltip. After poking around for some while, I came up with something satisfactory.</description>
-    </item>
-    
-    <item>
-      <title>NancyFx and bundling with Cassette</title>
-      <link>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</link>
-      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/nancyfx-and-bundling-with-cassette/</guid>
-      <description>Working on a new side project built using NancyFx, I wanted to bundle and minify my css and script resources. Looking into the options, Cassette (*) seemed the most obvious option.
-Since I struggled with the implementation a little bit, I documented the process below.
-1. Cassette.Nancy package
-**
-**Add the Cassette.Nancy package to the project.
-PM&amp;gt; Install-Package Cassette.Nancy Attempting to resolve dependency &#39;Cassette&#39;. Attempting to resolve dependency &#39;AjaxMin (= 4.</description>
-    </item>
-    
-    <item>
       <title>Commands, queries and testing</title>
       <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
       <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
@@ -134,17 +92,6 @@ public static class Convert { public static string PaymentRequest(PaymentRequest
       <guid>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</guid>
       <description>While working on an already updated ASP.NET Web API project, I noticed an extra value in the IncludeErrorDetailPolicy enumeration. The IncludeErrorDetailPolicy configuration tells the Web API host when it&amp;rsquo;s allowed to include full error details in responses. Before updating, the RC version of the IncludeErrorDetailPolicy enumeration only had three possible values: LocalOnly, Always and Never. With the released version comes a new value: Default.
 // Summary: // Use the default behavior for the host environment.</description>
-    </item>
-    
-    <item>
-      <title>A really quick look at ASP.NET Web API Help Pages</title>
-      <link>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</link>
-      <pubDate>Thu, 16 Aug 2012 21:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/08/a-really-quick-look-at-asp.net-web-api-help-pages/</guid>
-      <description>While skimming over future features of ASP.NET Web API, I came across the ASP.NET Web API Help Page feature. I couldn&amp;rsquo;t find an introduction online, and the Nuget package has only been downloaded 16 times, so I had to have a really quick look. I documented my baby steps below.
-So, I had a really simple ASP.NET MVC4 project, with one API controller exposing tweets.
-public class TweetsController : ApiController { /// &amp;lt;summary&amp;gt; /// Get a &amp;lt;c&amp;gt;Tweet&amp;lt;/c&amp;gt; by its identifier.</description>
     </item>
     
     <item>
@@ -344,16 +291,6 @@ This is where the PositionError argument of the PositionErrorCallback comes in h
       <guid>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</guid>
       <description>I read about the HTML5 Geolocation API in the Pro HTML5 Programming book a while ago, and decided to play with it on this lazy Sunday.
 Using the Geolocation API to make a one-shot position request is very straight-forward. Get a reference to the navigator.geolocation object and call the getCurrentPosition() method, passing in at least a PositionCallback. In this example I&amp;rsquo;m also passing in a PositionErrorCallback. In the PositionCallback you can examine the properties of the position object.</description>
-    </item>
-    
-    <item>
-      <title>Programmatically disable UpdatePanels</title>
-      <link>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</link>
-      <pubDate>Sat, 18 Dec 2010 14:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/programmatically-disable-updatepanels/</guid>
-      <description>In this post I&amp;rsquo;ll show you how to programmatically disable all UpdatePanels in a page. I don&amp;rsquo;t know in which scenario you would want to use this, but I had to use it to hack around an issue with the ReportViewer control. I&amp;rsquo;ll save you the details, really.
-To disable all the UpdatePanels, you need to set the EnablePartialRendering property of the ScriptManager to false. You can get a reference to the current ScriptManager by using the GetCurrent() method passing in a reference to the current page.</description>
     </item>
     
     <item>

@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>jQuery-validate error messages in Twitter bootstrap tooltips</title>
-      <link>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</link>
-      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/jquery-validate-error-messages-in-twitter-bootstrap-tooltips/</guid>
-      <description>At work, we&amp;rsquo;re using the combination of ASP.NET MVC3, jQuery, jQuery-validate, knockout and Twitter Bootstrap on one of our projects. Having postponed looking at the aesthetics of the client-side validation for too long, we eventually found ourselves unsatisfied with the default error labels. Wanting to save on space, we&amp;rsquo;re experimenting with the error messages being shown in a Twitter Bootstrap tooltip. After poking around for some while, I came up with something satisfactory.</description>
-    </item>
-    
-    <item>
       <title>Supporting the OPTIONS verb in ASP.NET Web API</title>
       <link>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</link>
       <pubDate>Sun, 02 Sep 2012 18:27:00 +0200</pubDate>
@@ -39,19 +30,6 @@
       <description>One of the new wildly evangelized features of ASP.NET MVC4 is the built-in support for bundling and minification of scripts and stylesheets.
 I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work for ASP.NET MVC3 though. If you open the packages config of an ASP.NET MVC4 beta project, you will find that bundling support lives in the Microsoft.Web.Optimization package.
 &amp;lt;package id=&amp;quot;Microsoft.Web.Optimization&amp;quot; version=&amp;quot;1.0.0-beta&amp;quot; /&amp;gt;  So we should just be able to install this package for an ASP.</description>
-    </item>
-    
-    <item>
-      <title>ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5</title>
-      <link>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</link>
-      <pubDate>Sun, 19 Feb 2012 16:52:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/asp.net-mvc4-installer-is-incompatible-with-microsoft-.net-framework-4.5/</guid>
-      <description>I tried installing ASP.NET MVC4 beta today, but seconds into the installation the WebPI already halted the process.
- ASP.NET MVC4 Installer is incompatible with Microsoft .NET Framework 4.5
- Apparently, this was documented in the ASP.NET MVC4 installation notes.
- This release is not compatible with the .NET Framework 4.5 Developer Preview. You must uninstall the .NET 4.5 Developer Preview before installing the ASP.NET MVC 4 Beta.
- I guess you have to be forgiving if you want to play with the early bits.</description>
     </item>
     
   </channel>
