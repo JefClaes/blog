@@ -11,16 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/linq/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Finding the gaps in a sequence of dates</title>
-      <link>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</link>
-      <pubDate>Sun, 23 Sep 2012 20:42:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</guid>
-      <description>Somewhere earlier this week I had to find the gaps in a sequence of dates. Admittedly, my first action was to search Stackoverflow for a clean solution. But since no one asked the question there yet, I had to implement it myself.
-The solution comes in the form of an extension method on IEnumerable&amp;lt;DateTime&amp;gt;, which takes a lower bound and an upper bound, and returns an enumerable of dates.
-public static IEnumerable&amp;lt;DateTime&amp;gt; GetGaps( this IEnumerable&amp;lt;DateTime&amp;gt; sequence, DateTime lowerbound, DateTime upperbound) { var completeSequence = new List&amp;lt;DateTime&amp;gt;(); var tmpDay = lowerbound.</description>
-    </item>
-    
   </channel>
 </rss>

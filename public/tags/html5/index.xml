@@ -12,46 +12,6 @@
     
     
     <item>
-      <title>My InfoQ article on HTML5 offline web applications</title>
-      <link>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</link>
-      <pubDate>Wed, 02 May 2012 20:09:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</guid>
-      <description>After writing a few things on HTML5 offline web applications earlier this year, I got contacted by InfoQ to write an in-detail article on the subject for them. I hesitated at first, because I was afraid that it would feel too much like work, taking the fun out of my writing. Turns out it wasn&amp;rsquo;t like that at all. The guys at infoQ were really relaxed to work with, asking interesting questions and giving useful feedback, without forcing me into a certain direction.</description>
-    </item>
-    
-    <item>
-      <title>Visualizing the offline application cache update progress</title>
-      <link>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</link>
-      <pubDate>Wed, 11 Apr 2012 16:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</guid>
-      <description>I wrote about using the HTML5 application cache earlier, mostly focusing on generating and serving the manifest file using ASP.NET MVC. I also bitched about how not one browser I know of gives an indication of the application cache update progress. Today I wanted to write something about how you can visualize the application cache update progress yourself.
-The applicationCache API has several useful and rather straightforward events we can handle to inform the user of the update progress.</description>
-    </item>
-    
-    <item>
-      <title>How a web application can download and store over 2GB without you even knowing it</title>
-      <link>http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/</link>
-      <pubDate>Sun, 25 Mar 2012 13:11:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/</guid>
-      <description>I have been experimenting with the HTML5 offline application cache some more over the last few days, doing boundary tests in an attempt to learn more about browser behaviour in edge cases.
-One of these experiments was testing the cache quota.
-Two weeks ago, I blogged about generating and serving an offline application manifest using ASP.NET MVC. I reused that code to add hundreds of 7MB PDF files to the cache.</description>
-    </item>
-    
-    <item>
-      <title>HTML5 Offline Web applications as an afterthought in ASP.NET MVC</title>
-      <link>http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/</link>
-      <pubDate>Wed, 14 Mar 2012 15:39:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/</guid>
-      <description>Recently I prototyped a mobile web application using ASP.NET MVC, jQuery Mobile and some HTML5 features. One of the key goals was to find out how far you can push a web &amp;lsquo;application&amp;rsquo; until the browser starts getting in the way. Working disconnected is one of these things that appear to be a major showstopper at first.
-However - to my surprise honestly - the HTML5 Offline Web applications API seems to be widely implemented across modern browsers already.</description>
-    </item>
-    
-    <item>
       <title>How Wikipedia uses HTML5 to save bandwidth</title>
       <link>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save-bandwidth/</link>
       <pubDate>Thu, 19 Jan 2012 20:56:00 +0100</pubDate>

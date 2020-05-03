@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Supporting the OPTIONS verb in ASP.NET Web API - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Supporting the OPTIONS verb in ASP.NET Web API">
+<meta itemprop="description" content="ASP.NET Web API controllers support only four HTTP verbs by convention: GET, PUT, POST and DELETE. The full list of existing HTTP verbs is more extensive though. One of those unsupported verbs which can be particularly useful for API discovery and documentation is the OPTIONS verb.
+ The OPTIONS method represents a request for information about the communication options available on the request/response chain identified by the Request-URI. This method allows the client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval.">
+<meta itemprop="datePublished" content="2012-09-02T18:27:00&#43;02:00" />
+<meta itemprop="dateModified" content="2012-09-02T18:27:00&#43;02:00" />
+<meta itemprop="wordCount" content="557">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Supporting the OPTIONS verb in ASP.NET Web API" />
+<meta property="og:description" content="ASP.NET Web API controllers support only four HTTP verbs by convention: GET, PUT, POST and DELETE. The full list of existing HTTP verbs is more extensive though. One of those unsupported verbs which can be particularly useful for API discovery and documentation is the OPTIONS verb.
+ The OPTIONS method represents a request for information about the communication options available on the request/response chain identified by the Request-URI. This method allows the client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/09/supporting-options-verb-in-aspnet-web.html" />
+<meta property="article:published_time" content="2012-09-02T18:27:00+02:00" />
+<meta property="article:modified_time" content="2012-09-02T18:27:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Supporting the OPTIONS verb in ASP.NET Web API"/>
+<meta name="twitter:description" content="ASP.NET Web API controllers support only four HTTP verbs by convention: GET, PUT, POST and DELETE. The full list of existing HTTP verbs is more extensive though. One of those unsupported verbs which can be particularly useful for API discovery and documentation is the OPTIONS verb.
+ The OPTIONS method represents a request for information about the communication options available on the request/response chain identified by the Request-URI. This method allows the client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">02</span>
+							<span class="rest">Sep 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Supporting the OPTIONS verb in ASP.NET Web API</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p><a href="http://www.asp.net/web-api">ASP.NET Web API</a> controllers support only
+four HTTP verbs by convention: GET, PUT, POST and DELETE. The <a href="http://annevankesteren.nl/2007/10/http-methods">full list
+of existing HTTP verbs</a>
+is more extensive though. One of those unsupported verbs which can be
+particularly useful for API discovery and documentation is the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html">OPTIONS
+verb</a>.</p>
+<blockquote>
+<p>The OPTIONS method represents a request for information about the
+communication options available on the request/response chain
+identified by the Request-URI. This method allows the client to
+determine the options and/or requirements associated with a resource,
+or the capabilities of a server, without implying a resource action or
+initiating a resource retrieval.</p>
+</blockquote>
+<p>If we wanted to implement controller support for the OPTIONS verb, we
+could manually map an action to the verb by decorating it with an
+AcceptVerbs attribute, and making the action return a response with a
+relevant Access-Control-Allow-Methods header.</p>
+<p>For a values controller, with a GET and DELETE action, it could look
+like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">ValuesController</span> : <span style="color:#268bd2">ApiController</span>
+{        
+    <span style="color:#859900">public</span> <span style="color:#268bd2">IEnumerable</span>&lt;<span style="color:#859900;font-weight:bold">string</span>&gt; <span style="color:#268bd2">Get</span>()
+    {
+        <span style="color:#859900">return</span> <span style="color:#859900">new</span> <span style="color:#859900;font-weight:bold">string</span>[] { <span style="color:#2aa198">&#34;value1&#34;</span>, <span style="color:#2aa198">&#34;value2&#34;</span> };
+    }                 
+    
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Delete</span>(<span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">id</span>) { }
+<span style="color:#268bd2">
+</span><span style="color:#268bd2">    [AcceptVerbs(&#34;OPTIONS&#34;)]</span>
+    <span style="color:#859900">public</span> <span style="color:#268bd2">HttpResponseMessage</span> <span style="color:#268bd2">Options</span>()
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">resp</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">HttpResponseMessage</span>(<span style="color:#268bd2">HttpStatusCode</span>.<span style="color:#268bd2">OK</span>);
+        <span style="color:#268bd2">resp</span>.<span style="color:#268bd2">Headers</span>.<span style="color:#268bd2">Add</span>(<span style="color:#2aa198">&#34;Access-Control-Allow-Origin&#34;</span>, <span style="color:#2aa198">&#34;*&#34;</span>);
+        <span style="color:#268bd2">resp</span>.<span style="color:#268bd2">Headers</span>.<span style="color:#268bd2">Add</span>(<span style="color:#2aa198">&#34;Access-Control-Allow-Methods&#34;</span>, <span style="color:#2aa198">&#34;GET,DELETE&#34;</span>);
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">resp</span>;
+    }
+}
+</code></pre></div><p>If we now make an OPTIONS request to http://localhost:53314/api/values..</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">OPTIONS http://localhost:53314/api/values HTTP/1.1
+User-Agent: Fiddler
+Host: localhost:53314
+</code></pre></div><p>..we receive following response.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">HTTP/1.1 200 OK
+Server: ASP.NET Development Server/10.0.0.0
+Date: Sun, 02 Sep 2012 13:46:21 GMT
+X-AspNet-Version: 4.0.30319
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET,DELETE
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: -1
+Content-Length: 0
+Connection: Close
+</code></pre></div><p>While this works, it&rsquo;s not a great solution. We don&rsquo;t want to maintain
+the list of supported verbs manually, and we certainly don&rsquo;t want to
+repeat this for each controller.</p>
+<p>ASP.NET Web API provides a nice way to have a more high level solution:
+<a href="http://www.asp.net/web-api/overview/working-with-http/http-message-handlers">HTTP message handlers</a>. These basically behave as HTTP intermediaries, meaning we can intercept each <code>OPTIONS</code> request early, and bypass the whole request chain. Another useful component we can make good use of is the default
+<a href="http://blogs.msdn.com/b/yaohuang1/archive/2012/05/21/asp-net-web-api-generating-a-web-api-help-page-using-apiexplorer.aspx">ApiExplorer</a>;
+this abstraction allows us to obtain metadata of our API&rsquo;s stucture.</p>
+<p>To create a new HTTP message handler, I inherited from the
+<code>DelegatingHandler</code> class, and overwrote the <code>SendAsync</code> method. Here we&rsquo;ll
+intercept the request when the verb equals <code>OPTIONS</code>. An instance of the
+Api explorer can be resolved through the global configuration. I grab
+the requested controller from the request route data, and use that to
+search the Api explorer&rsquo;s <code>ApiDescriptions</code> collection for its associated
+actions, and its associated verbs. Once I get the outcome of this
+lookup, and at least one verb is supported (*), I&rsquo;ll return an OK
+response with the relevant headers, and thus short circuit the
+request.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">OptionsHttpMessageHandler</span> : <span style="color:#268bd2">DelegatingHandler</span>
+{
+    <span style="color:#859900">protected</span> <span style="color:#859900">override</span> <span style="color:#268bd2">Task</span>&lt;<span style="color:#268bd2">HttpResponseMessage</span>&gt; <span style="color:#268bd2">SendAsync</span>(
+        <span style="color:#268bd2">HttpRequestMessage</span> <span style="color:#268bd2">request</span>, <span style="color:#268bd2">CancellationToken</span> <span style="color:#268bd2">cancellationToken</span>)
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">request</span>.<span style="color:#268bd2">Method</span> == <span style="color:#268bd2">HttpMethod</span>.<span style="color:#268bd2">Options</span>)
+        {
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">apiExplorer</span> = <span style="color:#268bd2">GlobalConfiguration</span>.<span style="color:#268bd2">Configuration</span>.<span style="color:#268bd2">Services</span>.<span style="color:#268bd2">GetApiExplorer</span>();
+
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">controllerRequested</span> = <span style="color:#268bd2">request</span>.<span style="color:#268bd2">GetRouteData</span>().<span style="color:#268bd2">Values</span>[<span style="color:#2aa198">&#34;controller&#34;</span>] <span style="color:#859900">as</span> <span style="color:#859900;font-weight:bold">string</span>;              
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">supportedMethods</span> = <span style="color:#268bd2">apiExplorer</span>.<span style="color:#268bd2">ApiDescriptions</span>
+                .<span style="color:#268bd2">Where</span>(<span style="color:#268bd2">d</span> =&gt; 
+                {  
+                    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">controller</span> = <span style="color:#268bd2">d</span>.<span style="color:#268bd2">ActionDescriptor</span>.<span style="color:#268bd2">ControllerDescriptor</span>.<span style="color:#268bd2">ControllerName</span>;
+                    <span style="color:#859900">return</span> <span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Equals</span>(
+                        <span style="color:#268bd2">controller</span>, <span style="color:#268bd2">controllerRequested</span>, <span style="color:#268bd2">StringComparison</span>.<span style="color:#268bd2">OrdinalIgnoreCase</span>);
+                })
+                .<span style="color:#268bd2">Select</span>(<span style="color:#268bd2">d</span> =&gt; <span style="color:#268bd2">d</span>.<span style="color:#268bd2">HttpMethod</span>.<span style="color:#268bd2">Method</span>)
+                .<span style="color:#268bd2">Distinct</span>();
+
+            <span style="color:#859900">if</span> (!<span style="color:#268bd2">supportedMethods</span>.<span style="color:#268bd2">Any</span>())
+                <span style="color:#859900">return</span> <span style="color:#268bd2">Task</span>.<span style="color:#268bd2">Factory</span>.<span style="color:#268bd2">StartNew</span>(
+                    () =&gt; <span style="color:#268bd2">request</span>.<span style="color:#268bd2">CreateResponse</span>(<span style="color:#268bd2">HttpStatusCode</span>.<span style="color:#268bd2">NotFound</span>));
+
+            <span style="color:#859900">return</span> <span style="color:#268bd2">Task</span>.<span style="color:#268bd2">Factory</span>.<span style="color:#268bd2">StartNew</span>(() =&gt;
+            {
+                <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">resp</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">HttpResponseMessage</span>(<span style="color:#268bd2">HttpStatusCode</span>.<span style="color:#268bd2">OK</span>);
+                <span style="color:#268bd2">resp</span>.<span style="color:#268bd2">Headers</span>.<span style="color:#268bd2">Add</span>(<span style="color:#2aa198">&#34;Access-Control-Allow-Origin&#34;</span>, <span style="color:#2aa198">&#34;*&#34;</span>);
+                <span style="color:#268bd2">resp</span>.<span style="color:#268bd2">Headers</span>.<span style="color:#268bd2">Add</span>(
+                    <span style="color:#2aa198">&#34;Access-Control-Allow-Methods&#34;</span>, <span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Join</span>(<span style="color:#2aa198">&#34;,&#34;</span>, <span style="color:#268bd2">supportedMethods</span>));
+
+                <span style="color:#859900">return</span> <span style="color:#268bd2">resp</span>;
+            });
+    }
+
+    <span style="color:#859900">return</span> <span style="color:#859900">base</span>.<span style="color:#268bd2">SendAsync</span>(<span style="color:#268bd2">request</span>, <span style="color:#268bd2">cancellationToken</span>);
+    }
+}
+</code></pre></div><p>Register this HTTP message handler by adding it to the configuration.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">GlobalConfiguration</span>.<span style="color:#268bd2">Configuration</span>.<span style="color:#268bd2">MessageHandlers</span>.<span style="color:#268bd2">Add</span>(<span style="color:#859900">new</span> <span style="color:#268bd2">OptionsHttpMessageHandler</span>());
+</code></pre></div><p>This second solution still yields the same result, but is far more
+scalable.</p>
+<p>(*) When a resource can&rsquo;t be read nor manipulated, it must not exist right?</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

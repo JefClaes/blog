@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>Add images to a GitHub readme</title>
-      <link>http://localhost:1313/2012/04/add-images-to-a-github-readme/</link>
-      <pubDate>Sun, 01 Apr 2012 19:32:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/04/add-images-to-a-github-readme/</guid>
-      <description>Today I wanted to add some screenshots to a GitHub readme for the sake of documenting. While this wasn&amp;rsquo;t particularly hard, I do had to iterate a few times before I got it right.
-Hosting the images
-You could simply add the images to your repository and reference them using the raw url&amp;rsquo;s, but this isn&amp;rsquo;t very efficient. Using this method, every request needs to go through GitHub&amp;rsquo;s application layer. It&amp;rsquo;s far better to make use of GitHub Pages, a feature purely designed to publish web content.</description>
-    </item>
-    
-    <item>
       <title>Should we get this tool?</title>
       <link>http://localhost:1313/2011/06/should-we-get-this-tool/</link>
       <pubDate>Wed, 15 Jun 2011 21:45:00 +0200</pubDate>

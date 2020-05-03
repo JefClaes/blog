@@ -128,5 +128,36 @@ A better model  Even if you come up with a better model, the fact that it has be
       <description>Two weeks ago I got to spend four days attending the IDDD Tour by Vaughn Vernon. Although my book queue has only allowed me to shallowly browse the book, I had high hopes for this course. I anticipated a week of getting lectured on DDD with a few practical exercises, but was blown away by the openness and interaction promoted by Vaughn and his associate Alberto Brandolini. A passionate group, engaging workshops, long days and lots of sharing made these few days exceptionally satisfying and inspirational.</description>
     </item>
     
+    <item>
+      <title>The 7 R&#39;s of Hypermedia</title>
+      <link>http://localhost:1313/2012/09/the-7-rs-of-hypermedia.html</link>
+      <pubDate>Mon, 17 Sep 2012 21:42:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/the-7-rs-of-hypermedia.html</guid>
+      <description>While most REST concepts are rather easy to grok, there is one concept which I found harder to understand at first: Hypermedia. Let it be that without this concept, you&amp;rsquo;re missing out on an extremely important strength of REST. Hypermedia enables you to build dumb - or smart, depending on your perspective - clients, which are mostly driven by the server. Practically, this is implemented as resources embedding links which allow the client to discover and navigate through your RESTful service.</description>
+    </item>
+    
+    <item>
+      <title>Book review: The Art of Agile Development</title>
+      <link>http://localhost:1313/2012/06/book-review-art-of-agile-development.html</link>
+      <pubDate>Sun, 10 Jun 2012 19:42:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/book-review-art-of-agile-development.html</guid>
+      <description>While I have - obviously - read the Agile Manifesto before, and regularly click through to articles on agile, I had never read an extensive work on it. Browsing for a good book, I was advised by a peer to get The Art of Agile Development.
+I wholeheartedly believe in the Agile Manifesto, but somewhere along the way Agile - with a capital A - got somewhat of a bad rep.</description>
+    </item>
+    
+    <item>
+      <title>Sent from my phone</title>
+      <link>http://localhost:1313/2012/03/sent-from-my-phone.html</link>
+      <pubDate>Sat, 17 Mar 2012 19:46:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/03/sent-from-my-phone.html</guid>
+      <description>According to Matt from 37signals the line &amp;ldquo;Sent from my iPhone&amp;rdquo; at the bottom of an email means this:
+ Let’s be honest. “Sent from my iPhone” really means “I’m not going to bother to proofread and correct this because it would take me an extra 30 seconds.”
+ I agree. I too use this line as an excuse to write a terse message and omit proper salutations.
+However, I also think these four simple words greatly helped the viral growth of the mobile phone.</description>
+    </item>
+    
   </channel>
 </rss>

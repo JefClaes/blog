@@ -40,5 +40,14 @@ I met Pieter the first time in a bar in Vilnius, December 2013, I accidentally e
 Thanks to the effort of Mathias, Stijn and Yves, Tuesday marked the first get-together of the Belgian DDD user group in its official form.</description>
     </item>
     
+    <item>
+      <title>My InfoQ article on HTML5 offline web applications</title>
+      <link>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web.html</link>
+      <pubDate>Wed, 02 May 2012 20:09:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web.html</guid>
+      <description>After writing a few things on HTML5 offline web applications earlier this year, I got contacted by InfoQ to write an in-detail article on the subject for them. I hesitated at first, because I was afraid that it would feel too much like work, taking the fun out of my writing. Turns out it wasn&amp;rsquo;t like that at all. The guys at infoQ were really relaxed to work with, asking interesting questions and giving useful feedback, without forcing me into a certain direction.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Some Servicelocator pattern stinks</title>
-      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</link>
-      <pubDate>Tue, 17 Apr 2012 20:33:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</guid>
-      <description>I have been working on a somewhat legacy codebase which makes use of the Servicelocator pattern. Although I always thought of Dependecy Injection to be the superior pattern, I was pleased to find some Inversion of Control implementation in there. Working with the codebase, I discovered first hand how easily, when used without caution and discipline, the Servicelocator pattern can introduce code rot.
-I will walk you through some of the issues I have with the Servicelocator pattern, mostly looking at it from a test perspective.</description>
-    </item>
-    
-    <item>
       <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
       <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
       <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>

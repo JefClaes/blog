@@ -119,5 +119,16 @@ I arranged a simple scenario for testing: one message type - thus one queue, whe
       <description>First time I touched messaging was in the first few years of my professional life working on software that supported fire departments in their day-to-day activities. The dispatching software would send messages to a proprietary broker, which in its turn would forward them to interested subscribers; other dispatching clients, or services. To ensure availability, the broker component could failover to a different machine, but that was about it. It didn&amp;rsquo;t allow you to queue or retry messages; if you weren&amp;rsquo;t up when the messages were forwarded, you would never receive them.</description>
     </item>
     
+    <item>
+      <title>Painless database logging with mongoDB</title>
+      <link>http://localhost:1313/2012/05/painless-database-logging-with-mongodb.html</link>
+      <pubDate>Sun, 20 May 2012 17:18:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/painless-database-logging-with-mongodb.html</guid>
+      <description>While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
+From the mongoDB documentation:
+ Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging.</description>
+    </item>
+    
   </channel>
 </rss>

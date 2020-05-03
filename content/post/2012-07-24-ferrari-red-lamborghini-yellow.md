@@ -4,14 +4,9 @@ slug = "2012-07-24-ferrari-red-lamborghini-yellow"
 published = 2012-07-24T00:56:00.003000+02:00
 author = "Jef Claes"
 tags = [ "Travel",]
+url = "2012/07/ferrari-red-lamborghini-yellow.html"
 +++
-<span style="background-color: white;">After 14 hours and 34 minutes in
-the car, driving 1148km, over the German autobahn, swerving Austrian
-roads, and the Italian autostrade, defying overwhelming hail storms,
-roadwork and miles long tunnel congestions, we arrived at Torbole,
-Italy.</span>
-
-  
+After 14 hours and 34 minutes in the car, driving 1148km, over the German autobahn, swerving Austrian roads, and the Italian autostrade, defying overwhelming hail storms, roadwork and miles long tunnel congestions, we arrived at Torbole, Italy.
 
 [Torbole](http://en.wikipedia.org/wiki/Nago-Torbole) is a small village,
 nestled between the mountains, right at the edge of [Lake
@@ -28,11 +23,7 @@ great launching point to visit other places in northern Italy though.
   
 After a lazy day yesterday, we drove two hours South today, to
 Sant'Agata Bolognese and Maranello, to visit two legendary car
-manufacturers:
-[Lamborghini](http://www.lamborghini.com/en/heritage/museum/overview/)
-and [Ferrari](http://museo.ferrari.com/). While both museums only take
-around 40 minutes to visit, I definitely was more impressed by the
-Lamborghini museum. Compared to the Ferrari museum, the Lamborghini
+manufacturers: [Lamborghini](http://www.lamborghini.com/en/heritage/museum/overview/) and [Ferrari](http://museo.ferrari.com/). While both museums only take around 40 minutes to visit, I definitely was more impressed by the Lamborghini museum. Compared to the Ferrari museum, the Lamborghini
 museum seemed to exhibit far more (non-racing) eccentric and rare
 models.  
   
@@ -43,8 +34,6 @@ models.
 
 [![](/post/images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0145.jpg)](/post/images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0145.jpg)
 
-  
-
 Since both museums failed to entertain us for longer than an hour, we
 visited [Verona](http://en.wikipedia.org/wiki/Verona) on our way back.
 While we didn't enter any tourist attractions, we enjoyed strolling
@@ -52,8 +41,6 @@ through the old town, blending into the mass, only halting on a Roman
 square to pay way too much for an iced cappuccino which was served
 lukewarm.  
   
-
 [![](/post/images/thumbnails/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0171.jpg)](/post/images/2012-07-24-ferrari-red-lamborghini-yellow-Garda_0171.jpg)  
 
-<span
-style="background-color: white;">[Arrivederci](http://www.youtube.com/watch?v=4aXIFFaWNjM).</span>
+[Arrivederci](http://www.youtube.com/watch?v=4aXIFFaWNjM).

@@ -3,7 +3,8 @@ title = "Why I will always love RSS"
 slug = "2012-05-06-why-i-will-always-love-rss"
 published = 2012-05-06T16:50:00+02:00
 author = "Jef Claes"
-tags = [ "Browsers", "Ramblings", "RSS",]
+tags = [ "opinion",]
+url = "2012/05/why-i-will-always-love-rss.html"
 +++
 There has been a lot of noise in the tech community earlier this year
 about how RSS is supposedly having one foot in the grave. If that would

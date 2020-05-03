@@ -3,7 +3,8 @@ title = "The 'everyone should learn to code' dilemma"
 slug = "2012-06-03-the-everyone-should-learn-to-code-dilemma"
 published = 2012-06-03T16:40:00+02:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2012/06/everyone-should-learn-to-code-dilemma.html"
 +++
 Back when I was working on software for fire departments, we started
 thinking about reworking a critical piece of our solution: deployment
@@ -19,7 +20,8 @@ this was no custom built tool, we had to work around it by composing
 incomprehensible decision trees or by tricking the underlying services.
 When talking about how we could do better, we hit a wall pretty soon. We
 thought about building our own - but more extensive - UI, and damn, even
-designing a DSL crossed our minds.  
+designing a DSL crossed our minds. 
+ 
 Along the process, I heard that [Configuration Complexity
 Clock](http://mikehadlow.blogspot.co.uk/2012/05/configuration-complexity-clock.html)
 ticking, and I couldn't stop myself from thinking that if everyone knew

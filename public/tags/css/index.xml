@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>HtmlHelper to generate a top-level menu for areas</title>
-      <link>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</link>
-      <pubDate>Sun, 08 Jul 2012 19:10:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</guid>
-      <description>Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
-Let&amp;rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them.</description>
-    </item>
-    
-    <item>
       <title>IE8-Fix: Disabled select not showing selected options</title>
       <link>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</link>
       <pubDate>Wed, 24 Feb 2010 19:55:00 +0100</pubDate>

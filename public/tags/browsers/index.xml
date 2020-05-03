@@ -12,48 +12,6 @@
     
     
     <item>
-      <title>Why I will always love RSS</title>
-      <link>http://localhost:1313/2012/05/why-i-will-always-love-rss/</link>
-      <pubDate>Sun, 06 May 2012 16:50:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/05/why-i-will-always-love-rss/</guid>
-      <description>There has been a lot of noise in the tech community earlier this year about how RSS is supposedly having one foot in the grave. If that would be even remotely true, I hope it dies with its boots on. The herald would be browsers and social networking sites killing or hiding support for RSS. While that may be true, their motives shouldn&amp;rsquo;t rig our opinions.
-RSS has never worked out for the regular consumer, not directly anyways.</description>
-    </item>
-    
-    <item>
-      <title>Visualizing the offline application cache update progress</title>
-      <link>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</link>
-      <pubDate>Wed, 11 Apr 2012 16:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</guid>
-      <description>I wrote about using the HTML5 application cache earlier, mostly focusing on generating and serving the manifest file using ASP.NET MVC. I also bitched about how not one browser I know of gives an indication of the application cache update progress. Today I wanted to write something about how you can visualize the application cache update progress yourself.
-The applicationCache API has several useful and rather straightforward events we can handle to inform the user of the update progress.</description>
-    </item>
-    
-    <item>
-      <title>Check for local file browsing with JavaScript</title>
-      <link>http://localhost:1313/2012/04/check-for-local-file-browsing-with-javascript/</link>
-      <pubDate>Mon, 02 Apr 2012 15:34:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/04/check-for-local-file-browsing-with-javascript/</guid>
-      <description>Because I do most of my research while commuting by train, I often pull entire websites offline using httrack. While browsing the jQuery Mobile documentation locally this morning, I stumbled upon following gem.
-
-I was curious to see how they determine whether a page is browsed locally or not. Looking into the source, I was a bit dissapointed to find nothing but plain common sense. The trick is comparing the protocol of the current location with known local protocols.</description>
-    </item>
-    
-    <item>
-      <title>How a web application can download and store over 2GB without you even knowing it</title>
-      <link>http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/</link>
-      <pubDate>Sun, 25 Mar 2012 13:11:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/</guid>
-      <description>I have been experimenting with the HTML5 offline application cache some more over the last few days, doing boundary tests in an attempt to learn more about browser behaviour in edge cases.
-One of these experiments was testing the cache quota.
-Two weeks ago, I blogged about generating and serving an offline application manifest using ASP.NET MVC. I reused that code to add hundreds of 7MB PDF files to the cache.</description>
-    </item>
-    
-    <item>
       <title>How Wikipedia uses HTML5 to save bandwidth</title>
       <link>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save-bandwidth/</link>
       <pubDate>Thu, 19 Jan 2012 20:56:00 +0100</pubDate>

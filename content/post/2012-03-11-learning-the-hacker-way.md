@@ -3,7 +3,7 @@ title = "Learning: the Hacker Way"
 slug = "2012-03-11-learning-the-hacker-way"
 published = 2012-03-11T11:08:00+01:00
 author = "Jef Claes"
-tags = [ "General",]
+tags = [ "opinion",]
 +++
 I have had a fair amount of discussions on continuous learning and
 knowledge sharing the past few days. It became rather obvious that a lot
@@ -30,7 +30,7 @@ value is marginal compared to what you gain by actually doing it.
   
 I remember I wanted to step up my JavaScript game two years ago, and
 [ordered a
-book](http://jclaes.blogspot.com/2010/02/book-review-object-oriented-javascript.html).
+book](http://jefclaes.be/2010/02/book-review-object-oriented-javascript.html).
 A few months after finishing the book, I finally had the chance to
 implement something in JavaScript, but I couldn't. I remembered some
 syntax, and most concepts, but I couldn't do it. Eventually I really
@@ -54,7 +54,7 @@ you would be a good fit for the project.
 > The Hacker Way is an approach to building that involves continuous
 > improvement and iteration. Hackers believe that something can always
 > be better, and that nothing is ever complete. 
-
+>
 > Hacker culture is also extremely open and meritocratic. Hackers
 > believe that the best idea and implementation should always win - not
 > the person who is best at lobbying for an idea or the person who
@@ -84,5 +84,4 @@ your personal and your company's portfolio. This can help you prove that
 you can do more than just talk the walk, talk is cheap after all.  
   
 *I want to know from you what the flaws are in my way of thinking. Is
-the described technique naive, too idealistic or unrealistic?*  
-*Which technique has proven to work best for you?*
+the described technique naive, too idealistic or unrealistic? Which technique has proven to work best for you?*

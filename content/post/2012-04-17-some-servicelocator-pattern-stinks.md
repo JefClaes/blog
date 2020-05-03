@@ -3,7 +3,8 @@ title = "Some Servicelocator pattern stinks"
 slug = "2012-04-17-some-servicelocator-pattern-stinks"
 published = 2012-04-17T20:33:00+02:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", ".NET", "Refactoring", "Ramblings",]
+tags = [ "opinion", "code"]
+url = "2012/04/some-servicelocator-pattern-stinks.html"
 +++
 I have been working on a somewhat legacy codebase which makes use of the
 [Servicelocator
@@ -39,32 +40,34 @@ implementation, but which still is small enough to grasp easily.
 So let's have a look at this FireStation class. I know it's a
 ridiculously naïve implementation, but good enough as an example.  
 
-    public class FireStation
+```csharp
+public class FireStation
+{
+    public void Alert(Incident incident)
     {
-        public void Alert(Incident incident)
-        {
-            SendPagerMessage();
-            SendEmail();
+        SendPagerMessage();
+        SendEmail();
 
-            if (incident.Priority == IncidentPriority.High)            
-                ActivateSiren();                        
-        }
-
-        private void SendPagerMessage()
-        {
-            ServiceLocator.Current.GetInstance<IPagingTerminal>().SendMessage();
-        }
-
-        private void SendEmail()
-        {
-            ServiceLocator.Current.GetInstance<IMailServer>().SendMailMessage();
-        }
-
-        private void ActivateSiren()
-        {
-            ServiceLocator.Current.GetInstance<IImmoticaServer>().ActivateSiren();
-        }
+        if (incident.Priority == IncidentPriority.High)            
+            ActivateSiren();                        
     }
+
+    private void SendPagerMessage()
+    {
+        ServiceLocator.Current.GetInstance<IPagingTerminal>().SendMessage();
+    }
+
+    private void SendEmail()
+    {
+        ServiceLocator.Current.GetInstance<IMailServer>().SendMailMessage();
+    }
+
+    private void ActivateSiren()
+    {
+        ServiceLocator.Current.GetInstance<IImmoticaServer>().ActivateSiren();
+    }
+}
+```
 
 There is one public Alert method, which takes an Incident instance, and
 uses three alarmation channels to alert firemen: paging, email and a
@@ -74,15 +77,17 @@ So, let's imagine I wanted to test whether the siren is activated when
 there is a high priority incident. I would just start writing the test,
 to ultimately find out I have no idea what to assert.  
 
-    [TestMethod()]        
-    public void Alert_activates_the_siren_when_the_priority_is_high()
-    {
-        var fireStation = new FireStation();
+```csharp
+[TestMethod()]        
+public void Alert_activates_the_siren_when_the_priority_is_high()
+{
+    var fireStation = new FireStation();
 
-        fireStation.Alert(new Incident(IncidentPriority.High));
+    fireStation.Alert(new Incident(IncidentPriority.High));
 
-        Assert.Inconclusive("How can I verify the siren is activated?");
-    }
+    Assert.Inconclusive("How can I verify the siren is activated?");
+}
+```
 
 Looking at the collapsed method definitions, I still don't know. There
 is no constructor, so the dependencies aren't resolved in there. Nothing
@@ -94,20 +99,22 @@ interaction.
 So I do that, by creating the mock, setting up the container and setting
 it as the provider for my servicelocator.  
 
-    [TestMethod()]    
-    public void Alert_activates_the_siren_when_the_priority_is_high()
-    {            
-        var immoticaServer = new Mock<IImmoticaServer>();
+```csharp
+[TestMethod()]    
+public void Alert_activates_the_siren_when_the_priority_is_high()
+{            
+    var immoticaServer = new Mock<IImmoticaServer>();
 
-        var kernel = new StandardKernel();
-        kernel.Bind<IImmoticaServer>().ToConstant(immoticaServer.Object);
-        
-        ServiceLocator.SetLocatorProvider(() => new NinjectServiceLocator(kernel));    
+    var kernel = new StandardKernel();
+    kernel.Bind<IImmoticaServer>().ToConstant(immoticaServer.Object);
+    
+    ServiceLocator.SetLocatorProvider(() => new NinjectServiceLocator(kernel));    
 
-        new FireStation().Alert(new Incident(IncidentPriority.High));
+    new FireStation().Alert(new Incident(IncidentPriority.High));
 
-        immoticaServer.Verify(i => i.ActivateSiren(), Times.Once());
-    }
+    immoticaServer.Verify(i => i.ActivateSiren(), Times.Once());
+}
+```
 
 Now I'm polluting my test with responsibilities it shouldn't really care
 about. I could probably move that into some infrastructure or the test
@@ -120,8 +127,10 @@ would have had no idea that I needed two extra stubs to make the test
 pass; one for the IPagingTerminal dependency and one for the IMailServer
 dependency.  
 
-    kernel.Bind<IPagingTerminal>().ToConstant(new Mock<IPagingTerminal>().Object);
-    kernel.Bind<IMailServer>().ToConstant(new Mock<IMailServer>().Object);
+```csharp
+kernel.Bind<IPagingTerminal>().ToConstant(new Mock<IPagingTerminal>().Object);
+kernel.Bind<IMailServer>().ToConstant(new Mock<IMailServer>().Object);
+```
 
 After binding these two dependencies the test finally turns up green.  
   
@@ -154,6 +163,4 @@ This post turned out to be longer than I expected it to be, and I even
 left some annoyances uncovered. I hope I succeeded in explaining my beef
 with the Servicelocator pattern. I trust that the general consensus will
 soon dictate that this pattern easily leads to marginal code, and that
-it actually is an anti-pattern which should be avoided if possible.  
-  
-*What is your experience with the Servicelocator pattern?*
+it actually is an anti-pattern which should be avoided if possible.

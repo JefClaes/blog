@@ -3,7 +3,8 @@ title = "Should I unit- or integration test my ASP.NET Web API services?"
 slug = "2012-07-15-should-i-unit-or-integration-test-my-asp-net-web-api-services"
 published = 2012-07-15T22:37:00+02:00
 author = "Jef Claes"
-tags = [ "Codesnipeets", "ASP.NET", "REST", "HTTP", "Web API",]
+tags = [ "code",]
+url = "2012/07/should-i-unit-or-integration-test-my.html"
 +++
 Over the last two weeks, preparing for a talk, I have been doing some
 research on [ASP.NET Web API](http://www.asp.net/web-api). After working
@@ -29,7 +30,6 @@ fails to prove however, is the *correctness of your code when all the
 little pieces are put together and configured*. And let it be that this
 is extremely important when you're exposing an API.  
 
-  
 Looking at Web API, I would probably test most infrastructure in
 isolation - filters, type formatters, messagehandlers and serialization,
 because these tests will help pinpoint errors in components which will
@@ -52,62 +52,65 @@ HttpMessageHandler, which makes it possible to consume it using an
 [HttpClient](http://code.msdn.microsoft.com/Introduction-to-HttpClient-4a2d9cee)
 in-memory.  
   
-
 So let me show you some code I wrote trying out these thoughts. The
 first thing I did was exposing the hosting server's configuration to my
 tests. This could be as simple as this.
 
-    public class ServerSetup 
+```csharp
+public class ServerSetup 
+{
+    public static HttpSelfHostConfiguration GetConfiguration(string baseAdress)
     {
-        public static HttpSelfHostConfiguration GetConfiguration(string baseAdress)
-        {
-            var config = new HttpSelfHostConfiguration(baseAdress);
-            
-            var kernel = new StandardKernel();
-            kernel.Bind<IResumeStore>().To<ResumeStore>();
-            
-            config.Routes.MapHttpRoute(
-                "DefaultApi", "api/{controller}/{id}",
-                new { id = RouteParameter.Optional });
-            config.MessageHandlers.Add(new MethodOverrideHandler());
-            config.DependencyResolver = new NinjectDependencyResolver(kernel);
+        var config = new HttpSelfHostConfiguration(baseAdress);
+        
+        var kernel = new StandardKernel();
+        kernel.Bind<IResumeStore>().To<ResumeStore>();
+        
+        config.Routes.MapHttpRoute(
+            "DefaultApi", "api/{controller}/{id}",
+            new { id = RouteParameter.Optional });
+        config.MessageHandlers.Add(new MethodOverrideHandler());
+        config.DependencyResolver = new NinjectDependencyResolver(kernel);
 
-            return config;
-        }
+        return config;
     }
+}
+```
 
 Now in my test I can grab this configuration, and just overwrite the
 dependencies and the error detail policy. I can initialize an HttpClient
 by passing in an HttpServer instance which uses the modified
 configuration.  
 
-    private HttpClient _client;
+```csharp
+private HttpClient _client;
 
-    [TestInitialize]
-    public void Setup()
-    {
-        var kernel = new StandardKernel();
-        kernel.Bind<IResumeStore>().ToConstant(new Mock<IResumeStore>().Object);
+[TestInitialize]
+public void Setup()
+{
+    var kernel = new StandardKernel();
+    kernel.Bind<IResumeStore>().ToConstant(new Mock<IResumeStore>().Object);
 
-        var config = ServerSetup.GetConfiguration("http://test");
-        config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;                       
-        config.DependencyResolver = new NinjectDependencyResolver(kernel);
+    var config = ServerSetup.GetConfiguration("http://test");
+    config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;                       
+    config.DependencyResolver = new NinjectDependencyResolver(kernel);
 
-        _client = new HttpClient(new HttpServer(config));
-    }
+    _client = new HttpClient(new HttpServer(config));
+}
 
-    [TestMethod]
-    public void Post_Returns_HttpStatus_Code_Created()
-    {         
-        var result = _client.PostAsync<Resume>(
-              "http://test/api/resume", 
-              new Resume("Jef", "Claes"), 
-              new JsonMediaTypeFormatter()).Result;
+[TestMethod]
+public void Post_Returns_HttpStatus_Code_Created()
+{         
+    var result = _client.PostAsync<Resume>(
+            "http://test/api/resume", 
+            new Resume("Jef", "Claes"), 
+            new JsonMediaTypeFormatter()).Result;
 
-        result.EnsureSuccessStatusCode();
+    result.EnsureSuccessStatusCode();
 
-        Assert.AreEqual(HttpStatusCode.Created, result.StatusCode);
-    }
+    Assert.AreEqual(HttpStatusCode.Created, result.StatusCode);
+}
+```
 
 Now I'm consuming my API almost exactly as a client would; my request
 goes through the routing, infrastructure and the controller.

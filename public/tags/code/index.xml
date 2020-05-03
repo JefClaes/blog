@@ -527,5 +527,130 @@ Yesterday I wrote about an architecture which limits abstractions by solely intr
 That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
     </item>
     
+    <item>
+      <title>Supporting the OPTIONS verb in ASP.NET Web API</title>
+      <link>http://localhost:1313/2012/09/supporting-options-verb-in-aspnet-web.html</link>
+      <pubDate>Sun, 02 Sep 2012 18:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/09/supporting-options-verb-in-aspnet-web.html</guid>
+      <description>ASP.NET Web API controllers support only four HTTP verbs by convention: GET, PUT, POST and DELETE. The full list of existing HTTP verbs is more extensive though. One of those unsupported verbs which can be particularly useful for API discovery and documentation is the OPTIONS verb.
+ The OPTIONS method represents a request for information about the communication options available on the request/response chain identified by the Request-URI. This method allows the client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval.</description>
+    </item>
+    
+    <item>
+      <title>Should I unit- or integration test my ASP.NET Web API services?</title>
+      <link>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my.html</link>
+      <pubDate>Sun, 15 Jul 2012 22:37:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my.html</guid>
+      <description>Over the last two weeks, preparing for a talk, I have been doing some research on ASP.NET Web API. After working my way through the API, and the implementation of certain features, I looked at testing.
+Similar to ASP.NET MVC, Web API allows you to create relatively small building blocks, which can replace parts of, or be added to an existing default global setup. This makes it possible for us to test each component in isolation: controllers, dependency resolvers, filters, serialization, type formatters, messagehandlers and routing.</description>
+    </item>
+    
+    <item>
+      <title>HtmlHelper to generate a top-level menu for areas</title>
+      <link>http://localhost:1313/2012/07/htmlhelper-to-generate-top-level-menu.html</link>
+      <pubDate>Sun, 08 Jul 2012 19:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/htmlhelper-to-generate-top-level-menu.html</guid>
+      <description>Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&amp;rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them.</description>
+    </item>
+    
+    <item>
+      <title>Persisting model state when using PRG</title>
+      <link>http://localhost:1313/2012/06/persisting-model-state-when-using-prg.html</link>
+      <pubDate>Sun, 17 Jun 2012 16:48:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/persisting-model-state-when-using-prg.html</guid>
+      <description>I&amp;rsquo;ve been working on an ASP.NET MVC application in which we frequently apply the Post/Redirect/Get pattern. One of the direct consequences of applying this pattern is that you often want to persist the model state across redirects, so that you don&amp;rsquo;t lose validation errors, or the values of input fields.
+To persist the model state across redirects, we can put TempData to work. The sole purpose of TempData is exactly this; persisting state until the next request.</description>
+    </item>
+    
+    <item>
+      <title>Making my first NancyFx test pass</title>
+      <link>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass.html</link>
+      <pubDate>Mon, 11 Jun 2012 16:47:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass.html</guid>
+      <description>Like I already said last week, I have been dabbling a bit with NancyFx lately.
+This week I took a serious look at testing Nancy modules and Razor views. Due to Nancy&amp;rsquo;s defaults and conventions, it takes a little while to set up Nancy in a test context. Then again, Nancy&amp;rsquo;s granularity makes it simple enough to set up a solid test infrastructure by replacing some of its building blocks.</description>
+    </item>
+    
+    <item>
+      <title>Painless database logging with mongoDB</title>
+      <link>http://localhost:1313/2012/05/painless-database-logging-with-mongodb.html</link>
+      <pubDate>Sun, 20 May 2012 17:18:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/painless-database-logging-with-mongodb.html</guid>
+      <description>While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
+From the mongoDB documentation:
+ Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging.</description>
+    </item>
+    
+    <item>
+      <title>Some Servicelocator pattern stinks</title>
+      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks.html</link>
+      <pubDate>Tue, 17 Apr 2012 20:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks.html</guid>
+      <description>I have been working on a somewhat legacy codebase which makes use of the Servicelocator pattern. Although I always thought of Dependecy Injection to be the superior pattern, I was pleased to find some Inversion of Control implementation in there. Working with the codebase, I discovered first hand how easily, when used without caution and discipline, the Servicelocator pattern can introduce code rot.
+I will walk you through some of the issues I have with the Servicelocator pattern, mostly looking at it from a test perspective.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing the offline application cache update progress</title>
+      <link>http://localhost:1313/2012/04/visualizing-offline-application-cache.html</link>
+      <pubDate>Wed, 11 Apr 2012 16:27:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/visualizing-offline-application-cache.html</guid>
+      <description>I wrote about using the HTML5 application cache earlier, mostly focusing on generating and serving the manifest file using ASP.NET MVC. I also bitched about how not one browser I know of gives an indication of the application cache update progress.
+Today I wanted to write something about how you can visualize the application cache update progress yourself.
+The applicationCache API has several useful and rather straightforward events we can handle to inform the user of the update progress.</description>
+    </item>
+    
+    <item>
+      <title>Check for local file browsing with JavaScript</title>
+      <link>http://localhost:1313/2012/04/check-for-local-file-browsing-with.html</link>
+      <pubDate>Mon, 02 Apr 2012 15:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/check-for-local-file-browsing-with.html</guid>
+      <description>Because I do most of my research while commuting by train, I often pull entire websites offline using httrack. While browsing the [jQuery Mobile documentation](http://jquerymobile.com/demos/1.1.0-rc.1/ locally this morning, I stumbled upon following gem.
+
+I was curious to see how they determine whether a page is browsed locally or not. Looking into the source, I was a bit dissapointed to find nothing but plain common sense. The trick is comparing the protocol of the current location with known local protocols.</description>
+    </item>
+    
+    <item>
+      <title>Add images to a GitHub readme</title>
+      <link>http://localhost:1313/2012/04/add-images-to-github-readme.html</link>
+      <pubDate>Sun, 01 Apr 2012 19:32:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/add-images-to-github-readme.html</guid>
+      <description>Today I wanted to add some screenshots to a GitHub readme for the sake of documenting. While this wasn&amp;rsquo;t particularly hard, I do had to iterate a few times before I got it right.
+Hosting the images You could simply add the images to your repository and reference them using the raw url&amp;rsquo;s, but this isn&amp;rsquo;t very efficient. Using this method, every request needs to go through GitHub&amp;rsquo;s application layer. It&amp;rsquo;s far better to make use of GitHub Pages, a feature purely designed to publish web content.</description>
+    </item>
+    
+    <item>
+      <title>How a web application can download and store over 2GB without you even knowing it</title>
+      <link>http://localhost:1313/2012/03/how-web-application-can-download-and.html</link>
+      <pubDate>Sun, 25 Mar 2012 13:11:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/03/how-web-application-can-download-and.html</guid>
+      <description>I have been experimenting with the HTML5 offline application cache some more over the last few days, doing boundary tests in an attempt to learn more about browser behaviour in edge cases.
+One of these experiments was testing the cache quota.
+Two weeks ago, I blogged about generating and serving an offline application manifest using ASP.NET MVC.
+I reused that code to add hundreds of 7MB PDF files to the cache.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Offline Web applications as an afterthought in ASP.NET MVC</title>
+      <link>http://localhost:1313/2012/03/html5-offline-web-applications-as.html</link>
+      <pubDate>Wed, 14 Mar 2012 15:39:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/03/html5-offline-web-applications-as.html</guid>
+      <description>Recently I prototyped a mobile web application using ASP.NET MVC, jQuery Mobile and some HTML5 features. One of the key goals was to find out how far you can push a web &amp;lsquo;application&amp;rsquo; until the browser starts getting in the way. Working disconnected is one of these things that appear to be a major showstopper at first.
+However - to my surprise honestly - the HTML5 Offline Web applications API seems to be widely implemented across modern browsers already.</description>
+    </item>
+    
   </channel>
 </rss>

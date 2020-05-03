@@ -30,5 +30,14 @@ I help out during the weekends in a small family run magic shop. I&amp;rsquo;m t
       <description>San Francisco, 1852. With the California Gold Rush at its peak, successful gold-seekers wanted to protect all their precious gold nuggets by storing them in a strong safe. At the time, it wasn&amp;rsquo;t that easy to have access to a safe though. At the very beginning, it were just a few local merchants that owned one. Not much later, bankers swamped the area hoping to get their piece of the pie - bringing the strongest safes money can buy.</description>
     </item>
     
+    <item>
+      <title>On crime and document stores</title>
+      <link>http://localhost:1313/2012/07/on-crime-and-document-stores.html</link>
+      <pubDate>Sun, 01 Jul 2012 16:04:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/07/on-crime-and-document-stores.html</guid>
+      <description>Having worked with several storage paradigms over these last few months - from flatfiles, to NoSQL, to the big enterprisey relational databases -, I have spent plenty of time trying to make sense of all the options out there. It wasn&amp;rsquo;t until I watched one of the last episodes of The Wire season 3 that I had an epiphany regarding modeling data in document stores. Yes, I know, I tend to take those things home with me.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -3,14 +3,11 @@ title = "HtmlHelper to generate a top-level menu for areas"
 slug = "2012-07-08-htmlhelper-to-generate-a-top-level-menu-for-areas"
 published = 2012-07-08T19:10:00+02:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", "ASP.NET MVC", "CSS", "ASP.NET",]
+tags = [ "code",]
+url = "2012/07/htmlhelper-to-generate-top-level-menu.html"
 +++
 Last week, we had to set up a new ASP.NET MVC web application, using a
-somewhat customized [Twitter
-Bootstrap](http://twitter.github.com/bootstrap/) build. Because the
-application has multiple functional contexts, we divided it in multiple
-parts using areas. Since these areas were a one-to-one mapping with the
-top-level menu items, we tried abstracting the creation of the menu
+somewhat customized [Twitter Bootstrap](http://twitter.github.com/bootstrap/) build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu
 items, ánd the management of setting the active item, into an
 HtmlHelper.  
   
@@ -18,11 +15,13 @@ Let's say, for this example, that we have six areas: Images, Maps, Play,
 Search, Video and Blog, and we want to render a list item for each one
 of them.  
 
-    <div class="nav-collapse collapse">
-        <ul class="nav">
-            // Add list items         
-        </ul>
-    </div>
+```html
+<div class="nav-collapse collapse">
+    <ul class="nav">
+        // Add list items         
+    </ul>
+</div>
+```
 
 The first solution we tried, assumed we needed an extreme
 low-maintenance solution, for which we would write some infrastructure
@@ -39,53 +38,57 @@ sufficient. To be able to mark the active area with a css class, you can
 get the active areaname from the viewcontext, and use that to compare to
 the iterand value.  
 
-    public static class TopMenuExtensions
+```csharp
+public static class TopMenuExtensions
+{
+    private static IEnumerable<string> _areaNames;
+
+    public static MvcHtmlString RenderTopMenuItems(this HtmlHelper helper)
     {
-        private static IEnumerable<string> _areaNames;
+        var areaNames = GetAreaNames();
+        var currentArea = helper.ViewContext.RouteData.DataTokens["area"] as string;
 
-        public static MvcHtmlString RenderTopMenuItems(this HtmlHelper helper)
+        var html = new StringBuilder();
+        foreach (var areaName in areaNames)
         {
-            var areaNames = GetAreaNames();
-            var currentArea = helper.ViewContext.RouteData.DataTokens["area"] as string;
+            var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
+            var url = urlHelper.Action(string.Empty, string.Empty, new { area = areaName });
+            // or similar
+            // var url = urlHelper.RouteUrl(areaName + "_default");
 
-            var html = new StringBuilder();
-            foreach (var areaName in areaNames)
-            {
-                var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
-                var url = urlHelper.Action(string.Empty, string.Empty, new { area = areaName });
-                // or similar
-                // var url = urlHelper.RouteUrl(areaName + "_default");
-
-                html.AppendLine(areaName.Equals(
-                    currentArea, StringComparison.OrdinalIgnoreCase) ? 
-                    "<li class='active'>" : "<li>");
-                html.AppendLine(string.Format("<a href='{0}'>{1}</a>", url, areaName));
-                html.AppendLine("</li>");
-            }
-
-            return new MvcHtmlString(html.ToString());
+            html.AppendLine(areaName.Equals(
+                currentArea, StringComparison.OrdinalIgnoreCase) ? 
+                "<li class='active'>" : "<li>");
+            html.AppendLine(string.Format("<a href='{0}'>{1}</a>", url, areaName));
+            html.AppendLine("</li>");
         }
 
-        private static IEnumerable<string> GetAreaNames()
-        {
-            if (_areaNames == null)
-            {
-                _areaNames = Assembly
-                    .GetExecutingAssembly()
-                    .GetTypes()
-                    .Where(t => t.IsClass && typeof(AreaRegistration).IsAssignableFrom(t))
-                    .Select(a => (AreaRegistration)Activator.CreateInstance(a))
-                    .Select(r => r.AreaName);
-            }
-
-            return _areaNames;
-        }
+        return new MvcHtmlString(html.ToString());
     }
+
+    private static IEnumerable<string> GetAreaNames()
+    {
+        if (_areaNames == null)
+        {
+            _areaNames = Assembly
+                .GetExecutingAssembly()
+                .GetTypes()
+                .Where(t => t.IsClass && typeof(AreaRegistration).IsAssignableFrom(t))
+                .Select(a => (AreaRegistration)Activator.CreateInstance(a))
+                .Select(r => r.AreaName);
+        }
+
+        return _areaNames;
+    }
+}
+```
 
 Now we can add following line to our \_Layout file, and be done with
 it.  
 
-    @Html.RenderTopMenuItems()  
+```csharp
+@Html.RenderTopMenuItems()  
+```
 
 While this works, we stumbled upon an annoyance pretty quickly: we
 wanted to change the order of the menu items, but couldn't. We took a
@@ -94,33 +97,37 @@ with an attribute, but since the added value is so small compared to the
 extra complexity introduced, we decided just to throw the
 overengineering out.  
 
-    public static MvcHtmlString RenderTopMenuItems(
-                 this HtmlHelper helper, IEnumerable<string> areaNames)
-    {        
-        var currentArea = helper.ViewContext.RouteData.DataTokens["area"] as string;
+```csharp
+public static MvcHtmlString RenderTopMenuItems(
+                this HtmlHelper helper, IEnumerable<string> areaNames)
+{        
+    var currentArea = helper.ViewContext.RouteData.DataTokens["area"] as string;
 
-        var html = new StringBuilder();
-        foreach (var areaName in areaNames)
-        {
-            var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
-            var url = urlHelper.Action(string.Empty, string.Empty, new { area = areaName });
-            
-            if (url == null)
-                throw new NullReferenceException(
-                    string.Format("Couldn't find an url for the area {0}.", areaName));                
-            html.AppendLine(areaName.Equals(
-                              currentArea, StringComparison.OrdinalIgnoreCase) ? 
-                              "<li class='active'>" : "<li>");
-            html.AppendLine(string.Format("<a href='{0}'>{1}</a>", url, areaName));
-            html.AppendLine("</li>");
-        }
+    var html = new StringBuilder();
+    foreach (var areaName in areaNames)
+    {
+        var urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
+        var url = urlHelper.Action(string.Empty, string.Empty, new { area = areaName });
+        
+        if (url == null)
+            throw new NullReferenceException(
+                string.Format("Couldn't find an url for the area {0}.", areaName));                
+        html.AppendLine(areaName.Equals(
+                            currentArea, StringComparison.OrdinalIgnoreCase) ? 
+                            "<li class='active'>" : "<li>");
+        html.AppendLine(string.Format("<a href='{0}'>{1}</a>", url, areaName));
+        html.AppendLine("</li>");
+    }
 
-        return new MvcHtmlString(html.ToString());
-    }       
+    return new MvcHtmlString(html.ToString());
+}  
+```     
 
 The top-level menu items can now be rendered like this.  
 
-    @Html.RenderTopMenuItems(new [] { "Search", "Images", "Blog", "Maps", "Play", "Video" } )
+```csharp
+@Html.RenderTopMenuItems(new [] { "Search", "Images", "Blog", "Maps", "Play", "Video" } )
+```
 
 And the result looks like this.  
   

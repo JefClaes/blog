@@ -3,7 +3,8 @@ title = "The Floating City"
 slug = "2012-07-26-the-floating-city"
 published = 2012-07-26T00:38:00+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2012/07/the-floating-city.html"
 +++
 Yesterday we cruised along the eastern coastline of [Lake
 Garda](http://en.wikipedia.org/wiki/Lake_Garda). Plan A was to visit

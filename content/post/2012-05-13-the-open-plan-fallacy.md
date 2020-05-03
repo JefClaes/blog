@@ -3,7 +3,8 @@ title = "The open plan fallacy"
 slug = "2012-05-13-the-open-plan-fallacy"
 published = 2012-05-13T16:20:00+02:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2012/05/open-plan-fallacy.html"
 +++
 I haven't worked in a whole lot of places, somewhere around four, but
 every single one of them used an [open

@@ -1290,209 +1290,178 @@ That being said, in this post I want to talk about an architecture that tries to
     </item>
     
     <item>
-      <title>Finding the gaps in a sequence of dates</title>
-      <link>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</link>
-      <pubDate>Sun, 23 Sep 2012 20:42:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</guid>
-      <description>Somewhere earlier this week I had to find the gaps in a sequence of dates. Admittedly, my first action was to search Stackoverflow for a clean solution. But since no one asked the question there yet, I had to implement it myself.
-The solution comes in the form of an extension method on IEnumerable&amp;lt;DateTime&amp;gt;, which takes a lower bound and an upper bound, and returns an enumerable of dates.
-public static IEnumerable&amp;lt;DateTime&amp;gt; GetGaps( this IEnumerable&amp;lt;DateTime&amp;gt; sequence, DateTime lowerbound, DateTime upperbound) { var completeSequence = new List&amp;lt;DateTime&amp;gt;(); var tmpDay = lowerbound.</description>
-    </item>
-    
-    <item>
       <title>The 7 R&#39;s of Hypermedia</title>
-      <link>http://localhost:1313/2012/09/the-7-rs-of-hypermedia/</link>
+      <link>http://localhost:1313/2012/09/the-7-rs-of-hypermedia.html</link>
       <pubDate>Mon, 17 Sep 2012 21:42:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/09/the-7-rs-of-hypermedia/</guid>
+      <guid>http://localhost:1313/2012/09/the-7-rs-of-hypermedia.html</guid>
       <description>While most REST concepts are rather easy to grok, there is one concept which I found harder to understand at first: Hypermedia. Let it be that without this concept, you&amp;rsquo;re missing out on an extremely important strength of REST. Hypermedia enables you to build dumb - or smart, depending on your perspective - clients, which are mostly driven by the server. Practically, this is implemented as resources embedding links which allow the client to discover and navigate through your RESTful service.</description>
     </item>
     
     <item>
       <title>Slides and code from my Tunisia REST and ASP.NET Web API session</title>
-      <link>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</link>
+      <link>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest.html</link>
       <pubDate>Thu, 13 Sep 2012 08:55:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</guid>
-      <description>I just returned from a four day trip to Tunisia with Euricom. Next to indulging on the sun, food and all-inclusive cocktails, getting to know each other in a less professional setting, we spent somewhere around half of our days - and this is a rather generous estimate - doing technical sessions and workshops.I gave a 90 minute long crash course on REST and ASP.NET Web API.
-Content
-REST Concepts Architectural values Left overs  ASP.</description>
+      <guid>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest.html</guid>
+      <description>I just returned from a four day trip to Tunisia with Euricom. Next to indulging on the sun, food and all-inclusive cocktails, getting to know each other in a less professional setting, we spent somewhere around half of our days - and this is a rather generous estimate - doing technical sessions and workshops.
+I gave a 90 minute long crash course on REST and ASP.NET Web API.
+Content REST:</description>
     </item>
     
     <item>
       <title>Supporting the OPTIONS verb in ASP.NET Web API</title>
-      <link>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</link>
+      <link>http://localhost:1313/2012/09/supporting-options-verb-in-aspnet-web.html</link>
       <pubDate>Sun, 02 Sep 2012 18:27:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</guid>
+      <guid>http://localhost:1313/2012/09/supporting-options-verb-in-aspnet-web.html</guid>
       <description>ASP.NET Web API controllers support only four HTTP verbs by convention: GET, PUT, POST and DELETE. The full list of existing HTTP verbs is more extensive though. One of those unsupported verbs which can be particularly useful for API discovery and documentation is the OPTIONS verb.
  The OPTIONS method represents a request for information about the communication options available on the request/response chain identified by the Request-URI. This method allows the client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval.</description>
     </item>
     
     <item>
       <title>Is serialization really that expensive?</title>
-      <link>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</link>
+      <link>http://localhost:1313/2012/08/is-serialization-really-that-expensive.html</link>
       <pubDate>Wed, 22 Aug 2012 13:19:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</guid>
+      <guid>http://localhost:1313/2012/08/is-serialization-really-that-expensive.html</guid>
       <description>While wading through an exotic codebase, I stumbled upon a static class named Convert. This class contained somewhere around 2700 (non-generated) lines of code, where each method manually converted some object to a simple textual representation. These methods were then used to convert requests and reponses to and from a remote third party service before logging them to the database for auditing reasons.
 public static class Convert { public static string PaymentRequest(PaymentRequest req) { var sb = new StringBuilder(); sb.</description>
     </item>
     
     <item>
-      <title>ASP.NET Web API error detail policy now defaults to the custom errors configuration</title>
-      <link>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</link>
-      <pubDate>Mon, 20 Aug 2012 08:50:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</guid>
-      <description>While working on an already updated ASP.NET Web API project, I noticed an extra value in the IncludeErrorDetailPolicy enumeration. The IncludeErrorDetailPolicy configuration tells the Web API host when it&amp;rsquo;s allowed to include full error details in responses. Before updating, the RC version of the IncludeErrorDetailPolicy enumeration only had three possible values: LocalOnly, Always and Never. With the released version comes a new value: Default.
-// Summary: // Use the default behavior for the host environment.</description>
-    </item>
-    
-    <item>
       <title>My learning resources distilled</title>
-      <link>http://localhost:1313/2012/08/my-learning-resources-distilled/</link>
+      <link>http://localhost:1313/2012/08/my-learning-resources-distilled.html</link>
       <pubDate>Sun, 19 Aug 2012 16:10:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/08/my-learning-resources-distilled/</guid>
+      <guid>http://localhost:1313/2012/08/my-learning-resources-distilled.html</guid>
       <description>I have picked up a few new tools this summer (MongoDB, NancyFx and WebAPI), and it occurred to me that I&amp;rsquo;ve built certain habits these last few years in how I make use of all the learning resources out there.
 I tried to identify all of them, to then categorize them, to finally order them according to in which phase of my study process I use them.
-The written and spoken word</description>
+The written and spoken word The first thing I look for online is documentation.</description>
     </item>
     
     <item>
       <title>Finito</title>
-      <link>http://localhost:1313/2012/07/finito/</link>
+      <link>http://localhost:1313/2012/07/finito.html</link>
       <pubDate>Mon, 30 Jul 2012 22:23:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/07/finito/</guid>
+      <guid>http://localhost:1313/2012/07/finito.html</guid>
       <description>With this last post, our trip to Italy has come to an end. We have spent these last few days practicing several indispensable tourist activities: testing the ice cold lake water, to wriggle between other sunbathers on the packed beach right after, exuberant eating and drinking, reading novels, and sauntering between prullaria shops.
 Fortuitously, one of our last evenings here was upgraded by fireworks over an already moonlit Lake Garda. This outlying location gave the fireworks show an extra notch.</description>
     </item>
     
     <item>
       <title>Milano</title>
-      <link>http://localhost:1313/2012/07/milano/</link>
+      <link>http://localhost:1313/2012/07/milano.html</link>
       <pubDate>Fri, 27 Jul 2012 22:25:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/07/milano/</guid>
+      <guid>http://localhost:1313/2012/07/milano.html</guid>
       <description>After Venice on Wednesday, we decided to stay in Torbole for a relaxing hike yesterday. As it turned out, the hiking trail that was described in the brochures as suitable for all and with a duration of 1h20, in reality took us 2h30 and sour calves to complete. The views of the lake&amp;rsquo;s valley and its school of windsurfers defying the wind were worth the sweat though. Arriving at the endpoint, and discovering that we had to wait over an hour for the bus to take us back, we stumbled upon one of the best hidden lake side terraces we&amp;rsquo;ve seen yet.</description>
     </item>
     
     <item>
       <title>The Floating City</title>
-      <link>http://localhost:1313/2012/07/the-floating-city/</link>
+      <link>http://localhost:1313/2012/07/the-floating-city.html</link>
       <pubDate>Thu, 26 Jul 2012 00:38:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/07/the-floating-city/</guid>
+      <guid>http://localhost:1313/2012/07/the-floating-city.html</guid>
       <description>Yesterday we cruised along the eastern coastline of Lake Garda. Plan A was to visit Malcesine and take the cableway up to the top of Monte Baldo, but since the line at the ticket center resembled one of a Justin Bieber concert, we skipped the cableway. Maybe we&amp;rsquo;ll give it another try later this week, but then earlier in the day. We continued our journey along the coast, passing past several genuinely picturesque villages.</description>
     </item>
     
     <item>
       <title>Ferrari red. Lamborghini yellow.</title>
-      <link>http://localhost:1313/2012/07/ferrari-red.-lamborghini-yellow./</link>
+      <link>http://localhost:1313/2012/07/ferrari-red-lamborghini-yellow.html</link>
       <pubDate>Tue, 24 Jul 2012 00:56:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/07/ferrari-red.-lamborghini-yellow./</guid>
-      <description>After 14 hours and 34 minutes in the car, driving 1148km, over the German autobahn, swerving Austrian roads, and the Italian autostrade, defying overwhelming hail storms, roadwork and miles long tunnel congestions, we arrived at Torbole, Italy.Torbole is a small village, nestled between the mountains, right at the edge of Lake Garda. While the lakeside view is astonishing, you have to pick the right time to truly experience it. In the daytime, the village is overwhelmed by tourists; miles long rows of cars queue to enter the village, pizzerias and ristorantes on every corner, Germans galore.</description>
+      <guid>http://localhost:1313/2012/07/ferrari-red-lamborghini-yellow.html</guid>
+      <description>After 14 hours and 34 minutes in the car, driving 1148km, over the German autobahn, swerving Austrian roads, and the Italian autostrade, defying overwhelming hail storms, roadwork and miles long tunnel congestions, we arrived at Torbole, Italy.
+Torbole is a small village, nestled between the mountains, right at the edge of Lake Garda. While the lakeside view is astonishing, you have to pick the right time to truly experience it. In the daytime, the village is overwhelmed by tourists; miles long rows of cars queue to enter the village, pizzerias and ristorantes on every corner, Germans galore.</description>
     </item>
     
     <item>
       <title>Should I unit- or integration test my ASP.NET Web API services?</title>
-      <link>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my-asp.net-web-api-services/</link>
+      <link>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my.html</link>
       <pubDate>Sun, 15 Jul 2012 22:37:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my-asp.net-web-api-services/</guid>
+      <guid>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my.html</guid>
       <description>Over the last two weeks, preparing for a talk, I have been doing some research on ASP.NET Web API. After working my way through the API, and the implementation of certain features, I looked at testing.
 Similar to ASP.NET MVC, Web API allows you to create relatively small building blocks, which can replace parts of, or be added to an existing default global setup. This makes it possible for us to test each component in isolation: controllers, dependency resolvers, filters, serialization, type formatters, messagehandlers and routing.</description>
     </item>
     
     <item>
       <title>HtmlHelper to generate a top-level menu for areas</title>
-      <link>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</link>
+      <link>http://localhost:1313/2012/07/htmlhelper-to-generate-top-level-menu.html</link>
       <pubDate>Sun, 08 Jul 2012 19:10:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</guid>
+      <guid>http://localhost:1313/2012/07/htmlhelper-to-generate-top-level-menu.html</guid>
       <description>Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
 Let&amp;rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them.</description>
     </item>
     
     <item>
       <title>On crime and document stores</title>
-      <link>http://localhost:1313/2012/07/on-crime-and-document-stores/</link>
+      <link>http://localhost:1313/2012/07/on-crime-and-document-stores.html</link>
       <pubDate>Sun, 01 Jul 2012 16:04:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/07/on-crime-and-document-stores/</guid>
-      <description>Having worked with several storage paradigms over these last few months
- from flatfiles, to NoSQL, to the big enterprisey relational databases -, I have spent plenty of time trying to make sense of all the options out there. It wasn&amp;rsquo;t until I watched one of the last episodes of The Wire season 3 that I had an epiphany regarding modeling data in document stores. Yes, I know, I tend to take those things home with me.</description>
+      <guid>http://localhost:1313/2012/07/on-crime-and-document-stores.html</guid>
+      <description>Having worked with several storage paradigms over these last few months - from flatfiles, to NoSQL, to the big enterprisey relational databases -, I have spent plenty of time trying to make sense of all the options out there. It wasn&amp;rsquo;t until I watched one of the last episodes of The Wire season 3 that I had an epiphany regarding modeling data in document stores. Yes, I know, I tend to take those things home with me.</description>
     </item>
     
     <item>
       <title>Persisting model state when using PRG</title>
-      <link>http://localhost:1313/2012/06/persisting-model-state-when-using-prg/</link>
+      <link>http://localhost:1313/2012/06/persisting-model-state-when-using-prg.html</link>
       <pubDate>Sun, 17 Jun 2012 16:48:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/06/persisting-model-state-when-using-prg/</guid>
+      <guid>http://localhost:1313/2012/06/persisting-model-state-when-using-prg.html</guid>
       <description>I&amp;rsquo;ve been working on an ASP.NET MVC application in which we frequently apply the Post/Redirect/Get pattern. One of the direct consequences of applying this pattern is that you often want to persist the model state across redirects, so that you don&amp;rsquo;t lose validation errors, or the values of input fields.
 To persist the model state across redirects, we can put TempData to work. The sole purpose of TempData is exactly this; persisting state until the next request.</description>
     </item>
     
     <item>
       <title>Making my first NancyFx test pass</title>
-      <link>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/</link>
+      <link>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass.html</link>
       <pubDate>Mon, 11 Jun 2012 16:47:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/</guid>
+      <guid>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass.html</guid>
       <description>Like I already said last week, I have been dabbling a bit with NancyFx lately.
 This week I took a serious look at testing Nancy modules and Razor views. Due to Nancy&amp;rsquo;s defaults and conventions, it takes a little while to set up Nancy in a test context. Then again, Nancy&amp;rsquo;s granularity makes it simple enough to set up a solid test infrastructure by replacing some of its building blocks.</description>
     </item>
     
     <item>
       <title>Book review: The Art of Agile Development</title>
-      <link>http://localhost:1313/2012/06/book-review-the-art-of-agile-development/</link>
+      <link>http://localhost:1313/2012/06/book-review-art-of-agile-development.html</link>
       <pubDate>Sun, 10 Jun 2012 19:42:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/06/book-review-the-art-of-agile-development/</guid>
+      <guid>http://localhost:1313/2012/06/book-review-art-of-agile-development.html</guid>
       <description>While I have - obviously - read the Agile Manifesto before, and regularly click through to articles on agile, I had never read an extensive work on it. Browsing for a good book, I was advised by a peer to get The Art of Agile Development.
 I wholeheartedly believe in the Agile Manifesto, but somewhere along the way Agile - with a capital A - got somewhat of a bad rep.</description>
     </item>
     
     <item>
-      <title>NancyFx Appharbor builds timing out</title>
-      <link>http://localhost:1313/2012/06/nancyfx-appharbor-builds-timing-out/</link>
-      <pubDate>Tue, 05 Jun 2012 21:26:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/06/nancyfx-appharbor-builds-timing-out/</guid>
-      <description>I have been working on a petite portfolio site for my girlfriend which is implemented in NancyFx, hosted in ASP.NET. On deploying the project to Appharbor, my builds kept timing out. Since the build log was empty, I turned to Twitter for help. This fine gentleman provided me with a solution.
-When you add the Razor view engine to your project using the Nuget package, the postbuild event of your project will be modified to xcopy some assemblies into the bin - which apparently is an Intellisense and precompilation thing.</description>
-    </item>
-    
-    <item>
       <title>The &#39;everyone should learn to code&#39; dilemma</title>
-      <link>http://localhost:1313/2012/06/the-everyone-should-learn-to-code-dilemma/</link>
+      <link>http://localhost:1313/2012/06/everyone-should-learn-to-code-dilemma.html</link>
       <pubDate>Sun, 03 Jun 2012 16:40:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/06/the-everyone-should-learn-to-code-dilemma/</guid>
+      <guid>http://localhost:1313/2012/06/everyone-should-learn-to-code-dilemma.html</guid>
       <description>Back when I was working on software for fire departments, we started thinking about reworking a critical piece of our solution: deployment plans. In a fire department domain, deployment plans help to make a suggestion to the dispatcher about which units should be dispatched to a location when an incident is called in. The suggested composition of units depends on a wide range of variables: availability, response time, ranks, type of incident, required tools, &amp;hellip; , even politics.</description>
     </item>
     
     <item>
       <title>The open plan fallacy testimonials</title>
-      <link>http://localhost:1313/2012/05/the-open-plan-fallacy-testimonials/</link>
+      <link>http://localhost:1313/2012/05/open-plan-fallacy-testimonials.html</link>
       <pubDate>Sun, 27 May 2012 15:36:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/05/the-open-plan-fallacy-testimonials/</guid>
+      <guid>http://localhost:1313/2012/05/open-plan-fallacy-testimonials.html</guid>
       <description>I wrote an article titled &amp;lsquo;The open plan fallacy&amp;rsquo; just two weeks ago. Earlier this week a similar article was published by the New York Times. The content of that article wasn&amp;rsquo;t particularly extraordinary, but the comments were. I waded through all of them on my daily commute, and it&amp;rsquo;s really hard to find one in favor of open plan offices - people seem to be enraged.
 I handpicked some of the most interesting ones.</description>
     </item>
     
     <item>
       <title>Painless database logging with mongoDB</title>
-      <link>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</link>
+      <link>http://localhost:1313/2012/05/painless-database-logging-with-mongodb.html</link>
       <pubDate>Sun, 20 May 2012 17:18:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</guid>
+      <guid>http://localhost:1313/2012/05/painless-database-logging-with-mongodb.html</guid>
       <description>While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
 From the mongoDB documentation:
  Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging.</description>
@@ -1500,92 +1469,93 @@ From the mongoDB documentation:
     
     <item>
       <title>The open plan fallacy</title>
-      <link>http://localhost:1313/2012/05/the-open-plan-fallacy/</link>
+      <link>http://localhost:1313/2012/05/open-plan-fallacy.html</link>
       <pubDate>Sun, 13 May 2012 16:20:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/05/the-open-plan-fallacy/</guid>
+      <guid>http://localhost:1313/2012/05/open-plan-fallacy.html</guid>
       <description>I haven&amp;rsquo;t worked in a whole lot of places, somewhere around four, but every single one of them used an open plan to structure their workplace. From what I hear from others, it&amp;rsquo;s the standard.
 There are a few things to say about the advantages of an open office layout. They should stimulate communication, create more opportunities for observing and learning from others and be more cost-effective. I&amp;rsquo;m afraid it&amp;rsquo;s the latter which is the biggest driver though.</description>
     </item>
     
     <item>
       <title>Why I will always love RSS</title>
-      <link>http://localhost:1313/2012/05/why-i-will-always-love-rss/</link>
+      <link>http://localhost:1313/2012/05/why-i-will-always-love-rss.html</link>
       <pubDate>Sun, 06 May 2012 16:50:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/05/why-i-will-always-love-rss/</guid>
+      <guid>http://localhost:1313/2012/05/why-i-will-always-love-rss.html</guid>
       <description>There has been a lot of noise in the tech community earlier this year about how RSS is supposedly having one foot in the grave. If that would be even remotely true, I hope it dies with its boots on. The herald would be browsers and social networking sites killing or hiding support for RSS. While that may be true, their motives shouldn&amp;rsquo;t rig our opinions.
 RSS has never worked out for the regular consumer, not directly anyways.</description>
     </item>
     
     <item>
       <title>My InfoQ article on HTML5 offline web applications</title>
-      <link>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</link>
+      <link>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web.html</link>
       <pubDate>Wed, 02 May 2012 20:09:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</guid>
+      <guid>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web.html</guid>
       <description>After writing a few things on HTML5 offline web applications earlier this year, I got contacted by InfoQ to write an in-detail article on the subject for them. I hesitated at first, because I was afraid that it would feel too much like work, taking the fun out of my writing. Turns out it wasn&amp;rsquo;t like that at all. The guys at infoQ were really relaxed to work with, asking interesting questions and giving useful feedback, without forcing me into a certain direction.</description>
     </item>
     
     <item>
       <title>Some Servicelocator pattern stinks</title>
-      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</link>
+      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks.html</link>
       <pubDate>Tue, 17 Apr 2012 20:33:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</guid>
+      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks.html</guid>
       <description>I have been working on a somewhat legacy codebase which makes use of the Servicelocator pattern. Although I always thought of Dependecy Injection to be the superior pattern, I was pleased to find some Inversion of Control implementation in there. Working with the codebase, I discovered first hand how easily, when used without caution and discipline, the Servicelocator pattern can introduce code rot.
 I will walk you through some of the issues I have with the Servicelocator pattern, mostly looking at it from a test perspective.</description>
     </item>
     
     <item>
       <title>Visualizing the offline application cache update progress</title>
-      <link>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</link>
+      <link>http://localhost:1313/2012/04/visualizing-offline-application-cache.html</link>
       <pubDate>Wed, 11 Apr 2012 16:27:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</guid>
-      <description>I wrote about using the HTML5 application cache earlier, mostly focusing on generating and serving the manifest file using ASP.NET MVC. I also bitched about how not one browser I know of gives an indication of the application cache update progress. Today I wanted to write something about how you can visualize the application cache update progress yourself.
+      <guid>http://localhost:1313/2012/04/visualizing-offline-application-cache.html</guid>
+      <description>I wrote about using the HTML5 application cache earlier, mostly focusing on generating and serving the manifest file using ASP.NET MVC. I also bitched about how not one browser I know of gives an indication of the application cache update progress.
+Today I wanted to write something about how you can visualize the application cache update progress yourself.
 The applicationCache API has several useful and rather straightforward events we can handle to inform the user of the update progress.</description>
     </item>
     
     <item>
       <title>Check for local file browsing with JavaScript</title>
-      <link>http://localhost:1313/2012/04/check-for-local-file-browsing-with-javascript/</link>
+      <link>http://localhost:1313/2012/04/check-for-local-file-browsing-with.html</link>
       <pubDate>Mon, 02 Apr 2012 15:34:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/04/check-for-local-file-browsing-with-javascript/</guid>
-      <description>Because I do most of my research while commuting by train, I often pull entire websites offline using httrack. While browsing the jQuery Mobile documentation locally this morning, I stumbled upon following gem.
+      <guid>http://localhost:1313/2012/04/check-for-local-file-browsing-with.html</guid>
+      <description>Because I do most of my research while commuting by train, I often pull entire websites offline using httrack. While browsing the [jQuery Mobile documentation](http://jquerymobile.com/demos/1.1.0-rc.1/ locally this morning, I stumbled upon following gem.
 
 I was curious to see how they determine whether a page is browsed locally or not. Looking into the source, I was a bit dissapointed to find nothing but plain common sense. The trick is comparing the protocol of the current location with known local protocols.</description>
     </item>
     
     <item>
       <title>Add images to a GitHub readme</title>
-      <link>http://localhost:1313/2012/04/add-images-to-a-github-readme/</link>
+      <link>http://localhost:1313/2012/04/add-images-to-github-readme.html</link>
       <pubDate>Sun, 01 Apr 2012 19:32:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/04/add-images-to-a-github-readme/</guid>
+      <guid>http://localhost:1313/2012/04/add-images-to-github-readme.html</guid>
       <description>Today I wanted to add some screenshots to a GitHub readme for the sake of documenting. While this wasn&amp;rsquo;t particularly hard, I do had to iterate a few times before I got it right.
-Hosting the images
-You could simply add the images to your repository and reference them using the raw url&amp;rsquo;s, but this isn&amp;rsquo;t very efficient. Using this method, every request needs to go through GitHub&amp;rsquo;s application layer. It&amp;rsquo;s far better to make use of GitHub Pages, a feature purely designed to publish web content.</description>
+Hosting the images You could simply add the images to your repository and reference them using the raw url&amp;rsquo;s, but this isn&amp;rsquo;t very efficient. Using this method, every request needs to go through GitHub&amp;rsquo;s application layer. It&amp;rsquo;s far better to make use of GitHub Pages, a feature purely designed to publish web content.</description>
     </item>
     
     <item>
       <title>How a web application can download and store over 2GB without you even knowing it</title>
-      <link>http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/</link>
+      <link>http://localhost:1313/2012/03/how-web-application-can-download-and.html</link>
       <pubDate>Sun, 25 Mar 2012 13:11:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/</guid>
+      <guid>http://localhost:1313/2012/03/how-web-application-can-download-and.html</guid>
       <description>I have been experimenting with the HTML5 offline application cache some more over the last few days, doing boundary tests in an attempt to learn more about browser behaviour in edge cases.
 One of these experiments was testing the cache quota.
-Two weeks ago, I blogged about generating and serving an offline application manifest using ASP.NET MVC. I reused that code to add hundreds of 7MB PDF files to the cache.</description>
+Two weeks ago, I blogged about generating and serving an offline application manifest using ASP.NET MVC.
+I reused that code to add hundreds of 7MB PDF files to the cache.</description>
     </item>
     
     <item>
       <title>Sent from my phone</title>
-      <link>http://localhost:1313/2012/03/sent-from-my-phone/</link>
+      <link>http://localhost:1313/2012/03/sent-from-my-phone.html</link>
       <pubDate>Sat, 17 Mar 2012 19:46:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/03/sent-from-my-phone/</guid>
+      <guid>http://localhost:1313/2012/03/sent-from-my-phone.html</guid>
       <description>According to Matt from 37signals the line &amp;ldquo;Sent from my iPhone&amp;rdquo; at the bottom of an email means this:
  Let’s be honest. “Sent from my iPhone” really means “I’m not going to bother to proofread and correct this because it would take me an extra 30 seconds.”
  I agree. I too use this line as an excuse to write a terse message and omit proper salutations.
@@ -1594,10 +1564,10 @@ However, I also think these four simple words greatly helped the viral growth of
     
     <item>
       <title>HTML5 Offline Web applications as an afterthought in ASP.NET MVC</title>
-      <link>http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/</link>
+      <link>http://localhost:1313/2012/03/html5-offline-web-applications-as.html</link>
       <pubDate>Wed, 14 Mar 2012 15:39:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/</guid>
+      <guid>http://localhost:1313/2012/03/html5-offline-web-applications-as.html</guid>
       <description>Recently I prototyped a mobile web application using ASP.NET MVC, jQuery Mobile and some HTML5 features. One of the key goals was to find out how far you can push a web &amp;lsquo;application&amp;rsquo; until the browser starts getting in the way. Working disconnected is one of these things that appear to be a major showstopper at first.
 However - to my surprise honestly - the HTML5 Offline Web applications API seems to be widely implemented across modern browsers already.</description>
     </item>

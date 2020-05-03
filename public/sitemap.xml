@@ -873,11 +873,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</loc>
-    <lastmod>2012-09-23T20:42:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/linq/</loc>
     <lastmod>2012-09-23T20:42:00+02:00</lastmod>
   </url>
@@ -888,7 +883,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/09/the-7-rs-of-hypermedia/</loc>
+    <loc>http://localhost:1313/2012/09/the-7-rs-of-hypermedia.html</loc>
     <lastmod>2012-09-17T21:42:00+02:00</lastmod>
   </url>
   
@@ -898,47 +893,42 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</loc>
+    <loc>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest.html</loc>
     <lastmod>2012-09-13T08:55:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</loc>
+    <loc>http://localhost:1313/2012/09/supporting-options-verb-in-aspnet-web.html</loc>
     <lastmod>2012-09-02T18:27:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</loc>
+    <loc>http://localhost:1313/2012/08/is-serialization-really-that-expensive.html</loc>
     <lastmod>2012-08-22T13:19:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/08/asp.net-web-api-error-detail-policy-now-defaults-to-the-custom-errors-configuration/</loc>
-    <lastmod>2012-08-20T08:50:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/08/my-learning-resources-distilled/</loc>
+    <loc>http://localhost:1313/2012/08/my-learning-resources-distilled.html</loc>
     <lastmod>2012-08-19T16:10:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/07/finito/</loc>
+    <loc>http://localhost:1313/2012/07/finito.html</loc>
     <lastmod>2012-07-30T22:23:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/07/milano/</loc>
+    <loc>http://localhost:1313/2012/07/milano.html</loc>
     <lastmod>2012-07-27T22:25:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/07/the-floating-city/</loc>
+    <loc>http://localhost:1313/2012/07/the-floating-city.html</loc>
     <lastmod>2012-07-26T00:38:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/07/ferrari-red.-lamborghini-yellow./</loc>
+    <loc>http://localhost:1313/2012/07/ferrari-red-lamborghini-yellow.html</loc>
     <lastmod>2012-07-24T00:56:00+02:00</lastmod>
   </url>
   
@@ -948,17 +938,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my-asp.net-web-api-services/</loc>
+    <loc>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my.html</loc>
     <lastmod>2012-07-15T22:37:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/07/htmlhelper-to-generate-a-top-level-menu-for-areas/</loc>
+    <loc>http://localhost:1313/2012/07/htmlhelper-to-generate-top-level-menu.html</loc>
     <lastmod>2012-07-08T19:10:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/07/on-crime-and-document-stores/</loc>
+    <loc>http://localhost:1313/2012/07/on-crime-and-document-stores.html</loc>
     <lastmod>2012-07-01T16:04:00+02:00</lastmod>
   </url>
   
@@ -968,17 +958,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/06/persisting-model-state-when-using-prg/</loc>
+    <loc>http://localhost:1313/2012/06/persisting-model-state-when-using-prg.html</loc>
     <lastmod>2012-06-17T16:48:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/</loc>
+    <loc>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass.html</loc>
     <lastmod>2012-06-11T16:47:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/06/book-review-the-art-of-agile-development/</loc>
+    <loc>http://localhost:1313/2012/06/book-review-art-of-agile-development.html</loc>
     <lastmod>2012-06-10T19:42:00+02:00</lastmod>
   </url>
   
@@ -988,32 +978,27 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/06/nancyfx-appharbor-builds-timing-out/</loc>
-    <lastmod>2012-06-05T21:26:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2012/06/the-everyone-should-learn-to-code-dilemma/</loc>
+    <loc>http://localhost:1313/2012/06/everyone-should-learn-to-code-dilemma.html</loc>
     <lastmod>2012-06-03T16:40:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/05/the-open-plan-fallacy-testimonials/</loc>
+    <loc>http://localhost:1313/2012/05/open-plan-fallacy-testimonials.html</loc>
     <lastmod>2012-05-27T15:36:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</loc>
+    <loc>http://localhost:1313/2012/05/painless-database-logging-with-mongodb.html</loc>
     <lastmod>2012-05-20T17:18:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/05/the-open-plan-fallacy/</loc>
+    <loc>http://localhost:1313/2012/05/open-plan-fallacy.html</loc>
     <lastmod>2012-05-13T16:20:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/05/why-i-will-always-love-rss/</loc>
+    <loc>http://localhost:1313/2012/05/why-i-will-always-love-rss.html</loc>
     <lastmod>2012-05-06T16:50:00+02:00</lastmod>
   </url>
   
@@ -1023,42 +1008,42 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</loc>
+    <loc>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web.html</loc>
     <lastmod>2012-05-02T20:09:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</loc>
+    <loc>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks.html</loc>
     <lastmod>2012-04-17T20:33:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</loc>
+    <loc>http://localhost:1313/2012/04/visualizing-offline-application-cache.html</loc>
     <lastmod>2012-04-11T16:27:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/04/check-for-local-file-browsing-with-javascript/</loc>
+    <loc>http://localhost:1313/2012/04/check-for-local-file-browsing-with.html</loc>
     <lastmod>2012-04-02T15:34:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/04/add-images-to-a-github-readme/</loc>
+    <loc>http://localhost:1313/2012/04/add-images-to-github-readme.html</loc>
     <lastmod>2012-04-01T19:32:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/03/how-a-web-application-can-download-and-store-over-2gb-without-you-even-knowing-it/</loc>
+    <loc>http://localhost:1313/2012/03/how-web-application-can-download-and.html</loc>
     <lastmod>2012-03-25T13:11:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/03/sent-from-my-phone/</loc>
+    <loc>http://localhost:1313/2012/03/sent-from-my-phone.html</loc>
     <lastmod>2012-03-17T19:46:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/03/html5-offline-web-applications-as-an-afterthought-in-asp.net-mvc/</loc>
+    <loc>http://localhost:1313/2012/03/html5-offline-web-applications-as.html</loc>
     <lastmod>2012-03-14T15:39:00+01:00</lastmod>
   </url>
   

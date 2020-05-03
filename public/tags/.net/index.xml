@@ -12,69 +12,6 @@
     
     
     <item>
-      <title>Finding the gaps in a sequence of dates</title>
-      <link>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</link>
-      <pubDate>Sun, 23 Sep 2012 20:42:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</guid>
-      <description>Somewhere earlier this week I had to find the gaps in a sequence of dates. Admittedly, my first action was to search Stackoverflow for a clean solution. But since no one asked the question there yet, I had to implement it myself.
-The solution comes in the form of an extension method on IEnumerable&amp;lt;DateTime&amp;gt;, which takes a lower bound and an upper bound, and returns an enumerable of dates.
-public static IEnumerable&amp;lt;DateTime&amp;gt; GetGaps( this IEnumerable&amp;lt;DateTime&amp;gt; sequence, DateTime lowerbound, DateTime upperbound) { var completeSequence = new List&amp;lt;DateTime&amp;gt;(); var tmpDay = lowerbound.</description>
-    </item>
-    
-    <item>
-      <title>Slides and code from my Tunisia REST and ASP.NET Web API session</title>
-      <link>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</link>
-      <pubDate>Thu, 13 Sep 2012 08:55:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/slides-and-code-from-my-tunisia-rest-and-asp.net-web-api-session/</guid>
-      <description>I just returned from a four day trip to Tunisia with Euricom. Next to indulging on the sun, food and all-inclusive cocktails, getting to know each other in a less professional setting, we spent somewhere around half of our days - and this is a rather generous estimate - doing technical sessions and workshops.I gave a 90 minute long crash course on REST and ASP.NET Web API.
-Content
-REST Concepts Architectural values Left overs  ASP.</description>
-    </item>
-    
-    <item>
-      <title>Is serialization really that expensive?</title>
-      <link>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</link>
-      <pubDate>Wed, 22 Aug 2012 13:19:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</guid>
-      <description>While wading through an exotic codebase, I stumbled upon a static class named Convert. This class contained somewhere around 2700 (non-generated) lines of code, where each method manually converted some object to a simple textual representation. These methods were then used to convert requests and reponses to and from a remote third party service before logging them to the database for auditing reasons.
-public static class Convert { public static string PaymentRequest(PaymentRequest req) { var sb = new StringBuilder(); sb.</description>
-    </item>
-    
-    <item>
-      <title>Making my first NancyFx test pass</title>
-      <link>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/</link>
-      <pubDate>Mon, 11 Jun 2012 16:47:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/06/making-my-first-nancyfx-test-pass/</guid>
-      <description>Like I already said last week, I have been dabbling a bit with NancyFx lately.
-This week I took a serious look at testing Nancy modules and Razor views. Due to Nancy&amp;rsquo;s defaults and conventions, it takes a little while to set up Nancy in a test context. Then again, Nancy&amp;rsquo;s granularity makes it simple enough to set up a solid test infrastructure by replacing some of its building blocks.</description>
-    </item>
-    
-    <item>
-      <title>Painless database logging with mongoDB</title>
-      <link>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</link>
-      <pubDate>Sun, 20 May 2012 17:18:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</guid>
-      <description>While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
-From the mongoDB documentation:
- Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging.</description>
-    </item>
-    
-    <item>
-      <title>Some Servicelocator pattern stinks</title>
-      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</link>
-      <pubDate>Tue, 17 Apr 2012 20:33:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks/</guid>
-      <description>I have been working on a somewhat legacy codebase which makes use of the Servicelocator pattern. Although I always thought of Dependecy Injection to be the superior pattern, I was pleased to find some Inversion of Control implementation in there. Working with the codebase, I discovered first hand how easily, when used without caution and discipline, the Servicelocator pattern can introduce code rot.
-I will walk you through some of the issues I have with the Servicelocator pattern, mostly looking at it from a test perspective.</description>
-    </item>
-    
-    <item>
       <title>Book review: Working with NHibernate 3.0</title>
       <link>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</link>
       <pubDate>Wed, 08 Feb 2012 20:21:00 +0100</pubDate>

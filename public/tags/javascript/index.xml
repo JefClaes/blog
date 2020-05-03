@@ -12,36 +12,6 @@
     
     
     <item>
-      <title>My InfoQ article on HTML5 offline web applications</title>
-      <link>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</link>
-      <pubDate>Wed, 02 May 2012 20:09:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/05/my-infoq-article-on-html5-offline-web-applications/</guid>
-      <description>After writing a few things on HTML5 offline web applications earlier this year, I got contacted by InfoQ to write an in-detail article on the subject for them. I hesitated at first, because I was afraid that it would feel too much like work, taking the fun out of my writing. Turns out it wasn&amp;rsquo;t like that at all. The guys at infoQ were really relaxed to work with, asking interesting questions and giving useful feedback, without forcing me into a certain direction.</description>
-    </item>
-    
-    <item>
-      <title>Visualizing the offline application cache update progress</title>
-      <link>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</link>
-      <pubDate>Wed, 11 Apr 2012 16:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/04/visualizing-the-offline-application-cache-update-progress/</guid>
-      <description>I wrote about using the HTML5 application cache earlier, mostly focusing on generating and serving the manifest file using ASP.NET MVC. I also bitched about how not one browser I know of gives an indication of the application cache update progress. Today I wanted to write something about how you can visualize the application cache update progress yourself.
-The applicationCache API has several useful and rather straightforward events we can handle to inform the user of the update progress.</description>
-    </item>
-    
-    <item>
-      <title>Check for local file browsing with JavaScript</title>
-      <link>http://localhost:1313/2012/04/check-for-local-file-browsing-with-javascript/</link>
-      <pubDate>Mon, 02 Apr 2012 15:34:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/04/check-for-local-file-browsing-with-javascript/</guid>
-      <description>Because I do most of my research while commuting by train, I often pull entire websites offline using httrack. While browsing the jQuery Mobile documentation locally this morning, I stumbled upon following gem.
-
-I was curious to see how they determine whether a page is browsed locally or not. Looking into the source, I was a bit dissapointed to find nothing but plain common sense. The trick is comparing the protocol of the current location with known local protocols.</description>
-    </item>
-    
-    <item>
       <title>Daydreaming about jQuery Mobile and the WebAPI</title>
       <link>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</link>
       <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>

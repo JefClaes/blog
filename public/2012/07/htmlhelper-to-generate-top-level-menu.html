@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>HtmlHelper to generate a top-level menu for areas - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="HtmlHelper to generate a top-level menu for areas">
+<meta itemprop="description" content="Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them.">
+<meta itemprop="datePublished" content="2012-07-08T19:10:00&#43;02:00" />
+<meta itemprop="dateModified" content="2012-07-08T19:10:00&#43;02:00" />
+<meta itemprop="wordCount" content="584">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="HtmlHelper to generate a top-level menu for areas" />
+<meta property="og:description" content="Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/07/htmlhelper-to-generate-top-level-menu.html" />
+<meta property="article:published_time" content="2012-07-08T19:10:00+02:00" />
+<meta property="article:modified_time" content="2012-07-08T19:10:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HtmlHelper to generate a top-level menu for areas"/>
+<meta name="twitter:description" content="Last week, we had to set up a new ASP.NET MVC web application, using a somewhat customized Twitter Bootstrap build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu items, ánd the management of setting the active item, into an HtmlHelper.
+Let&rsquo;s say, for this example, that we have six areas: Images, Maps, Play, Search, Video and Blog, and we want to render a list item for each one of them."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">08</span>
+							<span class="rest">Jul 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">HtmlHelper to generate a top-level menu for areas</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Last week, we had to set up a new ASP.NET MVC web application, using a
+somewhat customized <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> build. Because the application has multiple functional contexts, we divided it in multiple parts using areas. Since these areas were a one-to-one mapping with the top-level menu items, we tried abstracting the creation of the menu
+items, ánd the management of setting the active item, into an
+HtmlHelper.</p>
+<p>Let&rsquo;s say, for this example, that we have six areas: Images, Maps, Play,
+Search, Video and Blog, and we want to render a list item for each one
+of them.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2;font-weight:bold">div</span> <span style="color:#268bd2">class</span>=<span style="color:#2aa198">&#34;nav-collapse collapse&#34;</span>&gt;
+    &lt;<span style="color:#268bd2;font-weight:bold">ul</span> <span style="color:#268bd2">class</span>=<span style="color:#2aa198">&#34;nav&#34;</span>&gt;
+        // Add list items         
+    &lt;/<span style="color:#268bd2;font-weight:bold">ul</span>&gt;
+&lt;/<span style="color:#268bd2;font-weight:bold">div</span>&gt;
+</code></pre></div><p>The first solution we tried, assumed we needed an extreme
+low-maintenance solution, for which we would write some infrastructure
+once, and then be able to just create new areas without having to think
+about updating the top-level menu.</p>
+<p>This solution reflected over all the types looking for classes which
+inherit from the AreaRegistration class. Once you get a list of all the
+area names, you can iterate over them and create a list item for each
+one of them, using an instance of UrlHelper to resolve the associated
+url. You have to impose some routing convention to make the url lookup
+robust though; in this example, I assume the default route is
+sufficient. To be able to mark the active area with a css class, you can
+get the active areaname from the viewcontext, and use that to compare to
+the iterand value.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">static</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">TopMenuExtensions</span>
+{
+    <span style="color:#859900">private</span> <span style="color:#859900">static</span> <span style="color:#268bd2">IEnumerable</span>&lt;<span style="color:#859900;font-weight:bold">string</span>&gt; <span style="color:#268bd2">_areaNames</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#859900">static</span> <span style="color:#268bd2">MvcHtmlString</span> <span style="color:#268bd2">RenderTopMenuItems</span>(<span style="color:#859900">this</span> <span style="color:#268bd2">HtmlHelper</span> <span style="color:#268bd2">helper</span>)
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">areaNames</span> = <span style="color:#268bd2">GetAreaNames</span>();
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">currentArea</span> = <span style="color:#268bd2">helper</span>.<span style="color:#268bd2">ViewContext</span>.<span style="color:#268bd2">RouteData</span>.<span style="color:#268bd2">DataTokens</span>[<span style="color:#2aa198">&#34;area&#34;</span>] <span style="color:#859900">as</span> <span style="color:#859900;font-weight:bold">string</span>;
+
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">html</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">StringBuilder</span>();
+        <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">areaName</span> <span style="color:#859900">in</span> <span style="color:#268bd2">areaNames</span>)
+        {
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">urlHelper</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">UrlHelper</span>(<span style="color:#268bd2">helper</span>.<span style="color:#268bd2">ViewContext</span>.<span style="color:#268bd2">RequestContext</span>);
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">url</span> = <span style="color:#268bd2">urlHelper</span>.<span style="color:#268bd2">Action</span>(<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Empty</span>, <span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Empty</span>, <span style="color:#859900">new</span> { <span style="color:#268bd2">area</span> = <span style="color:#268bd2">areaName</span> });
+            <span style="color:#93a1a1;font-style:italic">// or similar
+</span><span style="color:#93a1a1;font-style:italic"></span>            <span style="color:#93a1a1;font-style:italic">// var url = urlHelper.RouteUrl(areaName + &#34;_default&#34;);
+</span><span style="color:#93a1a1;font-style:italic"></span>
+            <span style="color:#268bd2">html</span>.<span style="color:#268bd2">AppendLine</span>(<span style="color:#268bd2">areaName</span>.<span style="color:#268bd2">Equals</span>(
+                <span style="color:#268bd2">currentArea</span>, <span style="color:#268bd2">StringComparison</span>.<span style="color:#268bd2">OrdinalIgnoreCase</span>) ? 
+                <span style="color:#2aa198">&#34;&lt;li class=&#39;active&#39;&gt;&#34;</span> : <span style="color:#2aa198">&#34;&lt;li&gt;&#34;</span>);
+            <span style="color:#268bd2">html</span>.<span style="color:#268bd2">AppendLine</span>(<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Format</span>(<span style="color:#2aa198">&#34;&lt;a href=&#39;{0}&#39;&gt;{1}&lt;/a&gt;&#34;</span>, <span style="color:#268bd2">url</span>, <span style="color:#268bd2">areaName</span>));
+            <span style="color:#268bd2">html</span>.<span style="color:#268bd2">AppendLine</span>(<span style="color:#2aa198">&#34;&lt;/li&gt;&#34;</span>);
+        }
+
+        <span style="color:#859900">return</span> <span style="color:#859900">new</span> <span style="color:#268bd2">MvcHtmlString</span>(<span style="color:#268bd2">html</span>.<span style="color:#268bd2">ToString</span>());
+    }
+
+    <span style="color:#859900">private</span> <span style="color:#859900">static</span> <span style="color:#268bd2">IEnumerable</span>&lt;<span style="color:#859900;font-weight:bold">string</span>&gt; <span style="color:#268bd2">GetAreaNames</span>()
+    {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">_areaNames</span> == <span style="color:#859900">null</span>)
+        {
+            <span style="color:#268bd2">_areaNames</span> = <span style="color:#268bd2">Assembly</span>
+                .<span style="color:#268bd2">GetExecutingAssembly</span>()
+                .<span style="color:#268bd2">GetTypes</span>()
+                .<span style="color:#268bd2">Where</span>(<span style="color:#268bd2">t</span> =&gt; <span style="color:#268bd2">t</span>.<span style="color:#268bd2">IsClass</span> &amp;&amp; <span style="color:#859900">typeof</span>(<span style="color:#268bd2">AreaRegistration</span>).<span style="color:#268bd2">IsAssignableFrom</span>(<span style="color:#268bd2">t</span>))
+                .<span style="color:#268bd2">Select</span>(<span style="color:#268bd2">a</span> =&gt; (<span style="color:#268bd2">AreaRegistration</span>)<span style="color:#268bd2">Activator</span>.<span style="color:#268bd2">CreateInstance</span>(<span style="color:#268bd2">a</span>))
+                .<span style="color:#268bd2">Select</span>(<span style="color:#268bd2">r</span> =&gt; <span style="color:#268bd2">r</span>.<span style="color:#268bd2">AreaName</span>);
+        }
+
+        <span style="color:#859900">return</span> <span style="color:#268bd2">_areaNames</span>;
+    }
+}
+</code></pre></div><p>Now we can add following line to our _Layout file, and be done with
+it.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">@Html</span>.<span style="color:#268bd2">RenderTopMenuItems</span>()  
+</code></pre></div><p>While this works, we stumbled upon an annoyance pretty quickly: we
+wanted to change the order of the menu items, but couldn&rsquo;t. We took a
+step back, and momentarily considered decorating the arearegistrations
+with an attribute, but since the added value is so small compared to the
+extra complexity introduced, we decided just to throw the
+overengineering out.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">static</span> <span style="color:#268bd2">MvcHtmlString</span> <span style="color:#268bd2">RenderTopMenuItems</span>(
+                <span style="color:#859900">this</span> <span style="color:#268bd2">HtmlHelper</span> <span style="color:#268bd2">helper</span>, <span style="color:#268bd2">IEnumerable</span>&lt;<span style="color:#859900;font-weight:bold">string</span>&gt; <span style="color:#268bd2">areaNames</span>)
+{        
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">currentArea</span> = <span style="color:#268bd2">helper</span>.<span style="color:#268bd2">ViewContext</span>.<span style="color:#268bd2">RouteData</span>.<span style="color:#268bd2">DataTokens</span>[<span style="color:#2aa198">&#34;area&#34;</span>] <span style="color:#859900">as</span> <span style="color:#859900;font-weight:bold">string</span>;
+
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">html</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">StringBuilder</span>();
+    <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">areaName</span> <span style="color:#859900">in</span> <span style="color:#268bd2">areaNames</span>)
+    {
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">urlHelper</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">UrlHelper</span>(<span style="color:#268bd2">helper</span>.<span style="color:#268bd2">ViewContext</span>.<span style="color:#268bd2">RequestContext</span>);
+        <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">url</span> = <span style="color:#268bd2">urlHelper</span>.<span style="color:#268bd2">Action</span>(<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Empty</span>, <span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Empty</span>, <span style="color:#859900">new</span> { <span style="color:#268bd2">area</span> = <span style="color:#268bd2">areaName</span> });
+        
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">url</span> == <span style="color:#859900">null</span>)
+            <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">NullReferenceException</span>(
+                <span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Format</span>(<span style="color:#2aa198">&#34;Couldn&#39;t find an url for the area {0}.&#34;</span>, <span style="color:#268bd2">areaName</span>));                
+        <span style="color:#268bd2">html</span>.<span style="color:#268bd2">AppendLine</span>(<span style="color:#268bd2">areaName</span>.<span style="color:#268bd2">Equals</span>(
+                            <span style="color:#268bd2">currentArea</span>, <span style="color:#268bd2">StringComparison</span>.<span style="color:#268bd2">OrdinalIgnoreCase</span>) ? 
+                            <span style="color:#2aa198">&#34;&lt;li class=&#39;active&#39;&gt;&#34;</span> : <span style="color:#2aa198">&#34;&lt;li&gt;&#34;</span>);
+        <span style="color:#268bd2">html</span>.<span style="color:#268bd2">AppendLine</span>(<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Format</span>(<span style="color:#2aa198">&#34;&lt;a href=&#39;{0}&#39;&gt;{1}&lt;/a&gt;&#34;</span>, <span style="color:#268bd2">url</span>, <span style="color:#268bd2">areaName</span>));
+        <span style="color:#268bd2">html</span>.<span style="color:#268bd2">AppendLine</span>(<span style="color:#2aa198">&#34;&lt;/li&gt;&#34;</span>);
+    }
+
+    <span style="color:#859900">return</span> <span style="color:#859900">new</span> <span style="color:#268bd2">MvcHtmlString</span>(<span style="color:#268bd2">html</span>.<span style="color:#268bd2">ToString</span>());
+}  
+</code></pre></div><p>The top-level menu items can now be rendered like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">@Html</span>.<span style="color:#268bd2">RenderTopMenuItems</span>(<span style="color:#859900">new</span> [] { <span style="color:#2aa198">&#34;Search&#34;</span>, <span style="color:#2aa198">&#34;Images&#34;</span>, <span style="color:#2aa198">&#34;Blog&#34;</span>, <span style="color:#2aa198">&#34;Maps&#34;</span>, <span style="color:#2aa198">&#34;Play&#34;</span>, <span style="color:#2aa198">&#34;Video&#34;</span> } )
+</code></pre></div><p>And the result looks like this.</p>
+<p><a href="/post/images/2012-07-08-htmlhelper-to-generate-a-top-level-menu-for-areas-TwitterBootstrapMenu.PNG"><img src="/post/images/thumbnails/2012-07-08-htmlhelper-to-generate-a-top-level-menu-for-areas-TwitterBootstrapMenu.PNG" alt=""></a></p>
+<p>While you can go at this problem in a lot of different ways, I think
+this is one of the most robust and most compact ways I have been able to
+write this so far. How have you solved this in the past?</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

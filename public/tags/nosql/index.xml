@@ -11,15 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/nosql/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>On crime and document stores</title>
-      <link>http://localhost:1313/2012/07/on-crime-and-document-stores/</link>
-      <pubDate>Sun, 01 Jul 2012 16:04:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/07/on-crime-and-document-stores/</guid>
-      <description>Having worked with several storage paradigms over these last few months
- from flatfiles, to NoSQL, to the big enterprisey relational databases -, I have spent plenty of time trying to make sense of all the options out there. It wasn&amp;rsquo;t until I watched one of the last episodes of The Wire season 3 that I had an epiphany regarding modeling data in document stores. Yes, I know, I tend to take those things home with me.</description>
-    </item>
-    
   </channel>
 </rss>

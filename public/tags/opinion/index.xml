@@ -262,5 +262,85 @@ I regularly find myself building small things as an antitoxin to the regular per
       <description>It didn&amp;rsquo;t take long before I noticed how little job titles mean. In my first job, you were assured to be granted a fancy title after only having acquired a minimum seniority, if you knew how to play the game. A more important sounding job title was HR&amp;rsquo;s default bribe that often kept people from leaving for greener pastures, for a short while. But even after being upgraded from a stable cleaner to a Senior Barn Hygiene Technician, you&amp;rsquo;re still cleaning shit though.</description>
     </item>
     
+    <item>
+      <title>Is serialization really that expensive?</title>
+      <link>http://localhost:1313/2012/08/is-serialization-really-that-expensive.html</link>
+      <pubDate>Wed, 22 Aug 2012 13:19:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/is-serialization-really-that-expensive.html</guid>
+      <description>While wading through an exotic codebase, I stumbled upon a static class named Convert. This class contained somewhere around 2700 (non-generated) lines of code, where each method manually converted some object to a simple textual representation. These methods were then used to convert requests and reponses to and from a remote third party service before logging them to the database for auditing reasons.
+public static class Convert { public static string PaymentRequest(PaymentRequest req) { var sb = new StringBuilder(); sb.</description>
+    </item>
+    
+    <item>
+      <title>My learning resources distilled</title>
+      <link>http://localhost:1313/2012/08/my-learning-resources-distilled.html</link>
+      <pubDate>Sun, 19 Aug 2012 16:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/08/my-learning-resources-distilled.html</guid>
+      <description>I have picked up a few new tools this summer (MongoDB, NancyFx and WebAPI), and it occurred to me that I&amp;rsquo;ve built certain habits these last few years in how I make use of all the learning resources out there.
+I tried to identify all of them, to then categorize them, to finally order them according to in which phase of my study process I use them.
+The written and spoken word The first thing I look for online is documentation.</description>
+    </item>
+    
+    <item>
+      <title>The &#39;everyone should learn to code&#39; dilemma</title>
+      <link>http://localhost:1313/2012/06/everyone-should-learn-to-code-dilemma.html</link>
+      <pubDate>Sun, 03 Jun 2012 16:40:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/06/everyone-should-learn-to-code-dilemma.html</guid>
+      <description>Back when I was working on software for fire departments, we started thinking about reworking a critical piece of our solution: deployment plans. In a fire department domain, deployment plans help to make a suggestion to the dispatcher about which units should be dispatched to a location when an incident is called in. The suggested composition of units depends on a wide range of variables: availability, response time, ranks, type of incident, required tools, &amp;hellip; , even politics.</description>
+    </item>
+    
+    <item>
+      <title>The open plan fallacy testimonials</title>
+      <link>http://localhost:1313/2012/05/open-plan-fallacy-testimonials.html</link>
+      <pubDate>Sun, 27 May 2012 15:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/open-plan-fallacy-testimonials.html</guid>
+      <description>I wrote an article titled &amp;lsquo;The open plan fallacy&amp;rsquo; just two weeks ago. Earlier this week a similar article was published by the New York Times. The content of that article wasn&amp;rsquo;t particularly extraordinary, but the comments were. I waded through all of them on my daily commute, and it&amp;rsquo;s really hard to find one in favor of open plan offices - people seem to be enraged.
+I handpicked some of the most interesting ones.</description>
+    </item>
+    
+    <item>
+      <title>The open plan fallacy</title>
+      <link>http://localhost:1313/2012/05/open-plan-fallacy.html</link>
+      <pubDate>Sun, 13 May 2012 16:20:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/open-plan-fallacy.html</guid>
+      <description>I haven&amp;rsquo;t worked in a whole lot of places, somewhere around four, but every single one of them used an open plan to structure their workplace. From what I hear from others, it&amp;rsquo;s the standard.
+There are a few things to say about the advantages of an open office layout. They should stimulate communication, create more opportunities for observing and learning from others and be more cost-effective. I&amp;rsquo;m afraid it&amp;rsquo;s the latter which is the biggest driver though.</description>
+    </item>
+    
+    <item>
+      <title>Why I will always love RSS</title>
+      <link>http://localhost:1313/2012/05/why-i-will-always-love-rss.html</link>
+      <pubDate>Sun, 06 May 2012 16:50:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/05/why-i-will-always-love-rss.html</guid>
+      <description>There has been a lot of noise in the tech community earlier this year about how RSS is supposedly having one foot in the grave. If that would be even remotely true, I hope it dies with its boots on. The herald would be browsers and social networking sites killing or hiding support for RSS. While that may be true, their motives shouldn&amp;rsquo;t rig our opinions.
+RSS has never worked out for the regular consumer, not directly anyways.</description>
+    </item>
+    
+    <item>
+      <title>Some Servicelocator pattern stinks</title>
+      <link>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks.html</link>
+      <pubDate>Tue, 17 Apr 2012 20:33:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2012/04/some-servicelocator-pattern-stinks.html</guid>
+      <description>I have been working on a somewhat legacy codebase which makes use of the Servicelocator pattern. Although I always thought of Dependecy Injection to be the superior pattern, I was pleased to find some Inversion of Control implementation in there. Working with the codebase, I discovered first hand how easily, when used without caution and discipline, the Servicelocator pattern can introduce code rot.
+I will walk you through some of the issues I have with the Servicelocator pattern, mostly looking at it from a test perspective.</description>
+    </item>
+    
+    <item>
+      <title>Learning: the Hacker Way</title>
+      <link>http://localhost:1313/2012/03/learning-the-hacker-way/</link>
+      <pubDate>Sun, 11 Mar 2012 11:08:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/03/learning-the-hacker-way/</guid>
+      <description>I have had a fair amount of discussions on continuous learning and knowledge sharing the past few days. It became rather obvious that a lot of us have developed their own techniques, but also that maybe most of us are still in search of more efficient techniques. Having gone through several phases myself, I would like to share my current way of learning: the Hacker Way.
+Here are some snippets taken from a recent letter from Mark Zuckerberg addressed to the Facebook shareholders.</description>
+    </item>
+    
   </channel>
 </rss>

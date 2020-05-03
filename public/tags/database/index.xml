@@ -11,16 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/database/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Painless database logging with mongoDB</title>
-      <link>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</link>
-      <pubDate>Sun, 20 May 2012 17:18:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/05/painless-database-logging-with-mongodb/</guid>
-      <description>While browsing the source code of the ELMAH mongoDB provider, I learned about a special type of collections: capped collections.
-From the mongoDB documentation:
- Capped collections are fixed sized collections that have a very high performance auto-FIFO age-out feature (age out is based on insertion order). In addition, capped collections automatically, with high performance, maintain insertion order for the documents in the collection; this is very powerful for certain use cases such as logging.</description>
-    </item>
-    
   </channel>
 </rss>

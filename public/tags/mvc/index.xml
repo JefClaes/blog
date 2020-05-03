@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Supporting the OPTIONS verb in ASP.NET Web API</title>
-      <link>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</link>
-      <pubDate>Sun, 02 Sep 2012 18:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/09/supporting-the-options-verb-in-asp.net-web-api/</guid>
-      <description>ASP.NET Web API controllers support only four HTTP verbs by convention: GET, PUT, POST and DELETE. The full list of existing HTTP verbs is more extensive though. One of those unsupported verbs which can be particularly useful for API discovery and documentation is the OPTIONS verb.
- The OPTIONS method represents a request for information about the communication options available on the request/response chain identified by the Request-URI. This method allows the client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval.</description>
-    </item>
-    
-    <item>
       <title>ASP.NET MVC4 bundling in ASP.NET MVC3</title>
       <link>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</link>
       <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>

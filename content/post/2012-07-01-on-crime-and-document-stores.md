@@ -3,11 +3,10 @@ title = "On crime and document stores"
 slug = "2012-07-01-on-crime-and-document-stores"
 published = 2012-07-01T16:04:00+02:00
 author = "Jef Claes"
-tags = [ "SQLServer", "NoSql",]
+tags = [ "story",]
+url = "2012/07/on-crime-and-document-stores.html"
 +++
-Having worked with several storage paradigms over these last few months
-- from flatfiles, to  NoSQL, to the big enterprisey relational databases
--, I have spent plenty of time trying to make sense of all the options
+Having worked with several storage paradigms over these last few months - from flatfiles, to  NoSQL, to the big enterprisey relational databases -, I have spent plenty of time trying to make sense of all the options
 out there. It wasn't until I watched one of the last episodes of [The
 Wire](http://en.wikipedia.org/wiki/The_Wire) season 3 that I had an
 epiphany regarding modeling data in document stores. Yes, I know, I tend

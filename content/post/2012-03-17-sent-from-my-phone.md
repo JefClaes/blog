@@ -3,7 +3,8 @@ title = "Sent from my phone"
 slug = "2012-03-17-sent-from-my-phone"
 published = 2012-03-17T19:46:00+01:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "consumed",]
+url = "2012/03/sent-from-my-phone.html"
 +++
 According to [Matt from
 37signals](http://37signals.com/svn/posts/2500-lets-be-honest-sent-from-my)

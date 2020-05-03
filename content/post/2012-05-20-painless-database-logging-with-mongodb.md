@@ -3,14 +3,14 @@ title = "Painless database logging with mongoDB"
 slug = "2012-05-20-painless-database-logging-with-mongodb"
 published = 2012-05-20T17:18:00+02:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", "database", ".NET",]
+tags = [ "code", "infrastructure"]
+url = "2012/05/painless-database-logging-with-mongodb.html"
 +++
 While browsing the source code of the [ELMAH mongoDB
 provider](https://github.com/CaptainCodeman/elmah-mongodb), I learned
 about a special type of collections: capped collections.  
   
-From the [mongoDB
-documentation](http://www.mongodb.org/display/DOCS/Capped+Collections):  
+From the [mongoDB documentation](http://www.mongodb.org/display/DOCS/Capped+Collections):  
 
 > Capped collections are fixed sized collections that have a very high
 > performance auto-FIFO age-out feature (age out is based on insertion
@@ -37,18 +37,17 @@ when the logging table is eating up all the disk space.
   
 Creating a capped collection with the C\# driver can look like this.  
 
-    var server = MongoServer.Create("mongodb://localhost/");
-    var db = server.GetDatabase("PlayGround");
+```csharp
+var server = MongoServer.Create("mongodb://localhost/");
+var db = server.GetDatabase("PlayGround");
 
-    var options = CollectionOptions
-        .SetCapped(true)
-        .SetMaxSize(5000)
-        .SetMaxDocuments(100);
+var options = CollectionOptions
+    .SetCapped(true)
+    .SetMaxSize(5000)
+    .SetMaxDocuments(100);
 
-    if (!db.CollectionExists("Log"))
-        db.CreateCollection("Log", options);
+if (!db.CollectionExists("Log"))
+    db.CreateCollection("Log", options);
+```
 
-Now that's easy sailing.  
-  
-Expect to find me posting more on mongoDB in the coming months, I'm
-starting to really like this little database engine.
+Now that's easy sailing.

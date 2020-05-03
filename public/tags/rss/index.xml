@@ -11,15 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/rss/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Why I will always love RSS</title>
-      <link>http://localhost:1313/2012/05/why-i-will-always-love-rss/</link>
-      <pubDate>Sun, 06 May 2012 16:50:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/05/why-i-will-always-love-rss/</guid>
-      <description>There has been a lot of noise in the tech community earlier this year about how RSS is supposedly having one foot in the grave. If that would be even remotely true, I hope it dies with its boots on. The herald would be browsers and social networking sites killing or hiding support for RSS. While that may be true, their motives shouldn&amp;rsquo;t rig our opinions.
-RSS has never worked out for the regular consumer, not directly anyways.</description>
-    </item>
-    
   </channel>
 </rss>

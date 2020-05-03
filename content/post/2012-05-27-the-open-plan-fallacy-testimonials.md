@@ -3,7 +3,8 @@ title = "The open plan fallacy testimonials"
 slug = "2012-05-27-the-open-plan-fallacy-testimonials"
 published = 2012-05-27T15:36:00+02:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2012/05/open-plan-fallacy-testimonials.html"
 +++
 I wrote an article titled '[The open plan
 fallacy](http://www.jefclaes.be/2012/05/open-plan-fallacy.html)' just
