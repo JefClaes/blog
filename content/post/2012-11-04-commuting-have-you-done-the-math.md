@@ -3,7 +3,8 @@ title = "Commuting? Have you done the math?"
 slug = "2012-11-04-commuting-have-you-done-the-math"
 published = 2012-11-04T20:24:00.001000+01:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2012/11/commuting-have-you-done-math.html"
 +++
 On my first job interview, over four years ago, I was asked whether I
 would relocate if I was hired. Back then, I still lived in the
@@ -13,7 +14,8 @@ thought about it for a few seconds and told the interviewer that I
 didn't plan on moving out of my parents' place in the first few years.
 Besides, the distance isn't that great; it's only 60km (=37 miles) of
 highway, how bad could it be? Apparently that reply was good enough
-since I was given the job a few days later.  
+since I was given the job a few days later.
+
 Well, that commute grew old rather quickly though. Turns out that those
 60km of highway are one of the most saturated pieces of asphalt in
 Belgium, with up to 20 to 30km (12 to 18 miles) of systematic traffic
@@ -40,26 +42,19 @@ worse than I expected.
   
 Easing this burden isn't trivial though, and I can only think of a few
 feasible options, excluded changing jobs:  
+- **Travel outside rush hours:** leave for work very early or really late. I experimented with the former for quite some time, but I never really got used to it. It also seems a bit counterproductive to have your rhythm be too different from that of your team members. I'm guessing your family life will suffer as well, but I can't be the judge of that.
+- **Bring the office to you.** In this technological day and age there
+are hardly any sound arguments not to encourage working from home.
+Yet, the classical enterprise shies away from embracing it and seems
+to be more comfortable sticking with the status quo than improving
+working conditions for their employees. 
+- **Relocate.** This option might be drastic, yet it's the one with
+the biggest probability of success.
+- If possible, **use public transport**. Even if your total time
+enroute increases, you will have more time to do something
+productive while you take away some of the frustration that comes
+along with commuting by car.
 
--   **Travel outside rush hours:** leave for work very early or really
-    late. I experimented with the former for quite some time, but I
-    never really got used to it. It also seems a bit counterproductive
-    to have your rhythm be too different from that of your team members.
-    I'm guessing your family life will suffer as well, but I can't be
-    the judge of that.
--   **Bring the office to you.** In this technological day and age there
-    are hardly any sound arguments not to encourage working from home.
-    Yet, the classical enterprise shies away from embracing it and seems
-    to be more comfortable sticking with the status quo than improving
-    working conditions for their employees. 
--   **Relocate.** This option might be drastic, yet it's the one with
-    the biggest probability of success.
--   If possible, **use public transport**. Even if your total time
-    enroute increases, you will have more time to do something
-    productive while you take away some of the frustration that comes
-    along with commuting by car.
-
-  
 Earlier this year, I moved from one of the (work-wise) more remote
 corners of Belgium to a far better located area; the heart of Antwerp.
 To top that, I'm now living and working within walking distance of the
@@ -87,6 +82,6 @@ morning, I see a lot of other Belgian people complain about their
 commute. Is this a Belgian thing only? Which means of transport do you
 use for the commute? How long are you on the road each day? **Have you
 done the math? **  
-**  
-**[More comments on Hacker
+  
+[More comments on Hacker
 News](http://news.ycombinator.org/item?id=4740839).

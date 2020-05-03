@@ -12,45 +12,6 @@
     
     
     <item>
-      <title>Commuting? Have you done the math?</title>
-      <link>http://localhost:1313/2012/11/commuting-have-you-done-the-math/</link>
-      <pubDate>Sun, 04 Nov 2012 20:24:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/commuting-have-you-done-the-math/</guid>
-      <description>On my first job interview, over four years ago, I was asked whether I would relocate if I was hired. Back then, I still lived in the Campine region with my parents, while the Ferranti Computer Systems headquarters are in Antwerp. I thought about it for a few seconds and told the interviewer that I didn&amp;rsquo;t plan on moving out of my parents&amp;rsquo; place in the first few years. Besides, the distance isn&amp;rsquo;t that great; it&amp;rsquo;s only 60km (=37 miles) of highway, how bad could it be?</description>
-    </item>
-    
-    <item>
-      <title>Post Web.NET Europe</title>
-      <link>http://localhost:1313/2012/10/post-web.net-europe/</link>
-      <pubDate>Mon, 22 Oct 2012 20:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/post-web.net-europe/</guid>
-      <description>I attended and spoke at Web.NET Europe in Milan over the weekend. This was only my fourth full day- or more conference (Techdays Belgium, TechEd Berlin and HTML5 WebCamps), but it was undoubtedly the best one so far.
-The quality of the sessions was definitely not inferior to those of bigger conferences. I especially enjoyed the talks on SignalR, OAuth and scaling data (I included some of my notes below). The strength of this conference doesn&amp;rsquo;t lie in the exceptional speakers or sessions though, but in its cozy size and the type of attendees it attracts.</description>
-    </item>
-    
-    <item>
-      <title>Commands, queries and testing</title>
-      <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
-      <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/commands-queries-and-testing/</guid>
-      <description>Also read:
- Self-contained commands with dependencies Separating command data from logic and sending it on a bus  We need abstraction, but the amount of abstraction we really need depends, and should be assessed on a case-by-case basis. It seems advisable to grow abstractions, and to introduce them gradually.
-That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
-    </item>
-    
-    <item>
-      <title>On job titles</title>
-      <link>http://localhost:1313/2012/10/on-job-titles/</link>
-      <pubDate>Sun, 07 Oct 2012 19:22:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/on-job-titles/</guid>
-      <description>It didn&amp;rsquo;t take long before I noticed how little job titles mean. In my first job, you were assured to be granted a fancy title after only having acquired a minimum seniority, if you knew how to play the game. A more important sounding job title was HR&amp;rsquo;s default bribe that often kept people from leaving for greener pastures, for a short while. But even after being upgraded from a stable cleaner to a Senior Barn Hygiene Technician, you&amp;rsquo;re still cleaning shit though.</description>
-    </item>
-    
-    <item>
       <title>Is serialization really that expensive?</title>
       <link>http://localhost:1313/2012/08/is-serialization-really-that-expensive/</link>
       <pubDate>Wed, 22 Aug 2012 13:19:00 +0200</pubDate>

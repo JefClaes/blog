@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>Commands, queries and testing</title>
-      <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
-      <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/commands-queries-and-testing/</guid>
-      <description>Also read:
- Self-contained commands with dependencies Separating command data from logic and sending it on a bus  We need abstraction, but the amount of abstraction we really need depends, and should be assessed on a case-by-case basis. It seems advisable to grow abstractions, and to introduce them gradually.
-That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
-    </item>
-    
-    <item>
       <title>Finding the gaps in a sequence of dates</title>
       <link>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</link>
       <pubDate>Sun, 23 Sep 2012 20:42:00 +0200</pubDate>

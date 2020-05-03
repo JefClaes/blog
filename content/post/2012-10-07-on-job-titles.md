@@ -3,7 +3,8 @@ title = "On job titles"
 slug = "2012-10-07-on-job-titles"
 published = 2012-10-07T19:22:00+02:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2012/10/on-job-titles.html"
 +++
 It didn't take long before I noticed how little job titles mean. In my
 first job, you were assured to be granted [a fancy
@@ -52,6 +53,5 @@ indivertible to play along; titles can serve as a means to an end.
 *I'm interested in hearing your opinion. Do you think they are
 important, or do you just play along? Have you ever regretted not
 caring?*  
-*  
-*Bonus: [relevant Futurama
-scene](https://lh6.googleusercontent.com/-KKVe0ReDads/UG0zb-kNxkI/AAAAAAAABZw/YQnJwnmnCk0/s512/Futurama_JobTitle.jpg).
+ 
+Bonus: [relevant Futurama scene](https://lh6.googleusercontent.com/-KKVe0ReDads/UG0zb-kNxkI/AAAAAAAABZw/YQnJwnmnCk0/s512/Futurama_JobTitle.jpg).

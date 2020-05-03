@@ -3,7 +3,8 @@ title = "Slides and code from my Web.NET Europe REST and ASP.NET Web API session
 slug = "2012-10-21-slides-and-code-from-my-web-net-europe-rest-and-asp-net-web-api-session"
 published = 2012-10-21T00:16:00+02:00
 author = "Jef Claes"
-tags = [ ".NET", "ASP.NET", "REST", "Web API",]
+tags = [ "talks",]
+url = "2012/10/slides-and-code-from-my-webnet-europe.html"
 +++
 I just returned to the hotel after attending and speaking at [Web.NET
 Europe 2012](http://webnetconf.eu/). There were multiple sessions on
@@ -18,7 +19,4 @@ votes, the session rating stands at 90%. It's great to see your
 preparations have such a fruitful outcome.  
   
 I still have a few thoughts on the conference to materialize, but for
-now, I uploaded [the
-slides](http://www.slideshare.net/jclaes/rest-and-aspnet-web-api-milan)
-(they're also embedded below) and hosted the [source code on
-GitHub](https://github.com/JefClaes/aspnet-webapi-samples-webdotnet).
+now, I uploaded [the slides](http://www.slideshare.net/jclaes/rest-and-aspnet-web-api-milan) and hosted the [source code on GitHub](https://github.com/JefClaes/aspnet-webapi-samples-webdotnet).

@@ -318,16 +318,5 @@ A better model  Even if you come up with a better model, the fact that it has be
       <description>Two weeks ago I got to spend four days attending the IDDD Tour by Vaughn Vernon. Although my book queue has only allowed me to shallowly browse the book, I had high hopes for this course. I anticipated a week of getting lectured on DDD with a few practical exercises, but was blown away by the openness and interaction promoted by Vaughn and his associate Alberto Brandolini. A passionate group, engaging workshops, long days and lots of sharing made these few days exceptionally satisfying and inspirational.</description>
     </item>
     
-    <item>
-      <title>Commands with dependencies</title>
-      <link>http://localhost:1313/2012/10/commands-with-dependencies/</link>
-      <pubDate>Mon, 15 Oct 2012 16:57:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/commands-with-dependencies/</guid>
-      <description>Also read: Separating command data from logic and sending it on a bus
-Yesterday I wrote about an architecture which limits abstractions by solely introducing commands and queries. I shared a dead simple variation of this pattern, the advantages I experienced, and how I could still unit test the controller if I wanted to.
-At the end of that post I wondered how I would be able to test commands in isolation; suppose the implementation doesn&amp;rsquo;t use a database this time, but a hairy, too low-level, third party webservice.</description>
-    </item>
-    
   </channel>
 </rss>

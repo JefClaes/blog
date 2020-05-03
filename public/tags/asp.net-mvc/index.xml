@@ -12,28 +12,6 @@
     
     
     <item>
-      <title>Commands with dependencies</title>
-      <link>http://localhost:1313/2012/10/commands-with-dependencies/</link>
-      <pubDate>Mon, 15 Oct 2012 16:57:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/commands-with-dependencies/</guid>
-      <description>Also read: Separating command data from logic and sending it on a bus
-Yesterday I wrote about an architecture which limits abstractions by solely introducing commands and queries. I shared a dead simple variation of this pattern, the advantages I experienced, and how I could still unit test the controller if I wanted to.
-At the end of that post I wondered how I would be able to test commands in isolation; suppose the implementation doesn&amp;rsquo;t use a database this time, but a hairy, too low-level, third party webservice.</description>
-    </item>
-    
-    <item>
-      <title>Commands, queries and testing</title>
-      <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
-      <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/commands-queries-and-testing/</guid>
-      <description>Also read:
- Self-contained commands with dependencies Separating command data from logic and sending it on a bus  We need abstraction, but the amount of abstraction we really need depends, and should be assessed on a case-by-case basis. It seems advisable to grow abstractions, and to introduce them gradually.
-That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
-    </item>
-    
-    <item>
       <title>The 7 R&#39;s of Hypermedia</title>
       <link>http://localhost:1313/2012/09/the-7-rs-of-hypermedia/</link>
       <pubDate>Mon, 17 Sep 2012 21:42:00 +0200</pubDate>

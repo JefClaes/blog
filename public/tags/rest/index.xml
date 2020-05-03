@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Slides and code from my Web.NET Europe REST and ASP.NET Web API session</title>
-      <link>http://localhost:1313/2012/10/slides-and-code-from-my-web.net-europe-rest-and-asp.net-web-api-session/</link>
-      <pubDate>Sun, 21 Oct 2012 00:16:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/slides-and-code-from-my-web.net-europe-rest-and-asp.net-web-api-session/</guid>
-      <description>I just returned to the hotel after attending and speaking at Web.NET Europe 2012. There were multiple sessions on ASP.NET Web API today, and I was responsible for delivering the first one of the day. Being first, and to avoid overlap with others, I tried to lay a solid foundation by focusing on the REST and ASP.NET Web API basics: resources, identifiers, representations, verbs and hypermedia.
-More people than I expected showed up for my talk; somewhere around 50 to 70 attendees, I guess.</description>
-    </item>
-    
-    <item>
       <title>The 7 R&#39;s of Hypermedia</title>
       <link>http://localhost:1313/2012/09/the-7-rs-of-hypermedia/</link>
       <pubDate>Mon, 17 Sep 2012 21:42:00 +0200</pubDate>

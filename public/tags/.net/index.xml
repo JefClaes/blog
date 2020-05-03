@@ -12,58 +12,6 @@
     
     
     <item>
-      <title>Released: Kill long meetings</title>
-      <link>http://localhost:1313/2012/11/released-kill-long-meetings/</link>
-      <pubDate>Sun, 25 Nov 2012 17:45:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/11/released-kill-long-meetings/</guid>
-      <description>A lot has already been said and written about meetings, and some have carried the message above par; &amp;lsquo;Meetings: where work goes to die&#39;. Today, I&amp;rsquo;m not going to foul the internet with another rant, but I&amp;rsquo;d like to show you a small application built over the last few weeks after work.
-I regularly find myself building small things as an antitoxin to the regular periods of not writing and shipping code at work.</description>
-    </item>
-    
-    <item>
-      <title>Post Web.NET Europe</title>
-      <link>http://localhost:1313/2012/10/post-web.net-europe/</link>
-      <pubDate>Mon, 22 Oct 2012 20:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/post-web.net-europe/</guid>
-      <description>I attended and spoke at Web.NET Europe in Milan over the weekend. This was only my fourth full day- or more conference (Techdays Belgium, TechEd Berlin and HTML5 WebCamps), but it was undoubtedly the best one so far.
-The quality of the sessions was definitely not inferior to those of bigger conferences. I especially enjoyed the talks on SignalR, OAuth and scaling data (I included some of my notes below). The strength of this conference doesn&amp;rsquo;t lie in the exceptional speakers or sessions though, but in its cozy size and the type of attendees it attracts.</description>
-    </item>
-    
-    <item>
-      <title>Slides and code from my Web.NET Europe REST and ASP.NET Web API session</title>
-      <link>http://localhost:1313/2012/10/slides-and-code-from-my-web.net-europe-rest-and-asp.net-web-api-session/</link>
-      <pubDate>Sun, 21 Oct 2012 00:16:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/slides-and-code-from-my-web.net-europe-rest-and-asp.net-web-api-session/</guid>
-      <description>I just returned to the hotel after attending and speaking at Web.NET Europe 2012. There were multiple sessions on ASP.NET Web API today, and I was responsible for delivering the first one of the day. Being first, and to avoid overlap with others, I tried to lay a solid foundation by focusing on the REST and ASP.NET Web API basics: resources, identifiers, representations, verbs and hypermedia.
-More people than I expected showed up for my talk; somewhere around 50 to 70 attendees, I guess.</description>
-    </item>
-    
-    <item>
-      <title>Commands with dependencies</title>
-      <link>http://localhost:1313/2012/10/commands-with-dependencies/</link>
-      <pubDate>Mon, 15 Oct 2012 16:57:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/commands-with-dependencies/</guid>
-      <description>Also read: Separating command data from logic and sending it on a bus
-Yesterday I wrote about an architecture which limits abstractions by solely introducing commands and queries. I shared a dead simple variation of this pattern, the advantages I experienced, and how I could still unit test the controller if I wanted to.
-At the end of that post I wondered how I would be able to test commands in isolation; suppose the implementation doesn&amp;rsquo;t use a database this time, but a hairy, too low-level, third party webservice.</description>
-    </item>
-    
-    <item>
-      <title>Commands, queries and testing</title>
-      <link>http://localhost:1313/2012/10/commands-queries-and-testing/</link>
-      <pubDate>Sun, 14 Oct 2012 17:45:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2012/10/commands-queries-and-testing/</guid>
-      <description>Also read:
- Self-contained commands with dependencies Separating command data from logic and sending it on a bus  We need abstraction, but the amount of abstraction we really need depends, and should be assessed on a case-by-case basis. It seems advisable to grow abstractions, and to introduce them gradually.
-That being said, in this post I want to talk about an architecture that tries to limit abstractions to solely commands and queries.</description>
-    </item>
-    
-    <item>
       <title>Finding the gaps in a sequence of dates</title>
       <link>http://localhost:1313/2012/09/finding-the-gaps-in-a-sequence-of-dates/</link>
       <pubDate>Sun, 23 Sep 2012 20:42:00 +0200</pubDate>
