@@ -169,5 +169,15 @@ However, I also think these four simple words greatly helped the viral growth of
 Being new to NHibernate, and NHibernate being known as having a steep learning curve, I thought it would be a good idea to do some reading. Searching for books on NHibernate 3.</description>
     </item>
     
+    <item>
+      <title>Book review: The Art of Unit Testing</title>
+      <link>http://localhost:1313/2011/10/book-review-art-of-unit-testing.html</link>
+      <pubDate>Thu, 06 Oct 2011 21:08:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/10/book-review-art-of-unit-testing.html</guid>
+      <description>I think The Art of Unit Testing targets a broad audience. Beginners will find every part of the book useful, where intermediates might be more interested in the final two parts.
+Roy Osherove starts this book by laying a solid foundation of the unit testing concept. Why is testing important? What defines a good unit test, and how does a unit test differ from an integration test? In the second part of the book, he demonstrates the use of two core unit testing techniques: stubs and mocks.</description>
+    </item>
+    
   </channel>
 </rss>

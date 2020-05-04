@@ -393,5 +393,43 @@ Think about it. You might be guilty of this too.</description>
 The thoughts in this post were provoked by an interesting comment Kristof Claes left on my previous post.</description>
     </item>
     
+    <item>
+      <title>The gift of legacy</title>
+      <link>http://localhost:1313/2011/10/gift-of-legacy.html</link>
+      <pubDate>Sun, 30 Oct 2011 13:36:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/10/gift-of-legacy.html</guid>
+      <description>Just after graduating, I hated legacy with the heat of a thousand suns. I felt unfortunate, having to work on old code, built using outdated technologies, while software is all about making new and shiny things. Right, guys? Those naïve expectations of a rookie got crumbled very soon. Legacy is a constant in our industry. You can try to ignore it as long as possible, but it&amp;rsquo;s impossible to keep that up forever.</description>
+    </item>
+    
+    <item>
+      <title>Comfortably numb</title>
+      <link>http://localhost:1313/2011/09/comfortably-numb.html</link>
+      <pubDate>Wed, 21 Sep 2011 20:51:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/09/comfortably-numb.html</guid>
+      <description>Something that can bother me tremendously is being surrounded by people who are in a constant state of being comfortably numb. People who don&amp;rsquo;t welcome change, try to scare away new concepts and are just too much at home in their comfort zone. Some are perfectly happy filling their days keeping up appearances of being busy. They don&amp;rsquo;t care about self-improvement, but only care about augmenting their paychecks by accumulating as much legacy baggage as possible, with the sole intention of being perceived as an irreplaceable asset to the company, whilst not having to leave their comfort zone.</description>
+    </item>
+    
+    <item>
+      <title>Building small things</title>
+      <link>http://localhost:1313/2011/09/building-small-things.html</link>
+      <pubDate>Sun, 18 Sep 2011 16:35:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/09/building-small-things.html</guid>
+      <description>Due to the nature of things we build in our day to day job, writing software can wear out even the most fit of us.
+Most software jobs make you constantly deal with complexity. The amount of things which can lead to a complex software project are immense. A poor first design, and failure to redesign. External dependencies, which seem to behave different every time around. Or just the complexity of the problems itself.</description>
+    </item>
+    
+    <item>
+      <title>High Hopes</title>
+      <link>http://localhost:1313/2011/08/high-hopes.html</link>
+      <pubDate>Mon, 08 Aug 2011 20:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/08/high-hopes.html</guid>
+      <description>Last week, I resigned from my job at Ferranti Computer Systems. Three years ago, days after receiving my Graduate Diploma in Applied Computer Science, I had my first real-world working experience at Ferranti Computer Systems.
+The first project I was assigned to, was a project for the Antwerp fire department. Along with two other graduates and four seniors, I was thrown in at the deep end. I always had solid grades in school, and was fairly confident that I grasped the material I was taught.</description>
+    </item>
+    
   </channel>
 </rss>

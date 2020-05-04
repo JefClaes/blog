@@ -3,11 +3,11 @@ title = "Comfortably numb"
 slug = "2011-09-21-comfortably-numb"
 published = 2011-09-21T20:51:00+02:00
 author = "Jef Claes"
-tags = [ "General",]
+tags = [ "opinion",]
+url = "2011/09/comfortably-numb.html"
 +++
 Something that can bother me tremendously is being surrounded by people
-who are in a constant state of being [comfortably
-numb](http://www.youtube.com/watch?v=0wtiNzci1Wc). People who don't
+who are in a constant state of being [comfortably numb](http://www.youtube.com/watch?v=0wtiNzci1Wc). People who don't
 welcome change, try to scare away new concepts and are just too much at
 home in their comfort zone. Some are perfectly happy filling their days
 keeping up appearances of being busy. They don't care about

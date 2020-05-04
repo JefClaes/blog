@@ -3,13 +3,11 @@ title = "High Hopes"
 slug = "2011-08-08-high-hopes"
 published = 2011-08-08T20:30:00.004000+02:00
 author = "Jef Claes"
-tags = [ "General",]
+tags = [ "opinion",]
+url = "2011/08/high-hopes.html"
 +++
 Last week, I resigned from my job at [Ferranti Computer
-Systems](http://www.ferranti.be/Pages/default.aspx). Three years ago,
-days after receiving my Graduate Diploma in Applied Computer Science, I
-had my first real-world working experience at Ferranti Computer
-Systems.  
+Systems](http://www.ferranti.be/). Three years ago, days after receiving my Graduate Diploma in Applied Computer Science, I had my first real-world working experience at Ferranti Computer Systems.  
   
 The first project I was assigned to, was a project for the Antwerp fire
 department. Along with two other graduates and four seniors, I was
@@ -26,26 +24,13 @@ Ferranti. Not always that intense though, in the meanwhile I have had a
 few smaller, more shippable projects and a very similar project for fire
 department Ghent.  
   
-Today, we are a few months into building [a promising product for fire
-departments](http://www.ferranti.be/business-solutions/transport-mobility-security/Solutions/Pages/FrontForce.aspx),
-which has the potential to be big (in Belgium). Although my role in this
-project was fun and fairly satisfying, I still felt like it was time for
-me to move on.  
+Today, we are a few months into building a promising product for fire
+departments, which has the potential to be big (in Belgium). Although my role in this project was fun and fairly satisfying, I still felt like it was time for me to move on.  
   
 Many might think I'm a fool for throwing away a career where I was
 actually helping to save lives, building software. There are some
 frustrations that come along with building software for the public
-safety sector though.  
-Firstly, how perverted it might sound, this sector has a lot less money
-to spend on innovation compared to other, commercial sectors. This often
-leads to solutions which are not perfect, built to meet very tight
-deadlines.  
-Secondly, making progress is hard. Firefighters want to extinguish
-fires, liberate people... Most of them don't really care about software,
-making the adaptation and integration process painful. Although, I like
-to believe that this will change in the future. Our solution has been
-able to reduce station start-up times by 50%. It's impossible to ignore
-those numbers.  
+safety sector though. Firstly, how perverted it might sound, this sector has a lot less money to spend on innovation compared to other, commercial sectors. This often leads to solutions which are not perfect, built to meet very tight deadlines.  Secondly, making progress is hard. Firefighters want to extinguish fires, save people... Most of them don't really care about software, making the adaptation and integration process painful. Although, I like to believe that this will change in the future. Our solution has been able to reduce station start-up times by 50%. It's impossible to ignore those numbers.  
   
 This isn't the real reason I quit my job though. Every sector has its
 own problems. The real motivation for me to change jobs was that **I

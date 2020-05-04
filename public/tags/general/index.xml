@@ -12,55 +12,6 @@
     
     
     <item>
-      <title>Commute hacking: Chromapaper</title>
-      <link>http://localhost:1313/2011/10/commute-hacking-chromapaper/</link>
-      <pubDate>Sat, 08 Oct 2011 17:36:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/10/commute-hacking-chromapaper/</guid>
-      <description>Since I changed jobs, I do my daily commute by train. This adds two hours of leasure time to the day, which I used to lose in traffic.
-So far, I have been spending these two won hours programming and/or reading. I have been looking for a way to read online content offline on my laptop. Searching for software that could make this happen, I mostly came across programs which would mirror a whole site locally.</description>
-    </item>
-    
-    <item>
-      <title>Comfortably numb</title>
-      <link>http://localhost:1313/2011/09/comfortably-numb/</link>
-      <pubDate>Wed, 21 Sep 2011 20:51:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/09/comfortably-numb/</guid>
-      <description>Something that can bother me tremendously is being surrounded by people who are in a constant state of being comfortably numb. People who don&amp;rsquo;t welcome change, try to scare away new concepts and are just too much at home in their comfort zone. Some are perfectly happy filling their days keeping up appearances of being busy. They don&amp;rsquo;t care about self-improvement, but only care about augmenting their paychecks by accumulating as much legacy baggage as possible, with the sole intention of being perceived as an irreplaceable asset to the company, whilst not having to leave their comfort zone.</description>
-    </item>
-    
-    <item>
-      <title>Building small things</title>
-      <link>http://localhost:1313/2011/09/building-small-things/</link>
-      <pubDate>Sun, 18 Sep 2011 16:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/09/building-small-things/</guid>
-      <description>Due to the nature of things we build in our day to day job, writing software can wear out even the most fit of us.
-Most software jobs make you constantly deal with complexity. The amount of things which can lead to a complex software project are immense. A poor first design, and failure to redesign. External dependencies, which seem to behave different every time around. Or just the complexity of the problems itself.</description>
-    </item>
-    
-    <item>
-      <title>Things I read</title>
-      <link>http://localhost:1313/2011/08/things-i-read/</link>
-      <pubDate>Thu, 11 Aug 2011 21:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/08/things-i-read/</guid>
-      <description>Over the years I have collected an impressive collection of technology related feeds in my Google Reader account. Lately, I find myself neglecting most of my Google Reader subscriptions, and getting my information from a few specific sources. It just has become too much of a chore to sift out the really interesting posts.
-That&amp;rsquo;s why I have put my faith in the community to do the dirty work.</description>
-    </item>
-    
-    <item>
-      <title>High Hopes</title>
-      <link>http://localhost:1313/2011/08/high-hopes/</link>
-      <pubDate>Mon, 08 Aug 2011 20:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/08/high-hopes/</guid>
-      <description>Last week, I resigned from my job at Ferranti Computer Systems. Three years ago, days after receiving my Graduate Diploma in Applied Computer Science, I had my first real-world working experience at Ferranti Computer Systems.
-The first project I was assigned to, was a project for the Antwerp fire department. Along with two other graduates and four seniors, I was thrown in at the deep end. I always had solid grades in school, and was fairly confident that I grasped the material I was taught.</description>
-    </item>
-    
-    <item>
       <title>My js data structures and algorithms now on GitHub</title>
       <link>http://localhost:1313/2011/07/my-js-data-structures-and-algorithms-now-on-github/</link>
       <pubDate>Sat, 23 Jul 2011 15:30:00 +0200</pubDate>

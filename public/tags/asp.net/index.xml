@@ -12,25 +12,6 @@
     
     
     <item>
-      <title>Viewmodel extractors in ASP.NET MVC</title>
-      <link>http://localhost:1313/2011/10/viewmodel-extractors-in-asp.net-mvc/</link>
-      <pubDate>Mon, 17 Oct 2011 20:24:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/10/viewmodel-extractors-in-asp.net-mvc/</guid>
-      <description>Last week, I wrote something on assembling viewmodels in ASP.NET MVC. In that post, I said it would be nice to have a layer between my controller and my domain services that would assemble viewmodels for me. This would work one-way. In the other direction - from controller to domain services - I would just take a piece of my composite viewmodel and pass that directly to my domain services.</description>
-    </item>
-    
-    <item>
-      <title>Viewmodel assemblers in ASP.NET MVC</title>
-      <link>http://localhost:1313/2011/10/viewmodel-assemblers-in-asp.net-mvc/</link>
-      <pubDate>Wed, 12 Oct 2011 20:14:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/10/viewmodel-assemblers-in-asp.net-mvc/</guid>
-      <description>Working on a new ASP.NET MVC side-project, I have the luxury to experiment with new technologies, but also with different patterns and naming conventions.
-Something which bugged me in a previous project was that we made our service layer return viewmodels. It worked rather well because the service layer in our MVC project was just another layer between the real domain services - where most of its work was creating viewmodels from domain objects or translating viewmodels into domain objects, so they could be passed to the domain services.</description>
-    </item>
-    
-    <item>
       <title>Checking for anonymous types</title>
       <link>http://localhost:1313/2011/05/checking-for-anonymous-types/</link>
       <pubDate>Sat, 21 May 2011 18:00:00 +0200</pubDate>

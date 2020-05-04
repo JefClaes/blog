@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Book review: The Art of Unit Testing</title>
-      <link>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</link>
-      <pubDate>Thu, 06 Oct 2011 21:08:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</guid>
-      <description>I think The Art of Unit Testing targets a broad audience. Beginners will find every part of the book useful, where intermediates might be more interested in the final two parts.
-Roy Osherove starts this book by laying a solid foundation of the unit testing concept. Why is testing important? What defines a good unit test, and how does a unit test differ from an integration test? In the second part of the book, he demonstrates the use of two core unit testing techniques: stubs and mocks.</description>
-    </item>
-    
-    <item>
       <title>Checking for anonymous types</title>
       <link>http://localhost:1313/2011/05/checking-for-anonymous-types/</link>
       <pubDate>Sat, 21 May 2011 18:00:00 +0200</pubDate>

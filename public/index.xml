@@ -1727,59 +1727,19 @@ Anyhow, a very important part of the front-end is built using jQuery mobile. Alt
     
     <item>
       <title>The gift of legacy</title>
-      <link>http://localhost:1313/2011/10/the-gift-of-legacy/</link>
+      <link>http://localhost:1313/2011/10/gift-of-legacy.html</link>
       <pubDate>Sun, 30 Oct 2011 13:36:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2011/10/the-gift-of-legacy/</guid>
+      <guid>http://localhost:1313/2011/10/gift-of-legacy.html</guid>
       <description>Just after graduating, I hated legacy with the heat of a thousand suns. I felt unfortunate, having to work on old code, built using outdated technologies, while software is all about making new and shiny things. Right, guys? Those naïve expectations of a rookie got crumbled very soon. Legacy is a constant in our industry. You can try to ignore it as long as possible, but it&amp;rsquo;s impossible to keep that up forever.</description>
     </item>
     
     <item>
-      <title>Oops, Pluralsight</title>
-      <link>http://localhost:1313/2011/10/oops-pluralsight/</link>
-      <pubDate>Wed, 26 Oct 2011 21:10:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/10/oops-pluralsight/</guid>
-      <description>Only a few weeks ago, we got an annual Pluralsight subscription at Euricom. Since then, I have downloaded a couple of videos, raw wmv&amp;rsquo;s, to watch offline on my laptop, commuting.
-Yesterday, being out of material, I headed over to the Pluralsight website to download some more content. I discovered the site was redesigned, removing download links next to the videos.
-Heading over to their blog, I found out more.</description>
-    </item>
-    
-    <item>
-      <title>Viewmodel extractors in ASP.NET MVC</title>
-      <link>http://localhost:1313/2011/10/viewmodel-extractors-in-asp.net-mvc/</link>
-      <pubDate>Mon, 17 Oct 2011 20:24:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/10/viewmodel-extractors-in-asp.net-mvc/</guid>
-      <description>Last week, I wrote something on assembling viewmodels in ASP.NET MVC. In that post, I said it would be nice to have a layer between my controller and my domain services that would assemble viewmodels for me. This would work one-way. In the other direction - from controller to domain services - I would just take a piece of my composite viewmodel and pass that directly to my domain services.</description>
-    </item>
-    
-    <item>
-      <title>Viewmodel assemblers in ASP.NET MVC</title>
-      <link>http://localhost:1313/2011/10/viewmodel-assemblers-in-asp.net-mvc/</link>
-      <pubDate>Wed, 12 Oct 2011 20:14:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/10/viewmodel-assemblers-in-asp.net-mvc/</guid>
-      <description>Working on a new ASP.NET MVC side-project, I have the luxury to experiment with new technologies, but also with different patterns and naming conventions.
-Something which bugged me in a previous project was that we made our service layer return viewmodels. It worked rather well because the service layer in our MVC project was just another layer between the real domain services - where most of its work was creating viewmodels from domain objects or translating viewmodels into domain objects, so they could be passed to the domain services.</description>
-    </item>
-    
-    <item>
-      <title>Commute hacking: Chromapaper</title>
-      <link>http://localhost:1313/2011/10/commute-hacking-chromapaper/</link>
-      <pubDate>Sat, 08 Oct 2011 17:36:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/10/commute-hacking-chromapaper/</guid>
-      <description>Since I changed jobs, I do my daily commute by train. This adds two hours of leasure time to the day, which I used to lose in traffic.
-So far, I have been spending these two won hours programming and/or reading. I have been looking for a way to read online content offline on my laptop. Searching for software that could make this happen, I mostly came across programs which would mirror a whole site locally.</description>
-    </item>
-    
-    <item>
       <title>Book review: The Art of Unit Testing</title>
-      <link>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</link>
+      <link>http://localhost:1313/2011/10/book-review-art-of-unit-testing.html</link>
       <pubDate>Thu, 06 Oct 2011 21:08:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</guid>
+      <guid>http://localhost:1313/2011/10/book-review-art-of-unit-testing.html</guid>
       <description>I think The Art of Unit Testing targets a broad audience. Beginners will find every part of the book useful, where intermediates might be more interested in the final two parts.
 Roy Osherove starts this book by laying a solid foundation of the unit testing concept. Why is testing important? What defines a good unit test, and how does a unit test differ from an integration test? In the second part of the book, he demonstrates the use of two core unit testing techniques: stubs and mocks.</description>
     </item>
@@ -1793,34 +1753,34 @@ Roy Osherove starts this book by laying a solid foundation of the unit testing c
       <description>My mini-website arealdeveloper.com will no longer be available online after tomorrow.
 I slapped it together over a weekend, trying out WebMatrix, which turned out to be the perfect companion for building small things.
 A pleasant surprise was the mention of &amp;lsquo;A Real Developer&amp;rsquo; by the guys at Channel9. This made the traffic go through the roof for a few days.
-A few months later the site was a ghosttown. But I don&amp;rsquo;t mind, I even predicted this.</description>
+A few months later the site was a ghosttown. But I don&amp;rsquo;t mind, had to happen.</description>
     </item>
     
     <item>
       <title>Comfortably numb</title>
-      <link>http://localhost:1313/2011/09/comfortably-numb/</link>
+      <link>http://localhost:1313/2011/09/comfortably-numb.html</link>
       <pubDate>Wed, 21 Sep 2011 20:51:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/comfortably-numb/</guid>
+      <guid>http://localhost:1313/2011/09/comfortably-numb.html</guid>
       <description>Something that can bother me tremendously is being surrounded by people who are in a constant state of being comfortably numb. People who don&amp;rsquo;t welcome change, try to scare away new concepts and are just too much at home in their comfort zone. Some are perfectly happy filling their days keeping up appearances of being busy. They don&amp;rsquo;t care about self-improvement, but only care about augmenting their paychecks by accumulating as much legacy baggage as possible, with the sole intention of being perceived as an irreplaceable asset to the company, whilst not having to leave their comfort zone.</description>
     </item>
     
     <item>
       <title>Building small things</title>
-      <link>http://localhost:1313/2011/09/building-small-things/</link>
+      <link>http://localhost:1313/2011/09/building-small-things.html</link>
       <pubDate>Sun, 18 Sep 2011 16:35:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/building-small-things/</guid>
+      <guid>http://localhost:1313/2011/09/building-small-things.html</guid>
       <description>Due to the nature of things we build in our day to day job, writing software can wear out even the most fit of us.
 Most software jobs make you constantly deal with complexity. The amount of things which can lead to a complex software project are immense. A poor first design, and failure to redesign. External dependencies, which seem to behave different every time around. Or just the complexity of the problems itself.</description>
     </item>
     
     <item>
       <title>Once upon a time in the West</title>
-      <link>http://localhost:1313/2011/09/once-upon-a-time-in-the-west/</link>
+      <link>http://localhost:1313/2011/09/once-upon-time-in-west.html</link>
       <pubDate>Sat, 17 Sep 2011 11:15:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/once-upon-a-time-in-the-west/</guid>
+      <guid>http://localhost:1313/2011/09/once-upon-time-in-west.html</guid>
       <description>The girlfriend and I returned from our West Coast roadtrip yesterday morning.
 We found this trip to be an unforgettable experience, which made us even more hungry for future travels.
 This blog will return to business as usual, with mainly technical content and opinions.
@@ -1830,127 +1790,86 @@ Here is an overview of our posts exploring the West Coast:
     
     <item>
       <title>City of fallen angels</title>
-      <link>http://localhost:1313/2011/09/city-of-fallen-angels/</link>
+      <link>http://localhost:1313/2011/09/city-of-fallen-angels.html</link>
       <pubDate>Tue, 13 Sep 2011 05:45:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/city-of-fallen-angels/</guid>
+      <guid>http://localhost:1313/2011/09/city-of-fallen-angels.html</guid>
       <description>After seeing the celebrities at Madame Tussaud&amp;rsquo;s in Las Vegas, we went for the real deal.
 Turns out Hollywood is a lot less glamourous than we expected. The Walk of Fame isn&amp;rsquo;t a lot different from any other gray sidewalk, paved with long-forgotten stars. The famous Hollywood sign isn&amp;rsquo;t even lit a night, making the contrast with Beverly Hills at the other side of town even bigger. Maybe there&amp;rsquo;s another side to Hollywood that we haven&amp;rsquo;t seen, since we only stayed for two days, one of which at the Universal Studios.</description>
     </item>
     
     <item>
       <title>Fear and loathing in Las Vegas</title>
-      <link>http://localhost:1313/2011/09/fear-and-loathing-in-las-vegas/</link>
+      <link>http://localhost:1313/2011/09/fear-and-loathing-in-las-vegas.html</link>
       <pubDate>Sun, 11 Sep 2011 02:49:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/fear-and-loathing-in-las-vegas/</guid>
+      <guid>http://localhost:1313/2011/09/fear-and-loathing-in-las-vegas.html</guid>
       <description>Driving back into the desert after our breakfast, with Las Vegas in the rear-view mirror, we secretly feel a little relieved to be heading back to the real world. The cocktail of fake pyramids, indoor jungles, Paris landmarks, castles and volcanoes became a little nauseating. With hotels and casinoes resembling labyrinths, designed to get people trapped inside, it feels liberating to drive through the wide open landscape again.
 Some of the things we enjoyed the most were the late nights walking the Strip, watching free shows, standing on top of the Stratosphere and posing with the wax celebs at Madame Tussaud&amp;rsquo;s.</description>
     </item>
     
     <item>
       <title>Edge of eternity</title>
-      <link>http://localhost:1313/2011/09/edge-of-eternity/</link>
+      <link>http://localhost:1313/2011/09/edge-of-eternity.html</link>
       <pubDate>Wed, 07 Sep 2011 06:40:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/edge-of-eternity/</guid>
+      <guid>http://localhost:1313/2011/09/edge-of-eternity.html</guid>
       <description>We all know the Grand Canyon as one of the seven natural wonders of the world, today I learned why. As one of the locals described: &amp;lsquo;Pretty amazing for a big hole in the ground&amp;rsquo;. Being the closest to the south entrance, we visited the South Rim of the canyon. A trip to the visitor center taught us there were no easy hikes (except for the going down part), so we didn&amp;rsquo;t attempt at one.</description>
     </item>
     
     <item>
       <title>From Glen to Grand</title>
-      <link>http://localhost:1313/2011/09/from-glen-to-grand/</link>
+      <link>http://localhost:1313/2011/09/from-glen-to-grand.html</link>
       <pubDate>Tue, 06 Sep 2011 07:14:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/from-glen-to-grand/</guid>
+      <guid>http://localhost:1313/2011/09/from-glen-to-grand.html</guid>
       <description>Yesterday, we drove from Saint-George to Page, Arizona. The Pipe Springs National Monument happened to be on our way, so we made a stop. Turned out there wasn&amp;rsquo;t much to see. A 30-minute ranger-led tour made it worthwhile though. During the tour through the Winsor Castle, she told us about the Mormons who used to live there. The Fort manager, also head of their Mormon church, married 58 women, resulting in plenty of children to work the Fort.</description>
     </item>
     
     <item>
       <title>Rusty rocks</title>
-      <link>http://localhost:1313/2011/09/rusty-rocks/</link>
+      <link>http://localhost:1313/2011/09/rusty-rocks.html</link>
       <pubDate>Sun, 04 Sep 2011 07:23:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/rusty-rocks/</guid>
+      <guid>http://localhost:1313/2011/09/rusty-rocks.html</guid>
       <description>We started the day with a short drive to Zion National Park. On our way we came across some colossal rock formations, layered with different shades of red. Since the park is almost entirely car free, we took the shuttle bus along the scenic route. We got off at different stops, to take short hikes to the park&amp;rsquo;s natural treasures. The Emerald Pools were first up, followed by the Weeping Rock and a riverside walk to the Narrows, which are architected by the Virgin river.</description>
     </item>
     
     <item>
       <title>Sands of Nevada</title>
-      <link>http://localhost:1313/2011/09/sands-of-nevada/</link>
+      <link>http://localhost:1313/2011/09/yesterday-evening-we-spent-night-in.html</link>
       <pubDate>Sat, 03 Sep 2011 06:29:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/sands-of-nevada/</guid>
+      <guid>http://localhost:1313/2011/09/yesterday-evening-we-spent-night-in.html</guid>
       <description>Yesterday evening we spent the night in a town called Tonopah, which is literally in the middle of nowhere. Today we continued our trip to Zion (Utah), driving hundreds of miles through the Nevada desert, getting sunburned on the way. There was not a soul in sight, except for cattle crossing the road, who seemed to be waiting for us to pass to say hello. We just arrived at St. George, which is a launching point to Zion National Park.</description>
     </item>
     
     <item>
       <title>Yosemite skyscrapers</title>
-      <link>http://localhost:1313/2011/09/yosemite-skyscrapers/</link>
+      <link>http://localhost:1313/2011/09/yosemite-skyscrapers.html</link>
       <pubDate>Fri, 02 Sep 2011 07:10:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/09/yosemite-skyscrapers/</guid>
+      <guid>http://localhost:1313/2011/09/yosemite-skyscrapers.html</guid>
       <description>These skyscrapers are, other than the enormous mountains, the redwood sequoia on top of them. Some of these trees are the same height as a thirty story building, which is higher than the Statue Of Liberty. It&amp;rsquo;s almost impossible to capture these giants on camera. 
 After a short hike between the sequoia, we drove off to Yosemite Valley to discover the Yosemity Falls. Although the falls must be more impressive in Winter, they were still worth visiting.</description>
     </item>
     
     <item>
       <title>If you&#39;re going to San Francisco</title>
-      <link>http://localhost:1313/2011/08/if-youre-going-to-san-francisco/</link>
+      <link>http://localhost:1313/2011/08/if-youre-going-to-san-francisco.html</link>
       <pubDate>Wed, 31 Aug 2011 09:30:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/08/if-youre-going-to-san-francisco/</guid>
+      <guid>http://localhost:1313/2011/08/if-youre-going-to-san-francisco.html</guid>
       <description>While I&amp;rsquo;m writing this, the girlfriend and I are on our way from San Francisco to Yosemite National Park. We have spent two full days visiting &amp;lsquo;Fog City&amp;rsquo;. During these two intensive days we were able to see everything we aimed for, maybe more.
-Financial DistrictThis part of town is definitely worth a visit. The multiplicity of skyscrapers merging into the San Francisco fog, is an impressive view. When the fog has gone, the shadows the buildings cast on each other are just as amazing.</description>
-    </item>
-    
-    <item>
-      <title>Why lie</title>
-      <link>http://localhost:1313/2011/08/why-lie/</link>
-      <pubDate>Tue, 30 Aug 2011 06:45:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/08/why-lie/</guid>
-      <description>A one dollar smile at Pier 39.</description>
-    </item>
-    
-    <item>
-      <title>Data validation, take it seriously</title>
-      <link>http://localhost:1313/2011/08/data-validation-take-it-seriously/</link>
-      <pubDate>Sun, 28 Aug 2011 16:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/08/data-validation-take-it-seriously/</guid>
-      <description>We just heard that we might be stuck in Washington DC for a few hours due to a defect of our plane&amp;rsquo;s backup generator. We decided to notify our hotel we might be running late.
-Surfing to the contact page on their site, we found out that we couldn&amp;rsquo;t enter our European mobile phonenumber in the required (!) telephone number field.
-Unable to find the direct email address of the hotel, I opened the developer tools and had a look at the validation script.</description>
-    </item>
-    
-    <item>
-      <title>West Coast road trip schedule</title>
-      <link>http://localhost:1313/2011/08/west-coast-road-trip-schedule/</link>
-      <pubDate>Mon, 22 Aug 2011 19:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/08/west-coast-road-trip-schedule/</guid>
-      <description>This Sunday, my girlfriend and I are leaving for a three-week roadtrip along the West Coast.
-During these three weeks, we plan on writing about our experiences and publishing them on this blog. We see this as a way to capture memories and report to the homefront in the meantime. I hope the regular readers who come here for technical content, won&amp;rsquo;t be dissapointed.
-Usually our holidays are well (or over) prepared.</description>
-    </item>
-    
-    <item>
-      <title>Things I read</title>
-      <link>http://localhost:1313/2011/08/things-i-read/</link>
-      <pubDate>Thu, 11 Aug 2011 21:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/08/things-i-read/</guid>
-      <description>Over the years I have collected an impressive collection of technology related feeds in my Google Reader account. Lately, I find myself neglecting most of my Google Reader subscriptions, and getting my information from a few specific sources. It just has become too much of a chore to sift out the really interesting posts.
-That&amp;rsquo;s why I have put my faith in the community to do the dirty work.</description>
+Financial District This part of town is definitely worth a visit. The multiplicity of skyscrapers merging into the San Francisco fog, is an impressive view. When the fog has gone, the shadows the buildings cast on each other are just as amazing.</description>
     </item>
     
     <item>
       <title>High Hopes</title>
-      <link>http://localhost:1313/2011/08/high-hopes/</link>
+      <link>http://localhost:1313/2011/08/high-hopes.html</link>
       <pubDate>Mon, 08 Aug 2011 20:30:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/08/high-hopes/</guid>
+      <guid>http://localhost:1313/2011/08/high-hopes.html</guid>
       <description>Last week, I resigned from my job at Ferranti Computer Systems. Three years ago, days after receiving my Graduate Diploma in Applied Computer Science, I had my first real-world working experience at Ferranti Computer Systems.
 The first project I was assigned to, was a project for the Antwerp fire department. Along with two other graduates and four seniors, I was thrown in at the deep end. I always had solid grades in school, and was fairly confident that I grasped the material I was taught.</description>
     </item>

@@ -47,12 +47,4 @@ first
 place](https://www.jefclaes.be/2011/04/anonymous-type-equality-follow-up.html),
 being reference types after all.  
   
-Starting with a new sideproject in ASP.NET MVC a few months ago, I
-experimented with patterns to [build
-viewmodels](https://www.jefclaes.be/2011/10/viewmodel-assemblers-in-aspnet-mvc.html)
-and [extract domain models back out of the
-viewmodels](https://www.jefclaes.be/2011/10/viewmodel-extractors-in-aspnet-mvc.html).
-This last post was featured on the ASP.NET homepage for a few days,
-ensuring this last topic made the list.  
-  
 To wrap up this link collection, I would like to **thank you for reading**. I hope to see you contribute to this little outlet of mine for another year.

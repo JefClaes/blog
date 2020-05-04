@@ -1003,28 +1003,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/10/the-gift-of-legacy/</loc>
+    <loc>http://localhost:1313/2011/10/gift-of-legacy.html</loc>
     <lastmod>2011-10-30T13:36:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/10/oops-pluralsight/</loc>
-    <lastmod>2011-10-26T21:10:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/10/viewmodel-extractors-in-asp.net-mvc/</loc>
-    <lastmod>2011-10-17T20:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/10/viewmodel-assemblers-in-asp.net-mvc/</loc>
-    <lastmod>2011-10-12T20:14:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/10/commute-hacking-chromapaper/</loc>
-    <lastmod>2011-10-08T17:36:00+02:00</lastmod>
   </url>
   
   <url>
@@ -1033,7 +1013,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/10/book-review-the-art-of-unit-testing/</loc>
+    <loc>http://localhost:1313/2011/10/book-review-art-of-unit-testing.html</loc>
     <lastmod>2011-10-06T21:08:00+02:00</lastmod>
   </url>
   
@@ -1053,82 +1033,62 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/comfortably-numb/</loc>
+    <loc>http://localhost:1313/2011/09/comfortably-numb.html</loc>
     <lastmod>2011-09-21T20:51:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/building-small-things/</loc>
+    <loc>http://localhost:1313/2011/09/building-small-things.html</loc>
     <lastmod>2011-09-18T16:35:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/once-upon-a-time-in-the-west/</loc>
+    <loc>http://localhost:1313/2011/09/once-upon-time-in-west.html</loc>
     <lastmod>2011-09-17T11:15:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/city-of-fallen-angels/</loc>
+    <loc>http://localhost:1313/2011/09/city-of-fallen-angels.html</loc>
     <lastmod>2011-09-13T05:45:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/fear-and-loathing-in-las-vegas/</loc>
+    <loc>http://localhost:1313/2011/09/fear-and-loathing-in-las-vegas.html</loc>
     <lastmod>2011-09-11T02:49:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/edge-of-eternity/</loc>
+    <loc>http://localhost:1313/2011/09/edge-of-eternity.html</loc>
     <lastmod>2011-09-07T06:40:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/from-glen-to-grand/</loc>
+    <loc>http://localhost:1313/2011/09/from-glen-to-grand.html</loc>
     <lastmod>2011-09-06T07:14:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/rusty-rocks/</loc>
+    <loc>http://localhost:1313/2011/09/rusty-rocks.html</loc>
     <lastmod>2011-09-04T07:23:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/sands-of-nevada/</loc>
+    <loc>http://localhost:1313/2011/09/yesterday-evening-we-spent-night-in.html</loc>
     <lastmod>2011-09-03T06:29:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/09/yosemite-skyscrapers/</loc>
+    <loc>http://localhost:1313/2011/09/yosemite-skyscrapers.html</loc>
     <lastmod>2011-09-02T07:10:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/08/if-youre-going-to-san-francisco/</loc>
+    <loc>http://localhost:1313/2011/08/if-youre-going-to-san-francisco.html</loc>
     <lastmod>2011-08-31T09:30:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/08/why-lie/</loc>
-    <lastmod>2011-08-30T06:45:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/08/data-validation-take-it-seriously/</loc>
-    <lastmod>2011-08-28T16:30:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/08/west-coast-road-trip-schedule/</loc>
-    <lastmod>2011-08-22T19:30:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/08/things-i-read/</loc>
-    <lastmod>2011-08-11T21:30:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/08/high-hopes/</loc>
+    <loc>http://localhost:1313/2011/08/high-hopes.html</loc>
     <lastmod>2011-08-08T20:30:00+02:00</lastmod>
   </url>
   

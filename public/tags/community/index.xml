@@ -49,5 +49,17 @@ Thanks to the effort of Mathias, Stijn and Yves, Tuesday marked the first get-to
       <description>After writing a few things on HTML5 offline web applications earlier this year, I got contacted by InfoQ to write an in-detail article on the subject for them. I hesitated at first, because I was afraid that it would feel too much like work, taking the fun out of my writing. Turns out it wasn&amp;rsquo;t like that at all. The guys at infoQ were really relaxed to work with, asking interesting questions and giving useful feedback, without forcing me into a certain direction.</description>
     </item>
     
+    <item>
+      <title>A real developer knows when to pull the plug</title>
+      <link>http://localhost:1313/2011/09/a-real-developer-knows-when-to-pull-the-plug/</link>
+      <pubDate>Thu, 29 Sep 2011 20:38:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/09/a-real-developer-knows-when-to-pull-the-plug/</guid>
+      <description>My mini-website arealdeveloper.com will no longer be available online after tomorrow.
+I slapped it together over a weekend, trying out WebMatrix, which turned out to be the perfect companion for building small things.
+A pleasant surprise was the mention of &amp;lsquo;A Real Developer&amp;rsquo; by the guys at Channel9. This made the traffic go through the roof for a few days.
+A few months later the site was a ghosttown. But I don&amp;rsquo;t mind, had to happen.</description>
+    </item>
+    
   </channel>
 </rss>

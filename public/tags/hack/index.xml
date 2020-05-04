@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>Data validation, take it seriously</title>
-      <link>http://localhost:1313/2011/08/data-validation-take-it-seriously/</link>
-      <pubDate>Sun, 28 Aug 2011 16:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/08/data-validation-take-it-seriously/</guid>
-      <description>We just heard that we might be stuck in Washington DC for a few hours due to a defect of our plane&amp;rsquo;s backup generator. We decided to notify our hotel we might be running late.
-Surfing to the contact page on their site, we found out that we couldn&amp;rsquo;t enter our European mobile phonenumber in the required (!) telephone number field.
-Unable to find the direct email address of the hotel, I opened the developer tools and had a look at the validation script.</description>
-    </item>
-    
-    <item>
       <title>Keeping WebSockets alive</title>
       <link>http://localhost:1313/2011/03/keeping-websockets-alive/</link>
       <pubDate>Sat, 12 Mar 2011 17:40:00 +0100</pubDate>

@@ -3,7 +3,8 @@ title = "Building small things"
 slug = "2011-09-18-building-small-things"
 published = 2011-09-18T16:35:00+02:00
 author = "Jef Claes"
-tags = [ "General",]
+tags = [ "opinion",]
+url = "2011/09/building-small-things.html"
 +++
 Due to the nature of things we build in our day to day job, writing
 software can wear out even the most fit of us.  

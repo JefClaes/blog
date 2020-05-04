@@ -3,7 +3,8 @@ title = "Book review: The Art of Unit Testing"
 slug = "2011-10-06-book-review-the-art-of-unit-testing"
 published = 2011-10-06T21:08:00+02:00
 author = "Jef Claes"
-tags = [ ".NET", "Bookreview",]
+tags = [ "consumed",]
+url = "2011/10/book-review-art-of-unit-testing.html"
 +++
 I think [The Art of Unit
 Testing](http://www.amazon.com/gp/product/1933988274/ref=as_li_tf_tl?ie=UTF8&tag=diofanedebyje-20&linkCode=as2&camp=217145&creative=399377&creativeASIN=1933988274)
