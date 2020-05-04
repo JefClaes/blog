@@ -30,7 +30,7 @@ value is marginal compared to what you gain by actually doing it.
   
 I remember I wanted to step up my JavaScript game two years ago, and
 [ordered a
-book](http://jefclaes.be/2010/02/book-review-object-oriented-javascript.html).
+book](http://www.jefclaes.be/2010/02/book-review-object-oriented-javascript.html).
 A few months after finishing the book, I finally had the chance to
 implement something in JavaScript, but I couldn't. I remembered some
 syntax, and most concepts, but I couldn't do it. Eventually I really

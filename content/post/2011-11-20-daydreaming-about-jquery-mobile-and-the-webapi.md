@@ -3,10 +3,11 @@ title = "Daydreaming about jQuery Mobile and the WebAPI"
 slug = "2011-11-20-daydreaming-about-jquery-mobile-and-the-webapi"
 published = 2011-11-20T17:24:00.001000+01:00
 author = "Jef Claes"
-tags = [ "ASP.NET", "javascript", "Ramblings", "jQuery",]
+tags = [ "opinion"]
+url = "2011/11/blame-no-one-but-yourself.html"
 +++
 I recently blogged about [programming for the future of
-mobile](http://jclaes.blogspot.com/2011/11/programming-for-future-of-mobile.html)
+mobile](https://www.jefclaes.be/2011/11/programming-for-future-of-mobile.html)
 with [jQuery Mobile](http://jquerymobile.com/) and the
 [WebAPI](https://wiki.mozilla.org/WebAPI). You probably heard that
 jQuery Mobile 1.0 was released earlier this week. Although it will take
@@ -41,7 +42,9 @@ follow along, and let me know if these ramblings seem feasible.
 Serving themes based on the operating system should be doable. A naïve
 implementation, which only supports Metro, could be as simple as this.  
 
-    return Request.UserAgent.Contains("Windows Phone OS 7.5") ? "jQueryMobile.Metro.css" : "jQueryMobile.Default.css";            
+```js
+return Request.UserAgent.Contains("Windows Phone OS 7.5") ? "jQueryMobile.Metro.css" : "jQueryMobile.Default.css";            
+```
 
 On my Windows Phone, I can configure the background- and the accent
 color for the Metro UI. And this is where it gets interesting. Using the
@@ -52,61 +55,42 @@ completely transparant.
   
 The proposed Settings API standard looks like this.  
   
+```
+interface SettingsManager
+{
+    // List of known settings.
+    const DOMString FOOBAR = "foobar";
+ 
 
-    interface SettingsManager
+    // Setters. SettingsRequest.result is always null.
+    SettingsRequest set(DOMString name, DOMString value);
+    SettingsRequest set(DOMString name, long value);
+    SettingsRequest set(DOMString name, long long value);
+    SettingsRequest set(DOMString name, float value);
 
-    {
+    // Getters. SettingsRequest.result will be of the requested type if the success event is sent.
+    SettingsRequest getString(DOMString name);
+    SettingsRequest getInt(DOMString name);
+    SettingsRequest getLong(DOMString name);
+    SettingsRequest getFloat(DOMString name);
+}
+```
 
-        // List of known settings.
-
-        const DOMString FOOBAR = "foobar";
-
-     
-
-        // Setters. SettingsRequest.result is always null.
-
-        SettingsRequest set(DOMString name, DOMString value);
-
-        SettingsRequest set(DOMString name, long value);
-
-        SettingsRequest set(DOMString name, long long value);
-
-        SettingsRequest set(DOMString name, float value);
-
-     
-
-        // Getters. SettingsRequest.result will be of the requested type if the success event is sent.
-
-        SettingsRequest getString(DOMString name);
-
-        SettingsRequest getInt(DOMString name);
-
-        SettingsRequest getLong(DOMString name);
-
-        SettingsRequest getFloat(DOMString name);
-
-    }
-
-  
 So, dynamically modifying the css to comply to the Metro color sheme
 could be this easy.  
-  
 
-    var backgroundColorRequest = settingsManager.getString('metro-backgroundColor');
+```js
+var backgroundColorRequest = settingsManager.getString('metro-backgroundColor');
 
-    backgroundColorRequest.onSuccess = function() {
+backgroundColorRequest.onSuccess = function() 
+    $(".main").css("background-color", this.result);
+}
 
-        $(".main").css("background-color", this.result);
+var accentColorRequest = settingsManager.getString('metro-accentColor');
 
-    }
+accentColorRequest.onSuccess = function() {
+    $(".tile").css("background-color", this.result);
+};
+```
 
-    var accentColorRequest = settingsManager.getString('metro-accentColor');
-
-    accentColorRequest.onSuccess = function() {
-
-        $(".tile").css("background-color", this.result);
-
-    };
-
-  
 Is it just me, or does the WebAPI have some sick potential?

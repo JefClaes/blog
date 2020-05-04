@@ -953,32 +953,37 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/12/2011-annual-review/</loc>
+    <loc>http://localhost:1313/2011/12/2011-annual-review.html</loc>
     <lastmod>2011-12-26T21:35:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/12/2011s-most-read-posts/</loc>
+    <loc>http://localhost:1313/tags/me/</loc>
+    <lastmod>2011-12-26T21:35:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2011/12/2011s-most-read-posts.html</loc>
     <lastmod>2011-12-17T19:33:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/11/when-should-you-take-performance-into-consideration/</loc>
+    <loc>http://localhost:1313/2011/11/when-should-you-take-performance-into.html</loc>
     <lastmod>2011-11-27T17:55:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/11/rewriting-an-if/</loc>
+    <loc>http://localhost:1313/2011/11/rewriting-if.html</loc>
     <lastmod>2011-11-24T21:12:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/11/blame-no-one-but-yourself/</loc>
+    <loc>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</loc>
     <lastmod>2011-11-23T21:24:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</loc>
+    <loc>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</loc>
     <lastmod>2011-11-20T17:24:00+01:00</lastmod>
   </url>
   
@@ -993,7 +998,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</loc>
+    <loc>http://localhost:1313/2011/11/programming-for-future-of-mobile.html</loc>
     <lastmod>2011-11-09T22:27:00+01:00</lastmod>
   </url>
   

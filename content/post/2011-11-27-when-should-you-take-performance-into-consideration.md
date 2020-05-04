@@ -3,10 +3,11 @@ title = "When should you take performance into consideration?"
 slug = "2011-11-27-when-should-you-take-performance-into-consideration"
 published = 2011-11-27T17:55:00.001000+01:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2011/11/when-should-you-take-performance-into.html"
 +++
 Before publishing [my previous post on rewriting an
-if](http://jclaes.blogspot.com/2011/11/rewriting-if.html), I knew some
+if](https://www.jefclaes.be/2011/11/rewriting-if.html), I knew some
 people would hate it, because the refactored construct is less
 performant.  
   

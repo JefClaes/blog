@@ -219,6 +219,15 @@
     </item>
     
     <item>
+      <title>me</title>
+      <link>http://localhost:1313/tags/me/</link>
+      <pubDate>Mon, 26 Dec 2011 21:35:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/me/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>javascript</title>
       <link>http://localhost:1313/tags/javascript/</link>
       <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>

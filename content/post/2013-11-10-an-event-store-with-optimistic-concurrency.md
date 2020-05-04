@@ -69,7 +69,7 @@ public class Lock
 }     
 ```
 
-### Optimistic concurrency**  
+### Optimistic concurrency
  
 Before committing changes, we want to verify that no other changes
 have been committed in the meanwhile. These changes could have

@@ -3,36 +3,29 @@ title = "Rewriting an if"
 slug = "2011-11-24-rewriting-an-if"
 published = 2011-11-24T21:12:00.001000+01:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", ".NET",]
+tags = [ "code",]
+url = "2011/11/rewriting-if.html"
 +++
 Yesterday I came across an if statement that looked something like
 this.  
   
-
-    if (arg == "a" ||
-
-        arg == "b" ||
-
-        arg == "c" ||
-
-        arg == "d" ||
-
-        arg == "e")
-
-    {
-
-        Console.WriteLine(true);
-
-    }
-
+```csharp
+if (arg == "a" ||
+    arg == "b" ||
+    arg == "c" ||
+    arg == "d" ||
+    arg == "e") 
+{
+    Console.WriteLine(true);
+}
+```
   
 An alternative way of writing this could look like this.  
   
-
-    if (new [] { "a", "b", "c", "d", "e" }.Contains(arg)) 
-
-        Console.WriteLine(true);
-
+```csharp
+if (new [] { "a", "b", "c", "d", "e" }.Contains(arg))
+    Console.WriteLine(true);
+```
   
 I can't remember in which Github repository I spotted this technique,
 but I'm sure it was written in something other than C\#. I think it

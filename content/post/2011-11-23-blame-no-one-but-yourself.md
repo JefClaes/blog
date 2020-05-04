@@ -3,12 +3,11 @@ title = "Blame no one but yourself"
 slug = "2011-11-23-blame-no-one-but-yourself"
 published = 2011-11-23T21:24:00+01:00
 author = "Jef Claes"
-tags = [ "Ramblings",]
+tags = [ "opinion",]
+url = "2011/11/blame-no-one-but-yourself.html"
 +++
 Blame no one but yourself. This is one of the few quotes I remember
-months after reading [this
-book](http://jclaes.blogspot.com/2011/04/its-not-how-good-you-are-its-how-good.html).
-Although it's a harsh statement, there definitely is some truth to it.  
+months after reading [this book](https://www.jefclaes.be/2011/04/its-not-how-good-you-are-its-how-good.html). Although it's a harsh statement, there definitely is some truth to it.  
   
 Once I started observing my own behavior when faced with failure, I
 caught myself regularly blaming others for failures to which I am - at

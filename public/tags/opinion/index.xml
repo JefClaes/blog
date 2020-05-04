@@ -352,5 +352,46 @@ Here are some snippets taken from a recent letter from Mark Zuckerberg addressed
 I think there is nothing wrong with falling in love with your technology per se. If you want to have a fair relationship with your technology, you have to invest in her.</description>
     </item>
     
+    <item>
+      <title>2011 Annual Review</title>
+      <link>http://localhost:1313/2011/12/2011-annual-review.html</link>
+      <pubDate>Mon, 26 Dec 2011 21:35:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/12/2011-annual-review.html</guid>
+      <description>Since the end of the year is approaching, I would like to look back on 2011 and take a peek at 2012. Unlike the years before, I&amp;rsquo;m hardly setting any goals this year. Interests change so quickly, and new opportunities present themselves so regularly, I feel like it might be ignorant to set these things in stone.
+My career The year started out interesting, working on a brand new product for fire departments at Ferranti Computer Systems.</description>
+    </item>
+    
+    <item>
+      <title>When should you take performance into consideration?</title>
+      <link>http://localhost:1313/2011/11/when-should-you-take-performance-into.html</link>
+      <pubDate>Sun, 27 Nov 2011 17:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/when-should-you-take-performance-into.html</guid>
+      <description>Before publishing my previous post on rewriting an if, I knew some people would hate it, because the refactored construct is less performant.
+Although I think performance is important, relevant performance improvements are, apart from in tight loops, hardly ever to find in language constructs. To put it more bluntly, they are a waste of time. When translating your thoughts into code, you should aim to make your intentions as clear as possible for the person who comes after you.</description>
+    </item>
+    
+    <item>
+      <title>Blame no one but yourself</title>
+      <link>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</link>
+      <pubDate>Wed, 23 Nov 2011 21:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</guid>
+      <description>Blame no one but yourself. This is one of the few quotes I remember months after reading this book. Although it&amp;rsquo;s a harsh statement, there definitely is some truth to it.
+Once I started observing my own behavior when faced with failure, I caught myself regularly blaming others for failures to which I am - at least - an accomplice.
+Think about it. You might be guilty of this too.</description>
+    </item>
+    
+    <item>
+      <title>Daydreaming about jQuery Mobile and the WebAPI</title>
+      <link>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</link>
+      <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</guid>
+      <description>I recently blogged about programming for the future of mobile with jQuery Mobile and the WebAPI. You probably heard that jQuery Mobile 1.0 was released earlier this week. Although it will take a while before we will see some actual results from the WebAPI initiative, that shouldn&amp;rsquo;t keep us from letting our minds play with things that might be possible one day using the WebAPI.
+The thoughts in this post were provoked by an interesting comment Kristof Claes left on my previous post.</description>
+    </item>
+    
   </channel>
 </rss>

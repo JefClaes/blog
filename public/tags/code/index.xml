@@ -693,5 +693,26 @@ Next to being able to scale to an arbitrary size without suffering data loss, th
 Handling unknown actions To give you an example, let&amp;rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method.</description>
     </item>
     
+    <item>
+      <title>Rewriting an if</title>
+      <link>http://localhost:1313/2011/11/rewriting-if.html</link>
+      <pubDate>Thu, 24 Nov 2011 21:12:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/rewriting-if.html</guid>
+      <description>Yesterday I came across an if statement that looked something like this.
+if (arg == &amp;#34;a&amp;#34; || arg == &amp;#34;b&amp;#34; || arg == &amp;#34;c&amp;#34; || arg == &amp;#34;d&amp;#34; || arg == &amp;#34;e&amp;#34;) { Console.WriteLine(true); } An alternative way of writing this could look like this.
+if (new [] { &amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;c&amp;#34;, &amp;#34;d&amp;#34;, &amp;#34;e&amp;#34; }.Contains(arg)) Console.WriteLine(true); I can&amp;rsquo;t remember in which Github repository I spotted this technique, but I&amp;rsquo;m sure it was written in something other than C#.</description>
+    </item>
+    
+    <item>
+      <title>Programming for the future of mobile</title>
+      <link>http://localhost:1313/2011/11/programming-for-future-of-mobile.html</link>
+      <pubDate>Wed, 09 Nov 2011 22:27:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2011/11/programming-for-future-of-mobile.html</guid>
+      <description>I have been working on something small on the side lately. I hardly have anything to show for it though, most of it is still being shaped in my head.
+Anyhow, a very important part of the front-end is built using jQuery mobile. Although the framework hasn&amp;rsquo;t been released - release candidates are available though -, it&amp;rsquo;s something you should start looking into today. Why? Because the browser is the future of mobile applications.</description>
+    </item>
+    
   </channel>
 </rss>

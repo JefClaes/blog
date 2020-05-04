@@ -1655,52 +1655,51 @@ Handling unknown actions To give you an example, let&amp;rsquo;s say I have a Ho
     
     <item>
       <title>2011 Annual Review</title>
-      <link>http://localhost:1313/2011/12/2011-annual-review/</link>
+      <link>http://localhost:1313/2011/12/2011-annual-review.html</link>
       <pubDate>Mon, 26 Dec 2011 21:35:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2011/12/2011-annual-review/</guid>
+      <guid>http://localhost:1313/2011/12/2011-annual-review.html</guid>
       <description>Since the end of the year is approaching, I would like to look back on 2011 and take a peek at 2012. Unlike the years before, I&amp;rsquo;m hardly setting any goals this year. Interests change so quickly, and new opportunities present themselves so regularly, I feel like it might be ignorant to set these things in stone.
-My career
-The year started out interesting, working on a brand new product for fire departments at Ferranti Computer Systems.</description>
+My career The year started out interesting, working on a brand new product for fire departments at Ferranti Computer Systems.</description>
     </item>
     
     <item>
       <title>2011&#39;s most read posts</title>
-      <link>http://localhost:1313/2011/12/2011s-most-read-posts/</link>
+      <link>http://localhost:1313/2011/12/2011s-most-read-posts.html</link>
       <pubDate>Sat, 17 Dec 2011 19:33:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2011/12/2011s-most-read-posts/</guid>
+      <guid>http://localhost:1313/2011/12/2011s-most-read-posts.html</guid>
       <description>I compiled a list of most popular posts that were published on this blog in 2011. Unlike last year, and the year before that, this year it&amp;rsquo;s not a strict top five list. While analyzing the statistics, I found out that a few topics -covered over multiple posts - were popular this year.
 Preparing for my HTML5 Webcamps session on WebSockets, I wrote a few posts on the Microsoft WebSockets prototype.</description>
     </item>
     
     <item>
       <title>When should you take performance into consideration?</title>
-      <link>http://localhost:1313/2011/11/when-should-you-take-performance-into-consideration/</link>
+      <link>http://localhost:1313/2011/11/when-should-you-take-performance-into.html</link>
       <pubDate>Sun, 27 Nov 2011 17:55:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2011/11/when-should-you-take-performance-into-consideration/</guid>
+      <guid>http://localhost:1313/2011/11/when-should-you-take-performance-into.html</guid>
       <description>Before publishing my previous post on rewriting an if, I knew some people would hate it, because the refactored construct is less performant.
 Although I think performance is important, relevant performance improvements are, apart from in tight loops, hardly ever to find in language constructs. To put it more bluntly, they are a waste of time. When translating your thoughts into code, you should aim to make your intentions as clear as possible for the person who comes after you.</description>
     </item>
     
     <item>
       <title>Rewriting an if</title>
-      <link>http://localhost:1313/2011/11/rewriting-an-if/</link>
+      <link>http://localhost:1313/2011/11/rewriting-if.html</link>
       <pubDate>Thu, 24 Nov 2011 21:12:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2011/11/rewriting-an-if/</guid>
+      <guid>http://localhost:1313/2011/11/rewriting-if.html</guid>
       <description>Yesterday I came across an if statement that looked something like this.
-if (arg == &amp;quot;a&amp;quot; || arg == &amp;quot;b&amp;quot; || arg == &amp;quot;c&amp;quot; || arg == &amp;quot;d&amp;quot; || arg == &amp;quot;e&amp;quot;) { Console.WriteLine(true); }  An alternative way of writing this could look like this.
-if (new [] { &amp;quot;a&amp;quot;, &amp;quot;b&amp;quot;, &amp;quot;c&amp;quot;, &amp;quot;d&amp;quot;, &amp;quot;e&amp;quot; }.Contains(arg)) Console.WriteLine(true);  I can&amp;rsquo;t remember in which Github repository I spotted this technique, but I&amp;rsquo;m sure it was written in something other than C#.</description>
+if (arg == &amp;#34;a&amp;#34; || arg == &amp;#34;b&amp;#34; || arg == &amp;#34;c&amp;#34; || arg == &amp;#34;d&amp;#34; || arg == &amp;#34;e&amp;#34;) { Console.WriteLine(true); } An alternative way of writing this could look like this.
+if (new [] { &amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;c&amp;#34;, &amp;#34;d&amp;#34;, &amp;#34;e&amp;#34; }.Contains(arg)) Console.WriteLine(true); I can&amp;rsquo;t remember in which Github repository I spotted this technique, but I&amp;rsquo;m sure it was written in something other than C#.</description>
     </item>
     
     <item>
       <title>Blame no one but yourself</title>
-      <link>http://localhost:1313/2011/11/blame-no-one-but-yourself/</link>
+      <link>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</link>
       <pubDate>Wed, 23 Nov 2011 21:24:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2011/11/blame-no-one-but-yourself/</guid>
+      <guid>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</guid>
       <description>Blame no one but yourself. This is one of the few quotes I remember months after reading this book. Although it&amp;rsquo;s a harsh statement, there definitely is some truth to it.
 Once I started observing my own behavior when faced with failure, I caught myself regularly blaming others for failures to which I am - at least - an accomplice.
 Think about it. You might be guilty of this too.</description>
@@ -1708,20 +1707,20 @@ Think about it. You might be guilty of this too.</description>
     
     <item>
       <title>Daydreaming about jQuery Mobile and the WebAPI</title>
-      <link>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</link>
+      <link>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</link>
       <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2011/11/daydreaming-about-jquery-mobile-and-the-webapi/</guid>
+      <guid>http://localhost:1313/2011/11/blame-no-one-but-yourself.html</guid>
       <description>I recently blogged about programming for the future of mobile with jQuery Mobile and the WebAPI. You probably heard that jQuery Mobile 1.0 was released earlier this week. Although it will take a while before we will see some actual results from the WebAPI initiative, that shouldn&amp;rsquo;t keep us from letting our minds play with things that might be possible one day using the WebAPI.
 The thoughts in this post were provoked by an interesting comment Kristof Claes left on my previous post.</description>
     </item>
     
     <item>
       <title>Programming for the future of mobile</title>
-      <link>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</link>
+      <link>http://localhost:1313/2011/11/programming-for-future-of-mobile.html</link>
       <pubDate>Wed, 09 Nov 2011 22:27:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</guid>
+      <guid>http://localhost:1313/2011/11/programming-for-future-of-mobile.html</guid>
       <description>I have been working on something small on the side lately. I hardly have anything to show for it though, most of it is still being shaped in my head.
 Anyhow, a very important part of the front-end is built using jQuery mobile. Although the framework hasn&amp;rsquo;t been released - release candidates are available though -, it&amp;rsquo;s something you should start looking into today. Why? Because the browser is the future of mobile applications.</description>
     </item>

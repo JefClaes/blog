@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Programming for the future of mobile - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Programming for the future of mobile">
+<meta itemprop="description" content="I have been working on something small on the side lately. I hardly have anything to show for it though, most of it is still being shaped in my head.
+Anyhow, a very important part of the front-end is built using jQuery mobile. Although the framework hasn&rsquo;t been released - release candidates are available though -, it&rsquo;s something you should start looking into today. Why? Because the browser is the future of mobile applications.">
+<meta itemprop="datePublished" content="2011-11-09T22:27:00&#43;01:00" />
+<meta itemprop="dateModified" content="2011-11-09T22:27:00&#43;01:00" />
+<meta itemprop="wordCount" content="369">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Programming for the future of mobile" />
+<meta property="og:description" content="I have been working on something small on the side lately. I hardly have anything to show for it though, most of it is still being shaped in my head.
+Anyhow, a very important part of the front-end is built using jQuery mobile. Although the framework hasn&rsquo;t been released - release candidates are available though -, it&rsquo;s something you should start looking into today. Why? Because the browser is the future of mobile applications." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2011/11/programming-for-future-of-mobile.html" />
+<meta property="article:published_time" content="2011-11-09T22:27:00+01:00" />
+<meta property="article:modified_time" content="2011-11-09T22:27:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Programming for the future of mobile"/>
+<meta name="twitter:description" content="I have been working on something small on the side lately. I hardly have anything to show for it though, most of it is still being shaped in my head.
+Anyhow, a very important part of the front-end is built using jQuery mobile. Although the framework hasn&rsquo;t been released - release candidates are available though -, it&rsquo;s something you should start looking into today. Why? Because the browser is the future of mobile applications."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">09</span>
+							<span class="rest">Nov 2011</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Programming for the future of mobile</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>I have been working on something small on the side lately. I hardly have
+anything to show for it though, most of it is still being shaped in my
+head.</p>
+<p>Anyhow, a very important part of the front-end is built using <a href="http://jquerymobile.com/">jQuery
+mobile</a>. Although the framework hasn&rsquo;t been
+released - release candidates are available though -, it&rsquo;s something you
+should start looking into today. Why? Because the browser is the future
+of mobile applications. With the
+<a href="http://blogs.adobe.com/conversations/2011/11/flash-focus.html">Flash</a>
+and <a href="http://www.theverge.com/2011/11/9/2548975/microsoft-may-halt-development-work-on-silverlight-after-next-release">Silverlight
+bombs</a>
+that were dropped today, I am even more confident that that future might
+be nearer than we think.</p>
+<p>Built upon the jQuery and jQuery UI foundation, jQuery mobile aims to
+make mobile web applications seriously cross-platform and cross-device,
+while optimizing for touchfriendliness. From what I&rsquo;ve seen so far, the
+jQuery team has (once again) succeeded at making the web just work.</p>
+<p>To start using jQuery mobile, you just have to add one extra script file
+and one stylesheet on top of the existing jQuery infrastructure. Once
+that is done, the framework will already do most of the heavy lifting
+for you. Depending on your needs, you might want to enrich some elements
+explicitly in a nice semantic fashion.</p>
+<p>For example, this is how you would get some collapsible panel action
+going.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2;font-weight:bold">div</span> <span style="color:#268bd2">data-role</span>=<span style="color:#2aa198">&#34;collapsible&#34;</span> <span style="color:#268bd2">data-theme</span>=<span style="color:#2aa198">&#34;c&#34;</span> <span style="color:#268bd2">data-content-theme</span>=<span style="color:#2aa198">&#34;c&#34;</span> <span style="color:#268bd2">data-collapsed</span>=<span style="color:#2aa198">&#34;@dataCollapsed&#34;</span> <span style="color:#268bd2">id</span>=<span style="color:#2aa198">&#34;entriesList&#34;</span>&gt;
+    &lt;<span style="color:#268bd2;font-weight:bold">h3</span>&gt;@entryGroup.Date.ToString(&#34;dd/MM/yyyy&#34;)&lt;/<span style="color:#268bd2;font-weight:bold">h3</span>&gt;                
+    &lt;<span style="color:#268bd2;font-weight:bold">ul</span> <span style="color:#268bd2">data-role</span>=<span style="color:#2aa198">&#34;listview&#34;</span> <span style="color:#268bd2">data-inset</span>=<span style="color:#2aa198">&#34;true&#34;</span> <span style="color:#268bd2">data-theme</span>=<span style="color:#2aa198">&#34;d&#34;</span>&gt;  
+        @foreach (var entry in entryGroup.Entries)
+        {           
+            &lt;<span style="color:#268bd2;font-weight:bold">li</span>&gt;
+                @entry.CreatedOn.ToString(&#34;HH:mm&#34;) @entry.Description                     
+            &lt;/<span style="color:#268bd2;font-weight:bold">li</span>&gt;         
+        }
+    &lt;/<span style="color:#268bd2;font-weight:bold">ul</span>&gt;
+&lt;/<span style="color:#268bd2;font-weight:bold">div</span>&gt; 
+</code></pre></div><p>To give you an idea, this would result in something that looks like
+this. Clean, right?</p>
+<p><a href="/post/images/2011-11-09-programming-for-the-future-of-mobile-jQueryMobile.PNG"><img src="/post/images/thumbnails/2011-11-09-programming-for-the-future-of-mobile-jQueryMobile.PNG" alt=""></a></p>
+<p>Now that these problems are out of the way soon, the only barrier left
+for mobile web applications is that the browser has no actual hooks in
+the device itself. But this last barrier can&rsquo;t hold forever&hellip; Mozilla
+initiated a very interesting project not so long ago. They started
+defining standards for a set of APIs that should give you direct access
+to the device: a camera API, telephony and messaging API, accelerometer
+API.. Find everything about the WebAPI initiative
+<a href="https://wiki.mozilla.org/WebAPI">here</a>. Subscribe to the <a href="https://lists.mozilla.org/listinfo/dev-webapi">mailing
+list</a>, participate and
+help pushing the web forward.</p>
+<p>I&rsquo;m fairly optimistic about the future of mobile web applications. It&rsquo;s
+impossible to put a timeframe on it, <strong>but eventually WWW, the Web Will
+Win.</strong></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2011  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
