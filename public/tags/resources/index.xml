@@ -11,17 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/resources/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Three common mistakes you should avoid when starting with Web Page Resources in ASP.NET</title>
-      <link>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</link>
-      <pubDate>Tue, 08 Sep 2009 20:04:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</guid>
-      <description>This is a list of of three common mistakes made by developers who start using Web Page Resources in ASP.NET.
-1. Not using the right format for the name of a local resources fileThe format of the name of a local resources file should be: PageName.PageExtension.resx.
-If you don&amp;rsquo;t add the page extension (Aspx, Ascx), you will get the Exception &amp;ldquo;The resource object with key &amp;lsquo;PageTitle&amp;rsquo; was not found.&amp;quot;.
-2. Not adding an App_LocalResources folder to each subfolderEach subfolder must have it&amp;rsquo;s own App_LocalResources folder, else ASP.</description>
-    </item>
-    
   </channel>
 </rss>

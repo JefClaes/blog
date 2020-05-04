@@ -12,18 +12,6 @@
     
     
     <item>
-      <title>Interview with Arjan Zuidhof from Arjan&#39;s World</title>
-      <link>http://localhost:1313/2009/04/interview-with-arjan-zuidhof-from-arjans-world/</link>
-      <pubDate>Fri, 24 Apr 2009 16:39:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/04/interview-with-arjan-zuidhof-from-arjans-world/</guid>
-      <description>Like the title says, I had a little chat with Arjan Zuidhof from Arjan&amp;rsquo;s World.
-Arjan has a opinionated linkblog, on which he posts on a daily basis.
-Here it goes..
-Next to blogging, what do you do for a living?I&amp;rsquo;m a thirty-something developer from the Netherlands working as an inhouse .NET developer in a big company, somewhere in the Randstad (western part of the country). I mainly work on projects related to customer data in the broadest sense.</description>
-    </item>
-    
-    <item>
       <title>Stored Procedures: Make them or break them</title>
       <link>http://localhost:1313/2009/02/stored-procedures-make-them-or-break-them/</link>
       <pubDate>Sun, 15 Feb 2009 18:58:00 +0100</pubDate>
@@ -33,49 +21,6 @@ Next to blogging, what do you do for a living?I&amp;rsquo;m a thirty-something d
 Some questions that popped up in my head: What are the advantages/disadvantages? When and how should they be used? Will they extinct with LINQ to SQL becoming more and more popular? Why should you store your queries in your database, instead of in your code..
 I asked the opinion of a few ASP.NET/.NET professionals. Hope you find this interesting!
 Kris Van Der Mast (Blog) Since I&amp;rsquo;m a consultant I have to go with the specifications of my clients.</description>
-    </item>
-    
-    <item>
-      <title>Being a developer in India</title>
-      <link>http://localhost:1313/2009/02/being-a-developer-in-india/</link>
-      <pubDate>Tue, 10 Feb 2009 20:45:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/02/being-a-developer-in-india/</guid>
-      <description>Nowadays all you here is: hey let&amp;rsquo;s outsource our call center, our IT department, our developer team.. to India. I asked Mudassar Ahmed Khan a few questions about how it&amp;rsquo;s like being a developer in India.
-
-How is it like to be a developer in India?Quite bad..
- You get into heavy competition from day one when you join a Computer Science course. Companies set percentage criteria for young graduates.</description>
-    </item>
-    
-    <item>
-      <title>Interview with Curt Christianson (Part II)</title>
-      <link>http://localhost:1313/2009/01/interview-with-curt-christianson-part-ii/</link>
-      <pubDate>Mon, 12 Jan 2009 20:34:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/01/interview-with-curt-christianson-part-ii/</guid>
-      <description>This is part II of the interview with Curt Christianson. For Part I go here.
-Part 2: Technology Let me ask you some general questions about building a web application. What is your advise on setting up the layers of a web application. In the web application I&amp;rsquo;m currently working on we chose a not so standard architecture I guess. We have multiple &amp;ldquo;modules&amp;rdquo;, which are folders in practice. In the root of these modules we hold our aspx pages.</description>
-    </item>
-    
-    <item>
-      <title>Interview with Curt Christianson (Part I)</title>
-      <link>http://localhost:1313/2009/01/interview-with-curt-christianson-part-i/</link>
-      <pubDate>Thu, 08 Jan 2009 19:42:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/01/interview-with-curt-christianson-part-i/</guid>
-      <description>Curt Christianson is one of the administrators of forums.asp.net. Last month I stumbled across his blog, and felt like I had to do an interview with him. And here we are!
-I have divided his interview in two parts:
- His career and his life Some techtalk on mainly ASP.NET webproject-architecture mixed with a bit of AJAX and WPF  Part 1: Career and life Who are you? Where do you live?</description>
-    </item>
-    
-    <item>
-      <title>Interview with Ecbruck</title>
-      <link>http://localhost:1313/2008/11/interview-with-ecbruck/</link>
-      <pubDate>Sat, 22 Nov 2008 15:50:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2008/11/interview-with-ecbruck/</guid>
-      <description>Ecbruck is Microsoft MVP and is a respected admin of forums.asp.net. He is known for his high quality replies/solutions. So I thought it might be intresting to have a chat with him!
-Me: Who are you? Where do you work? On what project are you working?Ecbruck: My name is Ed Bruck. I live in Des Moines, IA, and currently work as a contractor for the Pioneer HyBred company. During the past year, I&amp;rsquo;ve been working on a 3.</description>
     </item>
     
   </channel>

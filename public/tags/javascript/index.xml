@@ -75,18 +75,6 @@ I am going to start by implementing some of the simple sorting algorithms in Jav
     </item>
     
     <item>
-      <title>My first jQuery plugin: jRoll</title>
-      <link>http://localhost:1313/2011/05/my-first-jquery-plugin-jroll/</link>
-      <pubDate>Sat, 14 May 2011 17:45:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/my-first-jquery-plugin-jroll/</guid>
-      <description>With transitioning to ASP.NET MVC, I see our JavaScript codebase increasing exponentially. And this is a big win, unless we fail to keep that codebase maintainable. We mainly rely on jQuery to do our DOM manipulations, so it&amp;rsquo;s only logical for us to abstract those manipulations into reusable jQuery plugins.
-So today, I wrote my first jQuery plugin and named it jRoll.
-jRoll
-jRoll is a plugin that finds all the (external) links in a jQuery object, and replaces the value of the href attribute with a value you specified.</description>
-    </item>
-    
-    <item>
       <title>Video, slides and source from my WebSockets talk</title>
       <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
       <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>
@@ -99,16 +87,6 @@ You can already find the video of my session on Channel9.
 The slides can be found on SlideShare.
 If you want to play with the demo yourself, you can download the source:
  Make sure your firewall allows incoming TCP traffic on port 4502 Deploy the client access policy file to IIS Also host the Demo.</description>
-    </item>
-    
-    <item>
-      <title>Using JSON serialization outside a web context</title>
-      <link>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</link>
-      <pubDate>Sun, 06 Feb 2011 16:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</guid>
-      <description>You usually are in a web context if you are working with JSON, where JSON serialization almost always is encapsulated by the framework. You might accidentally come across scenarios where you want to serialize and deserialize JSON in a non-web context though.
-Turns out this is fairly trivial since .NET 3.5. .NET 3.5 added the JavaScriptSerializer class. You can find this class in the System.Web.Script.Serialization namespace. To access this namespace you need to reference the System.</description>
     </item>
     
     <item>
@@ -197,16 +175,6 @@ In this post I will show you two new methods in the javascript Selector API whic
     </item>
     
     <item>
-      <title>Building a tagcloud with jQuery and ASMX Webservices</title>
-      <link>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</link>
-      <pubDate>Sat, 18 Sep 2010 18:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</guid>
-      <description>Generating tagclouds is nothing new. People have been generating tagclouds server-side since the seventies. Lately more and more tagclouds are being generated client-side.
-There is nothing wrong with generating tagclouds server-side. Telerik has a great tagcloud server control. Generating tagclouds server-side can bring some overhead though, so depending on the scenario and the requirements you might decide to do it client-side. There are a ton of fancy ready-to-use jQuery tagcloud plug-ins out there.</description>
-    </item>
-    
-    <item>
       <title>The state of the client-side ASP.NET Ajax 4.0 framework</title>
       <link>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</link>
       <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
@@ -225,17 +193,6 @@ In January Microsoft told us that they would ship the ASP.NET Ajax 4.0 library a
       <description>Although I&amp;rsquo;ve made my feet wet with various JavaScript frameworks, I am not a JavaScript hero at all. This might be one of the disadvantages of being a WebForms developer and having great toolkits at hand like the AJAX Control Toolkit and Telerik RADControls.
 Because you really can&amp;rsquo;t call yourself a webdeveloper without having some understanding of JavaScript I decided to order Object-Oriented Javascript by Stoyan Stefanov.
 This book really handles the language itself.</description>
-    </item>
-    
-    <item>
-      <title>Why the javascript beforeunload event is incomplete</title>
-      <link>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</link>
-      <pubDate>Sat, 12 Sep 2009 21:13:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</guid>
-      <description>The onbeforeunload event fires when a page is being unloaded.
-In the intranet webapplications world customers pretty often ask to show a warning when a user leaves a page (by closing the browser, closing a tab, clicking a link,..). This feature is specifically very interesting for data-input-driven webforms where one wrong click can make ten minutes of work undone.
-Last week I had to implement this feature in a huge webform which is causing lots of postbacks (firing the onbeforeunload event).</description>
     </item>
     
   </channel>

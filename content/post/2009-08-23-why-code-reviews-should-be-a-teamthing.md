@@ -15,7 +15,7 @@ reviews.
 
 1.  Having all developers doing code reviews enforces well-documented
     coding standards..
-2.  Which also leads to discussions about what these codings tandards
+2.  Which also leads to discussions about what these coding standards
     should be.
 3.  Each developer is forced to understand the workflow of an
     application which isn't his, which expands his domain knowledge.

@@ -23,17 +23,5 @@ A simple solution
 The simplest solution is checking every few seconds whether the WebSocket is still opened.</description>
     </item>
     
-    <item>
-      <title>IE8-Fix: Disabled select not showing selected options</title>
-      <link>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</link>
-      <pubDate>Wed, 24 Feb 2010 19:55:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</guid>
-      <description>In this post a small workaround for disabled select not showing selected options in IE8. It&amp;rsquo;s probably not the cleanest fix, but it get&amp;rsquo;s the job done.
-ProblemA disabled select does not highlight the selected options.
- 1: &amp;lt;select size=&amp;quot;3&amp;quot; multiple=&amp;quot;multiple&amp;quot; id=&amp;quot;mySelect&amp;quot; disabled=&amp;quot;disabled&amp;quot;&amp;gt; 2: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option1&amp;quot;&amp;gt;Option 1&amp;lt;/option&amp;gt; 3: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option2&amp;quot;&amp;gt;Option 2&amp;lt;/option&amp;gt; 4: &amp;lt;option value=&amp;quot;Option3&amp;quot;&amp;gt;Option 3&amp;lt;/option&amp;gt; 5: &amp;lt;/select&amp;gt;  
-SolutionThe following CSS provides a workaround. It looks pretty similar to the appearance we are used to.</description>
-    </item>
-    
   </channel>
 </rss>

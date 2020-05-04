@@ -11,28 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/refactoring/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Yesterday I blogged on &amp;lsquo;WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls&#39;. In this post I went from bad code to better code. A smart reader gave me some good pointers on how to improve this code some more. Another iteration was necessary.
-Losing the LinqIn the previous iteration I used Linq to search my dictionary.
- 1: var res = mappings.Where(map =&amp;gt; map.Key.Equals((CheckBox)sender)).First();  This is overhead, because the dictionary implements an indexer.</description>
-    </item>
-    
-    <item>
-      <title>WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Mon, 12 Jul 2010 21:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Last week I came across a problem which seemed trivial at first sight, but turned out to be a pretty fun refactoring challenge.
-The scenarioThe real problem was a bit more complex, but for simplicity&amp;rsquo;s sake I made this example. In this form there are three checkboxes which map with the textboxes next to them. If the checkbox gets unchecked the corresponding textboxes should be cleared.
-
-First iterationI warn you.</description>
-    </item>
-    
   </channel>
 </rss>

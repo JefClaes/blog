@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Reporting Services option grayed out on installing SSRS</title>
-      <link>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</link>
-      <pubDate>Sat, 12 Feb 2011 17:50:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</guid>
-      <description>Even though our title says Developer, it&amp;rsquo;s hard for most of us to escape doing a system administrator task once in a while.
-I had to add SQL Server Reporting Services to an existing SQL Server 2005 installation. This shouldn&amp;rsquo;t be a big deal. Mount the SQL Server installation image, run the setup and follow the installation wizard to add extra components. Arriving at the step where I should be able to select Reporting Services, the Reporting Services option was grayed out.</description>
-    </item>
-    
-    <item>
       <title>Listening for UDP packets in a Windows service using an UdpClient</title>
       <link>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</link>
       <pubDate>Sun, 14 Mar 2010 16:00:00 +0100</pubDate>

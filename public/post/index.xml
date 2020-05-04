@@ -1978,15 +1978,6 @@ More Joel on Software was written by Joel Spolsky, already a legend for launchin
     </item>
     
     <item>
-      <title>A sign of broken code</title>
-      <link>http://localhost:1313/2011/05/a-sign-of-broken-code/</link>
-      <pubDate>Sat, 28 May 2011 18:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/a-sign-of-broken-code/</guid>
-      <description>Credit to Calvin and Hobbes.</description>
-    </item>
-    
-    <item>
       <title>Checking for anonymous types</title>
       <link>http://localhost:1313/2011/05/checking-for-anonymous-types/</link>
       <pubDate>Sat, 21 May 2011 18:00:00 +0200</pubDate>
@@ -1994,18 +1985,6 @@ More Joel on Software was written by Joel Spolsky, already a legend for launchin
       <guid>http://localhost:1313/2011/05/checking-for-anonymous-types/</guid>
       <description>Because I blogged about anonymous types last month, I thought following method would also make an interesting post.
 private static bool IsAnonymousType(Type type) { Debug.Assert(type != null, &amp;quot;Type should not be null&amp;quot;); // HACK: The only way to detect anonymous types right now. return Attribute.IsDefined(type, typeof(CompilerGeneratedAttribute), false) &amp;amp;&amp;amp; type.IsGenericType &amp;amp;&amp;amp; type.Name.Contains(&amp;quot;AnonymousType&amp;quot;) &amp;amp;&amp;amp; (type.Name.StartsWith(&amp;quot;&amp;lt;&amp;gt;&amp;quot;, StringComparison.OrdinalIgnoreCase) || type.Name.StartsWith(&amp;quot;VB$&amp;quot;, StringComparison.OrdinalIgnoreCase)) &amp;amp;&amp;amp; (type.Attributes &amp;amp; TypeAttributes.NotPublic) == TypeAttributes.NotPublic; }  For a type to be anonymous:</description>
-    </item>
-    
-    <item>
-      <title>My first jQuery plugin: jRoll</title>
-      <link>http://localhost:1313/2011/05/my-first-jquery-plugin-jroll/</link>
-      <pubDate>Sat, 14 May 2011 17:45:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/my-first-jquery-plugin-jroll/</guid>
-      <description>With transitioning to ASP.NET MVC, I see our JavaScript codebase increasing exponentially. And this is a big win, unless we fail to keep that codebase maintainable. We mainly rely on jQuery to do our DOM manipulations, so it&amp;rsquo;s only logical for us to abstract those manipulations into reusable jQuery plugins.
-So today, I wrote my first jQuery plugin and named it jRoll.
-jRoll
-jRoll is a plugin that finds all the (external) links in a jQuery object, and replaces the value of the href attribute with a value you specified.</description>
     </item>
     
     <item>
@@ -2140,26 +2119,6 @@ The simplest solution is checking every few seconds whether the WebSocket is sti
 In my session I will be talking about WebSockets.
  WebSockets on Fire
 While the WebSockets API specification is not stable yet, various browser vendors have already implemented a prototype in their latest browser versions. Microsoft released their WebSockets prototype in December 2010. While there is no native implementation of WebSockets in IE9 just yet, for now they are providing a solution which works cross-browser, relying on a Silverlight client.</description>
-    </item>
-    
-    <item>
-      <title>Reporting Services option grayed out on installing SSRS</title>
-      <link>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</link>
-      <pubDate>Sat, 12 Feb 2011 17:50:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</guid>
-      <description>Even though our title says Developer, it&amp;rsquo;s hard for most of us to escape doing a system administrator task once in a while.
-I had to add SQL Server Reporting Services to an existing SQL Server 2005 installation. This shouldn&amp;rsquo;t be a big deal. Mount the SQL Server installation image, run the setup and follow the installation wizard to add extra components. Arriving at the step where I should be able to select Reporting Services, the Reporting Services option was grayed out.</description>
-    </item>
-    
-    <item>
-      <title>Using JSON serialization outside a web context</title>
-      <link>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</link>
-      <pubDate>Sun, 06 Feb 2011 16:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/02/using-json-serialization-outside-a-web-context/</guid>
-      <description>You usually are in a web context if you are working with JSON, where JSON serialization almost always is encapsulated by the framework. You might accidentally come across scenarios where you want to serialize and deserialize JSON in a non-web context though.
-Turns out this is fairly trivial since .NET 3.5. .NET 3.5 added the JavaScriptSerializer class. You can find this class in the System.Web.Script.Serialization namespace. To access this namespace you need to reference the System.</description>
     </item>
     
     <item>
@@ -2363,15 +2322,6 @@ In this post I will show you two new methods in the javascript Selector API whic
     </item>
     
     <item>
-      <title>Add certifications to your LinkedIn profile</title>
-      <link>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</link>
-      <pubDate>Sun, 28 Nov 2010 20:27:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</guid>
-      <description>October 18th LinkedIn released five new sections that can be added to your profile. The most important for us developers might be the Certifications section. Although your peers aren&amp;rsquo;t easily impressed by a certification, future partners and employers might be.</description>
-    </item>
-    
-    <item>
       <title>TechEd Europe 2010: Day 3</title>
       <link>http://localhost:1313/2010/11/teched-europe-2010-day-3/</link>
       <pubDate>Thu, 11 Nov 2010 20:56:00 +0100</pubDate>
@@ -2446,38 +2396,6 @@ Finding a good tutorialThere are lots of tutorials out there on how to install S
     </item>
     
     <item>
-      <title>Building a tagcloud with jQuery and ASMX Webservices</title>
-      <link>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</link>
-      <pubDate>Sat, 18 Sep 2010 18:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</guid>
-      <description>Generating tagclouds is nothing new. People have been generating tagclouds server-side since the seventies. Lately more and more tagclouds are being generated client-side.
-There is nothing wrong with generating tagclouds server-side. Telerik has a great tagcloud server control. Generating tagclouds server-side can bring some overhead though, so depending on the scenario and the requirements you might decide to do it client-side. There are a ton of fancy ready-to-use jQuery tagcloud plug-ins out there.</description>
-    </item>
-    
-    <item>
-      <title>Extension method: IEnumerable&lt;DateTime?&gt;.AreChronological()</title>
-      <link>http://localhost:1313/2010/08/extension-method-ienumerabledatetime.arechronological/</link>
-      <pubDate>Sun, 22 Aug 2010 13:54:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/08/extension-method-ienumerabledatetime.arechronological/</guid>
-      <description>In this post you can find an extension method which extends IEnumerable&amp;lt;DateTime?&amp;gt;. The AreChronological extension method tests if the items in the IEnumerable&amp;lt;DateTime?&amp;gt; are in chronological order.
-There are multiple ways you can solve this problem.
-Imperative solution 1: public static class DateTimeExtensions 2: { 3: public static bool AreChronological(this IEnumerable&amp;lt;DateTime?&amp;gt; dateTimes) 4: { 5: var prev = (DateTime?)DateTime.MinValue; 6: 7: foreach (var dateTime in dateTimes) 8: { 9: if (dateTime !</description>
-    </item>
-    
-    <item>
-      <title>Extension method: DateTime.IsInFuture()</title>
-      <link>http://localhost:1313/2010/08/extension-method-datetime.isinfuture/</link>
-      <pubDate>Sun, 22 Aug 2010 13:03:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/08/extension-method-datetime.isinfuture/</guid>
-      <description>In this post you can find a simple DateTime extension method. The IsInFuture method simply returns a boolean indicating whether the DateTime instance is in the future or not.
- 1: public static class DateTimeExtensions 2: { 3: public static bool IsInFuture(this DateTime dateTime) 4: { 5: int compareResult = DateTime.Compare(dateTime, DateTime.Now); 6: 7: return compareResult != -1; 8: } 9: }  You can use it like this..
- 1: DateTime dateTimeInPast = new DateTime(2010, 5, 20); 2: DateTime dateTimeInFuture = new DateTime(2025, 11, 20); 3: 4: Console.</description>
-    </item>
-    
-    <item>
       <title>Tripping in Holland. Honey, who shrunk Holland?</title>
       <link>http://localhost:1313/2010/07/tripping-in-holland.-honey-who-shrunk-holland/</link>
       <pubDate>Wed, 21 Jul 2010 17:30:00 +0200</pubDate>
@@ -2494,51 +2412,6 @@ The sight which gave us the most interesting pictures is Madurodam. Madurodam is
       
       <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</guid>
       <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
-    </item>
-    
-    <item>
-      <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Yesterday I blogged on &amp;lsquo;WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls&#39;. In this post I went from bad code to better code. A smart reader gave me some good pointers on how to improve this code some more. Another iteration was necessary.
-Losing the LinqIn the previous iteration I used Linq to search my dictionary.
- 1: var res = mappings.Where(map =&amp;gt; map.Key.Equals((CheckBox)sender)).First();  This is overhead, because the dictionary implements an indexer.</description>
-    </item>
-    
-    <item>
-      <title>WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Mon, 12 Jul 2010 21:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Last week I came across a problem which seemed trivial at first sight, but turned out to be a pretty fun refactoring challenge.
-The scenarioThe real problem was a bit more complex, but for simplicity&amp;rsquo;s sake I made this example. In this form there are three checkboxes which map with the textboxes next to them. If the checkbox gets unchecked the corresponding textboxes should be cleared.
-
-First iterationI warn you.</description>
-    </item>
-    
-    <item>
-      <title>.NET API for PasteHTML</title>
-      <link>http://localhost:1313/2010/06/.net-api-for-pastehtml/</link>
-      <pubDate>Sun, 20 Jun 2010 16:10:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/06/.net-api-for-pastehtml/</guid>
-      <description>PasteHTML is a website which lets you upload and share HTML pages. It&amp;rsquo;s free, anonymous and without registration. The uploaded pages should stay online forever.
-The only drawback is that you can&amp;rsquo;t edit or delete your uploaded pages in an easy way yet. It is ad free, but I guess there will be some advertisements in the future when hosting costs increase.
-You can make a POST request to upload a page through their public API.</description>
-    </item>
-    
-    <item>
-      <title>Making my blog suck less</title>
-      <link>http://localhost:1313/2010/06/making-my-blog-suck-less/</link>
-      <pubDate>Sat, 19 Jun 2010 23:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/06/making-my-blog-suck-less/</guid>
-      <description>Today Scott Hanselman did a session on blogging at the BWB (Blogging While Brown - yah seriously!) conference. He tweeted a link to the slides of this session. I embedded the slides in this post, but you can also get them from here.
-Take your time to check out the slides. It&amp;rsquo;s actually a bit of a checklist, so it shouldn&amp;rsquo;t take more than two minutes.
-The slides pointed out a few things that were missing on my blog.</description>
     </item>
     
     <item>
@@ -2642,18 +2515,6 @@ The trick my team and I use to workaround this problem, makes use of the service
     </item>
     
     <item>
-      <title>IE8-Fix: Disabled select not showing selected options</title>
-      <link>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</link>
-      <pubDate>Wed, 24 Feb 2010 19:55:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</guid>
-      <description>In this post a small workaround for disabled select not showing selected options in IE8. It&amp;rsquo;s probably not the cleanest fix, but it get&amp;rsquo;s the job done.
-ProblemA disabled select does not highlight the selected options.
- 1: &amp;lt;select size=&amp;quot;3&amp;quot; multiple=&amp;quot;multiple&amp;quot; id=&amp;quot;mySelect&amp;quot; disabled=&amp;quot;disabled&amp;quot;&amp;gt; 2: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option1&amp;quot;&amp;gt;Option 1&amp;lt;/option&amp;gt; 3: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option2&amp;quot;&amp;gt;Option 2&amp;lt;/option&amp;gt; 4: &amp;lt;option value=&amp;quot;Option3&amp;quot;&amp;gt;Option 3&amp;lt;/option&amp;gt; 5: &amp;lt;/select&amp;gt;  
-SolutionThe following CSS provides a workaround. It looks pretty similar to the appearance we are used to.</description>
-    </item>
-    
-    <item>
       <title>Book review: Object-Oriented JavaScript</title>
       <link>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</link>
       <pubDate>Mon, 22 Feb 2010 19:47:00 +0100</pubDate>
@@ -2717,31 +2578,6 @@ The first project I&amp;rsquo;ve ever worked on was a rather big one.</descripti
     </item>
     
     <item>
-      <title>The problem that ViewStateMode solves</title>
-      <link>http://localhost:1313/2009/12/the-problem-that-viewstatemode-solves/</link>
-      <pubDate>Sun, 13 Dec 2009 16:55:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/12/the-problem-that-viewstatemode-solves/</guid>
-      <description>A new feature of ASP.NET 4.0 is the ViewStateMode property on a Control.
- You can use the ViewStateMode property to enable view state for an individual control even if view state is disabled for the page.
-Source:Msdn
- In this post I&amp;rsquo;ll try to give this new feature a chance to shine and show it&amp;rsquo;s use.
-Problem to solve: Disable ViewState on the Page and enable it on an individual Control.</description>
-    </item>
-    
-    <item>
-      <title>Add leading zeros to a number</title>
-      <link>http://localhost:1313/2009/12/add-leading-zeros-to-a-number/</link>
-      <pubDate>Mon, 07 Dec 2009 20:21:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/12/add-leading-zeros-to-a-number/</guid>
-      <description>Todays post is a very small tip.
-I saw the question &amp;ldquo;How to add leading zeros to a number&amp;rdquo; on the ASP.NET forums countless times before. And often the answers provide solutions that work, but are overkill as well.
-The two cleanest methods I know are String.Format and PadLeft.
- 1: Console.WriteLine(&amp;quot;Using .ToString()&amp;quot;); 2: Console.WriteLine(String.Format(&amp;quot;{0:0000}&amp;quot;, 16)); 3: 4: Console.WriteLine(&amp;quot;-------------------&amp;quot;); 5: 6: Console.WriteLine(&amp;quot;Using .PadLeft()&amp;quot;); 7: Console.WriteLine(Convert.ToString(16).PadLeft(4, &#39;0&#39;));  You can see the result here.</description>
-    </item>
-    
-    <item>
       <title>Response.RedirectPermanent in .NET 3.5 and older</title>
       <link>http://localhost:1313/2009/12/response.redirectpermanent-in-.net-3.5-and-older/</link>
       <pubDate>Sat, 05 Dec 2009 17:50:00 +0100</pubDate>
@@ -2774,39 +2610,6 @@ Although our stay there was rather short (only four days), we visited some of th
     </item>
     
     <item>
-      <title>Why the javascript beforeunload event is incomplete</title>
-      <link>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</link>
-      <pubDate>Sat, 12 Sep 2009 21:13:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</guid>
-      <description>The onbeforeunload event fires when a page is being unloaded.
-In the intranet webapplications world customers pretty often ask to show a warning when a user leaves a page (by closing the browser, closing a tab, clicking a link,..). This feature is specifically very interesting for data-input-driven webforms where one wrong click can make ten minutes of work undone.
-Last week I had to implement this feature in a huge webform which is causing lots of postbacks (firing the onbeforeunload event).</description>
-    </item>
-    
-    <item>
-      <title>Debugging &#34;SubReport could not be shown.&#34;</title>
-      <link>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</link>
-      <pubDate>Wed, 09 Sep 2009 18:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</guid>
-      <description>I&amp;rsquo;ve been upgrading a local report which contains multiple subreports, and yes I got that &amp;ldquo;SubReport could not be shown.&amp;rdquo; error more than once.
-Debugging this error is a pain in the a.. All you get is &amp;ldquo;SubReport could not be shown.&amp;quot;, making me want to punch my screen and scream &amp;ldquo;BUT WHY?&amp;ldquo;Just before breaking my screen and going on full tilt, I decided to take a step back and run through my checklist.</description>
-    </item>
-    
-    <item>
-      <title>Three common mistakes you should avoid when starting with Web Page Resources in ASP.NET</title>
-      <link>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</link>
-      <pubDate>Tue, 08 Sep 2009 20:04:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</guid>
-      <description>This is a list of of three common mistakes made by developers who start using Web Page Resources in ASP.NET.
-1. Not using the right format for the name of a local resources fileThe format of the name of a local resources file should be: PageName.PageExtension.resx.
-If you don&amp;rsquo;t add the page extension (Aspx, Ascx), you will get the Exception &amp;ldquo;The resource object with key &amp;lsquo;PageTitle&amp;rsquo; was not found.&amp;quot;.
-2. Not adding an App_LocalResources folder to each subfolderEach subfolder must have it&amp;rsquo;s own App_LocalResources folder, else ASP.</description>
-    </item>
-    
-    <item>
       <title>Why code reviews should be a teamthing</title>
       <link>http://localhost:1313/2009/08/why-code-reviews-should-be-a-teamthing/</link>
       <pubDate>Sun, 23 Aug 2009 19:22:00 +0200</pubDate>
@@ -2814,7 +2617,7 @@ If you don&amp;rsquo;t add the page extension (Aspx, Ascx), you will get the Exc
       <guid>http://localhost:1313/2009/08/why-code-reviews-should-be-a-teamthing/</guid>
       <description>Often code reviews are done by one person, the technical lead of your team.
 In my opinion it&amp;rsquo;s better to make each developer of your team do code reviews.
-My arguments Having all developers doing code reviews enforces well-documented coding standards.. Which also leads to discussions about what these codings tandards should be. Each developer is forced to understand the workflow of an application which isn&amp;rsquo;t his, which expands his domain knowledge.</description>
+My arguments Having all developers doing code reviews enforces well-documented coding standards.. Which also leads to discussions about what these coding standards should be. Each developer is forced to understand the workflow of an application which isn&amp;rsquo;t his, which expands his domain knowledge.</description>
     </item>
     
     <item>
@@ -2834,18 +2637,6 @@ Looking forward to the next holiday :)</description>
     </item>
     
     <item>
-      <title>Interview with Arjan Zuidhof from Arjan&#39;s World</title>
-      <link>http://localhost:1313/2009/04/interview-with-arjan-zuidhof-from-arjans-world/</link>
-      <pubDate>Fri, 24 Apr 2009 16:39:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/04/interview-with-arjan-zuidhof-from-arjans-world/</guid>
-      <description>Like the title says, I had a little chat with Arjan Zuidhof from Arjan&amp;rsquo;s World.
-Arjan has a opinionated linkblog, on which he posts on a daily basis.
-Here it goes..
-Next to blogging, what do you do for a living?I&amp;rsquo;m a thirty-something developer from the Netherlands working as an inhouse .NET developer in a big company, somewhere in the Randstad (western part of the country). I mainly work on projects related to customer data in the broadest sense.</description>
-    </item>
-    
-    <item>
       <title>Stored Procedures: Make them or break them</title>
       <link>http://localhost:1313/2009/02/stored-procedures-make-them-or-break-them/</link>
       <pubDate>Sun, 15 Feb 2009 18:58:00 +0100</pubDate>
@@ -2855,61 +2646,6 @@ Next to blogging, what do you do for a living?I&amp;rsquo;m a thirty-something d
 Some questions that popped up in my head: What are the advantages/disadvantages? When and how should they be used? Will they extinct with LINQ to SQL becoming more and more popular? Why should you store your queries in your database, instead of in your code..
 I asked the opinion of a few ASP.NET/.NET professionals. Hope you find this interesting!
 Kris Van Der Mast (Blog) Since I&amp;rsquo;m a consultant I have to go with the specifications of my clients.</description>
-    </item>
-    
-    <item>
-      <title>Being a developer in India</title>
-      <link>http://localhost:1313/2009/02/being-a-developer-in-india/</link>
-      <pubDate>Tue, 10 Feb 2009 20:45:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/02/being-a-developer-in-india/</guid>
-      <description>Nowadays all you here is: hey let&amp;rsquo;s outsource our call center, our IT department, our developer team.. to India. I asked Mudassar Ahmed Khan a few questions about how it&amp;rsquo;s like being a developer in India.
-
-How is it like to be a developer in India?Quite bad..
- You get into heavy competition from day one when you join a Computer Science course. Companies set percentage criteria for young graduates.</description>
-    </item>
-    
-    <item>
-      <title>Interview with Curt Christianson (Part II)</title>
-      <link>http://localhost:1313/2009/01/interview-with-curt-christianson-part-ii/</link>
-      <pubDate>Mon, 12 Jan 2009 20:34:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/01/interview-with-curt-christianson-part-ii/</guid>
-      <description>This is part II of the interview with Curt Christianson. For Part I go here.
-Part 2: Technology Let me ask you some general questions about building a web application. What is your advise on setting up the layers of a web application. In the web application I&amp;rsquo;m currently working on we chose a not so standard architecture I guess. We have multiple &amp;ldquo;modules&amp;rdquo;, which are folders in practice. In the root of these modules we hold our aspx pages.</description>
-    </item>
-    
-    <item>
-      <title>Interview with Curt Christianson (Part I)</title>
-      <link>http://localhost:1313/2009/01/interview-with-curt-christianson-part-i/</link>
-      <pubDate>Thu, 08 Jan 2009 19:42:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/01/interview-with-curt-christianson-part-i/</guid>
-      <description>Curt Christianson is one of the administrators of forums.asp.net. Last month I stumbled across his blog, and felt like I had to do an interview with him. And here we are!
-I have divided his interview in two parts:
- His career and his life Some techtalk on mainly ASP.NET webproject-architecture mixed with a bit of AJAX and WPF  Part 1: Career and life Who are you? Where do you live?</description>
-    </item>
-    
-    <item>
-      <title>Interview with Ecbruck</title>
-      <link>http://localhost:1313/2008/11/interview-with-ecbruck/</link>
-      <pubDate>Sat, 22 Nov 2008 15:50:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2008/11/interview-with-ecbruck/</guid>
-      <description>Ecbruck is Microsoft MVP and is a respected admin of forums.asp.net. He is known for his high quality replies/solutions. So I thought it might be intresting to have a chat with him!
-Me: Who are you? Where do you work? On what project are you working?Ecbruck: My name is Ed Bruck. I live in Des Moines, IA, and currently work as a contractor for the Pioneer HyBred company. During the past year, I&amp;rsquo;ve been working on a 3.</description>
-    </item>
-    
-    <item>
-      <title>History of my Frankenstein PC</title>
-      <link>http://localhost:1313/2008/11/history-of-my-frankenstein-pc/</link>
-      <pubDate>Mon, 17 Nov 2008 18:01:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2008/11/history-of-my-frankenstein-pc/</guid>
-      <description>This week I decided to buy a new PC, because my old one was randomly rebooting, was really out-of-date and because I deserved it.
-My old PC had turned into a Frankenstein PC over the years, that&amp;rsquo;s why I decided to write a little summary of the modifications I did to it over the years.
-
- My new PC only had a 40GB hard drive, which wasn&amp;rsquo;t that big of a problem at first.</description>
     </item>
     
   </channel>

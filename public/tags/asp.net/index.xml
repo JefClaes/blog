@@ -44,45 +44,12 @@ Finding a good tutorialThere are lots of tutorials out there on how to install S
     </item>
     
     <item>
-      <title>Building a tagcloud with jQuery and ASMX Webservices</title>
-      <link>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</link>
-      <pubDate>Sat, 18 Sep 2010 18:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</guid>
-      <description>Generating tagclouds is nothing new. People have been generating tagclouds server-side since the seventies. Lately more and more tagclouds are being generated client-side.
-There is nothing wrong with generating tagclouds server-side. Telerik has a great tagcloud server control. Generating tagclouds server-side can bring some overhead though, so depending on the scenario and the requirements you might decide to do it client-side. There are a ton of fancy ready-to-use jQuery tagcloud plug-ins out there.</description>
-    </item>
-    
-    <item>
       <title>Switching with non-constant cases in C#</title>
       <link>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</link>
       <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
       
       <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</guid>
       <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
-    </item>
-    
-    <item>
-      <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Yesterday I blogged on &amp;lsquo;WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls&#39;. In this post I went from bad code to better code. A smart reader gave me some good pointers on how to improve this code some more. Another iteration was necessary.
-Losing the LinqIn the previous iteration I used Linq to search my dictionary.
- 1: var res = mappings.Where(map =&amp;gt; map.Key.Equals((CheckBox)sender)).First();  This is overhead, because the dictionary implements an indexer.</description>
-    </item>
-    
-    <item>
-      <title>WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Mon, 12 Jul 2010 21:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Last week I came across a problem which seemed trivial at first sight, but turned out to be a pretty fun refactoring challenge.
-The scenarioThe real problem was a bit more complex, but for simplicity&amp;rsquo;s sake I made this example. In this form there are three checkboxes which map with the textboxes next to them. If the checkbox gets unchecked the corresponding textboxes should be cleared.
-
-First iterationI warn you.</description>
     </item>
     
     <item>
@@ -115,19 +82,6 @@ Use the built-in goodiesASP.NET Webforms has a lot of good stuff built into it. 
     </item>
     
     <item>
-      <title>The problem that ViewStateMode solves</title>
-      <link>http://localhost:1313/2009/12/the-problem-that-viewstatemode-solves/</link>
-      <pubDate>Sun, 13 Dec 2009 16:55:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/12/the-problem-that-viewstatemode-solves/</guid>
-      <description>A new feature of ASP.NET 4.0 is the ViewStateMode property on a Control.
- You can use the ViewStateMode property to enable view state for an individual control even if view state is disabled for the page.
-Source:Msdn
- In this post I&amp;rsquo;ll try to give this new feature a chance to shine and show it&amp;rsquo;s use.
-Problem to solve: Disable ViewState on the Page and enable it on an individual Control.</description>
-    </item>
-    
-    <item>
       <title>Response.RedirectPermanent in .NET 3.5 and older</title>
       <link>http://localhost:1313/2009/12/response.redirectpermanent-in-.net-3.5-and-older/</link>
       <pubDate>Sat, 05 Dec 2009 17:50:00 +0100</pubDate>
@@ -145,60 +99,6 @@ Problem to solve: Disable ViewState on the Page and enable it on an individual C
       <guid>http://localhost:1313/2009/11/book-review-professional-refactoring-in-c#-asp.net/</guid>
       <description>Three months ago I was looking up to refactoring a legacy ASP.NET Webforms application. Although I was familiar with refactoring, I ordered &amp;ldquo;Professional Refactoring in C# &amp;amp; ASP.NET&amp;rdquo; by Daniejel Arsenovski to get deeper into refactoring.
 The titleAlthough the title states &amp;ldquo;Professional&amp;rdquo;, I think this book should find it&amp;rsquo;s main audience in coding novices. Another problem with the title is the word ASP.NET in it. The book has one chapter covering ASP.</description>
-    </item>
-    
-    <item>
-      <title>Why the javascript beforeunload event is incomplete</title>
-      <link>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</link>
-      <pubDate>Sat, 12 Sep 2009 21:13:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/why-the-javascript-beforeunload-event-is-incomplete/</guid>
-      <description>The onbeforeunload event fires when a page is being unloaded.
-In the intranet webapplications world customers pretty often ask to show a warning when a user leaves a page (by closing the browser, closing a tab, clicking a link,..). This feature is specifically very interesting for data-input-driven webforms where one wrong click can make ten minutes of work undone.
-Last week I had to implement this feature in a huge webform which is causing lots of postbacks (firing the onbeforeunload event).</description>
-    </item>
-    
-    <item>
-      <title>Debugging &#34;SubReport could not be shown.&#34;</title>
-      <link>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</link>
-      <pubDate>Wed, 09 Sep 2009 18:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</guid>
-      <description>I&amp;rsquo;ve been upgrading a local report which contains multiple subreports, and yes I got that &amp;ldquo;SubReport could not be shown.&amp;rdquo; error more than once.
-Debugging this error is a pain in the a.. All you get is &amp;ldquo;SubReport could not be shown.&amp;quot;, making me want to punch my screen and scream &amp;ldquo;BUT WHY?&amp;ldquo;Just before breaking my screen and going on full tilt, I decided to take a step back and run through my checklist.</description>
-    </item>
-    
-    <item>
-      <title>Three common mistakes you should avoid when starting with Web Page Resources in ASP.NET</title>
-      <link>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</link>
-      <pubDate>Tue, 08 Sep 2009 20:04:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</guid>
-      <description>This is a list of of three common mistakes made by developers who start using Web Page Resources in ASP.NET.
-1. Not using the right format for the name of a local resources fileThe format of the name of a local resources file should be: PageName.PageExtension.resx.
-If you don&amp;rsquo;t add the page extension (Aspx, Ascx), you will get the Exception &amp;ldquo;The resource object with key &amp;lsquo;PageTitle&amp;rsquo; was not found.&amp;quot;.
-2. Not adding an App_LocalResources folder to each subfolderEach subfolder must have it&amp;rsquo;s own App_LocalResources folder, else ASP.</description>
-    </item>
-    
-    <item>
-      <title>Interview with Curt Christianson (Part II)</title>
-      <link>http://localhost:1313/2009/01/interview-with-curt-christianson-part-ii/</link>
-      <pubDate>Mon, 12 Jan 2009 20:34:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/01/interview-with-curt-christianson-part-ii/</guid>
-      <description>This is part II of the interview with Curt Christianson. For Part I go here.
-Part 2: Technology Let me ask you some general questions about building a web application. What is your advise on setting up the layers of a web application. In the web application I&amp;rsquo;m currently working on we chose a not so standard architecture I guess. We have multiple &amp;ldquo;modules&amp;rdquo;, which are folders in practice. In the root of these modules we hold our aspx pages.</description>
-    </item>
-    
-    <item>
-      <title>Interview with Curt Christianson (Part I)</title>
-      <link>http://localhost:1313/2009/01/interview-with-curt-christianson-part-i/</link>
-      <pubDate>Thu, 08 Jan 2009 19:42:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/01/interview-with-curt-christianson-part-i/</guid>
-      <description>Curt Christianson is one of the administrators of forums.asp.net. Last month I stumbled across his blog, and felt like I had to do an interview with him. And here we are!
-I have divided his interview in two parts:
- His career and his life Some techtalk on mainly ASP.NET webproject-architecture mixed with a bit of AJAX and WPF  Part 1: Career and life Who are you? Where do you live?</description>
     </item>
     
   </channel>

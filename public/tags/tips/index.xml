@@ -23,16 +23,6 @@
     </item>
     
     <item>
-      <title>Reporting Services option grayed out on installing SSRS</title>
-      <link>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</link>
-      <pubDate>Sat, 12 Feb 2011 17:50:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/02/reporting-services-option-grayed-out-on-installing-ssrs/</guid>
-      <description>Even though our title says Developer, it&amp;rsquo;s hard for most of us to escape doing a system administrator task once in a while.
-I had to add SQL Server Reporting Services to an existing SQL Server 2005 installation. This shouldn&amp;rsquo;t be a big deal. Mount the SQL Server installation image, run the setup and follow the installation wizard to add extra components. Arriving at the step where I should be able to select Reporting Services, the Reporting Services option was grayed out.</description>
-    </item>
-    
-    <item>
       <title>Format JavaScript with the IE9 developer tools</title>
       <link>http://localhost:1313/2010/12/format-javascript-with-the-ie9-developer-tools/</link>
       <pubDate>Mon, 27 Dec 2010 19:30:00 +0100</pubDate>
@@ -44,15 +34,6 @@ You can find this feature in the toolbox on the Script tab.
 This is how jquery.min.js looks after formatting.
 
 This feature is not available in the public beta (9.0.7.9360.16406), but should be available in the latest platform previews.</description>
-    </item>
-    
-    <item>
-      <title>Add certifications to your LinkedIn profile</title>
-      <link>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</link>
-      <pubDate>Sun, 28 Nov 2010 20:27:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/11/add-certifications-to-your-linkedin-profile/</guid>
-      <description>October 18th LinkedIn released five new sections that can be added to your profile. The most important for us developers might be the Certifications section. Although your peers aren&amp;rsquo;t easily impressed by a certification, future partners and employers might be.</description>
     </item>
     
     <item>
@@ -72,29 +53,6 @@ Finding a good tutorialThere are lots of tutorials out there on how to install S
       
       <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</guid>
       <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
-    </item>
-    
-    <item>
-      <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Yesterday I blogged on &amp;lsquo;WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls&#39;. In this post I went from bad code to better code. A smart reader gave me some good pointers on how to improve this code some more. Another iteration was necessary.
-Losing the LinqIn the previous iteration I used Linq to search my dictionary.
- 1: var res = mappings.Where(map =&amp;gt; map.Key.Equals((CheckBox)sender)).First();  This is overhead, because the dictionary implements an indexer.</description>
-    </item>
-    
-    <item>
-      <title>WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Mon, 12 Jul 2010 21:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Last week I came across a problem which seemed trivial at first sight, but turned out to be a pretty fun refactoring challenge.
-The scenarioThe real problem was a bit more complex, but for simplicity&amp;rsquo;s sake I made this example. In this form there are three checkboxes which map with the textboxes next to them. If the checkbox gets unchecked the corresponding textboxes should be cleared.
-
-First iterationI warn you.</description>
     </item>
     
     <item>
@@ -134,18 +92,6 @@ The trick my team and I use to workaround this problem, makes use of the service
     </item>
     
     <item>
-      <title>IE8-Fix: Disabled select not showing selected options</title>
-      <link>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</link>
-      <pubDate>Wed, 24 Feb 2010 19:55:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</guid>
-      <description>In this post a small workaround for disabled select not showing selected options in IE8. It&amp;rsquo;s probably not the cleanest fix, but it get&amp;rsquo;s the job done.
-ProblemA disabled select does not highlight the selected options.
- 1: &amp;lt;select size=&amp;quot;3&amp;quot; multiple=&amp;quot;multiple&amp;quot; id=&amp;quot;mySelect&amp;quot; disabled=&amp;quot;disabled&amp;quot;&amp;gt; 2: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option1&amp;quot;&amp;gt;Option 1&amp;lt;/option&amp;gt; 3: &amp;lt;option selected=&amp;quot;selected&amp;quot; value=&amp;quot;Option2&amp;quot;&amp;gt;Option 2&amp;lt;/option&amp;gt; 4: &amp;lt;option value=&amp;quot;Option3&amp;quot;&amp;gt;Option 3&amp;lt;/option&amp;gt; 5: &amp;lt;/select&amp;gt;  
-SolutionThe following CSS provides a workaround. It looks pretty similar to the appearance we are used to.</description>
-    </item>
-    
-    <item>
       <title>Log4Net: log.Debug(String.Format()) versus log.DebugFormat()</title>
       <link>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</link>
       <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
@@ -153,53 +99,6 @@ SolutionThe following CSS provides a workaround. It looks pretty similar to the 
       <guid>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</guid>
       <description>Log4net is one of the most popular opensource logging frameworks available in the .NET world. I&amp;rsquo;ve been using this framework for over a year now, and today I discovered something new.
 I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.</description>
-    </item>
-    
-    <item>
-      <title>The problem that ViewStateMode solves</title>
-      <link>http://localhost:1313/2009/12/the-problem-that-viewstatemode-solves/</link>
-      <pubDate>Sun, 13 Dec 2009 16:55:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/12/the-problem-that-viewstatemode-solves/</guid>
-      <description>A new feature of ASP.NET 4.0 is the ViewStateMode property on a Control.
- You can use the ViewStateMode property to enable view state for an individual control even if view state is disabled for the page.
-Source:Msdn
- In this post I&amp;rsquo;ll try to give this new feature a chance to shine and show it&amp;rsquo;s use.
-Problem to solve: Disable ViewState on the Page and enable it on an individual Control.</description>
-    </item>
-    
-    <item>
-      <title>Add leading zeros to a number</title>
-      <link>http://localhost:1313/2009/12/add-leading-zeros-to-a-number/</link>
-      <pubDate>Mon, 07 Dec 2009 20:21:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/12/add-leading-zeros-to-a-number/</guid>
-      <description>Todays post is a very small tip.
-I saw the question &amp;ldquo;How to add leading zeros to a number&amp;rdquo; on the ASP.NET forums countless times before. And often the answers provide solutions that work, but are overkill as well.
-The two cleanest methods I know are String.Format and PadLeft.
- 1: Console.WriteLine(&amp;quot;Using .ToString()&amp;quot;); 2: Console.WriteLine(String.Format(&amp;quot;{0:0000}&amp;quot;, 16)); 3: 4: Console.WriteLine(&amp;quot;-------------------&amp;quot;); 5: 6: Console.WriteLine(&amp;quot;Using .PadLeft()&amp;quot;); 7: Console.WriteLine(Convert.ToString(16).PadLeft(4, &#39;0&#39;));  You can see the result here.</description>
-    </item>
-    
-    <item>
-      <title>Debugging &#34;SubReport could not be shown.&#34;</title>
-      <link>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</link>
-      <pubDate>Wed, 09 Sep 2009 18:41:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</guid>
-      <description>I&amp;rsquo;ve been upgrading a local report which contains multiple subreports, and yes I got that &amp;ldquo;SubReport could not be shown.&amp;rdquo; error more than once.
-Debugging this error is a pain in the a.. All you get is &amp;ldquo;SubReport could not be shown.&amp;quot;, making me want to punch my screen and scream &amp;ldquo;BUT WHY?&amp;ldquo;Just before breaking my screen and going on full tilt, I decided to take a step back and run through my checklist.</description>
-    </item>
-    
-    <item>
-      <title>Three common mistakes you should avoid when starting with Web Page Resources in ASP.NET</title>
-      <link>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</link>
-      <pubDate>Tue, 08 Sep 2009 20:04:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/09/three-common-mistakes-you-should-avoid-when-starting-with-web-page-resources-in-asp.net/</guid>
-      <description>This is a list of of three common mistakes made by developers who start using Web Page Resources in ASP.NET.
-1. Not using the right format for the name of a local resources fileThe format of the name of a local resources file should be: PageName.PageExtension.resx.
-If you don&amp;rsquo;t add the page extension (Aspx, Ascx), you will get the Exception &amp;ldquo;The resource object with key &amp;lsquo;PageTitle&amp;rsquo; was not found.&amp;quot;.
-2. Not adding an App_LocalResources folder to each subfolderEach subfolder must have it&amp;rsquo;s own App_LocalResources folder, else ASP.</description>
     </item>
     
   </channel>

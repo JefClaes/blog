@@ -11,17 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/hardware/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>History of my Frankenstein PC</title>
-      <link>http://localhost:1313/2008/11/history-of-my-frankenstein-pc/</link>
-      <pubDate>Mon, 17 Nov 2008 18:01:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2008/11/history-of-my-frankenstein-pc/</guid>
-      <description>This week I decided to buy a new PC, because my old one was randomly rebooting, was really out-of-date and because I deserved it.
-My old PC had turned into a Frankenstein PC over the years, that&amp;rsquo;s why I decided to write a little summary of the modifications I did to it over the years.
-
- My new PC only had a 40GB hard drive, which wasn&amp;rsquo;t that big of a problem at first.</description>
-    </item>
-    
   </channel>
 </rss>

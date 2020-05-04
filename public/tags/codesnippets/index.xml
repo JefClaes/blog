@@ -167,67 +167,12 @@ In this post I will show you two new methods in the javascript Selector API whic
     </item>
     
     <item>
-      <title>Building a tagcloud with jQuery and ASMX Webservices</title>
-      <link>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</link>
-      <pubDate>Sat, 18 Sep 2010 18:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/09/building-a-tagcloud-with-jquery-and-asmx-webservices/</guid>
-      <description>Generating tagclouds is nothing new. People have been generating tagclouds server-side since the seventies. Lately more and more tagclouds are being generated client-side.
-There is nothing wrong with generating tagclouds server-side. Telerik has a great tagcloud server control. Generating tagclouds server-side can bring some overhead though, so depending on the scenario and the requirements you might decide to do it client-side. There are a ton of fancy ready-to-use jQuery tagcloud plug-ins out there.</description>
-    </item>
-    
-    <item>
-      <title>Extension method: IEnumerable&lt;DateTime?&gt;.AreChronological()</title>
-      <link>http://localhost:1313/2010/08/extension-method-ienumerabledatetime.arechronological/</link>
-      <pubDate>Sun, 22 Aug 2010 13:54:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/08/extension-method-ienumerabledatetime.arechronological/</guid>
-      <description>In this post you can find an extension method which extends IEnumerable&amp;lt;DateTime?&amp;gt;. The AreChronological extension method tests if the items in the IEnumerable&amp;lt;DateTime?&amp;gt; are in chronological order.
-There are multiple ways you can solve this problem.
-Imperative solution 1: public static class DateTimeExtensions 2: { 3: public static bool AreChronological(this IEnumerable&amp;lt;DateTime?&amp;gt; dateTimes) 4: { 5: var prev = (DateTime?)DateTime.MinValue; 6: 7: foreach (var dateTime in dateTimes) 8: { 9: if (dateTime !</description>
-    </item>
-    
-    <item>
-      <title>Extension method: DateTime.IsInFuture()</title>
-      <link>http://localhost:1313/2010/08/extension-method-datetime.isinfuture/</link>
-      <pubDate>Sun, 22 Aug 2010 13:03:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/08/extension-method-datetime.isinfuture/</guid>
-      <description>In this post you can find a simple DateTime extension method. The IsInFuture method simply returns a boolean indicating whether the DateTime instance is in the future or not.
- 1: public static class DateTimeExtensions 2: { 3: public static bool IsInFuture(this DateTime dateTime) 4: { 5: int compareResult = DateTime.Compare(dateTime, DateTime.Now); 6: 7: return compareResult != -1; 8: } 9: }  You can use it like this..
- 1: DateTime dateTimeInPast = new DateTime(2010, 5, 20); 2: DateTime dateTimeInFuture = new DateTime(2025, 11, 20); 3: 4: Console.</description>
-    </item>
-    
-    <item>
       <title>Switching with non-constant cases in C#</title>
       <link>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</link>
       <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
       
       <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</guid>
       <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
-    </item>
-    
-    <item>
-      <title>Follow up: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Yesterday I blogged on &amp;lsquo;WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls&#39;. In this post I went from bad code to better code. A smart reader gave me some good pointers on how to improve this code some more. Another iteration was necessary.
-Losing the LinqIn the previous iteration I used Linq to search my dictionary.
- 1: var res = mappings.Where(map =&amp;gt; map.Key.Equals((CheckBox)sender)).First();  This is overhead, because the dictionary implements an indexer.</description>
-    </item>
-    
-    <item>
-      <title>WebForms refactoring: Eliminating redundant eventhandlers using a dictionary to map controls</title>
-      <link>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</link>
-      <pubDate>Mon, 12 Jul 2010 21:35:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/webforms-refactoring-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</guid>
-      <description>Last week I came across a problem which seemed trivial at first sight, but turned out to be a pretty fun refactoring challenge.
-The scenarioThe real problem was a bit more complex, but for simplicity&amp;rsquo;s sake I made this example. In this form there are three checkboxes which map with the textboxes next to them. If the checkbox gets unchecked the corresponding textboxes should be cleared.
-
-First iterationI warn you.</description>
     </item>
     
     <item>
