@@ -1876,43 +1876,33 @@ The first project I was assigned to, was a project for the Antwerp fire departme
     
     <item>
       <title>Merge sorting in JavaScript</title>
-      <link>http://localhost:1313/2011/07/merge-sorting-in-javascript/</link>
+      <link>http://localhost:1313/2011/07/merge-sorting-in-javascript_1458.html</link>
       <pubDate>Tue, 26 Jul 2011 19:00:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/07/merge-sorting-in-javascript/</guid>
-      <description>The latest addition to my data structures and algorithms in JavaScript is the merge sort algorithm.
+      <guid>http://localhost:1313/2011/07/merge-sorting-in-javascript_1458.html</guid>
+      <description>The latest addition to my [data structures and algorithms in JavaScript](https://github.com/JefClaes Data-structures-and-algorithms-in-JavaScript) is the merge sort algorithm.
 There are four main steps in the merge sort algorithm (from Wikipedia):
- If the list is of length 0 or 1, then it is already sorted. Otherwise: Divide the unsorted list into two sublists of about half the size. Sort each sublist recursively by re-applying the merge sort. Merge the two sublists back into one sorted list.</description>
+ If the list is of length 0 or 1, then it is already sorted.  Otherwise:
+ Divide the unsorted list into two sublists of about half the size. Sort each sublist recursively by re-applying the merge sort. Merge the two sublists back into one sorted list.</description>
     </item>
     
     <item>
       <title>My js data structures and algorithms now on GitHub</title>
-      <link>http://localhost:1313/2011/07/my-js-data-structures-and-algorithms-now-on-github/</link>
+      <link>http://localhost:1313/2011/07/my-js-data-structures-and-algorithms.html</link>
       <pubDate>Sat, 23 Jul 2011 15:30:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/07/my-js-data-structures-and-algorithms-now-on-github/</guid>
+      <guid>http://localhost:1313/2011/07/my-js-data-structures-and-algorithms.html</guid>
       <description>If you have been reading my blog lately, you know that I&amp;rsquo;m implementing some data structures and algorithms in JavaScript. So far, I have blogged about simple sorting algorithms, the stack data structure and the queue data structure. This week I have also implemented a doubly linked list. I started writing a post about that last implementation, but I didn&amp;rsquo;t like where it was going, so instead of writing about it, I have pushed everything to a public Git repository.</description>
     </item>
     
     <item>
-      <title>Recursively spawning Web Workers</title>
-      <link>http://localhost:1313/2011/07/recursively-spawning-web-workers/</link>
-      <pubDate>Thu, 21 Jul 2011 15:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/07/recursively-spawning-web-workers/</guid>
-      <description>I like to think of HTML5 Web Workers simply as &amp;lsquo;threading for the Web&amp;rsquo;.
-Wikipedia describes it a bit more in detail.
- Web Workers define an API for running scripts, basically JavaScript, in the background independently of any user interface scripts. This allows for long-running scripts that are not interrupted by scripts that respond to clicks or other user interactions, and allows long tasks to be executed without yielding to keep the page responsive.</description>
-    </item>
-    
-    <item>
       <title>Overoptimizing my JavaScript stack implementation for fun</title>
-      <link>http://localhost:1313/2011/07/overoptimizing-my-javascript-stack-implementation-for-fun/</link>
+      <link>http://localhost:1313/2011/07/overoptimizing-my-javascript-stack.html</link>
       <pubDate>Mon, 18 Jul 2011 21:00:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/07/overoptimizing-my-javascript-stack-implementation-for-fun/</guid>
+      <guid>http://localhost:1313/2011/07/overoptimizing-my-javascript-stack.html</guid>
       <description>Davy Brion made a comment on my JavaScript stack/queue implementation on Twitter last night: Any reason why you don&amp;rsquo;t immediately set elements to [] at declaration in your stack/queue example?
-var elements; this.push = function(element) { if (typeof(elements) === &#39;undefined&#39;) { elements = []; } elements.push(element); }  Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&amp;rsquo;t push elements.</description>
+var elements; this.push = function(element) { if (typeof(elements) === &amp;#39;undefined&amp;#39;) { elements = []; } elements.push(element); } Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&amp;rsquo;t push elements.</description>
     </item>
     
     <item>

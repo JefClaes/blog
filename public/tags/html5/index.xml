@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>Recursively spawning Web Workers</title>
-      <link>http://localhost:1313/2011/07/recursively-spawning-web-workers/</link>
-      <pubDate>Thu, 21 Jul 2011 15:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/07/recursively-spawning-web-workers/</guid>
-      <description>I like to think of HTML5 Web Workers simply as &amp;lsquo;threading for the Web&amp;rsquo;.
-Wikipedia describes it a bit more in detail.
- Web Workers define an API for running scripts, basically JavaScript, in the background independently of any user interface scripts. This allows for long-running scripts that are not interrupted by scripts that respond to clicks or other user interactions, and allows long tasks to be executed without yielding to keep the page responsive.</description>
-    </item>
-    
-    <item>
       <title>Video, slides and source from my WebSockets talk</title>
       <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
       <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>

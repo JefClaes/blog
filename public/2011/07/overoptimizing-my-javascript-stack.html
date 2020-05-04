@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Overoptimizing my JavaScript stack implementation for fun - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="Overoptimizing my JavaScript stack implementation for fun">
 <meta itemprop="description" content="Davy Brion made a comment on my JavaScript stack/queue implementation on Twitter last night: Any reason why you don&rsquo;t immediately set elements to [] at declaration in your stack/queue example?
-var elements; this.push = function(element) { if (typeof(elements) === &#39;undefined&#39;) { elements = []; } elements.push(element); }  Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&rsquo;t push elements.">
+var elements; this.push = function(element) { if (typeof(elements) === &#39;undefined&#39;) { elements = []; } elements.push(element); } Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&rsquo;t push elements.">
 <meta itemprop="datePublished" content="2011-07-18T21:00:00&#43;02:00" />
 <meta itemprop="dateModified" content="2011-07-18T21:00:00&#43;02:00" />
 <meta itemprop="wordCount" content="200">
@@ -14,15 +14,15 @@ var elements; this.push = function(element) { if (typeof(elements) === &#39;unde
 
 <meta itemprop="keywords" content="code," /><meta property="og:title" content="Overoptimizing my JavaScript stack implementation for fun" />
 <meta property="og:description" content="Davy Brion made a comment on my JavaScript stack/queue implementation on Twitter last night: Any reason why you don&rsquo;t immediately set elements to [] at declaration in your stack/queue example?
-var elements; this.push = function(element) { if (typeof(elements) === &#39;undefined&#39;) { elements = []; } elements.push(element); }  Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&rsquo;t push elements." />
+var elements; this.push = function(element) { if (typeof(elements) === &#39;undefined&#39;) { elements = []; } elements.push(element); } Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&rsquo;t push elements." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2011/07/overoptimizing-my-javascript-stack-implementation-for-fun/" />
+<meta property="og:url" content="http://localhost:1313/2011/07/overoptimizing-my-javascript-stack.html" />
 <meta property="article:published_time" content="2011-07-18T21:00:00+02:00" />
 <meta property="article:modified_time" content="2011-07-18T21:00:00+02:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Overoptimizing my JavaScript stack implementation for fun"/>
 <meta name="twitter:description" content="Davy Brion made a comment on my JavaScript stack/queue implementation on Twitter last night: Any reason why you don&rsquo;t immediately set elements to [] at declaration in your stack/queue example?
-var elements; this.push = function(element) { if (typeof(elements) === &#39;undefined&#39;) { elements = []; } elements.push(element); }  Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&rsquo;t push elements."/>
+var elements; this.push = function(element) { if (typeof(elements) === &#39;undefined&#39;) { elements = []; } elements.push(element); } Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&rsquo;t push elements."/>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
@@ -88,28 +88,18 @@ var elements; this.push = function(element) { if (typeof(elements) === &#39;unde
 			</div>
 					
 			<div class="markdown">
-				<p><a href="http://davybrion.com/blog/">Davy Brion</a> made a comment on <a href="http://jclaes.blogspot.com/2011/07/stacks-and-queues-in-javascript.html">my
-JavaScript stack/queue
-implementation</a>
-on Twitter last night: Any reason why you don&rsquo;t immediately set elements
-to [] at declaration in your stack/queue example?</p>
-<pre><code>var elements;
+				<p><a href="http://davybrion.com/blog/">Davy Brion</a> made a comment on <a href="https://www.jefclaes.be/2011/07/stacks-and-queues-in-javascript.html">my
+JavaScript stack/queue implementation</a> on Twitter last night: Any reason why you don&rsquo;t immediately set elements to [] at declaration in your stack/queue example?</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#859900">var</span> <span style="color:#268bd2">elements</span>;
 
- 
-
-this.push = function(element) {
-
-    if (typeof(elements) === 'undefined') {
-
-        elements = [];   
-
+<span style="color:#859900">this</span>.<span style="color:#268bd2">push</span> = <span style="color:#859900">function</span>(<span style="color:#268bd2">element</span>) {
+    <span style="color:#859900">if</span> (<span style="color:#859900">typeof</span>(<span style="color:#268bd2">elements</span>) === <span style="color:#2aa198">&#39;undefined&#39;</span>) {
+        <span style="color:#268bd2">elements</span> = [];   
     }                            
 
-    elements.push(element);
-
+    <span style="color:#268bd2">elements</span>.<span style="color:#268bd2">push</span>(<span style="color:#268bd2">element</span>);
 }
-</code></pre>
-<p>Yes, I made an overoptimization, and a bad one. In this implementation,
+</code></pre></div><p>Yes, I made an overoptimization, and a bad one. In this implementation,
 you save a few bytes in memory if you initialize the stack, but don&rsquo;t
 push elements. This might have made some sense 15 years ago, but today a
 few bytes are very negligible compared to the cost of evaluating the
