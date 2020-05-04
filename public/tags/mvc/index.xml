@@ -6,21 +6,10 @@
     <description>Recent content in MVC on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Nov 2012 20:30:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2012 20:26:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/mvc/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>ASP.NET MVC4 bundling in ASP.NET MVC3</title>
-      <link>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</link>
-      <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</guid>
-      <description>One of the new wildly evangelized features of ASP.NET MVC4 is the built-in support for bundling and minification of scripts and stylesheets.
-I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work for ASP.NET MVC3 though. If you open the packages config of an ASP.NET MVC4 beta project, you will find that bundling support lives in the Microsoft.Web.Optimization package.
-&amp;lt;package id=&amp;quot;Microsoft.Web.Optimization&amp;quot; version=&amp;quot;1.0.0-beta&amp;quot; /&amp;gt;  So we should just be able to install this package for an ASP.</description>
-    </item>
     
   </channel>
 </rss>

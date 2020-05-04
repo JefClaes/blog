@@ -159,5 +159,15 @@ I wholeheartedly believe in the Agile Manifesto, but somewhere along the way Agi
 However, I also think these four simple words greatly helped the viral growth of the mobile phone.</description>
     </item>
     
+    <item>
+      <title>Book review: Working with NHibernate 3.0</title>
+      <link>http://localhost:1313/2012/02/book-review-working-with-nhibernate-30.html</link>
+      <pubDate>Wed, 08 Feb 2012 20:21:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/book-review-working-with-nhibernate-30.html</guid>
+      <description>It&amp;rsquo;s been a while since I wrote my last book review, mostly because I&amp;rsquo;m still trying to figure out when it adds value to write one. For this one it was pretty obvious, there are far too little reviews out there.
+Being new to NHibernate, and NHibernate being known as having a steep learning curve, I thought it would be a good idea to do some reading. Searching for books on NHibernate 3.</description>
+    </item>
+    
   </channel>
 </rss>

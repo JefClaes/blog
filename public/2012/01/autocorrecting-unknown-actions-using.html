@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Autocorrecting unknown actions using the Levenshtein distance - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Autocorrecting unknown actions using the Levenshtein distance">
+<meta itemprop="description" content="This weekend I prototyped an idea I had earlier this week: autocorrecting unknown actions in ASP.NET MVC.
+Handling unknown actions To give you an example, let&rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method.">
+<meta itemprop="datePublished" content="2012-01-15T16:04:00&#43;01:00" />
+<meta itemprop="dateModified" content="2012-01-15T16:04:00&#43;01:00" />
+<meta itemprop="wordCount" content="999">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Autocorrecting unknown actions using the Levenshtein distance" />
+<meta property="og:description" content="This weekend I prototyped an idea I had earlier this week: autocorrecting unknown actions in ASP.NET MVC.
+Handling unknown actions To give you an example, let&rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/01/autocorrecting-unknown-actions-using.html" />
+<meta property="article:published_time" content="2012-01-15T16:04:00+01:00" />
+<meta property="article:modified_time" content="2012-01-15T16:04:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Autocorrecting unknown actions using the Levenshtein distance"/>
+<meta name="twitter:description" content="This weekend I prototyped an idea I had earlier this week: autocorrecting unknown actions in ASP.NET MVC.
+Handling unknown actions To give you an example, let&rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">15</span>
+							<span class="rest">Jan 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Autocorrecting unknown actions using the Levenshtein distance</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>This weekend I prototyped an idea I had earlier this week:
+autocorrecting unknown actions in ASP.NET MVC.</p>
+<h3 id="handling-unknown-actions">Handling unknown actions</h3>
+<p>To give you an example, let&rsquo;s say I have a Home controller with an
+action named Kitten on it. If there is an incoming route for the Home
+controller with Kitty (instead of Kitten) as the action name, the
+controller will not be able to invoke any action method and instead will
+call the <code>HandleUnknownAction</code> method.</p>
+<p>Here is the snippet from the ASP.NET MVC source.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">protected</span> <span style="color:#859900">override</span> <span style="color:#859900">void</span> <span style="color:#268bd2">ExecuteCore</span>() {
+    <span style="color:#268bd2">PossiblyLoadTempData</span>();
+    <span style="color:#859900">try</span> {
+        <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">actionName</span> = <span style="color:#268bd2">RouteData</span>.<span style="color:#268bd2">GetRequiredString</span>(<span style="color:#2aa198">&#34;action&#34;</span>);
+        <span style="color:#859900">if</span> (!<span style="color:#268bd2">ActionInvoker</span>.<span style="color:#268bd2">InvokeAction</span>(<span style="color:#268bd2">ControllerContext</span>, <span style="color:#268bd2">actionName</span>)) {
+            <span style="color:#268bd2">HandleUnknownAction</span>(<span style="color:#268bd2">actionName</span>);
+        }
+    }
+    <span style="color:#859900">finally</span> {
+        <span style="color:#268bd2">PossiblySaveTempData</span>();
+    }
+}
+</code></pre></div><p>The <code>HandleUnknownAction</code> is virtual, meaning we can override it in our
+derived controller. The base implementation of the <code>HandleUnknownAction</code>
+method does nothing more than throwing a <code>404 HttpException</code>.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">protected</span> <span style="color:#859900">virtual</span> <span style="color:#859900">void</span> <span style="color:#268bd2">HandleUnknownAction</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">actionName</span>) {
+    <span style="color:#859900">throw</span> <span style="color:#859900">new</span> <span style="color:#268bd2">HttpException</span>(<span style="color:#2aa198;font-weight:bold">404</span>, <span style="color:#268bd2">String</span>.<span style="color:#268bd2">Format</span>(<span style="color:#268bd2">CultureInfo</span>.<span style="color:#268bd2">CurrentCulture</span>,
+        <span style="color:#268bd2">MvcResources</span>.<span style="color:#268bd2">Controller_UnknownAction</span>, <span style="color:#268bd2">actionName</span>, <span style="color:#268bd2">GetType</span>().<span style="color:#268bd2">FullName</span>));
+}
+</code></pre></div><p>So let&rsquo;s override the <code>HandleUnknownAction</code> method and try to autocorrect
+the unknown action name. To be safe, we will only attempt to autocorrect
+the action name when it&rsquo;s a GET HTTP request.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">protected</span> <span style="color:#859900">override</span> <span style="color:#859900">void</span> <span style="color:#268bd2">HandleUnknownAction</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">actionName</span>)
+{
+    <span style="color:#859900">if</span> (!<span style="color:#268bd2">HttpContext</span>.<span style="color:#268bd2">Request</span>.<span style="color:#268bd2">HttpMethod</span>.<span style="color:#268bd2">Equals</span>(<span style="color:#2aa198">&#34;GET&#34;</span>, <span style="color:#268bd2">StringComparison</span>.<span style="color:#268bd2">OrdinalIgnoreCase</span>))
+        <span style="color:#268bd2">Throw404HttpException</span>(<span style="color:#268bd2">actionName</span>);
+    
+    <span style="color:#268bd2">TryToRedirectToAnActionNearby</span>(<span style="color:#268bd2">actionName</span>);           
+}
+</code></pre></div><h3 id="listing-all-actions">Listing all actions</h3>
+<p>First we need a list of all available action names. I reflect on the
+methods of the current controller and select the methods which are
+public, can be invoked and are an instance method. Also the method
+should return an <code>ActionResult</code>, not be decorated with the <code>HttpPost</code>
+attribute and not have a special name. I&rsquo;m pretty sure I&rsquo;m missing a few
+things here, but there seems to be no generic way to extract this
+metadata from a controller. Places where these type of things are used
+in the framework seem to be internal or non-public.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">private</span> <span style="color:#268bd2">IEnumerable</span>&lt;<span style="color:#859900;font-weight:bold">string</span>&gt; <span style="color:#268bd2">GetAllHttpGetActionNames</span>()
+{
+    <span style="color:#859900">return</span> <span style="color:#268bd2">GetType</span>()
+            .<span style="color:#268bd2">GetMethods</span>(<span style="color:#268bd2">BindingFlags</span>.<span style="color:#268bd2">InvokeMethod</span> | 
+                        <span style="color:#268bd2">BindingFlags</span>.<span style="color:#268bd2">Public</span> | 
+                        <span style="color:#268bd2">BindingFlags</span>.<span style="color:#268bd2">Instance</span>)
+            .<span style="color:#268bd2">Where</span>(<span style="color:#268bd2">m</span> =&gt; <span style="color:#268bd2">m</span>.<span style="color:#268bd2">ReturnType</span> == <span style="color:#859900">typeof</span>(<span style="color:#268bd2">ActionResult</span>) &amp;&amp;
+                        !<span style="color:#268bd2">m</span>.<span style="color:#268bd2">IsSpecialName</span> &amp;&amp;
+                        !<span style="color:#268bd2">m</span>.<span style="color:#268bd2">GetCustomAttributes</span>(<span style="color:#859900">true</span>)
+                            .<span style="color:#268bd2">Contains</span>(<span style="color:#859900">typeof</span>(<span style="color:#268bd2">HttpPostAttribute</span>)))
+            .<span style="color:#268bd2">Select</span>(<span style="color:#268bd2">m</span> =&gt; <span style="color:#268bd2">m</span>.<span style="color:#268bd2">Name</span>)
+            .<span style="color:#268bd2">Distinct</span>();
+}
+</code></pre></div><p>Once we have all these action names, we want to see how distant they are
+from the unknown action name we are trying to autocorrect here. To
+calculate this we can use the Levenshtein distance algorithm.</p>
+<h3 id="the-levenshtein-distance">The Levenshtein distance</h3>
+<p>The <a href="http://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein
+distance</a> is defined
+by Wikipedia like this.</p>
+<blockquote>
+<p>In information theory and computer science, the Levenshtein distance
+is a string metric for measuring the amount of difference between two
+sequences. The Levenshtein distance between two strings is defined as
+the minimum number of edits needed to transform one string into the
+other, with the allowable edit operations being insertion, deletion,
+or substitution of a single character. It is named after Vladimir
+Levenshtein, who considered this distance in 1965.</p>
+</blockquote>
+<p>An implementation of this algorithm in C# could look like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">static</span> <span style="color:#859900;font-weight:bold">int</span> <span style="color:#268bd2">CalculateDistance</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">str1</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">str2</span>) 
+{
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">matrix</span> = <span style="color:#859900">new</span> <span style="color:#859900;font-weight:bold">int</span>[<span style="color:#268bd2">str1</span>.<span style="color:#268bd2">Length</span> + <span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">str2</span>.<span style="color:#268bd2">Length</span> + <span style="color:#2aa198;font-weight:bold">1</span>];
+
+    <span style="color:#859900">for</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">i</span> = <span style="color:#2aa198;font-weight:bold">0</span>; <span style="color:#268bd2">i</span> &lt;= <span style="color:#268bd2">str1</span>.<span style="color:#268bd2">Length</span>; <span style="color:#268bd2">i</span>++)
+        <span style="color:#268bd2">matrix</span>[<span style="color:#268bd2">i</span>, <span style="color:#2aa198;font-weight:bold">0</span>] = <span style="color:#268bd2">i</span>;
+    <span style="color:#859900">for</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">j</span> = <span style="color:#2aa198;font-weight:bold">0</span>; <span style="color:#268bd2">j</span> &lt;= <span style="color:#268bd2">str2</span>.<span style="color:#268bd2">Length</span>; <span style="color:#268bd2">j</span>++)
+        <span style="color:#268bd2">matrix</span>[<span style="color:#2aa198;font-weight:bold">0</span>, <span style="color:#268bd2">j</span>] = <span style="color:#268bd2">j</span>;
+
+    <span style="color:#859900">for</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">i</span> = <span style="color:#2aa198;font-weight:bold">1</span>; <span style="color:#268bd2">i</span> &lt;= <span style="color:#268bd2">str1</span>.<span style="color:#268bd2">Length</span>; <span style="color:#268bd2">i</span>++)
+    {
+        <span style="color:#859900">for</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">j</span> = <span style="color:#2aa198;font-weight:bold">1</span>; <span style="color:#268bd2">j</span> &lt;= <span style="color:#268bd2">str2</span>.<span style="color:#268bd2">Length</span>; <span style="color:#268bd2">j</span>++)
+        {
+            <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">cost</span> = <span style="color:#268bd2">str1</span>[<span style="color:#268bd2">i</span> - <span style="color:#2aa198;font-weight:bold">1</span>] == <span style="color:#268bd2">str2</span>[<span style="color:#268bd2">j</span> - <span style="color:#2aa198;font-weight:bold">1</span>] ? <span style="color:#2aa198;font-weight:bold">0</span> : <span style="color:#2aa198;font-weight:bold">1</span>;
+
+            <span style="color:#268bd2">matrix</span>[<span style="color:#268bd2">i</span>, <span style="color:#268bd2">j</span>] = (<span style="color:#859900">new</span>[]
+            {
+                <span style="color:#268bd2">matrix</span>[<span style="color:#268bd2">i</span> - <span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">j</span>] + <span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">matrix</span>[<span style="color:#268bd2">i</span>, <span style="color:#268bd2">j</span> - <span style="color:#2aa198;font-weight:bold">1</span>] + <span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">matrix</span>[<span style="color:#268bd2">i</span> - <span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">j</span> - <span style="color:#2aa198;font-weight:bold">1</span>] + <span style="color:#268bd2">cost</span>
+            }).<span style="color:#268bd2">Min</span>();
+
+            <span style="color:#859900">if</span> ((<span style="color:#268bd2">i</span> &gt; <span style="color:#2aa198;font-weight:bold">1</span>) &amp;&amp; 
+                (<span style="color:#268bd2">j</span> &gt; <span style="color:#2aa198;font-weight:bold">1</span>) &amp;&amp; 
+                (<span style="color:#268bd2">str1</span>[<span style="color:#268bd2">i</span> - <span style="color:#2aa198;font-weight:bold">1</span>] == <span style="color:#268bd2">str2</span>[<span style="color:#268bd2">j</span> - <span style="color:#2aa198;font-weight:bold">2</span>]) &amp;&amp;
+                (<span style="color:#268bd2">str1</span>[<span style="color:#268bd2">i</span> - <span style="color:#2aa198;font-weight:bold">2</span>] == <span style="color:#268bd2">str2</span>[<span style="color:#268bd2">j</span> - <span style="color:#2aa198;font-weight:bold">1</span>]))
+            {
+                <span style="color:#268bd2">matrix</span>[<span style="color:#268bd2">i</span>, <span style="color:#268bd2">j</span>] = <span style="color:#268bd2">Math</span>.<span style="color:#268bd2">Min</span>(<span style="color:#268bd2">matrix</span>[<span style="color:#268bd2">i</span>, <span style="color:#268bd2">j</span>], <span style="color:#268bd2">matrix</span>[<span style="color:#268bd2">i</span> - <span style="color:#2aa198;font-weight:bold">2</span>, <span style="color:#268bd2">j</span> - <span style="color:#2aa198;font-weight:bold">2</span>] + <span style="color:#268bd2">cost</span>);
+            }
+        }
+    }
+
+    <span style="color:#859900">return</span> <span style="color:#268bd2">matrix</span>[<span style="color:#268bd2">str1</span>.<span style="color:#268bd2">Length</span>, <span style="color:#268bd2">str2</span>.<span style="color:#268bd2">Length</span>];
+}        
+</code></pre></div><p>This is a direct port from the <a href="http://en.wikipedia.org/wiki/Levenshtein_distance#Computing_Levenshtein_distance">pseudocode found on Wikipedia</a>. These tests might, probably a lot more than the implementation, help you understand what the Levenshtein algorithm calculates.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">[TestMethod()]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Test_CalculateDistance_With_Two_Empty_String</span>()
+{           
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">0</span>, <span style="color:#268bd2">Levenshtein</span>.<span style="color:#268bd2">CalculateDistance</span>(<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Empty</span>, <span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Empty</span>));
+}   
+<span style="color:#268bd2">
+</span><span style="color:#268bd2">[TestMethod()]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Test_CalculateDistance_With_Empty_First_String</span>()
+{         
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">6</span>, <span style="color:#268bd2">Levenshtein</span>.<span style="color:#268bd2">CalculateDistance</span>(<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Empty</span>, <span style="color:#2aa198">&#34;kitten&#34;</span>));
+}
+<span style="color:#268bd2">
+</span><span style="color:#268bd2">[TestMethod()]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Test_CalculateDistance_With_Empty_Second_String</span>()
+{           
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">6</span>, <span style="color:#268bd2">Levenshtein</span>.<span style="color:#268bd2">CalculateDistance</span>(<span style="color:#2aa198">&#34;kitten&#34;</span>, <span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Empty</span>));
+}
+<span style="color:#268bd2">
+</span><span style="color:#268bd2">[TestMethod()]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Test_CalculateDistance_With_Missing_Characters</span>()
+{           
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">2</span>, <span style="color:#268bd2">Levenshtein</span>.<span style="color:#268bd2">CalculateDistance</span>(<span style="color:#2aa198">&#34;kitten&#34;</span>, <span style="color:#2aa198">&#34;kitt&#34;</span>));
+}
+<span style="color:#268bd2">
+</span><span style="color:#268bd2">[TestMethod()]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Test_CalculateDistance_With_Wrong_Characters</span>()
+{           
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">Levenshtein</span>.<span style="color:#268bd2">CalculateDistance</span>(<span style="color:#2aa198">&#34;kitten&#34;</span>, <span style="color:#2aa198">&#34;kittyn&#34;</span>));
+}
+<span style="color:#268bd2">
+</span><span style="color:#268bd2">[TestMethod()]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Test_CalculateDistance_With_Too_Much_Characters</span>()
+{           
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">5</span>, <span style="color:#268bd2">Levenshtein</span>.<span style="color:#268bd2">CalculateDistance</span>(<span style="color:#2aa198">&#34;kitten&#34;</span>, <span style="color:#2aa198">&#34;kittenkitty&#34;</span>));
+}
+<span style="color:#268bd2">
+</span><span style="color:#268bd2">[TestMethod()]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Test_CalculateDistance_With_Equal_Strings</span>()
+{          
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreEqual</span>(<span style="color:#2aa198;font-weight:bold">0</span>, <span style="color:#268bd2">Levenshtein</span>.<span style="color:#268bd2">CalculateDistance</span>(<span style="color:#2aa198">&#34;kitten&#34;</span>, <span style="color:#2aa198">&#34;kitten&#34;</span>));
+}
+</code></pre></div><p>Now that we have implemented the Levenshtein distance algorithm, we can
+calculate the distances between the unknown action name and all the
+available action names.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">private</span> <span style="color:#268bd2">Dictionary</span>&lt;<span style="color:#859900;font-weight:bold">string</span>, <span style="color:#859900;font-weight:bold">int</span>&gt; <span style="color:#268bd2">CalculateLevenshteinDistance</span>(<span style="color:#268bd2">IEnumerable</span>&lt;<span style="color:#859900;font-weight:bold">string</span>&gt; <span style="color:#268bd2">actionList</span>, <span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">actionName</span>)
+{
+    <span style="color:#859900">return</span> <span style="color:#268bd2">actionList</span>
+            .<span style="color:#268bd2">Select</span>(<span style="color:#268bd2">a</span> =&gt; <span style="color:#859900">new</span>
+            {
+                <span style="color:#268bd2">Action</span> = <span style="color:#268bd2">a</span>.<span style="color:#268bd2">ToLower</span>(),
+                <span style="color:#268bd2">Distance</span> = <span style="color:#268bd2">Levenshtein</span>.<span style="color:#268bd2">CalculateDistance</span>(<span style="color:#268bd2">a</span>.<span style="color:#268bd2">ToLower</span>(), <span style="color:#268bd2">actionName</span>.<span style="color:#268bd2">ToLower</span>())
+            })                    
+            .<span style="color:#268bd2">ToDictionary</span>(<span style="color:#268bd2">k</span> =&gt; <span style="color:#268bd2">k</span>.<span style="color:#268bd2">Action</span>, <span style="color:#268bd2">v</span> =&gt; <span style="color:#268bd2">v</span>.<span style="color:#268bd2">Distance</span>);
+}
+</code></pre></div><p>For the unknown action name &lsquo;Kitty&rsquo;, when the action names &lsquo;Kitten&rsquo;,
+&lsquo;Index&rsquo; and &lsquo;Dog&rsquo; are available, this method would return a dictionary
+that looks like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&#39;kitten&#39; : 2
+&#39;index&#39; : 6
+&#39;dog&#39; : 6
+</code></pre></div><h3 id="putting-it-all-together">Putting it all together</h3>
+<p>Now we have this dictionary, we want to filter on a certain distance
+threshold. I picked three, given that when a word is three characters
+off, the chance of it being a typo is rather small.</p>
+<p>If the dictionary still contains some items after filtering, we want to take the action with the shortest distance, this action is the nearest to the unknown action. Only thing left to do is change the action in the <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.controller.routedata(v=vs.90).aspx">RouteData</a> and execute a <a href="http://msdn.microsoft.com/en-us/library/system.web.mvc.redirectresult.aspx">RedirectResult</a>. The easiest way to generate a url to redirect to, is to use the controller&rsquo;s UrlHelper to let it generate the url based on the RouteData.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">private</span> <span style="color:#859900">void</span> <span style="color:#268bd2">TryToRedirectToAnActionNearby</span>(<span style="color:#859900;font-weight:bold">string</span> <span style="color:#268bd2">actionName</span>)
+{
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">httpGetActionNames</span> = <span style="color:#268bd2">GetAllHttpGetActionNames</span>();
+    <span style="color:#859900">if</span> (!<span style="color:#268bd2">httpGetActionNames</span>.<span style="color:#268bd2">Any</span>())
+        <span style="color:#268bd2">Throw404HttpException</span>(<span style="color:#268bd2">actionName</span>);
+
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">actionDistanceMap</span> = <span style="color:#268bd2">CalculateLevenshteinDistance</span>(<span style="color:#268bd2">httpGetActionNames</span>, <span style="color:#268bd2">actionName</span>)
+                                .<span style="color:#268bd2">Where</span>(<span style="color:#268bd2">i</span> =&gt; <span style="color:#268bd2">i</span>.<span style="color:#268bd2">Value</span> &lt;= <span style="color:#2aa198;font-weight:bold">3</span>);
+    <span style="color:#859900">if</span> (!<span style="color:#268bd2">actionDistanceMap</span>.<span style="color:#268bd2">Any</span>())
+        <span style="color:#268bd2">Throw404HttpException</span>(<span style="color:#268bd2">actionName</span>);
+
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">shortestDistance</span> = <span style="color:#268bd2">actionDistanceMap</span>.<span style="color:#268bd2">Select</span>(<span style="color:#268bd2">v</span> =&gt; <span style="color:#268bd2">v</span>.<span style="color:#268bd2">Value</span>).<span style="color:#268bd2">Min</span>();
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">nearestAction</span> = <span style="color:#268bd2">actionDistanceMap</span>.<span style="color:#268bd2">Where</span>(<span style="color:#268bd2">i</span> =&gt; <span style="color:#268bd2">i</span>.<span style="color:#268bd2">Value</span> == <span style="color:#268bd2">shortestDistance</span>).<span style="color:#268bd2">First</span>().<span style="color:#268bd2">Key</span>;
+
+    <span style="color:#268bd2">ControllerContext</span>.<span style="color:#268bd2">RouteData</span>.<span style="color:#268bd2">Values</span>[<span style="color:#2aa198">&#34;action&#34;</span>] = <span style="color:#268bd2">nearestAction</span>;
+
+    <span style="color:#859900">new</span> <span style="color:#268bd2">RedirectResult</span>(<span style="color:#268bd2">Url</span>.<span style="color:#268bd2">RouteUrl</span>(<span style="color:#268bd2">RouteData</span>.<span style="color:#268bd2">Values</span>), <span style="color:#268bd2">permanent</span>: <span style="color:#859900">true</span>)
+        .<span style="color:#268bd2">ExecuteResult</span>(<span style="color:#268bd2">ControllerContext</span>);
+}
+</code></pre></div><h3 id="the-outcome">The outcome</h3>
+<p>Now when I, the user, type http://somesite/someController/kitty, I will
+be redirected to http://somesite/someController/kitten without me even
+noticing.</p>
+<p><a href="/post/images/2012-01-15-autocorrecting-unknown-actions-using-the-levenshtein-distance-LevenshteinDistanceRedirect.PNG"><img src="/post/images/thumbnails/2012-01-15-autocorrecting-unknown-actions-using-the-levenshtein-distance-LevenshteinDistanceRedirect.PNG" alt=""></a></p>
+<h3 id="feedback">Feedback</h3>
+<p>This implementation definitely is <strong>not production ready</strong>. It&rsquo;s a
+prototype, not even under test. I wonder if this  is even something you
+would want to do. Or is this <strong>breaking the Web</strong> in one way or the
+other? Would it bother search engines?</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

@@ -3,7 +3,8 @@ title = "Book review: Working with NHibernate 3.0"
 slug = "2012-02-08-book-review-working-with-nhibernate-3-0"
 published = 2012-02-08T20:21:00+01:00
 author = "Jef Claes"
-tags = [ ".NET", "Bookreview",]
+tags = [ "consumed",]
+url = "2012/02/book-review-working-with-nhibernate-30.html"
 +++
 It's been a while since I wrote my last book review, mostly because I'm
 still trying to figure out when it adds value to write one. For this one
@@ -69,7 +70,7 @@ the use of Evict, Merge and Persist.
 The last chapter, covering only 9 pages, shows how you should set up
 NHibernate in an MVC3 application.  
   
-**Conclusion**  
+### Conclusion  
   
 Although this book doesn't do a great job showing you how to use
 NHibernate in the real world, it does do a decent job giving you a basic
@@ -77,7 +78,6 @@ overview of NHibernate's capabilities. Reading this book when you're new
 to NHibernate will save you from a few costly common NHibernate
 pitfalls. I don't think I will be able to use this book for reference,
 but it should be easier now - knowing the correct terminology - to
-search in the [NHibernate documentation
-online](http://stackoverflow.com/questions/135776/best-place-for-nhibernate-documentation).  
+search in the NHibernate documentation online.  
   
 **My rating: 3/5.** *Do you advise other books on NHibernate?*

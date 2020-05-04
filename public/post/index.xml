@@ -1584,41 +1584,41 @@ Here are some snippets taken from a recent letter from Mark Zuckerberg addressed
     
     <item>
       <title>ASP.NET MVC4 bundling in ASP.NET MVC3</title>
-      <link>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</link>
+      <link>http://localhost:1313/2012/02/aspnet-mvc4-bundling-in-aspnet-mvc3.html</link>
       <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</guid>
+      <guid>http://localhost:1313/2012/02/aspnet-mvc4-bundling-in-aspnet-mvc3.html</guid>
       <description>One of the new wildly evangelized features of ASP.NET MVC4 is the built-in support for bundling and minification of scripts and stylesheets.
 I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work for ASP.NET MVC3 though. If you open the packages config of an ASP.NET MVC4 beta project, you will find that bundling support lives in the Microsoft.Web.Optimization package.
-&amp;lt;package id=&amp;quot;Microsoft.Web.Optimization&amp;quot; version=&amp;quot;1.0.0-beta&amp;quot; /&amp;gt;  So we should just be able to install this package for an ASP.</description>
+&amp;lt;package id=&amp;#34;Microsoft.Web.Optimization&amp;#34; version=&amp;#34;1.0.0-beta&amp;#34; /&amp;gt; So we should just be able to install this package for an ASP.</description>
     </item>
     
     <item>
       <title>There&#39;s no place for monogamy in technology</title>
-      <link>http://localhost:1313/2012/02/theres-no-place-for-monogamy-in-technology/</link>
+      <link>http://localhost:1313/2012/02/theres-no-place-for-monogamy-in.html</link>
       <pubDate>Mon, 20 Feb 2012 08:43:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/02/theres-no-place-for-monogamy-in-technology/</guid>
+      <guid>http://localhost:1313/2012/02/theres-no-place-for-monogamy-in.html</guid>
       <description>In this post I would like to share some of my thoughts on a recent post by James Hague titled &amp;lsquo;Don&amp;rsquo;t Fall in Love With Your Technology&amp;rsquo;. If you haven&amp;rsquo;t read that post yet, please do, it&amp;rsquo;s so short that me summarizing it here would be silly.
 I think there is nothing wrong with falling in love with your technology per se. If you want to have a fair relationship with your technology, you have to invest in her.</description>
     </item>
     
     <item>
       <title>Book review: Working with NHibernate 3.0</title>
-      <link>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</link>
+      <link>http://localhost:1313/2012/02/book-review-working-with-nhibernate-30.html</link>
       <pubDate>Wed, 08 Feb 2012 20:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</guid>
+      <guid>http://localhost:1313/2012/02/book-review-working-with-nhibernate-30.html</guid>
       <description>It&amp;rsquo;s been a while since I wrote my last book review, mostly because I&amp;rsquo;m still trying to figure out when it adds value to write one. For this one it was pretty obvious, there are far too little reviews out there.
 Being new to NHibernate, and NHibernate being known as having a steep learning curve, I thought it would be a good idea to do some reading. Searching for books on NHibernate 3.</description>
     </item>
     
     <item>
       <title>Testing DI bootstrappers</title>
-      <link>http://localhost:1313/2012/02/testing-di-bootstrappers/</link>
+      <link>http://localhost:1313/2012/02/testing-di-bootstrappers.html</link>
       <pubDate>Mon, 06 Feb 2012 08:59:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/02/testing-di-bootstrappers/</guid>
+      <guid>http://localhost:1313/2012/02/testing-di-bootstrappers.html</guid>
       <description>While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&amp;rsquo;t see any reason why they shouldn&amp;rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
 I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot.</description>
     </item>
@@ -1630,45 +1630,27 @@ I encourage you to take a look at the commit history of your DI bootstrappers; I
       
       <guid>http://localhost:1313/2012/02/a-solar-storm-anecdote/</guid>
       <description>Last week, several news channels reported on the strongest solar storm since 2005. This news item reminded me of a peculiar support ticket we received one gray Monday morning a few years ago, when I was still writing software for fire departments.
- *********************************************************************************
-Ticket 7238
-Subject: AVL broken
-Status: New
-Description
-06:22 Vehicles stay mostly stationary on the map, even when we are
-positive they are en route.
-*********************************************************************************</description>
+# Ticket 7238 Subject: **AVL broken** Status: New Description 06:22 Vehicles stay mostly stationary on the map, even when we are positive they are en route. Fire departments that have to cover a large area - and are wealthy enough - often use AVL (Automatic Vehicle Location) to track their vehicles and visualize them on a map.</description>
     </item>
     
     <item>
       <title>How Wikipedia uses HTML5 to save bandwidth</title>
-      <link>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save-bandwidth/</link>
+      <link>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save.html</link>
       <pubDate>Thu, 19 Jan 2012 20:56:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save-bandwidth/</guid>
+      <guid>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save.html</guid>
       <description>Something I hadn&amp;rsquo;t noticed until recently is that Wikipedia tries to use the browser&amp;rsquo;s native SVG support to render certain images. For example, if you search for a high resolution image of your country&amp;rsquo;s flag, you will probably end up viewing an SVG. Wikipedia also offers downloads to the image rendered as a PNG though.
 Next to being able to scale to an arbitrary size without suffering data loss, the SVG data format allows images to be far more compact.</description>
     </item>
     
     <item>
       <title>Autocorrecting unknown actions using the Levenshtein distance</title>
-      <link>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</link>
+      <link>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using.html</link>
       <pubDate>Sun, 15 Jan 2012 16:04:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</guid>
+      <guid>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using.html</guid>
       <description>This weekend I prototyped an idea I had earlier this week: autocorrecting unknown actions in ASP.NET MVC.
-**Handling unknown actions
-**
-To give you an example, let&amp;rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method.</description>
-    </item>
-    
-    <item>
-      <title>An approach to mobile support in ASP.NET MVC</title>
-      <link>http://localhost:1313/2012/01/an-approach-to-mobile-support-in-asp.net-mvc/</link>
-      <pubDate>Thu, 12 Jan 2012 21:16:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/01/an-approach-to-mobile-support-in-asp.net-mvc/</guid>
-      <description>I have been spending a decent amount of time working on a side project in ASP.NET MVC lately. From the start, I planned on supporting mobile. There are lots of ways you can use or extend ASP.NET MVC to support mobile. Having tried several, I can say they all have their merits, and the solution that will work for you very much depends on your requirements. In this post I will run you over the implementation that worked for me, for my specific requirements.</description>
+Handling unknown actions To give you an example, let&amp;rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method.</description>
     </item>
     
     <item>

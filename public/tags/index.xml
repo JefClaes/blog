@@ -39,7 +39,7 @@
     </item>
     
     <item>
-      <title>DDD</title>
+      <title>ddd</title>
       <link>http://localhost:1313/tags/ddd/</link>
       <pubDate>Sun, 23 Jul 2017 08:48:00 +0200</pubDate>
       
@@ -102,81 +102,9 @@
     </item>
     
     <item>
-      <title>Architecture</title>
-      <link>http://localhost:1313/tags/architecture/</link>
-      <pubDate>Sun, 02 Jun 2013 16:24:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/architecture/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ramblings</title>
-      <link>http://localhost:1313/tags/ramblings/</link>
-      <pubDate>Sun, 02 Jun 2013 16:24:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/ramblings/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>.NET</title>
-      <link>http://localhost:1313/tags/.net/</link>
-      <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/.net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CodeSnippets</title>
-      <link>http://localhost:1313/tags/codesnippets/</link>
-      <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/codesnippets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nhibnerate</title>
-      <link>http://localhost:1313/tags/nhibnerate/</link>
-      <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/nhibnerate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTML</title>
-      <link>http://localhost:1313/tags/html/</link>
-      <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
-      <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Opensource</title>
-      <link>http://localhost:1313/tags/opensource/</link>
-      <pubDate>Mon, 20 May 2013 17:02:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/opensource/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ASP.NET</title>
       <link>http://localhost:1313/tags/asp.net/</link>
-      <pubDate>Sun, 28 Apr 2013 18:56:00 +0200</pubDate>
+      <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/asp.net/</guid>
       <description></description>
@@ -185,279 +113,135 @@
     <item>
       <title>ASP.NET MVC</title>
       <link>http://localhost:1313/tags/asp.net-mvc/</link>
-      <pubDate>Sun, 28 Apr 2013 18:56:00 +0200</pubDate>
+      <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/asp.net-mvc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Refactoring</title>
-      <link>http://localhost:1313/tags/refactoring/</link>
-      <pubDate>Sun, 07 Apr 2013 17:35:00 +0200</pubDate>
+      <title>CodeSnippets</title>
+      <link>http://localhost:1313/tags/codesnippets/</link>
+      <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/tags/refactoring/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTTP</title>
-      <link>http://localhost:1313/tags/http/</link>
-      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Messaging</title>
-      <link>http://localhost:1313/tags/messaging/</link>
-      <pubDate>Sun, 17 Mar 2013 16:10:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/messaging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>REST</title>
-      <link>http://localhost:1313/tags/rest/</link>
-      <pubDate>Sun, 03 Mar 2013 16:45:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/rest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NoSql</title>
-      <link>http://localhost:1313/tags/nosql/</link>
-      <pubDate>Sun, 17 Feb 2013 17:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/nosql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
-      <pubDate>Sun, 17 Feb 2013 17:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NancyFx</title>
-      <link>http://localhost:1313/tags/nancyfx/</link>
-      <pubDate>Sun, 20 Jan 2013 22:03:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/nancyfx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hack</title>
-      <link>http://localhost:1313/tags/hack/</link>
-      <pubDate>Sun, 06 Jan 2013 21:18:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/hack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hacking</title>
-      <link>http://localhost:1313/tags/hacking/</link>
-      <pubDate>Sun, 06 Jan 2013 21:18:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/hacking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>General</title>
-      <link>http://localhost:1313/tags/general/</link>
-      <pubDate>Mon, 31 Dec 2012 15:58:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>me</title>
-      <link>http://localhost:1313/tags/me/</link>
-      <pubDate>Mon, 31 Dec 2012 15:58:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/me/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blogging</title>
-      <link>http://localhost:1313/tags/blogging/</link>
-      <pubDate>Sun, 23 Dec 2012 15:53:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/blogging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Browser</title>
-      <link>http://localhost:1313/tags/browser/</link>
-      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/browser/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tips</title>
-      <link>http://localhost:1313/tags/tips/</link>
-      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tools</title>
-      <link>http://localhost:1313/tags/tools/</link>
-      <pubDate>Sun, 16 Dec 2012 16:44:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/tools/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>database</title>
-      <link>http://localhost:1313/tags/database/</link>
-      <pubDate>Sun, 09 Dec 2012 16:08:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jQuery</title>
-      <link>http://localhost:1313/tags/jquery/</link>
-      <pubDate>Sun, 25 Nov 2012 17:45:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/jquery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Browsers</title>
-      <link>http://localhost:1313/tags/browsers/</link>
-      <pubDate>Sun, 18 Nov 2012 15:06:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/browsers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LOL</title>
-      <link>http://localhost:1313/tags/lol/</link>
-      <pubDate>Wed, 14 Nov 2012 12:26:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/lol/</guid>
+      <guid>http://localhost:1313/tags/codesnippets/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MVC</title>
       <link>http://localhost:1313/tags/mvc/</link>
-      <pubDate>Sun, 11 Nov 2012 20:30:00 +0100</pubDate>
+      <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/mvc/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>CSS</title>
-      <link>http://localhost:1313/tags/css/</link>
-      <pubDate>Thu, 01 Nov 2012 19:02:00 +0100</pubDate>
+      <title>General</title>
+      <link>http://localhost:1313/tags/general/</link>
+      <pubDate>Mon, 20 Feb 2012 08:43:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/tags/css/</guid>
+      <guid>http://localhost:1313/tags/general/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Web API</title>
-      <link>http://localhost:1313/tags/web-api/</link>
-      <pubDate>Sun, 21 Oct 2012 00:16:00 +0200</pubDate>
+      <title>.NET</title>
+      <link>http://localhost:1313/tags/.net/</link>
+      <pubDate>Wed, 08 Feb 2012 20:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/tags/web-api/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RSS</title>
-      <link>http://localhost:1313/tags/rss/</link>
-      <pubDate>Sun, 23 Sep 2012 21:56:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/rss/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linq</title>
-      <link>http://localhost:1313/tags/linq/</link>
-      <pubDate>Sun, 23 Sep 2012 20:42:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/linq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Microsoft</title>
-      <link>http://localhost:1313/tags/microsoft/</link>
-      <pubDate>Thu, 20 Sep 2012 12:14:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/microsoft/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Event</title>
-      <link>http://localhost:1313/tags/event/</link>
-      <pubDate>Thu, 13 Sep 2012 08:55:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/event/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Codesnipeets</title>
-      <link>http://localhost:1313/tags/codesnipeets/</link>
-      <pubDate>Sun, 15 Jul 2012 22:37:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/codesnipeets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQLServer</title>
-      <link>http://localhost:1313/tags/sqlserver/</link>
-      <pubDate>Sun, 01 Jul 2012 16:04:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/sqlserver/</guid>
+      <guid>http://localhost:1313/tags/.net/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bookreview</title>
       <link>http://localhost:1313/tags/bookreview/</link>
-      <pubDate>Sun, 10 Jun 2012 19:42:00 +0200</pubDate>
+      <pubDate>Wed, 08 Feb 2012 20:21:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/bookreview/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>LOL</title>
+      <link>http://localhost:1313/tags/lol/</link>
+      <pubDate>Wed, 01 Feb 2012 08:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/lol/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ramblings</title>
+      <link>http://localhost:1313/tags/ramblings/</link>
+      <pubDate>Wed, 01 Feb 2012 08:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/ramblings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Browsers</title>
+      <link>http://localhost:1313/tags/browsers/</link>
+      <pubDate>Thu, 19 Jan 2012 20:56:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/browsers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>HTML5</title>
       <link>http://localhost:1313/tags/html5/</link>
-      <pubDate>Wed, 02 May 2012 20:09:00 +0200</pubDate>
+      <pubDate>Thu, 19 Jan 2012 20:56:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>url</title>
+      <link>http://localhost:1313/tags/url/</link>
+      <pubDate>Thu, 19 Jan 2012 20:56:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/url/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hack</title>
+      <link>http://localhost:1313/tags/hack/</link>
+      <pubDate>Sun, 15 Jan 2012 16:04:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/hack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jQuery</title>
+      <link>http://localhost:1313/tags/jquery/</link>
+      <pubDate>Sun, 20 Nov 2011 17:24:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/jquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>http://localhost:1313/tags/tips/</link>
+      <pubDate>Sat, 08 Oct 2011 17:36:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -480,11 +264,11 @@
     </item>
     
     <item>
-      <title>Visual Studio</title>
-      <link>http://localhost:1313/tags/visual-studio/</link>
-      <pubDate>Tue, 28 Jun 2011 19:00:00 +0200</pubDate>
+      <title>Tools</title>
+      <link>http://localhost:1313/tags/tools/</link>
+      <pubDate>Wed, 15 Jun 2011 21:45:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/tags/visual-studio/</guid>
+      <guid>http://localhost:1313/tags/tools/</guid>
       <description></description>
     </item>
     
@@ -494,6 +278,24 @@
       <pubDate>Sat, 04 Jun 2011 14:30:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/industry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event</title>
+      <link>http://localhost:1313/tags/event/</link>
+      <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/event/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microsoft</title>
+      <link>http://localhost:1313/tags/microsoft/</link>
+      <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/microsoft/</guid>
       <description></description>
     </item>
     
@@ -516,11 +318,38 @@
     </item>
     
     <item>
+      <title>Blogging</title>
+      <link>http://localhost:1313/tags/blogging/</link>
+      <pubDate>Wed, 29 Dec 2010 20:17:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/blogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>teched</title>
       <link>http://localhost:1313/tags/teched/</link>
       <pubDate>Thu, 11 Nov 2010 20:56:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/teched/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Refactoring</title>
+      <link>http://localhost:1313/tags/refactoring/</link>
+      <pubDate>Tue, 13 Jul 2010 20:55:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/refactoring/</guid>
       <description></description>
     </item>
     
@@ -557,6 +386,33 @@
       <pubDate>Sun, 14 Mar 2010 16:00:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/windows-services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>http://localhost:1313/tags/css/</link>
+      <pubDate>Wed, 24 Feb 2010 19:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Opensource</title>
+      <link>http://localhost:1313/tags/opensource/</link>
+      <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/opensource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visual Studio</title>
+      <link>http://localhost:1313/tags/visual-studio/</link>
+      <pubDate>Wed, 09 Sep 2009 18:41:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/visual-studio/</guid>
       <description></description>
     </item>
     

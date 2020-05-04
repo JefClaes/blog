@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>DDD on Jef Claes</title>
+    <title>ddd on Jef Claes</title>
     <link>http://localhost:1313/tags/ddd/</link>
-    <description>Recent content in DDD on Jef Claes</description>
+    <description>Recent content in ddd on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Jul 2017 08:48:00 +0200</lastBuildDate>

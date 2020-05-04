@@ -563,48 +563,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/architecture/</loc>
-    <lastmod>2013-06-02T16:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/ramblings/</loc>
-    <lastmod>2013-06-02T16:24:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/.net/</loc>
-    <lastmod>2013-05-26T16:27:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that.html</loc>
     <lastmod>2013-05-26T16:27:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/codesnippets/</loc>
-    <lastmod>2013-05-26T16:27:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/nhibnerate/</loc>
-    <lastmod>2013-05-26T16:27:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/html/</loc>
-    <lastmod>2013-05-20T17:02:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
-    <lastmod>2013-05-20T17:02:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/opensource/</loc>
-    <lastmod>2013-05-20T17:02:00+02:00</lastmod>
   </url>
   
   <url>
@@ -623,38 +583,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/asp.net/</loc>
-    <lastmod>2013-04-28T18:56:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/asp.net-mvc/</loc>
-    <lastmod>2013-04-28T18:56:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2013/04/designing-entities-immutability-first.html</loc>
-    <lastmod>2013-04-07T17:35:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/refactoring/</loc>
     <lastmod>2013-04-07T17:35:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://localhost:1313/2013/03/reading-large-files-in-chunks-with.html</loc>
     <lastmod>2013-03-24T18:16:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/http/</loc>
-    <lastmod>2013-03-17T16:10:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/messaging/</loc>
-    <lastmod>2013-03-17T16:10:00+01:00</lastmod>
   </url>
   
   <url>
@@ -673,27 +608,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/rest/</loc>
-    <lastmod>2013-03-03T16:45:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2013/02/my-christmas-holiday-project-postmortem.html</loc>
     <lastmod>2013-02-24T16:42:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>http://localhost:1313/2013/02/adding-r-to-cqs-some-storage-options.html</loc>
-    <lastmod>2013-02-17T17:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/nosql/</loc>
-    <lastmod>2013-02-17T17:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/sql/</loc>
     <lastmod>2013-02-17T17:57:00+01:00</lastmod>
   </url>
   
@@ -718,11 +638,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/nancyfx/</loc>
-    <lastmod>2013-01-20T22:03:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2013/01/separating-command-data-from-logic-and.html</loc>
     <lastmod>2013-01-20T22:03:00+01:00</lastmod>
   </url>
@@ -733,58 +648,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/hack/</loc>
-    <lastmod>2013-01-06T21:18:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/hacking/</loc>
-    <lastmod>2013-01-06T21:18:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2012/12/2012-annual-review.html</loc>
-    <lastmod>2012-12-31T15:58:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/general/</loc>
-    <lastmod>2012-12-31T15:58:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/me/</loc>
     <lastmod>2012-12-31T15:58:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>http://localhost:1313/2012/12/2012s-most-read-posts.html</loc>
     <lastmod>2012-12-23T15:53:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/blogging/</loc>
-    <lastmod>2012-12-23T15:53:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/browser/</loc>
-    <lastmod>2012-12-16T16:44:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/tips/</loc>
-    <lastmod>2012-12-16T16:44:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/tools/</loc>
-    <lastmod>2012-12-16T16:44:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/database/</loc>
-    <lastmod>2012-12-09T16:08:00+01:00</lastmod>
   </url>
   
   <url>
@@ -798,38 +668,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/jquery/</loc>
-    <lastmod>2012-11-25T17:45:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2012/11/released-kill-long-meetings.html</loc>
     <lastmod>2012-11-25T17:45:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/browsers/</loc>
-    <lastmod>2012-11-18T15:06:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/lol/</loc>
-    <lastmod>2012-11-14T12:26:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/mvc/</loc>
-    <lastmod>2012-11-11T20:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2012/11/commuting-have-you-done-math.html</loc>
     <lastmod>2012-11-04T20:24:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/css/</loc>
-    <lastmod>2012-11-01T19:02:00+01:00</lastmod>
   </url>
   
   <url>
@@ -839,11 +684,6 @@
   
   <url>
     <loc>http://localhost:1313/2012/10/slides-and-code-from-my-webnet-europe.html</loc>
-    <lastmod>2012-10-21T00:16:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/web-api/</loc>
     <lastmod>2012-10-21T00:16:00+02:00</lastmod>
   </url>
   
@@ -868,28 +708,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/rss/</loc>
-    <lastmod>2012-09-23T21:56:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/linq/</loc>
-    <lastmod>2012-09-23T20:42:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/microsoft/</loc>
-    <lastmod>2012-09-20T12:14:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2012/09/the-7-rs-of-hypermedia.html</loc>
     <lastmod>2012-09-17T21:42:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/event/</loc>
-    <lastmod>2012-09-13T08:55:00+02:00</lastmod>
   </url>
   
   <url>
@@ -933,11 +753,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/codesnipeets/</loc>
-    <lastmod>2012-07-15T22:37:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2012/07/should-i-unit-or-integration-test-my.html</loc>
     <lastmod>2012-07-15T22:37:00+02:00</lastmod>
   </url>
@@ -953,11 +768,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/sqlserver/</loc>
-    <lastmod>2012-07-01T16:04:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2012/06/persisting-model-state-when-using-prg.html</loc>
     <lastmod>2012-06-17T16:48:00+02:00</lastmod>
   </url>
@@ -969,11 +779,6 @@
   
   <url>
     <loc>http://localhost:1313/2012/06/book-review-art-of-agile-development.html</loc>
-    <lastmod>2012-06-10T19:42:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/bookreview/</loc>
     <lastmod>2012-06-10T19:42:00+02:00</lastmod>
   </url>
   
@@ -1000,11 +805,6 @@
   <url>
     <loc>http://localhost:1313/2012/05/why-i-will-always-love-rss.html</loc>
     <lastmod>2012-05-06T16:50:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/html5/</loc>
-    <lastmod>2012-05-02T20:09:00+02:00</lastmod>
   </url>
   
   <url>
@@ -1053,22 +853,57 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</loc>
+    <loc>http://localhost:1313/tags/asp.net/</loc>
     <lastmod>2012-02-25T20:26:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/02/theres-no-place-for-monogamy-in-technology/</loc>
+    <loc>http://localhost:1313/tags/asp.net-mvc/</loc>
+    <lastmod>2012-02-25T20:26:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2012/02/aspnet-mvc4-bundling-in-aspnet-mvc3.html</loc>
+    <lastmod>2012-02-25T20:26:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/codesnippets/</loc>
+    <lastmod>2012-02-25T20:26:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/mvc/</loc>
+    <lastmod>2012-02-25T20:26:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/general/</loc>
     <lastmod>2012-02-20T08:43:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/02/book-review-working-with-nhibernate-3.0/</loc>
+    <loc>http://localhost:1313/2012/02/theres-no-place-for-monogamy-in.html</loc>
+    <lastmod>2012-02-20T08:43:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/.net/</loc>
     <lastmod>2012-02-08T20:21:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/02/testing-di-bootstrappers/</loc>
+    <loc>http://localhost:1313/2012/02/book-review-working-with-nhibernate-30.html</loc>
+    <lastmod>2012-02-08T20:21:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/bookreview/</loc>
+    <lastmod>2012-02-08T20:21:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2012/02/testing-di-bootstrappers.html</loc>
     <lastmod>2012-02-06T08:59:00+01:00</lastmod>
   </url>
   
@@ -1078,18 +913,43 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save-bandwidth/</loc>
+    <loc>http://localhost:1313/tags/lol/</loc>
+    <lastmod>2012-02-01T08:43:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/ramblings/</loc>
+    <lastmod>2012-02-01T08:43:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/browsers/</loc>
     <lastmod>2012-01-19T20:56:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</loc>
+    <loc>http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save.html</loc>
+    <lastmod>2012-01-19T20:56:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/html5/</loc>
+    <lastmod>2012-01-19T20:56:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/url/</loc>
+    <lastmod>2012-01-19T20:56:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using.html</loc>
     <lastmod>2012-01-15T16:04:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2012/01/an-approach-to-mobile-support-in-asp.net-mvc/</loc>
-    <lastmod>2012-01-12T21:16:00+01:00</lastmod>
+    <loc>http://localhost:1313/tags/hack/</loc>
+    <lastmod>2012-01-15T16:04:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1123,6 +983,16 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/javascript/</loc>
+    <lastmod>2011-11-20T17:24:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/jquery/</loc>
+    <lastmod>2011-11-20T17:24:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2011/11/programming-for-the-future-of-mobile/</loc>
     <lastmod>2011-11-09T22:27:00+01:00</lastmod>
   </url>
@@ -1149,6 +1019,11 @@
   
   <url>
     <loc>http://localhost:1313/2011/10/commute-hacking-chromapaper/</loc>
+    <lastmod>2011-10-08T17:36:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/tips/</loc>
     <lastmod>2011-10-08T17:36:00+02:00</lastmod>
   </url>
   
@@ -1288,12 +1163,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/visual-studio/</loc>
-    <lastmod>2011-06-28T19:00:00+02:00</lastmod>
+    <loc>http://localhost:1313/2011/06/should-we-get-this-tool/</loc>
+    <lastmod>2011-06-15T21:45:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/06/should-we-get-this-tool/</loc>
+    <loc>http://localhost:1313/tags/tools/</loc>
     <lastmod>2011-06-15T21:45:00+02:00</lastmod>
   </url>
   
@@ -1365,6 +1240,16 @@
   <url>
     <loc>http://localhost:1313/2011/04/its-not-how-good-you-are-its-how-good-you-want-to-be/</loc>
     <lastmod>2011-04-10T20:30:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/event/</loc>
+    <lastmod>2011-04-07T21:30:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/microsoft/</loc>
+    <lastmod>2011-04-07T21:30:00+02:00</lastmod>
   </url>
   
   <url>
@@ -1440,6 +1325,11 @@
   <url>
     <loc>http://localhost:1313/2011/01/book-review-pro-html5-programming/</loc>
     <lastmod>2011-01-06T14:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/blogging/</loc>
+    <lastmod>2010-12-29T20:17:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1533,6 +1423,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/sql/</loc>
+    <lastmod>2010-09-23T19:31:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/</loc>
     <lastmod>2010-09-23T19:31:00+02:00</lastmod>
   </url>
@@ -1564,6 +1459,11 @@
   
   <url>
     <loc>http://localhost:1313/2010/07/follow-up-eliminating-redundant-eventhandlers-using-a-dictionary-to-map-controls/</loc>
+    <lastmod>2010-07-13T20:55:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/refactoring/</loc>
     <lastmod>2010-07-13T20:55:00+02:00</lastmod>
   </url>
   
@@ -1648,6 +1548,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/css/</loc>
+    <lastmod>2010-02-24T19:55:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2010/02/ie8-fix-disabled-select-not-showing-selected-options/</loc>
     <lastmod>2010-02-24T19:55:00+01:00</lastmod>
   </url>
@@ -1669,6 +1574,11 @@
   
   <url>
     <loc>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</loc>
+    <lastmod>2010-01-20T20:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/opensource/</loc>
     <lastmod>2010-01-20T20:30:00+01:00</lastmod>
   </url>
   
@@ -1714,6 +1624,11 @@
   
   <url>
     <loc>http://localhost:1313/2009/09/debugging-subreport-could-not-be-shown./</loc>
+    <lastmod>2009-09-09T18:41:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/visual-studio/</loc>
     <lastmod>2009-09-09T18:41:00+02:00</lastmod>
   </url>
   

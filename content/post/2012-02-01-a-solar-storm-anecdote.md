@@ -3,7 +3,8 @@ title = "A solar storm anecdote"
 slug = "2012-02-01-a-solar-storm-anecdote"
 published = 2012-02-01T08:43:00.001000+01:00
 author = "Jef Claes"
-tags = [ "Ramblings", "LOL",]
+tags = [ "story",]
+opinion = "2012/02/solar-storm-anecdote.html"
 +++
 Last week, several news channels reported on the strongest [solar
 storm](http://en.wikipedia.org/wiki/Solar_flare) since 2005. [This news
@@ -11,14 +12,14 @@ item](http://www.bbc.co.uk/news/science-environment-16701407) reminded
 me of a peculiar support ticket we received one gray Monday morning a
 few years ago, when I was still writing software for fire departments.  
 
-> \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*  
-> **Ticket 7238**  
-> Subject: **AVL broken**  
-> Status: New  
-> Description  
-> 06:22 Vehicles stay mostly stationary on the map, even when we are  
-> positive they are en route.  
-> \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+```
+# Ticket 7238  
+Subject: **AVL broken**  
+Status: New  
+Description  
+06:22 Vehicles stay mostly stationary on the map, even when we are  
+positive they are en route.  
+```
 
 Fire departments that have to cover a large area - and are wealthy
 enough - often use [AVL (Automatic Vehicle
@@ -42,19 +43,19 @@ through his mails while sipping on his morning coffee. After reading
 support ticket 7238, he nonchalantly said he knew what was going on with
 AVL and he would take over from there.  
 
-> \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*  
-> Ticket 7238  
-> Subject: AVL broken  
-> Status: Pending  
-> Description  
-> **08:45 I heard on the radio that there is a solar storm going on at  
-> the moment, which affects sattelites. The AVL module might have  
-> a hard time getting a GPS fix. This issue should solve itself over  
-> time. We will keep an eye on this issue.**  
-> ---------------------------------------------------------------------------------  
-> 06:22 Vehicles stay mostly stationary on the map, even when we are  
-> positive they are en route.  
-> \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
+```
+# Ticket 7238  
+Subject: AVL broken  
+Status: Pending  
+Description  
+**08:45 I heard on the radio that there is a solar storm going on at  
+the moment, which affects sattelites. The AVL module might have  
+a hard time getting a GPS fix. This issue should solve itself over  
+time. We will keep an eye on this issue.**  
+---------------------------------------------------------------------------------  
+06:22 Vehicles stay mostly stationary on the map, even when we are  
+positive they are en route.  
+```
 
 A few days passed and although the solar storm was over, we were still
 seeing signifcant packet loss. After spending a few hours working the
@@ -69,21 +70,20 @@ loss and the vehicles started moving on the map again.
   
 [![](/post/images/thumbnails/2012-02-01-a-solar-storm-anecdote-PokerFace.png)](/post/images/2012-02-01-a-solar-storm-anecdote-PokerFace.png)  
 
-> \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*  
-> Ticket 7238  
-> Subject: AVL broken  
-> **Status: Resolved**  
-> Description  
-> **15:47 The solar storm must be over. The vehicle locations are  
-> being updated in a timely fashion again.**  
-> --------------------------------------------------------------------------------  
-> 08:45 I heard on the radio that there is a solar storm going on at  
-> the moment, which affects sattelites. The AVL module might have  
-> a hard time getting a GPS fix. This issue should solve itself over  
-> time. We will keep an eye on this issue.  
-> --------------------------------------------------------------------------------  
-> 06:22 Vehicles stay mostly stationary on the map, even when we are  
-> positive they are en route.  
-> \*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*
-
+```
+# Ticket 7238  
+Subject: AVL broken  
+**Status: Resolved**  
+Description  
+**15:47 The solar storm must be over. The vehicle locations are  
+being updated in a timely fashion again.**  
+--------------------------------------------------------------------------------  
+08:45 I heard on the radio that there is a solar storm going on at  
+the moment, which affects sattelites. The AVL module might have  
+a hard time getting a GPS fix. This issue should solve itself over  
+time. We will keep an eye on this issue.  
+--------------------------------------------------------------------------------  
+06:22 Vehicles stay mostly stationary on the map, even when we are  
+positive they are en route.  
+```
 Until today, we never talked about ticket 7238 again.

@@ -6,31 +6,10 @@
     <description>Recent content in ASP.NET on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Apr 2013 18:56:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2012 20:26:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/asp.net/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>ASP.NET MVC4 bundling in ASP.NET MVC3</title>
-      <link>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</link>
-      <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</guid>
-      <description>One of the new wildly evangelized features of ASP.NET MVC4 is the built-in support for bundling and minification of scripts and stylesheets.
-I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work for ASP.NET MVC3 though. If you open the packages config of an ASP.NET MVC4 beta project, you will find that bundling support lives in the Microsoft.Web.Optimization package.
-&amp;lt;package id=&amp;quot;Microsoft.Web.Optimization&amp;quot; version=&amp;quot;1.0.0-beta&amp;quot; /&amp;gt;  So we should just be able to install this package for an ASP.</description>
-    </item>
-    
-    <item>
-      <title>Testing DI bootstrappers</title>
-      <link>http://localhost:1313/2012/02/testing-di-bootstrappers/</link>
-      <pubDate>Mon, 06 Feb 2012 08:59:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/testing-di-bootstrappers/</guid>
-      <description>While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&amp;rsquo;t see any reason why they shouldn&amp;rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
-I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot.</description>
-    </item>
     
     <item>
       <title>Daydreaming about jQuery Mobile and the WebAPI</title>

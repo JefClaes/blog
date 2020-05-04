@@ -6,27 +6,10 @@
     <description>Recent content in Ramblings on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jun 2013 16:24:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 01 Feb 2012 08:43:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/ramblings/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>A solar storm anecdote</title>
-      <link>http://localhost:1313/2012/02/a-solar-storm-anecdote/</link>
-      <pubDate>Wed, 01 Feb 2012 08:43:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/a-solar-storm-anecdote/</guid>
-      <description>Last week, several news channels reported on the strongest solar storm since 2005. This news item reminded me of a peculiar support ticket we received one gray Monday morning a few years ago, when I was still writing software for fire departments.
- *********************************************************************************
-Ticket 7238
-Subject: AVL broken
-Status: New
-Description
-06:22 Vehicles stay mostly stationary on the map, even when we are
-positive they are en route.
-*********************************************************************************</description>
-    </item>
     
     <item>
       <title>When should you take performance into consideration?</title>

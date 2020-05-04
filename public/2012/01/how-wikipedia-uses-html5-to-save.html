@@ -12,11 +12,11 @@ Next to being able to scale to an arbitrary size without suffering data loss, th
 
 
 
-<meta itemprop="keywords" content="url," /><meta property="og:title" content="How Wikipedia uses HTML5 to save bandwidth" />
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="How Wikipedia uses HTML5 to save bandwidth" />
 <meta property="og:description" content="Something I hadn&rsquo;t noticed until recently is that Wikipedia tries to use the browser&rsquo;s native SVG support to render certain images. For example, if you search for a high resolution image of your country&rsquo;s flag, you will probably end up viewing an SVG. Wikipedia also offers downloads to the image rendered as a PNG though.
 Next to being able to scale to an arbitrary size without suffering data loss, the SVG data format allows images to be far more compact." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save-bandwidth/" />
+<meta property="og:url" content="http://localhost:1313/2012/01/how-wikipedia-uses-html5-to-save.html" />
 <meta property="article:published_time" content="2012-01-19T20:56:00+01:00" />
 <meta property="article:modified_time" content="2012-01-19T20:56:00+01:00" />
 <meta name="twitter:card" content="summary"/>
@@ -101,13 +101,12 @@ Basically, SVG is just XML, which also means it can be easily compressed
 to make its size even smaller. For example, this is the (uncompressed)
 SVG for the flag of the <a href="http://en.wikipedia.org/wiki/Belgium">Kingdom of
 Belgium</a>.</p>
-<pre><code>&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;450&quot; height=&quot;300&quot;&gt;
-    &lt;rect width=&quot;450&quot; height=&quot;300&quot;/&gt;
-    &lt;rect x=&quot;150&quot; width=&quot;150&quot; height=&quot;300&quot; fill=&quot;#FAE042&quot;/&gt;
-    &lt;rect x=&quot;300&quot; width=&quot;150&quot; height=&quot;300&quot; fill=&quot;#ED2939&quot;/&gt;
-&lt;/svg&gt;
-</code></pre>
-<p>This svg node only weighs as much as 224 bytes, while the image rendered
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#268bd2;font-weight:bold">svg</span> <span style="color:#268bd2">xmlns</span>=<span style="color:#2aa198">&#34;http://www.w3.org/2000/svg&#34;</span> <span style="color:#268bd2">width</span>=<span style="color:#2aa198">&#34;450&#34;</span> <span style="color:#268bd2">height</span>=<span style="color:#2aa198">&#34;300&#34;</span>&gt;
+    &lt;<span style="color:#268bd2;font-weight:bold">rect</span> <span style="color:#268bd2">width</span>=<span style="color:#2aa198">&#34;450&#34;</span> <span style="color:#268bd2">height</span>=<span style="color:#2aa198">&#34;300&#34;</span>/&gt;
+    &lt;<span style="color:#268bd2;font-weight:bold">rect</span> <span style="color:#268bd2">x</span>=<span style="color:#2aa198">&#34;150&#34;</span> <span style="color:#268bd2">width</span>=<span style="color:#2aa198">&#34;150&#34;</span> <span style="color:#268bd2">height</span>=<span style="color:#2aa198">&#34;300&#34;</span> <span style="color:#268bd2">fill</span>=<span style="color:#2aa198">&#34;#FAE042&#34;</span>/&gt;
+    &lt;<span style="color:#268bd2;font-weight:bold">rect</span> <span style="color:#268bd2">x</span>=<span style="color:#2aa198">&#34;300&#34;</span> <span style="color:#268bd2">width</span>=<span style="color:#2aa198">&#34;150&#34;</span> <span style="color:#268bd2">height</span>=<span style="color:#2aa198">&#34;300&#34;</span> <span style="color:#268bd2">fill</span>=<span style="color:#2aa198">&#34;#ED2939&#34;</span>/&gt;
+&lt;/<span style="color:#268bd2;font-weight:bold">svg</span>&gt;
+</code></pre></div><p>This svg node only weighs as much as 224 bytes, while the image rendered
 as a high resolution PNG weighs 13.402 bytes. Stuff like that makes a
 significant difference when you&rsquo;re <a href="http://stats.wikimedia.org/EN/TablesPageViewsMonthlyCombined.htm">serving millions of page views on a
 daily
@@ -135,7 +134,7 @@ modern browsers</strong> (even Internet Explorer) presents.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/url">url</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					

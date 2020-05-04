@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Testing DI bootstrappers - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Testing DI bootstrappers">
+<meta itemprop="description" content="While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&rsquo;t see any reason why they shouldn&rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
+I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot.">
+<meta itemprop="datePublished" content="2012-02-06T08:59:00&#43;01:00" />
+<meta itemprop="dateModified" content="2012-02-06T08:59:00&#43;01:00" />
+<meta itemprop="wordCount" content="562">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Testing DI bootstrappers" />
+<meta property="og:description" content="While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&rsquo;t see any reason why they shouldn&rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
+I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2012/02/testing-di-bootstrappers.html" />
+<meta property="article:published_time" content="2012-02-06T08:59:00+01:00" />
+<meta property="article:modified_time" content="2012-02-06T08:59:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Testing DI bootstrappers"/>
+<meta name="twitter:description" content="While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&rsquo;t see any reason why they shouldn&rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
+I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">06</span>
+							<span class="rest">Feb 2012</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Testing DI bootstrappers</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>While your <a href="http://martinfowler.com/articles/injection.html">Dependency Injection</a>
+bootstrappers - being responsible for gluing your application together -
+are a vital part of your application, they are seldom put under test. I
+don&rsquo;t see any reason why they shouldn&rsquo;t be though. The cost of these
+tests is negligible, definitely if you compare it to the cost of the
+often catastrophical outcome of bugs in your bootstrappers.</p>
+<p>I encourage you to take a look at the commit history of your DI
+bootstrappers; I bet they change a lot. Wouldn&rsquo;t it be nice to have a
+set of tests that proves that the dependency container still behaves
+like you expect it to at runtime? Next to proving correctness, I think
+writing these tests also helps you discover various behaviours of your
+DI container, which is a valuable investment in itself.</p>
+<p>Let me show you a few tests that I wrote to put my <a href="https://jefclaes.be/2011/10/ninjecting-mvc3.html">ASP.NET MVC
+Ninject</a>
+bootstrapper under test.</p>
+<p>I started by opening up the Ninject bootstrapper, making the
+<code>CreateKernel</code> method public.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">public</span> <span style="color:#859900">static</span> <span style="color:#268bd2">IKernel</span> <span style="color:#268bd2">CreateKernel</span>()
+{
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">kernel</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">StandardKernel</span>();
+    
+    <span style="color:#268bd2">kernel</span>.<span style="color:#268bd2">Bind</span>&lt;<span style="color:#268bd2">IEntryService</span>&gt;().<span style="color:#268bd2">To</span>&lt;<span style="color:#268bd2">EntryService</span>&gt;();
+
+    <span style="color:#859900">return</span> <span style="color:#268bd2">kernel</span>;
+}
+</code></pre></div><p>In the test class, I used the <a href="http://msdn.microsoft.com/en-us/library/microsoft.visualstudio.testtools.unittesting.testinitializeattribute(v=vs.80).aspx">TestInitialize attribute</a>
+to initialize a new instance of the kernel before every test. I&rsquo;m not
+sure this is really necessary, but I want to avoid that my tests
+experience side-effects of a previous test.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">[TestInitialize]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Setup</span>()
+{         
+    <span style="color:#268bd2">_kernel</span> = <span style="color:#268bd2">NinjectMVC3</span>.<span style="color:#268bd2">CreateKernel</span>();
+}        
+</code></pre></div><p>Needless to say, the first test should prove that an implementation of
+the <code>IEntryService</code> interface can be resolved. The behaviour I observed
+while playing with this case, is that Ninject throws a
+<code>Ninject.ActivationException</code> when the implementation can&rsquo;t be resolved.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Ninject.ActivationException: Error activating IEntryService  
+   No matching bindings are available, and the type is not
+   self-bindable.  
+   Activation path:  
+       Request for IEntryService  
+   
+Suggestions:  
+
+1.  Ensure that you have defined a binding for IEntryService. 
+2.  If the binding was defined in a module, ensure that the module has
+     been loaded into the kernel.
+3.  Ensure you have not accidentally created more than one kernel.
+4.  If you are using constructor arguments, ensure that the parameter
+     name matches the constructors parameter name.
+5.  If you are using automatic module loading, ensure the search path
+     and filters are correct.
+</code></pre></div><p>So to test whether an implementation can be resolved, I just make sure
+no exceptions are thrown on resolving the dependency.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">[TestMethod]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Test_IEntryService_Can_Be_Resolved</span>()
+{
+    <span style="color:#268bd2">AssertDoesNotThrowWhenResolved</span>&lt;<span style="color:#268bd2">IEntryService</span>&gt;();
+}
+</code></pre></div><p>The <code>AssertDoesNotThrowWhenResolved</code> method is a helper method which tries
+to resolve a dependency of T and asserts that no exceptions are thrown
+while doing so. The assertion is borrowed from
+<a href="http://xunit.codeplex.com/">Xunit</a> (<a href="http://nuget.org/packages/xunit">package available on
+Nuget</a>).</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">private</span> <span style="color:#859900">void</span> <span style="color:#268bd2">AssertDoesNotThrowWhenResolved</span>&lt;<span style="color:#268bd2">T</span>&gt;() 
+{
+    <span style="color:#268bd2">Xunit</span>.<span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">DoesNotThrow</span>(() =&gt; <span style="color:#268bd2">_kernel</span>.<span style="color:#268bd2">Get</span>&lt;<span style="color:#268bd2">T</span>&gt;());
+}
+</code></pre></div><p>A second useful test is testing the lifetime of the resolved
+implementation. For most of my dependencies, I expect a new instance
+every time they are resolved. This test looks like this.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">[TestMethod]</span>
+<span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">Test_IEntryService_Is_New_Instance</span>()
+{
+    <span style="color:#268bd2">AssertNewInstanceIsResolved</span>&lt;<span style="color:#268bd2">IEntryService</span>&gt;();
+}
+</code></pre></div><p>The <code>AssertNewInstanceIsResolved</code> method is another helper method which
+resolves two instances of T and asserts they are not the same.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">private</span> <span style="color:#859900">void</span> <span style="color:#268bd2">AssertNewInstanceIsResolved</span>&lt;<span style="color:#268bd2">T</span>&gt;()
+{
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">instance</span> = <span style="color:#268bd2">_kernel</span>.<span style="color:#268bd2">Get</span>&lt;<span style="color:#268bd2">T</span>&gt;();
+    <span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">secondInstance</span> = <span style="color:#268bd2">_kernel</span>.<span style="color:#268bd2">Get</span>&lt;<span style="color:#268bd2">T</span>&gt;();
+
+    <span style="color:#268bd2">Assert</span>.<span style="color:#268bd2">AreNotSame</span>(<span style="color:#268bd2">instance</span>, <span style="color:#268bd2">secondInstance</span>);
+}  
+</code></pre></div><p>That&rsquo;s it. While these tests are very cheap to write, they do provide
+great value. I can imagine testing more complex bindings, like
+contextual bindings, taking a bit more time to set up, but the value of
+these tests increases proportionally.</p>
+<p><strong>Do you put your DI bootstrappers under test?</strong> If you don&rsquo;t, why not?</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2012  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

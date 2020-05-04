@@ -6,22 +6,10 @@
     <description>Recent content in Hack on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 06 Jan 2013 21:18:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 15 Jan 2012 16:04:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/hack/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Autocorrecting unknown actions using the Levenshtein distance</title>
-      <link>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</link>
-      <pubDate>Sun, 15 Jan 2012 16:04:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</guid>
-      <description>This weekend I prototyped an idea I had earlier this week: autocorrecting unknown actions in ASP.NET MVC.
-**Handling unknown actions
-**
-To give you an example, let&amp;rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method.</description>
-    </item>
     
     <item>
       <title>Data validation, take it seriously</title>

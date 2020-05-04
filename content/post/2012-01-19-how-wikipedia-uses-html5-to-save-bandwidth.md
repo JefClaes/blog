@@ -3,7 +3,8 @@ title = "How Wikipedia uses HTML5 to save bandwidth"
 slug = "2012-01-19-how-wikipedia-uses-html5-to-save-bandwidth"
 published = 2012-01-19T20:56:00+01:00
 author = "Jef Claes"
-tags = [ "Browsers", "HTML5",]
+tags = [ "code",]
+url = "2012/01/how-wikipedia-uses-html5-to-save.html"
 +++
 Something I hadn't noticed until recently is that Wikipedia tries to use
 the browser's native [SVG](http://www.w3.org/TR/SVG/) support to render
@@ -20,11 +21,13 @@ to make its size even smaller. For example, this is the (uncompressed)
 SVG for the flag of the [Kingdom of
 Belgium](http://en.wikipedia.org/wiki/Belgium).  
 
-    <svg xmlns="http://www.w3.org/2000/svg" width="450" height="300">
-        <rect width="450" height="300"/>
-        <rect x="150" width="150" height="300" fill="#FAE042"/>
-        <rect x="300" width="150" height="300" fill="#ED2939"/>
-    </svg>
+```html
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="300">
+    <rect width="450" height="300"/>
+    <rect x="150" width="150" height="300" fill="#FAE042"/>
+    <rect x="300" width="150" height="300" fill="#ED2939"/>
+</svg>
+```
 
 This svg node only weighs as much as 224 bytes, while the image rendered
 as a high resolution PNG weighs 13.402 bytes. Stuff like that makes a

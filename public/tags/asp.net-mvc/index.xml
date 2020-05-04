@@ -6,52 +6,10 @@
     <description>Recent content in ASP.NET MVC on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Apr 2013 18:56:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Feb 2012 20:26:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/asp.net-mvc/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>ASP.NET MVC4 bundling in ASP.NET MVC3</title>
-      <link>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</link>
-      <pubDate>Sat, 25 Feb 2012 20:26:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/asp.net-mvc4-bundling-in-asp.net-mvc3/</guid>
-      <description>One of the new wildly evangelized features of ASP.NET MVC4 is the built-in support for bundling and minification of scripts and stylesheets.
-I don&amp;rsquo;t see any reason why this new feature wouldn&amp;rsquo;t work for ASP.NET MVC3 though. If you open the packages config of an ASP.NET MVC4 beta project, you will find that bundling support lives in the Microsoft.Web.Optimization package.
-&amp;lt;package id=&amp;quot;Microsoft.Web.Optimization&amp;quot; version=&amp;quot;1.0.0-beta&amp;quot; /&amp;gt;  So we should just be able to install this package for an ASP.</description>
-    </item>
-    
-    <item>
-      <title>Testing DI bootstrappers</title>
-      <link>http://localhost:1313/2012/02/testing-di-bootstrappers/</link>
-      <pubDate>Mon, 06 Feb 2012 08:59:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/02/testing-di-bootstrappers/</guid>
-      <description>While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&amp;rsquo;t see any reason why they shouldn&amp;rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
-I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot.</description>
-    </item>
-    
-    <item>
-      <title>Autocorrecting unknown actions using the Levenshtein distance</title>
-      <link>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</link>
-      <pubDate>Sun, 15 Jan 2012 16:04:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/01/autocorrecting-unknown-actions-using-the-levenshtein-distance/</guid>
-      <description>This weekend I prototyped an idea I had earlier this week: autocorrecting unknown actions in ASP.NET MVC.
-**Handling unknown actions
-**
-To give you an example, let&amp;rsquo;s say I have a Home controller with an action named Kitten on it. If there is an incoming route for the Home controller with Kitty (instead of Kitten) as the action name, the controller will not be able to invoke any action method and instead will call the HandleUnknownAction method.</description>
-    </item>
-    
-    <item>
-      <title>An approach to mobile support in ASP.NET MVC</title>
-      <link>http://localhost:1313/2012/01/an-approach-to-mobile-support-in-asp.net-mvc/</link>
-      <pubDate>Thu, 12 Jan 2012 21:16:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2012/01/an-approach-to-mobile-support-in-asp.net-mvc/</guid>
-      <description>I have been spending a decent amount of time working on a side project in ASP.NET MVC lately. From the start, I planned on supporting mobile. There are lots of ways you can use or extend ASP.NET MVC to support mobile. Having tried several, I can say they all have their merits, and the solution that will work for you very much depends on your requirements. In this post I will run you over the implementation that worked for me, for my specific requirements.</description>
-    </item>
     
   </channel>
 </rss>

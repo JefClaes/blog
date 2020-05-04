@@ -39,5 +39,15 @@ I help out during the weekends in a small family run magic shop. I&amp;rsquo;m t
       <description>Having worked with several storage paradigms over these last few months - from flatfiles, to NoSQL, to the big enterprisey relational databases -, I have spent plenty of time trying to make sense of all the options out there. It wasn&amp;rsquo;t until I watched one of the last episodes of The Wire season 3 that I had an epiphany regarding modeling data in document stores. Yes, I know, I tend to take those things home with me.</description>
     </item>
     
+    <item>
+      <title>A solar storm anecdote</title>
+      <link>http://localhost:1313/2012/02/a-solar-storm-anecdote/</link>
+      <pubDate>Wed, 01 Feb 2012 08:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2012/02/a-solar-storm-anecdote/</guid>
+      <description>Last week, several news channels reported on the strongest solar storm since 2005. This news item reminded me of a peculiar support ticket we received one gray Monday morning a few years ago, when I was still writing software for fire departments.
+# Ticket 7238 Subject: **AVL broken** Status: New Description 06:22 Vehicles stay mostly stationary on the map, even when we are positive they are en route. Fire departments that have to cover a large area - and are wealthy enough - often use AVL (Automatic Vehicle Location) to track their vehicles and visualize them on a map.</description>
+    </item>
+    
   </channel>
 </rss>

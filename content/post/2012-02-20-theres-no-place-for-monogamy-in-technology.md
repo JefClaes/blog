@@ -3,7 +3,8 @@ title = "There's no place for monogamy in technology"
 slug = "2012-02-20-theres-no-place-for-monogamy-in-technology"
 published = 2012-02-20T08:43:00+01:00
 author = "Jef Claes"
-tags = [ "General",]
+tags = [ "opinion",]
+url = "2012/02/theres-no-place-for-monogamy-in.html"
 +++
 In this post I would like to share some of my thoughts on a [recent post
 by James Hague](http://prog21.dadgum.com/128.html) titled 'Don't Fall in
