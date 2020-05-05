@@ -12,28 +12,6 @@
     
     
     <item>
-      <title>Checking for anonymous types</title>
-      <link>http://localhost:1313/2011/05/checking-for-anonymous-types/</link>
-      <pubDate>Sat, 21 May 2011 18:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/checking-for-anonymous-types/</guid>
-      <description>Because I blogged about anonymous types last month, I thought following method would also make an interesting post.
-private static bool IsAnonymousType(Type type) { Debug.Assert(type != null, &amp;quot;Type should not be null&amp;quot;); // HACK: The only way to detect anonymous types right now. return Attribute.IsDefined(type, typeof(CompilerGeneratedAttribute), false) &amp;amp;&amp;amp; type.IsGenericType &amp;amp;&amp;amp; type.Name.Contains(&amp;quot;AnonymousType&amp;quot;) &amp;amp;&amp;amp; (type.Name.StartsWith(&amp;quot;&amp;lt;&amp;gt;&amp;quot;, StringComparison.OrdinalIgnoreCase) || type.Name.StartsWith(&amp;quot;VB$&amp;quot;, StringComparison.OrdinalIgnoreCase)) &amp;amp;&amp;amp; (type.Attributes &amp;amp; TypeAttributes.NotPublic) == TypeAttributes.NotPublic; }  For a type to be anonymous:</description>
-    </item>
-    
-    <item>
-      <title>My thoughts on WebMatrix</title>
-      <link>http://localhost:1313/2011/05/my-thoughts-on-webmatrix/</link>
-      <pubDate>Mon, 09 May 2011 21:15:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/my-thoughts-on-webmatrix/</guid>
-      <description>After building arealdeveloper.com, I felt like I had to do a follow-up post sharing my experiences with WebMatrix. While doing some research, I came across this post by Rob Connery. And frankly, I think it&amp;rsquo;s almost impossible for me to add something to his findings.
-In a nutshell
-For those who are like &amp;ldquo;tl;dr&amp;rdquo;, here are my thoughts on WebMatrix..
-WebMatrix is the perfect framework to start with ASP.NET development (wish I had).</description>
-    </item>
-    
-    <item>
       <title>Things good to know about SQL State Server</title>
       <link>http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/</link>
       <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>

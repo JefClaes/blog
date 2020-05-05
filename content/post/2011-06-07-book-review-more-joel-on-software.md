@@ -3,22 +3,13 @@ title = "Book review: More Joel on Software"
 slug = "2011-06-07-book-review-more-joel-on-software"
 published = 2011-06-07T19:00:00.003000+02:00
 author = "Jef Claes"
-tags = [ "Bookreview",]
+tags = [ "consumed",]
+url = "2011/06/book-review-more-joel-on-software.html"
 +++
 I was lucky to pick up a copy of [More Joel on
-Software](http://www.amazon.com/gp/product/1430209879/ref=as_li_tf_tl?ie=UTF8&tag=diofanedebyje-20&linkCode=as2&camp=217153&creative=399353&creativeASIN=1430209879)
-for only 5 euros at a [bookfest](http://www.boekenfestijn.com/) last
-week. Turns out the book ships pretty cheap on
-[Amazon](http://www.amazon.com/gp/product/1430209879/ref=as_li_tf_tl?ie=UTF8&tag=diofanedebyje-20&linkCode=as2&camp=217153&creative=399353&creativeASIN=1430209879)
-as well.  
+Software](http://www.amazon.com/gp/product/1430209879/ref=as_li_tf_tl?ie=UTF8&tag=diofanedebyje-20&linkCode=as2&camp=217153&creative=399353&creativeASIN=1430209879) for only 5 euros at a [bookfest](http://www.boekenfestijn.com/) last week. Turns out the book ships pretty cheap on [Amazon](http://www.amazon.com/gp/product/1430209879/ref=as_li_tf_tl?ie=UTF8&tag=diofanedebyje-20&linkCode=as2&camp=217153&creative=399353&creativeASIN=1430209879) as well.  
   
-More Joel on Software was written by [Joel
-Spolsky](http://en.wikipedia.org/wiki/Joel_Spolsky), already a legend
-for launching [The Stack Exchange Network](http://stackexchange.com/)
-with [Jeff Atwood](http://www.codinghorror.com/blog/). Although it's
-hard to not know him, I admittedly hadn't read a lot of his material so
-far. Starting my professional career in late 2008, the Spolsky writing
-high days were mostly over.  
+More Joel on Software was written by [Joel Spolsky](http://en.wikipedia.org/wiki/Joel_Spolsky), already a legend for launching [The Stack Exchange Network](http://stackexchange.com/) with [Jeff Atwood](http://www.codinghorror.com/blog/). Although it's hard to not know him, I admittedly hadn't read a lot of his material so far. Starting my professional career in late 2008, the Spolsky writing high days were mostly over.  
   
 More Joel on Software is the second
 [blook](http://en.wikipedia.org/wiki/Blook) which bundles the best of

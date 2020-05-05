@@ -12,18 +12,6 @@
     
     
     <item>
-      <title>Internet Explorer, how could you miss this?</title>
-      <link>http://localhost:1313/2011/07/internet-explorer-how-could-you-miss-this/</link>
-      <pubDate>Sun, 17 Jul 2011 15:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/07/internet-explorer-how-could-you-miss-this/</guid>
-      <description>Modern browsers keep making efforts to make the web a better place. One of those small, but so thoughtful features, is a way to tame unwanted dialogs.
-If I run following JavaScript, Chrome and Firefox both help me disabling it.
-for (var i = 0; i &amp;lt; 1000; i++) { alert(&amp;quot;Annoying alert &amp;quot; + i); }  
-Internet Explorer does not. Even if I kill the process of the tab, the tab will try to restore itself, forcing me to kill Internet Explorer as a whole.</description>
-    </item>
-    
-    <item>
       <title>Keeping WebSockets alive</title>
       <link>http://localhost:1313/2011/03/keeping-websockets-alive/</link>
       <pubDate>Sat, 12 Mar 2011 17:40:00 +0100</pubDate>

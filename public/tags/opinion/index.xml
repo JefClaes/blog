@@ -431,5 +431,25 @@ Most software jobs make you constantly deal with complexity. The amount of thing
 The first project I was assigned to, was a project for the Antwerp fire department. Along with two other graduates and four seniors, I was thrown in at the deep end. I always had solid grades in school, and was fairly confident that I grasped the material I was taught.</description>
     </item>
     
+    <item>
+      <title>Should we get this tool?</title>
+      <link>http://localhost:1313/2011/06/should-we-get-this-tool.html</link>
+      <pubDate>Wed, 15 Jun 2011 21:45:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/06/should-we-get-this-tool.html</guid>
+      <description>This is a decision that often needs to be made by middle management. For managers the most natural way to make this call is by evaluating the return on investment. To calculate the ROI, you need to compare the gain of an investment relative to the amount of investment. And this is exactly where things get hard, if not impossible. Measuring developer productivity is one of the unsolvable problems in our industry.</description>
+    </item>
+    
+    <item>
+      <title>My thoughts on WebMatrix</title>
+      <link>http://localhost:1313/2011/05/my-thoughts-on-webmatrix/</link>
+      <pubDate>Mon, 09 May 2011 21:15:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/05/my-thoughts-on-webmatrix/</guid>
+      <description>After building arealdeveloper.com, I felt like I had to do a follow-up post sharing my experiences with WebMatrix. While doing some research, I came across this post by Rob Connery. And frankly, I think it&amp;rsquo;s almost impossible for me to add something to his findings.
+In a nutshell For those who are here for the &amp;ldquo;tl;dr&amp;rdquo;, here are my thoughts on WebMatrix..
+WebMatrix is the perfect framework to start with ASP.</description>
+    </item>
+    
   </channel>
 </rss>

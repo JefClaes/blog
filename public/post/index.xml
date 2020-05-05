@@ -1906,75 +1906,53 @@ var elements; this.push = function(element) { if (typeof(elements) === &amp;#39;
     </item>
     
     <item>
-      <title>Internet Explorer, how could you miss this?</title>
-      <link>http://localhost:1313/2011/07/internet-explorer-how-could-you-miss-this/</link>
-      <pubDate>Sun, 17 Jul 2011 15:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/07/internet-explorer-how-could-you-miss-this/</guid>
-      <description>Modern browsers keep making efforts to make the web a better place. One of those small, but so thoughtful features, is a way to tame unwanted dialogs.
-If I run following JavaScript, Chrome and Firefox both help me disabling it.
-for (var i = 0; i &amp;lt; 1000; i++) { alert(&amp;quot;Annoying alert &amp;quot; + i); }  
-Internet Explorer does not. Even if I kill the process of the tab, the tab will try to restore itself, forcing me to kill Internet Explorer as a whole.</description>
-    </item>
-    
-    <item>
       <title>Stacks and queues in JavaScript</title>
-      <link>http://localhost:1313/2011/07/stacks-and-queues-in-javascript/</link>
+      <link>http://localhost:1313/2011/07/stacks-and-queues-in-javascript.html</link>
       <pubDate>Tue, 12 Jul 2011 21:00:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/07/stacks-and-queues-in-javascript/</guid>
+      <guid>http://localhost:1313/2011/07/stacks-and-queues-in-javascript.html</guid>
       <description>The second assignment in my &amp;lsquo;implementing data structures and algorithms in JavaScript&amp;rsquo; quest consists of two popular data structures: the stack and the queue.
-The stack
- A stack is a last in, first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only three fundamental operations: push, pop and stack top.
+The stack  A stack is a last in, first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only three fundamental operations: push, pop and stack top.
  Implementing this turned out to be pretty easy.</description>
     </item>
     
     <item>
       <title>Simple sorting in JavaScript</title>
-      <link>http://localhost:1313/2011/07/simple-sorting-in-javascript/</link>
+      <link>http://localhost:1313/2011/07/simple-sorting-in-javascript.html</link>
       <pubDate>Thu, 07 Jul 2011 21:30:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/07/simple-sorting-in-javascript/</guid>
+      <guid>http://localhost:1313/2011/07/simple-sorting-in-javascript.html</guid>
       <description>About three years ago I graduated and got my degree in Applied Computer Science. Although it says Computer Science, we hardly ever focused on data structures and algorithms. Obviously, I now see that as a shortcoming. So I plan to make up for that by reading up on some of the basics. While at it, I might be blogging on some of the topics.
 I am going to start by implementing some of the simple sorting algorithms in JavaScript.</description>
     </item>
     
     <item>
       <title>Should we get this tool?</title>
-      <link>http://localhost:1313/2011/06/should-we-get-this-tool/</link>
+      <link>http://localhost:1313/2011/06/should-we-get-this-tool.html</link>
       <pubDate>Wed, 15 Jun 2011 21:45:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/06/should-we-get-this-tool/</guid>
+      <guid>http://localhost:1313/2011/06/should-we-get-this-tool.html</guid>
       <description>This is a decision that often needs to be made by middle management. For managers the most natural way to make this call is by evaluating the return on investment. To calculate the ROI, you need to compare the gain of an investment relative to the amount of investment. And this is exactly where things get hard, if not impossible. Measuring developer productivity is one of the unsolvable problems in our industry.</description>
     </item>
     
     <item>
       <title>Book review: More Joel on Software</title>
-      <link>http://localhost:1313/2011/06/book-review-more-joel-on-software/</link>
+      <link>http://localhost:1313/2011/06/book-review-more-joel-on-software.html</link>
       <pubDate>Tue, 07 Jun 2011 19:00:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/06/book-review-more-joel-on-software/</guid>
+      <guid>http://localhost:1313/2011/06/book-review-more-joel-on-software.html</guid>
       <description>I was lucky to pick up a copy of More Joel on Software for only 5 euros at a bookfest last week. Turns out the book ships pretty cheap on Amazon as well.
 More Joel on Software was written by Joel Spolsky, already a legend for launching The Stack Exchange Network with Jeff Atwood. Although it&amp;rsquo;s hard to not know him, I admittedly hadn&amp;rsquo;t read a lot of his material so far.</description>
     </item>
     
     <item>
-      <title>Have you ever typed code on a job interview? Results</title>
-      <link>http://localhost:1313/2011/06/have-you-ever-typed-code-on-a-job-interview-results/</link>
-      <pubDate>Sat, 04 Jun 2011 14:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/06/have-you-ever-typed-code-on-a-job-interview-results/</guid>
-      <description>As more established bloggers have argued before, there is something essentially wrong with job interviews in our industry. Software companies hire developers without even making them touch a keyboard. As long as you talk the walk you are able to land yourself a decent position. There are complete lists of .NET interview questions out there, which should, with enough preparation, make it possible for a somewhat technologiable person to ace the average .</description>
-    </item>
-    
-    <item>
       <title>Checking for anonymous types</title>
-      <link>http://localhost:1313/2011/05/checking-for-anonymous-types/</link>
+      <link>http://localhost:1313/2011/05/checking-for-anonymous-types.html</link>
       <pubDate>Sat, 21 May 2011 18:00:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2011/05/checking-for-anonymous-types/</guid>
+      <guid>http://localhost:1313/2011/05/checking-for-anonymous-types.html</guid>
       <description>Because I blogged about anonymous types last month, I thought following method would also make an interesting post.
-private static bool IsAnonymousType(Type type) { Debug.Assert(type != null, &amp;quot;Type should not be null&amp;quot;); // HACK: The only way to detect anonymous types right now. return Attribute.IsDefined(type, typeof(CompilerGeneratedAttribute), false) &amp;amp;&amp;amp; type.IsGenericType &amp;amp;&amp;amp; type.Name.Contains(&amp;quot;AnonymousType&amp;quot;) &amp;amp;&amp;amp; (type.Name.StartsWith(&amp;quot;&amp;lt;&amp;gt;&amp;quot;, StringComparison.OrdinalIgnoreCase) || type.Name.StartsWith(&amp;quot;VB$&amp;quot;, StringComparison.OrdinalIgnoreCase)) &amp;amp;&amp;amp; (type.Attributes &amp;amp; TypeAttributes.NotPublic) == TypeAttributes.NotPublic; }  For a type to be anonymous:</description>
+private static bool IsAnonymousType(Type type) { Debug.Assert(type != null, &amp;#34;Type should not be null&amp;#34;); // HACK: The only way to detect anonymous types right now.  return Attribute.IsDefined(type, typeof(CompilerGeneratedAttribute), false) &amp;amp;&amp;amp; type.IsGenericType &amp;amp;&amp;amp; type.Name.Contains(&amp;#34;AnonymousType&amp;#34;) &amp;amp;&amp;amp; (type.Name.StartsWith(&amp;#34;&amp;lt;&amp;gt;&amp;#34;, StringComparison.OrdinalIgnoreCase) || type.Name.StartsWith(&amp;#34;VB$&amp;#34;, StringComparison.OrdinalIgnoreCase)) &amp;amp;&amp;amp; (type.Attributes &amp;amp; TypeAttributes.NotPublic) == TypeAttributes.NotPublic; } For a type to be anonymous:</description>
     </item>
     
     <item>
@@ -1984,9 +1962,8 @@ private static bool IsAnonymousType(Type type) { Debug.Assert(type != null, &amp
       
       <guid>http://localhost:1313/2011/05/my-thoughts-on-webmatrix/</guid>
       <description>After building arealdeveloper.com, I felt like I had to do a follow-up post sharing my experiences with WebMatrix. While doing some research, I came across this post by Rob Connery. And frankly, I think it&amp;rsquo;s almost impossible for me to add something to his findings.
-In a nutshell
-For those who are like &amp;ldquo;tl;dr&amp;rdquo;, here are my thoughts on WebMatrix..
-WebMatrix is the perfect framework to start with ASP.NET development (wish I had).</description>
+In a nutshell For those who are here for the &amp;ldquo;tl;dr&amp;rdquo;, here are my thoughts on WebMatrix..
+WebMatrix is the perfect framework to start with ASP.</description>
     </item>
     
     <item>

@@ -3,7 +3,8 @@ title = "Simple sorting in JavaScript"
 slug = "2011-07-07-simple-sorting-in-javascript"
 published = 2011-07-07T21:30:00.015000+02:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", "javascript",]
+tags = [ "code",]
+url = "2011/07/simple-sorting-in-javascript.html"
 +++
 About three years ago I graduated and got my degree in Applied Computer
 Science. Although it says Computer Science, we hardly ever focused on
@@ -14,10 +15,10 @@ basics. While at it, I might be blogging on some of the topics.
 I am going to start by implementing some of the simple sorting
 algorithms in JavaScript.  
   
-<span style="font-style:italic;">Find the final result
-[here](http://dl.dropbox.com/u/19698383/Blog/JavaScriptAlgorithmsDataStructs/Implementations/SimpleSorting.html).</span>  
+Find the final result
+[here](http://dl.dropbox.com/u/19698383/Blog/JavaScriptAlgorithmsDataStructs/Implementations/SimpleSorting.html).  
   
-**Bubble sort**  
+### Bubble sort
   
 The first sorting algorithm I'm going to implement is probably also the
 easiest, and slowest in most scenario's: [Bubble
@@ -31,172 +32,111 @@ sort](http://en.wikipedia.org/wiki/Bubblesort).
 
 Let's start by defining a namespace.  
   
-
-    var algorithms = { };
-
+```js
+var algorithms = { };
+```
   
 We could extend the native array object, but to keep things simple,
 let's create our own sortArray object.  
   
+```js
+var algorithms = {         
+    sortArray : function()
 
-    var algorithms = {         
+    }
+};
+```
+  
+The `sortArray` object contains a private array of elements. To add
+elements to that array, we will expose a `push` function on our `sortArray` object.  
+  
+```js
+var algorithms = {        
+    sortArray : function() {
+        var elements = [];                                                                      
+        this.push = function(val){
+            elements.push(val);                    
+        };                                       
+    } 
+};
+```
+  
+So far, we can do something like this.  
+  
+```js
+var sortArr = new algorithms.sortArray();               
 
-        sortArray : function(){
-
-                    
-
-        } 
-
-    };
+sortArr.push(80);
+sortArr.push(20);
+sortArr.push(...);
+```
 
   
-The sortArray object contains a private array of elements. To add
-elements to that array, we will expose a push function on our sortArray
-object.  
+Now we have to add a public `sort` function. Before we do that we need to
+define a private `swap` function, which can swap elements.  
   
+```js
+var swap = function(one, two) {
+    var tmp = elements[one];
+    elements[one] = elements[two];
+    elements[two] = tmp;                    
+};
+```
 
-    var algorithms = {         
-
-        sortArray : function(){
-
-            var elements = [];                                                                           
-
-                         
-
-            this.push = function(val){
-
-                elements.push(val);                    
-
-            };                                       
-
-        } 
-
-    };
-
+The `bubbleSort` function will take a callback argument which will be
+called every `sort` iteration.  
   
-So far we can do something like this.  
-  
+```js
+this.bubbleSort = function(callback) {   
+    callback(elements);
 
-    var sortArr = new algorithms.sortArray();               
-
-                 
-
-    sortArr.push(80);
-
-    sortArr.push(20);
-
-    sortArr.push(...);
-
-  
-Now we have to add a public sort function. Before we do that we need to
-define a private swap function, which can swap elements.  
-  
-
-    var swap = function(one, two) {
-
-        var tmp = elements[one];
-
-        elements[one] = elements[two];
-
-        elements[two] = tmp;                    
-
-    };
-
-  
-The bubbleSort function will take a callback argument which will be
-called every sort iteration.  
-  
-
-    this.bubbleSort = function(callback) {   
+    //Loop over all the elements
+    for (var out = elements.length - 1; out > 0; out--){                
+        for (var inn = 0; inn < out; inn++) {
+            //Are they out of order?
+            if (elements[inn] > elements[inn+1]){
+                swap(inn, inn+1);                                
+            } 
+        }
 
         callback(elements);
-
-        //Loop over all the elements
-
-        for (var out = elements.length - 1; out > 0; out--){                            
-
-            for (var inn = 0; inn < out; inn++) {
-
-                //Are they out of order?
-
-                if (elements[inn] > elements[inn+1]){
-
-                    swap(inn, inn+1);                                
-
-                } 
-
-            }
-
-            callback(elements);
-
-        }                    
-
-    };
-
+    }                    
+};
+```
   
-That should be it. Now let's try to push some elements in the array,
-define a callback and call the bubbleSort function. In the callback
-function I'm using the [Google Charts
-API](http://code.google.com/intl/nl-BE/apis/chart/) to visualize the
-sorting process.  
+That should be it. Now let's try to `push` some elements in the array,
+define a callback and call the `bubbleSort` function. In the callback
+function I'm using the [Google Charts API](http://code.google.com/intl/nl-BE/apis/chart/) to visualize the sorting process.  
 
+```js
+$(document).ready(function() {             
+    ...                                 
+
+    var results = $("#results");
+
+    var drawElements = function(elements) {                            
+        var chd = "";                    
+
+        for (var e in elements) {
+            chd += elements[e].toString() + ",";
+        }
+
+        //Remove that last ","
+        chd = chd.substring(0, chd.length - 1);                        
+
+        //Build the Google Charts url
+        var chartUrlBase = "http://chart.apis.google.com/chart?chxt=y&chbh=a&chs=300x225&cht=bvg&chco=A2C180,3D7930&chtt=Sorting";
+        var chartUrlComplete = chartUrlBase + "&chd=t:" + chd;                                   
+        $("#results").append("<img src='" + chartUrlComplete + "'/>").append("<br/>");
+    }                              
+
+    sortArr.bubbleSort(drawElements);                               
+});
+```
   
-
-    $(document).ready(function() {             
-
-        ...                                 
-
-                    
-
-        var results = $("#results");
-
-        
-
-        var drawElements = function(elements) {                            
-
-            var chd = "";                    
-
-            
-
-            for (var e in elements) {
-
-                chd += elements[e].toString() + ",";
-
-            }
-
-            
-
-            //Remove that last ","
-
-            chd = chd.substring(0, chd.length - 1);                        
-
-            
-
-            //Build the Google Charts url
-
-            var chartUrlBase = "http://chart.apis.google.com/chart?chxt=y&chbh=a&chs=300x225&cht=bvg&chco=A2C180,3D7930&chtt=Sorting";
-
-            var chartUrlComplete = chartUrlBase + "&chd=t:" + chd;                                    
-
-            
-
-            $("#results").append("<img src='" + chartUrlComplete + "'/>").append("<br/>");                                                                                                                                         
-
-        }                              
-
-                             
-
-        sortArr.bubbleSort(drawElements);                               
-
-    });
-
+### Selection sort 
   
-**Selection sort**  
-  
-The second algorithm is [Selection
-sort](http://en.wikipedia.org/wiki/Selection_sort). I found this one the
-easiest to understand so far: find the mimimum value, swap it with the
-value in the first position, advance one position and repeat.  
+The second algorithm is [Selection sort](http://en.wikipedia.org/wiki/Selection_sort). I found this one the easiest to understand so far: find the mimimum value, swap it with the value in the first position, advance one position and repeat.  
 
 > Selection sort is a sorting algorithm, specifically an in-place
 > comparison sort. It has O(n2) time complexity, making it inefficient
@@ -206,48 +146,39 @@ value in the first position, advance one position and repeat.
 > situations, particularly where auxiliary memory is limited.
 
 Let's start by giving the BubbleSort callback function another place. We
-will make this a public function on our sortArray. I will name it onSort
-and set it to an empty function by default.  
+will make this a public function on our `sortArray`. I will name it `onSort` and set it to an empty function by default.  
   
-
-    this.onSort = function() {};      
-
+```js
+this.onSort = function() {};      
+```
   
-Once that is done we can define our public selectionSort function. This
-function calls the onSort function every sort iteration.  
+Once that is done we can define our public `selectionSort` function. This
+function calls the `onSort` function every sort iteration.  
 
-  
 
-    this.selectionSort = function(){
+```js
+this.selectionSort = function(){
 
-        this.onSort(elements);
+    this.onSort(elements);
 
-        for (var out = 0; out < elements.length - 1; out++) {
+    for (var out = 0; out < elements.length - 1; out++) {
+        var min = out;
 
-            var min = out;
-
-            for (var inn = out; inn < elements.length; inn++) {
-
-                //If minium greater => new minimum
-
-                if (elements[inn] < elements[min]){
-
-                    min = inn;
-
-                }                            
-
-            }
-
-            swap(out, min);
-
-            this.onSort(elements);
-
+        for (var inn = out; inn < elements.length; inn++) {
+            //If minium greater => new minimum
+            if (elements[inn] < elements[min]) {
+                min = inn;
+            }                            
         }
 
-    };
+        swap(out, min);
 
+        this.onSort(elements);
+    }
+};
+```
   
-**Insertion sort**  
+### Insertion sort  
   
 The last simple sorting algorithm I'm going to implement in this post is
 [Insertion sort](http://en.wikipedia.org/wiki/Insertion_sort).  
@@ -261,45 +192,31 @@ The last simple sorting algorithm I'm going to implement in this post is
 > remove from the input is arbitrary, and can be made using almost any
 > choice algorithm.
 
-The insertionSort is just another public function on our sortArray
+The `insertionSort` is just another public function on our `sortArray`
 object.  
-  
 
-    this.insertionSort = function(){
+```js
+this.insertionSort = function(){
+    this.onSort(elements);
 
-        this.onSort(elements);
+    for (var out = 1; out < elements.length; out++) {               
+        var temp = elements[out];
+        var inn = out;            
 
-        for (var out = 1; out < elements.length; out++){                        
+        //Until one is smaller
+        while (inn > 0 && elements[inn-1] >= temp){
+            elements[inn] = elements[inn-1];
 
-            var temp = elements[out];
-
-            var inn = out;
-
-            
-
-            //Until one is smaller
-
-            while (inn > 0 && elements[inn-1] >= temp){
-
-                elements[inn] = elements[inn-1];
-
-  
-
-                inn--;
-
-            }
-
-            elements[inn] = temp;
-
-            this.onSort(elements);
-
+            inn--;
         }
 
-    }
+        elements[inn] = temp;
 
+        this.onSort(elements);
+    }
+}
+```
   
-You can **find the final result
-[here](http://dl.dropbox.com/u/19698383/Blog/JavaScriptAlgorithmsDataStructs/Implementations/SimpleSorting.html)**.
-If you have any remarks on these implementations, please let me know!  
+You can **find the final result [here](http://dl.dropbox.com/u/19698383/Blog/JavaScriptAlgorithmsDataStructs/Implementations/SimpleSorting.html)**. If you have any remarks on these implementations, please let me know!  
   
 [![](/post/images/thumbnails/2011-07-07-simple-sorting-in-javascript-SortResult.PNG)](/post/images/2011-07-07-simple-sorting-in-javascript-SortResult.PNG)

@@ -12,28 +12,6 @@
     
     
     <item>
-      <title>Stacks and queues in JavaScript</title>
-      <link>http://localhost:1313/2011/07/stacks-and-queues-in-javascript/</link>
-      <pubDate>Tue, 12 Jul 2011 21:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/07/stacks-and-queues-in-javascript/</guid>
-      <description>The second assignment in my &amp;lsquo;implementing data structures and algorithms in JavaScript&amp;rsquo; quest consists of two popular data structures: the stack and the queue.
-The stack
- A stack is a last in, first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only three fundamental operations: push, pop and stack top.
- Implementing this turned out to be pretty easy.</description>
-    </item>
-    
-    <item>
-      <title>Simple sorting in JavaScript</title>
-      <link>http://localhost:1313/2011/07/simple-sorting-in-javascript/</link>
-      <pubDate>Thu, 07 Jul 2011 21:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/07/simple-sorting-in-javascript/</guid>
-      <description>About three years ago I graduated and got my degree in Applied Computer Science. Although it says Computer Science, we hardly ever focused on data structures and algorithms. Obviously, I now see that as a shortcoming. So I plan to make up for that by reading up on some of the basics. While at it, I might be blogging on some of the topics.
-I am going to start by implementing some of the simple sorting algorithms in JavaScript.</description>
-    </item>
-    
-    <item>
       <title>Video, slides and source from my WebSockets talk</title>
       <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
       <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>

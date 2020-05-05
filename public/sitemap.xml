@@ -1108,22 +1108,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/07/internet-explorer-how-could-you-miss-this/</loc>
-    <lastmod>2011-07-17T15:30:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/07/stacks-and-queues-in-javascript/</loc>
+    <loc>http://localhost:1313/2011/07/stacks-and-queues-in-javascript.html</loc>
     <lastmod>2011-07-12T21:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/07/simple-sorting-in-javascript/</loc>
+    <loc>http://localhost:1313/2011/07/simple-sorting-in-javascript.html</loc>
     <lastmod>2011-07-07T21:30:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/06/should-we-get-this-tool/</loc>
+    <loc>http://localhost:1313/2011/06/should-we-get-this-tool.html</loc>
     <lastmod>2011-06-15T21:45:00+02:00</lastmod>
   </url>
   
@@ -1133,13 +1128,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/06/book-review-more-joel-on-software/</loc>
+    <loc>http://localhost:1313/2011/06/book-review-more-joel-on-software.html</loc>
     <lastmod>2011-06-07T19:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/06/have-you-ever-typed-code-on-a-job-interview-results/</loc>
-    <lastmod>2011-06-04T14:30:00+02:00</lastmod>
   </url>
   
   <url>
@@ -1148,7 +1138,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/05/checking-for-anonymous-types/</loc>
+    <loc>http://localhost:1313/2011/05/checking-for-anonymous-types.html</loc>
     <lastmod>2011-05-21T18:00:00+02:00</lastmod>
   </url>
   

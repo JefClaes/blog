@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Checking for anonymous types</title>
-      <link>http://localhost:1313/2011/05/checking-for-anonymous-types/</link>
-      <pubDate>Sat, 21 May 2011 18:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/05/checking-for-anonymous-types/</guid>
-      <description>Because I blogged about anonymous types last month, I thought following method would also make an interesting post.
-private static bool IsAnonymousType(Type type) { Debug.Assert(type != null, &amp;quot;Type should not be null&amp;quot;); // HACK: The only way to detect anonymous types right now. return Attribute.IsDefined(type, typeof(CompilerGeneratedAttribute), false) &amp;amp;&amp;amp; type.IsGenericType &amp;amp;&amp;amp; type.Name.Contains(&amp;quot;AnonymousType&amp;quot;) &amp;amp;&amp;amp; (type.Name.StartsWith(&amp;quot;&amp;lt;&amp;gt;&amp;quot;, StringComparison.OrdinalIgnoreCase) || type.Name.StartsWith(&amp;quot;VB$&amp;quot;, StringComparison.OrdinalIgnoreCase)) &amp;amp;&amp;amp; (type.Attributes &amp;amp; TypeAttributes.NotPublic) == TypeAttributes.NotPublic; }  For a type to be anonymous:</description>
-    </item>
-    
-    <item>
       <title>Anonymous type equality follow-up: Equals()</title>
       <link>http://localhost:1313/2011/04/anonymous-type-equality-follow-up-equals/</link>
       <pubDate>Sun, 24 Apr 2011 12:30:00 +0200</pubDate>

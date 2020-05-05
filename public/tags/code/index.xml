@@ -745,5 +745,36 @@ There are four main steps in the merge sort algorithm (from Wikipedia):
 var elements; this.push = function(element) { if (typeof(elements) === &amp;#39;undefined&amp;#39;) { elements = []; } elements.push(element); } Yes, I made an overoptimization, and a bad one. In this implementation, you save a few bytes in memory if you initialize the stack, but don&amp;rsquo;t push elements.</description>
     </item>
     
+    <item>
+      <title>Stacks and queues in JavaScript</title>
+      <link>http://localhost:1313/2011/07/stacks-and-queues-in-javascript.html</link>
+      <pubDate>Tue, 12 Jul 2011 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/stacks-and-queues-in-javascript.html</guid>
+      <description>The second assignment in my &amp;lsquo;implementing data structures and algorithms in JavaScript&amp;rsquo; quest consists of two popular data structures: the stack and the queue.
+The stack  A stack is a last in, first out (LIFO) abstract data type and data structure. A stack can have any abstract data type as an element, but is characterized by only three fundamental operations: push, pop and stack top.
+ Implementing this turned out to be pretty easy.</description>
+    </item>
+    
+    <item>
+      <title>Simple sorting in JavaScript</title>
+      <link>http://localhost:1313/2011/07/simple-sorting-in-javascript.html</link>
+      <pubDate>Thu, 07 Jul 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/simple-sorting-in-javascript.html</guid>
+      <description>About three years ago I graduated and got my degree in Applied Computer Science. Although it says Computer Science, we hardly ever focused on data structures and algorithms. Obviously, I now see that as a shortcoming. So I plan to make up for that by reading up on some of the basics. While at it, I might be blogging on some of the topics.
+I am going to start by implementing some of the simple sorting algorithms in JavaScript.</description>
+    </item>
+    
+    <item>
+      <title>Checking for anonymous types</title>
+      <link>http://localhost:1313/2011/05/checking-for-anonymous-types.html</link>
+      <pubDate>Sat, 21 May 2011 18:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/05/checking-for-anonymous-types.html</guid>
+      <description>Because I blogged about anonymous types last month, I thought following method would also make an interesting post.
+private static bool IsAnonymousType(Type type) { Debug.Assert(type != null, &amp;#34;Type should not be null&amp;#34;); // HACK: The only way to detect anonymous types right now.  return Attribute.IsDefined(type, typeof(CompilerGeneratedAttribute), false) &amp;amp;&amp;amp; type.IsGenericType &amp;amp;&amp;amp; type.Name.Contains(&amp;#34;AnonymousType&amp;#34;) &amp;amp;&amp;amp; (type.Name.StartsWith(&amp;#34;&amp;lt;&amp;gt;&amp;#34;, StringComparison.OrdinalIgnoreCase) || type.Name.StartsWith(&amp;#34;VB$&amp;#34;, StringComparison.OrdinalIgnoreCase)) &amp;amp;&amp;amp; (type.Attributes &amp;amp; TypeAttributes.NotPublic) == TypeAttributes.NotPublic; } For a type to be anonymous:</description>
+    </item>
+    
   </channel>
 </rss>
