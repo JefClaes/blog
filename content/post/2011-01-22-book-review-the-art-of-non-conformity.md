@@ -3,7 +3,8 @@ title = "Book review: The Art of Non-Conformity"
 slug = "2011-01-22-book-review-the-art-of-non-conformity"
 published = 2011-01-22T14:00:00.002000+01:00
 author = "Jef Claes"
-tags = [ "Bookreview",]
+tags = [ "consumed",]
+url = "2011/01/book-review-art-of-non-conformity.html"
 +++
 The book [The Art of Non-Conformity: Set Your Own Rules, Live the Life
 You Want, and Change the

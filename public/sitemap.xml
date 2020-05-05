@@ -1158,12 +1158,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/04/prague-impressions/</loc>
+    <loc>http://localhost:1313/2011/04/prague-impressions.html</loc>
     <lastmod>2011-04-24T15:45:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/04/anonymous-type-equality-follow-up-equals/</loc>
+    <loc>http://localhost:1313/2011/04/anonymous-type-equality-follow-up.html</loc>
     <lastmod>2011-04-24T12:30:00+02:00</lastmod>
   </url>
   
@@ -1173,12 +1173,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/04/using-c#-keywords-as-variables/</loc>
+    <loc>http://localhost:1313/2011/04/using-c-keywords-as-variables.html</loc>
     <lastmod>2011-04-11T19:00:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/04/its-not-how-good-you-are-its-how-good-you-want-to-be/</loc>
+    <loc>http://localhost:1313/2011/04/its-not-how-good-you-are-its-how-good.html</loc>
     <lastmod>2011-04-10T20:30:00+02:00</lastmod>
   </url>
   
@@ -1198,13 +1198,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/03/keeping-websockets-alive/</loc>
+    <loc>http://localhost:1313/2011/03/keeping-websockets-alive.html</loc>
     <lastmod>2011-03-12T17:40:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/03/i-will-be-talking-at-html5-webcamps/</loc>
-    <lastmod>2011-03-01T12:56:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1218,42 +1213,22 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/02/why-i-still-buy-real-books/</loc>
+    <loc>http://localhost:1313/2011/02/why-i-still-buy-real-books.html</loc>
     <lastmod>2011-02-01T08:30:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/01/hello-world-with-kayak-and-owin/</loc>
-    <lastmod>2011-01-23T19:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/01/book-review-the-art-of-non-conformity/</loc>
+    <loc>http://localhost:1313/2011/01/book-review-art-of-non-conformity.html</loc>
     <lastmod>2011-01-22T14:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/01/book-review-got-fight/</loc>
+    <loc>http://localhost:1313/2011/01/book-review-got-fight.html</loc>
     <lastmod>2011-01-15T18:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2011/01/html5-the-websockets-prototype-with-silverlight-html-bridges-and-javascript/</loc>
-    <lastmod>2011-01-12T19:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/01/html5-rebuilding-the-websockets-server-prototype/</loc>
-    <lastmod>2011-01-09T18:45:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/01/html5-installing-the-microsoft-websockets-prototype/</loc>
-    <lastmod>2011-01-08T20:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2011/01/book-review-pro-html5-programming/</loc>
+    <loc>http://localhost:1313/2011/01/book-review-pro-html5-programming.html</loc>
     <lastmod>2011-01-06T14:30:00+01:00</lastmod>
   </url>
   

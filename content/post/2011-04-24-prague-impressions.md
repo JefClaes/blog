@@ -3,10 +3,11 @@ title = "Prague impressions"
 slug = "2011-04-24-prague-impressions"
 published = 2011-04-24T15:45:00.001000+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2011/04/prague-impressions.html"
 +++
 [Last
-year](http://jclaes.blogspot.com/2010/04/trip-report-czech-republic.html)
+year](https://www.jefclaes.be/2010/04/trip-report-czech-republic.html)
 my girlfriend and I already made a trip to the Czech Republic, but we
 felt like we had spent to little time visiting Prague. We made up for
 that by making a follow-up trip last week.  
@@ -53,6 +54,4 @@ Prague by night.
 [![](/post/images/thumbnails/2011-04-24-prague-impressions-Praag_136.jpg)](/post/images/2011-04-24-prague-impressions-Praag_136.jpg)  
 Oh, iPads are for taking pictures.  
   
-  
-*All credit for these pictures goes to [my
-girlfriend](http://kristienbehets.daportfolio.com).*
+

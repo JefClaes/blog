@@ -84,5 +84,16 @@ I have been listening to your feedback, and this Sunday I implemented some of yo
 It got a little out of hand. After publishing, I showed it to a few popular tweeps, and they were kind enough to mention it. 24 hours after the launch it has gotten over 3.5k unique visitors, 39k page views (see what I did there?) and over 240 submissions. Being mentioned by Scott Hanselman and Rey Bango helps.</description>
     </item>
     
+    <item>
+      <title>Video, slides and source from my WebSockets talk</title>
+      <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
+      <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</guid>
+      <description>Yesterday, I gave a talk on WebSockets at HTML5 WebCamps Belgium.
+ WebSockets on Fire
+While the WebSockets API specification is not stable yet, various browser vendors have already implemented a prototype in their latest browser versions. Microsoft released their WebSockets prototype in December 2010. While there is no native implementation of WebSockets in IE9 just yet, for now they are providing a solution which works cross-browser, relying on a Silverlight client.</description>
+    </item>
+    
   </channel>
 </rss>

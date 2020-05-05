@@ -3,7 +3,8 @@ title = "Book review: Got Fight?"
 slug = "2011-01-15-book-review-got-fight"
 published = 2011-01-15T18:00:00+01:00
 author = "Jef Claes"
-tags = [ "Bookreview",]
+tags = [ "consumed",]
+url = "2011/01/book-review-got-fight.html"
 +++
 I rarely review books with non-technical content here, but I just felt
 like I had to with this one.  
@@ -33,7 +34,7 @@ be entertained, and *maybe* learn something along the way!
 Below you can find some quotes taken from the book, which will probably
 tell you a lot more than my small summary above.  
   
-**Forrest on..**  
+### Forrest on..  
   
 .. sphincter control  
 

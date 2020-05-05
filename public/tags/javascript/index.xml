@@ -12,34 +12,6 @@
     
     
     <item>
-      <title>Video, slides and source from my WebSockets talk</title>
-      <link>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</link>
-      <pubDate>Thu, 07 Apr 2011 21:30:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/04/video-slides-and-source-from-my-websockets-talk/</guid>
-      <description>Yesterday, I gave a talk on WebSockets at HTML5 WebCamps Belgium.
-I got a lot of positive feedback on Twitter, which makes me a very happy panda!
-
-You can already find the video of my session on Channel9.
-The slides can be found on SlideShare.
-If you want to play with the demo yourself, you can download the source:
- Make sure your firewall allows incoming TCP traffic on port 4502 Deploy the client access policy file to IIS Also host the Demo.</description>
-    </item>
-    
-    <item>
-      <title>HTML5: Installing the Microsoft WebSockets prototype</title>
-      <link>http://localhost:1313/2011/01/html5-installing-the-microsoft-websockets-prototype/</link>
-      <pubDate>Sat, 08 Jan 2011 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/01/html5-installing-the-microsoft-websockets-prototype/</guid>
-      <description>In December Microsoft launched the HTML5 Labs for experimental HTML5 technologies still under development. With the launch, they also released a WebSockets prototype.
-In this post I will lead you through the process of installing the WebSockets prototype on your machine. By the end of this tutorial you should have a working chat web application sample.
-Download
-First you need to download and run the WebSockets prototype installer.
-This package installs the binaries and samples in the %ProgramFiles%\Microsoft SDKs\WCF WebSockets\10.</description>
-    </item>
-    
-    <item>
       <title>HTML5: Exception handling with the Geolocation API</title>
       <link>http://localhost:1313/2010/12/html5-exception-handling-with-the-geolocation-api/</link>
       <pubDate>Sun, 26 Dec 2010 20:30:00 +0100</pubDate>

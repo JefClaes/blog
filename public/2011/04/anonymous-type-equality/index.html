@@ -5,18 +5,20 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Anonymous type equality - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="Anonymous type equality">
 <meta itemprop="description" content="Let&rsquo;s say you instantiate two variables (a and b) using anonymous types. They both have the same two properties (x and y) with equal values.
- 1: var a = new { x = 1, y = 2 }; 2: var b = new { y = 2, x = 1 };  Do you think these two variables are equal?
- 1: var areEquel = a.Equals(b); 2: Console.WriteLine(areEquel); //Prints false :O  These two variables are not equal.">
+var a = new { x = 1, y = 2 }; var b = new { y = 2, x = 1 }; Do you think they are equal?
+Console.WriteLine(a.Equals(b)); //Prints false :O They are not. Not something I expected!
+If we look at the IL the C# compiler produced, it starts making sense though.">
 <meta itemprop="datePublished" content="2011-04-23T15:15:00&#43;02:00" />
 <meta itemprop="dateModified" content="2011-04-23T15:15:00&#43;02:00" />
-<meta itemprop="wordCount" content="197">
+<meta itemprop="wordCount" content="184">
 
 
 
-<meta itemprop="keywords" content="CodeSnippets,.NET," /><meta property="og:title" content="Anonymous type equality" />
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Anonymous type equality" />
 <meta property="og:description" content="Let&rsquo;s say you instantiate two variables (a and b) using anonymous types. They both have the same two properties (x and y) with equal values.
- 1: var a = new { x = 1, y = 2 }; 2: var b = new { y = 2, x = 1 };  Do you think these two variables are equal?
- 1: var areEquel = a.Equals(b); 2: Console.WriteLine(areEquel); //Prints false :O  These two variables are not equal." />
+var a = new { x = 1, y = 2 }; var b = new { y = 2, x = 1 }; Do you think they are equal?
+Console.WriteLine(a.Equals(b)); //Prints false :O They are not. Not something I expected!
+If we look at the IL the C# compiler produced, it starts making sense though." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/2011/04/anonymous-type-equality/" />
 <meta property="article:published_time" content="2011-04-23T15:15:00+02:00" />
@@ -24,8 +26,9 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Anonymous type equality"/>
 <meta name="twitter:description" content="Let&rsquo;s say you instantiate two variables (a and b) using anonymous types. They both have the same two properties (x and y) with equal values.
- 1: var a = new { x = 1, y = 2 }; 2: var b = new { y = 2, x = 1 };  Do you think these two variables are equal?
- 1: var areEquel = a.Equals(b); 2: Console.WriteLine(areEquel); //Prints false :O  These two variables are not equal."/>
+var a = new { x = 1, y = 2 }; var b = new { y = 2, x = 1 }; Do you think they are equal?
+Console.WriteLine(a.Equals(b)); //Prints false :O They are not. Not something I expected!
+If we look at the IL the C# compiler produced, it starts making sense though."/>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
@@ -94,16 +97,11 @@
 				<p>Let&rsquo;s say you instantiate two variables (a and b) using <a href="http://msdn.microsoft.com/en-us/library/bb397696.aspx">anonymous
 types</a>. They both
 have the same two properties (x and y) with equal values.</p>
-<pre><code>   1:  var a = new { x = 1, y = 2 };
-
-   2:  var b = new { y = 2, x = 1 };
-</code></pre>
-<p>Do you think these two variables are equal?</p>
-<pre><code>   1:  var areEquel = a.Equals(b);
-
-   2:  Console.WriteLine(areEquel); //Prints false :O
-</code></pre>
-<p>These two variables are not equal. Not something I expected!</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">a</span> = <span style="color:#859900">new</span> { <span style="color:#268bd2">x</span> = <span style="color:#2aa198;font-weight:bold">1</span>, <span style="color:#268bd2">y</span> = <span style="color:#2aa198;font-weight:bold">2</span> };
+<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">b</span> = <span style="color:#859900">new</span> { <span style="color:#268bd2">y</span> = <span style="color:#2aa198;font-weight:bold">2</span>, <span style="color:#268bd2">x</span> = <span style="color:#2aa198;font-weight:bold">1</span> };
+</code></pre></div><p>Do you think they are equal?</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">Console</span>.<span style="color:#268bd2">WriteLine</span>(<span style="color:#268bd2">a</span>.<span style="color:#268bd2">Equals</span>(<span style="color:#268bd2">b</span>)); <span style="color:#93a1a1;font-style:italic">//Prints false :O
+</span></code></pre></div><p>They are not. Not something I expected!</p>
 <p>If we look at the IL the C# compiler produced, it starts making sense
 though.</p>
 <p><a href="/post/images/2011-04-23-anonymous-type-equality-AnonymousTypeEquality.PNG"><img src="/post/images/thumbnails/2011-04-23-anonymous-type-equality-AnonymousTypeEquality.PNG" alt=""></a><br>
@@ -118,12 +116,12 @@ specify a sequence of properties of the same names and compile-time
 types in the same order will produce instances of the same anonymous
 type.</p>
 </blockquote>
-<p><strong>Conclusion</strong></p>
+<h3 id="conclusion">Conclusion</h3>
 <p>When defining anonymous types, the sequence of the property assignment
 matters. If the sequence of the property assignment differs, different
 types are defined by the C# compiler.</p>
-<p><!-- raw HTML omitted -->Also read <a href="http://jclaes.blogspot.com/2011/04/anonymous-type-equality-follow-up.html">the
-follow-up</a>.<!-- raw HTML omitted --></p>
+<p>Also read <a href="https://www.jefclaes.be/2011/04/anonymous-type-equality-follow-up.html">the
+follow-up</a>.</p>
 
 			</div>
 
@@ -132,9 +130,7 @@ follow-up</a>.<!-- raw HTML omitted --></p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
-							
-							<li><a href="/tags/.net">.NET</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					

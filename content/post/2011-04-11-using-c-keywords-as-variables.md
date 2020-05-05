@@ -3,7 +3,8 @@ title = "Using C# keywords as variables"
 slug = "2011-04-11-using-c-keywords-as-variables"
 published = 2011-04-11T19:00:00.002000+02:00
 author = "Jef Claes"
-tags = [ "CodeSnippets", ".NET", "LOL", "Tips",]
+tags = [ "code",]
+url = "2011/04/using-c-keywords-as-variables.html"
 +++
 Hold it, don't shoot me. I know this would be an awful practice, but it
 is an interesting C\# compiler quirk nonetheless.  
@@ -13,16 +14,14 @@ is an interesting C\# compiler quirk nonetheless.
 > program unless they include @ as a prefix. For example, @if is a legal
 > identifier but if is not because it is a keyword.
 
-    static void Main(string[] args) {           
+```csharp
+static void Main(string[] args) {           
+    var @if = "oh my..";
 
-        var @if = "oh my..";
+    Console.WriteLine(@if);
+}
+```
 
-     
-
-        Console.WriteLine(@if);
-
-    }
-
-  
-========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped
-==========
+```
+========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped ==========
+```

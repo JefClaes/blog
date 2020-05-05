@@ -11,17 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/hack/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Keeping WebSockets alive</title>
-      <link>http://localhost:1313/2011/03/keeping-websockets-alive/</link>
-      <pubDate>Sat, 12 Mar 2011 17:40:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2011/03/keeping-websockets-alive/</guid>
-      <description>The problem with using stateful connections on an imperfect place as the internet is that connections might drop. The server or an intermediary can drop the connection due to an idle timeout. Even a temporary problem at the server or a local network hiccup might kill your connection.
-If you aren&amp;rsquo;t prepared to handle these scenarios, you will not be able to fully rely on WebSockets.
-A simple solution
-The simplest solution is checking every few seconds whether the WebSocket is still opened.</description>
-    </item>
-    
   </channel>
 </rss>

@@ -4,19 +4,17 @@ slug = "2011-04-10-its-not-how-good-you-are-its-how-good-you-want-to-be"
 published = 2011-04-10T20:30:00+02:00
 author = "Jef Claes"
 tags = [ "Bookreview",]
+url = "2011/04/its-not-how-good-you-are-its-how-good.html"
 +++
 This Christmas, my girlfriend and I got this little book called [It's
 not how good you are, it's how good you want to
 be](http://www.amazon.com/gp/product/0714843377/ref=as_li_tf_tl?ie=UTF8&tag=diofanedebyje-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0714843377).
+
 This book is mainly directed to (advertisement) designers, but since I
 feel that designers and developers do have a few things in common, we
 both like to create things, I also read it.  
   
-The content of this book is a collection of [Paul
-Ardens](http://en.wikipedia.org/wiki/Paul_Arden) observations on
-business and life presented in a *very* consumable format. As it turns
-out, although I am not part of the target audience, a good amount of his
-thoughts can be applied to software development as well.  
+The content of this book is a collection of [Paul Ardens](http://en.wikipedia.org/wiki/Paul_Arden) observations on business and life presented in a *very* consumable format. As it turns out, although I am not part of the target audience, a good amount of his thoughts can be applied to software development as well.  
   
 Find a few of these thought-provoking quotes below.  
 

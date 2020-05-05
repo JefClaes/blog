@@ -3,7 +3,8 @@ title = "Why I still buy real books"
 slug = "2011-02-01-why-i-still-buy-real-books"
 published = 2011-02-01T08:30:00.003000+01:00
 author = "Jef Claes"
-tags = [ "Bookreview",]
+tags = [ "opinion", "consumed"]
+url = "2011/02/why-i-still-buy-real-books.html"
 +++
 As a technology geek, it should be hard to keep ignoring the latest
 generation of eReaders (read: [the
@@ -31,4 +32,3 @@ book. Part of my love for paper books might also be caused by the global
 perception that books equal wisdom.  
   
 [![](/post/images/thumbnails/2011-02-01-why-i-still-buy-real-books-dexterblood.jpg)](/post/images/2011-02-01-why-i-still-buy-real-books-dexterblood.jpg)  
-**Any accomplices out there?**

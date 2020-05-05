@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Keeping WebSockets alive - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Keeping WebSockets alive">
+<meta itemprop="description" content="The problem with using stateful connections on an imperfect place as the internet is that connections might drop. The server or an intermediary can drop the connection due to an idle timeout. Even a temporary problem at the server or a local network hiccup might kill your connection.
+If you aren&rsquo;t prepared to handle these scenarios, you will not be able to fully rely on WebSockets.
+A simple solution The simplest solution is checking every few seconds whether the WebSocket is still opened.">
+<meta itemprop="datePublished" content="2011-03-12T17:40:00&#43;01:00" />
+<meta itemprop="dateModified" content="2011-03-12T17:40:00&#43;01:00" />
+<meta itemprop="wordCount" content="454">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Keeping WebSockets alive" />
+<meta property="og:description" content="The problem with using stateful connections on an imperfect place as the internet is that connections might drop. The server or an intermediary can drop the connection due to an idle timeout. Even a temporary problem at the server or a local network hiccup might kill your connection.
+If you aren&rsquo;t prepared to handle these scenarios, you will not be able to fully rely on WebSockets.
+A simple solution The simplest solution is checking every few seconds whether the WebSocket is still opened." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2011/03/keeping-websockets-alive.html" />
+<meta property="article:published_time" content="2011-03-12T17:40:00+01:00" />
+<meta property="article:modified_time" content="2011-03-12T17:40:00+01:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Keeping WebSockets alive"/>
+<meta name="twitter:description" content="The problem with using stateful connections on an imperfect place as the internet is that connections might drop. The server or an intermediary can drop the connection due to an idle timeout. Even a temporary problem at the server or a local network hiccup might kill your connection.
+If you aren&rsquo;t prepared to handle these scenarios, you will not be able to fully rely on WebSockets.
+A simple solution The simplest solution is checking every few seconds whether the WebSocket is still opened."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">12</span>
+							<span class="rest">Mar 2011</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Keeping WebSockets alive</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>The problem with using stateful connections on an imperfect place as the
+internet is that connections might drop. The server or an intermediary
+can drop the connection due to an idle timeout. Even a temporary problem
+at the server or a local network hiccup might kill your connection.</p>
+<p>If you aren&rsquo;t prepared to handle these scenarios, you will not be able
+to fully rely on <a href="http://websocket.org/">WebSockets</a>.</p>
+<h3 id="a-simple-solution">A simple solution</h3>
+<p>The simplest solution is checking every few seconds whether the
+WebSocket is still opened. This might suffice in a good amount of
+scenarios, but a lot of other scenarios require more stable
+connectivity.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#268bd2">$</span>(<span style="color:#cb4b16">document</span>).<span style="color:#268bd2">ready</span>(<span style="color:#859900">function</span> () {        
+    <span style="color:#268bd2">setInterval</span>(<span style="color:#268bd2">openWebSocket</span>, <span style="color:#2aa198;font-weight:bold">5000</span>);
+}
+
+<span style="color:#859900">function</span> <span style="color:#268bd2">openWebSocket</span>(){
+    <span style="color:#859900">if</span> (<span style="color:#268bd2">websocket</span>.<span style="color:#268bd2">readyState</span> === <span style="color:#859900;font-weight:bold">undefined</span> || <span style="color:#268bd2">websocket</span>.<span style="color:#268bd2">readyState</span> &gt; <span style="color:#2aa198;font-weight:bold">1</span>) {
+        ...
+    }
+}
+</code></pre></div><h3 id="keepalives">Keepalives</h3>
+<p>As mentioned before, the server or an intermediate might drop the
+connection when the connection becomes idle. To prevent this, you could
+make your server send keepalive messages at predefined intervals.</p>
+<p>I implemented this in the <a href="https://www.jefclaes.be/2011/01/html5-rebuilding-websockets-server.html">HTML5 Labs WCF Server</a>.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#268bd2">[ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession, 
+</span><span style="color:#268bd2">                 ConcurrencyMode = ConcurrencyMode.Multiple)]</span>
+
+<span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">CadSubscriptionService</span> : <span style="color:#268bd2">WebSocketsService</span> {
+    <span style="color:#859900">private</span> <span style="color:#859900">static</span> <span style="color:#268bd2">KeepAliveBroadcaster</span> <span style="color:#268bd2">_keepAliveBroadcaster</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">CadSubscriptionService</span>() {           
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">_keepAliveBroadcaster</span> == <span style="color:#859900">null</span>) {
+            <span style="color:#268bd2">_keepAliveBroadcaster</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">KeepAliveBroadcaster</span>();
+        }
+    }
+ 
+    <span style="color:#859900">public</span> <span style="color:#859900">override</span> <span style="color:#859900">void</span> <span style="color:#268bd2">OnOpen</span>() {
+        <span style="color:#268bd2">_keepAliveBroadcaster</span>.<span style="color:#268bd2">AddService</span>(<span style="color:#859900">this</span>);
+
+        <span style="color:#859900">base</span>.<span style="color:#268bd2">OnOpen</span>();
+    }
+
+    <span style="color:#859900">protected</span> <span style="color:#859900">override</span> <span style="color:#859900">void</span> <span style="color:#268bd2">OnClose</span>(<span style="color:#859900;font-weight:bold">object</span> <span style="color:#268bd2">sender</span>, <span style="color:#268bd2">EventArgs</span> <span style="color:#268bd2">e</span>) {
+        <span style="color:#268bd2">_keepAliveBroadcaster</span>.<span style="color:#268bd2">RemoveService</span>(<span style="color:#859900">this</span>);
+
+        <span style="color:#859900">base</span>.<span style="color:#268bd2">OnClose</span>(<span style="color:#268bd2">sender</span>, <span style="color:#268bd2">e</span>);
+    }     
+}
+</code></pre></div><p>The <code>KeepAliveBroadcaster</code> class maintains a list of connected sessions.
+Using a <a href="http://msdn.microsoft.com/en-us/library/system.threading.timer.aspx">Timer</a> it sends a message to each client every 15 seconds. This should stop the connection from dropping due to an idle timeout.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#859900">public</span> <span style="color:#859900">class</span> <span style="color:#cb4b16">KeepAliveBroadcaster</span> {
+
+    <span style="color:#859900">private</span> <span style="color:#268bd2">List</span>&lt;<span style="color:#268bd2">WebSocketsService</span>&gt; <span style="color:#268bd2">_services</span>;
+    <span style="color:#859900">private</span> <span style="color:#268bd2">Timer</span> <span style="color:#268bd2">_timer</span>;
+
+    <span style="color:#859900">public</span> <span style="color:#268bd2">KeepAliveBroadcaster</span>() {
+        <span style="color:#268bd2">_timer</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">Timer</span>((<span style="color:#268bd2">o</span>) =&gt; {
+            <span style="color:#859900">if</span> (<span style="color:#268bd2">_services</span> == <span style="color:#859900">null</span>) {
+                <span style="color:#859900">return</span>;
+            }
+
+            <span style="color:#859900">lock</span> (<span style="color:#268bd2">_services</span>) {
+                <span style="color:#859900">if</span> (<span style="color:#268bd2">_services</span>.<span style="color:#268bd2">Count</span> &gt; <span style="color:#2aa198;font-weight:bold">0</span>) {
+                    <span style="color:#859900">foreach</span> (<span style="color:#859900;font-weight:bold">var</span> <span style="color:#268bd2">service</span> <span style="color:#859900">in</span> <span style="color:#268bd2">_services</span>) {
+                        <span style="color:#268bd2">service</span>.<span style="color:#268bd2">Send</span>(<span style="color:#2aa198">&#34;staying alive!&#34;</span>);
+                    }
+                }
+            }
+        }, <span style="color:#859900">null</span>, <span style="color:#2aa198;font-weight:bold">100</span>, <span style="color:#2aa198;font-weight:bold">15000</span>);              
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">AddService</span>(<span style="color:#268bd2">WebSocketsService</span> <span style="color:#268bd2">service</span>) {
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">_services</span> == <span style="color:#859900">null</span>) {
+            <span style="color:#268bd2">_services</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">List</span>&lt;<span style="color:#268bd2">WebSocketsService</span>&gt;();
+        }
+
+        <span style="color:#859900">lock</span> (<span style="color:#268bd2">_services</span>) {               
+            <span style="color:#268bd2">_services</span>.<span style="color:#268bd2">Add</span>(<span style="color:#268bd2">service</span>);
+        }
+    }
+
+    <span style="color:#859900">public</span> <span style="color:#859900">void</span> <span style="color:#268bd2">RemoveService</span>(<span style="color:#268bd2">WebSocketsService</span> <span style="color:#268bd2">service</span>) {
+        <span style="color:#859900">lock</span> (<span style="color:#268bd2">_services</span>) {
+            <span style="color:#268bd2">_services</span>.<span style="color:#268bd2">Remove</span>(<span style="color:#268bd2">service</span>);
+        }
+    }
+}
+</code></pre></div><h3 id="reopening-asap">Reopening ASAP</h3>
+<p>Something you could also implement is reopening the connection as soon
+as it closes.</p>
+<p>Retry opening the connection when the onclose event fires. Think about
+limiting the number of retries, or you might end up with an infinite
+loop.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#268bd2">websocket</span>.<span style="color:#268bd2">onclose</span> = <span style="color:#859900">function</span> (<span style="color:#268bd2">event</span>) {            
+        <span style="color:#268bd2">$</span>(<span style="color:#2aa198">&#39;#status&#39;</span>).<span style="color:#268bd2">html</span>(<span style="color:#2aa198">&#39;Socket closed&#39;</span>);    
+        
+        <span style="color:#268bd2">retryOpeningWebSocket</span>();
+    };
+
+
+    <span style="color:#859900">function</span> <span style="color:#268bd2">retryOpeningWebSocket</span>(){
+        <span style="color:#859900">if</span> (<span style="color:#268bd2">retries</span> &lt; <span style="color:#2aa198;font-weight:bold">2</span>) {            
+            <span style="color:#268bd2">setTimeout</span>(<span style="color:#268bd2">openWebSocket</span>, <span style="color:#2aa198;font-weight:bold">1000</span>);            
+            <span style="color:#268bd2">retries</span>++;
+        }
+    }
+</code></pre></div><h3 id="some-afterthought">Some afterthought</h3>
+<p>Depending on what type of connectivity you require, these solutions
+might not suffice. If you can&rsquo;t afford to lose a single message, you
+might want to think about implementing queues at the client and server
+to overcome a gap of connection loss. Maybe you even want to implement
+some sort of acknowledge messaging. Something for a future post maybe!</p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2011  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

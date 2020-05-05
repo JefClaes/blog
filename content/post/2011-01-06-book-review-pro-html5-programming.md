@@ -3,7 +3,8 @@ title = "Book review: Pro HTML5 Programming"
 slug = "2011-01-06-book-review-pro-html5-programming"
 published = 2011-01-06T14:30:00+01:00
 author = "Jef Claes"
-tags = [ "Bookreview",]
+tags = [ "consumed",]
+url = "2011/01/book-review-pro-html5-programming.html"
 +++
 The [Apress](http://apress.com/) book [Pro HTML5
 Programming](http://www.amazon.com/gp/product/1430227907?ie=UTF8&tag=diofanedebyje-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=1430227907)
@@ -37,17 +38,4 @@ introduction to HTML5. You should [get
 it](http://www.amazon.com/gp/product/1430227907?ie=UTF8&tag=diofanedebyje-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=1430227907)
 before it's obsolete ;).  
   
-**My rating: 4/5. What is yours?**  
-  
-Some of my articles on HTML5:  
-
--   [HTML5: New in the javascript Selector
-    API](http://jclaes.blogspot.com/2010/11/html5-new-in-javascript-selector-api.html)
--   [HTML5: More on
-    selectors](http://jclaes.blogspot.com/2010/12/html5-more-on-selectors.html)
--   [HTML5 selectors and
-    jQuery](http://jclaes.blogspot.com/2010/12/html5-selectors-and-jquery.html)
--   [HTML5: The Geolocation API is scary
-    (good)](http://jclaes.blogspot.com/2010/12/html5-geolocation-api-is-scary-good.html)
--   [HTML5: Exception handling with the Geolocation
-    API](http://jclaes.blogspot.com/2010/12/html5-exception-handling-with.html)
+**My rating: 4/5.**
