@@ -11,16 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/arealdeveloper/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>arealdeveloper.com</title>
-      <link>http://localhost:1313/2011/04/arealdeveloper.com/</link>
-      <pubDate>Tue, 26 Apr 2011 20:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2011/04/arealdeveloper.com/</guid>
-      <description>A Real Developer is a side-project I built over the weekend poking around with WebMatrix.
-
-It got a little out of hand. After publishing, I showed it to a few popular tweeps, and they were kind enough to mention it. 24 hours after the launch it has gotten over 3.5k unique visitors, 39k page views (see what I did there?) and over 240 submissions. Being mentioned by Scott Hanselman and Rey Bango helps.</description>
-    </item>
-    
   </channel>
 </rss>

@@ -3,11 +3,11 @@ title = "arealdeveloper.com"
 slug = "2011-04-26-arealdeveloper-com"
 published = 2011-04-26T20:00:00.003000+02:00
 author = "Jef Claes"
-tags = [ "WebMatrix", "ARealDeveloper", "LOL",]
+tags = [ "code", "community"]
+url = "2011/04/arealdevelopercom.html"
 +++
-[A Real Developer](http://arealdeveloper.com/) is a side-project I built
-over the weekend poking around with
-[WebMatrix](http://www.asp.net/webmatrix).  
+[A Real Developer](#) is a side-project I built
+over the weekend poking around with [WebMatrix](http://www.asp.net/webmatrix).  
   
 [![](/post/images/thumbnails/2011-04-26-arealdeveloper-com-arealdevss.PNG)](/post/images/2011-04-26-arealdeveloper-com-arealdevss.PNG)  
 It got a little out of hand. After publishing, I showed it to a few
@@ -40,7 +40,7 @@ life-form that evolves. (by
   
 And so much more of them are awesome.  
   
-**The future**  
+### The future
   
 I enjoyed the experience so far. I'm well aware that this buzz will end
 soon, but I'm going to try to maintain momentum as long as possible.  
@@ -48,11 +48,10 @@ soon, but I'm going to try to maintain momentum as long as possible.
 That's why I am eager to hear your suggestions and feedback.  
   
 Requests received so far:
-
--   Make it possible to up- or downvote quotes.
--   Make a smart algorithm based on those votes.
--   Make it easier to link to quotes.
--   Twitter authentication.
+- Make it possible to up- or downvote quotes.
+- Make a smart algorithm based on those votes.
+- Make it easier to link to quotes.
+- Twitter authentication.
 
 I might open source this little project (it's only 50 lines of code) and
 I might do a few blog posts on the making of in the next weeks.
