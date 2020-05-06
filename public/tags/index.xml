@@ -122,36 +122,27 @@
     <item>
       <title>Browsers</title>
       <link>http://localhost:1313/tags/browsers/</link>
-      <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
+      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/browsers/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>javascript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
-      <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>jQuery</title>
-      <link>http://localhost:1313/tags/jquery/</link>
-      <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/jquery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>CodeSnippets</title>
       <link>http://localhost:1313/tags/codesnippets/</link>
-      <pubDate>Fri, 10 Dec 2010 20:00:00 +0100</pubDate>
+      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/codesnippets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -233,6 +224,15 @@
       <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/ajax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jQuery</title>
+      <link>http://localhost:1313/tags/jquery/</link>
+      <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/jquery/</guid>
       <description></description>
     </item>
     

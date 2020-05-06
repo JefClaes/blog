@@ -1133,28 +1133,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/browsers/</loc>
-    <lastmod>2010-12-12T13:09:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2010/12/html5-selectors-and-jquery.html</loc>
     <lastmod>2010-12-12T13:09:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
-    <lastmod>2010-12-12T13:09:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/jquery/</loc>
-    <lastmod>2010-12-12T13:09:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/codesnippets/</loc>
-    <lastmod>2010-12-10T20:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1168,33 +1148,28 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/browsers/</loc>
+    <lastmod>2010-11-29T19:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/codesnippets/</loc>
+    <lastmod>2010-11-29T19:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/</loc>
+    <lastmod>2010-11-29T19:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/javascript/</loc>
     <lastmod>2010-11-29T19:30:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/teched/</loc>
     <lastmod>2010-11-11T20:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/11/teched-europe-2010-day-3/</loc>
-    <lastmod>2010-11-11T20:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/11/teched-europe-2010-day-2/</loc>
-    <lastmod>2010-11-11T10:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/11/teched-europe-2010-day-1/</loc>
-    <lastmod>2010-11-09T21:26:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/11/teched-europe-2010-keynote-summary/</loc>
-    <lastmod>2010-11-08T23:15:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1274,6 +1249,11 @@
   
   <url>
     <loc>http://localhost:1313/tags/ajax/</loc>
+    <lastmod>2010-04-19T21:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/jquery/</loc>
     <lastmod>2010-04-19T21:00:00+02:00</lastmod>
   </url>
   
