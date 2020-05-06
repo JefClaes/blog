@@ -2314,17 +2314,6 @@ Description
     </item>
     
     <item>
-      <title>Doing the groceries in parallel</title>
-      <link>http://localhost:1313/2010/05/doing-the-groceries-in-parallel/</link>
-      <pubDate>Mon, 10 May 2010 20:36:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/05/doing-the-groceries-in-parallel/</guid>
-      <description>I&amp;rsquo;ve started reading the excellent paper &amp;ldquo;Patterns for Parallel Programming: Understanding and Applying Parallel Patterns with the .NET Framework 4&amp;quot;.
-There is a section in this whitepaper which explains perfectly why parallel programming was and still is such an interesting problem.
- Consider an analogy: shopping with some friends at a grocery store. You come into the store with a grocery list, and you rip the list into one piece per friend, such that every friend is responsible for retrieving the elements on his or her list.</description>
-    </item>
-    
-    <item>
       <title>Blog redesign</title>
       <link>http://localhost:1313/2010/05/blog-redesign/</link>
       <pubDate>Sat, 08 May 2010 16:25:00 +0200</pubDate>
