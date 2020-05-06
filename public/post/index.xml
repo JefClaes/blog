@@ -2117,47 +2117,21 @@ The book contains 11 concise chapters: An overview of HTML5, the Canvas API, aud
     
     <item>
       <title>Reviewing and renewing resolutions</title>
-      <link>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions/</link>
+      <link>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions.html</link>
       <pubDate>Wed, 29 Dec 2010 20:17:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions/</guid>
-      <description>My career
-I&amp;rsquo;m still working on the same projects as I was last year: Firestation Antwerp and Ghent. This year we did not build a lot of brand new things, but we have added a decent amount of new functionalities. Next to that there were a bunch of bugs to fix and technical debt to pay off. I learned a lot from the mistakes we made and refactoring makes you really think about what good and clean code should look like.</description>
-    </item>
-    
-    <item>
-      <title>Format JavaScript with the IE9 developer tools</title>
-      <link>http://localhost:1313/2010/12/format-javascript-with-the-ie9-developer-tools/</link>
-      <pubDate>Mon, 27 Dec 2010 19:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/format-javascript-with-the-ie9-developer-tools/</guid>
-      <description>One of the new features in the IE9 developer tools Giorgio Sardo demoed at TechEd Europe, is the Format JavaScript tool. This tool can be very useful when you want to reverse engineer a minified script.
-You can find this feature in the toolbox on the Script tab.
-
-This is how jquery.min.js looks after formatting.
-
-This feature is not available in the public beta (9.0.7.9360.16406), but should be available in the latest platform previews.</description>
+      <guid>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions.html</guid>
+      <description>My career I&amp;rsquo;m still working on the same projects as I was last year: Firestation Antwerp and Ghent. This year we did not build a lot of brand new things, but we have added a decent amount of new functionalities. Next to that there were a bunch of bugs to fix and technical debt to pay off. I learned a lot from the mistakes we made and refactoring makes you really think about what good and clean code should look like.</description>
     </item>
     
     <item>
       <title>HTML5: Exception handling with the Geolocation API</title>
-      <link>http://localhost:1313/2010/12/html5-exception-handling-with-the-geolocation-api/</link>
+      <link>http://localhost:1313/2010/12/html5-exception-handling-with.html</link>
       <pubDate>Sun, 26 Dec 2010 20:30:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2010/12/html5-exception-handling-with-the-geolocation-api/</guid>
+      <guid>http://localhost:1313/2010/12/html5-exception-handling-with.html</guid>
       <description>In my previous post on the Geolocation API I passed in a PositionErrorCallback to the geolocation.getCurrentPosition() method. When I received this callback I displayed a generic message informing the user something went wrong. In real-world scenarios you probably want the message to be more specific. You might also want to call a specific fallback method depending on what went wrong.
 This is where the PositionError argument of the PositionErrorCallback comes in handy.</description>
-    </item>
-    
-    <item>
-      <title>Top 5 popular posts of 2010</title>
-      <link>http://localhost:1313/2010/12/top-5-popular-posts-of-2010/</link>
-      <pubDate>Sun, 26 Dec 2010 17:25:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/top-5-popular-posts-of-2010/</guid>
-      <description>Today I have spent a few hours evaluating this year&amp;rsquo;s analytics of my blog. In total I posted 59 entries this year, but in this post you will only find the 5 most popular, plus the ones that I liked writing a lot but failed to make it to the top 5.
-The most popular posts of 2010
-  Cannot start Service from the command line or debugger.: The most popular post of 2010, almost all traffic was completely driven by search engines.</description>
     </item>
     
     <item>

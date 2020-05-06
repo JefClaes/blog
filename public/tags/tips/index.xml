@@ -6,24 +6,10 @@
     <description>Recent content in Tips on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 08 Oct 2011 17:36:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 Dec 2010 19:30:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Format JavaScript with the IE9 developer tools</title>
-      <link>http://localhost:1313/2010/12/format-javascript-with-the-ie9-developer-tools/</link>
-      <pubDate>Mon, 27 Dec 2010 19:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/format-javascript-with-the-ie9-developer-tools/</guid>
-      <description>One of the new features in the IE9 developer tools Giorgio Sardo demoed at TechEd Europe, is the Format JavaScript tool. This tool can be very useful when you want to reverse engineer a minified script.
-You can find this feature in the toolbox on the Script tab.
-
-This is how jquery.min.js looks after formatting.
-
-This feature is not available in the public beta (9.0.7.9360.16406), but should be available in the latest platform previews.</description>
-    </item>
     
     <item>
       <title>Things good to know about SQL State Server</title>

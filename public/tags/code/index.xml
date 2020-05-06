@@ -831,5 +831,15 @@ If you aren&amp;rsquo;t prepared to handle these scenarios, you will not be able
 A simple solution The simplest solution is checking every few seconds whether the WebSocket is still opened.</description>
     </item>
     
+    <item>
+      <title>HTML5: Exception handling with the Geolocation API</title>
+      <link>http://localhost:1313/2010/12/html5-exception-handling-with.html</link>
+      <pubDate>Sun, 26 Dec 2010 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-exception-handling-with.html</guid>
+      <description>In my previous post on the Geolocation API I passed in a PositionErrorCallback to the geolocation.getCurrentPosition() method. When I received this callback I displayed a generic message informing the user something went wrong. In real-world scenarios you probably want the message to be more specific. You might also want to call a specific fallback method depending on what went wrong.
+This is where the PositionError argument of the PositionErrorCallback comes in handy.</description>
+    </item>
+    
   </channel>
 </rss>

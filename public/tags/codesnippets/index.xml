@@ -6,20 +6,10 @@
     <description>Recent content in CodeSnippets on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Feb 2012 20:26:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 26 Dec 2010 20:30:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/codesnippets/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>HTML5: Exception handling with the Geolocation API</title>
-      <link>http://localhost:1313/2010/12/html5-exception-handling-with-the-geolocation-api/</link>
-      <pubDate>Sun, 26 Dec 2010 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/html5-exception-handling-with-the-geolocation-api/</guid>
-      <description>In my previous post on the Geolocation API I passed in a PositionErrorCallback to the geolocation.getCurrentPosition() method. When I received this callback I displayed a generic message informing the user something went wrong. In real-world scenarios you probably want the message to be more specific. You might also want to call a specific fallback method depending on what went wrong.
-This is where the PositionError argument of the PositionErrorCallback comes in handy.</description>
-    </item>
     
     <item>
       <title>HTML5: The Geolocation API is scary (good)</title>

@@ -6,31 +6,10 @@
     <description>Recent content in General on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 Feb 2012 08:43:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 29 Dec 2010 20:17:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/general/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Reviewing and renewing resolutions</title>
-      <link>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions/</link>
-      <pubDate>Wed, 29 Dec 2010 20:17:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/reviewing-and-renewing-resolutions/</guid>
-      <description>My career
-I&amp;rsquo;m still working on the same projects as I was last year: Firestation Antwerp and Ghent. This year we did not build a lot of brand new things, but we have added a decent amount of new functionalities. Next to that there were a bunch of bugs to fix and technical debt to pay off. I learned a lot from the mistakes we made and refactoring makes you really think about what good and clean code should look like.</description>
-    </item>
-    
-    <item>
-      <title>Top 5 popular posts of 2010</title>
-      <link>http://localhost:1313/2010/12/top-5-popular-posts-of-2010/</link>
-      <pubDate>Sun, 26 Dec 2010 17:25:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/top-5-popular-posts-of-2010/</guid>
-      <description>Today I have spent a few hours evaluating this year&amp;rsquo;s analytics of my blog. In total I posted 59 entries this year, but in this post you will only find the 5 most popular, plus the ones that I liked writing a lot but failed to make it to the top 5.
-The most popular posts of 2010
-  Cannot start Service from the command line or debugger.: The most popular post of 2010, almost all traffic was completely driven by search engines.</description>
-    </item>
     
     <item>
       <title>Looking back, moving forward (New years post)</title>
