@@ -111,24 +111,6 @@
     </item>
     
     <item>
-      <title>Blogging</title>
-      <link>http://localhost:1313/tags/blogging/</link>
-      <pubDate>Wed, 29 Dec 2010 20:17:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/blogging/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>General</title>
-      <link>http://localhost:1313/tags/general/</link>
-      <pubDate>Wed, 29 Dec 2010 20:17:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/general/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>me</title>
       <link>http://localhost:1313/tags/me/</link>
       <pubDate>Wed, 29 Dec 2010 20:17:00 +0100</pubDate>
@@ -140,34 +122,16 @@
     <item>
       <title>Browsers</title>
       <link>http://localhost:1313/tags/browsers/</link>
-      <pubDate>Mon, 27 Dec 2010 19:30:00 +0100</pubDate>
+      <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/browsers/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Tips</title>
-      <link>http://localhost:1313/tags/tips/</link>
-      <pubDate>Mon, 27 Dec 2010 19:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CodeSnippets</title>
-      <link>http://localhost:1313/tags/codesnippets/</link>
-      <pubDate>Sun, 26 Dec 2010 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/codesnippets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>javascript</title>
       <link>http://localhost:1313/tags/javascript/</link>
-      <pubDate>Sun, 26 Dec 2010 20:30:00 +0100</pubDate>
+      <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
@@ -179,6 +143,15 @@
       <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/jquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CodeSnippets</title>
+      <link>http://localhost:1313/tags/codesnippets/</link>
+      <pubDate>Fri, 10 Dec 2010 20:00:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/codesnippets/</guid>
       <description></description>
     </item>
     
@@ -210,6 +183,15 @@
     </item>
     
     <item>
+      <title>Tips</title>
+      <link>http://localhost:1313/tags/tips/</link>
+      <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>.NET</title>
       <link>http://localhost:1313/tags/.net/</link>
       <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
@@ -237,20 +219,11 @@
     </item>
     
     <item>
-      <title>E-book</title>
-      <link>http://localhost:1313/tags/e-book/</link>
-      <pubDate>Mon, 10 May 2010 20:36:00 +0200</pubDate>
+      <title>Blogging</title>
+      <link>http://localhost:1313/tags/blogging/</link>
+      <pubDate>Sat, 08 May 2010 16:25:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/tags/e-book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ramblings</title>
-      <link>http://localhost:1313/tags/ramblings/</link>
-      <pubDate>Mon, 10 May 2010 20:36:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/ramblings/</guid>
+      <guid>http://localhost:1313/tags/blogging/</guid>
       <description></description>
     </item>
     
@@ -291,11 +264,29 @@
     </item>
     
     <item>
+      <title>Ramblings</title>
+      <link>http://localhost:1313/tags/ramblings/</link>
+      <pubDate>Sun, 14 Feb 2010 16:22:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/ramblings/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Opensource</title>
       <link>http://localhost:1313/tags/opensource/</link>
       <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/opensource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>General</title>
+      <link>http://localhost:1313/tags/general/</link>
+      <pubDate>Mon, 21 Dec 2009 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/general/</guid>
       <description></description>
     </item>
     

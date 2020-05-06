@@ -3,19 +3,19 @@ title = "HTML5 selectors and jQuery"
 slug = "2010-12-12-html5-selectors-and-jquery"
 published = 2010-12-12T13:09:00.011000+01:00
 author = "Jef Claes"
-tags = [ "javascript", "Browsers", "jQuery",]
+tags = [ "code",]
+url = "2010/12/html5-selectors-and-jquery.html"
 +++
 In [my first post on the HTML5 javascript Selector
-API](http://jclaes.blogspot.com/2010/11/html5-new-in-javascript-selector-api.html)
-I wondered how the new methods querySelector() and querySelectorAll()
-would influence [jQuery](http://jquery.com/).  
+API](https://www.jefclaes.be/2010/11/html5-new-in-javascript-selector-api.html)
+I wondered how the new methods `querySelector()` and `querySelectorAll()`
+would influence [jQuery](http://jquery.com/). 
   
 At the time, I couldn't find any information on the subject, but
 yesterday I found out that jQuery has been taking advantage of these new
-methods since version 1.4.3.  
+methods since version `1.4.3`.  
   
-From the [release
-notes](http://blog.jquery.com/2010/10/16/jquery-143-released/)..  
+From the [release notes](http://blog.jquery.com/2010/10/16/jquery-143-released/)..  
 
 > The performance of nearly all the major traversal methods has been
 > drastically improved. .closest(), .filter() (and as a result, .is()),
@@ -41,5 +41,4 @@ notes](http://blog.jquery.com/2010/10/16/jquery-143-released/)..
 > support those methods continue to have the same performance
 > characteristics.  
 
-  
 Looks like it's not a bad idea to keep an eye on the release notes..

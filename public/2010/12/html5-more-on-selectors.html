@@ -7,14 +7,14 @@
 <meta itemprop="description" content="Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&rsquo;s impossible to show you all of the selectors usages in just one post, that&rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications.">
 <meta itemprop="datePublished" content="2010-12-05T13:15:00&#43;01:00" />
 <meta itemprop="dateModified" content="2010-12-05T13:15:00&#43;01:00" />
-<meta itemprop="wordCount" content="458">
+<meta itemprop="wordCount" content="454">
 
 
 
 <meta itemprop="keywords" content="code," /><meta property="og:title" content="HTML5: More on selectors" />
 <meta property="og:description" content="Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&rsquo;s impossible to show you all of the selectors usages in just one post, that&rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2010/12/html5-more-on-selectors/" />
+<meta property="og:url" content="http://localhost:1313/2010/12/html5-more-on-selectors.html" />
 <meta property="article:published_time" content="2010-12-05T13:15:00+01:00" />
 <meta property="article:modified_time" content="2010-12-05T13:15:00+01:00" />
 <meta name="twitter:card" content="summary"/>
@@ -85,10 +85,8 @@
 			</div>
 					
 			<div class="markdown">
-				<p><a href="https://www.jefclaes.be/2010/11/html5-new-in-javascript-selector-api.html">Last weekend I
-blogged</a>
-on new addittions to the javascript Selector API: querySelector() and
-querySelectorAll(). These two new methods enable you to find elements by
+				<p><a href="https://www.jefclaes.be/2010/11/html5-new-in-javascript-selector-api.html">Last weekend I blogged</a> on new addittions to the javascript Selector API: <code>querySelector()</code> and
+<code>querySelectorAll()</code>. These two new methods enable you to find elements by
 matching against a group of selectors. I only scratched the surface in
 the previous post, that&rsquo;s why you can find a few more examples in this
 post. These examples should demonstrate the power and ease of use of the
@@ -100,190 +98,112 @@ specifications</a>.</p>
 I experimented on the <a href="http://www.asp.net/">asp.net homepage</a> using the
 <a href="http://msdn.microsoft.com/en-us/ie/aa740478.aspx">IE9 developer
 tools</a>.</p>
-<p><strong>Attribute selectors</strong></p>
+<h3 id="attribute-selectors">Attribute selectors</h3>
 <p>Select all elements which have an attribute named <em>title</em>.</p>
-<pre><code>&gt;&gt;document.querySelectorAll('[title]');
-
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">document.querySelectorAll(&#39;[title]&#39;);
 [object] {
-
     length : 5,
-
     0 : http://www.asp.net/,
-
     1 : [object HTMLImageElement],
-
     2 : http://www.asp.net/get-started,
-
     3 : http://www.asp.net/downloads,
-
     4 : http://www.asp.net/rss/spotlight
-
 }
-</code></pre>
-<p>Select all elements where the <em>title</em> attribute has the value set to
+</code></pre></div><p>Select all elements where the <em>title</em> attribute has the value set to
 <em>Rss</em>.</p>
-<pre><code>&gt;&gt;document.querySelectorAll('[title=Rss]');
-
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">document.querySelectorAll(&#39;[title=Rss]&#39;);
 [object] {
-
     length : 1,
-
     0 : http://www.asp.net/rss/spotlight
-
 }
-</code></pre>
-<p>Select all elements where the <em>href</em> attribute is set to
-<a href="http://umbraco.org/">http://umbraco.org/</a> and where the <em>target</em> attribute is set to
+</code></pre></div><p>Select all elements where the <em>href</em> attribute is set to
+<code>http://umbraco.org/</code> and where the <em>target</em> attribute is set to
 _blank.</p>
-<pre><code>&gt;&gt;document.querySelectorAll('[href=&quot;http://umbraco.org/&quot;][target=&quot;_blank&quot;]');
-
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">document.querySelectorAll(&#39;[href=&#34;http://umbraco.org/&#34;][target=&#34;_blank&#34;]&#39;);
 [object] {
-
     length : 1,
-
     0 : http://umbraco.org/
-
 }
-</code></pre>
-<p>Select all elements where the <em>href</em> attribute contains <em>umbraco</em>.</p>
-<pre><code>&gt;&gt;document.querySelectorAll('[href*=&quot;umbraco&quot;]');
-
+</code></pre></div><p>Select all elements where the <em>href</em> attribute contains <em>umbraco</em>.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">document.querySelectorAll(&#39;[href*=&#34;umbraco&#34;]&#39;);
 [object] {
-
     length : 3,
-
     0 : [object HTMLLinkElement],
-
     1 : [object HTMLLinkElement],
-
     2 : http://umbraco.org/
-
 }
-</code></pre>
-<p><strong>Class selectors</strong></p>
+</code></pre></div><h3 id="class-selectors">Class selectors</h3>
 <p>Find the first element where the <em>class</em> is set to <em>.search_box</em>.</p>
-<pre><code>&gt;&gt;document.querySelector('.search_box')
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">document.querySelector(&#39;.search_box&#39;)
 
 [object HTMLInputElement] {
-
     jQuery1291484082884 : 1,
-
-    align : &quot;&quot;,
-
-    border : &quot;&quot;,
-
+    align : &#34;&#34;,
+    border : &#34;&#34;,
     hspace : 0,
-
     vspace : 0,
-
-    accept : &quot;&quot;,
-
-    alt : &quot;&quot;,
-
+    accept : &#34;&#34;,
+    alt : &#34;&#34;,
     checked : false,
-
     defaultChecked : false,
-
-    defaultValue : &quot;Search&quot;
-
+    defaultValue : &#34;Search&#34;
     ...
-
 }
-</code></pre>
-<p><strong>Id selectors</strong></p>
+</code></pre></div><h3 id="id-selectors">Id selectors</h3>
 <p>Find the first element with the id <em>#WLSearchBoxInput</em>.</p>
-<pre><code>&gt;&gt;document.querySelector('#WLSearchBoxInput')
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">document.querySelector(&#39;#WLSearchBoxInput&#39;)
 
 [object HTMLInputElement] {
-
     jQuery1291484082884 : 1,
-
-    align : &quot;&quot;,
-
-    border : &quot;&quot;,
-
+    align : &#34;&#34;,
+    border : &#34;&#34;,
     hspace : 0,
-
     vspace : 0,
-
-    accept : &quot;&quot;,
-
-    alt : &quot;&quot;,
-
+    accept : &#34;&#34;,
+    alt : &#34;&#34;,
     checked : false,
-
     defaultChecked : false,
-
-    defaultValue : &quot;Search&quot;
-
+    defaultValue : &#34;Search&#34;
     ...
-
 }
-</code></pre>
-<p><strong>Pseudo classes</strong></p>
+</code></pre></div><h3 id="pseudo-classes">Pseudo classes</h3>
 <p>Select the first hyperlink that is being hovered over.</p>
-<pre><code>&gt;&gt;document.querySelector('a:hover')
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">document.querySelector(&#39;a:hover&#39;)
 
 http://umbraco.org/ {
-
-    charset : &quot;&quot;,
-
-    coords : &quot;&quot;,
-
-    hash : &quot;&quot;,
-
-    host : &quot;umbraco.org:80&quot;,
-
-    hostname : &quot;umbraco.org&quot;,
-
-    href : &quot;http://umbraco.org/&quot;,
-
-    hreflang : &quot;&quot;,
-
-    name : &quot;&quot;,
-
-    pathname : &quot;&quot;,
-
-    port : &quot;80&quot;
-
+    charset : &#34;&#34;,
+    coords : &#34;&#34;,
+    hash : &#34;&#34;,
+    host : &#34;umbraco.org:80&#34;,
+    hostname : &#34;umbraco.org&#34;,
+    href : &#34;http://umbraco.org/&#34;,
+    hreflang : &#34;&#34;,
+    name : &#34;&#34;,
+    pathname : &#34;&#34;,
+    port : &#34;80&#34;
     ...
-
 }
-</code></pre>
-<p>Select the third child element from the first element with the class
+</code></pre></div><p>Select the third child element from the first element with the class
 <em>.welcom_nav</em>.</p>
-<pre><code>&gt;&gt;document.querySelector('.welcome_nav:nth-child(3)')
-
-    type : &quot;&quot;,
-
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">document.querySelector(&#39;.welcome_nav:nth-child(3)&#39;)
+    
+    type : &#34;&#34;,
     compact : false,
-
     currentStyle : [object MSCurrentStyleCSSProperties],
-
     runtimeStyle : [object MSStyleCSSProperties],
-
-    accessKey : &quot;&quot;,
-
-    className : &quot;welcome_nav&quot;,
-
-    contentEditable : &quot;inherit&quot;,
-
-    dir : &quot;&quot;,
-
+    accessKey : &#34;&#34;,
+    className : &#34;welcome_nav&#34;,
+    contentEditable : &#34;inherit&#34;,
+    dir : &#34;&#34;,
     disabled : false,
-
-    id : &quot;&quot;
-
+    id : &#34;&#34;
     ...
-
 }
-</code></pre>
-<p>As you can see searching for elements with native javascript has become
+</code></pre></div><p>As you can see searching for elements with native javascript has become
 a lot easier. I tried to show some examples which can be applied to real
 life scenarios. Examples based on more complex scenarios can be found in
 the <a href="http://www.w3.org/TR/css3-selectors/">W3C Selectors
 specifications</a>.</p>
-<p><strong>What do you think?</strong></p>
 
 			</div>
 

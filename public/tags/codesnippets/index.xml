@@ -6,50 +6,10 @@
     <description>Recent content in CodeSnippets on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 26 Dec 2010 20:30:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 10 Dec 2010 20:00:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/codesnippets/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>HTML5: The Geolocation API is scary (good)</title>
-      <link>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</link>
-      <pubDate>Sun, 19 Dec 2010 17:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</guid>
-      <description>I read about the HTML5 Geolocation API in the Pro HTML5 Programming book a while ago, and decided to play with it on this lazy Sunday.
-Using the Geolocation API to make a one-shot position request is very straight-forward. Get a reference to the navigator.geolocation object and call the getCurrentPosition() method, passing in at least a PositionCallback. In this example I&amp;rsquo;m also passing in a PositionErrorCallback. In the PositionCallback you can examine the properties of the position object.</description>
-    </item>
-    
-    <item>
-      <title>More accurate javascript execution time measurement with the msPerformance API</title>
-      <link>http://localhost:1313/2010/12/more-accurate-javascript-execution-time-measurement-with-the-msperformance-api/</link>
-      <pubDate>Fri, 10 Dec 2010 20:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/more-accurate-javascript-execution-time-measurement-with-the-msperformance-api/</guid>
-      <description>A cool feature of Internet Explorer 9 is the msPerformance API. This API helps you to accurately measure the performance of a webpage. A lot of developers have built their own performance measurement constructs over the years, based on the Date function, but the results of these constructs can be way off!
-John Resig (jQuery inventor) has an in detail blogpost where he discovers where custom javascript execution time measurement goes wrong.</description>
-    </item>
-    
-    <item>
-      <title>HTML5: Drawing images to the canvas gotcha</title>
-      <link>http://localhost:1313/2010/12/html5-drawing-images-to-the-canvas-gotcha/</link>
-      <pubDate>Sun, 05 Dec 2010 19:55:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/html5-drawing-images-to-the-canvas-gotcha/</guid>
-      <description>While I was playing with the Canvas API I came across a weird issue: I was trying to draw an image to the canvas, but the image failed to render very often.
-Have a look at the source. Do you spot the problem?
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;HTML5: Canvas&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt; window.addEventListener(&amp;quot;load&amp;quot;, draw, true); function draw(){ var canvas = document.getElementById(&#39;canvas&#39;); var context = canvas.getContext(&#39;2d&#39;); var img = new Image(); img.src = &amp;quot;http://3.</description>
-    </item>
-    
-    <item>
-      <title>HTML5: More on selectors</title>
-      <link>http://localhost:1313/2010/12/html5-more-on-selectors/</link>
-      <pubDate>Sun, 05 Dec 2010 13:15:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/html5-more-on-selectors/</guid>
-      <description>Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&amp;rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&amp;rsquo;s impossible to show you all of the selectors usages in just one post, that&amp;rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications.</description>
-    </item>
     
     <item>
       <title>HTML5: New in the javascript Selector API</title>

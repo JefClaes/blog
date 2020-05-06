@@ -841,5 +841,47 @@ A simple solution The simplest solution is checking every few seconds whether th
 This is where the PositionError argument of the PositionErrorCallback comes in handy.</description>
     </item>
     
+    <item>
+      <title>HTML5: The Geolocation API is scary (good)</title>
+      <link>http://localhost:1313/2010/12/html5-geolocation-api-is-scary-good.html</link>
+      <pubDate>Sun, 19 Dec 2010 17:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-geolocation-api-is-scary-good.html</guid>
+      <description>I read about the HTML5 Geolocation API in the Pro HTML5 Programming book a while ago, and decided to play with it on this lazy Sunday.
+Using the Geolocation API to make a one-shot position request is very straight-forward. Get a reference to the navigator.geolocation object and call the getCurrentPosition() method, passing in at least a PositionCallback. In this example I&amp;rsquo;m also passing in a PositionErrorCallback. In the PositionCallback you can examine the properties of the position object.</description>
+    </item>
+    
+    <item>
+      <title>HTML5 selectors and jQuery</title>
+      <link>http://localhost:1313/2010/12/html5-selectors-and-jquery.html</link>
+      <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-selectors-and-jquery.html</guid>
+      <description>In my first post on the HTML5 javascript Selector API I wondered how the new methods querySelector() and querySelectorAll() would influence jQuery.
+At the time, I couldn&amp;rsquo;t find any information on the subject, but yesterday I found out that jQuery has been taking advantage of these new methods since version 1.4.3.
+From the release notes..
+ The performance of nearly all the major traversal methods has been drastically improved. .closest(), .</description>
+    </item>
+    
+    <item>
+      <title>HTML5: Drawing images to the canvas gotcha</title>
+      <link>http://localhost:1313/2010/12/html5-drawing-images-to-canvas-gotcha.html</link>
+      <pubDate>Sun, 05 Dec 2010 19:55:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-drawing-images-to-canvas-gotcha.html</guid>
+      <description>While I was playing with the Canvas API I came across a weird issue: I was trying to draw an image to the canvas, but the image failed to render very often.
+Have a look at the source. Do you spot the problem?
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;HTML5: Canvas&amp;lt;/title&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; window.addEventListener(&amp;#34;load&amp;#34;, draw, true); function draw(){ var canvas = document.getElementById(&amp;#39;canvas&amp;#39;); var context = canvas.getContext(&amp;#39;2d&amp;#39;); var img = new Image(); img.src = &amp;#34;logo.</description>
+    </item>
+    
+    <item>
+      <title>HTML5: More on selectors</title>
+      <link>http://localhost:1313/2010/12/html5-more-on-selectors.html</link>
+      <pubDate>Sun, 05 Dec 2010 13:15:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/12/html5-more-on-selectors.html</guid>
+      <description>Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&amp;rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&amp;rsquo;s impossible to show you all of the selectors usages in just one post, that&amp;rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications.</description>
+    </item>
+    
   </channel>
 </rss>

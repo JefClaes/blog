@@ -1113,16 +1113,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/blogging/</loc>
-    <lastmod>2010-12-29T20:17:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/general/</loc>
-    <lastmod>2010-12-29T20:17:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/me/</loc>
     <lastmod>2010-12-29T20:17:00+01:00</lastmod>
   </url>
@@ -1133,37 +1123,27 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/browsers/</loc>
-    <lastmod>2010-12-27T19:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/tips/</loc>
-    <lastmod>2010-12-27T19:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/codesnippets/</loc>
-    <lastmod>2010-12-26T20:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2010/12/html5-exception-handling-with.html</loc>
     <lastmod>2010-12-26T20:30:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
-    <lastmod>2010-12-26T20:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/12/html5-the-geolocation-api-is-scary-good/</loc>
+    <loc>http://localhost:1313/2010/12/html5-geolocation-api-is-scary-good.html</loc>
     <lastmod>2010-12-19T17:30:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/12/html5-selectors-and-jquery/</loc>
+    <loc>http://localhost:1313/tags/browsers/</loc>
+    <lastmod>2010-12-12T13:09:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2010/12/html5-selectors-and-jquery.html</loc>
+    <lastmod>2010-12-12T13:09:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/javascript/</loc>
     <lastmod>2010-12-12T13:09:00+01:00</lastmod>
   </url>
   
@@ -1173,17 +1153,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/12/more-accurate-javascript-execution-time-measurement-with-the-msperformance-api/</loc>
+    <loc>http://localhost:1313/tags/codesnippets/</loc>
     <lastmod>2010-12-10T20:00:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/12/html5-drawing-images-to-the-canvas-gotcha/</loc>
+    <loc>http://localhost:1313/2010/12/html5-drawing-images-to-canvas-gotcha.html</loc>
     <lastmod>2010-12-05T19:55:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/12/html5-more-on-selectors/</loc>
+    <loc>http://localhost:1313/2010/12/html5-more-on-selectors.html</loc>
     <lastmod>2010-12-05T13:15:00+01:00</lastmod>
   </url>
   
@@ -1243,6 +1223,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/tips/</loc>
+    <lastmod>2010-09-23T19:31:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2010/07/tripping-in-holland.-honey-who-shrunk-holland/</loc>
     <lastmod>2010-07-21T17:30:00+02:00</lastmod>
   </url>
@@ -1278,17 +1263,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/e-book/</loc>
-    <lastmod>2010-05-10T20:36:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/ramblings/</loc>
-    <lastmod>2010-05-10T20:36:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2010/05/blog-redesign/</loc>
+    <lastmod>2010-05-08T16:25:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/blogging/</loc>
     <lastmod>2010-05-08T16:25:00+02:00</lastmod>
   </url>
   
@@ -1348,6 +1328,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/ramblings/</loc>
+    <lastmod>2010-02-14T16:22:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</loc>
     <lastmod>2010-02-14T16:22:00+01:00</lastmod>
   </url>
@@ -1365,6 +1350,11 @@
   <url>
     <loc>http://localhost:1313/2010/01/excellence-is-a-drive-from-inside-not-outside/</loc>
     <lastmod>2010-01-11T15:06:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/general/</loc>
+    <lastmod>2009-12-21T18:57:00+01:00</lastmod>
   </url>
   
   <url>

@@ -12,18 +12,6 @@
     
     
     <item>
-      <title>HTML5 selectors and jQuery</title>
-      <link>http://localhost:1313/2010/12/html5-selectors-and-jquery/</link>
-      <pubDate>Sun, 12 Dec 2010 13:09:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/12/html5-selectors-and-jquery/</guid>
-      <description>In my first post on the HTML5 javascript Selector API I wondered how the new methods querySelector() and querySelectorAll() would influence jQuery.
-At the time, I couldn&amp;rsquo;t find any information on the subject, but yesterday I found out that jQuery has been taking advantage of these new methods since version 1.4.3.
-From the release notes..
- The performance of nearly all the major traversal methods has been drastically improved. .closest(), .</description>
-    </item>
-    
-    <item>
       <title>The state of the client-side ASP.NET Ajax 4.0 framework</title>
       <link>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</link>
       <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
