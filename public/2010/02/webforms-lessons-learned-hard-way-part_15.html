@@ -5,24 +5,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Webforms lessons learned the hard way (Part 2) - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="Webforms lessons learned the hard way (Part 2)">
 <meta itemprop="description" content="If you missed part 1, you can find it here.
-Use the built-in goodiesASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions.">
+Use the built-in goodies ASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions.">
 <meta itemprop="datePublished" content="2010-02-15T17:43:00&#43;01:00" />
 <meta itemprop="dateModified" content="2010-02-15T17:43:00&#43;01:00" />
-<meta itemprop="wordCount" content="320">
+<meta itemprop="wordCount" content="326">
 
 
 
-<meta itemprop="keywords" content="," /><meta property="og:title" content="Webforms lessons learned the hard way (Part 2)" />
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Webforms lessons learned the hard way (Part 2)" />
 <meta property="og:description" content="If you missed part 1, you can find it here.
-Use the built-in goodiesASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions." />
+Use the built-in goodies ASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-2/" />
+<meta property="og:url" content="http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part_15.html" />
 <meta property="article:published_time" content="2010-02-15T17:43:00+01:00" />
 <meta property="article:modified_time" content="2010-02-15T17:43:00+01:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Webforms lessons learned the hard way (Part 2)"/>
 <meta name="twitter:description" content="If you missed part 1, you can find it here.
-Use the built-in goodiesASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions."/>
+Use the built-in goodies ASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions."/>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
@@ -89,8 +89,8 @@ Use the built-in goodiesASP.NET Webforms has a lot of good stuff built into it. 
 					
 			<div class="markdown">
 				<p>If you missed part 1, you can find it
-<a href="http://jclaes.blogspot.com/2010/02/webforms-lessons-learned-hard-way-part.html">here</a>.</p>
-<p><!-- raw HTML omitted -->Use the built-in goodies<!-- raw HTML omitted --></p>
+<a href="https://www.jefclaes.be/2010/02/webforms-lessons-learned-hard-way-part.html">here</a>.</p>
+<h3 id="use-the-built-in-goodies">Use the built-in goodies</h3>
 <p>ASP.NET Webforms has a lot of good stuff built into it. Do your homework
 before you start building the next big Webforms thing! A perfect example
 of this is ASP.NET Membership. ASP.NET provides an out-of-box membership
@@ -98,31 +98,20 @@ solution. I&rsquo;ve seen people who were to lazy to do some research or
 thought they could do better and ended up with a solution which put its
 doors wide open to people with bad intentions.</p>
 <p>When a feature doesn&rsquo;t exactly match your needs, try extending it. The
-ASP.NET team are artists as it comes to writing solid extensible
-frameworks. I&rsquo;d like to point to ASP.NET Membership again. You can write
-your <a href="http://www.asp.net/(S(ywiyuluxr3qb2dfva1z5lgeg))/learn/videos/video-189.aspx">own
-provider</a>,
-which integrates with ASP.NET seamlessly.</p>
-<p><!-- raw HTML omitted -->Move as much as possible away from your
-page<!-- raw HTML omitted --></p>
-<p>Separating the businesslogic and data-accesslogic from your
-presentationlogic positively affects the quality of your page and
-code-behind in so many ways.</p>
+ASP.NET team are artists as it comes to writing solid extensible frameworks. I&rsquo;d like to point to ASP.NET Membership again. You can write
+your <a href="http://www.asp.net/(S(ywiyuluxr3qb2dfva1z5lgeg))/learn/videos/video-189.aspx">own provider</a> which integrates with ASP.NET seamlessly.</p>
+<h3 id="move-as-much-as-possible-away-from-your-page">Move as much as possible away from your page</h3>
+<p>Separating the domain and persistence away from your presentation logic positively affects the quality of your page and code-behind in so many ways.</p>
 <p>One of the big drawbacks of Webforms is that testing your pages isn&rsquo;t
 easy. That&rsquo;s why it&rsquo;s important to keep the quantity of code in the
-code-behind as low as possible. Code outside your presentationlogic can
+code-behind as low as possible. Code outside your presentation logic can
 easily be covered using unittests.</p>
-<p>Dividing your webapplication in multiple layers also makes the code in
+<p>Dividing your web application in multiple layers also makes the code in
 the page and page-behind easier to grasp (encapsulation etc..).</p>
-<p><!-- raw HTML omitted -->Let others do it for you<!-- raw HTML omitted --></p>
+<h3 id="let-others-do-it-for-you">Let others do it for you</h3>
 <p>Because most of the ASP.NET Server controls are easy to extend, there a
 lot of third party control vendors out there.</p>
-<p>I&rsquo;ve only been using the <a href="http://www.telerik.com/products/aspnet-ajax.aspx">Telerik
-RadControls</a> for a few
-months now, and using this control suite, made my life so much easier.
-1000$ might look like a big investment, but you can&rsquo;t believe how many
-time it has saved me. Especially the
-<a href="http://demos.telerik.com/aspnet-ajax/grid/examples/performance/linq/defaultcs.aspx">RadGrid</a>
+<p>I&rsquo;ve only been using the <a href="http://www.telerik.com/products/aspnet-ajax.aspx">Telerik RadControls</a> for a few months now, and using this control suite, made my life so much easier.1000$ might look like a big investment, but you can&rsquo;t believe how many time it has saved me. Especially the <a href="http://demos.telerik.com/aspnet-ajax/grid/examples/performance/linq/defaultcs.aspx">RadGrid</a>
 control is a great time-saver. Binding a list of objects to a RadGrid,
 and finding out sorting, paging,.. just works is awesome.</p>
 <p>What are some of your Webforms lessons learned the hard way?</p>
@@ -134,7 +123,7 @@ and finding out sorting, paging,.. just works is awesome.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/"></a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					

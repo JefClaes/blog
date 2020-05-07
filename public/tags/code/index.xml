@@ -926,5 +926,43 @@ Invokes a handler on each Exception contained by this AggregateException. Parame
 System.Func&amp;lt;Exception, Boolean&amp;gt; predicate The predicate to execute for each exception.</description>
     </item>
     
+    <item>
+      <title>Exception handling in batch operations with the AggregateException</title>
+      <link>http://localhost:1313/2010/05/exception-handling-in-batch-operations.html</link>
+      <pubDate>Sat, 15 May 2010 18:34:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/exception-handling-in-batch-operations.html</guid>
+      <description>Doing batch operations and elegantly handling exceptions is a problem which every developer has faced before. In .NET 3.5 or older there is no out-of-the-box solution to handle exceptions in these types of scenarios, without being inconsistent to the normal flow of exception handling. .NET 4 introduces the AggregateException; an exception representing multiple exceptions. The AggregateException was introduced in the first place to be used with the parallel framework, but it can be used in other scenarios as well, such as batch operations.</description>
+    </item>
+    
+    <item>
+      <title>Webforms lessons learned the hard way (Part 2)</title>
+      <link>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part_15.html</link>
+      <pubDate>Mon, 15 Feb 2010 17:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part_15.html</guid>
+      <description>If you missed part 1, you can find it here.
+Use the built-in goodies ASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&amp;rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions.</description>
+    </item>
+    
+    <item>
+      <title>Webforms lessons learned the hard way (Part 1)</title>
+      <link>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part.html</link>
+      <pubDate>Sun, 14 Feb 2010 16:22:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part.html</guid>
+      <description>I&amp;rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&amp;rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them.</description>
+    </item>
+    
+    <item>
+      <title>Log4Net: log.Debug(String.Format()) versus log.DebugFormat()</title>
+      <link>http://localhost:1313/2010/01/log4net-logdebugstringformat-versus.html</link>
+      <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/01/log4net-logdebugstringformat-versus.html</guid>
+      <description>Log4net is one of the most popular opensource logging frameworks available in the .NET world. I&amp;rsquo;ve been using this framework for over a year now, and today I discovered something new.
+I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.</description>
+    </item>
+    
   </channel>
 </rss>

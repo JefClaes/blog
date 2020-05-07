@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Webforms lessons learned the hard way (Part 1)</title>
-      <link>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</link>
-      <pubDate>Sun, 14 Feb 2010 16:22:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</guid>
-      <description>I&amp;rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&amp;rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them.</description>
-    </item>
-    
-    <item>
       <title>Why code reviews should be a teamthing</title>
       <link>http://localhost:1313/2009/08/why-code-reviews-should-be-a-teamthing/</link>
       <pubDate>Sun, 23 Aug 2009 19:22:00 +0200</pubDate>

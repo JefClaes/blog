@@ -11,15 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/jquery/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>The state of the client-side ASP.NET Ajax 4.0 framework</title>
-      <link>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</link>
-      <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</guid>
-      <description>The people who follow my blog might remember the ASP.NET Ajax 4.0 series. In these series I showed some of the core features of the ASP.NET Ajax 4.0 beta javascript library.
-In January Microsoft told us that they would ship the ASP.NET Ajax 4.0 library as a part of the Microsoft Ajax framework, together with the release of ASP.NET 4.0. A few days ago I was ready to dig in the library a little deeper, but I found out that most of the documentation and resources I used to consult, had moved or had disappeared.</description>
-    </item>
-    
   </channel>
 </rss>

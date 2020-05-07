@@ -11,15 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Quick and dirty tool for sending UDP packets</title>
-      <link>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</link>
-      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</guid>
-      <description>While I was playing with my UDPListener I needed a small tool which could send some UDP packets to a certain hostname and port. That&amp;rsquo;s why I wrote a console application which uses an UdpClient to send some UDP packets. It&amp;rsquo;s quick and dirty, but it serves the cause.
- 1: namespace UdpSender 2: { 3: class Program 4: { 5: //Constants 6: private const string HOSTNAME = &amp;quot;LocalHost&amp;quot;; 7: private const int PORT = 800; 8: private const int TIMES = 5; 9: private const string MESSAGE = &amp;quot;This is a TestMessage&amp;quot;; 10: private const int SLEEP = 50; 11: 12: static void Main(string[] args) 13: { 14: using (UdpClient client = new UdpClient()) 15: { 16: //Connect 17: client.</description>
-    </item>
-    
   </channel>
 </rss>

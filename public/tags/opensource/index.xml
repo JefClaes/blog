@@ -11,15 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Log4Net: log.Debug(String.Format()) versus log.DebugFormat()</title>
-      <link>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</link>
-      <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</guid>
-      <description>Log4net is one of the most popular opensource logging frameworks available in the .NET world. I&amp;rsquo;ve been using this framework for over a year now, and today I discovered something new.
-I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.</description>
-    </item>
-    
   </channel>
 </rss>

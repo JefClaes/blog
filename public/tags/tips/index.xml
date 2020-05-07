@@ -6,41 +6,10 @@
     <description>Recent content in Tips on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Sep 2010 19:31:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 15 Mar 2010 18:57:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/tips/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Quick and dirty tool for sending UDP packets</title>
-      <link>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</link>
-      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</guid>
-      <description>While I was playing with my UDPListener I needed a small tool which could send some UDP packets to a certain hostname and port. That&amp;rsquo;s why I wrote a console application which uses an UdpClient to send some UDP packets. It&amp;rsquo;s quick and dirty, but it serves the cause.
- 1: namespace UdpSender 2: { 3: class Program 4: { 5: //Constants 6: private const string HOSTNAME = &amp;quot;LocalHost&amp;quot;; 7: private const int PORT = 800; 8: private const int TIMES = 5; 9: private const string MESSAGE = &amp;quot;This is a TestMessage&amp;quot;; 10: private const int SLEEP = 50; 11: 12: static void Main(string[] args) 13: { 14: using (UdpClient client = new UdpClient()) 15: { 16: //Connect 17: client.</description>
-    </item>
-    
-    <item>
-      <title>Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe)..</title>
-      <link>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</link>
-      <pubDate>Sat, 13 Mar 2010 16:36:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</guid>
-      <description>When you create a new Windows Service project and try to debug it, Visual Studio will show you a Windows Service Start Failure with the message &amp;ldquo;Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe) and then started with the Server Explorer, Windows Services Administrative tool or the NET START command.&amp;quot;.
-
-The trick my team and I use to workaround this problem, makes use of the service Debug flag.</description>
-    </item>
-    
-    <item>
-      <title>Log4Net: log.Debug(String.Format()) versus log.DebugFormat()</title>
-      <link>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</link>
-      <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</guid>
-      <description>Log4net is one of the most popular opensource logging frameworks available in the .NET world. I&amp;rsquo;ve been using this framework for over a year now, and today I discovered something new.
-I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.</description>
-    </item>
     
   </channel>
 </rss>

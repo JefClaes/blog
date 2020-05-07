@@ -2252,84 +2252,29 @@ System.Func&amp;lt;Exception, Boolean&amp;gt; predicate The predicate to execute
     
     <item>
       <title>Exception handling in batch operations with the AggregateException</title>
-      <link>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</link>
+      <link>http://localhost:1313/2010/05/exception-handling-in-batch-operations.html</link>
       <pubDate>Sat, 15 May 2010 18:34:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</guid>
+      <guid>http://localhost:1313/2010/05/exception-handling-in-batch-operations.html</guid>
       <description>Doing batch operations and elegantly handling exceptions is a problem which every developer has faced before. In .NET 3.5 or older there is no out-of-the-box solution to handle exceptions in these types of scenarios, without being inconsistent to the normal flow of exception handling. .NET 4 introduces the AggregateException; an exception representing multiple exceptions. The AggregateException was introduced in the first place to be used with the parallel framework, but it can be used in other scenarios as well, such as batch operations.</description>
     </item>
     
     <item>
-      <title>Blog redesign</title>
-      <link>http://localhost:1313/2010/05/blog-redesign/</link>
-      <pubDate>Sat, 08 May 2010 16:25:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/05/blog-redesign/</guid>
-      <description>Today I finally took the time to redesign my blog.
-The word redesign might be a bit exaggerated though. I downloaded the 2plus blogger template and tweaked it a little. Hope you like the new design!
-Before..
-..and after
-Your opinionAs always, I would like to hear your opinion!</description>
-    </item>
-    
-    <item>
-      <title>The state of the client-side ASP.NET Ajax 4.0 framework</title>
-      <link>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</link>
-      <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</guid>
-      <description>The people who follow my blog might remember the ASP.NET Ajax 4.0 series. In these series I showed some of the core features of the ASP.NET Ajax 4.0 beta javascript library.
-In January Microsoft told us that they would ship the ASP.NET Ajax 4.0 library as a part of the Microsoft Ajax framework, together with the release of ASP.NET 4.0. A few days ago I was ready to dig in the library a little deeper, but I found out that most of the documentation and resources I used to consult, had moved or had disappeared.</description>
-    </item>
-    
-    <item>
       <title>Trip Report Czech Republic</title>
-      <link>http://localhost:1313/2010/04/trip-report-czech-republic/</link>
+      <link>http://localhost:1313/2010/04/trip-report-czech-republic.html</link>
       <pubDate>Mon, 12 Apr 2010 20:16:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2010/04/trip-report-czech-republic/</guid>
+      <guid>http://localhost:1313/2010/04/trip-report-czech-republic.html</guid>
       <description>Last week my girlfriend and I went on a short holiday to the city of Plzeň in the Czech Republic. In this post you can find a small trip report.
-Roadtrippin&#39;Minutes after leaving home we discovered an unpleasant surprise; my Tom Tom has no map of the Czech Republic. Good thing that people used to print this stuff on paper. After consulting a paper map of Europe we did have an idea which direction to follow.</description>
-    </item>
-    
-    <item>
-      <title>Quick and dirty tool for sending UDP packets</title>
-      <link>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</link>
-      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</guid>
-      <description>While I was playing with my UDPListener I needed a small tool which could send some UDP packets to a certain hostname and port. That&amp;rsquo;s why I wrote a console application which uses an UdpClient to send some UDP packets. It&amp;rsquo;s quick and dirty, but it serves the cause.
- 1: namespace UdpSender 2: { 3: class Program 4: { 5: //Constants 6: private const string HOSTNAME = &amp;quot;LocalHost&amp;quot;; 7: private const int PORT = 800; 8: private const int TIMES = 5; 9: private const string MESSAGE = &amp;quot;This is a TestMessage&amp;quot;; 10: private const int SLEEP = 50; 11: 12: static void Main(string[] args) 13: { 14: using (UdpClient client = new UdpClient()) 15: { 16: //Connect 17: client.</description>
-    </item>
-    
-    <item>
-      <title>Listening for UDP packets in a Windows service using an UdpClient</title>
-      <link>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</link>
-      <pubDate>Sun, 14 Mar 2010 16:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</guid>
-      <description>In this post, I&amp;rsquo;ll show you how can you listen for UDP packets in a Windows service.
-OnStartWhen the service starts, I set the started flag to true, initialize the ManualResetEvent, initialize an UdpClient and a WorkingThread. The ManualResetEvent will help us on a later stage to make our service stop elegantly.
- 1: protected override void OnStart(string[] args) 2: { 3: Start(); 4: } 5: 6: public void Start() 7: { 8: m_started = true; 9: 10: m_stop = new ManualResetEvent(false); 11: 12: InitializeUdpListener(); 13: InitializeWorkingThread(); 14: }  InitializingFirst we need to initialize an IPEndpoint.</description>
-    </item>
-    
-    <item>
-      <title>Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe)..</title>
-      <link>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</link>
-      <pubDate>Sat, 13 Mar 2010 16:36:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</guid>
-      <description>When you create a new Windows Service project and try to debug it, Visual Studio will show you a Windows Service Start Failure with the message &amp;ldquo;Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe) and then started with the Server Explorer, Windows Services Administrative tool or the NET START command.&amp;quot;.
-
-The trick my team and I use to workaround this problem, makes use of the service Debug flag.</description>
+Roadtrippin&amp;rsquo; Minutes after leaving home we discovered an unpleasant surprise; my Tom Tom has no map of the Czech Republic. Good thing that people used to print this stuff on paper. After consulting a paper map of Europe we did have an idea which direction to follow.</description>
     </item>
     
     <item>
       <title>Book review: Object-Oriented JavaScript</title>
-      <link>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</link>
+      <link>http://localhost:1313/2010/02/book-review-object-oriented-javascript.html</link>
       <pubDate>Mon, 22 Feb 2010 19:47:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</guid>
+      <guid>http://localhost:1313/2010/02/book-review-object-oriented-javascript.html</guid>
       <description>Although I&amp;rsquo;ve made my feet wet with various JavaScript frameworks, I am not a JavaScript hero at all. This might be one of the disadvantages of being a WebForms developer and having great toolkits at hand like the AJAX Control Toolkit and Telerik RADControls.
 Because you really can&amp;rsquo;t call yourself a webdeveloper without having some understanding of JavaScript I decided to order Object-Oriented Javascript by Stoyan Stefanov.
 This book really handles the language itself.</description>
@@ -2337,29 +2282,29 @@ This book really handles the language itself.</description>
     
     <item>
       <title>Webforms lessons learned the hard way (Part 2)</title>
-      <link>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-2/</link>
+      <link>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part_15.html</link>
       <pubDate>Mon, 15 Feb 2010 17:43:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-2/</guid>
+      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part_15.html</guid>
       <description>If you missed part 1, you can find it here.
-Use the built-in goodiesASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&amp;rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions.</description>
+Use the built-in goodies ASP.NET Webforms has a lot of good stuff built into it. Do your homework before you start building the next big Webforms thing! A perfect example of this is ASP.NET Membership. ASP.NET provides an out-of-box membership solution. I&amp;rsquo;ve seen people who were to lazy to do some research or thought they could do better and ended up with a solution which put its doors wide open to people with bad intentions.</description>
     </item>
     
     <item>
       <title>Webforms lessons learned the hard way (Part 1)</title>
-      <link>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</link>
+      <link>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part.html</link>
       <pubDate>Sun, 14 Feb 2010 16:22:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</guid>
+      <guid>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part.html</guid>
       <description>I&amp;rsquo;ve been spending a lot of my days in Webforms the last two years. In this post I want to share some best practices I&amp;rsquo;ve learned the hard way over these years. A lot of MVC developers might think this post comes a bit late (who still cares about Webforms?!), I do think (in the real world) a lot of the ASP.NET developers are still using Webforms. This post is directly targeting them.</description>
     </item>
     
     <item>
       <title>Log4Net: log.Debug(String.Format()) versus log.DebugFormat()</title>
-      <link>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</link>
+      <link>http://localhost:1313/2010/01/log4net-logdebugstringformat-versus.html</link>
       <pubDate>Wed, 20 Jan 2010 20:30:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</guid>
+      <guid>http://localhost:1313/2010/01/log4net-logdebugstringformat-versus.html</guid>
       <description>Log4net is one of the most popular opensource logging frameworks available in the .NET world. I&amp;rsquo;ve been using this framework for over a year now, and today I discovered something new.
 I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.</description>
     </item>

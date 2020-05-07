@@ -120,69 +120,6 @@
     </item>
     
     <item>
-      <title>ASP.NET</title>
-      <link>http://localhost:1313/tags/asp.net/</link>
-      <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/asp.net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SQL</title>
-      <link>http://localhost:1313/tags/sql/</link>
-      <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/sql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tips</title>
-      <link>http://localhost:1313/tags/tips/</link>
-      <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>.NET</title>
-      <link>http://localhost:1313/tags/.net/</link>
-      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/.net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CodeSnippets</title>
-      <link>http://localhost:1313/tags/codesnippets/</link>
-      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/codesnippets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Reporting</title>
-      <link>http://localhost:1313/tags/reporting/</link>
-      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/reporting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Best Practices</title>
-      <link>http://localhost:1313/tags/best-practices/</link>
-      <pubDate>Sat, 15 May 2010 18:34:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/tags/best-practices/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Blogging</title>
       <link>http://localhost:1313/tags/blogging/</link>
       <pubDate>Sat, 08 May 2010 16:25:00 +0200</pubDate>
@@ -192,11 +129,29 @@
     </item>
     
     <item>
+      <title>meta</title>
+      <link>http://localhost:1313/tags/meta/</link>
+      <pubDate>Sat, 08 May 2010 16:25:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/meta/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>AJAX</title>
       <link>http://localhost:1313/tags/ajax/</link>
       <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/ajax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.NET</title>
+      <link>http://localhost:1313/tags/asp.net/</link>
+      <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/asp.net/</guid>
       <description></description>
     </item>
     
@@ -215,6 +170,33 @@
       <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/jquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.NET</title>
+      <link>http://localhost:1313/tags/.net/</link>
+      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/.net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CodeSnippets</title>
+      <link>http://localhost:1313/tags/codesnippets/</link>
+      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/codesnippets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>http://localhost:1313/tags/tips/</link>
+      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/tips/</guid>
       <description></description>
     </item>
     
@@ -242,6 +224,15 @@
       <pubDate>Sun, 14 Mar 2010 16:00:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/windows-services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Best Practices</title>
+      <link>http://localhost:1313/tags/best-practices/</link>
+      <pubDate>Mon, 15 Feb 2010 17:43:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/best-practices/</guid>
       <description></description>
     </item>
     
@@ -287,6 +278,15 @@
       <pubDate>Sun, 15 Feb 2009 18:58:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/interview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Sun, 15 Feb 2009 18:58:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/sql/</guid>
       <description></description>
     </item>
     

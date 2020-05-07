@@ -3,7 +3,8 @@ title = "Book review: Object-Oriented JavaScript"
 slug = "2010-02-22-book-review-object-oriented-javascript"
 published = 2010-02-22T19:47:00.003000+01:00
 author = "Jef Claes"
-tags = [ "AJAX", "javascript", "Bookreview",]
+tags = [ "consumed",]
+url = "2010/02/book-review-object-oriented-javascript.html"
 +++
 Although I've made my feet wet with various JavaScript frameworks, I am
 not a JavaScript hero at all. This might be one of the disadvantages of

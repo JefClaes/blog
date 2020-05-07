@@ -1163,43 +1163,13 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/asp.net/</loc>
-    <lastmod>2010-09-23T19:31:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/sql/</loc>
-    <lastmod>2010-09-23T19:31:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2010/09/things-good-to-know-about-sql-state.html</loc>
-    <lastmod>2010-09-23T19:31:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/tips/</loc>
     <lastmod>2010-09-23T19:31:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>http://localhost:1313/2010/07/tripping-in-holland-honey-who-shrunk.html</loc>
     <lastmod>2010-07-21T17:30:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/.net/</loc>
-    <lastmod>2010-07-14T22:25:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/codesnippets/</loc>
-    <lastmod>2010-07-14T22:25:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/reporting/</loc>
-    <lastmod>2010-07-14T22:25:00+02:00</lastmod>
   </url>
   
   <url>
@@ -1213,18 +1183,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/best-practices/</loc>
+    <loc>http://localhost:1313/2010/05/exception-handling-in-batch-operations.html</loc>
     <lastmod>2010-05-15T18:34:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</loc>
-    <lastmod>2010-05-15T18:34:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/05/blog-redesign/</loc>
-    <lastmod>2010-05-08T16:25:00+02:00</lastmod>
   </url>
   
   <url>
@@ -1233,7 +1193,17 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/meta/</loc>
+    <lastmod>2010-05-08T16:25:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/ajax/</loc>
+    <lastmod>2010-04-19T21:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/asp.net/</loc>
     <lastmod>2010-04-19T21:00:00+02:00</lastmod>
   </url>
   
@@ -1248,28 +1218,28 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</loc>
-    <lastmod>2010-04-19T21:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/04/trip-report-czech-republic/</loc>
+    <loc>http://localhost:1313/2010/04/trip-report-czech-republic.html</loc>
     <lastmod>2010-04-12T20:16:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</loc>
+    <loc>http://localhost:1313/tags/.net/</loc>
+    <lastmod>2010-03-15T18:57:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/codesnippets/</loc>
+    <lastmod>2010-03-15T18:57:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/tips/</loc>
     <lastmod>2010-03-15T18:57:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/tools/</loc>
     <lastmod>2010-03-15T18:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</loc>
-    <lastmod>2010-03-14T16:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1283,17 +1253,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</loc>
-    <lastmod>2010-03-13T16:36:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</loc>
+    <loc>http://localhost:1313/2010/02/book-review-object-oriented-javascript.html</loc>
     <lastmod>2010-02-22T19:47:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-2/</loc>
+    <loc>http://localhost:1313/tags/best-practices/</loc>
+    <lastmod>2010-02-15T17:43:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part_15.html</loc>
     <lastmod>2010-02-15T17:43:00+01:00</lastmod>
   </url>
   
@@ -1303,12 +1273,12 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/02/webforms-lessons-learned-the-hard-way-part-1/</loc>
+    <loc>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part.html</loc>
     <lastmod>2010-02-14T16:22:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/</loc>
+    <loc>http://localhost:1313/2010/01/log4net-logdebugstringformat-versus.html</loc>
     <lastmod>2010-01-20T20:30:00+01:00</lastmod>
   </url>
   
@@ -1359,6 +1329,11 @@
   
   <url>
     <loc>http://localhost:1313/tags/interview/</loc>
+    <lastmod>2009-02-15T18:58:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/sql/</loc>
     <lastmod>2009-02-15T18:58:00+01:00</lastmod>
   </url>
   

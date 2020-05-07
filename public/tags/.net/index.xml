@@ -6,51 +6,10 @@
     <description>Recent content in .NET on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 14 Jul 2010 22:25:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 15 Mar 2010 18:57:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/.net/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Exception handling in batch operations with the AggregateException</title>
-      <link>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</link>
-      <pubDate>Sat, 15 May 2010 18:34:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/05/exception-handling-in-batch-operations-with-the-aggregateexception/</guid>
-      <description>Doing batch operations and elegantly handling exceptions is a problem which every developer has faced before. In .NET 3.5 or older there is no out-of-the-box solution to handle exceptions in these types of scenarios, without being inconsistent to the normal flow of exception handling. .NET 4 introduces the AggregateException; an exception representing multiple exceptions. The AggregateException was introduced in the first place to be used with the parallel framework, but it can be used in other scenarios as well, such as batch operations.</description>
-    </item>
-    
-    <item>
-      <title>Quick and dirty tool for sending UDP packets</title>
-      <link>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</link>
-      <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</guid>
-      <description>While I was playing with my UDPListener I needed a small tool which could send some UDP packets to a certain hostname and port. That&amp;rsquo;s why I wrote a console application which uses an UdpClient to send some UDP packets. It&amp;rsquo;s quick and dirty, but it serves the cause.
- 1: namespace UdpSender 2: { 3: class Program 4: { 5: //Constants 6: private const string HOSTNAME = &amp;quot;LocalHost&amp;quot;; 7: private const int PORT = 800; 8: private const int TIMES = 5; 9: private const string MESSAGE = &amp;quot;This is a TestMessage&amp;quot;; 10: private const int SLEEP = 50; 11: 12: static void Main(string[] args) 13: { 14: using (UdpClient client = new UdpClient()) 15: { 16: //Connect 17: client.</description>
-    </item>
-    
-    <item>
-      <title>Listening for UDP packets in a Windows service using an UdpClient</title>
-      <link>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</link>
-      <pubDate>Sun, 14 Mar 2010 16:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</guid>
-      <description>In this post, I&amp;rsquo;ll show you how can you listen for UDP packets in a Windows service.
-OnStartWhen the service starts, I set the started flag to true, initialize the ManualResetEvent, initialize an UdpClient and a WorkingThread. The ManualResetEvent will help us on a later stage to make our service stop elegantly.
- 1: protected override void OnStart(string[] args) 2: { 3: Start(); 4: } 5: 6: public void Start() 7: { 8: m_started = true; 9: 10: m_stop = new ManualResetEvent(false); 11: 12: InitializeUdpListener(); 13: InitializeWorkingThread(); 14: }  InitializingFirst we need to initialize an IPEndpoint.</description>
-    </item>
-    
-    <item>
-      <title>Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe)..</title>
-      <link>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</link>
-      <pubDate>Sat, 13 Mar 2010 16:36:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</guid>
-      <description>When you create a new Windows Service project and try to debug it, Visual Studio will show you a Windows Service Start Failure with the message &amp;ldquo;Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe) and then started with the Server Explorer, Windows Services Administrative tool or the NET START command.&amp;quot;.
-
-The trick my team and I use to workaround this problem, makes use of the service Debug flag.</description>
-    </item>
     
     <item>
       <title>Response.RedirectPermanent in .NET 3.5 and older</title>

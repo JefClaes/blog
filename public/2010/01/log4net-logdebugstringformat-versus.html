@@ -8,15 +8,15 @@
 I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.">
 <meta itemprop="datePublished" content="2010-01-20T20:30:00&#43;01:00" />
 <meta itemprop="dateModified" content="2010-01-20T20:30:00&#43;01:00" />
-<meta itemprop="wordCount" content="301">
+<meta itemprop="wordCount" content="176">
 
 
 
-<meta itemprop="keywords" content="CodeSnippets,Opensource,Tips," /><meta property="og:title" content="Log4Net: log.Debug(String.Format()) versus log.DebugFormat()" />
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Log4Net: log.Debug(String.Format()) versus log.DebugFormat()" />
 <meta property="og:description" content="Log4net is one of the most popular opensource logging frameworks available in the .NET world. I&rsquo;ve been using this framework for over a year now, and today I discovered something new.
 I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2010/01/log4net-log.debugstring.format-versus-log.debugformat/" />
+<meta property="og:url" content="http://localhost:1313/2010/01/log4net-logdebugstringformat-versus.html" />
 <meta property="article:published_time" content="2010-01-20T20:30:00+01:00" />
 <meta property="article:modified_time" content="2010-01-20T20:30:00+01:00" />
 <meta name="twitter:card" content="summary"/>
@@ -99,88 +99,19 @@ my message and an Exception was thrown in the beginning of my method
 which caused the application flow to break. You can avoid this by using
 the
 <a href="http://logging.apache.org/log4net/release/sdk/log4net.ILog.DebugFormat_overloads.html">DebugFormat()</a>
-method. If you mistype here, no Exception will be thrown, but a WARN
+method. If you mistype here, no exception will be thrown, but a <code>WARN</code>
 message will be logged.</p>
-<p><!-- raw HTML omitted -->Example using
-log.Debug(String.Format())<!-- raw HTML omitted --></p>
-<pre><code>   1:  try
-
-   2:  {
-
-   3:      if (log.IsDebugEnabled)
-
-   4:      {
-
-   5:          log.Debug(&quot;Starting to insert item ABC_1.&quot;);
-
-   6:          //Insert item ABC_1
-
-   7:          log.Debug(string.Format(&quot;Item {0} inserted with success. Started inserting item {1}.&quot;, &quot;ABC_1&quot;));
-
-   8:          log.Debug(&quot;Starting to insert item ABC_2.&quot;);
-
-   9:          //Insert item ABC_2
-
-  10:          log.Debug(string.Format(&quot;Inserted item {0}.&quot;, &quot;ABC_2&quot;));
-
-  11:      }
-
-  12:  }
-
-  13:  catch (Exception ex)
-
-  14:  {
-
-  15:      log.Error(&quot;Woops&quot;, ex);
-
-  16:  }
-</code></pre>
-<p>As expected this throws a
-&ldquo;<a href="http://msdn.microsoft.com/en-us/library/system.formatexception.aspx">System.FormatException</a>:
-Index (zero based) must be greater than or equal to zero and less than
-the size of the argument list.&rdquo;</p>
-<p><!-- raw HTML omitted -->Example using log.DebugFormat()<!-- raw HTML omitted --></p>
-<pre><code>   1:  try
-
-   2:  {
-
-   3:      if (log.IsDebugEnabled)
-
-   4:      {
-
-   5:          log.Debug(&quot;Starting to insert item ABC_1.&quot;);
-
-   6:          //Insert item ABC_1
-
-   7:          log.DebugFormat(&quot;Item {0} inserted with success. Started inserting item {1}.&quot;, &quot;ABC_1&quot;);
-
-   8:          log.Debug(&quot;Starting to insert item ABC_2.&quot;);
-
-   9:          //Insert item ABC_2
-
-  10:          log.Debug(string.Format(&quot;Inserted item {0}.&quot;, &quot;ABC_2&quot;));
-
-  11:      }
-
-  12:  }
-
-  13:  catch (Exception ex)
-
-  14:  {
-
-  15:      log.Error(&quot;Woops&quot;, ex);
-
-  16:  }
-</code></pre>
-<p>Using DebugFormat() the logger logs a WARN message, but it doesn&rsquo;t break
+<h3 id="example-using-stringformat">Example using <code>String.Format</code></h3>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#268bd2">log</span>.<span style="color:#268bd2">Debug</span>(<span style="color:#859900;font-weight:bold">string</span>.<span style="color:#268bd2">Format</span>(<span style="color:#2aa198">&#34;{0}{1}&#34;</span>, <span style="color:#2aa198">&#34;ABC_1&#34;</span>));
+</code></pre></div><p>As expected this throws a <a href="http://msdn.microsoft.com/en-us/library/system.formatexception.aspx">System.FormatException</a>: <code>Index (zero based) must be greater than or equal to zero and less than the size of the argument list.</code></p>
+<h3 id="example-using-logdebugformat">Example using <code>log.DebugFormat</code></h3>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#268bd2">log</span>.<span style="color:#268bd2">DebugFormat</span>(<span style="color:#2aa198">&#34;{0}{1}&#34;</span>, <span style="color:#2aa198">&#34;ABC_1&#34;</span>);
+</code></pre></div><p>Using <code>DebugFormat()</code> the logger logs a <code>WARN</code> message, but it doesn&rsquo;t break
 the application flow.</p>
-<pre><code>   1:  WARN StringFormat: Exception while rendering format [Item {0} inserted with
-
-   2:  success. Started inserting item {1}.]
-</code></pre>
-<p>So to avoid logging breaking your application, you should use the
-DebugFormat(), WarningFormat(), InfoFormat(), ErrorFormat() methods
-instead of String.Format() to format your log message.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">WARN StringFormat: Exception while rendering format [{0} {1}.]
+</code></pre></div><p>So to avoid logging breaking your application, you should use the
+<code>DebugFormat()</code>, <code>WarningFormat()</code>, <code>InfoFormat()</code>, <code>ErrorFormat()</code> methods
+instead of <code>String.Format()</code> to format your log message.</p>
 
 			</div>
 
@@ -189,11 +120,7 @@ instead of String.Format() to format your log message.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/codesnippets">CodeSnippets</a></li>
-							
-							<li><a href="/tags/opensource">Opensource</a></li>
-							
-							<li><a href="/tags/tips">Tips</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					

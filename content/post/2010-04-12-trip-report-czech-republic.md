@@ -3,30 +3,27 @@ title = "Trip Report Czech Republic"
 slug = "2010-04-12-trip-report-czech-republic"
 published = 2010-04-12T20:16:00.002000+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2010/04/trip-report-czech-republic.html"
 +++
-Last week [my girlfriend](http://amillionimpressions.blogspot.com/) and
-I went on a short holiday to the city of
+Last week my girlfriend and I went on a short holiday to the city of
 [Plzeň](http://en.wikipedia.org/wiki/Plze%C5%88) in the [Czech
 Republic](http://en.wikipedia.org/wiki/Czech_Republic). In this post you
 can find a small trip report.  
   
-<span style="font-weight:bold;">Roadtrippin'</span>  
+### Roadtrippin'  
   
 Minutes after leaving home we discovered an unpleasant surprise; my Tom
 Tom has no map of the Czech Republic. Good thing that people used to
 print this stuff on paper. After consulting a paper map of Europe we did
 have an idea which direction to follow.  
   
-
-  
-  
 The route was easy enough though; straight ahead for 800km. Driving
-through Germany was a blast. For those not from Europe; the biggest part
+through Germany was a blast. For those not from Europe; a big part
 of the [German autobahn](http://en.wikipedia.org/wiki/Autobahn) has no
 speedlimit.  
   
-<span style="font-weight:bold;">Prague</span>  
+### Prague
   
 The highlight of our holiday was
 [Prague](http://en.wikipedia.org/wiki/Prague). A lot of the historic
@@ -59,11 +56,9 @@ Prague Castle is the biggest and most important church of the Czech
 Republic.  
   
 [![](/post/images/thumbnails/2010-04-12-trip-report-czech-republic-Pilsen_037.JPG)](/post/images/2010-04-12-trip-report-czech-republic-Pilsen_037.JPG)  
-<span style="font-weight:bold;">Plzeň</span>  
+### Plzeň  
   
-Plzeň is known worldwide for it's
-[Pilsener](http://en.wikipedia.org/wiki/Pilsener) beer and it's
-[Skoda](http://en.wikipedia.org/wiki/%C5%A0koda_Auto) factories.
+Plzeň is known worldwide for [Pilsener](http://en.wikipedia.org/wiki/Pilsener) beer and its [Skoda](http://en.wikipedia.org/wiki/%C5%A0koda_Auto) factories.
 Although industry made [Plzeň](http://en.wikipedia.org/wiki/Plze%C5%88)
 one of the biggest cities of the Chzech Republic, the number of tourist
 attractions is rather limited..  
@@ -82,7 +77,7 @@ cops stormed a restaurant on the other side of the street to arrest some
 hooligans. Sweet action!  
   
 [![](/post/images/thumbnails/2010-04-12-trip-report-czech-republic-Pilsen_086.jpg)](/post/images/2010-04-12-trip-report-czech-republic-Pilsen_086.jpg)  
-<span style="font-weight:bold;">Final thoughts</span>  
+### Final thoughts  
   
 Although the Czech Republic does not have a good reputation, I think all
 the problems this country used to have belong to the past. The people

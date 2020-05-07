@@ -11,27 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/windows-services/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>Listening for UDP packets in a Windows service using an UdpClient</title>
-      <link>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</link>
-      <pubDate>Sun, 14 Mar 2010 16:00:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/listening-for-udp-packets-in-a-windows-service-using-an-udpclient/</guid>
-      <description>In this post, I&amp;rsquo;ll show you how can you listen for UDP packets in a Windows service.
-OnStartWhen the service starts, I set the started flag to true, initialize the ManualResetEvent, initialize an UdpClient and a WorkingThread. The ManualResetEvent will help us on a later stage to make our service stop elegantly.
- 1: protected override void OnStart(string[] args) 2: { 3: Start(); 4: } 5: 6: public void Start() 7: { 8: m_started = true; 9: 10: m_stop = new ManualResetEvent(false); 11: 12: InitializeUdpListener(); 13: InitializeWorkingThread(); 14: }  InitializingFirst we need to initialize an IPEndpoint.</description>
-    </item>
-    
-    <item>
-      <title>Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe)..</title>
-      <link>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</link>
-      <pubDate>Sat, 13 Mar 2010 16:36:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/03/cannot-start-service-from-the-command-line-or-debugger.-a-windows-service-must-first-be-installed-using-installutil.exe../</guid>
-      <description>When you create a new Windows Service project and try to debug it, Visual Studio will show you a Windows Service Start Failure with the message &amp;ldquo;Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe) and then started with the Server Explorer, Windows Services Administrative tool or the NET START command.&amp;quot;.
-
-The trick my team and I use to workaround this problem, makes use of the service Debug flag.</description>
-    </item>
-    
   </channel>
 </rss>

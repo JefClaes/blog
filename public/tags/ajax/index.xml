@@ -11,26 +11,5 @@
 	<atom:link href="http://localhost:1313/tags/ajax/index.xml" rel="self" type="application/rss+xml" />
     
     
-    <item>
-      <title>The state of the client-side ASP.NET Ajax 4.0 framework</title>
-      <link>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</link>
-      <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/04/the-state-of-the-client-side-asp.net-ajax-4.0-framework/</guid>
-      <description>The people who follow my blog might remember the ASP.NET Ajax 4.0 series. In these series I showed some of the core features of the ASP.NET Ajax 4.0 beta javascript library.
-In January Microsoft told us that they would ship the ASP.NET Ajax 4.0 library as a part of the Microsoft Ajax framework, together with the release of ASP.NET 4.0. A few days ago I was ready to dig in the library a little deeper, but I found out that most of the documentation and resources I used to consult, had moved or had disappeared.</description>
-    </item>
-    
-    <item>
-      <title>Book review: Object-Oriented JavaScript</title>
-      <link>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</link>
-      <pubDate>Mon, 22 Feb 2010 19:47:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/02/book-review-object-oriented-javascript/</guid>
-      <description>Although I&amp;rsquo;ve made my feet wet with various JavaScript frameworks, I am not a JavaScript hero at all. This might be one of the disadvantages of being a WebForms developer and having great toolkits at hand like the AJAX Control Toolkit and Telerik RADControls.
-Because you really can&amp;rsquo;t call yourself a webdeveloper without having some understanding of JavaScript I decided to order Object-Oriented Javascript by Stoyan Stefanov.
-This book really handles the language itself.</description>
-    </item>
-    
   </channel>
 </rss>
