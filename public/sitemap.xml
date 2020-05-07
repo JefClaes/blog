@@ -1148,37 +1148,17 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/browsers/</loc>
+    <loc>http://localhost:1313/2010/11/html5-new-in-javascript-selector-api.html</loc>
     <lastmod>2010-11-29T19:30:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/codesnippets/</loc>
-    <lastmod>2010-11-29T19:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/</loc>
-    <lastmod>2010-11-29T19:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
-    <lastmod>2010-11-29T19:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/teched/</loc>
-    <lastmod>2010-11-11T20:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/2010/10/trip-report-denmark-part-2/</loc>
+    <loc>http://localhost:1313/2010/10/trip-report-denmark-part-2.html</loc>
     <lastmod>2010-10-14T15:30:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/10/trip-report-denmark-part-1/</loc>
+    <loc>http://localhost:1313/2010/10/trip-report-denmark-part-1.html</loc>
     <lastmod>2010-10-13T20:30:00+02:00</lastmod>
   </url>
   
@@ -1193,7 +1173,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/</loc>
+    <loc>http://localhost:1313/2010/09/things-good-to-know-about-sql-state.html</loc>
     <lastmod>2010-09-23T19:31:00+02:00</lastmod>
   </url>
   
@@ -1203,7 +1183,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/07/tripping-in-holland.-honey-who-shrunk-holland/</loc>
+    <loc>http://localhost:1313/2010/07/tripping-in-holland-honey-who-shrunk.html</loc>
     <lastmod>2010-07-21T17:30:00+02:00</lastmod>
   </url>
   
@@ -1213,17 +1193,22 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/codesnippets/</loc>
+    <lastmod>2010-07-14T22:25:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/reporting/</loc>
     <lastmod>2010-07-14T22:25:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</loc>
+    <loc>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c.html</loc>
     <lastmod>2010-07-14T22:25:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/05/handling-the-aggregateexception/</loc>
+    <loc>http://localhost:1313/2010/05/handling-aggregateexception.html</loc>
     <lastmod>2010-05-23T13:10:00+02:00</lastmod>
   </url>
   
@@ -1249,6 +1234,11 @@
   
   <url>
     <loc>http://localhost:1313/tags/ajax/</loc>
+    <lastmod>2010-04-19T21:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/javascript/</loc>
     <lastmod>2010-04-19T21:00:00+02:00</lastmod>
   </url>
   
@@ -1328,11 +1318,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2010/01/excellence-is-a-drive-from-inside-not-outside/</loc>
-    <lastmod>2010-01-11T15:06:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/tags/general/</loc>
     <lastmod>2009-12-21T18:57:00+01:00</lastmod>
   </url>
@@ -1340,6 +1325,11 @@
   <url>
     <loc>http://localhost:1313/2009/12/looking-back-moving-forward-new-years-post/</loc>
     <lastmod>2009-12-21T18:57:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/browsers/</loc>
+    <lastmod>2009-12-05T17:50:00+01:00</lastmod>
   </url>
   
   <url>

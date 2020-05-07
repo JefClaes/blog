@@ -3,12 +3,12 @@ title = "Trip Report Denmark (Part 2)"
 slug = "2010-10-14-trip-report-denmark-part-2"
 published = 2010-10-14T15:30:00.001000+02:00
 author = "Jef Claes"
-tags = [ "Travel",]
+tags = [ "travel",]
+url = "2010/10/trip-report-denmark-part-2.html"
 +++
 If you missed the first part of this trip report, you can find it
-[here](http://jclaes.blogspot.com/2010/10/trip-report-denmark-part-1.html).  
-  
-<span style="font-weight:bold;">Funen</span>  
+[here](https://www.jefclaes.be/2010/10/trip-report-denmark-part-1.html).  
+### Funen  
   
 After three days of Copenhagen we stayed at
 [Funen](http://en.wikipedia.org/wiki/Funen) for two days. This is the
@@ -28,7 +28,7 @@ awesome!
 [![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_111.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Faaborg_111.JPG)  
 [![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Faaborg_112.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Faaborg_112.JPG)  
   
-<span style="font-weight:bold;">Jutland</span>  
+### Jutland  
   
 The last three days of our trip we stayed at the biggest island
 (peninsula) of Denmark,
@@ -44,7 +44,7 @@ energy.
 [![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_066.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Blaavand_066.JPG)  
 [![](/post/images/thumbnails/2010-10-14-trip-report-denmark-part-2-Blaavand_143.JPG)](/post/images/2010-10-14-trip-report-denmark-part-2-Blaavand_143.JPG)  
   
-<span style="font-weight:bold;">Conclusion</span>  
+### Conclusion  
   
 This trip was amazing. From Copenhagen to Jutland, this country has
 surprised me hundreds of times. We got the best out of Denmark's culture
@@ -54,11 +54,3 @@ Funen and Jutland. Summarized Denmark has it all!
 One small drawback is that Denmark isn't cheap. Everything is twice as
 expensive compared to Belgium. Although with some good looking around
 you can save a lot.  
-  
-<span style="font-weight:bold;">And you?</span>  
-  
-Have you ever been to Denmark? Is it on your wishlist?  
-  
-  
-<span style="font-style:italic;">Credit to my (beautiful) girlfriend for
-making these beautiful pictures.</span>

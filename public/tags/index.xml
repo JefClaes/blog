@@ -120,42 +120,6 @@
     </item>
     
     <item>
-      <title>Browsers</title>
-      <link>http://localhost:1313/tags/browsers/</link>
-      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/browsers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CodeSnippets</title>
-      <link>http://localhost:1313/tags/codesnippets/</link>
-      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/codesnippets/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>http://localhost:1313/tags/javascript/</link>
-      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>teched</title>
-      <link>http://localhost:1313/tags/teched/</link>
-      <pubDate>Thu, 11 Nov 2010 20:56:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/tags/teched/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ASP.NET</title>
       <link>http://localhost:1313/tags/asp.net/</link>
       <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
@@ -192,6 +156,15 @@
     </item>
     
     <item>
+      <title>CodeSnippets</title>
+      <link>http://localhost:1313/tags/codesnippets/</link>
+      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/codesnippets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Reporting</title>
       <link>http://localhost:1313/tags/reporting/</link>
       <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
@@ -224,6 +197,15 @@
       <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
       
       <guid>http://localhost:1313/tags/ajax/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Mon, 19 Apr 2010 21:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/tags/javascript/</guid>
       <description></description>
     </item>
     
@@ -287,6 +269,15 @@
       <pubDate>Mon, 21 Dec 2009 18:57:00 +0100</pubDate>
       
       <guid>http://localhost:1313/tags/general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Browsers</title>
+      <link>http://localhost:1313/tags/browsers/</link>
+      <pubDate>Sat, 05 Dec 2009 17:50:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/tags/browsers/</guid>
       <description></description>
     </item>
     

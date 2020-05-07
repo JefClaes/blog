@@ -12,16 +12,6 @@
     
     
     <item>
-      <title>Things good to know about SQL State Server</title>
-      <link>http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/</link>
-      <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/</guid>
-      <description>While installing a SQL State Server last week, I came across a few things worth sharing about the installation and use of SQL State Server.
-Finding a good tutorialThere are lots of tutorials out there on how to install SQL State Server but most of them are not great. To do a basic installation you only need this Msdn documentation on how to run the Aspnet_regsql.exe tool and edit your web.</description>
-    </item>
-    
-    <item>
       <title>Stored Procedures: Make them or break them</title>
       <link>http://localhost:1313/2009/02/stored-procedures-make-them-or-break-them/</link>
       <pubDate>Sun, 15 Feb 2009 18:58:00 +0100</pubDate>

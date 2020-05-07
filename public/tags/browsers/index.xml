@@ -6,20 +6,10 @@
     <description>Recent content in Browsers on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Nov 2010 19:30:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 05 Dec 2009 17:50:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/browsers/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>HTML5: New in the javascript Selector API</title>
-      <link>http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/</link>
-      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2010/11/html5-new-in-the-javascript-selector-api/</guid>
-      <description>Because I finally got the MCTS 70-536 certification out of the way, I can start experimenting with some fun stuff again. One of the things on the top of my list is HTML5. I started reading the book Pro HTML5 Programming, so expect more posts on HTML5 in the near future.
-In this post I will show you two new methods in the javascript Selector API which are extremely useful to find elements.</description>
-    </item>
     
     <item>
       <title>Response.RedirectPermanent in .NET 3.5 and older</title>

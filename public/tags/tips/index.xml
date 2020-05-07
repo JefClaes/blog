@@ -12,40 +12,6 @@
     
     
     <item>
-      <title>Things good to know about SQL State Server</title>
-      <link>http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/</link>
-      <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/09/things-good-to-know-about-sql-state-server/</guid>
-      <description>While installing a SQL State Server last week, I came across a few things worth sharing about the installation and use of SQL State Server.
-Finding a good tutorialThere are lots of tutorials out there on how to install SQL State Server but most of them are not great. To do a basic installation you only need this Msdn documentation on how to run the Aspnet_regsql.exe tool and edit your web.</description>
-    </item>
-    
-    <item>
-      <title>Switching with non-constant cases in C#</title>
-      <link>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</link>
-      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c/</guid>
-      <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
-    </item>
-    
-    <item>
-      <title>Handling the AggregateException</title>
-      <link>http://localhost:1313/2010/05/handling-the-aggregateexception/</link>
-      <pubDate>Sun, 23 May 2010 13:10:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2010/05/handling-the-aggregateexception/</guid>
-      <description>Last week I showed you how you can use the AggregateException to apply consistent exception handling in batch operations. You can find that post here.
-Bart De Smet read that post and pointed out that I should check out the Handle method of the AggregateException.
-The Handle methodAs found in the MSDN documentation.
-Description
- Invokes a handler on each Exception contained by this AggregateException.
- Parameters
- System.Func&amp;lt;Exception, Boolean&amp;gt; predicate</description>
-    </item>
-    
-    <item>
       <title>Quick and dirty tool for sending UDP packets</title>
       <link>http://localhost:1313/2010/03/quick-and-dirty-tool-for-sending-udp-packets/</link>
       <pubDate>Mon, 15 Mar 2010 18:57:00 +0100</pubDate>

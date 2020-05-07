@@ -883,5 +883,48 @@ Have a look at the source. Do you spot the problem?
       <description>Last weekend I blogged on new addittions to the javascript Selector API: querySelector() and querySelectorAll(). These two new methods enable you to find elements by matching against a group of selectors. I only scratched the surface in the previous post, that&amp;rsquo;s why you can find a few more examples in this post. These examples should demonstrate the power and ease of use of the new Selector API features. It&amp;rsquo;s impossible to show you all of the selectors usages in just one post, that&amp;rsquo;s why I strongly encourage you to have a look at the W3C Selectors specifications.</description>
     </item>
     
+    <item>
+      <title>HTML5: New in the javascript Selector API</title>
+      <link>http://localhost:1313/2010/11/html5-new-in-javascript-selector-api.html</link>
+      <pubDate>Mon, 29 Nov 2010 19:30:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2010/11/html5-new-in-javascript-selector-api.html</guid>
+      <description>Because I finally got the MCTS 70-536 certification out of the way, I can start experimenting with some fun stuff again. One of the things on the top of my list is HTML5. I started reading the book Pro HTML5 Programming, so expect more posts on HTML5 in the near future.
+In this post I will show you two new methods in the javascript Selector API which are extremely useful to find elements.</description>
+    </item>
+    
+    <item>
+      <title>Things good to know about SQL State Server</title>
+      <link>http://localhost:1313/2010/09/things-good-to-know-about-sql-state.html</link>
+      <pubDate>Thu, 23 Sep 2010 19:31:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/09/things-good-to-know-about-sql-state.html</guid>
+      <description>While installing a SQL State Server last week, I came across a few things worth sharing about the installation and use of SQL State Server.
+Finding a good tutorial There are lots of tutorials out there on how to install SQL State Server but most of them are not great. To do a basic installation you only need this MSDN documentation on how to run the Aspnet_regsql.exe tool and edit your web.</description>
+    </item>
+    
+    <item>
+      <title>Switching with non-constant cases in C#</title>
+      <link>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c.html</link>
+      <pubDate>Wed, 14 Jul 2010 22:25:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c.html</guid>
+      <description>Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&amp;rsquo;t use variables in your case statements because the C# compiler doesn&amp;rsquo;t allow you to. It&amp;rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.</description>
+    </item>
+    
+    <item>
+      <title>Handling the AggregateException</title>
+      <link>http://localhost:1313/2010/05/handling-aggregateexception.html</link>
+      <pubDate>Sun, 23 May 2010 13:10:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2010/05/handling-aggregateexception.html</guid>
+      <description>Last week I showed you how you can use the AggregateException to apply consistent exception handling in batch operations. You can find that post here.
+Bart De Smet read that post and pointed out that I should check out the Handle method of the AggregateException.
+The Handle method As found in the MSDN documentation.
+Description
+Invokes a handler on each Exception contained by this AggregateException. Parameters
+System.Func&amp;lt;Exception, Boolean&amp;gt; predicate The predicate to execute for each exception.</description>
+    </item>
+    
   </channel>
 </rss>

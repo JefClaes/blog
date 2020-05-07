@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Switching with non-constant cases in C# - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Switching with non-constant cases in C#">
+<meta itemprop="description" content="Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&rsquo;t use variables in your case statements because the C# compiler doesn&rsquo;t allow you to. It&rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements.">
+<meta itemprop="datePublished" content="2010-07-14T22:25:00&#43;02:00" />
+<meta itemprop="dateModified" content="2010-07-14T22:25:00&#43;02:00" />
+<meta itemprop="wordCount" content="384">
+
+
+
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Switching with non-constant cases in C#" />
+<meta property="og:description" content="Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&rsquo;t use variables in your case statements because the C# compiler doesn&rsquo;t allow you to. It&rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/2010/07/switching-with-non-constant-cases-in-c.html" />
+<meta property="article:published_time" content="2010-07-14T22:25:00+02:00" />
+<meta property="article:modified_time" content="2010-07-14T22:25:00+02:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Switching with non-constant cases in C#"/>
+<meta name="twitter:description" content="Last week I came across a scenario where I wanted to switch over non-constants (aka variables), but while I was compiling I got Compiler Error CS0150 (A constant value is expected). This is one of those things I always forget. You can&rsquo;t use variables in your case statements because the C# compiler doesn&rsquo;t allow you to. It&rsquo;s very logical though, the compiler forces you to use constants because otherwise there is no way of knowing there are equal case statements."/>
+<link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="http://localhost:1313/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="http://localhost:1313/">
+				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<div class="site-description"><p>On software and life</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/post">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-header">
+				
+					<div class="meta">
+						<div class="date">
+							<span class="day">14</span>
+							<span class="rest">Jul 2010</span>
+						</div>
+					</div>
+				
+				<div class="matter">
+					<h1 class="title">Switching with non-constant cases in C#</h1>
+				</div>
+			</div>
+					
+			<div class="markdown">
+				<p>Last week I came across a scenario where I wanted to switch over
+non-constants (aka variables), but while I was compiling I got <a href="http://msdn.microsoft.com/en-us/library/6weteh5e(VS.80).aspx">Compiler
+Error CS0150 (A constant value is
+expected)</a>.
+This is one of those things I always forget. You can&rsquo;t use variables in
+your case statements because the C# compiler doesn&rsquo;t allow you to. It&rsquo;s
+very logical though, the compiler forces you to use constants because
+otherwise there is no way of knowing there are equal case statements.</p>
+<h3 id="the-scenario">The scenario</h3>
+<p>Let&rsquo;s say I have an ASP.NET page where the user can input and submit a
+value. On the server-side I want to match this value with a value from a
+local resource file. Depending on the match I want to execute other
+code.</p>
+<p>Remember I can&rsquo;t use a switch because the values in the local resource
+file are variable.</p>
+<h3 id="option-one-using-conditional-statements">Option one: Using conditional statements</h3>
+<p>As shown in the code snippet below you can use else-if statements to
+search for a match.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#859900">if</span> (<span style="color:#268bd2">input</span> == <span style="color:#268bd2">GetLocalResourceObject</span>(<span style="color:#2aa198">&#34;CaseOne&#34;</span>).<span style="color:#268bd2">ToString</span>()) {
+      <span style="color:#859900">this</span>.<span style="color:#268bd2">ltResult</span>.<span style="color:#268bd2">Text</span> = <span style="color:#2aa198">&#34;Case one matched.&#34;</span>;
+} <span style="color:#859900">else</span> <span style="color:#859900">if</span> (<span style="color:#268bd2">input</span> == <span style="color:#268bd2">GetLocalResourceObject</span>(<span style="color:#2aa198">&#34;CaseTwo&#34;</span>).<span style="color:#268bd2">ToString</span>()) {
+      <span style="color:#859900">this</span>.<span style="color:#268bd2">ltResult</span>.<span style="color:#268bd2">Text</span> = <span style="color:#2aa198">&#34;Case two matched.&#34;</span>;
+} <span style="color:#859900">else</span> <span style="color:#859900">if</span> (<span style="color:#268bd2">input</span> == <span style="color:#268bd2">GetLocalResourceObject</span>(<span style="color:#2aa198">&#34;CaseThree&#34;</span>).<span style="color:#268bd2">ToString</span>()) {
+      <span style="color:#859900">this</span>.<span style="color:#268bd2">ltResult</span>.<span style="color:#268bd2">Text</span> = <span style="color:#2aa198">&#34;Case three matched.&#34;</span>;
+} <span style="color:#859900">else</span> {
+      <span style="color:#859900">this</span>.<span style="color:#268bd2">ltResult</span>.<span style="color:#268bd2">Text</span> = <span style="color:#2aa198">&#34;No matching case found.&#34;</span>;
+}
+</code></pre></div><p>This option has at least two disadvantages:</p>
+<ul>
+<li>It allows equal conditions (cases) which might have horrible consequences.</li>
+<li>It&rsquo;s ugly.</li>
+</ul>
+<h3 id="option-two-using-a-dictionary">Option two: Using a dictionary</h3>
+<p>You can also use a generic dictionary where the pairs have a
+string as the key and a delegate as the value. Because the code I&rsquo;m
+executing when a match is found is so compact I&rsquo;m using the simplest
+delegate of them all: an <a href="http://msdn.microsoft.com/en-us/library/system.action.aspx">Action
+delegate</a>.
+An Action delegate takes no parameters and does not return a value.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#268bd2">Dictionary</span>&lt;<span style="color:#859900;font-weight:bold">string</span>, <span style="color:#268bd2">Action</span>&gt; <span style="color:#268bd2">mappings</span> = <span style="color:#859900">new</span> <span style="color:#268bd2">Dictionary</span>&lt;<span style="color:#859900;font-weight:bold">string</span>, <span style="color:#268bd2">Action</span>&gt;() {
+      { <span style="color:#268bd2">GetLocalResourceObject</span>(<span style="color:#2aa198">&#34;CaseOne&#34;</span>).<span style="color:#268bd2">ToString</span>(), () =&gt; <span style="color:#859900">this</span>.<span style="color:#268bd2">ltResult</span>.<span style="color:#268bd2">Text</span> = <span style="color:#2aa198">&#34;Case one matched.&#34;</span>},
+      { <span style="color:#268bd2">GetLocalResourceObject</span>(<span style="color:#2aa198">&#34;CaseTwo&#34;</span>).<span style="color:#268bd2">ToString</span>(), () =&gt; <span style="color:#859900">this</span>.<span style="color:#268bd2">ltResult</span>.<span style="color:#268bd2">Text</span> = <span style="color:#2aa198">&#34;Case two matched.&#34;</span>},
+      { <span style="color:#268bd2">GetLocalResourceObject</span>(<span style="color:#2aa198">&#34;CaseThree&#34;</span>).<span style="color:#268bd2">ToString</span>(), () =&gt; <span style="color:#859900">this</span>.<span style="color:#268bd2">ltResult</span>.<span style="color:#268bd2">Text</span> = <span style="color:#2aa198">&#34;Case three matched.&#34;</span>}
+};
+
+<span style="color:#859900">if</span> (<span style="color:#268bd2">mappings</span>.<span style="color:#268bd2">ContainsKey</span>(<span style="color:#268bd2">input</span>)) {
+      <span style="color:#268bd2">mappings</span>[<span style="color:#268bd2">input</span>]();
+} <span style="color:#859900">else</span> {
+      <span style="color:#859900">this</span>.<span style="color:#268bd2">ltResult</span>.<span style="color:#268bd2">Text</span> = <span style="color:#2aa198">&#34;No matching case found.&#34;</span>;
+}
+</code></pre></div><p>I think this option is a lot better than the previous one:</p>
+<ul>
+<li>This code is elegant, no spaghetti here.</li>
+<li>And better yet, having equal conditions (cases) is impossible. You can&rsquo;t add duplicate keys to a dictionary. If you do, an <code>ArgumentException</code> gets thrown at runtime.</li>
+</ul>
+<p><a href="/post/images/2010-07-14-switching-with-non-constant-cases-in-c-argumentExc.png"><img src="/post/images/thumbnails/2010-07-14-switching-with-non-constant-cases-in-c-argumentExc.png" alt=""></a></p>
+
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li><a href="/tags/code">code</a></li>
+							
+						</ul>
+					
+				
+			</div></div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2010  <a href="https://github.com/knadh/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
