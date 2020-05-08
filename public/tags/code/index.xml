@@ -964,5 +964,15 @@ Use the built-in goodies ASP.NET Webforms has a lot of good stuff built into it.
 I often use string.Format() to format my log messages. Earlier this morning I made a typo formatting my message and an Exception was thrown in the beginning of my method which caused the application flow to break. You can avoid this by using the DebugFormat() method.</description>
     </item>
     
+    <item>
+      <title>Response.RedirectPermanent in .NET 3.5 and older</title>
+      <link>http://localhost:1313/2009/12/response.redirectpermanent-in-.net-3.5-and-older/</link>
+      <pubDate>Sat, 05 Dec 2009 17:50:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/12/response.redirectpermanent-in-.net-3.5-and-older/</guid>
+      <description>One of the new features in ASP.NET 4.0 is permanently redirecting to a page using Response.RedirectPermanent.
+ It is common practice in Web applications to move pages and other content around over time, which can lead to an accumulation of stale links in search engines. In ASP.NET, developers have traditionally handled requests to old URLs by using by using the Response.Redirect method to forward a request to the new URL. However, the Redirect method issues an HTTP 302 Found (temporary redirect) response, which results in an extra HTTP round trip when users attempt to access the old URLs.</description>
+    </item>
+    
   </channel>
 </rss>

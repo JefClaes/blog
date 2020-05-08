@@ -3,7 +3,8 @@ title = "Stored Procedures: Make them or break them"
 slug = "2009-02-15-stored-procedures-make-them-or-break-them"
 published = 2009-02-15T18:58:00+01:00
 author = "Jef Claes"
-tags = [ "SQL", ".NET", "Interview",]
+tags = [ "opinion",]
+url = "2009/01/stored-procedures-make-them-or-break.html"
 +++
 I've been thinking about the use of stored procedures lately.  
   
@@ -15,10 +16,7 @@ store your queries in your database, instead of in your code..
 I asked the opinion of a few ASP.NET/.NET professionals. Hope you find
 this interesting!  
   
-<span style="font-weight: bold;">Kris Van Der Mast
-([Blog](http://blog.krisvandermast.com/))</span>  
-<span style="font-weight: bold;">  
-</span>  
+### Kris Van Der Mast ([Blog](http://blog.krisvandermast.com/))
 
 > Since I'm a consultant I have to go with the specifications of my
 > clients. Most still use stored procedures though I see a shift
@@ -29,10 +27,7 @@ this interesting!
 > (winforms project) but for 3-4 special occasions we used sprocs.
 
   
-<span style="font-weight: bold;">SyntaxC4
-([Profile](http://forums.asp.net/members/SyntaxC4.aspx))</span>  
-<span style="font-weight: bold;">  
-</span>  
+### SyntaxC4 ([Profile](http://forums.asp.net/members/SyntaxC4.aspx))
 
 > I do use Stored Procedures on a regular basis. I develop mostly in
 > DotNetNuke, which has an extensive use of stored procs. I have read
@@ -50,11 +45,7 @@ this interesting!
 > procedures instead of using a view to query against. unless of course
 > a view is more efficient.
 
-  
-<span style="font-weight: bold;">TATWORTH
-([Profile](http://forums.asp.net/members/TATWORTH.aspx))</span>  
-<span style="font-weight: bold;">  
-</span>  
+### TATWORTH ([Profile](http://forums.asp.net/members/TATWORTH.aspx))</span>  
 
 > It is not much a case of would I use stored procedures as when would I
 > not use them! Occasionally for searching, dynamic TSQL needs to be
@@ -66,11 +57,9 @@ this interesting!
 > The use of stored procedures (or the occasional parameterized TSQL) is
 > in my opinion one of a series of essential steps to produce robust
 > applications.
-
   
-<span style="font-weight: bold;">Tom Peeters (a co-worker)</span>  
+### Tom Peeters (a co-worker)
   
-
 > I prefer to (read *always*) use stored procedures when I’m developing
 > front end applications. 
 
@@ -98,9 +87,5 @@ this interesting!
 > initial development overhead is greater, you will more than make up
 > for the investment down the line.
 
-  
 Looks like a lot of people are still very fond of stored procedures. The
 arguments make a lot of sense!  
-  
-<span style="font-weight: bold;">What are your thoughts on stored
-procedures?</span>

@@ -242,5 +242,15 @@ Because you really can&amp;rsquo;t call yourself a webdeveloper without having s
 This book really handles the language itself.</description>
     </item>
     
+    <item>
+      <title>Book review: Professional Refactoring in C# &amp; ASP.NET</title>
+      <link>http://localhost:1313/2009/11/book-review-professional-refactoring-in.html</link>
+      <pubDate>Tue, 17 Nov 2009 19:37:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/11/book-review-professional-refactoring-in.html</guid>
+      <description>Three months ago I was looking up to refactoring a legacy ASP.NET Webforms application. Although I was familiar with refactoring, I ordered &amp;ldquo;Professional Refactoring in C# &amp;amp; ASP.NET&amp;rdquo; by Daniejel Arsenovski to get deeper into refactoring.
+The title Although the title states &amp;ldquo;Professional&amp;rdquo;, I think this book should find its main audience in coding novices. Another problem with the title is the word ASP.NET in it. The book has one chapter covering ASP.</description>
+    </item>
+    
   </channel>
 </rss>

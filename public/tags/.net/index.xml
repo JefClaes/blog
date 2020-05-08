@@ -6,42 +6,10 @@
     <description>Recent content in .NET on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Mar 2010 18:57:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2009 19:37:00 +0100</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/.net/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Response.RedirectPermanent in .NET 3.5 and older</title>
-      <link>http://localhost:1313/2009/12/response.redirectpermanent-in-.net-3.5-and-older/</link>
-      <pubDate>Sat, 05 Dec 2009 17:50:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/12/response.redirectpermanent-in-.net-3.5-and-older/</guid>
-      <description>One of the new features in ASP.NET 4.0 is permanently redirecting to a page using Response.RedirectPermanent.
- It is common practice in Web applications to move pages and other content around over time, which can lead to an accumulation of stale links in search engines. In ASP.NET, developers have traditionally handled requests to old URLs by using by using the Response.Redirect method to forward a request to the new URL. However, the Redirect method issues an HTTP 302 Found (temporary redirect) response, which results in an extra HTTP round trip when users attempt to access the old URLs.</description>
-    </item>
-    
-    <item>
-      <title>Book review: Professional Refactoring in C# &amp; ASP.NET</title>
-      <link>http://localhost:1313/2009/11/book-review-professional-refactoring-in-c#-asp.net/</link>
-      <pubDate>Tue, 17 Nov 2009 19:37:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/11/book-review-professional-refactoring-in-c#-asp.net/</guid>
-      <description>Three months ago I was looking up to refactoring a legacy ASP.NET Webforms application. Although I was familiar with refactoring, I ordered &amp;ldquo;Professional Refactoring in C# &amp;amp; ASP.NET&amp;rdquo; by Daniejel Arsenovski to get deeper into refactoring.
-The titleAlthough the title states &amp;ldquo;Professional&amp;rdquo;, I think this book should find it&amp;rsquo;s main audience in coding novices. Another problem with the title is the word ASP.NET in it. The book has one chapter covering ASP.</description>
-    </item>
-    
-    <item>
-      <title>Stored Procedures: Make them or break them</title>
-      <link>http://localhost:1313/2009/02/stored-procedures-make-them-or-break-them/</link>
-      <pubDate>Sun, 15 Feb 2009 18:58:00 +0100</pubDate>
-      
-      <guid>http://localhost:1313/2009/02/stored-procedures-make-them-or-break-them/</guid>
-      <description>I&amp;rsquo;ve been thinking about the use of stored procedures lately.
-Some questions that popped up in my head: What are the advantages/disadvantages? When and how should they be used? Will they extinct with LINQ to SQL becoming more and more popular? Why should you store your queries in your database, instead of in your code..
-I asked the opinion of a few ASP.NET/.NET professionals. Hope you find this interesting!
-Kris Van Der Mast (Blog) Since I&amp;rsquo;m a consultant I have to go with the specifications of my clients.</description>
-    </item>
     
   </channel>
 </rss>

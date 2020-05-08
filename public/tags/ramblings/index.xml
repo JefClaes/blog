@@ -6,21 +6,10 @@
     <description>Recent content in Ramblings on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Feb 2010 16:22:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2009 19:22:00 +0200</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/ramblings/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Why code reviews should be a teamthing</title>
-      <link>http://localhost:1313/2009/08/why-code-reviews-should-be-a-teamthing/</link>
-      <pubDate>Sun, 23 Aug 2009 19:22:00 +0200</pubDate>
-      
-      <guid>http://localhost:1313/2009/08/why-code-reviews-should-be-a-teamthing/</guid>
-      <description>Often code reviews are done by one person, the technical lead of your team.
-In my opinion it&amp;rsquo;s better to make each developer of your team do code reviews.
-My arguments Having all developers doing code reviews enforces well-documented coding standards.. Which also leads to discussions about what these coding standards should be. Each developer is forced to understand the workflow of an application which isn&amp;rsquo;t his, which expands his domain knowledge.</description>
-    </item>
     
   </channel>
 </rss>

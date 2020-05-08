@@ -8,11 +8,11 @@
  It is common practice in Web applications to move pages and other content around over time, which can lead to an accumulation of stale links in search engines. In ASP.NET, developers have traditionally handled requests to old URLs by using by using the Response.Redirect method to forward a request to the new URL. However, the Redirect method issues an HTTP 302 Found (temporary redirect) response, which results in an extra HTTP round trip when users attempt to access the old URLs.">
 <meta itemprop="datePublished" content="2009-12-05T17:50:00&#43;01:00" />
 <meta itemprop="dateModified" content="2009-12-05T17:50:00&#43;01:00" />
-<meta itemprop="wordCount" content="153">
+<meta itemprop="wordCount" content="151">
 
 
 
-<meta itemprop="keywords" content=".NET,ASP.NET,Browsers," /><meta property="og:title" content="Response.RedirectPermanent in .NET 3.5 and older" />
+<meta itemprop="keywords" content="code," /><meta property="og:title" content="Response.RedirectPermanent in .NET 3.5 and older" />
 <meta property="og:description" content="One of the new features in ASP.NET 4.0 is permanently redirecting to a page using Response.RedirectPermanent.
  It is common practice in Web applications to move pages and other content around over time, which can lead to an accumulation of stale links in search engines. In ASP.NET, developers have traditionally handled requests to old URLs by using by using the Response.Redirect method to forward a request to the new URL. However, the Redirect method issues an HTTP 302 Found (temporary redirect) response, which results in an extra HTTP round trip when users attempt to access the old URLs." />
 <meta property="og:type" content="article" />
@@ -89,8 +89,7 @@
 					
 			<div class="markdown">
 				<p>One of the new features in ASP.NET 4.0 is permanently redirecting to a
-page using
-<a href="http://msdn.microsoft.com/en-us/library/system.web.httpresponse.redirectpermanent(VS.100).aspx">Response.RedirectPermanent</a>.</p>
+page using <a href="http://msdn.microsoft.com/en-us/library/system.web.httpresponse.redirectpermanent(VS.100).aspx">Response.RedirectPermanent</a>.</p>
 <blockquote>
 <p>It is common practice in Web applications to move pages and other
 content around over time, which can lead to an accumulation of stale
@@ -99,25 +98,19 @@ handled requests to old URLs by using by using the Response.Redirect
 method to forward a request to the new URL. However, the Redirect
 method issues an HTTP 302 Found (temporary redirect) response, which
 results in an extra HTTP round trip when users attempt to access the
-old URLs.<br>
-<a href="http://www.asp.net/LEARN/whitepapers/aspnet4/default.aspx#_TOC1_4">Source</a></p>
+old URLs.</p>
 </blockquote>
+<p><a href="http://www.asp.net/LEARN/whitepapers/aspnet4/default.aspx#_TOC1_4">Source</a></p>
 <p>You can achieve this functionality in ASP.NET 3.5 and older by writing a
-<!-- raw HTML omitted -->301 Moved Permanently Status<!-- raw HTML omitted --> and
-a <!-- raw HTML omitted -->Location Header<!-- raw HTML omitted --> to the
-Response stream. This can be found in the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP
+<code>301 Moved Permanently Status</code> and
+a ``Location Header<code> to the</code>Response` stream. This can be found in the <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">HTTP
 specifications</a>.</p>
 <p>Here is an example.</p>
-<pre><code>   1:  Response.Clear();
-
-   2:  Response.Status = &quot;301 Moved Permanently&quot;;
-
-   3:  Response.AddHeader(&quot;Location&quot;, &quot;PageOne.aspx&quot;);
-
-   4:  Response.End();
-</code></pre>
-<p>You can verify this by using
-<a href="http://www.fiddler2.com/fiddler2/">Fiddler</a>.</p>
+<div class="highlight"><pre style="color:#586e75;background-color:#eee8d5;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#268bd2">Response</span>.<span style="color:#268bd2">Clear</span>();
+<span style="color:#268bd2">Response</span>.<span style="color:#268bd2">Status</span> = <span style="color:#2aa198">&#34;301 Moved Permanently&#34;</span>;
+<span style="color:#268bd2">Response</span>.<span style="color:#268bd2">AddHeader</span>(<span style="color:#2aa198">&#34;Location&#34;</span>, <span style="color:#2aa198">&#34;PageOne.aspx&#34;</span>);
+<span style="color:#268bd2">Response</span>.<span style="color:#268bd2">End</span>();
+</code></pre></div><p>You can verify the result by using  <a href="http://www.fiddler2.com/fiddler2/">Fiddler</a>.</p>
 <p><a href="/post/images/2009-12-05-response-redirectpermanent-in-net-3-5-and-older-fiddler.JPG"><img src="/post/images/thumbnails/2009-12-05-response-redirectpermanent-in-net-3-5-and-older-fiddler.JPG" alt=""></a></p>
 
 			</div>
@@ -127,11 +120,7 @@ specifications</a>.</p>
 					
 						<ul class="flat">
 							
-							<li><a href="/tags/.net">.NET</a></li>
-							
-							<li><a href="/tags/asp.net">ASP.NET</a></li>
-							
-							<li><a href="/tags/browsers">Browsers</a></li>
+							<li><a href="/tags/code">code</a></li>
 							
 						</ul>
 					

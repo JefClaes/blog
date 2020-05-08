@@ -461,5 +461,28 @@ WebMatrix is the perfect framework to start with ASP.</description>
 Some of the most obvious benefits&amp;hellip; You can carry a whole library in your backpack. The price of an eBook often is substantially less than the hardcover version.</description>
     </item>
     
+    <item>
+      <title>Why code reviews should be a team thing</title>
+      <link>http://localhost:1313/2009/08/why-codereviews-should-be-teamthing.html</link>
+      <pubDate>Sun, 23 Aug 2009 19:22:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/2009/08/why-codereviews-should-be-teamthing.html</guid>
+      <description>Often code reviews are done by one person, the technical lead of your team.
+In my opinion it&amp;rsquo;s better to make each developer of your team do code reviews.
+My arguments  Having all developers do code reviews leads to discussions about what coding standards should be used.. Leading to well-documented standards. Each developer is forced to understand the workflow of an application which isn&amp;rsquo;t his, which expands his domain knowledge.</description>
+    </item>
+    
+    <item>
+      <title>Stored Procedures: Make them or break them</title>
+      <link>http://localhost:1313/2009/01/stored-procedures-make-them-or-break.html</link>
+      <pubDate>Sun, 15 Feb 2009 18:58:00 +0100</pubDate>
+      
+      <guid>http://localhost:1313/2009/01/stored-procedures-make-them-or-break.html</guid>
+      <description>I&amp;rsquo;ve been thinking about the use of stored procedures lately.
+Some questions that popped up in my head: What are the advantages/disadvantages? When and how should they be used? Will they extinct with LINQ to SQL becoming more and more popular? Why should you store your queries in your database, instead of in your code..
+I asked the opinion of a few ASP.NET/.NET professionals. Hope you find this interesting!
+Kris Van Der Mast (Blog)  Since I&amp;rsquo;m a consultant I have to go with the specifications of my clients.</description>
+    </item>
+    
   </channel>
 </rss>

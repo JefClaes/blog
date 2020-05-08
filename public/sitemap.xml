@@ -1188,68 +1188,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/blogging/</loc>
-    <lastmod>2010-05-08T16:25:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/meta/</loc>
-    <lastmod>2010-05-08T16:25:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/ajax/</loc>
-    <lastmod>2010-04-19T21:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/asp.net/</loc>
-    <lastmod>2010-04-19T21:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
-    <lastmod>2010-04-19T21:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/jquery/</loc>
-    <lastmod>2010-04-19T21:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2010/04/trip-report-czech-republic.html</loc>
     <lastmod>2010-04-12T20:16:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/.net/</loc>
-    <lastmod>2010-03-15T18:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/codesnippets/</loc>
-    <lastmod>2010-03-15T18:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/tips/</loc>
-    <lastmod>2010-03-15T18:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/tools/</loc>
-    <lastmod>2010-03-15T18:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/windows/</loc>
-    <lastmod>2010-03-14T16:00:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/windows-services/</loc>
-    <lastmod>2010-03-14T16:00:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1258,18 +1198,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/best-practices/</loc>
-    <lastmod>2010-02-15T17:43:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2010/02/webforms-lessons-learned-hard-way-part_15.html</loc>
     <lastmod>2010-02-15T17:43:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/ramblings/</loc>
-    <lastmod>2010-02-14T16:22:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1283,23 +1213,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/opensource/</loc>
-    <lastmod>2010-01-20T20:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/general/</loc>
-    <lastmod>2009-12-21T18:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2009/12/looking-back-moving-forward-new-years-post/</loc>
     <lastmod>2009-12-21T18:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/browsers/</loc>
-    <lastmod>2009-12-05T17:50:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1308,23 +1223,38 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2009/11/book-review-professional-refactoring-in-c#-asp.net/</loc>
+    <loc>http://localhost:1313/tags/.net/</loc>
     <lastmod>2009-11-17T19:37:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2009/11/my-trip-to-madrid-in-ten-pictures/</loc>
+    <loc>http://localhost:1313/tags/asp.net/</loc>
+    <lastmod>2009-11-17T19:37:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/2009/11/book-review-professional-refactoring-in.html</loc>
+    <lastmod>2009-11-17T19:37:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/general/</loc>
     <lastmod>2009-11-09T20:30:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2009/08/why-code-reviews-should-be-a-teamthing/</loc>
+    <loc>http://localhost:1313/2009/11/my-trip-to-madrid-in-ten-pictures.html</loc>
+    <lastmod>2009-11-09T20:30:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/ramblings/</loc>
     <lastmod>2009-08-23T19:22:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/2009/08/my-holiday-in-france-in-five-pictures/</loc>
-    <lastmod>2009-08-20T19:12:00+02:00</lastmod>
+    <loc>http://localhost:1313/2009/08/why-codereviews-should-be-teamthing.html</loc>
+    <lastmod>2009-08-23T19:22:00+02:00</lastmod>
   </url>
   
   <url>
@@ -1338,7 +1268,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/2009/02/stored-procedures-make-them-or-break-them/</loc>
+    <loc>http://localhost:1313/2009/01/stored-procedures-make-them-or-break.html</loc>
     <lastmod>2009-02-15T18:58:00+01:00</lastmod>
   </url>
   
