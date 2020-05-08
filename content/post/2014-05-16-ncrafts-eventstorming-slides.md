@@ -3,7 +3,7 @@ title = "NCrafts Eventstorming slides"
 slug = "2014-05-16-ncrafts-eventstorming-slides"
 published = 2014-05-16T15:22:00.001000+02:00
 author = "Jef Claes"
-tags = [ "ddd", "talks"]
+tags = [ "ddd", "community"]
 url = "2014/05/ncrafts-eventstorming-slides.html"
 +++
 Me and [Tom](https://twitter.com/tojans) just finished doing our Event

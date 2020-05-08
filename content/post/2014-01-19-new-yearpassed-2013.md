@@ -3,7 +3,7 @@ title = "new YearPassed(2013);"
 slug = "2014-01-19-new-yearpassed-2013"
 published = 2014-01-19T17:54:00.001000+01:00
 author = "Jef Claes"
-tags = [ "opinion",]
+tags = [ "me",]
 url = "2014/01/new-yearpassed2013.html"
 +++
 I normally write this up at the end of the year, but circumstances made

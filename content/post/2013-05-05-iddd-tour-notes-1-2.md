@@ -3,7 +3,7 @@ title = "IDDD Tour notes (1/2)"
 slug = "2013-05-05-iddd-tour-notes-1-2"
 published = 2013-05-05T17:10:00+02:00
 author = "Jef Claes"
-tags = [ "consumed", "ddd"]
+tags = [ "community", "ddd"]
 url = "2013/05/iddd-tour-notes-12.html"
 +++
 Two weeks ago I got to spend four days attending the [IDDD

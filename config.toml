@@ -8,13 +8,12 @@ languageCode = "en-us"
 title = "Jef Claes"
 theme = "ink"
 
+
+googleAnalytics = "UA-6239073-1"
+
+
 [permalinks]
 post = "/:year/:month/:title"
-
-
-
-googleAnalytics = "UA-123-45"
-disqusShortname = "ink-demo"
 
 [params]
 	subtitle = "On software and life"
@@ -23,9 +22,21 @@ disqusShortname = "ink-demo"
 	avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
 	
 	featherIconsCDN = true
-	# customCSS = "css/custom.css"  # Custom CSS applied to default styles.
+	# customCSS  = "css/custom.css"  # Custom CSS applied to default styles.
 	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
 	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
+
+[mediaTypes]
+  [mediaTypes."application/rss"]
+    suffixes = []
+
+[outputs]
+home = [ "RSS", "HTML"]
+ 
+[outputFormats]
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feeds/posts/default"
 
 # Nav.
 [[menu.main]]
@@ -39,11 +50,6 @@ url = "/post"
 weight = 2
 
 [[menu.main]]
-name = "About"
-url = "/about"
-weight = 3
-
-[[menu.main]]
 name = "Tags"
 url = "/tags"
 weight = 4
@@ -54,9 +60,19 @@ icon = "github"
 url = "https://github.com/jefclaes"
 
 [[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://twitter.com/jefclaes"
+
+[[params.social]]
+name = "LinkedIn"
+icon = "linkedin"
+url = "https://www.linkedin.com/in/jefclaes"
+
+[[params.social]]
 name = "RSS"
 icon = "rss"
-url = "/index.xml"
+url = "https://feed.jefclaes.be"
 
 [taxonomies]
 tag = "tags"

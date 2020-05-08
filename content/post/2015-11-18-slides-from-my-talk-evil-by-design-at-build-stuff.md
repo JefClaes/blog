@@ -3,7 +3,7 @@ title = "Slides from my talk \"Evil by Design\" at Build Stuff"
 slug = "2015-11-18-slides-from-my-talk-evil-by-design-at-build-stuff"
 published = 2015-11-18T15:47:00.001000+01:00
 author = "Jef Claes"
-tags = [ "ddd", "talks"]
+tags = [ "ddd", "community"]
 url = "2015/11/slides-from-my-talk-evil-by-design-at.html"
 +++
 Third time attending Build Stuff, first time doing a talk. I'm happy

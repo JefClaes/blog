@@ -3,7 +3,7 @@ title = "Post Web.NET Europe"
 slug = "2012-10-22-post-web-net-europe"
 published = 2012-10-22T20:35:00.001000+02:00
 author = "Jef Claes"
-tags = [ "talks",]
+tags = [ "community",]
 url = "2012/10/post-webnet-europe.html"
 +++
 I attended and [spoke](http://www.jefclaes.be/2012/10/slides-and-code-from-my-webnet-europe.html) at [Web.NET Europe in Milan](http://webnetconf.eu/) over the weekend. This was only my fourth full day- or more conference (Techdays Belgium, [TechEd Berlin](http://www.jefclaes.be/2010/11/teched-europe-2010-day-3.html) and [HTML5 WebCamps](http://www.jefclaes.be/2011/04/video-slides-and-source-from-my.html)), but it was undoubtedly the best one so far.  

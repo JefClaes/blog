@@ -3,7 +3,7 @@ title = "Event storming workshop slides"
 slug = "2013-11-17-event-storming-workshop-slides"
 published = 2013-11-17T19:56:00+01:00
 author = "Jef Claes"
-tags = [ "talks",]
+tags = [ "community",]
 url = "2013/11/event-storming-workshop-slides.html"
 +++
 At [Euricom](http://euri.com/), we quarterly all retreat to headquarters

@@ -3,7 +3,7 @@ title = "It's not how good you are, it's how good you want to be"
 slug = "2011-04-10-its-not-how-good-you-are-its-how-good-you-want-to-be"
 published = 2011-04-10T20:30:00+02:00
 author = "Jef Claes"
-tags = [ "Bookreview",]
+tags = [ "consumed",]
 url = "2011/04/its-not-how-good-you-are-its-how-good.html"
 +++
 This Christmas, my girlfriend and I got this little book called [It's

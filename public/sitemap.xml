@@ -83,22 +83,17 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/opinion/</loc>
+    <lastmod>2017-02-12T00:20:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/2017/02/printing-money-hacking-loyalty-points/</loc>
     <lastmod>2017-02-12T00:20:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/sec/</loc>
-    <lastmod>2017-02-12T00:20:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2017/01/gotta-serve-somebody-or-somebodies.html</loc>
-    <lastmod>2017-01-13T15:08:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/opinion/</loc>
     <lastmod>2017-01-13T15:08:00+01:00</lastmod>
   </url>
   
@@ -149,11 +144,6 @@
   
   <url>
     <loc>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</loc>
-    <lastmod>2015-11-18T15:47:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/talks/</loc>
     <lastmod>2015-11-18T15:47:00+01:00</lastmod>
   </url>
   
@@ -390,6 +380,11 @@
   <url>
     <loc>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong_26.html</loc>
     <lastmod>2014-01-26T18:00:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/me/</loc>
+    <lastmod>2014-01-19T17:54:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1073,11 +1068,6 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/bookreview/</loc>
-    <lastmod>2011-04-10T20:30:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2011/04/its-not-how-good-you-are-its-how-good.html</loc>
     <lastmod>2011-04-10T20:30:00+02:00</lastmod>
   </url>
@@ -1110,11 +1100,6 @@
   <url>
     <loc>http://localhost:1313/2011/01/book-review-pro-html5-programming.html</loc>
     <lastmod>2011-01-06T14:30:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/me/</loc>
-    <lastmod>2010-12-29T20:17:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1223,23 +1208,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/.net/</loc>
-    <lastmod>2009-11-17T19:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/asp.net/</loc>
-    <lastmod>2009-11-17T19:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2009/11/book-review-professional-refactoring-in.html</loc>
     <lastmod>2009-11-17T19:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/general/</loc>
-    <lastmod>2009-11-09T20:30:00+01:00</lastmod>
   </url>
   
   <url>
@@ -1248,23 +1218,8 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/ramblings/</loc>
-    <lastmod>2009-08-23T19:22:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/2009/08/why-codereviews-should-be-teamthing.html</loc>
     <lastmod>2009-08-23T19:22:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/interview/</loc>
-    <lastmod>2009-02-15T18:58:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/sql/</loc>
-    <lastmod>2009-02-15T18:58:00+01:00</lastmod>
   </url>
   
   <url>

@@ -3,7 +3,7 @@ title = "What if we stored events instead of state? - slides"
 slug = "2014-05-12-what-if-we-stored-events-instead-of-state-slides"
 published = 2014-05-12T17:41:00+02:00
 author = "Jef Claes"
-tags = [ "talks",]
+tags = [ "community",]
 url = "2014/05/what-if-we-stored-events-instead-of.html"
 +++
 I just returned from Croatia, where I got to speak twice at the second edition of [The Geek Gathering](http://2014.thegeekgathering.org/).  

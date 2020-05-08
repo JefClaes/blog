@@ -3,7 +3,7 @@ title = "Released: Kill long meetings"
 slug = "2012-11-25-released-kill-long-meetings"
 published = 2012-11-25T17:45:00+01:00
 author = "Jef Claes"
-tags = [ "opinion" ]
+tags = [ "community" ]
 url = "2012/11/released-kill-long-meetings.html"
 +++
 A lot has already been said and written about meetings, and some have

@@ -3,7 +3,7 @@ title = "Slides from my talk on the Ubiquitous Language"
 slug = "2013-09-15-slides-from-my-talk-on-the-ubiquitous-language"
 published = 2013-09-15T16:34:00+02:00
 author = "Jef Claes"
-tags = [ "talks",]
+tags = [ "community",]
 url = "2013/09/slides-from-my-talk-on-ubiquitous.html"
 +++
 I just returned from our yearly [Euricom](http://euri.com/) retreat.

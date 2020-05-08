@@ -3,7 +3,7 @@ title = "Slides and code from my Web.NET Europe REST and ASP.NET Web API session
 slug = "2012-10-21-slides-and-code-from-my-web-net-europe-rest-and-asp-net-web-api-session"
 published = 2012-10-21T00:16:00+02:00
 author = "Jef Claes"
-tags = [ "talks",]
+tags = [ "community",]
 url = "2012/10/slides-and-code-from-my-webnet-europe.html"
 +++
 I just returned to the hotel after attending and speaking at [Web.NET

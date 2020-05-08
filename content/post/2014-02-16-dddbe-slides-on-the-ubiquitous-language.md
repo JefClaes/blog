@@ -3,7 +3,7 @@ title = "DDDBE slides on the Ubiquitous Language"
 slug = "2014-02-16-dddbe-slides-on-the-ubiquitous-language"
 published = 2014-02-16T18:04:00.003000+01:00
 author = "Jef Claes"
-tags = [ "ddd", "talks",]
+tags = [ "community",]
 url = "2014/02/dddbe-slides-on-ubiquitous-language.html"
 +++
 Monday, I and four others did a [DDDBE](http://domaindriven.be/) session on the strategic side of Domain Driven Design.  

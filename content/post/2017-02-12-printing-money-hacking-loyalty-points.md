@@ -3,7 +3,7 @@ title = "Printing money - hacking loyalty points"
 slug = "2017-02-12-printing-money-hacking-loyalty-points"
 published = 2017-02-12T00:20:00.003000+01:00
 author = "Jef Claes"
-tags = [ "sec"]
+tags = [ "opinion"]
 +++
 At work, we've all grown quite vigilant when it comes to customers
 trying to cheat the system. A necessary trait when working in a domain
