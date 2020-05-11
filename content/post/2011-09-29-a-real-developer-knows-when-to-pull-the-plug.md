@@ -9,8 +9,8 @@ My mini-website [arealdeveloper.com](#) will no
 longer be available online after tomorrow.  
   
 I slapped it together over a weekend, trying out WebMatrix, which turned
-out to be the [perfect companion](https://www.jefclaes.be/2011/05/my-thoughts-on-webmatrix.html)
-for [building small things](https://www.jefclaes.be/2011/09/building-small-things.html).  
+out to be the [perfect companion](https://jefclaes.be/2011/05/my-thoughts-on-webmatrix.html)
+for [building small things](https://jefclaes.be/2011/09/building-small-things.html).  
   
 A pleasant surprise was [the mention of 'A Real Developer' by the guys at Channel9](https://jefclaes.be/2011/05/arealdevelopercom-mentioned-on-channel9.html). This made the traffic go through the roof for a few days.  
   

@@ -6,7 +6,7 @@ author = "Jef Claes"
 tags = [ "travel",]
 url = "2011/09/city-of-fallen-angels.html"
 +++
-After seeing the celebrities at Madame Tussaud's in [Las Vegas](https://www.jefclaes.be/2011/09/fear-and-loathing-in-las-vegas.html),
+After seeing the celebrities at Madame Tussaud's in [Las Vegas](https://jefclaes.be/2011/09/fear-and-loathing-in-las-vegas.html),
 we went for the real deal.
 
 Turns out Hollywood is a lot less glamourous than we expected. The Walk

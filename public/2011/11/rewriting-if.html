@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+<head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Rewriting an if - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="Rewriting an if">
@@ -18,7 +18,7 @@ if (new [] { &#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34; }.C
 if (arg == &#34;a&#34; || arg == &#34;b&#34; || arg == &#34;c&#34; || arg == &#34;d&#34; || arg == &#34;e&#34;) { Console.WriteLine(true); } An alternative way of writing this could look like this.
 if (new [] { &#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34; }.Contains(arg)) Console.WriteLine(true); I can&rsquo;t remember in which Github repository I spotted this technique, but I&rsquo;m sure it was written in something other than C#." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2011/11/rewriting-if.html" />
+<meta property="og:url" content="https://jefclaes.be/2011/11/rewriting-if.html" />
 <meta property="article:published_time" content="2011-11-24T21:12:00+01:00" />
 <meta property="article:modified_time" content="2011-11-24T21:12:00+01:00" />
 <meta name="twitter:card" content="summary"/>
@@ -27,13 +27,13 @@ if (new [] { &#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34; }.C
 if (arg == &#34;a&#34; || arg == &#34;b&#34; || arg == &#34;c&#34; || arg == &#34;d&#34; || arg == &#34;e&#34;) { Console.WriteLine(true); } An alternative way of writing this could look like this.
 if (new [] { &#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34; }.Contains(arg)) Console.WriteLine(true); I can&rsquo;t remember in which Github repository I spotted this technique, but I&rsquo;m sure it was written in something other than C#."/>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://jefclaes.be/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://jefclaes.be/css/main.css" />
 
-        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://jefclaes.be/css/dark.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-		<script src="http://localhost:1313/js/main.js"></script>
+		<script src="https://jefclaes.be/js/main.js"></script>
 </head>
 
 <body>
@@ -41,14 +41,14 @@ if (new [] { &#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;, &#34;e&#34; }.C
 		<div class="header">
 	
 		<div class="avatar">
-			<a href="http://localhost:1313/">
+			<a href="https://jefclaes.be/">
 				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
 			</a>
 		</div>
 	
-	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<h1 class="site-title"><a href="https://jefclaes.be/">Jef Claes</a></h1>
 	<div class="site-description"><p>On software and life</p><nav class="nav social">
-			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="https://twitter.com/jefclaes" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://www.linkedin.com/in/jefclaes" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://feed.jefclaes.be" title="RSS"><i data-feather="rss"></i></a></li></ul>
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="https://twitter.com/jefclaes" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://www.linkedin.com/in/jefclaes" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="http://feed.jefclaes.be" title="RSS"><i data-feather="rss"></i></a></li></ul>
 		</nav></div>
 
 	<nav class="nav">

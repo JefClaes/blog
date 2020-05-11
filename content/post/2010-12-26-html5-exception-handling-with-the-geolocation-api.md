@@ -6,7 +6,7 @@ author = "Jef Claes"
 tags = [ "code",]
 url = "2010/12/html5-exception-handling-with.html"
 +++
-In [my previous post](https://www.jefclaes.be/2010/12/html5-geolocation-api-is-scary-good.html) on the [Geolocation API](http://dev.w3.org/geo/api/spec-source.html) I passed in a `PositionErrorCallback` to the [geolocation.getCurrentPosition()](http://dev.w3.org/geo/api/spec-source.html#geolocation_interface) method. When I received this callback I displayed a generic message informing the user something went wrong. In real-world scenarios you probably want the message to be more specific. You might also want to call a specific fallback method depending on what went wrong.  
+In [my previous post](https://jefclaes.be/2010/12/html5-geolocation-api-is-scary-good.html) on the [Geolocation API](http://dev.w3.org/geo/api/spec-source.html) I passed in a `PositionErrorCallback` to the [geolocation.getCurrentPosition()](http://dev.w3.org/geo/api/spec-source.html#geolocation_interface) method. When I received this callback I displayed a generic message informing the user something went wrong. In real-world scenarios you probably want the message to be more specific. You might also want to call a specific fallback method depending on what went wrong.  
   
 This is where the [PositionError](http://dev.w3.org/geo/api/spec-source.html#position_error_interface) argument of the `PositionErrorCallback` comes in handy. This object has two properties: `code` and `message`.  
   

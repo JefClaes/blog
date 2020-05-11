@@ -7,7 +7,7 @@ tags = [ "code",]
 url = "2010/12/html5-selectors-and-jquery.html"
 +++
 In [my first post on the HTML5 javascript Selector
-API](https://www.jefclaes.be/2010/11/html5-new-in-javascript-selector-api.html)
+API](https://jefclaes.be/2010/11/html5-new-in-javascript-selector-api.html)
 I wondered how the new methods `querySelector()` and `querySelectorAll()`
 would influence [jQuery](http://jquery.com/). 
   

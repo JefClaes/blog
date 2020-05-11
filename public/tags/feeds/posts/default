@@ -2,93 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Jef Claes</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://jefclaes.be/tags/</link>
     <description>Recent content in Tags on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 12 Aug 2018 14:58:00 +0200</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/feeds/posts/default" rel="self" type="application/rss" />
+	<atom:link href="https://jefclaes.be/tags/feeds/posts/default" rel="self" type="application/rss" />
     
     
     <item>
       <title>infrastructure</title>
-      <link>http://localhost:1313/tags/infrastructure/</link>
+      <link>https://jefclaes.be/tags/infrastructure/</link>
       <pubDate>Sun, 12 Aug 2018 14:58:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/tags/infrastructure/</guid>
+      <guid>https://jefclaes.be/tags/infrastructure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>consumed</title>
-      <link>http://localhost:1313/tags/consumed/</link>
+      <link>https://jefclaes.be/tags/consumed/</link>
       <pubDate>Wed, 03 Jan 2018 21:28:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/tags/consumed/</guid>
+      <guid>https://jefclaes.be/tags/consumed/</guid>
       <description></description>
     </item>
     
     <item>
       <title>code</title>
-      <link>http://localhost:1313/tags/code/</link>
+      <link>https://jefclaes.be/tags/code/</link>
       <pubDate>Sun, 30 Jul 2017 14:34:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/tags/code/</guid>
+      <guid>https://jefclaes.be/tags/code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ddd</title>
-      <link>http://localhost:1313/tags/ddd/</link>
+      <link>https://jefclaes.be/tags/ddd/</link>
       <pubDate>Sun, 23 Jul 2017 08:48:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/tags/ddd/</guid>
+      <guid>https://jefclaes.be/tags/ddd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>story</title>
-      <link>http://localhost:1313/tags/story/</link>
+      <link>https://jefclaes.be/tags/story/</link>
       <pubDate>Sun, 23 Jul 2017 08:48:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/tags/story/</guid>
+      <guid>https://jefclaes.be/tags/story/</guid>
       <description></description>
     </item>
     
     <item>
       <title>community</title>
-      <link>http://localhost:1313/tags/community/</link>
+      <link>https://jefclaes.be/tags/community/</link>
       <pubDate>Mon, 13 Feb 2017 21:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/tags/community/</guid>
+      <guid>https://jefclaes.be/tags/community/</guid>
       <description></description>
     </item>
     
     <item>
       <title>opinion</title>
-      <link>http://localhost:1313/tags/opinion/</link>
+      <link>https://jefclaes.be/tags/opinion/</link>
       <pubDate>Sun, 12 Feb 2017 00:20:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/tags/opinion/</guid>
+      <guid>https://jefclaes.be/tags/opinion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>travel</title>
-      <link>http://localhost:1313/tags/travel/</link>
+      <link>https://jefclaes.be/tags/travel/</link>
       <pubDate>Sun, 14 Sep 2014 21:01:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/tags/travel/</guid>
+      <guid>https://jefclaes.be/tags/travel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>me</title>
-      <link>http://localhost:1313/tags/me/</link>
+      <link>https://jefclaes.be/tags/me/</link>
       <pubDate>Sun, 19 Jan 2014 17:54:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/tags/me/</guid>
+      <guid>https://jefclaes.be/tags/me/</guid>
       <description></description>
     </item>
     

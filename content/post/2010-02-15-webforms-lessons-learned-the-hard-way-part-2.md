@@ -7,7 +7,7 @@ tags = [ "code",]
 url = "2010/02/webforms-lessons-learned-hard-way-part_15.html"
 +++
 If you missed part 1, you can find it
-[here](https://www.jefclaes.be/2010/02/webforms-lessons-learned-hard-way-part.html).  
+[here](https://jefclaes.be/2010/02/webforms-lessons-learned-hard-way-part.html).  
   
 ### Use the built-in goodies  
   

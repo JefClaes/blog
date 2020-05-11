@@ -45,4 +45,4 @@ matters. If the sequence of the property assignment differs, different
 types are defined by the C\# compiler.  
   
 Also read [the
-follow-up](https://www.jefclaes.be/2011/04/anonymous-type-equality-follow-up.html).
+follow-up](https://jefclaes.be/2011/04/anonymous-type-equality-follow-up.html).

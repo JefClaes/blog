@@ -7,7 +7,7 @@ tags = [ "code",]
 url = "2011/07/overoptimizing-my-javascript-stack.html"
 +++
 [Davy Brion](http://davybrion.com/blog/) made a comment on [my
-JavaScript stack/queue implementation](https://www.jefclaes.be/2011/07/stacks-and-queues-in-javascript.html) on Twitter last night: Any reason why you don't immediately set elements to \[\] at declaration in your stack/queue example?  
+JavaScript stack/queue implementation](https://jefclaes.be/2011/07/stacks-and-queues-in-javascript.html) on Twitter last night: Any reason why you don't immediately set elements to \[\] at declaration in your stack/queue example?  
 
 ```js
 var elements;

@@ -63,7 +63,7 @@ contribute to that community.
 I managed to travel four times this year:  
 
 - France (Albi)
-- [Spain (Madrid)](https://www.jefclaes.be/2009/11/my-trip-to-madrid-in-ten-pictures.html)
+- [Spain (Madrid)](https://jefclaes.be/2009/11/my-trip-to-madrid-in-ten-pictures.html)
 - Belgium (Ardennes)
 - France (Normandie)
 

@@ -7,7 +7,7 @@ tags = [ "travel",]
 url = "2011/04/prague-impressions.html"
 +++
 [Last
-year](https://www.jefclaes.be/2010/04/trip-report-czech-republic.html)
+year](https://jefclaes.be/2010/04/trip-report-czech-republic.html)
 my girlfriend and I already made a trip to the Czech Republic, but we
 felt like we had spent to little time visiting Prague. We made up for
 that by making a follow-up trip last week.  

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+<head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Testing DI bootstrappers - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="Testing DI bootstrappers">
@@ -16,7 +16,7 @@ I encourage you to take a look at the commit history of your DI bootstrappers; I
 <meta property="og:description" content="While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&rsquo;t see any reason why they shouldn&rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
 I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2012/02/testing-di-bootstrappers.html" />
+<meta property="og:url" content="https://jefclaes.be/2012/02/testing-di-bootstrappers.html" />
 <meta property="article:published_time" content="2012-02-06T08:59:00+01:00" />
 <meta property="article:modified_time" content="2012-02-06T08:59:00+01:00" />
 <meta name="twitter:card" content="summary"/>
@@ -24,13 +24,13 @@ I encourage you to take a look at the commit history of your DI bootstrappers; I
 <meta name="twitter:description" content="While your Dependency Injection bootstrappers - being responsible for gluing your application together - are a vital part of your application, they are seldom put under test. I don&rsquo;t see any reason why they shouldn&rsquo;t be though. The cost of these tests is negligible, definitely if you compare it to the cost of the often catastrophical outcome of bugs in your bootstrappers.
 I encourage you to take a look at the commit history of your DI bootstrappers; I bet they change a lot."/>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://jefclaes.be/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://jefclaes.be/css/main.css" />
 
-        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://jefclaes.be/css/dark.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-		<script src="http://localhost:1313/js/main.js"></script>
+		<script src="https://jefclaes.be/js/main.js"></script>
 </head>
 
 <body>
@@ -38,14 +38,14 @@ I encourage you to take a look at the commit history of your DI bootstrappers; I
 		<div class="header">
 	
 		<div class="avatar">
-			<a href="http://localhost:1313/">
+			<a href="https://jefclaes.be/">
 				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
 			</a>
 		</div>
 	
-	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<h1 class="site-title"><a href="https://jefclaes.be/">Jef Claes</a></h1>
 	<div class="site-description"><p>On software and life</p><nav class="nav social">
-			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="https://twitter.com/jefclaes" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://www.linkedin.com/in/jefclaes" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://feed.jefclaes.be" title="RSS"><i data-feather="rss"></i></a></li></ul>
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="https://twitter.com/jefclaes" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://www.linkedin.com/in/jefclaes" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="http://feed.jefclaes.be" title="RSS"><i data-feather="rss"></i></a></li></ul>
 		</nav></div>
 
 	<nav class="nav">
@@ -96,7 +96,7 @@ set of tests that proves that the dependency container still behaves
 like you expect it to at runtime? Next to proving correctness, I think
 writing these tests also helps you discover various behaviours of your
 DI container, which is a valuable investment in itself.</p>
-<p>Let me show you a few tests that I wrote to put my <a href="https://www.jefclaes.be/2011/10/ninjecting-mvc3.html">ASP.NET MVC
+<p>Let me show you a few tests that I wrote to put my <a href="https://jefclaes.be/2011/10/ninjecting-mvc3.html">ASP.NET MVC
 Ninject</a>
 bootstrapper under test.</p>
 <p>I started by opening up the Ninject bootstrapper, making the

@@ -7,7 +7,7 @@ tags = [ "travel",]
 url = "2010/10/trip-report-denmark-part-2.html"
 +++
 If you missed the first part of this trip report, you can find it
-[here](https://www.jefclaes.be/2010/10/trip-report-denmark-part-1.html).  
+[here](https://jefclaes.be/2010/10/trip-report-denmark-part-1.html).  
 ### Funen  
   
 After three days of Copenhagen we stayed at

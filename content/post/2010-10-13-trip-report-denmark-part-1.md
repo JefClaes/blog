@@ -7,7 +7,7 @@ tags = [ "travel",]
 url = "2010/10/trip-report-denmark-part-1.html"
 +++
 Last month me and my
-girlfriend] went on a holiday
+girlfriend went on a holiday
 to [Denmark](http://en.wikipedia.org/wiki/Denmark) for a week. We had a
 great time, visited a lot of places and took hundreds of pictures. In
 this post you can find a trip report containing the best pictures and

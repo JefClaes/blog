@@ -2,120 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ddd on Jef Claes</title>
-    <link>http://localhost:1313/tags/ddd/</link>
+    <link>https://jefclaes.be/tags/ddd/</link>
     <description>Recent content in ddd on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Jul 2017 08:48:00 +0200</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/ddd/feeds/posts/default" rel="self" type="application/rss" />
+	<atom:link href="https://jefclaes.be/tags/ddd/feeds/posts/default" rel="self" type="application/rss" />
     
     
     <item>
       <title>From human decisions, to suggestions to automated decisions</title>
-      <link>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to.html</link>
+      <link>https://jefclaes.be/2017/07/from-human-decisions-to-suggestions-to.html</link>
       <pubDate>Sun, 23 Jul 2017 08:48:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to.html</guid>
+      <guid>https://jefclaes.be/2017/07/from-human-decisions-to-suggestions-to.html</guid>
       <description>I&amp;rsquo;ve been wanting to share this experience for a while, but it took me a while to come up with a story and example I could use in a blog post.
 I help out during the weekends in a small family run magic shop. I&amp;rsquo;m the third generation working in the shop. My great-grandfather always hoped that his only son would follow in his footsteps as a carpenter. But at only eighteen years old, my grandfather said goodbye to the chisels and sawdust, and set out for the big city to chase his dream of becoming a world class magician.</description>
     </item>
     
     <item>
       <title>My InfoQ interview on DDD, events and legacy</title>
-      <link>http://localhost:1313/2016/08/my-infoq-article-on-ddd-events-and.html</link>
+      <link>https://jefclaes.be/2016/08/my-infoq-article-on-ddd-events-and.html</link>
       <pubDate>Sun, 21 Aug 2016 15:07:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2016/08/my-infoq-article-on-ddd-events-and.html</guid>
+      <guid>https://jefclaes.be/2016/08/my-infoq-article-on-ddd-events-and.html</guid>
       <description>Seems that it&amp;rsquo;s impossible to beat the Gaussian curve of blogging frequency. On the other hand, I spent quite some of my mental blogging budget on an interview with InfoQ.
 I&amp;rsquo;m a bit bummed out that it&amp;rsquo;s such a large wall of text. When submitting the answers, I highlighted some snippets which should make for easier scanning. Too bad the formatting was lost when publishing it. I included some highlights below.</description>
     </item>
     
     <item>
       <title>Notifications from an event log</title>
-      <link>http://localhost:1313/2016/04/notifications-from-event-log.html</link>
+      <link>https://jefclaes.be/2016/04/notifications-from-event-log.html</link>
       <pubDate>Sun, 17 Apr 2016 17:37:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2016/04/notifications-from-event-log.html</guid>
+      <guid>https://jefclaes.be/2016/04/notifications-from-event-log.html</guid>
       <description>User notifications are a feature that came as an afterthought, but turned out to be rather easy to implement - without touching (read: breaking) existing functionality - thanks to having an immutable event log.
 In the domain I&amp;rsquo;m working in at the moment, we will often give users incentives to return to the website, or to extend their stay on the website. These incentives were only communicated by email at first, and this is a decent medium when you want users to return to the website.</description>
     </item>
     
     <item>
       <title>Visualizing event streams</title>
-      <link>http://localhost:1313/2015/12/visualizing-event-streams.html</link>
+      <link>https://jefclaes.be/2015/12/visualizing-event-streams.html</link>
       <pubDate>Sun, 20 Dec 2015 17:59:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/12/visualizing-event-streams.html</guid>
+      <guid>https://jefclaes.be/2015/12/visualizing-event-streams.html</guid>
       <description>In my recent talk on Evil by Design, I showed how I&amp;rsquo;ve been visualizing event streams as a means to get a better grip on how aggregates behave in production. The talk&amp;rsquo;s scope kept me from showing the code that goes together with the examples shown. Consider this post as an addendum to that talk.
 First off, we need a few types: a string that identifies a stream, an event containing a timestamp and its name.</description>
     </item>
     
     <item>
       <title>Slides from my talk &#34;Evil by Design&#34; at Build Stuff</title>
-      <link>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</link>
+      <link>https://jefclaes.be/2015/11/slides-from-my-talk-evil-by-design-at.html</link>
       <pubDate>Wed, 18 Nov 2015 15:47:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/11/slides-from-my-talk-evil-by-design-at.html</guid>
+      <guid>https://jefclaes.be/2015/11/slides-from-my-talk-evil-by-design-at.html</guid>
       <description>Third time attending Build Stuff, first time doing a talk. I&amp;rsquo;m happy that it&amp;rsquo;s out of the way and can now just enjoy the conference, but I&amp;rsquo;m even more excited that it was well-received! The talk should have been recorded, but you can already find the abstract and slides below.
  Last year I ventured into the domain of (online) gambling. Given that the industry has been around since forever, I expected most problems to be of the technical kind.</description>
     </item>
     
     <item>
       <title>Defining big wins</title>
-      <link>http://localhost:1313/2015/11/defining-big-wins.html</link>
+      <link>https://jefclaes.be/2015/11/defining-big-wins.html</link>
       <pubDate>Mon, 16 Nov 2015 21:31:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/11/defining-big-wins.html</guid>
+      <guid>https://jefclaes.be/2015/11/defining-big-wins.html</guid>
       <description>Casinos invest a lot of energy selling the dream. One way to do this is by showing off people winning big in your casino. Everyone has seen those corny pictures of people holding human-sized cheques right? It&amp;rsquo;s a solid tactic, since empirical evidence shows that after a store has sold a large-prize winning lottery ticket, the ticket sales increase from 12 to 38% over the following weeks.
 If we look at slot machine play, what exactly defines a big win?</description>
     </item>
     
     <item>
       <title>Basic casino math</title>
-      <link>http://localhost:1313/2015/06/basic-casino-math.html</link>
+      <link>https://jefclaes.be/2015/06/basic-casino-math.html</link>
       <pubDate>Mon, 22 Jun 2015 22:52:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2015/06/basic-casino-math.html</guid>
+      <guid>https://jefclaes.be/2015/06/basic-casino-math.html</guid>
       <description>In a previous series of posts, I went over the models used by casinos to spin a wheel (spinning, manipulating the odds, clustering and near misses). I did not yet expand on the basic mathematical models that ensure a casino makes money.
 Let&amp;rsquo;s pretend we are spinning the wheel again. The wheel has 5 pockets, and just one of those is the winning one. Given we will be using an unmodified wheel, you win 1 out of 5 spins.</description>
     </item>
     
     <item>
       <title>Scaling promotion codes</title>
-      <link>http://localhost:1313/2015/03/scaling-promotion-codes/</link>
+      <link>https://jefclaes.be/2015/03/scaling-promotion-codes/</link>
       <pubDate>Sun, 15 Mar 2015 18:01:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/03/scaling-promotion-codes/</guid>
+      <guid>https://jefclaes.be/2015/03/scaling-promotion-codes/</guid>
       <description>In our system a backoffice user can issue a promotion code for users to redeem. Redeeming a promotion code, a user receives a discount on his next purchase or a free gift. A promotion code is only active for a limited amount of time, can only be redeemed a limited amount of times and can only be redeemed once per user.
 public bool TryRedeem(UserId userId) { if (HasAlreadyBeenRedeemedByUser(userId)) return false; if (NoLongerActive()) return false; if (Depleted()) return false; Apply(new PromotionCodeRedeemed(userId.</description>
     </item>
     
     <item>
       <title>Domain Language: The Playthrough Bonus</title>
-      <link>http://localhost:1313/2015/02/domain-language-playthrough-bonus.html</link>
+      <link>https://jefclaes.be/2015/02/domain-language-playthrough-bonus.html</link>
       <pubDate>Mon, 23 Feb 2015 19:05:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2015/02/domain-language-playthrough-bonus.html</guid>
+      <guid>https://jefclaes.be/2015/02/domain-language-playthrough-bonus.html</guid>
       <description>Since online gambling has been regulated in Belgium, basically each eligible license holder has complemented their land based operations with an online counterpart. Being such a small country, everyone wants to secure their market share as soon as possible. The big players have been pouring tons of money in to marketing and advertising, it&amp;rsquo;s everywhere: radio, television, (online) newspapers, bus stops, billboards, sport events, airplane vouchers - you name it. While regulations for land based casinos are very strict and almost overprotective, regulations for online play are much more permissive.</description>
     </item>
     
     <item>
       <title>Spinning the wheel: clustering and near misses</title>
-      <link>http://localhost:1313/2014/12/spinning-wheel-clustering-and-near.html</link>
+      <link>https://jefclaes.be/2014/12/spinning-wheel-clustering-and-near.html</link>
       <pubDate>Sun, 14 Dec 2014 17:13:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/12/spinning-wheel-clustering-and-near.html</guid>
+      <guid>https://jefclaes.be/2014/12/spinning-wheel-clustering-and-near.html</guid>
       <description>The previous post showed a simple model casinos use to manipulate the odds. Instead of relying on the physical wheel for randomness, they rely on a virtual list of indexes that maps to the physical wheel.
 Using that same model, it&amp;rsquo;s easy to fiddle with the virtual indexes so that they map to misses right next to the winning pocket, creating &amp;ldquo;near misses&amp;rdquo;. &amp;ldquo;Near misses&amp;rdquo; make players feel less like losing, since you &amp;ldquo;almost won&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>Spinning the wheel: manipulating the odds</title>
-      <link>http://localhost:1313/2014/12/spinning-wheel-manipulating-odds.html</link>
+      <link>https://jefclaes.be/2014/12/spinning-wheel-manipulating-odds.html</link>
       <pubDate>Thu, 11 Dec 2014 19:24:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/12/spinning-wheel-manipulating-odds.html</guid>
+      <guid>https://jefclaes.be/2014/12/spinning-wheel-manipulating-odds.html</guid>
       <description>The previous post defined a basic set of data structures and functions to spin a wheel of fortune in F#.
 There was very little mystery to that implementation though. The physical wheel had four pockets and spinning the wheel would land you a win one out of four spins. As a casino, it&amp;rsquo;s impossible to come up with an interesting payout using this model.
 To juice up the pot, casinos started adding more pockets to the wheel of fortune.</description>
@@ -123,10 +123,10 @@ To juice up the pot, casinos started adding more pockets to the wheel of fortune
     
     <item>
       <title>Spinning the wheel</title>
-      <link>http://localhost:1313/2014/12/spinning-wheel.html</link>
+      <link>https://jefclaes.be/2014/12/spinning-wheel.html</link>
       <pubDate>Tue, 09 Dec 2014 19:56:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/12/spinning-wheel.html</guid>
+      <guid>https://jefclaes.be/2014/12/spinning-wheel.html</guid>
       <description>In this post, I&amp;rsquo;ll define a basic set of data structures and functions to spin a wheel of fortune. In the next post, I&amp;rsquo;ll show you the simple model casinos use to build a bigger, more attractive pot, without touching the physical wheel and without losing money. Finally, I&amp;rsquo;ll show you how casinos tweak that model to bend the odds and create near misses.
 
 Let&amp;rsquo;s say we have a physical wheel with four pockets, which are labeled either miss or win.</description>
@@ -134,10 +134,10 @@ Let&amp;rsquo;s say we have a physical wheel with four pockets, which are labele
     
     <item>
       <title>Hot aggregate detection using F#</title>
-      <link>http://localhost:1313/2014/11/hot-aggregate-detection-using-f.html</link>
+      <link>https://jefclaes.be/2014/11/hot-aggregate-detection-using-f.html</link>
       <pubDate>Sun, 16 Nov 2014 17:20:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/11/hot-aggregate-detection-using-f.html</guid>
+      <guid>https://jefclaes.be/2014/11/hot-aggregate-detection-using-f.html</guid>
       <description>Last week, I wrote about splitting a hot aggregate. Discovering that specific hot aggregate was easy; it would cause transactional failures from time to time.
 Long-lived hot aggregates often are an indication of a missing concept and an opportunity for teasing things apart. Last week, I took one long-lived hot aggregate and pulled smaller short-lived hot aggregates out, identifying two missing concepts.
 Hunting for more hot aggregates, I could visualize event streams and use my eyes to detect bursts of activity, or I could have a little function analyze the event streams for me.</description>
@@ -145,29 +145,29 @@ Hunting for more hot aggregates, I could visualize event streams and use my eyes
     
     <item>
       <title>Splitting hot aggregates</title>
-      <link>http://localhost:1313/2014/11/splitting-hot-aggregates.html</link>
+      <link>https://jefclaes.be/2014/11/splitting-hot-aggregates.html</link>
       <pubDate>Sun, 09 Nov 2014 19:00:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/11/splitting-hot-aggregates.html</guid>
+      <guid>https://jefclaes.be/2014/11/splitting-hot-aggregates.html</guid>
       <description>When you visit a real casino, the constant busy-ness is overwhelming; players spamming buttons, pulling levers, spinning the wheel, gambling on the outcome of sports games, playing cards, feeding the machine, cashing out, breaking bills, ordering drinks or even buying a souvenir. A single player will easily generate a thousand transactions in one sitting.
 When you look at an online casino, this isn&amp;rsquo;t very different. In the system we inherited, the biggest and busiest aggregate by far is a user&amp;rsquo;s account.</description>
     </item>
     
     <item>
       <title>Thinking No Computers</title>
-      <link>http://localhost:1313/2014/08/thinking-no-computers/</link>
+      <link>https://jefclaes.be/2014/08/thinking-no-computers/</link>
       <pubDate>Tue, 19 Aug 2014 20:09:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/08/thinking-no-computers/</guid>
+      <guid>https://jefclaes.be/2014/08/thinking-no-computers/</guid>
       <description>The other day I happened to see a curious exchange in one of our businesses. The cashier swapped a torn, but carefully restored by taping it together again, Euro bill for a new one with the manager. Inquisitive, I asked the manager what he was planning to do with that Euro bill. &amp;ldquo;Once a month, I take all those ripped up or badly worn bills to the National Bank, and trade them for new ones.</description>
     </item>
     
     <item>
       <title>Not about the UI and the database</title>
-      <link>http://localhost:1313/2014/06/not-about-ui-and-database.html</link>
+      <link>https://jefclaes.be/2014/06/not-about-ui-and-database.html</link>
       <pubDate>Sun, 01 Jun 2014 17:55:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/06/not-about-ui-and-database.html</guid>
+      <guid>https://jefclaes.be/2014/06/not-about-ui-and-database.html</guid>
       <description>When you ask an outsider which components an average application consists of, he will most likely be able to identify the user interface and the database. He will also recognize that there is something in between that takes the input from the user interface, applies some logic and persists the result in the database.
 
 In the past, trying to make sense of what goes on the middle, we started</description>
@@ -175,19 +175,19 @@ In the past, trying to make sense of what goes on the middle, we started</descri
     
     <item>
       <title>NCrafts Eventstorming slides</title>
-      <link>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</link>
+      <link>https://jefclaes.be/2014/05/ncrafts-eventstorming-slides.html</link>
       <pubDate>Fri, 16 May 2014 15:22:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/05/ncrafts-eventstorming-slides.html</guid>
+      <guid>https://jefclaes.be/2014/05/ncrafts-eventstorming-slides.html</guid>
       <description>Me and Tom just finished doing our Event storming workshop at NCrafts Paris. Although we made a few mistakes along the way, feedback on the workshop was great. I hope to put something out about what we learned facilitating later this week. People talked, discovered and eventually learned a new domain in under two hours. The domain? Two minutes before the workshop we found a domain expert prepared to talk about his coupon start-up.</description>
     </item>
     
     <item>
       <title>Alternatives to Udi&#39;s domain events</title>
-      <link>http://localhost:1313/2014/03/alternatives-to-udis-domain-events.html</link>
+      <link>https://jefclaes.be/2014/03/alternatives-to-udis-domain-events.html</link>
       <pubDate>Sun, 02 Mar 2014 18:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/03/alternatives-to-udis-domain-events.html</guid>
+      <guid>https://jefclaes.be/2014/03/alternatives-to-udis-domain-events.html</guid>
       <description>Almost four years ago Udi Dahan introduced an elegant technique that allows you to have your domain model dispatch events without injecting a dispatcher into the model - keeping your model focused on the business at hand.
 This works by having a static DomainEvents class which dispatches raised events.
 This customer aggregate raises an event when a customer moves to a new address.
@@ -196,20 +196,20 @@ public class Customer { private readonly string _id; private Address _address; p
     
     <item>
       <title>Strategic DDD in a nutshell </title>
-      <link>http://localhost:1313/2014/02/strategic-ddd-in-nutshell.html</link>
+      <link>https://jefclaes.be/2014/02/strategic-ddd-in-nutshell.html</link>
       <pubDate>Sun, 23 Feb 2014 18:21:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/02/strategic-ddd-in-nutshell.html</guid>
+      <guid>https://jefclaes.be/2014/02/strategic-ddd-in-nutshell.html</guid>
       <description>There are two big parts to Domain Driven Design; strategy and tactics. Strategy helps setting out a high-level grand design, while tactics enable us to execute on the strategy.
 Practicing strategic design, we generally first try to list all of the different parts that make our business a whole; these are sub-domains. When you look at a supermarket chain, you would find sub-domains like real estate management, advertising, suppliers, stock, sales, human resources, finance, security and so on.</description>
     </item>
     
     <item>
       <title>Repositories, where did we go wrong?</title>
-      <link>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong_26.html</link>
+      <link>https://jefclaes.be/2014/01/repositories-where-did-we-go-wrong_26.html</link>
       <pubDate>Sun, 26 Jan 2014 18:00:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2014/01/repositories-where-did-we-go-wrong_26.html</guid>
+      <guid>https://jefclaes.be/2014/01/repositories-where-did-we-go-wrong_26.html</guid>
       <description>In essence, repositories are a simple abstraction over aggregate storage. A repository will insert, update, delete or fetch an aggregate from the underlying persistence mechanism. This abstraction avoids that databases, SQL statements, Object Mappers and the like leak into your domain. Next to that, swapping out repositories for an in-memory version makes testing easier.
 Recently, the use of repositories is being questioned again.
 Why would we wrap Object Mappers in yet another abstraction?</description>
@@ -217,10 +217,10 @@ Why would we wrap Object Mappers in yet another abstraction?</description>
     
     <item>
       <title>An event sourced aggregate</title>
-      <link>http://localhost:1313/2013/10/an-event-sourced-aggregate.html</link>
+      <link>https://jefclaes.be/2013/10/an-event-sourced-aggregate.html</link>
       <pubDate>Sun, 13 Oct 2013 18:36:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/10/an-event-sourced-aggregate.html</guid>
+      <guid>https://jefclaes.be/2013/10/an-event-sourced-aggregate.html</guid>
       <description>Last week I shared my theoretical understanding of event sourcing. Today, I want to make an attempt at making that theory tangible by implementing an event sourced aggregate.
 In traditional systems, we only persist the current state of an object.
 
@@ -229,20 +229,20 @@ In event sourced systems, we don&amp;rsquo;t persist the current state of an obj
     
     <item>
       <title>My understanding of event sourcing</title>
-      <link>http://localhost:1313/2013/10/my-understanding-of-event-sourcing.html</link>
+      <link>https://jefclaes.be/2013/10/my-understanding-of-event-sourcing.html</link>
       <pubDate>Sun, 06 Oct 2013 18:32:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/10/my-understanding-of-event-sourcing.html</guid>
+      <guid>https://jefclaes.be/2013/10/my-understanding-of-event-sourcing.html</guid>
       <description>I&amp;rsquo;ve been studying event sourcing from a distance for little over a year now; reading online material and going through some of the excellent OS code. Unfortunately, there would be no value introducing it into my current project - it would even be a terrible idea, so I decided to satisfy my inquisitiveness by consolidating and sharing my understanding of the concept.
 Domain events An event is something that happened in the past.</description>
     </item>
     
     <item>
       <title>Eventual consistent domain events with RavenDB and IronMQ</title>
-      <link>http://localhost:1313/2013/08/eventual-consistent-domain-events-with.html</link>
+      <link>https://jefclaes.be/2013/08/eventual-consistent-domain-events-with.html</link>
       <pubDate>Thu, 15 Aug 2013 14:03:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/08/eventual-consistent-domain-events-with.html</guid>
+      <guid>https://jefclaes.be/2013/08/eventual-consistent-domain-events-with.html</guid>
       <description>Working on side projects, I often find myself using RavenDB for storage and IronMQ for queueing. I wrote about that last one before here and here.
 One project I&amp;rsquo;m working on right now makes use of domain events. As an example, I&amp;rsquo;ll use the usual suspect: the BookingConfirmed event. When a booking has been confirmed, I want to notify my customer by sending him an email.
 I want to avoid that persisting a booking fails because an eventhandler throws - the mail server is unavailable.</description>
@@ -250,39 +250,39 @@ I want to avoid that persisting a booking fails because an eventhandler throws -
     
     <item>
       <title>When your commands spell CUD</title>
-      <link>http://localhost:1313/2013/08/when-your-commands-spell-cud.html</link>
+      <link>https://jefclaes.be/2013/08/when-your-commands-spell-cud.html</link>
       <pubDate>Sun, 04 Aug 2013 19:08:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/08/when-your-commands-spell-cud.html</guid>
+      <guid>https://jefclaes.be/2013/08/when-your-commands-spell-cud.html</guid>
       <description>A good while ago, I blogged on commands (and queries). After exploring various flavors, I eventually settled on this one; commands, handlers and an in-memory bus that serves as a command executor.
 Commands help you in supporting the ubiquitous language by explicitly capturing user intent at the boundaries of your system - think use cases. You can look at them as messages that are being sent to your domain. In this regard, they also serve as a layer over your domain - decoupling the inside from the outside, allowing you to gradually introduce concepts on the inside, without breaking the outside.</description>
     </item>
     
     <item>
       <title>Multiplayer Enterprise Architect</title>
-      <link>http://localhost:1313/2013/06/multiplayer-enterprise-architect.html</link>
+      <link>https://jefclaes.be/2013/06/multiplayer-enterprise-architect.html</link>
       <pubDate>Sun, 30 Jun 2013 17:00:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/06/multiplayer-enterprise-architect.html</guid>
+      <guid>https://jefclaes.be/2013/06/multiplayer-enterprise-architect.html</guid>
       <description>Hanging around in the pub after DDDX, I ended up talking to Alberto Brandolini. For those who have never met him; he&amp;rsquo;s very much into visualization. You will always see him carrying a drawing pad, with a dash of permanent marker on his cheek, and a few lost sticky notes on his back. I don&amp;rsquo;t know if it was the Italian accent and the strong gestures, or my mildly intoxicated condition, but the idea of visualization as an important tool grew on me even more that evening.</description>
     </item>
     
     <item>
       <title>Accidental entities - what about the UI?</title>
-      <link>http://localhost:1313/2013/06/accidental-entities-what-about-ui.html</link>
+      <link>https://jefclaes.be/2013/06/accidental-entities-what-about-ui.html</link>
       <pubDate>Sun, 02 Jun 2013 16:24:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/06/accidental-entities-what-about-ui.html</guid>
+      <guid>https://jefclaes.be/2013/06/accidental-entities-what-about-ui.html</guid>
       <description>This post is a follow-up to my previous blog post &amp;ldquo;Accidental entities - you don&amp;rsquo;t need that identity&amp;quot;.
 In that post, we followed a consultant building an application for a car rental. One of the requirements was that the CEO could manage a collection of available colors. Although the tools at our disposal - a relational database and NHibernate - wanted to trick us into making a car reference one of these available colors by its identifier, we found out that the CEO really thinks of a car&amp;rsquo;s color as a value, and does not care about a color&amp;rsquo;s identity.</description>
     </item>
     
     <item>
       <title>Accidental entities - you don&#39;t need that identity</title>
-      <link>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that.html</link>
+      <link>https://jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html</link>
       <pubDate>Sun, 26 May 2013 16:27:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/05/accidental-entities-you-dont-need-that.html</guid>
+      <guid>https://jefclaes.be/2013/05/accidental-entities-you-dont-need-that.html</guid>
       <description>An entity is identified by an identifier, while value objects are identified by their value.
 If I make a living renting cars to tourists, I might not care the least about the identity of the colors the cars came in. I just care about their value; Rosso Corsa, Azurro Metallic&amp;hellip; If I repaint the car, the color changes, and the previous color is abandoned as a whole.
 However, if I were a car paint manufacturer, I would care a great deal about the identity of a color.</description>
@@ -290,10 +290,10 @@ However, if I were a car paint manufacturer, I would care a great deal about the
     
     <item>
       <title>IDDD Tour notes (2/2)</title>
-      <link>http://localhost:1313/2013/05/iddd-tour-notes-22.html</link>
+      <link>https://jefclaes.be/2013/05/iddd-tour-notes-22.html</link>
       <pubDate>Sun, 12 May 2013 15:44:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/05/iddd-tour-notes-22.html</guid>
+      <guid>https://jefclaes.be/2013/05/iddd-tour-notes-22.html</guid>
       <description>This is the second and last part of my notes I scribbled down attending the IDDD Tour. The first part was published last week.
 A better model  Even if you come up with a better model, the fact that it has been the ubiquitous language of the domain for decades proves that it works for them.
  This quote bothers me a bit. There definitely is truth to this, but modeling an existing process often presents such a great opportunity to revise and improve it.</description>
@@ -301,10 +301,10 @@ A better model  Even if you come up with a better model, the fact that it has be
     
     <item>
       <title>IDDD Tour notes (1/2)</title>
-      <link>http://localhost:1313/2013/05/iddd-tour-notes-12.html</link>
+      <link>https://jefclaes.be/2013/05/iddd-tour-notes-12.html</link>
       <pubDate>Sun, 05 May 2013 17:10:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2013/05/iddd-tour-notes-12.html</guid>
+      <guid>https://jefclaes.be/2013/05/iddd-tour-notes-12.html</guid>
       <description>Two weeks ago I got to spend four days attending the IDDD Tour by Vaughn Vernon. Although my book queue has only allowed me to shallowly browse the book, I had high hopes for this course. I anticipated a week of getting lectured on DDD with a few practical exercises, but was blown away by the openness and interaction promoted by Vaughn and his associate Alberto Brandolini. A passionate group, engaging workshops, long days and lots of sharing made these few days exceptionally satisfying and inspirational.</description>
     </item>
     

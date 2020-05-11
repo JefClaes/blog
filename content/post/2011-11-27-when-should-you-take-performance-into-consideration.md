@@ -7,7 +7,7 @@ tags = [ "opinion",]
 url = "2011/11/when-should-you-take-performance-into.html"
 +++
 Before publishing [my previous post on rewriting an
-if](https://www.jefclaes.be/2011/11/rewriting-if.html), I knew some
+if](https://jefclaes.be/2011/11/rewriting-if.html), I knew some
 people would hate it, because the refactored construct is less
 performant.  
   

@@ -7,7 +7,7 @@ tags = [ "code",]
 url = "2011/04/anonymous-type-equality-follow-up.html"
 +++
 After publishing [yesterday's post on anonymous type
-equality](https://www.jefclaes.be/2011/04/anonymous-type-equality.html),
+equality](https://jefclaes.be/2011/04/anonymous-type-equality.html),
 I received an interesting comment. The comment stated that
 even if the sequence of the property assignment were the same, the
 equality comparison would still return false, because the types

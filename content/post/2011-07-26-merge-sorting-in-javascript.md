@@ -25,7 +25,7 @@ this diagram (also from [Wikipedia](http://en.wikipedia.org/wiki/Merge_sort)).
 [![](/post/images/thumbnails/2011-07-26-merge-sorting-in-javascript-MergeSort.png)](/post/images/2011-07-26-merge-sorting-in-javascript-MergeSort.png)  
 
 I added a public `mergeSort` function to the `sortArray` object, which I
-showed in the [first post](https://www.jefclaes.be/2011/07/simple-sorting-in-javascript.html) in these series.  
+showed in the [first post](https://jefclaes.be/2011/07/simple-sorting-in-javascript.html) in these series.  
   
 ```js
 this.mergeSort = function() {                                       

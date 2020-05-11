@@ -9,7 +9,7 @@ url = "2010/05/handling-aggregateexception.html"
 Last week I showed you how you can use the `AggregateException` to apply
 consistent exception handling in batch operations. You can find that
 post
-[here](https://www.jefclaes.be/2010/05/exception-handling-in-batch-operations.html).  
+[here](https://jefclaes.be/2010/05/exception-handling-in-batch-operations.html).  
   
 [Bart De Smet](http://bartdesmet.net/blogs/bart/) read that post and
 pointed out that I should check out the Handle method of the

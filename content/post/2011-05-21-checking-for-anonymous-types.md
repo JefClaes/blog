@@ -7,7 +7,7 @@ tags = [ "code",]
 url = "2011/05/checking-for-anonymous-types.html"
 +++
 Because I blogged about anonymous types [last
-month](https://www.jefclaes.be/2011/04/anonymous-type-equality-follow-up.html), I thought following method would also make an interesting post.  
+month](https://jefclaes.be/2011/04/anonymous-type-equality-follow-up.html), I thought following method would also make an interesting post.  
   
 ```csharp
 private static bool IsAnonymousType(Type type) {

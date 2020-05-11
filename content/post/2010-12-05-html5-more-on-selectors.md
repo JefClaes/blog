@@ -6,7 +6,7 @@ author = "Jef Claes"
 tags = [ "code",]
 url = "2010/12/html5-more-on-selectors.html"
 +++
-[Last weekend I blogged](https://www.jefclaes.be/2010/11/html5-new-in-javascript-selector-api.html) on new addittions to the javascript Selector API: `querySelector()` and
+[Last weekend I blogged](https://jefclaes.be/2010/11/html5-new-in-javascript-selector-api.html) on new addittions to the javascript Selector API: `querySelector()` and
 `querySelectorAll()`. These two new methods enable you to find elements by 
 matching against a group of selectors. I only scratched the surface in
 the previous post, that's why you can find a few more examples in this

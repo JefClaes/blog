@@ -108,4 +108,4 @@ The result looks like this.
 Can you imagine other scenarios where the `AggregateException` might be
 able to add some value?  
   
-Related post: [Handling the AggregateException](https://www.jefclaes.be/2010/05/handling-aggregateexception.html)</span>
+Related post: [Handling the AggregateException](https://jefclaes.be/2010/05/handling-aggregateexception.html)</span>

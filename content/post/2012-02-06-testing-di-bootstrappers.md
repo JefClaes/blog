@@ -21,7 +21,7 @@ writing these tests also helps you discover various behaviours of your
 DI container, which is a valuable investment in itself.  
 
 Let me show you a few tests that I wrote to put my [ASP.NET MVC
-Ninject](https://www.jefclaes.be/2011/10/ninjecting-mvc3.html)
+Ninject](https://jefclaes.be/2011/10/ninjecting-mvc3.html)
 bootstrapper under test.  
   
 I started by opening up the Ninject bootstrapper, making the

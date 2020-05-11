@@ -60,9 +60,9 @@ One of the goals I'm totally satisfied about.
   
 Next to citytripping in Belgium, I was lucky enough to travel abroad 5
 times this year:
--   [Czech Republic](https://www.jefclaes.be/2010/04/trip-report-czech-republic.html)
--   [Holland](https://www.jefclaes.be/2010/07/tripping-in-holland-honey-who-shrunk.html)
--   [Denmark](https://www.jefclaes.be/2010/10/trip-report-denmark-part-2.html)
+-   [Czech Republic](https://jefclaes.be/2010/04/trip-report-czech-republic.html)
+-   [Holland](https://jefclaes.be/2010/07/tripping-in-holland-honey-who-shrunk.html)
+-   [Denmark](https://jefclaes.be/2010/10/trip-report-denmark-part-2.html)
 -   Spain
 -   Germany (TechEd)
 

@@ -2,49 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>story on Jef Claes</title>
-    <link>http://localhost:1313/tags/story/</link>
+    <link>https://jefclaes.be/tags/story/</link>
     <description>Recent content in story on Jef Claes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Jul 2017 08:48:00 +0200</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/story/feeds/posts/default" rel="self" type="application/rss" />
+	<atom:link href="https://jefclaes.be/tags/story/feeds/posts/default" rel="self" type="application/rss" />
     
     
     <item>
       <title>From human decisions, to suggestions to automated decisions</title>
-      <link>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to.html</link>
+      <link>https://jefclaes.be/2017/07/from-human-decisions-to-suggestions-to.html</link>
       <pubDate>Sun, 23 Jul 2017 08:48:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2017/07/from-human-decisions-to-suggestions-to.html</guid>
+      <guid>https://jefclaes.be/2017/07/from-human-decisions-to-suggestions-to.html</guid>
       <description>I&amp;rsquo;ve been wanting to share this experience for a while, but it took me a while to come up with a story and example I could use in a blog post.
 I help out during the weekends in a small family run magic shop. I&amp;rsquo;m the third generation working in the shop. My great-grandfather always hoped that his only son would follow in his footsteps as a carpenter. But at only eighteen years old, my grandfather said goodbye to the chisels and sawdust, and set out for the big city to chase his dream of becoming a world class magician.</description>
     </item>
     
     <item>
       <title>Eventual consistency in the Wild West</title>
-      <link>http://localhost:1313/2014/05/eventual-consistency-in-wild-west.html</link>
+      <link>https://jefclaes.be/2014/05/eventual-consistency-in-wild-west.html</link>
       <pubDate>Sun, 25 May 2014 18:01:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2014/05/eventual-consistency-in-wild-west.html</guid>
+      <guid>https://jefclaes.be/2014/05/eventual-consistency-in-wild-west.html</guid>
       <description>San Francisco, 1852. With the California Gold Rush at its peak, successful gold-seekers wanted to protect all their precious gold nuggets by storing them in a strong safe. At the time, it wasn&amp;rsquo;t that easy to have access to a safe though. At the very beginning, it were just a few local merchants that owned one. Not much later, bankers swamped the area hoping to get their piece of the pie - bringing the strongest safes money can buy.</description>
     </item>
     
     <item>
       <title>On crime and document stores</title>
-      <link>http://localhost:1313/2012/07/on-crime-and-document-stores.html</link>
+      <link>https://jefclaes.be/2012/07/on-crime-and-document-stores.html</link>
       <pubDate>Sun, 01 Jul 2012 16:04:00 +0200</pubDate>
       
-      <guid>http://localhost:1313/2012/07/on-crime-and-document-stores.html</guid>
+      <guid>https://jefclaes.be/2012/07/on-crime-and-document-stores.html</guid>
       <description>Having worked with several storage paradigms over these last few months - from flatfiles, to NoSQL, to the big enterprisey relational databases -, I have spent plenty of time trying to make sense of all the options out there. It wasn&amp;rsquo;t until I watched one of the last episodes of The Wire season 3 that I had an epiphany regarding modeling data in document stores. Yes, I know, I tend to take those things home with me.</description>
     </item>
     
     <item>
       <title>A solar storm anecdote</title>
-      <link>http://localhost:1313/2012/02/a-solar-storm-anecdote/</link>
+      <link>https://jefclaes.be/2012/02/a-solar-storm-anecdote/</link>
       <pubDate>Wed, 01 Feb 2012 08:43:00 +0100</pubDate>
       
-      <guid>http://localhost:1313/2012/02/a-solar-storm-anecdote/</guid>
+      <guid>https://jefclaes.be/2012/02/a-solar-storm-anecdote/</guid>
       <description>Last week, several news channels reported on the strongest solar storm since 2005. This news item reminded me of a peculiar support ticket we received one gray Monday morning a few years ago, when I was still writing software for fire departments.
 # Ticket 7238 Subject: **AVL broken** Status: New Description 06:22 Vehicles stay mostly stationary on the map, even when we are positive they are en route. Fire departments that have to cover a large area - and are wealthy enough - often use AVL (Automatic Vehicle Location) to track their vehicles and visualize them on a map.</description>
     </item>

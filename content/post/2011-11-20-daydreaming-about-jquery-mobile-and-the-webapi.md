@@ -7,7 +7,7 @@ tags = [ "opinion"]
 url = "2011/11/blame-no-one-but-yourself.html"
 +++
 I recently blogged about [programming for the future of
-mobile](https://www.jefclaes.be/2011/11/programming-for-future-of-mobile.html)
+mobile](https://jefclaes.be/2011/11/programming-for-future-of-mobile.html)
 with [jQuery Mobile](http://jquerymobile.com/) and the
 [WebAPI](https://wiki.mozilla.org/WebAPI). You probably heard that
 jQuery Mobile 1.0 was released earlier this week. Although it will take

@@ -39,7 +39,7 @@ As mentioned before, the server or an intermediate might drop the
 connection when the connection becomes idle. To prevent this, you could
 make your server send keepalive messages at predefined intervals.  
   
-I implemented this in the [HTML5 Labs WCF Server](https://www.jefclaes.be/2011/01/html5-rebuilding-websockets-server.html).  
+I implemented this in the [HTML5 Labs WCF Server](https://jefclaes.be/2011/01/html5-rebuilding-websockets-server.html).  
   
 ```cs
 [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession, 

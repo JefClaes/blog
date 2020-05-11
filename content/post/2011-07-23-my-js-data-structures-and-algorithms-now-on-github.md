@@ -8,7 +8,7 @@ url = "2011/07/my-js-data-structures-and-algorithms.html"
 +++
 If you have been reading my blog lately, you know that I'm implementing
 some data structures and algorithms in JavaScript. So far, I have
-blogged about [simple sorting algorithms](https://www.jefclaes.be/2011/07/simple-sorting-in-javascript.html), [the stack data structure and the queue data structure](https://www.jefclaes.be/2011/07/stacks-and-queues-in-javascript.html). This week I have also implemented a doubly linked list. I started writing a post about that last implementation, but I didn't like where it was going, so instead of writing about it, I have pushed everything to a public Git repository.  
+blogged about [simple sorting algorithms](https://jefclaes.be/2011/07/simple-sorting-in-javascript.html), [the stack data structure and the queue data structure](https://jefclaes.be/2011/07/stacks-and-queues-in-javascript.html). This week I have also implemented a doubly linked list. I started writing a post about that last implementation, but I didn't like where it was going, so instead of writing about it, I have pushed everything to a public Git repository.  
   
 You can [find the public repository here](https://github.com/JefClaes/Data-structures-and-algorithms-in-JavaScript).  
   

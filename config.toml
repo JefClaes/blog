@@ -72,7 +72,7 @@ url = "https://www.linkedin.com/in/jefclaes"
 [[params.social]]
 name = "RSS"
 icon = "rss"
-url = "https://feed.jefclaes.be"
+url = "http://feed.jefclaes.be"
 
 [taxonomies]
 tag = "tags"

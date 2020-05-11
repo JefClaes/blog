@@ -5,7 +5,7 @@ published = 2011-05-09T21:15:00+02:00
 author = "Jef Claes"
 tags = [ "opinion",]
 +++
-After building [arealdeveloper.com](https://www.jefclaes.be/2011/04/arealdevelopercom.html), I felt like I had to do a follow-up post sharing my experiences with [WebMatrix](http://www.asp.net/webmatrix). While doing some research, I came across [this post](http://blog.wekeroad.com/microsoft/someone-hit-their-head) by Rob Connery. And frankly, I think it's almost impossible for me to add something to his findings.  
+After building [arealdeveloper.com](https://jefclaes.be/2011/04/arealdevelopercom.html), I felt like I had to do a follow-up post sharing my experiences with [WebMatrix](http://www.asp.net/webmatrix). While doing some research, I came across [this post](http://blog.wekeroad.com/microsoft/someone-hit-their-head) by Rob Connery. And frankly, I think it's almost impossible for me to add something to his findings.  
   
 ### In a nutshell
   

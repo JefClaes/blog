@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+<head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Glueing the browser and POS devices together  - Jef Claes</title><meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta itemprop="name" content="Glueing the browser and POS devices together ">
@@ -16,7 +16,7 @@ Although we could use any Windows client framework, we like building things in t
 <meta property="og:description" content="I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
 Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&rsquo;s asynchronous programming model and its incredible rich ecosystem." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/2014/05/glueing-browser-and-pos-devices-together.html" />
+<meta property="og:url" content="https://jefclaes.be/2014/05/glueing-browser-and-pos-devices-together.html" />
 <meta property="article:published_time" content="2014-05-04T18:23:00+02:00" />
 <meta property="article:modified_time" content="2014-05-04T18:23:00+02:00" />
 <meta name="twitter:card" content="summary"/>
@@ -24,13 +24,13 @@ Although we could use any Windows client framework, we like building things in t
 <meta name="twitter:description" content="I have been occupied building a modest Point of Sale system over these last few weeks. Looking at implementing the client, there were two constraints; it needed to run on Windows and it should be able to talk to devices such as a ticket printer and a card reader.
 Although we could use any Windows client framework, we like building things in the browser better for a number of reasons; platform-independence, familiar user experience, JavaScript&rsquo;s asynchronous programming model and its incredible rich ecosystem."/>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/normalize.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://jefclaes.be/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://jefclaes.be/css/main.css" />
 
-        <link id="dark-scheme" rel="stylesheet" type="text/css" href="http://localhost:1313/css/dark.css" />
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://jefclaes.be/css/dark.css" />
 
 	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-		<script src="http://localhost:1313/js/main.js"></script>
+		<script src="https://jefclaes.be/js/main.js"></script>
 </head>
 
 <body>
@@ -38,14 +38,14 @@ Although we could use any Windows client framework, we like building things in t
 		<div class="header">
 	
 		<div class="avatar">
-			<a href="http://localhost:1313/">
+			<a href="https://jefclaes.be/">
 				<img src="https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg" alt="Jef Claes" />
 			</a>
 		</div>
 	
-	<h1 class="site-title"><a href="http://localhost:1313/">Jef Claes</a></h1>
+	<h1 class="site-title"><a href="https://jefclaes.be/">Jef Claes</a></h1>
 	<div class="site-description"><p>On software and life</p><nav class="nav social">
-			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="https://twitter.com/jefclaes" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://www.linkedin.com/in/jefclaes" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://feed.jefclaes.be" title="RSS"><i data-feather="rss"></i></a></li></ul>
+			<ul class="flat"><li><a href="https://github.com/jefclaes" title="Github"><i data-feather="github"></i></a></li><li><a href="https://twitter.com/jefclaes" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://www.linkedin.com/in/jefclaes" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="http://feed.jefclaes.be" title="RSS"><i data-feather="rss"></i></a></li></ul>
 		</nav></div>
 
 	<nav class="nav">
