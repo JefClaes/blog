@@ -937,10 +937,10 @@ System.Func&amp;lt;Exception, Boolean&amp;gt; predicate The predicate to execute
     
     <item>
       <title>Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe)..</title>
-      <link>https://jefclaes.be/cannot-start-service-from-command-line.html</link>
+      <link>https://jefclaes.be/2010/03/cannot-start-service-from-command-line.html</link>
       <pubDate>Sat, 13 Mar 2010 16:36:00 +0100</pubDate>
       
-      <guid>https://jefclaes.be/cannot-start-service-from-command-line.html</guid>
+      <guid>https://jefclaes.be/2010/03/cannot-start-service-from-command-line.html</guid>
       <description>When you create a new Windows Service project and try to debug it, Visual Studio will show you a Windows Service Start Failure with the message Cannot Start Service from the command line or debugger. A Windows Service must first be installed (using installutil.exe) and then started with the Server Explorer, Windows Services Administrative tool or the NET START command..
 
 The trick my team and I use to workaround this problem, makes use of the service Debug flag.</description>

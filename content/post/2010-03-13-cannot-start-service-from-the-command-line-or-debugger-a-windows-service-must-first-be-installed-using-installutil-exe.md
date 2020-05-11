@@ -4,7 +4,7 @@ slug = "2010-03-13-cannot-start-service-from-the-command-line-or-debugger-a-wind
 published = 2010-03-13T16:36:00.005000+01:00
 author = "Jef Claes"
 tags = [ "code",]
-url = "cannot-start-service-from-command-line.html"
+url = "2010/03/cannot-start-service-from-command-line.html"
 +++
 When you create a new Windows Service project and try to debug it,
 Visual Studio will show you a Windows Service Start Failure with the
