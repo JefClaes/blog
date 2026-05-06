@@ -3,13 +3,16 @@ pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsUseClasses = false
 
+[markup.goldmark.renderer]
+unsafe = true
+
 baseURL = "https://jefclaes.be/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Jef Claes"
 theme = "ink"
 
 
-googleAnalytics = "UA-6239073-1"
+# googleAnalytics disabled — UA properties were sunset in 2023
 
 
 [permalinks]
