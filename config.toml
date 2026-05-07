@@ -1,47 +1,66 @@
-pygmentsStyle = "solarized-light"
-pygmentsCodeFences = true
-pygmentsCodeFencesGuessSyntax = true
-pygmentsUseClasses = false
+baseURL = "https://jefclaes.be/"
+title = "Jef Claes"
+theme = "PaperMod"
+paginate = 10
+locale = "en-us"
 
 [markup.goldmark.renderer]
 unsafe = true
 
-baseURL = "https://jefclaes.be/"
-locale = "en-us"
-title = "Jef Claes"
-theme = "ink"
-
-
-# googleAnalytics disabled — UA properties were sunset in 2023
-
-
-[permalinks]
-post = "/:year/:month/:title"
+[markup.highlight]
+  style = "monokai"
+  noClasses = true
 
 [params]
-	subtitle = "On software and life"
+  env = "production"
+  author = "Jef Claes"
+  description = "On software and life"
 
-	# Optional 64x64 avatar image.
-	avatar = "https://image.freepik.com/free-vector/young-man-head-with-beard-avatar-character_24877-36786.jpg"
-	
-	featherIconsCDN = true
-	# customCSS  = "css/custom.css"  # Custom CSS applied to default styles.
-	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
-	# customJS = ["js/custom.js", "js/custom1.js"]  # Custom JS scripts.
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+
+[params.homeInfoParams]
+  Title = "Jef Claes"
+  Content = "On software and life"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/jefclaes"
+
+[[params.socialIcons]]
+  name = "twitter"
+  url = "https://twitter.com/jefclaes"
+
+[[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/jefclaes"
+
+[[params.socialIcons]]
+  name = "rss"
+  url = "/feeds/posts/default"
 
 [mediaTypes]
   [mediaTypes."application/rss"]
     suffixes = []
 
 [outputs]
-home = [ "RSS", "HTML"]
- 
+home = ["RSS", "HTML"]
+
 [outputFormats]
 [outputFormats.RSS]
 mediatype = "application/rss"
 baseName = "feeds/posts/default"
 
-# Nav.
+[taxonomies]
+tag = "tags"
+
+[permalinks]
+post = "/:year/:month/:title"
+
 [[menu.main]]
 name = "Home"
 url = "/"
@@ -56,26 +75,3 @@ weight = 2
 name = "Tags"
 url = "/tags"
 weight = 4
-
-[[params.social]]
-name = "Github"
-icon = "github"
-url = "https://github.com/jefclaes"
-
-[[params.social]]
-name = "Twitter"
-icon = "twitter"
-url = "https://twitter.com/jefclaes"
-
-[[params.social]]
-name = "LinkedIn"
-icon = "linkedin"
-url = "https://www.linkedin.com/in/jefclaes"
-
-[[params.social]]
-name = "RSS"
-icon = "rss"
-url = "http://feed.jefclaes.be"
-
-[taxonomies]
-tag = "tags"
