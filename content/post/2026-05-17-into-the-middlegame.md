@@ -31,5 +31,5 @@ Next to reviewing my own games with an [engine](https://en.wikipedia.org/wiki/St
 
 Chess has accidentally become a part of my life. Learning something new every day, discovering and appreciating the nuances of a position, feeling patterns click over time is incredibly rewarding. I'm not setting out a new objective just yet. Knowing myself, it will be some equally trivial number I'll obsess over.
 
-Writing this reminds me to bring the physical board out to the living room table again.
+As far as my daughters go, occasionally they pull up the chessboard but often end up playing made up games with the ponies and the towers.
 
