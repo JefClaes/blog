@@ -3,7 +3,7 @@ title = "Into the middlegame"
 slug = "2026-05-22-into-the-middlegame"
 published = 2026-05-22T09:00:00.000000+02:00
 author = "Jef Claes"
-tags = [ "personal" ]
+tags = [ "me" ]
 url = "2026/05/into-the-middlegame.html"
 +++
 
